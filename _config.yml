@@ -1,0 +1,33 @@
+# level 3
+first_steps: &first_steps
+  title: First steps
+  parent: getting_started
+  ref: first-steps
+core_functionalities: &core_functionalities
+  title: Core functionalities
+  parent: getting_started
+  ref: core-functionalities
+# level 2
+getting_started: &getting_started
+  start: Yes
+  title: Getting started
+  ref: getting-started
+  nav:
+  - *first_steps
+  - *core_functionalities
+advanced_configuration: &advanced_configuration
+  title: Advanced configuration
+  ref: advanced-configuration
+user_account_management: &user_account_management
+  title: User account management
+  ref: user-account-management
+supported_technologies: &supported_technologies
+  title: Supported technologies
+  ref: supported-technologies
+# level 1
+main:
+  nav:
+  - *getting_started
+  - *advanced_configuration
+  - *user_account_management
+  - *supported_technologies

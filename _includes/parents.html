@@ -1,0 +1,1 @@
+{% if site[parent].parent %}{% assign parent = site[parent].parent %}{% include path.html %}/{% else %}{{ site[parent].ref }}{% endif %}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8"/>
+      <title>
+         {{ site[page.id].title }}
+         &laquo; Documentation
+         &laquo; Clever Cloud
+      </title>
+      <link rel="stylesheet" type="text/css" href="/css/bootstrap.css"/>
+      <link rel="stylesheet" type="text/css" href="/css/main.css"/>
+      <link rel="stylesheet" type="text/css" href="/css/bootstrap-responsive.css"/>
+   </head>
+   <body>
+      <nav class="navbar navbar-fixed-top">
+         <div class="navbar-inner">
+            <div class="container">
+               <a href="/" class="brand">Clever Cloud</a>
+               <ul class="nav pull-right">
+                  <li>
+                     <a href="http://www.clever-cloud.com">Back to the website</a>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </nav>
+      <div class="container">
+         <div class="row">
+            <div class="span3">
+               {% include nav.html %}
+            </div>
+            <article class="span9">
+               {{ content }}
+               <footer class="pagination pagination-right">
+                  <ul>{% if page.parent %}{% if site[page.parent].parent %}{% assign parent = site[page.parent].parent %}{% capture path %}{% include parents.html %}{% endcapture %}{% else %}{% assign path = '' %}{% endif %}
+                     <li>
+                        <a href="/{% unless site[page.parent].start %}{% if site[page.parent].parent %}{{ path | strip_newlines }}/{% endif %}{{ site[page.parent].ref }}.html{% endunless %}">
+                           &laquo; Back to {{ site[page.parent].title }}
+                        </a>
+                     </li>{% endif %}{% if page.prev %}{% if site[page.prev].parent %}{% assign parent = site[page.prev].parent %}{% capture path %}{% include parents.html %}{% endcapture %}{% else %}{% assign path = '' %}{% endif %}
+                     <li>
+                        <a href="/{% unless site[page.prev].start %}{% if site[page.prev].parent %}{{ path | strip_newlines }}/{% endif %}{{ site[page.prev].ref }}.html{% endunless %}">
+                           &lsaquo; {{ site[page.prev].title }}
+                        </a>
+                     </li>{% endif %}{% if page.enter %}{% assign parent = site[page.enter].parent %}{% capture path %}{% include parents.html %}{% endcapture %}
+                     <li>
+                        <a href="/{{ path | strip_newlines }}/{{ site[page.enter].ref }}.html">
+                           {{ site[page.enter].title }} &hellip;
+                        </a>
+                     </li>{% endif %}{% if page.next %}{% if site[page.next].parent %}{% assign parent = site[page.next].parent %}{% capture path %}{% include parents.html %}{% endcapture %}{% else %}{% assign path = '' %}{% endif %}
+                     <li>
+                        <a href="/{% if site[page.next].parent %}{{ path | strip_newlines }}/{% endif %}{{ site[page.next].ref }}.html">
+                           {{ site[page.next].title }} &rsaquo;
+                        </a>
+                     </li>{% endif %}
+                  </ul>
+               </footer>
+            </article>
+         </div>
+      </div>
+   </body>
+</html>
