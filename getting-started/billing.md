@@ -1,3 +1,10 @@
+---
+layout: page
+
+id: billing
+parent: getting_started
+prev: your_profile
+---
 Billing
 =======
 

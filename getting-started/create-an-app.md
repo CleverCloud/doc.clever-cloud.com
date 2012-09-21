@@ -1,3 +1,10 @@
+---
+layout: page
+
+id: create_an_app
+parent: getting_started
+prev: create_account
+---
 Create an app
 =============
 

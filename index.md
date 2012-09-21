@@ -2,8 +2,8 @@
 layout: page
 
 id: getting_started
-enter: first_steps
-next: advanced_configuration
+enter: create_an_account
+next: app_configuration
 ---
 # Get started nicely with Clever Cloud
 

@@ -1,23 +1,45 @@
-# level 3
-first_steps: &first_steps
-  title: First steps
+# level 3 get started
+create_an_account: &create_an_account
+  title: Create an account
   parent: getting_started
-  ref: first-steps
-core_functionalities: &core_functionalities
-  title: Core functionalities
+  ref: create-an-account
+your_profile: &your_profile
+  title: Your profile
   parent: getting_started
-  ref: core-functionalities
+  ref: your-profile
+create_an_app: &create_an_app
+  title: Create an app
+  parent: getting_started
+  ref: create-an-app
+billing: &billing
+  title: Billing
+  parent: getting_started
+  ref: billing
+# level 3 app config
+cc_conf: &cc_conf
+  title: Configuration file
+  parent: app_configuration
+  ref: cc-conf
+java_and_scala: &java_and_scala
+  title: Java and scala
+  parent: app_configuration
+  ref: java-and-scala
 # level 2
 getting_started: &getting_started
   start: Yes
   title: Getting started
   ref: getting-started
   nav:
-  - *first_steps
-  - *core_functionalities
-advanced_configuration: &advanced_configuration
-  title: Advanced configuration
-  ref: advanced-configuration
+  - *create_an_account
+  - *your_profile
+  - *create_an_app
+  - *billing
+app_configuration: &app_configuration
+  title: App configuration
+  ref: app-configuration
+  nav:
+  - *cc_conf
+  - *java_and_scala
 user_account_management: &user_account_management
   title: User account management
   ref: user-account-management
@@ -28,6 +50,6 @@ supported_technologies: &supported_technologies
 main:
   nav:
   - *getting_started
-  - *advanced_configuration
+  - *app_configuration
   - *user_account_management
   - *supported_technologies

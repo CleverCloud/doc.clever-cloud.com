@@ -1,3 +1,11 @@
+---
+layout: page
+
+id: your_profile
+parent: getting_started
+prev: create_an_app
+---
+
 Your profile
 ============
 
