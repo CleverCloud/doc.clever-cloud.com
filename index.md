@@ -3,15 +3,18 @@ layout: page
 
 id: getting_started
 enter: create_an_account
-next: app_configuration
 ---
-# Get started nicely with Clever Cloud
+# Get started with Clever Cloud
 
-**Non proident sunt in culpa qui officia deserunt Sit amet consectetur
-adipisicing elit sed do eiusmod Culpa qui officia deserunt mollit anim id est
-Incididunt ut labore et dolore magna aliqua ut Laboris nisi ut aliquip ex ea
-commodo consequat**
+<legend>
+Clever Cloud is a high-performance hosting service, supporting modern web applications written in Java, PHP, Ruby and Scala.
+</legend>
 
-Ea commodo consequat duis aute irure dolor in Sed do eiusmod tempor incididunt
-ut labore et In culpa qui officia deserunt mollit anim id Ex ea commodo
-consequat duis aute irure dolor Do eiusmod tempor incididunt ut labore et dolore 
+## Introducing Clever Cloud
+
+In this part we will speak about the account creation's process, declaring and deploying apps in Clever Cloud.  
+In the <a href="/app-configuration.html">app configuration</a> section, we will talk about the small configurations steps before deploying your app, through thoses chapters&nbsp;:
+* Deployment configuration
+* Java and Scala
+* PHP 
+* Ruby 

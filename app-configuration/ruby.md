@@ -1,3 +1,10 @@
+---
+layout: page
+
+id: ruby
+parent: app_configuration
+
+---
 Ruby 
 ====
 

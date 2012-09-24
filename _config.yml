@@ -17,17 +17,25 @@ billing: &billing
   ref: billing
 # level 3 app config
 cc_conf: &cc_conf
-  title: Configuration file
+  title: Deployment configuration
   parent: app_configuration
   ref: cc-conf
 java_and_scala: &java_and_scala
   title: Java and scala
   parent: app_configuration
   ref: java-and-scala
+php: &php
+  title: PHP
+  parent: app_configuration
+  ref: php
+ruby: &ruby
+  title: Ruby
+  parent: app_configuration
+  ref: ruby
 # level 2
 getting_started: &getting_started
   start: Yes
-  title: Getting started
+  title: Getting started 
   ref: getting-started
   nav:
   - *create_an_account
@@ -40,6 +48,8 @@ app_configuration: &app_configuration
   nav:
   - *cc_conf
   - *java_and_scala
+  - *php
+  - *ruby
 user_account_management: &user_account_management
   title: User account management
   ref: user-account-management
