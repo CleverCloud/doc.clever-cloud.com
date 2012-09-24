@@ -1,0 +1,3 @@
+[submodule "cc-bootswatch"]
+	path = cc-bootswatch
+	url = gitolite@git.clever-cloud.com:cc-bootswatch
