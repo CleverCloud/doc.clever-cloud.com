@@ -2,10 +2,10 @@
 layout: page
 
 id: ruby
-parent: app_configuration
+prev: php
 
 ---
-Ruby 
+Ruby apps
 ====
 
 Deployment
@@ -31,13 +31,11 @@ Database
 
 We recommand you to use MySQL or PostGreSQL.  
 
-Rails app
-^^^^^^^^^
+### Rails app
 
 We automatically migrate your database. Nothing is needed.
 
-Non-Rails app
-^^^^^^^^^^^^^
+### Non-Rails app
 
 If you need a database, you must use ActiveRecord as ORM. We do not support DataMapper and such.   
 We recommand you to use the [activerecord_sans_rails gem](https://github.com/davidcornu/activerecord_sans_rails).    

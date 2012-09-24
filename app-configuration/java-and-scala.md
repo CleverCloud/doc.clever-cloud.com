@@ -2,8 +2,8 @@
 layout: page
 
 id: java_and_scala
-parent: app_configuration
-
+prev: cc_conf
+next: php
 ---
 
 Java - Scala

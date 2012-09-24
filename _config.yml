@@ -50,16 +50,8 @@ app_configuration: &app_configuration
   - *java_and_scala
   - *php
   - *ruby
-user_account_management: &user_account_management
-  title: User account management
-  ref: user-account-management
-supported_technologies: &supported_technologies
-  title: Supported technologies
-  ref: supported-technologies
 # level 1
 main:
   nav:
   - *getting_started
   - *app_configuration
-  - *user_account_management
-  - *supported_technologies

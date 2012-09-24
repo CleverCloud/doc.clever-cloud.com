@@ -5,15 +5,17 @@ id: cc_conf
 parent: app_configuration
 next: java_and_scala
 ---
-cc_conf.json
+Deployment configuration
 ============
+
+For every java or scala project using Maven, Ant or SBT
 
 This json is the configuration file that you will need for some deployment/build. Here is it's syntax:
 
     {
-      "jarName": "string",
-      "build": "string",
-      "goal": "string"
+      "jarName": "<string>",
+      "build": "<string>",
+      "goal": "<string>"
     }
 
 * "jarName" is a string containing the name of the main jar used to launch your application.
