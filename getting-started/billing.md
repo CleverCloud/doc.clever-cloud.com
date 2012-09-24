@@ -15,7 +15,7 @@ In this section, you have the details of your bills, with the number of remainin
 
 .. raw:: html
 
-  <img class="img_doc" src="_static/img/bills.png">
+  <img class="thumbnail img_doc" src="_static/img/bills.png">
 
 Buy drops
 ---------
