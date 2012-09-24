@@ -11,13 +11,13 @@ The detection of your app is made by the presence of certain files.
 * For pure-Rack or Rack-based application, like Sinatra or Merb, the file 'config.ru' at the root of the project.  
 * For the other projects, a 'init.rb' file  
 
-We also parse the Gemfile to find which app server you use. The supported app servers are, for now: Webrick, Thin, Phusion Passenger and Mongrel.  
+We also parse the Gemfile to find and install the gems you use.
 The file 'config.ru' must contain the following lines (example for Sinatra):
 
     require './start_file'  
     run Sinatra::Application
 
-The apps are, for now, automatically set to development, so make sure you use the right app server.
+The apps are, for now, automatically set to development, so make sure you have created a development set if needed.
 
 Database
 --------
