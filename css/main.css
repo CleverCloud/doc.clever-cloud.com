@@ -5,3 +5,7 @@ body{
    margin:auto;
    max-width:800px;
 }
+.img_doc{
+	max-width: 80%;
+	margin: 10px auto
+}
