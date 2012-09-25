@@ -8,7 +8,7 @@ next: java_and_scala
 Deployment configuration
 ============
 
-For every java or scala project using Maven, Ant or SBT
+For every java or scala project using Maven, Ant or SBT, you need
 
 This json is the configuration file that you will need for some deployment/build. Here is it's syntax:
 
