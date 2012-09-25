@@ -23,6 +23,7 @@ The detection of your app is made by the presence of certain files.
 We also parse the Gemfile to find and install the gems you use.
 The file 'config.ru' must contain the following lines (example for Sinatra):
 
+{% highlight ruby%}
     require 'rubygems'
     require 'bundler'
 
@@ -30,6 +31,7 @@ The file 'config.ru' must contain the following lines (example for Sinatra):
 
     require './<start_file>'  
     run Sinatra::Application
+{% endhighlight %}
 
 The apps are, for now, automatically set to development, so make sure you have created a development set if needed.
 

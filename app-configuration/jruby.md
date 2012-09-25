@@ -32,7 +32,7 @@ We recommand you to use MySQL or PostGreSQL.
 ### Rails app
 
 The gemfile of a Rails application using Jruby must contain the following:
-
+{% highlight ruby %}
       gem 'jdbc-mysql'
       gem 'activerecord-jdbc-adapter'
       gem 'activerecord-jdbcmysql-adapter'
@@ -40,6 +40,7 @@ The gemfile of a Rails application using Jruby must contain the following:
       gem 'jruby-rack'
       gem 'warbler'
       gem 'jetty'
+{% endhighlight %}
   
 We recommand you to use MySQL or PostGreSQL. You can find the syntax of the adapters [here](http://kenai.com/projects/activerecord-jdbc/pages/Home).
   

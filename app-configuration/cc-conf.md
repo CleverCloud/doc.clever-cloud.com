@@ -26,20 +26,27 @@ This JSON is the configuration file that you will need for some deployments and 
 
 Example of cc_conf.json for a Maven build:
 
+{% highlight javascript%}
     {
       "build": "maven",
       "goal": "-Dtest.active=false assembly:jar-with-dependencies"
     }
 
+{% endhighlight %}
+
 Example of cc_conf.json for Ant build:
 
+{% highlight javascript%}
     {
       "build": "ant",
       "goal": "exterminate -Ddoctor.version=11"
     }
+{% endhighlight %}
 
 Example of cc_conf.json for jar deploy:  
 
+{% highlight javascript%}
     {
       "jarName": "Muad-dib.jar"	
     }  
+{% endhighlight %}
