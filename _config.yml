@@ -32,6 +32,10 @@ ruby: &ruby
   title: Ruby
   parent: app_configuration
   ref: ruby
+jruby: &jruby
+  title: Jruby
+  parent: app_deployment
+  ref: jruby
 # level 2
 getting_started: &getting_started
   start: Yes
@@ -50,8 +54,10 @@ app_configuration: &app_configuration
   - *java_and_scala
   - *php
   - *ruby
+  - *jruby
 # level 1
 main:
   nav:
   - *getting_started
   - *app_configuration
+  - *app_deployment

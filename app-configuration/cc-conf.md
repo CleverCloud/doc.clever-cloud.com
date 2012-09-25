@@ -18,10 +18,7 @@ This JSON is the configuration file that you will need for some deployments and 
       "goal": "<string>"
     }
 
-sbt build => package
-sbt deploy => run
-maven => package
 
 * "jarName" is a string containing the name of the main jar used to launch your application.
 * "build" is a string with the builder you want to use. We currently support Maven, SBT and Ant.
-* "goal" is a string with a list of the parameters and/or the goals that Maven/Ant have to execute. It is mandatory if you upload a Maven or Ant-managed application. 
+* "goal" is a string with a list of the parameters and/or the goals that Maven/Ant have to execute. If you build via Maven and don't fill this field, the "package" command will be applied.

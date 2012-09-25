@@ -3,6 +3,7 @@ layout: page
 
 id: ruby
 prev: php
+next: jruby
 
 ---
 Ruby apps

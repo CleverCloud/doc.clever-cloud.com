@@ -1,4 +1,12 @@
-Jruby
+---
+layout: page
+
+id: jruby
+prev: ruby
+
+---
+
+Jruby apps
 =====
 
 Deployment
@@ -20,8 +28,7 @@ Database
 
 We recommand you to use MySQL or PostGreSQL.
 
-Rails app
-^^^^^^^^^
+### Rails app
 
 The gemfile of a Rails application using Jruby must contain the following:
 
@@ -40,7 +47,6 @@ Then, regenerate a Gemfile.lock
       $ rm Gemfile.lock 
       $ jruby -S bundle install 
 
-Non-Rails app
-^^^^^^^^^^^^^
+### Non-Rails app
 
 The same instructions must be used than for a ruby application (see above).

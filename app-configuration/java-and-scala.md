@@ -99,4 +99,4 @@ At the root of your project, you must add the cc_conf.json with the "goal" field
 Sbt
 ---
 
-Upload your files on our server with the cc_conf.json filled with "build": "sbt".
+Upload your files on our server with the cc_conf.json filled with "build": "sbt" (see the [deployment configuration section](/app-configuration/cc-conf.html) to read about the json.). If you build via SBT, the "package" command will be applied. If you deploy, the "run" command will.
