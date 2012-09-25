@@ -11,12 +11,13 @@ Deployment configuration
 For every java or scala project using Maven, Ant or SBT, you need to write a small specific JSON file, copied at the root of your project.
 
 This JSON is the configuration file that you will need for some deployments and builds. Here is the syntax:
-
+{% highlight javascript%}
     {
       "jarName": "<string>",
       "build": "<string>",
       "goal": "<string>"
     }
+{% endhighlight %}
 
 
 * "jarName" is a string containing the name of the main jar used to launch your application, with the extension.

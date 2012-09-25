@@ -1,4 +1,4 @@
-pygments: Yes
+pygments: true
 # level 3 get started
 create_an_account: &create_an_account
   title: Create an account
