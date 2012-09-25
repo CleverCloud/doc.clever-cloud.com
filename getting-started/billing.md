@@ -9,10 +9,7 @@ next: app_configuration
 Billing
 =======
 
-Summary
--------
-
-In this section, you have the details of your bills, with the number of remaining drops you have and it translation in euros.  
+In the *Summary* section, you have the details of your bills, with the number of remaining drops you have and it translation in euros.  
 <img class="thumbnail img_doc" src="/img/bills.png">
 Buy drops
 ---------

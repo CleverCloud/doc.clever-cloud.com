@@ -17,8 +17,8 @@ To run jars, just upload them on our server, as well as the cc_conf.json with th
 Play! Framework
 ---------------
 
-Play 2
-^^^^^^
+### Play 2
+
 
 If you use Play! Framework 2, you have nothing to do for now. Just upload your files, and we take care of everything.
 
