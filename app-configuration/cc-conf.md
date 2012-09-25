@@ -8,7 +8,8 @@ next: java_and_scala
 Deployment configuration
 ============
 
-For every java or scala project using Maven, Ant or SBT, you need to write a small specific JSON file, copied at the root of your project.
+For every java or scala project using Maven, Ant or SBT, you need to write a small specific JSON file, copied at the root of your project. Make sure this file is called
+**cc_conf.json**
 
 This JSON is the configuration file that you will need for some deployments and builds. Here is the syntax:
 {% highlight javascript%}
