@@ -2,6 +2,7 @@
 layout: page
 
 id: jruby
+parent: app_configuration
 prev: ruby
 
 ---
@@ -49,4 +50,4 @@ Then, regenerate a Gemfile.lock
 
 ### Non-Rails app
 
-The same instructions must be used than for a ruby application (see above).
+The same instructions must be used than for a ruby application (see the [corresponding section](/app-configuration/ruby.html)).

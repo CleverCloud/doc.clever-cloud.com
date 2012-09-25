@@ -19,6 +19,26 @@ This JSON is the configuration file that you will need for some deployments and 
     }
 
 
-* "jarName" is a string containing the name of the main jar used to launch your application.
+* "jarName" is a string containing the name of the main jar used to launch your application, with the extension.
 * "build" is a string with the builder you want to use. We currently support Maven, SBT and Ant.
 * "goal" is a string with a list of the parameters and/or the goals that Maven/Ant have to execute. If you build via Maven and don't fill this field, the "package" command will be applied.
+
+Example of cc_conf.json for a Maven build:
+
+    {
+      "build": "maven",
+      "goal": "-Dtest.active=false assembly:jar-with-dependencies"
+    }
+
+Example of cc_conf.json for Ant build:
+
+    {
+      "build": "ant",
+      "goal": "exterminate -Ddoctor.version=11"
+    }
+
+Example of cc_conf.json for jar deploy:  
+
+    {
+      "jarName": "Muad-dib.jar"	
+    }  

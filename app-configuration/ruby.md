@@ -2,6 +2,7 @@
 layout: page
 
 id: ruby
+parent: app_configuration
 prev: php
 next: jruby
 
@@ -22,7 +23,12 @@ The detection of your app is made by the presence of certain files.
 We also parse the Gemfile to find and install the gems you use.
 The file 'config.ru' must contain the following lines (example for Sinatra):
 
-    require './start_file'  
+    require 'rubygems'
+    require 'bundler'
+
+    Bundler.require
+
+    require './<start_file>'  
     run Sinatra::Application
 
 The apps are, for now, automatically set to development, so make sure you have created a development set if needed.
