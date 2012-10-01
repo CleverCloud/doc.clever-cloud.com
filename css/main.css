@@ -9,3 +9,10 @@ body{
 	max-width: 80%;
 	margin: 10px auto
 }
+.navbar-fixed-top .brand{
+   background:url('../img/cleverlogo.png') center top no-repeat;
+   height:15px;
+   overflow:hidden;
+   text-indent:-400%;
+   width:163px;
+}
