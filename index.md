@@ -6,9 +6,7 @@ enter: create_an_account
 ---
 # Get started with Clever Cloud
 
-<legend>
-Clever Cloud is a high-performance hosting service, supporting modern web applications written in Java, PHP, Ruby and Scala.
-</legend>
+*Clever Cloud is a high-performance hosting service, supporting modern web applications written in Java, PHP, Ruby and Scala.*
 
 ## Introducing Clever Cloud
 

@@ -1,18 +1,98 @@
 body{
-   padding-top:72px;
+   background:#f6f6f6;
+   padding-top:47px;
+}
+a{
+  color:#a83031;
+  }
+  a:hover, a:active, a:focus {
+    color:#4f1b1f;
+}
+h1{
+  border-bottom:1px solid #D0D0D0;
+  box-shadow:0 1px 0 #FFFFFF;
+  color:#3F3F3F;
+  font-size:13px;
+  font-weight:normal;
+  line-height:38px;
+  text-transform:uppercase;
+}
+h2{
+  font-size:14px;
+  line-height:20px;
+}
+h1,h2,h3,h4{
+  margin-bottom:10px;
+}
+pre{
+  font-weight:bold;
+  margin:10px 0;
 }
 .readable{
    margin:auto;
    max-width:800px;
 }
 .img_doc{
-	max-width: 80%;
-	margin: 10px auto
+	border-radius:0;
+  margin:10px 0;
+  max-width:80%;
+  padding:0;
 }
 .navbar-fixed-top .brand{
-   background:url('../img/cleverlogo.png') center top no-repeat;
-   height:15px;
-   overflow:hidden;
-   text-indent:-400%;
-   width:163px;
+    background:url("../img/navbar-fixed-spacer.png") no-repeat right;
+    color:#F6F6F6;
+    display:block;
+    float:none;
+    font-size:15px;
+    font-weight:bold;
+    margin-left:0;
+    padding-bottom:16px;
+    padding-left:15px;
+    padding-top:16px;
+  }
+  .navbar-fixed-top .navbar-inner{
+    background:url("../img/navbar-fixed-bg.png") repeat-x;
+    border-bottom:1px solid #3b1313;
+    border-top:1px solid #a63232;
+    height:47px;
+  }
+  .navbar-fixed-top .nav > li > a{
+    padding-bottom:14px;
+    padding-top:14px;
+}
+#affix{
+  background:url("../img/affix-spacer.png") repeat-y right;
+  bottom:0;
+  position:fixed;
+  top:47px;
+  }
+  #affix li > a{
+    border-bottom:1px solid #d0d0d0;
+    color:#ababab;
+    padding:10px 15px;
+    text-transform:uppercase;
+    }
+    #affix li + li > a{
+      border-top:1px solid #fff;
+  }
+  #affix .active > a{
+    background:#3f3f3f;
+    color:#fff;
+    border-top:1px solid #3f3f3f;
+  }
+  #affix .nav-list{
+    margin-right:2px;
+    }
+    #affix .nav-list .nav-list{
+      margin:0 -15px;
+      }
+      #affix .nav-list .nav-list a{
+        color:#3f3f3f;
+        }
+        #affix .nav-list .nav-list a:before {
+          content:"\2022 ";
+          padding:5px;
+        }
+        #affix .nav-list .nav-list .active a{
+          color:#fff;
 }

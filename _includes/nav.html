@@ -1,5 +1,5 @@
 {% if site[page.id].parent %}{% assign parent = site[page.id].parent %}{% capture path %}{% include parents.html %}{% endcapture %}{% endif %}
-<ul class="nav nav-tabs nav-stacked">{% for a in site.main.nav %}
+<ul class="nav nav-list">{% for a in site.main.nav %}
    <li{% if a == site[page.id] %} class="active"{% endif %}>
       <a href="/{% unless a.start %}{{ a.ref }}.html{% endunless %}">
          {{ a.title }}

@@ -20,21 +20,23 @@
       <nav class="navbar navbar-fixed-top">
          <div class="navbar-inner">
             <div class="container">
-               <a href="/" class="brand">Clever Cloud</a>
-               <ul class="nav pull-right">
-                  <li>
-                     <a href="http://www.clever-cloud.com">Back to the website</a>
-                  </li>
-               </ul>
+               <div class="row">
+                 <div class="span3"><a href="/" class="brand">Documentation</a></div>
+                 <ul class="nav pull-right">
+                    <li>
+                       <a href="http://www.clever-cloud.com">Back to the website</a>
+                    </li>
+                 </ul>
+               </div>
             </div>
          </div>
       </nav>
       <div class="container">
          <div class="row">
-            <div class="span3">
+            <div id="affix" class="span3">
                {% include nav.html %}
             </div>
-            <article class="span9">
+            <article class="span9 offset3">
                {{ content }}
                <footer class="pagination pagination-right">
                   <ul>{% if page.parent %}{% if site[page.parent].parent %}{% assign parent = site[page.parent].parent %}{% capture path %}{% include parents.html %}{% endcapture %}{% else %}{% assign path = '' %}{% endif %}

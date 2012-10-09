@@ -3,7 +3,7 @@ layout: page
 
 id: create_an_app
 parent: getting_started
-prev: create_account
+prev: create_an_account
 next: billing
 ---
 Create an app
