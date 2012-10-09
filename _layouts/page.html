@@ -48,7 +48,7 @@
                      </li>{% endif %}{% if page.enter %}{% assign parent = site[page.enter].parent %}{% capture path %}{% include parents.html %}{% endcapture %}
                      <li>
                         <a href="/{{ path | strip_newlines }}/{{ site[page.enter].ref }}.html">
-                           {{ site[page.enter].title }} &hellip;
+                           {{ site[page.enter].title }} &raquo;
                         </a>
                      </li>{% endif %}{% if page.next %}{% if site[page.next].parent %}{% assign parent = site[page.next].parent %}{% capture path %}{% include parents.html %}{% endcapture %}{% else %}{% assign path = '' %}{% endif %}
                      <li>
