@@ -32,10 +32,11 @@ pre{
    max-width:800px;
 }
 .img_doc{
-	border-radius:0;
+  border-radius:0;
   margin:10px 0;
   max-width:80%;
-  padding:0;
+  padding:4px;
+  
 }
 .navbar-fixed-top .brand{
     background:url("../img/navbar-fixed-spacer.png") no-repeat right;
