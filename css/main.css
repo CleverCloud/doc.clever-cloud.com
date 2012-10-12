@@ -53,6 +53,9 @@ pre{
     padding-left:15px;
     padding-top:16px;
   }
+  .navbar-fixed-top .container{
+    width:auto;
+  }
   .navbar-fixed-top .navbar-inner{
     background:url("../img/navbar-fixed-bg.png") repeat-x;
     border-bottom:1px solid #3b1313;
