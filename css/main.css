@@ -68,6 +68,7 @@ pre{
     height:47px;
   }
   .navbar-fixed-top .nav > li > a{
+    color:#a2a2a2;
     padding-bottom:14px;
     padding-top:14px;
 }
