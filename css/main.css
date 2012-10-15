@@ -21,7 +21,8 @@ h1{
 h2,h3,h4{
   font-size:14px;
   line-height:20px;
-  margin-bottom:10px;
+  margin-bottom:5px;
+  margin-top: 25px;
 }
 pre{
   font-weight:bold;
@@ -29,6 +30,10 @@ pre{
 }
 .container{
 	margin:0px;
+}
+
+.container article li {
+	margin-bottom: 10px;
 }
 .readable{
    margin:auto;
@@ -63,6 +68,7 @@ pre{
     height:47px;
   }
   .navbar-fixed-top .nav > li > a{
+    color:#a2a2a2;
     padding-bottom:14px;
     padding-top:14px;
 }
@@ -101,4 +107,7 @@ pre{
         }
         #affix .nav-list .nav-list .active a{
           color:#fff;
+}
+footer.pagination {
+	margin-top: 40px;
 }
