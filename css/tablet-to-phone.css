@@ -1,0 +1,13 @@
+.navbar-fixed-top .span3,.navbar-fixed-top .brand{
+  display:inline-block;
+}
+#affix{
+  background:none;
+  margin:10px 0 20px;
+  }
+#affix + [class*="span"]{
+  margin-left:0;
+}
+h1{
+  display:none;
+}

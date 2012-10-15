@@ -1,5 +1,5 @@
-<ul class="nav nav-list">{% for a in subnav %}
-   <li{% if page.url contains a.ref %} class="active"{% endif %}>
+<ul class="nav nav-list">{% for a in subnav %}{% capture fullpath %}/{{ dir | join: '/' }}/{{ a.ref }}.html{% endcapture %}
+   <li{% if page.url contains fullpath %} class="active"{% endif %}>
       <a href="/{{ dir | join: '/' }}/{{ a.ref }}.html">
          {{ a.title }}
       </a>{% if a.nav %}{% assign subnav = a.nav %}{% assign dir = a.ref %}

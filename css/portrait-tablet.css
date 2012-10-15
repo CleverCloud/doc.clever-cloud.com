@@ -1,0 +1,15 @@
+.navbar-fixed-top{
+  margin-bottom:0;
+  }
+  .navbar-fixed-top .navbar-inner,.navbar-fixed-top + .container{
+    padding:0 5px;
+}
+#affix{
+  position:static;
+  }
+  #affix + .offset3{
+    margin-left:20px;
+  }
+  #affix li > a{
+    margin-left:-20px;
+}
