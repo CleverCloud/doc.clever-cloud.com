@@ -26,7 +26,8 @@ The sFTP way
 ------------
 
 Use this way of doing if you need to redeploy your app on a regular way. To use
-it, just push your files on the following url:
+it, just push your files on the following url: ftp://upload.clever-cloud.com  
+You will receive your credentials by email.
 
 
 PHP modules
