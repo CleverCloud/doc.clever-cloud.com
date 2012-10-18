@@ -21,6 +21,10 @@ cc_conf: &cc_conf
   title: Deployment configuration
   parent: app_configuration
   ref: cc-conf
+ssl: &ssl
+  title: SSL
+  parent: app_configuration
+  ref: ssl
 java_and_scala: &java_and_scala
   title: Java and scala
   parent: app_configuration
@@ -52,6 +56,7 @@ app_configuration: &app_configuration
   ref: app-configuration
   nav:
   - *cc_conf
+  - *ssl
   - *java_and_scala
   - *php
   - *ruby

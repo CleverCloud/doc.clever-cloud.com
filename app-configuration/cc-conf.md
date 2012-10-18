@@ -3,7 +3,7 @@ layout: page
 
 id: cc_conf
 parent: app_configuration
-next: java_and_scala
+next: ssl 
 ---
 Deployment configuration
 ============

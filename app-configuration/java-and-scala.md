@@ -2,7 +2,7 @@
 layout: page
 
 id: java_and_scala
-prev: cc_conf
+prev: ssl 
 parent: app_configuration
 next: php
 ---
