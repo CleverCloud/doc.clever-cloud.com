@@ -2,13 +2,18 @@
 layout: page
 
 id: java_and_scala
-prev: ssl 
+prev: security 
 parent: app_configuration
 next: php
 ---
 
 Java - Scala
 ============
+Informations for all the projects
+---------------------------------
+
+Your application must run on the port 8080.
+
 
 Java jar
 --------

@@ -1,0 +1,20 @@
+---
+layout: page
+
+id: security
+prev: cc_conf
+parent: app_configuration
+next: java_and_scala
+---
+Security
+========
+SSL
+---
+
+You can get a free  SSL certificate for every applications deployed on cleverapps.io domain.  
+For now, there is no way for the app to know if the user use an encrypted connection or not.  
+You have two choices:
+* Either you force the SSL use 
+* You don't use it
+
+A functionnality will come soon to include a HTTP header inside your app.

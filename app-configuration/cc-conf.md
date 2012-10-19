@@ -3,7 +3,7 @@ layout: page
 
 id: cc_conf
 parent: app_configuration
-next: ssl 
+next: security 
 ---
 Deployment configuration
 ============
@@ -14,23 +14,30 @@ For every java or scala project using Maven, Ant or SBT, you need to write a sma
 This JSON is the configuration file that you will need for some deployments and builds. Here is the syntax:
 {% highlight javascript%}
     {
-      "jarName": "<string>",
-      "build": "<string>",
-      "goal": "<string>"
+        "jarName": "<string>",
+        "build": {
+            "goal": "<string>"
+        },
+        "deploy": {
+            "type": "<string>",
+            "goal": "<string>"
+        }
     }
 {% endhighlight %}
 
 
 * "jarName" is a string containing the name of the main jar used to launch your application, with the extension.
-* "build" is a string with the builder you want to use. We currently support Maven, SBT and Ant.
-* "goal" is a string with a list of the parameters and/or the goals that Maven/Ant have to execute. If you build via Maven and don't fill this field, the "package" command will be applied.
+* "build" is an object with the goal to execute.
+* "deploy" is an object containing the type of deploy (Maven, Ant or SBT) and the goal to execute.
 
-Example of cc_conf.json for a Maven build:
+Example of cc_conf.json for a Maven deploy:
 
 {% highlight javascript%}
     {
-      "build": "maven",
-      "goal": "-Dtest.active=false assembly:jar-with-dependencies"
+      "deploy": {
+        "type": "maven",
+        "goal": "-Dtest.active=false assembly:jar-with-dependencies"
+      }
     }
 
 {% endhighlight %}
@@ -39,8 +46,9 @@ Example of cc_conf.json for Ant build:
 
 {% highlight javascript%}
     {
-      "build": "ant",
-      "goal": "exterminate -Ddoctor.version=11"
+      "build": {
+        "goal": "exterminate -Ddoctor.version=11"
+      }
     }
 {% endhighlight %}
 
