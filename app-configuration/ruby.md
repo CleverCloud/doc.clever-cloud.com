@@ -33,7 +33,8 @@ The file 'config.ru' must contain the following lines (example for Sinatra):
     run Sinatra::Application
 {% endhighlight %}
 
-The apps are, for now, automatically set to development, so make sure you have created a development set if needed.
+The apps are, for now, automatically set to development, so make sure you have created a development set if needed.  
+Your application must run on the port 8080.
 
 Database
 --------

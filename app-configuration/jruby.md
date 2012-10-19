@@ -22,7 +22,8 @@ You can also have a web.xml for Rails applications. [Example](https://github.com
 
 The files of the application are grouped in a .war with Warbler and then deployed on a Jetty server.
 
-The apps are, for now, automatically set to development, so make sure you use the right app server.
+The apps are, for now, automatically set to development, so make sure you use the right app server.  
+Your app must run on the port 8080.
 
 Database
 ----------

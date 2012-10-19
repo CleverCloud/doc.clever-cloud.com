@@ -9,6 +9,11 @@ next: php
 
 Java - Scala
 ============
+Informations for all the projects
+---------------------------------
+
+Your application must run on the port 8080.
+
 
 Java jar
 --------
