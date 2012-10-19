@@ -3,7 +3,7 @@ layout: page
 
 id: cc_conf
 parent: app_configuration
-next: ssl 
+next: security 
 ---
 Deployment configuration
 ============
