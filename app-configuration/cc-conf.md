@@ -14,12 +14,12 @@ For every java or scala project using Maven, Ant or SBT, you need to write a sma
 This JSON is the configuration file that you will need for some deployments and builds. Here is the syntax:
 {% highlight javascript%}
     {
-        "jarName": "<string>",
         "build": {
+            "type": "<string>",
             "goal": "<string>"
         },
         "deploy": {
-            "type": "<string>",
+            "jarName": "<string>",
             "goal": "<string>"
         }
     }
@@ -35,7 +35,6 @@ Example of cc_conf.json for a Maven deploy:
 {% highlight javascript%}
     {
       "deploy": {
-        "type": "maven",
         "goal": "-Dtest.active=false assembly:jar-with-dependencies"
       }
     }
@@ -47,6 +46,7 @@ Example of cc_conf.json for Ant build:
 {% highlight javascript%}
     {
       "build": {
+        "type": "ant",
         "goal": "exterminate -Ddoctor.version=11"
       }
     }
@@ -56,6 +56,8 @@ Example of cc_conf.json for jar deploy:
 
 {% highlight javascript%}
     {
-      "jarName": "Muad-dib.jar"	
+      "deploy": {
+        "jarName": "Muad-dib.jar"	
+      }
     }  
 {% endhighlight %}
