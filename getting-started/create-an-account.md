@@ -6,19 +6,25 @@ parent: getting_started
 next: your_profile
 ---
 
-Create and account
-==================
+# Create and account
 
-Go to <a href="https://console.clever-cloud.com">console.clever-cloud.com</a>.   
-If you have already created your account, skip this step and go to the section called <a href="/getting-started/your-profile.html">"Your profile"</a>.  
-  
-Otherwise, click on Sign up.
+## Your Clever Cloud account
+To use our service, you will need to create a Clever Cloud account. After the creation of your Clever Cloud account, you will be able to:
+* Declare and deploy applications & databases
+* Buy drops to power your apps
+* Access to your hosting's statistics
+* Manage users (comiong soon)
+
+## Creating Clever Cloud account
+1. Go to <a href="https://console.clever-cloud.com">console.clever-cloud.com</a>.  
+If you have already created your account you can login, skip this step and go to the section called “<a href="/getting-started/your-profile.html">Your profile</a>”.
+2. Otherwise, click on Sign up.
 <img class="thumbnail img_doc" src="/img/login1.png">  
-Then, simply enter your email address and choose a password.  
+3. Then, simply enter your email address and choose a password.  
 Click the **Sign up** button. 
-We will send you a confirmation e-mail within seconds.
+Clever Cloud will send you a confirmation e-mail within seconds.
 <img class="thumbnail img_doc" src="/img/login2.png">  
 <img class="thumbnail img_doc" src="/img/login3.png">  
-Click on the confirmation link sent by email.  
+4. Click on the confirmation link sent by email.  
 You'll be automatically redirected to <a href="https://console.clever-cloud.com">console.clever-cloud.com</a> and logged into your profile.
 
