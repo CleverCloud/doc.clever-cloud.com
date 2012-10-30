@@ -4,17 +4,26 @@ create_an_account: &create_an_account
   title: Create an account
   parent: getting_started
   ref: create-an-account
+php_start: &php_start
+  title: Start with PHP
+  parent: getting_started
+  ref: start-with-php
+java_start: &java_start
+  title: Start with Java
+  parent: getting_started
+  ref: start-with-java
+# level 3 console
 your_profile: &your_profile
   title: Your profile
-  parent: getting_started
+  parent: console_clever
   ref: your-profile
 create_an_app: &create_an_app
   title: Create an app
-  parent: getting_started
+  parent: console_clever
   ref: create-an-app
 billing: &billing
   title: Billing
-  parent: getting_started
+  parent: console_clever
   ref: billing
 # level 3 app config
 cc_conf: &cc_conf
@@ -48,6 +57,13 @@ getting_started: &getting_started
   ref: getting-started
   nav:
   - *create_an_account
+  - *php_start
+  - *java_start
+console_clever: &console_clever
+  start: Yes
+  title: Clever Cloud Console 
+  ref: console
+  nav:
   - *your_profile
   - *create_an_app
   - *billing
@@ -68,5 +84,6 @@ app_deployment: &app_deployment
 main:
   nav:
   - *getting_started
+  - *console_clever
   - *app_configuration
   - *app_deployment
