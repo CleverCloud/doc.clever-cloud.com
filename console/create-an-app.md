@@ -2,7 +2,7 @@
 layout: page
 
 id: create_an_app
-parent: getting_started
+parent: console
 prev: create_an_account
 next: billing
 ---

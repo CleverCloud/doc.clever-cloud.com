@@ -2,7 +2,7 @@
 layout: page
 
 id: billing
-parent: getting_started
+parent: console
 prev: create_an_app
 next: app_configuration
 ---

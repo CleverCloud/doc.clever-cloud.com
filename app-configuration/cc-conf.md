@@ -5,8 +5,8 @@ id: cc_conf
 parent: app_configuration
 next: security 
 ---
-Deployment configuration
-============
+
+#Configuration file
 
 For every java or scala project using Maven, Ant or SBT, you need to write a small specific JSON file, copied at the root of your project. Make sure this file is called
 **cc_conf.json**

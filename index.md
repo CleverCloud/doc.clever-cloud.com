@@ -12,7 +12,7 @@ enter: create_an_account
 
 In this part we will speak about the account creation's process, declaring and deploying apps in Clever Cloud.  
 In the <a href="/app-configuration.html">app configuration</a> section, we will talk about the small configurations steps before deploying your app, through thoses chapters&nbsp;:
-* Deployment configuration
+* Configuration file
 * Java and Scala
 * PHP 
 * Ruby 

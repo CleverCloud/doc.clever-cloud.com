@@ -109,6 +109,6 @@ To build your project using SBT, upload your files on our server with the cc_con
     
     "build": "sbt"
   
-(see the [deployment configuration section](/app-configuration/cc-conf.html) to read about the json.).  
+(see the [configuration file section](/app-configuration/cc-conf.html) to read about the json.).  
 You also can deploy via SBT, without nothing to do.  
 If you build via SBT, the "package" command will be applied. If you deploy, the "run" command will.

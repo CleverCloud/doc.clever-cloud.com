@@ -27,10 +27,10 @@ billing: &billing
   ref: billing
 # level 3 app config
 cc_conf: &cc_conf
-  title: Deployment configuration
+  title: Configuration file
   parent: app_configuration
   ref: cc-conf
-ssl: &security
+security: &security
   title: Security
   parent: app_configuration
   ref: security
@@ -60,7 +60,6 @@ getting_started: &getting_started
   - *php_start
   - *java_start
 console_clever: &console_clever
-  start: Yes
   title: Clever Cloud Console 
   ref: console
   nav:

@@ -2,7 +2,7 @@
 layout: page
 
 id: your_profile
-parent: getting_started
+parent: console
 next: create_an_app
 prev: create_an_account
 ---
