@@ -1,5 +1,5 @@
 body{
-   background:#f6f6f6;
+   background:white;
    padding-top:47px;
 }
 a{
@@ -12,11 +12,11 @@ h1{
   border-bottom:1px solid #D0D0D0;
   box-shadow:0 1px 0 #FFFFFF;
   color:#3F3F3F;
-  font-size:13px;
-  font-weight:normal;
+  font-size:18px;
+  font-weight:bold;
   line-height:38px;
   margin-bottom:10px;
-  text-transform:uppercase;
+  margin-top:10px;
 }
 h2,h3,h4{
   font-size:14px;
@@ -78,6 +78,7 @@ ul.nav li ul.nav li a, ul.nav li ul.nav li{
 }
 #affix{
   background:url("../img/affix-spacer.png") repeat-y right;
+  background-color:#f6f6f6;
   bottom:0;
   position:fixed;
   top:47px;
