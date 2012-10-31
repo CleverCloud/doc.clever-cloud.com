@@ -50,6 +50,15 @@ jruby: &jruby
   title: Jruby
   parent: app_configuration
   ref: jruby
+# level 3 app deploy
+git_deploy: &git_deploy
+  title: Git deployment
+  parent: app_deployment
+  ref: git-deploy
+ftp_deploy: &ftp_deploy
+  title: FTP deployment
+  parent: app_deployment
+  ref: ftp-deploy
 # level 2
 getting_started: &getting_started
   start: Yes
@@ -79,6 +88,9 @@ app_configuration: &app_configuration
 app_deployment: &app_deployment
   title: App deployment
   ref: app-deployment
+  nav:
+  - *git_deploy
+  - *ftp_deploy
 # level 1
 main:
   nav:
