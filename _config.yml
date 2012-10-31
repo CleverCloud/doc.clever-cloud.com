@@ -21,6 +21,14 @@ create_an_app: &create_an_app
   title: Create an app
   parent: console_clever
   ref: create-an-app
+add_database: &add_database
+  title: Add a database
+  parent: console_clever
+  ref: add-database
+domain_name: &domain_name
+  title: Domain name
+  parent: console_clever
+  ref: domain-name
 billing: &billing
   title: Billing
   parent: console_clever
@@ -74,6 +82,8 @@ console_clever: &console_clever
   nav:
   - *your_profile
   - *create_an_app
+  - *add_database
+  - *domain_name
   - *billing
 app_configuration: &app_configuration
   title: App configuration
