@@ -3,7 +3,7 @@ layout: page
 
 id: billing
 parent: console
-prev: create_an_app
+prev: domain_name
 next: app_configuration
 ---
 Billing

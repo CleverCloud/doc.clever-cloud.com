@@ -3,12 +3,10 @@ layout: page
 
 id: create_an_app
 parent: console
-prev: create_an_account
-next: billing
+prev: your_profile
+next: add_database
 ---
-Create an app
-=============
-
+#Create an app
 
 You can create a new app by simply clicking the "New application" button, next to the "Home" button, in the top bar.  
 <img class="thumbnail img_doc" src="/img/newapp1.png">  
