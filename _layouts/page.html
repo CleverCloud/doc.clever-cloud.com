@@ -1,66 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <meta charset="utf-8"/>
-      <title>
-         {{ site[page.id].title }} - Clever Cloud Documentation
-      </title>
-      <link rel="stylesheet" type="text/css" href="/css/bootstrap.css"/>
-      <link rel="stylesheet" type="text/css" href="/css/main.css"/>
-      <link rel="stylesheet" type="text/css" href="/css/pygments.css"/>
-      <link rel="stylesheet" type="text/css" href="/css/bootstrap-responsive.css"/>
-      <link rel="stylesheet" type="text/css" href="/css/main-responsive.css"/>
-      <link media="screen and (max-width:979px)" rel="stylesheet" href="/css/portrait-tablet.css" type="text/css"/>
-      <link media="screen and (max-width:767px)" rel="stylesheet" href="/css/tablet-to-phone.css" type="text/css"/>
-   </head>
-   <body>
-      <nav class="navbar navbar-fixed-top">
-         <div class="navbar-inner">
-            <div class="container">
-               <div class="row">
-                 <div class="span3"><a href="/" class="brand">Documentation</a></div>
-                 <ul class="nav pull-right">
-                    <li>
-                       <a href="http://www.clever-cloud.com">Back to the website</a>
-                    </li>
-                 </ul>
-               </div>
-            </div>
-         </div>
+  <head>
+    <meta charset="utf-8"/>
+    <title>
+      {{ site[page.id].title }} - Clever Cloud documentation
+    </title>
+    <link media="all" rel="stylesheet" type="text/css" href="/css/base.css"/>
+    <link media="all" rel="stylesheet" type="text/css" href="/css/theme.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/pygments.css"/>
+  </head>
+  <body>
+    <div id="wrap">
+      <nav id="headbar">
+        <a href="http://www.clever-cloud.com" class="back">
+          <img src="/img/clever-cloud.png" alt="«"/>
+        </a>
+        <a href="/" class="brand">Clever Cloud documentation</a>
       </nav>
-      <div class="container">
-         <div class="row">
-            <div id="affix" class="span3">
-               {% include nav.html %}
-            </div>
-            <article class="span9 offset3">
-               {{ content }}
-               <footer class="pagination pagination-right">
-                  <ul>{% if page.parent %}{% if site[page.parent].parent %}{% assign parent = site[page.parent].parent %}{% capture path %}{% include parents.html %}{% endcapture %}{% else %}{% assign path = '' %}{% endif %}
-                     <li>
-                        <a href="/{% unless site[page.parent].start %}{% if site[page.parent].parent %}{{ path | strip_newlines }}/{% endif %}{{ site[page.parent].ref }}.html{% endunless %}">
-                           &laquo; Back to {{ site[page.parent].title }}
-                        </a>
-                     </li>{% endif %}{% if page.prev %}{% if site[page.prev].parent %}{% assign parent = site[page.prev].parent %}{% capture path %}{% include parents.html %}{% endcapture %}{% else %}{% assign path = '' %}{% endif %}
-                     <li>
-                        <a href="/{% unless site[page.prev].start %}{% if site[page.prev].parent %}{{ path | strip_newlines }}/{% endif %}{{ site[page.prev].ref }}.html{% endunless %}">
-                           &lsaquo; {{ site[page.prev].title }}
-                        </a>
-                     </li>{% endif %}{% if page.enter %}{% assign parent = site[page.enter].parent %}{% capture path %}{% include parents.html %}{% endcapture %}
-                     <li>
-                        <a href="/{{ path | strip_newlines }}/{{ site[page.enter].ref }}.html">
-                           {{ site[page.enter].title }} &raquo;
-                        </a>
-                     </li>{% endif %}{% if page.next %}{% if site[page.next].parent %}{% assign parent = site[page.next].parent %}{% capture path %}{% include parents.html %}{% endcapture %}{% else %}{% assign path = '' %}{% endif %}
-                     <li>
-                        <a href="/{% if site[page.next].parent %}{{ path | strip_newlines }}/{% endif %}{{ site[page.next].ref }}.html">
-                           {{ site[page.next].title }} &rsaquo;
-                        </a>
-                     </li>{% endif %}
-                  </ul>
-               </footer>
-            </article>
-         </div>
+      <menu id="sidebar">
+        {% include nav.html %}
+      </menu>
+      <div id="center">
+        {{ content }}
+        
       </div>
-   </body>
+    </div>
+    <footer id="pages">
+      <menu>{% if page.parent %}{% if site[page.parent].parent %}{% assign parent = site[page.parent].parent %}{% capture path %}{% include parents.html %}{% endcapture %}{% else %}{% assign path = '' %}{% endif %}
+        <a href="/{% unless site[page.parent].start %}{% if site[page.parent].parent %}{{ path | strip_newlines }}/{% endif %}{{ site[page.parent].ref }}.html{% endunless %}">
+          &laquo; Back to {{ site[page.parent].title }}
+        </a>{% endif %}{% if page.prev %}{% if site[page.prev].parent %}{% assign parent = site[page.prev].parent %}{% capture path %}{% include parents.html %}{% endcapture %}{% else %}{% assign path = '' %}{% endif %}
+        <a href="/{% unless site[page.prev].start %}{% if site[page.prev].parent %}{{ path | strip_newlines }}/{% endif %}{{ site[page.prev].ref }}.html{% endunless %}">
+          &lsaquo; {{ site[page.prev].title }}
+        </a>{% endif %}{% if page.enter %}{% assign parent = site[page.enter].parent %}{% capture path %}{% include parents.html %}{% endcapture %}
+        <a href="/{{ path | strip_newlines }}/{{ site[page.enter].ref }}.html">
+          {{ site[page.enter].title }} &raquo;
+        </a>{% endif %}{% if page.next %}{% if site[page.next].parent %}{% assign parent = site[page.next].parent %}{% capture path %}{% include parents.html %}{% endcapture %}{% else %}{% assign path = '' %}{% endif %}
+        <a href="/{% if site[page.next].parent %}{{ path | strip_newlines }}/{% endif %}{{ site[page.next].ref }}.html">
+          {{ site[page.next].title }} &rsaquo;
+        </a>{% endif %}
+      </menu>
+    </footer>
+  </body>
 </html>

@@ -1,0 +1,149 @@
+body{
+  background: #f1f1f1;
+  color:      #3f3f3f;
+  font:       14px/18px Arial,Verdana,sans-serif;
+}
+h1 {
+  border-bottom: 1px solid #d0d0d0;
+  font-size:     18px;
+}
+.date {
+  color:      #bbb;
+  font-style: italic;
+}
+.row {
+  border-top: 1px solid #d0d0d0;
+  box-shadow: 0 1px 0 #fff inset;
+  }
+  .row:hover {
+    font-weight: bold;
+}
+header.row {
+  border-top: none;
+  box-shadow: none;
+  color:      #bbb;
+  font-size:  11px;
+  font-style: italic;
+}
+.row.unread {
+  background:  #fff;
+  font-weight: bold;
+}
+.row.btn {
+  border:          1px solid #d0d0d0;
+  border-radius:   4px;
+  box-shadow:      0 1px 0 #fff,
+                   0 1px 0 #fff inset;
+  color:           #3f3f3f;
+  font-weight:     bold;
+  text-align:      center;
+  text-decoration: none;
+}
+#wrap {
+  box-shadow: 0 0 5px rgba(0,0,0,.3);
+}
+#headbar{
+  background:       #782a29;
+  background-image: -webkit-linear-gradient(top, #782a29, #501b1f 100%);
+  background-image:    -moz-linear-gradient(top, #782a29, #501b1f 100%);
+  background-image:         linear-gradient(top, #782a29, #501b1f 100%);
+  border:           1px solid #3c1414;
+  border-radius:    6px;
+  box-shadow:       0 1px 0 #a73131 inset;
+  color:            #fff;
+  }
+  #headbar * {
+    cursor: default;
+  }
+  #headbar a {
+    color:           #fff;
+    text-decoration: none;
+    cursor:          pointer;
+    }
+    #headbar .dropdown a{
+      background:  #551d20;
+      border:      1px solid #3e1515;
+      text-shadow: 0 1px 0 #2f1111;
+      }
+      #headbar .dropdown a:hover {
+        background-image: -webkit-linear-gradient(top, #6b2525, #4f1b1e 100%);
+        background-image:    -moz-linear-gradient(top, #6b2525, #4f1b1e 100%);
+        background-image:         linear-gradient(top, #6b2525, #4f1b1e 100%);
+      }
+      #headbar .dropdown a + a{
+        border-top: 1px solid #672a24;
+      }
+      #headbar .dropdown .add{
+        background:    #3c1414;
+        border-radius: 0 0 6px 6px;
+        border-top:    none;
+        box-shadow:    0 0 1px 1px #2b0c0a inset;
+        margin-top:    -1px;
+  }
+  #headbar .back{
+    background:    #551d20;
+    border-radius: 6px 0 0 6px;
+    box-shadow:    -15px 0 8px -8px #3c1414 inset,
+                   0 1px 0 #812730 inset;
+    }
+    #headbar .back:hover {
+      background: none;
+      box-shadow: none;
+  }
+  #headbar .brand{
+    background-image: -webkit-linear-gradient(top, #782a29, #501b1f 100%);
+    background-image:    -moz-linear-gradient(top, #782a29, #501b1f 100%);
+    background-image:         linear-gradient(top, #782a29, #501b1f 100%);
+    border:           1px solid #3c1414;
+    border-radius:    6px 0 0 6px;
+    border-right:     none;
+    box-shadow:       0 1px 0 #a73131 inset;
+    font-weight:      bold;
+    margin:           -1px 0;
+}
+#sidebar{
+  background:     #f1f1f1;
+  border-right:   1px solid #d0d0d0;
+  font-size:      11px;
+  text-transform: uppercase;
+  }
+  #sidebar a{
+    border-bottom:   1px solid #d0d0d0;
+    color:           #ababab;
+    font-weight:     bold;
+    text-decoration: none;
+    text-shadow:     0 1px 0 #fff;
+    }
+    #sidebar a:hover, #sidebar .active, #sidebar menu a{
+      color: #3f3f3f;
+    }
+    #sidebar a + a{
+      border-top: 1px solid #fff;
+    }
+    #sidebar menu a:hover, #sidebar menu .active {
+      background:    #3f3f3f;
+      border-color: transparent;
+      color:         #fff;
+      text-shadow:   none;
+      }
+      #sidebar menu a:hover + a, #sidebar menu .active + a {
+      border-top: 1px solid #222;
+}
+
+#center {
+  background:  #fff;
+  border-left: 1px solid #d0d0d0;
+  }
+  #center img {
+    border:        4px solid #f1f1f1;
+    border-radius: 4px;
+}
+#pages menu a {
+  border:          1px solid #d0d0d0;
+  border-radius:   4px;
+  box-shadow:      0 1px 0 #fff,
+                   0 1px 0 #fff inset;
+  color:           #3f3f3f;
+  font-weight:     bold;
+  text-decoration: none;
+}

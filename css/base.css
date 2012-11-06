@@ -1,0 +1,145 @@
+body, h1 {
+  margin: 0;
+}
+h1 {
+  line-height: 38px;
+}
+.accordion h4 {
+  margin: 10px 0;
+}
+.accordion label {
+  display:     block;
+  margin-left: 24px;
+}
+.accordion p {
+  margin: 4px 0;
+}
+.accordion [type="checkbox"] {
+  float: left;
+}
+.avatar{
+  display:     block;
+  float:       left;
+  height:      28px;
+  line-height: 28px;
+  margin:      0 9px;
+  width:       28px;
+}
+.row{
+  height:      39px;
+  line-height: 39px;
+  }
+  .row:after {
+    clear:   both;
+    content: "";
+    display: block;
+  }
+  .row [class*="span"] {
+    float:         left;
+    overflow:      hidden;
+    text-overflow: ellipsis;
+    white-space:   nowrap;
+  }
+  .row .avatar {
+    margin-top: 5px;
+  }
+  .row .span2 {
+    width: 16.65%;
+  }
+  .row .span4 {
+    width: 33.32%;
+  }
+  .row .span5 {
+    width: 41.65%;
+  }
+  .row .span6 {
+    width: 50%;
+  }
+  .row .span8 {
+    width: 66.65%;
+  }
+  .row .stats .graphics {
+    display: none;
+}
+.row.btn {
+  display:    block;
+  margin-top: 10px;
+  }
+  .row.btn:after {
+    display: none;
+}
+#wrap {
+  margin:      auto;
+  padding-top: 10px;
+  width:       960px;
+}
+#headbar{
+  height:      48px;
+  line-height: 48px;
+  margin:      0 10px;
+  position:    relative;
+  z-index:     4;
+  }
+  #headbar .back, #headbar .brand{
+    display: inline-block;
+    height:  inherit;
+  }
+  #headbar .back{
+    margin-right:   -10px;
+    padding:        0 14px 0 8px;
+    position:       relative;
+    vertical-align: bottom;
+    z-index:        5;
+    }
+    #headbar .back img {
+      margin-top: 8px;
+  }
+  #headbar .brand{
+    padding-left: 10px;
+    position:     relative;
+    z-index:      6;
+}
+#sidebar {
+  float:      left;
+  margin:     0;
+  padding:    60px 0 0;
+  position:   relative;
+  margin-top: -60px;
+  width:      160px;
+  z-index:    2;
+  }
+  #sidebar a {
+    display: block;
+    padding: 10px;
+  }
+  #sidebar menu {
+    padding: 0;
+}
+#center {
+  padding:  60px 20px 40px;
+  position: relative;
+  margin:   -60px 0 0 160px;
+  z-index:  1;
+  }
+  #center:after {
+    clear:   left;
+    content: "";
+    display: block;
+  }
+  #center img {
+    display:   block;
+    margin:    10px 0;
+    max-width: 70%;
+}
+#pages {
+  margin: auto;
+  width:  960px;
+  }
+  #pages menu {
+    padding:    0;
+    text-align: right;
+    }
+    #pages menu a {
+      display: inline-block;
+      padding: 10px;
+}

@@ -1,0 +1,6 @@
+#rightbar {
+  display: none;
+  }
+  #rightbar + #center {
+    margin-right: 10px;
+  }

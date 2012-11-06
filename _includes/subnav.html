@@ -1,8 +1,6 @@
-<ul class="nav nav-list">{% for a in subnav %}{% capture fullpath %}/{{ dir | join: '/' }}/{{ a.ref }}.html{% endcapture %}
-   <li{% if page.url contains fullpath %} class="active"{% endif %}>
-      <a href="/{{ dir | join: '/' }}/{{ a.ref }}.html">
-         {{ a.title }}
-      </a>{% if a.nav %}{% assign subnav = a.nav %}{% assign dir = a.ref %}
-      {% include subnav.html %}{% endif %}
-   </li>{% endfor %}
-</ul>
+<menu>{% for a in subnav %}{% capture fullpath %}/{{ dir | join: '/' }}/{{ a.ref }}.html{% endcapture %}
+  <a{% if page.url contains fullpath %} class="active"{% endif %} href="/{{ dir | join: '/' }}/{{ a.ref }}.html">
+    * {{ a.title }}
+  </a>{% if a.nav %}{% assign subnav = a.nav %}{% assign dir = a.ref %}
+  {% include subnav.html %}{% endif %}{% endfor %}
+</menu>

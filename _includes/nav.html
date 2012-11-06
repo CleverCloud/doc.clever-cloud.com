@@ -1,9 +1,6 @@
 {% if site[page.id].parent %}{% assign parent = site[page.id].parent %}{% capture path %}{% include parents.html %}{% endcapture %}{% endif %}
-<ul class="nav nav-list">{% for a in site.main.nav %}
-   <li{% if a == site[page.id] %} class="active"{% endif %}>
-      <a href="/{% unless a.start %}{{ a.ref }}.html{% endunless %}">
-         {{ a.title }}
-      </a>{% if a.nav and a == site[page.id] or path contains a.ref %}{% assign subnav = a.nav %}{% assign dir = a.ref %}
-      {% include subnav.html %}{% endif %}
-   </li>{% endfor %}
-</ul>
+{% for a in site.main.nav %}
+<a{% if a == site[page.id] %} class="active"{% endif %} href="/{% unless a.start %}{{ a.ref }}.html{% endunless %}">
+  {{ a.title }}
+</a>{% if a.nav and a == site[page.id] or path contains a.ref %}{% assign subnav = a.nav %}{% assign dir = a.ref %}
+{% include subnav.html %}{% endif %}{% endfor %}
