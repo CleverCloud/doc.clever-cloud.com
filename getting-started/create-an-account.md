@@ -3,7 +3,7 @@ layout: page
 
 id: create_an_account
 parent: getting_started
-next: your_profile
+next: php_start
 ---
 
 # Create a Clever Cloud account
