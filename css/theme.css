@@ -134,6 +134,9 @@ header.row {
   background:  #fff;
   border-left: 1px solid #d0d0d0;
   }
+  #center a {
+    color: #a73131;
+  }
   #center img {
     border:        4px solid #f1f1f1;
     border-radius: 4px;
