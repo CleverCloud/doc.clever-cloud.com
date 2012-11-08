@@ -21,7 +21,7 @@
         {% include nav.html %}
       </menu>
       <div id="center">
-        {{  site.pages }}
+        {{  site.pages | markdownify }}
       </div>
     </div>
     <footer id="pages">
