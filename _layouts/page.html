@@ -20,9 +20,9 @@
       <menu id="sidebar">
         {% include nav.html %}
       </menu>
-      <div id="center">
-        {{ content }}
-        
+      <div id="center">{% for p in  site.pages %}
+        {{ p.id }} {{ p.title }}
+        <p>{{ p.content }}</p>{% endfor %}
       </div>
     </div>
     <footer id="pages">
