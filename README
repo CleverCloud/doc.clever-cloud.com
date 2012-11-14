@@ -1,0 +1,26 @@
+sudo gem install jekyll-tagging
+
+
+New arbo
+
+=> new home incoming
+-------------------------
+Clever Cloud Usage
+ - create-an-account.md
+ - console/*
+ - security.md
+ 
+ PHP
+ - start-with-php.md
+ - php.md
+ - ftp-deploy.md
+ - git-deploy.md
+ 
+ JAVA
+ - java-and-sacala.md
+ - start-with-java.md
+ - cc-conf.md
+ - git-deploy.md
+ 
+ Services
+  - add-database.md
