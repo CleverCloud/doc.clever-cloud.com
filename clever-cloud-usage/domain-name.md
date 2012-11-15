@@ -10,7 +10,7 @@ next: billing
 
 When creating an app, you have two choice for domain names:
 * Using a **\*.cleverapps.io** sub-domain for testing purpose or a quick deploy.
-* Using your a custom domain name.
+* Using a custom domain name.
 
 **Choosing a custom domain name require a DNS configuration on the domain's registrar.**
 
