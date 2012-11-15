@@ -25,6 +25,9 @@ h1 {
   margin:      0 9px;
   width:       28px;
 }
+.highlight {
+  overflow-x:scroll;
+}
 .row{
   height:      39px;
   line-height: 39px;
