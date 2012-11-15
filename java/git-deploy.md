@@ -2,8 +2,8 @@
 layout: page
 
 id: git_deploy
-parent: app-deployment
-next: ftp_deploy
+parent: java
+next: services
 ---
 # Git Deployment
 *You will need git on your computer to deploy via this tool. Here is the official website of Git to get more informations&nbsp;: <a href="http://git-scm.com">git-scm.com</a>*
