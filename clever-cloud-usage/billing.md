@@ -2,9 +2,9 @@
 layout: page
 
 id: billing
-parent: console
+parent: clever_cloud_usage
 prev: domain_name
-next: app_configuration
+next: cc_conf
 ---
 Billing
 =======
