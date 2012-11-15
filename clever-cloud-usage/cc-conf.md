@@ -2,7 +2,8 @@
 layout: page
 
 id: cc_conf
-parent: app_configuration
+parent: clever_cloud_usage
+prev: billing
 next: security 
 ---
 
