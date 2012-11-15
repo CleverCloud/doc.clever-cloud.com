@@ -1,10 +1,7 @@
 ---
 layout: page
 
-id: add_database
-parent: console
-prev: create_an_app
-next: domain_name
+id: services
 ---
 #Managing databases
 

@@ -11,6 +11,10 @@ h1 {
   color:      #bbb;
   font-style: italic;
 }
+.highlight {
+  background: #eee;
+  border:     20px solid #eee;
+}
 .row {
   border-top: 1px solid #d0d0d0;
   box-shadow: 0 1px 0 #fff inset;

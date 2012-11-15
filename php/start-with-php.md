@@ -2,9 +2,8 @@
 layout: page
 
 id: php_start
-parent: getting_started
-prev: create_an_account
-next: java_start
+parent: php
+next: ftp_deploy
 ---
 
 # Tutorial : Run a PHP app

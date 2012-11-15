@@ -2,8 +2,8 @@
 layout: page
 
 id: create_an_account
-parent: getting_started
-next: php_start
+parent: clever_cloud_usage
+next: create_an_app
 ---
 
 # Create a Clever Cloud account

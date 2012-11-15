@@ -1,7 +1,7 @@
 ---
 layout: page
 
-id: getting_started
+id: clever_cloud_usage
 enter: create_an_account
 ---
 # Get started with Clever Cloud

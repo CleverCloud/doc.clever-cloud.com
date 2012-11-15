@@ -2,8 +2,8 @@
 layout: page
 
 id: java_start
-parent: getting_started
-prev: php_start
+parent: java
+next: git_deploy
 ---
 
 # Tutorial : Run a Java app
