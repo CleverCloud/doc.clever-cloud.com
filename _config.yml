@@ -1,110 +1,102 @@
 pygments: true
-# level 3 get started
+
+# level 3
 create_an_account: &create_an_account
-  title: Create an account
-  parent: getting_started
-  ref: create-an-account
+  title:  Create an account
+  parent: clever_cloud_usage
+  ref:    create-an-account
 php_start: &php_start
-  title: Start with PHP
-  parent: getting_started
-  ref: start-with-php
+  title:  Start with PHP
+  parent: php
+  ref:    start-with-php
 java_start: &java_start
-  title: Start with Java
-  parent: getting_started
-  ref: start-with-java
-# level 3 console
+  title:  Start with Java
+  parent: java
+  ref:    start-with-java
 your_profile: &your_profile
-  title: Your profile
-  parent: console_clever
-  ref: your-profile
+  title:  Your profile
+  parent: clever_cloud_usage
+  ref:    your-profile
 create_an_app: &create_an_app
-  title: Create an app
-  parent: console_clever
-  ref: create-an-app
+  title:  Create an app
+  parent: clever_cloud_usage
+  ref:    create-an-app
 add_database: &add_database
-  title: Add a database
-  parent: console_clever
-  ref: add-database
+  title:  Add a database
+  parent: services
+  ref:    add-database
 domain_name: &domain_name
-  title: Domain name
-  parent: console_clever
-  ref: domain-name
+  title:  Domain name
+  parent: clever_cloud_usage
+  ref:    domain-name
 billing: &billing
-  title: Billing
-  parent: console_clever
-  ref: billing
-# level 3 app config
+  title:  Billing
+  parent: clever_cloud_usage
+  ref:    billing
 cc_conf: &cc_conf
-  title: Configuration file
-  parent: app_configuration
-  ref: cc-conf
+  title:  Configuration file
+  parent: clever_cloud_usage
+  ref:    cc-conf
 security: &security
-  title: Security
-  parent: app_configuration
-  ref: security
-java_and_scala: &java_and_scala
-  title: Java and scala
-  parent: app_configuration
-  ref: java-and-scala
-php: &php
-  title: PHP
-  parent: app_configuration
-  ref: php
+  title:  Security
+  parent: clever_cloud_usage
+  ref:    security
 ruby: &ruby
-  title: Ruby
-  parent: app_configuration
-  ref: ruby
+  title:  Ruby
+  parent: ruby_apps
+  ref:    ruby
 jruby: &jruby
-  title: Jruby
-  parent: app_configuration
-  ref: jruby
-# level 3 app deploy
-git_deploy: &git_deploy
-  title: Git deployment
-  parent: app_deployment
-  ref: git-deploy
+  title:  Jruby
+  parent: ruby_apps
+  ref:    jruby
 ftp_deploy: &ftp_deploy
-  title: FTP deployment
-  parent: app_deployment
-  ref: ftp-deploy
+  title:  FTP deployment
+  parent: php
+  ref:    ftp-deploy
+git_deploy: &git_deploy
+  title:  Git deployment
+  parent: java
+  ref:    git-deploy
+
 # level 2
-getting_started: &getting_started
+clever_cloud_usage: &clever_cloud_usage
   start: Yes
-  title: Getting started 
-  ref: getting-started
+  title: Clever Cloud Usage
+  ref:   clever-cloud-usage
   nav:
   - *create_an_account
-  - *php_start
-  - *java_start
-console_clever: &console_clever
-  title: Clever Cloud Console 
-  ref: console
-  nav:
   - *your_profile
   - *create_an_app
-  - *add_database
   - *domain_name
   - *billing
-app_configuration: &app_configuration
-  title: App configuration
-  ref: app-configuration
-  nav:
   - *cc_conf
   - *security
-  - *java_and_scala
-  - *php
+php: &php
+  title: PHP
+  ref:   php
+  nav:
+  - *php_start
+  - *ftp_deploy
+java: &java
+  title: Java
+  ref:   java
+  nav:
+  - *java_start
+  - *git_deploy
+ruby_apps: &ruby_apps
+  title: Ruby
+  ref:   ruby
+  nav:
   - *ruby
   - *jruby
-app_deployment: &app_deployment
-  title: App deployment
-  ref: app-deployment
-  nav:
-  - *git_deploy
-  - *ftp_deploy
+services: &services
+  title: Services
+  ref:   services
+
 # level 1
 main:
   nav:
-  - *getting_started
-  - *console_clever
-  - *app_configuration
-  - *app_deployment
+  - *clever_cloud_usage
+  - *php
+  - *java
+  - *services

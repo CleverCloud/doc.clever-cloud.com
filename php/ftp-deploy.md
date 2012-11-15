@@ -2,8 +2,8 @@
 layout: page
 
 id: ftp_deploy
-parent: app-deployment
-prev: git_deploy
+parent: php
+prev: php_start
 ---
 # FTP Deployment
 

@@ -1,10 +1,8 @@
 ---
 layout: page
 
-id: php
-parent: app_configuration
-prev: java_and_scala
-next: ruby
+id:    php
+enter: php_start
 ---
 #PHP
 

@@ -1,10 +1,8 @@
 ---
 layout: page
 
-id: java_and_scala
-prev: security 
-parent: app_configuration
-next: php
+id: java
+enter: java_start
 ---
 
 Java - Scala
