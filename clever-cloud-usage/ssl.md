@@ -3,7 +3,7 @@ layout: page
 
 id: ssl
 prev: cc_conf
-parent: app_configuration
+parent: clever_cloud_usage
 next: java_and_scala
 ---
 SSL
