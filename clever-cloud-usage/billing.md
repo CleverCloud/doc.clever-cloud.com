@@ -6,12 +6,14 @@ parent: clever_cloud_usage
 prev: domain_name
 next: cc_conf
 ---
-Billing
-=======
+# Billing
 
+The billing section is divided in two parts: the review of your drop consumption and the diffrents drops packages plans.
+## Consommation and billing overview
 In the *Summary* section, you have the details of your bills, with the number of remaining drops you have and it translation in euros.  
 <img class="thumbnail img_doc" src="/img/bills.png">
-Buy drops
----------
-This is where you can refill your drops. Simply click on the number of drops you want, choose your way of paying and follow the instructions.  
-You can only pay with Paypal for now, but we will add new way soon !
+## Buying drops
+
+This is where you can refill your account with drops. Choose the number of drops you want.
+You can only pay with Paypal for now, a new system payment will be available soon.  
+<img class="thumbnail img_doc" src="/img/bills2.png">
