@@ -4,6 +4,20 @@ body, h1 {
 h1 {
   line-height: 38px;
 }
+body div#center h2 {
+  margin-bottom: 0px;
+  padding-top: 14px;
+}
+
+body div#center h3 {
+  margin-bottom: 0px;
+  padding-top: 14px;
+}
+
+body div#center h4 {
+  margin-bottom: 0px;
+  padding-top: 14px;
+}
 .accordion h4 {
   margin: 10px 0;
 }
