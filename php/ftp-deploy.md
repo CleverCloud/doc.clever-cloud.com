@@ -13,7 +13,7 @@ After you created an app in the [console](https://console.clever-cloud.com), the
 1. Your FTP credentials are sent by email.
 2. Use a FTP client with FTPS compliance, able to negotiate using the AUTH TLS method.  
 If your client does not handle this secure mode, the server will refuse the connection.
-3. The credentials are like :  
+3. The credentials are like:  
 
 		host = ftpes://upload.clever-cloud.com/
 		username = userxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
