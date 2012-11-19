@@ -11,7 +11,7 @@ You can deploy PHP applications via <a href="/php/ftp-deploy.html">FTP</a> or <a
 ## Deployment via FTP 
 **Important** : Git is not recomended for PHP applications. Configuration files could be created by some frameworks while they are in production, so Git could not allow you to retrieve them.
 
-To deploy via a FTP client, see details here: <a href="/app-deployment/ftp-deploy.html">FTP Deploy</a>.  
+To deploy via a FTP client, see details here: <a href="/php/ftp-deploy.html">FTP Deploy</a>.  
 
 ## PHP version and modules
 
