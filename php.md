@@ -6,8 +6,7 @@ enter: php_start
 ---
 #PHP
 
-For now, only the deployment via FTP is available. 
-Git deployment for PHP will be available soon.
+You can deploy PHP applications via <a href="/php/ftp-deploy.html">FTP</a> or <a href="/php/git-deploy.html">git</a>. Please note there is an issue with local file storage with the git deployment in PHP. So use FTP in case of Drupal, Wordpress or joomla applications. If you are not sure, please ask on <a href="https://groups.google.com/forum/?fromgroups#!forum/clever-cloud-users">Clever Cloud user group</a>.
 
 ## Deployment via FTP 
 **Important** : Git is not recomended for PHP applications. Configuration files could be created by some frameworks while they are in production, so Git could not allow you to retrieve them.
