@@ -89,6 +89,11 @@ header.row {
     border-radius: 6px 0 0 6px;
     box-shadow:    -15px 0 8px -8px #3c1414 inset,
                    0 1px 0 #812730 inset;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
     }
     #headbar .back:hover {
       background: none;
