@@ -147,7 +147,7 @@ header.row {
     color: #a73131;
   }
   #center img {
-    border:        4px solid #f1f1f1;
+    border: 3px solid #ccc;
     border-radius: 4px;
 }
 #pages menu a {

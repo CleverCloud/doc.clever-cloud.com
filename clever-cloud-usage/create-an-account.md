@@ -3,7 +3,7 @@ layout: page
 
 id: create_an_account
 parent: clever_cloud_usage
-next: create_an_app
+next: your_profile
 ---
 
 # Create a Clever Cloud account

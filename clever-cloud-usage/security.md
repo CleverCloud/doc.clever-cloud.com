@@ -3,8 +3,8 @@ layout: page
 
 id: security
 prev: cc_conf
-parent: app_configuration
-next: java_and_scala
+parent: clever_cloud_usage
+next: php
 ---
 Security
 ========
