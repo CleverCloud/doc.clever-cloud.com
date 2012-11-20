@@ -53,6 +53,14 @@ ftp_deploy: &ftp_deploy
   title:  FTP deployment
   parent: php
   ref:    ftp-deploy
+php_git_deploy: &php_git_deploy
+  title:  Git deployment
+  parent: php
+  ref:    git-deploy
+php_tested_cms: &php_tested_cms
+  title:  Tested CMS
+  parent: php
+  ref:    tested-cms
 git_deploy: &git_deploy
   title:  Git deployment
   parent: java
@@ -77,6 +85,8 @@ php: &php
   nav:
   - *php_start
   - *ftp_deploy
+  - *php_git_deploy
+  - *php_tested_cms
 java: &java
   title: Java
   ref:   java
