@@ -57,6 +57,14 @@ git_deploy: &git_deploy
   title:  Git deployment
   parent: java
   ref:    git-deploy
+mysql: &mysql
+  title:  mySQL database
+  parent: services
+  ref:    mysql
+postgresql: &postgresql
+  title:  PostgreSQL database
+  parent: services
+  ref:    postgresql
 
 # level 2
 clever_cloud_usage: &clever_cloud_usage
@@ -92,6 +100,9 @@ ruby_apps: &ruby_apps
 services: &services
   title: Services
   ref:   services
+  nav:
+  - *mysql
+  - *postgresql
 
 # level 1
 main:

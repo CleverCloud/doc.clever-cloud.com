@@ -3,16 +3,11 @@ layout: page
 
 id: services
 ---
-#Managing databases
+#Services
 
-## Add a database
-1. Created databases are listed under **Services**. The **Add a service** button allow you to add new databases.
-2. Clicking on this button show available databases:<img class="thumbnail img_doc" src="/img/postgre.png">
-3. Click on 
+The Cloud Cloud allow you to use several services, as database (RDBMS, noSQL) or middleware. If you cannot find the services you need, please ask on <a href="mailto:support@clever-cloud.com">support@clever-cloud.com</a>.
 
 
-##Migrate from an old database
-Some migration requires a populated database.  
-As the new databases are empty by default, create a **.sql** dump an old database and use the follwing tool&nbsp;:
-### mySQL Databases
-To populate a mySQL database, go to <a href="http://phpmyadmin.cleverapps.io">http://phpmyadmin.cleverapps.io</a>.
+##Databases
+ * You can use a [mySQL database](/services/mysql.html)
+ * You can use a [PostgreSQL database](/services/postgresql.html)
