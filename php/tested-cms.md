@@ -16,3 +16,6 @@ The following list is the list of tester CMS by our team.
  - Drupal
  - Wordpress
  - Dokuwiki
+ - Joomla
+ - Prestashop
+ - Magento
