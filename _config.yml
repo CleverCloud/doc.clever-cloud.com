@@ -33,6 +33,10 @@ billing: &billing
   title:  Billing
   parent: clever_cloud_usage
   ref:    billing
+pricing: &pricing
+  title:  Pricing
+  parent: clever_cloud_usage
+  ref:    pricing
 cc_conf: &cc_conf
   title:  Configuration file
   parent: clever_cloud_usage
@@ -85,6 +89,7 @@ clever_cloud_usage: &clever_cloud_usage
   - *create_an_app
   - *domain_name
   - *billing
+  - *pricing
   - *cc_conf
   - *security
 php: &php
