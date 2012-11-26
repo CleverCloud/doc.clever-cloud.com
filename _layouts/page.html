@@ -6,10 +6,23 @@
       {{ site[page.id].title }} - Clever Cloud documentation
     </title>
     <link media="all" rel="stylesheet" type="text/css" href="/css/bootstrap.min.css"/>
-    <link media="all" rel="stylesheet" type="text/css" href="/css/bootstrap-responsive.min.css"/>
+    <link href="/css/jquery-ui-1.9.1.custom.min.css" rel="stylesheet">
     <link media="all" rel="stylesheet" type="text/css" href="/css/base.css"/>
+    <link media="all" rel="stylesheet" type="text/css" href="/css/bootstrap-responsive.min.css"/>
     <link media="all" rel="stylesheet" type="text/css" href="/css/theme.css"/>
     <link rel="stylesheet" type="text/css" href="/css/pygments.css"/>
+    <script src="/js/jquery-1.8.2.js"></script>
+    <script src="/js/jquery-ui-1.9.1.custom.min.js"></script>
+    <script>
+    $(function() {
+      var active_menu = $( "#sidebar .menu-posts:has(.active)" );
+      $( "#sidebar" ).accordion({
+        header: ".menu-tag",
+        collapsible: true,
+        active: (active_menu.length > 0 ? parseInt(active_menu.attr("data-index")) -1 : false),
+        heightStyle: "content" });
+    });
+    </script>
   </head>
   <body>
     <div id="wrap">

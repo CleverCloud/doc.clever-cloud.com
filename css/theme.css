@@ -15,34 +15,6 @@ h1 {
   background: #eee;
   border:     20px solid #eee;
 }
-.row {
-  border-top: 1px solid #d0d0d0;
-  box-shadow: 0 1px 0 #fff inset;
-  }
-  .row:hover {
-    font-weight: bold;
-}
-header.row {
-  border-top: none;
-  box-shadow: none;
-  color:      #bbb;
-  font-size:  11px;
-  font-style: italic;
-}
-.row.unread {
-  background:  #fff;
-  font-weight: bold;
-}
-.row.btn {
-  border:          1px solid #d0d0d0;
-  border-radius:   4px;
-  box-shadow:      0 1px 0 #fff,
-                   0 1px 0 #fff inset;
-  color:           #3f3f3f;
-  font-weight:     bold;
-  text-align:      center;
-  text-decoration: none;
-}
 #wrap {
   box-shadow: 0 0 5px rgba(0,0,0,.3);
 }
@@ -110,34 +82,40 @@ header.row {
     font-weight:      bold;
     margin:           -1px 0;
 }
-#sidebar{
+#sidebar {
   background:     #f1f1f1;
   border-right:   1px solid #d0d0d0;
   font-size:      11px;
-  text-transform: uppercase;
   }
-  #sidebar a{
+  #sidebar a {
+    color: #ababab;
+  }
+  #sidebar .menu-tag,
+  #sidebar .menu-posts,
+  #sidebar .home-link {
     border-bottom:   1px solid #d0d0d0;
-    color:           #ababab;
-    font-weight:     bold;
+    box-shadow:      0 1px 0 #fff;
+    outline:         none;
     text-decoration: none;
-    text-shadow:     0 1px 0 #fff;
     }
-    #sidebar a:hover, #sidebar .active, #sidebar menu a{
+  #sidebar .menu-tag,
+  #sidebar .home-link {
+    font-weight:     bold;
+    text-transform:  uppercase;
+    }
+    #sidebar [aria-selected="true"],
+    #sidebar [aria-expanded="true"] a,
+    #sidebar .home-link.active {
       color: #3f3f3f;
-    }
-    #sidebar a + a{
-      border-top: 1px solid #fff;
-    }
-    #sidebar menu a:hover, #sidebar menu .active {
-      background:    #3f3f3f;
-      border-color: transparent;
-      color:         #fff;
-      text-shadow:   none;
-      }
-      #sidebar menu a:hover + a, #sidebar menu .active + a {
-      border-top: 1px solid #222;
+  }
+  #sidebar .menu-posts li + li a {
+    border-top: 1px solid #fff;
+    box-shadow: 0 -1px 0 #d8d8d8;
+  }
+  #sidebar .menu-posts .active {
+    font-weight: bold;
 }
+
 
 #center {
   background:  #fff;

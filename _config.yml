@@ -1,3 +1,8 @@
+# site generation
+
+tag_page_layout: tag_list
+tag_page_dir:    tag
+
 pygments: true
 
 # level 3

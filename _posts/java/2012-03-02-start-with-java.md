@@ -1,9 +1,9 @@
 ---
 layout: page
 
-id: java_start
-parent: java
-next: git_deploy
+title: Start with Java
+tags:
+- Java
 ---
 
 # Tutorial : Run a Java app

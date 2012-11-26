@@ -5,6 +5,9 @@ id: app_configuration
 enter: cc_conf
 parent: clever_cloud_usage
 
+tags:
+- usage
+
 ---
 # App Configuration
 

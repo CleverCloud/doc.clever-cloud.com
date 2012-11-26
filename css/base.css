@@ -31,7 +31,7 @@ body div#center h4 {
 .accordion [type="checkbox"] {
   float: left;
 }
-.avatar{
+.avatar {
   display:     block;
   float:       left;
   height:      28px;
@@ -40,50 +40,7 @@ body div#center h4 {
   width:       28px;
 }
 .highlight {
-  overflow-x:scroll;
-}
-.row{
-  height:      39px;
-  line-height: 39px;
-  }
-  .row:after {
-    clear:   both;
-    content: "";
-    display: block;
-  }
-  .row [class*="span"] {
-    float:         left;
-    overflow:      hidden;
-    text-overflow: ellipsis;
-    white-space:   nowrap;
-  }
-  .row .avatar {
-    margin-top: 5px;
-  }
-  .row .span2 {
-    width: 16.65%;
-  }
-  .row .span4 {
-    width: 33.32%;
-  }
-  .row .span5 {
-    width: 41.65%;
-  }
-  .row .span6 {
-    width: 50%;
-  }
-  .row .span8 {
-    width: 66.65%;
-  }
-  .row .stats .graphics {
-    display: none;
-}
-.row.btn {
-  display:    block;
-  margin-top: 10px;
-  }
-  .row.btn:after {
-    display: none;
+  overflow-x: scroll;
 }
 #wrap {
   margin:      auto;
@@ -122,20 +79,27 @@ body div#center h4 {
   padding:    60px 0 0;
   position:   relative;
   margin-top: -60px;
-  width:      160px;
+  width:      180px;
   z-index:    2;
   }
   #sidebar a {
     display: block;
-    padding: 10px;
   }
-  #sidebar menu {
-    padding: 0;
+  #sidebar .menu-tag,
+  #sidebar .home-link {
+    margin-top: 0;
+    padding: 12px;
+  }
+  #sidebar .menu-posts {
+    padding: 0 10px;
+    }
+    #sidebar .menu-posts a {
+      padding: 5px 10px;
 }
 #center {
   padding:  60px 20px 40px;
   position: relative;
-  margin:   -60px 0 0 160px;
+  margin:   -60px 0 0 180px;
   z-index:  1;
   }
   #center:after {
