@@ -1,4 +1,4 @@
-<menu>{% for a in subnav %}{% capture fullpath %}/{{ dir | join: '/' }}/{{ a.ref }}.html{% endcapture %}
+<menu id="inner">{% for a in subnav %}{% capture fullpath %}/{{ dir | join: '/' }}/{{ a.ref }}.html{% endcapture %}
   <a{% if page.url contains fullpath %} class="active"{% endif %} href="/{{ dir | join: '/' }}/{{ a.ref }}.html">
     &#9679; {{ a.title }}
   </a>{% if a.nav %}{% assign subnav = a.nav %}{% assign dir = a.ref %}
