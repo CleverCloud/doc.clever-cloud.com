@@ -22,8 +22,8 @@ In the <a href="/app-configuration.html">app configuration</a> section, we will 
 
 ## Get some help
 
-Many way to touch clever cloud peoples :
-* send <a href="mailto:support@clever-cloud.com">a mail to support</a>
-* twitter <a href="http://twitter.com/Clever_Support">@Clever_Support</a>
+Don't hesitate to contact us, you can:
+* Send <a href="mailto:support@clever-cloud.com">a mail to support</a>
+* Send a twitt to <a href="http://twitter.com/Clever_Support">@Clever_Support</a>
 
 
