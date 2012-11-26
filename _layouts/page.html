@@ -40,22 +40,6 @@
         
       </div>
     </div>
-    <footer id="pages">
-      <menu>{% if page.parent %}{% if site[page.parent].parent %}{% assign parent = site[page.parent].parent %}{% capture path %}{% include parents.html %}{% endcapture %}{% else %}{% assign path = '' %}{% endif %}
-        <a href="/{% unless site[page.parent].start %}{% if site[page.parent].parent %}{{ path | strip_newlines }}/{% endif %}{{ site[page.parent].ref }}.html{% endunless %}">
-          &laquo; Back to {{ site[page.parent].title }}
-        </a>{% endif %}{% if page.prev %}{% if site[page.prev].parent %}{% assign parent = site[page.prev].parent %}{% capture path %}{% include parents.html %}{% endcapture %}{% else %}{% assign path = '' %}{% endif %}
-        <a href="/{% unless site[page.prev].start %}{% if site[page.prev].parent %}{{ path | strip_newlines }}/{% endif %}{{ site[page.prev].ref }}.html{% endunless %}">
-          &lsaquo; {{ site[page.prev].title }}
-        </a>{% endif %}{% if page.enter %}{% assign parent = site[page.enter].parent %}{% capture path %}{% include parents.html %}{% endcapture %}
-        <a href="/{{ path | strip_newlines }}/{{ site[page.enter].ref }}.html">
-          {{ site[page.enter].title }} &raquo;
-        </a>{% endif %}{% if page.next %}{% if site[page.next].parent %}{% assign parent = site[page.next].parent %}{% capture path %}{% include parents.html %}{% endcapture %}{% else %}{% assign path = '' %}{% endif %}
-        <a href="/{% if site[page.next].parent %}{{ path | strip_newlines }}/{% endif %}{{ site[page.next].ref }}.html">
-          {{ site[page.next].title }} &rsaquo;
-        </a>{% endif %}
-      </menu>
-    </footer>
 	 
 	 <script type="text/javascript">
 
