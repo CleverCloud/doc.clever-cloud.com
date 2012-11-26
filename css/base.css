@@ -163,6 +163,8 @@ body div#center h4 {
 menu #inner a{
 	padding-top: 6px;
 	padding-bottom: 6px;
+	padding-left: 15px;
+	text-transform: capitalize;
 }
 menu #inner{
 	margin-top: 0px;
