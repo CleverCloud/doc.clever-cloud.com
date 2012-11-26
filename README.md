@@ -30,6 +30,9 @@ attention quand même :
   sorties dans `/_posts/waiting`. de manière générale, tout post qui n'a pas
   le format indiqué plus haut ne sera pas généré.
 
+* enfin, l'url de la page sera `http://doc.clever-cloud.com/nom-du-fichier/`
+  donc on fait pas trop les cons avec les noms :D
+
 ## nouvelle catégorie ou update
 
 le fichier `_config.yml` donne l'accès à une liste de tags triés, ça évite que
