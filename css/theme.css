@@ -1,5 +1,5 @@
 body{
-  background: #f1f1f1;
+  background: #f6f6f6;
   color:      #3f3f3f;
   font:       14px/18px Arial,Verdana,sans-serif;
 }
@@ -16,6 +16,13 @@ h1 {
 	background: #eee;
   border:     20px solid #eee;
 	*/
+}
+.alert-hot-problems {
+  background: #f9f6e7;
+  border:     1px solid #d0d0d0;
+  box-shadow: 0 1px 0 #fff,
+              0 1px 0 #fff inset;
+  color:      #3f3f3f;
 }
 #wrap {
   box-shadow: 0 0 5px rgba(0,0,0,.3);
