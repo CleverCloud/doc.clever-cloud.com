@@ -1,7 +1,7 @@
 # site generation
 
 tag_page_layout: tag_list
-tag_page_dir:    tag
+tag_page_dir:    articles
 
 permalink: /:categories/:title/
 
