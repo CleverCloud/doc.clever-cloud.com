@@ -94,6 +94,10 @@ img.thumbnail {
     margin-top: 0;
     padding: 12px;
   }
+  #sidebar .menu-tag .pointer {
+    float:      right;
+    margin-top: 5px;
+  }
   #sidebar .menu-posts {
     padding: 0 10px;
     }

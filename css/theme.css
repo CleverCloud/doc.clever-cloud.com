@@ -91,6 +91,7 @@ h1 {
   }
   #sidebar a {
     color: #ababab;
+    text-decoration: none;
   }
   #sidebar .menu-tag,
   #sidebar .menu-posts,
@@ -98,17 +99,25 @@ h1 {
     border-bottom:   1px solid #d0d0d0;
     box-shadow:      0 1px 0 #fff;
     outline:         none;
-    text-decoration: none;
     }
   #sidebar .menu-tag,
   #sidebar .home-link {
-    font-weight:     bold;
     text-transform:  uppercase;
+    }
+    #sidebar [aria-selected="true"],
+    #sidebar .home-link.active {
+      font-weight: bold;
     }
     #sidebar [aria-selected="true"],
     #sidebar [aria-expanded="true"] a,
     #sidebar .home-link.active {
       color: #3f3f3f;
+  }
+  #sidebar .menu-tag .pointer {
+    border-top-color: #d0d0d0;
+    }
+    #sidebar [aria-selected="true"] .pointer {
+      border-top-color: #3f3f3f;
   }
   #sidebar .menu-posts li + li a {
     border-top: 1px solid #fff;
