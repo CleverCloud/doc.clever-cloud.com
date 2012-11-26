@@ -1,8 +1,9 @@
 ---
 layout: page
 
-id: postgresql
-parent: services
+title: PostgreSQL
+tags:
+- Services
 ---
 #PostgreSQL : Managing databases
 

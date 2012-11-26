@@ -1,13 +1,9 @@
 ---
 layout: page
 
-id: app_configuration
-enter: cc_conf
-parent: clever_cloud_usage
-
+title: App configuration
 tags:
-- usage
-
+- Usage
 ---
 # App Configuration
 

@@ -1,10 +1,9 @@
 ---
 layout: page
 
-id: your_profile
-parent: console
-next: create_an_app
-prev: create_an_account
+title: Profile
+tags:
+- Usage
 ---
 
 # Your profile

@@ -1,10 +1,9 @@
 ---
 layout: page
 
-id: domain_name
-parent: console
-prev: create_an_app
-next: billing
+title: Domains
+tags:
+- Usage
 ---
 # Domain names configuration
 

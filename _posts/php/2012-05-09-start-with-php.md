@@ -1,9 +1,9 @@
 ---
 layout: page
 
-id: php_start
-parent: php
-next: ftp_deploy
+title: Run a PHP app
+tags:
+- PHP
 ---
 
 # Tutorial: Run a PHP app

@@ -1,10 +1,9 @@
 ---
 layout: page
 
-id: create_an_app
-parent: clever_cloud_usage
-prev: your_profile
-next: domain_name
+title: Create an app
+tags:
+- Usage
 ---
 #Create an app
 

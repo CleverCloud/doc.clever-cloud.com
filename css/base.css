@@ -69,7 +69,8 @@ img.thumbnail {
     z-index:        5;
     }
     #headbar .back img {
-      margin-top: 8px;
+      margin-top:     8px;
+      vertical-align: baseline;
   }
   #headbar .brand{
     padding-left: 10px;

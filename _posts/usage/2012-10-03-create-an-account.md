@@ -1,9 +1,9 @@
 ---
 layout: page
 
-id: create_an_account
-parent: clever_cloud_usage
-next: your_profile
+title: Create an account
+tags:
+- Usage
 ---
 
 # Create a Clever Cloud account

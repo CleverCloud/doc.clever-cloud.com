@@ -1,10 +1,9 @@
 ---
 layout: page
 
-id: php_tested_cms
-parent: php
-prev: php_git_deploy
-next: services
+title: Tested CMS
+tags:
+- PHP
 ---
 
 # Tested PHP CMS

@@ -1,10 +1,9 @@
 ---
 layout: page
 
-id: ftp_deploy
-parent: php
-prev: php_start
-next: php_git_deploy
+title: FTP deployment
+tags:
+- PHP
 ---
 # FTP Deployment
 
