@@ -9,7 +9,7 @@ next: princing
 # Billing
 
 The billing section is divided in two parts: the review of your drop consumption and the diffrents drops packages plans.
-## Consommation and billing overview
+## Consumption and billing overview
 In the *Summary* section, you have the details of your bills, with the number of remaining drops you have and it translation in euros.  
 <img class="thumbnail img_doc" src="/img/bills.png">
 
