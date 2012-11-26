@@ -9,9 +9,9 @@ next: services
 
 # Tested PHP CMS
 
-The following list is the list of tester CMS by our team.
+The following list is the list of tested CMS by our team.
 
-**Note:** This list is not exhaustive and doesn't mean that other CMS can't work on our hosting
+**Note:** This list is not exhaustive and doesn't mean that other CMS can't work on the Clever Cloud platform.
 
  - Drupal
  - Wordpress
