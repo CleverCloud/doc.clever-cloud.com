@@ -42,6 +42,9 @@ body div#center h4 {
 .highlight {
   overflow-x: scroll;
 }
+img.thumbnail {
+  padding: 0;
+}
 #wrap {
   margin:      auto;
   padding-top: 10px;
