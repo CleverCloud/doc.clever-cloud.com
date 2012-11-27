@@ -92,7 +92,6 @@ div#center .alert-hot-problems h4{
     border-radius:    6px 0 0 6px;
     border-right:     none;
     box-shadow:       0 1px 0 #a73131 inset;
-    font-weight:      bold;
     margin:           -1px 0;
 }
 #sidebar {
@@ -125,22 +124,21 @@ div#center .alert-hot-problems h4{
       color: #3f3f3f;
   }
   #sidebar .menu-tag .pointer {
-    border-top-color: #d0d0d0;
-    -webkit-transform: rotate(90deg);
-    -moz-transform: rotate(90deg);
-    -o-transform: rotate(90deg);
-    transform: rotate(90deg);
+    border-top-color:   #d0d0d0;
+    -webkit-transform:  rotate(-90deg);
+       -moz-transform:  rotate(-90deg);
+         -o-transform:  rotate(-90deg);
+            transform:  rotate(-90deg);
     -webkit-transition: 0.2s;
-    -moz-transition: 0.2s;
-    -o-transition: 0.2s;
-    transition: 0.2s;
-
+       -moz-transition: 0.2s;
+         -o-transition: 0.2s;
+            transition: 0.2s;
     }
     #sidebar [aria-selected="true"] .pointer {
       -webkit-transform: rotate(0deg);
-      -moz-transform: rotate(0deg);
-      -o-transform: rotate(0deg);
-      border-top-color: #3f3f3f;
+         -moz-transform: rotate(0deg);
+           -o-transform: rotate(0deg);
+      border-top-color:  #3f3f3f;
   }
   #sidebar .menu-posts li + li a {
     border-top: 1px solid #fff;
