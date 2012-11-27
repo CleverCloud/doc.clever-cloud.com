@@ -9,6 +9,15 @@ pygments: true
 
 # meta data
 
+portal:
+  website: &portal_website
+    title: Website
+    url:   http://www.clever-cloud.com
+  console: &portal_console
+    title: Console
+    url:   http://console.clever-cloud.com
+  list: [*portal_website, *portal_console]
+
 sidebar:
   tag_order:
   - Usage

@@ -32,6 +32,11 @@
           <img src="/img/clever-cloud.png" alt="«"/>
         </a>
         <a href="/" class="brand">Clever Cloud documentation</a>
+        <ul class="nav pull-right portal">{% for link in site.portal.list %}
+          <li>
+            <a href="{{ link.url }}" class="btn portal-link">{{ link.title }}</a>
+          </li>{% endfor %}
+        </ul>
       </nav>
       <menu id="sidebar">
         {% include nav.html %}

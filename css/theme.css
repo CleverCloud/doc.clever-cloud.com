@@ -80,11 +80,11 @@ div#center .alert-hot-problems h4{
     -o-transition: all 0.5s;
     -ms-transition: all 0.5s;
     }
-    #headbar .back:hover {
+    #headbar .headbar-homelink:hover .back {
       background: none;
       box-shadow: none;
   }
-  #headbar .brand{
+  #headbar .brand {
     background-image: -webkit-linear-gradient(top, #782a29, #501b1f 100%);
     background-image:    -moz-linear-gradient(top, #782a29, #501b1f 100%);
     background-image:         linear-gradient(top, #782a29, #501b1f 100%);
@@ -93,6 +93,17 @@ div#center .alert-hot-problems h4{
     border-right:     none;
     box-shadow:       0 1px 0 #a73131 inset;
     margin:           -1px 0;
+  }
+  #headbar .portal .portal-link {
+    background:    none;
+    border:        1px solid #3c1414;
+    border-radius: 4px;
+    box-shadow:    0 1px 0 #812730 inset,
+                   0 1px 0 #812730;
+    text-shadow:   0 1px 0 #3c1414;
+    }
+    #headbar .portal .portal-link:hover {
+      background: #812730;
 }
 #sidebar {
   background:     #f1f1f1;

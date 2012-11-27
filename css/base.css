@@ -72,10 +72,17 @@ img.thumbnail {
       margin-top:     8px;
       vertical-align: baseline;
   }
-  #headbar .brand{
+  #headbar .brand {
     padding-left: 10px;
     position:     relative;
     z-index:      6;
+  }
+  #headbar .portal {
+    margin: 9px 12px 0 0;
+    }
+    #headbar .portal > li {
+      float:       left;
+      margin-left: 10px;
 }
 #sidebar {
   float:      left;
