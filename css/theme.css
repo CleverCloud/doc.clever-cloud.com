@@ -19,12 +19,13 @@ h1 {
 }
 .alert-hot-problems {
   background: #f9f6e7;
-  border:     1px solid #d0d0d0;
+  border:     1px solid #dfddcf;
   box-shadow: 0 1px 0 #fff,
               0 1px 0 #fff inset;
   color:      #3f3f3f;
 }
 #wrap {
+  background: #f1f1f1;
   box-shadow: 0 0 5px rgba(0,0,0,.3);
 }
 #headbar{
@@ -151,7 +152,7 @@ h1 {
 
 
 #center {
-  background:  #fff;
+  background:  #f6f6f6;
   border-left: 1px solid #d0d0d0;
   }
   #center a {
