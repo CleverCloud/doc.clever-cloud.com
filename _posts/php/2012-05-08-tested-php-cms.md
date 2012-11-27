@@ -1,7 +1,7 @@
 ---
 layout: page
 
-title: Tested CMS
+title: Tested PHP CMS
 tags:
 - PHP
 ---

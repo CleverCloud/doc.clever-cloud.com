@@ -1,7 +1,7 @@
 ---
 layout: page
 
-title: Domains
+title: Domain names
 tags:
 - Usage
 ---

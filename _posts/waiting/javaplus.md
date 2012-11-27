@@ -1,45 +1,17 @@
 ---
 layout: page
 
-title: Java and Scala
-tags:
-- Java
-- Scala
+id: javaplus
+parent: app_configuration
+
 ---
 
-Java - Scala
-============
-Informations for all the projects
----------------------------------
+## Java Enterprise Edition (Java EE)
 
-Your application must run on the port 8080.
+To install a Java EE application,  pack it into a *.war file and follow the instructions to deploy on a Glassfish or a Jetty, in the next sections.
 
+## Glassfish
 
-Java jar
---------
-
-To run jars, just upload them on our server, as well as the cc_conf.json with the field "jarName" containing the name of the main jar.
-
-Play! Framework
----------------
-
-### Play 2
-
-
-If you use Play! Framework 2, you have nothing to do for now. Just upload your files, and we take care of everything.
-
-J2EE
-----
-
-To install a J2EE application, just pack it into a .war and follow the instructions to deploy on a Glassfish or a Jetty, in the next sections.
-
-Scala
------
-
-Simply upload your app on our server, and you are good to go.
-
-Glassfish
----------
 
 To deploy a .war on Glassfish, you only have to upload the .war. You can also
 upload a maven project which will be built before it’s deployed. See the Maven
@@ -91,24 +63,11 @@ A resource file looks like this:
 {% endhighlight %}
 The fields "serverName", "User" and "Password" have to be filled in with the value we will give you in the admin panel when you’ll ask for a database.
 
-Jetty
------
+## Jetty
 
 If you choose to run your application on Jetty, you just have to upload a .war on our server. Alternatively, you can upload a Maven project which will be built before deploy. See the maven section for further informations.  
 If you want to use a database, you have to fill the web.xml file. We support c3p0 and dbcp method. Fore more informations, take a look at the [Jetty doc](http://docs.codehaus.org/display/JETTY/DataSource+Examples).
-
-Maven-Ant
-----------
+-->
+## Maven-Ant
 
 At the root of your project, you must add the cc_conf.json with the "goal" field filled. It contains a string with all the goals and parameters that must be executed, separated by a space. The build field contain "maven" or "ant". 
-
-Sbt
----
-
-To build your project using SBT, upload your files on our server with the cc_conf.json filled with 
-    
-    "build": "sbt"
-  
-(see the [configuration file section](/app-configuration/cc-conf.html) to read about the json.).  
-You also can deploy via SBT, without nothing to do.  
-If you build via SBT, the "package" command will be applied. If you deploy, the "run" command will.

@@ -4,7 +4,7 @@ layout: page
 title: Git deployment
 tags:
 - Java
-- Scala
+- PHP
 ---
 # Git Deployment
 *You will need git on your computer to deploy via this tool. Here is the official website of Git to get more informations&nbsp;: <a href="http://git-scm.com">git-scm.com</a>*
@@ -17,12 +17,12 @@ If you didn't already track your app with git, start by typing:
 
     	$ git init
 
-3. Then, use the "git remote" command to add the deploy URL :
+3. Then, use the "git remote" command to add the deploy URL:
 
-		$ git remote add clever git+ssh://gitolite@git.clever-cloud.com/app_<your_app_id>.git
+		$ git remote add <name> git+ssh://gitolite@git.clever-cloud.com/app_<your_app_id>.git
 
-4. The last step is to push your application&nbsp;:
+4. The last step is to push your application:
 
-		$ git push clever master
+		$ git push <name> master
 
 If you send a Java app, and want to use Maven, Ant or SBT, don't forget to include the cc_conf.json. For more details, check the [deployment configuration page](/app-configuration/cc-conf.html)

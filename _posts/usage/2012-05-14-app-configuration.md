@@ -3,7 +3,7 @@ layout: page
 
 title: App configuration
 tags:
-- Usage
+- 
 ---
 # App Configuration
 
