@@ -4,7 +4,6 @@ layout: page
 title: Git deployment
 tags:
 - Java
-- PHP
 ---
 # Git Deployment
 *You will need git on your computer to deploy via this tool. Here is the official website of Git to get more informations&nbsp;: <a href="http://git-scm.com">git-scm.com</a>*
