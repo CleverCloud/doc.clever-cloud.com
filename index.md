@@ -23,6 +23,6 @@ In the <a href="/app-configuration.html">app configuration</a> section, we will 
 
 Don't hesitate to contact us, you can:
 * Send <a href="mailto:support@clever-cloud.com">a mail to support</a>
-* Send a twitt to <a href="http://twitter.com/Clever_Support">@Clever_Support</a>
+* Send a tweet to <a href="http://twitter.com/Clever_Support">@Clever_Support</a>
 
 
