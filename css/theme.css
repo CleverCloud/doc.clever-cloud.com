@@ -83,9 +83,12 @@ div#center .alert-hot-problems h4{
     -o-transition: all 0.5s;
     -ms-transition: all 0.5s;
     }
-    #headbar .headbar-homelink:hover .back {
+    #headbar .back:hover {
       background: none;
       box-shadow: none;
+    }
+    #headbar .back img {
+      cursor: pointer;
   }
   #headbar .brand {
     background-image: -webkit-linear-gradient(top, #782a29, #501b1f 100%);
