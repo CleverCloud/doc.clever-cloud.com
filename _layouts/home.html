@@ -2,9 +2,15 @@
 layout: page
 ---
 {{ content }}
-<div class="row-fluid">{% for tutorial in page.tutorials %}
+<div class="row-fluid cc-tutorials">{% for tutorial in page.tutorials %}
 	<div class="span4 cc-well">
     <img class="cc-well__img" src="{{ tutorial.img }}" alt="{{ tutorial.title }}"/>
 		<a href="{{ tutorial.url }}" class="btn cc-btn cc-well__btn">{{ tutorial.title }}</a>
 	</div>{% endfor %}
 </div>
+{% for table in page.tables %}
+<h2 class="center-title">{{ table.title }}</h2>{% for topic in table.topics %}
+<a href="{{ topic.url }}" class="cc-topic">
+	<strong class="cc-topic__left">{{ topic.left }}</strong>
+  <span class="cc-topic__right">{{ topic.right }}</span>
+</a>{% endfor %}{% endfor %}

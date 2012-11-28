@@ -13,15 +13,17 @@ tutorials:
 - title: PHP basics
   url: /php/
   img: http://placehold.it/300x150
+
+tables:
+- title: Help
+  topics:
+  - left:  A question to the support?
+    right: support@clever-cloud.com
+    url:   mailto:support@clever-cloud.com
+  - left:  Send a tweet to @Clever_Support
+    right: twitter.com/Clever_Support
+    url:   http://twitter.com/Clever_Support
 ---
 # Welcome on the Documentation
 
 Clever Cloud is a high-performance hosting service, supporting modern web applications written in Java, PHP, Ruby and Scala.
-
-## Get some help
-
-Don't hesitate to contact us, you can:
-* Send <a href="mailto:support@clever-cloud.com">a mail to support</a>
-* Send a tweet to <a href="http://twitter.com/Clever_Support">@Clever_Support</a>
-
-

@@ -1,10 +1,10 @@
-body, h1 {
+body, h1, .center-title {
   margin: 0;
 }
-h1 {
+h1, .center-title {
   line-height: 38px;
 }
-body div#center h2 {
+.center h2 {
   margin-bottom: 0px;
   padding-top: 14px;
 }
@@ -151,6 +151,9 @@ menu #inner{
 }
 
 /* class-based css from now on */
+.cc-tutorials {
+  padding-top: 20px;
+}
 .cc-well__btn {
   display: block;
   margin:  5px;
@@ -159,4 +162,17 @@ menu #inner{
 .center .cc-well__img {
   border: none;
   margin: 0;
+}
+.cc-topic {
+  display:     block;
+  line-height: 40px;
+  height:      40px;
+  padding:     0 5px;
+  white-space: nowrap;
+  }
+  .cc-topic__right {
+    float: right;
+  }
+  .cc-topic__left {
+    float: left;
 }

@@ -3,9 +3,12 @@ body{
   color:      #3f3f3f;
   font:       14px/18px Arial,Verdana,sans-serif;
 }
-h1 {
+h1,.center-title {
   border-bottom: 1px solid #d0d0d0;
   font-size:     18px;
+}
+h2 {
+  font-size: 18px;
 }
 .date {
   color:      #bbb;
@@ -213,4 +216,21 @@ div#center .alert-hot-problems h4{
   .cc-btn:focus {
     background: #fbfbfb;
     transition: none;
+}
+.cc-topic,
+.center .cc-topic {
+  box-shadow: 0 -1px 0 #d0d0d0 inset,
+              0 1px 0 #fff;
+  color: #3f3f3f;
+  }
+  .cc-topic:hover,
+  .cc-topic:focus {
+    background: #fbfbfb;
+  }
+  .cc-topic__right {
+    color:      #ababab;
+    font-style: italic;
+  }
+  .cc-topic__left {
+    font-weight: normal;
 }
