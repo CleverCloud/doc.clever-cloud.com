@@ -1,23 +1,22 @@
 ---
-layout: page
+layout: home
 
 title: Home
+
+tutorials:
+- title: Create an account
+  url: /create-an-account/
+  img: http://placehold.it/300x150
+- title: Java basics
+  url: /java/
+  img: http://placehold.it/300x150
+- title: PHP basics
+  url: /php/
+  img: http://placehold.it/300x150
 ---
-# Get started with Clever Cloud
+# Welcome on the Documentation
 
-*Clever Cloud is a high-performance hosting service, supporting modern web applications written in Java, PHP, Ruby and Scala.*
-
-## Introducing Clever Cloud
-
-In this part we will speak about the account creation's process, declaring and deploying apps in Clever Cloud.  
-In the <a href="/app-configuration.html">app configuration</a> section, we will talk about the small configurations steps before deploying your app, through thoses chapters&nbsp;:
-* Configuration file
-* Java and Scala
-* PHP 
-* Ruby 
-
-
-
+Clever Cloud is a high-performance hosting service, supporting modern web applications written in Java, PHP, Ruby and Scala.
 
 ## Get some help
 

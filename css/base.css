@@ -122,7 +122,7 @@ img.thumbnail {
     content: "";
     display: block;
   }
-  #center img {
+  .center img {
     display:   block;
     margin:    10px 0;
     max-width: 100%;
@@ -148,4 +148,15 @@ menu #inner a{
 menu #inner{
 	margin-top: 0px;
 	margin-bottom: 0px;
+}
+
+/* class-based css from now on */
+.cc-well__btn {
+  display: block;
+  margin:  5px;
+}
+.cc-well__img,
+.center .cc-well__img {
+  border: none;
+  margin: 0;
 }

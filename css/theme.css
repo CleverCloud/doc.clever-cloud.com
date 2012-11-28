@@ -167,10 +167,10 @@ div#center .alert-hot-problems h4{
   background:  #f6f6f6;
   border-left: 1px solid #d0d0d0;
   }
-  #center a {
+  .center a {
     color: #a73131;
   }
-  #center img {
+  .center img {
     border: 3px solid #ccc;
     border-radius: 4px;
 }
@@ -184,3 +184,33 @@ div#center .alert-hot-problems h4{
   text-decoration: none;
 }
 
+/* class-based css from now on */
+
+.cc-well {
+  border-radius: 4px;
+  box-shadow:    0 0 0 1px #d0d0d0,
+                 0 2px 0 #fff,
+                 0 1px 0 #fff inset;
+}
+.cc-well__img,
+.center .cc-well__img {
+  border-radius: 0;
+}
+.cc-btn,
+.center .cc-btn {
+  background:   -webkit-linear-gradient(top, #fff, #eee);
+  background:      -moz-linear-gradient(top, #fff, #eee);
+  background:       -ms-linear-gradient(top, #fff, #eee);
+  background:        -o-linear-gradient(top, #fff, #eee);
+  background:           linear-gradient(top, #fff, #eee);
+  border-color: #d0d0d0;
+  box-shadow:   0 1px 0 #fff;
+  color:        #3f3f3f;
+  font-weight:  bold;
+  text-shadow:  0 1px 0 #fff;
+  }
+  .cc-btn:hover,
+  .cc-btn:focus {
+    background: #fbfbfb;
+    transition: none;
+}

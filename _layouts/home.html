@@ -1,0 +1,10 @@
+---
+layout: page
+---
+{{ content }}
+<div class="row-fluid">{% for tutorial in page.tutorials %}
+	<div class="span4 cc-well">
+    <img class="cc-well__img" src="{{ tutorial.img }}" alt="{{ tutorial.title }}"/>
+		<a href="{{ tutorial.url }}" class="btn cc-btn cc-well__btn">{{ tutorial.title }}</a>
+	</div>{% endfor %}
+</div>
