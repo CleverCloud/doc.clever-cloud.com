@@ -18,3 +18,4 @@ The following list is the list of tested CMS by our team.
  - Joomla
  - Prestashop
  - Magento
+ - SugarCRM
