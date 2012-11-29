@@ -15,7 +15,7 @@ tutorials:
   img: http://placehold.it/300x150
 
 tables:
-- title: Help
+- title: FAQ
   topics:
   - left:  A question to the support?
     right: support@clever-cloud.com
