@@ -20,7 +20,7 @@ tables:
   - left:  What exactly is Clever Cloud?
     right: General
     answer: "Clever Cloud is a multi-language applications hosting platform. You don't have to manage servers anymore. You write application in language you want to, adding one or more services (databases, search engines etc…).<br> Clever Cloud is scalable and offer a pay-as-you-go payment, based on the Drops: the unit of computing energy we use."
-  - left:  How do I know how much Drops I need?
+  - left:  How drops my app will need?
     right: Usage/Pricing
     answer:   We do not provide a simulator yet. But Drops consumption <a href="/pricing">is detailed here</a>.
   - left:  Do I have to change anything in my code be Clever-Cloud-Ready?
