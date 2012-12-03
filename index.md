@@ -6,24 +6,34 @@ title: Home
 tutorials:
 - title: Create an account
   url: /create-an-account/
-  img: http://placehold.it/300x150
+  img: /img/account-start.png
 - title: Java basics
   url: /java/
-  img: http://placehold.it/300x150
+  img: /img/java-start.png
 - title: PHP basics
   url: /php/
-  img: http://placehold.it/300x150
+  img: /img/php-start.png
 
 tables:
 - title: FAQ
   topics:
-  - left:  A question to the support?
-    right: support@clever-cloud.com
-    url:   mailto:support@clever-cloud.com
-  - left:  Send a tweet to @Clever_Support
-    right: twitter.com/Clever_Support
-    url:   http://twitter.com/Clever_Support
+  - left:  What exactly is Clever Cloud?
+    right: General
+    answer: "Clever Cloud is a multi-language applications hosting platform. You don't have to manage servers anymore. You write application in language you want to, adding one or more services (databases, search engines etc…).<br> Clever Cloud is scalable and offer a pay-as-you-go payment, based on the Drops: the unit of computing energy we use."
+  - left:  How do I know how much Drops I need?
+    right: Usage/Pricing
+    answer:   We do not provide a simulator yet. But Drops consumption <a href="/pricing">is detailed here</a>.
+  - left:  Do I have to change anything in my code be Clever-Cloud-Ready?
+    right: Java/PHP
+    answer:   "Nope, that's the magic we're about to bring to this world."
+  - left:  What is the SLA promised by Clever Cloud? 
+    right: Guarantees
+    answer: "4 hours of guaranteed fault repair time, and email support is included for now."
+  - left:  Which services are incuded in every account? 
+    right: Guarantees
+    answer: "Clever Cloud hosting inludes: <ul><li>99,9% SLA</li> <li>Instant deployment and scaling</li> <li>Support (Mail, Twitter and UserGroup)</li> <li>24/7 Monitoring</li> <li> SSL 100% open and standard stacks</li><li>High-end Peering Public API</li><ul>"
 ---
 # Welcome on the Documentation
 
 Clever Cloud is a high-performance hosting service, supporting modern web applications written in Java, PHP, Ruby and Scala.
+
