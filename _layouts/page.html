@@ -22,6 +22,11 @@
         collapsible: true,
         active: (active_menu.length > 0 ? parseInt(active_menu.attr("data-index")) -1 : false),
         heightStyle: "content" });
+	      $( ".my-question-wrapper" ).accordion({
+	        header: ".cc-topic",
+	        collapsible: true,
+	        active: (active_menu.length > 0 ? parseInt(active_menu.attr("data-index")) -1 : false),
+	        heightStyle: "content" });
     });
     </script>
   </head>
