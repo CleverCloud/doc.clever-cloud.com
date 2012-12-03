@@ -172,6 +172,7 @@ menu #inner{
   }
   .cc-topic__right {
     float: right;
+    padding-right: 5px;
   }
   .cc-topic__left {
     float: left;

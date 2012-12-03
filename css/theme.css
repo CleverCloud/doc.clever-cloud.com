@@ -220,20 +220,37 @@ div#center .alert-hot-problems h4{
     background: #fbfbfb;
     transition: none;
 }
+.answer{
+  padding-left: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 12px;
+}
 .cc-topic,
 .center .cc-topic {
   box-shadow: 0 -1px 0 #d0d0d0 inset,
               0 1px 0 #fff;
   color: #3f3f3f;
+	padding:0;
+	margin: 0;
   }
-  .cc-topic:hover,
-  .cc-topic:focus {
+  .cc-topic:hover{
     background: #fbfbfb;
   }
   .cc-topic__right {
     color:      #ababab;
     font-style: italic;
+		font-size: 11px;
   }
   .cc-topic__left {
     font-weight: normal;
+}
+
+.unselectable{
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
