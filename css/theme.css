@@ -168,7 +168,12 @@ div#center .alert-hot-problems h4{
     font-weight: bold;
 }
 
-
+.pointer-table-content{
+	float: right;
+	margin-top: 8px;
+	-webkit-transform: rotate(-90deg);
+	margin-right: 10px;
+}
 #center {
   background:  #f6f6f6;
   border-left: 1px solid #d0d0d0;

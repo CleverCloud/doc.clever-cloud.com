@@ -31,7 +31,7 @@ tables:
     answer: "4 hours of guaranteed fault repair time, and email support is included for now."
   - left:  Which services are incuded in every account? 
     right: Guarantees
-    answer: "Clever Cloud hosting inludes: <ul><li>99,9% SLA</li> <li>Instant deployment and scaling</li> <li>Support (Mail, Twitter and UserGroup)</li> <li>24/7 Monitoring</li> <li> SSL 100% open and standard stacks</li><li>High-end Peering Public API</li><ul>"
+    answer: "Clever Cloud hosting inludes: <ul><li>99,9% SLA</li> <li>Instant deployment and scaling</li> <li>Support (Mail, Twitter and UserGroup)</li> <li>24/7 Monitoring</li> <li> SSL 100% open and standard stacks</li><li>High-end Peering Public API</li></ul>"
 ---
 # Welcome on the Documentation
 
