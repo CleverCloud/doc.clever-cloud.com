@@ -6,26 +6,30 @@ tags:
 - Java
 ---
 # Play Framework
-<ul class="nav nav-tabs nav-stacked">
+<div class="row">
+	<div class="span4">
+	<ul class="nav nav-tabs nav-stacked">
 	<li>
-		<a class="" href="#introducing_play">
-			<strong class="unselectable " >Introducing Play</strong>
-			<span class="unselectable caret pointer-table-content"></span>
-		</a>
+	<a class="" href="#introducing_play">
+	<strong class="unselectable " >Introducing Play</strong>
+	<span class="unselectable caret pointer-table-content"></span>
+	</a>
 	</li>
 	<li>
-		<a href="#play_12x">
-			<strong class="unselectable ">Play 1.2.x</strong>
-			<span class="unselectable caret pointer-table-content"></span>
-		</a>
+	<a href="#play_12x">
+	<strong class="unselectable ">Play 1.2.x</strong>
+	<span class="unselectable caret pointer-table-content"></span>
+	</a>
 	</li>
 	<li>
-		<a href="#play_2">
-			<strong class="unselectable ">Play 2</strong>
-			<span class="unselectable caret pointer-table-content"></span>
-		</a>
+	<a href="#play_2">
+	<strong class="unselectable ">Play 2</strong>
+	<span class="unselectable caret pointer-table-content"></span>
+	</a>
 	</li>
-</ul>
+	</ul>
+	</div>
+</div>
 ## Introducing Play
 Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
 
