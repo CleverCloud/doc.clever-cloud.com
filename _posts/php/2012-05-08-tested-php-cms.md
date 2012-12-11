@@ -12,10 +12,29 @@ The following list is the list of tested CMS by our team.
 
 **Note:** This list is not exhaustive and doesn't mean that other CMS can't work on the Clever Cloud platform.
 
- - Drupal
- - Wordpress
- - Dokuwiki
- - Joomla
- - Prestashop
- - Magento
- - SugarCRM
+<div class="span4">
+<table class="table table-bordered">
+  <tbody>
+    <tr>
+      <td>Wordpress</td>
+      <td>Prestashop</td>
+    </tr>
+  </tbody>
+  <tbody>
+    <tr>
+      <td>Dokuwiki</td>
+      <td>Joomla</td>
+    </tr>
+  </tbody>
+  <tbody>
+    <tr>
+      <td>SugarCRM</td>
+      <td>Drupal</td>
+    </tr>
+    <tr>
+      <td>Magento</td>
+      <td> </td>
+  </tr>
+  </tbody>
+</table>
+</div>

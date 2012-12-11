@@ -1,19 +1,31 @@
 <a class="home-link{% if page.url == '/index.html' %} active{% endif %}" href="/">Home</a>
 {% for tag_name in site.sidebar.tag_order %}
-<a class="menu-tag" href="/tag/{{ tag_name }}.html">
-  {{ tag_name }} <span class="caret pointer"></span>
-</a>
-<ul class="menu-posts" data-index="{{ forloop.index }}">{% for post in site.tags[tag_name] %}
-	<li{% if post.url == page.url %} class="active"{% endif %}>
-    <a href="{{ post.url }}">{{ post.title }}</a>
-  </li>{% endfor %}
-</ul>{% endfor %}
-{% for tag in site.tags %}{% capture tag_name %}{{ tag[0] }}{% endcapture %}{% unless site.sidebar.tag_order contains tag_name %}{% if site.sidebar.show_others %}
-<a class="menu-tag" href="/tag/{{ tag_name }}.html">
-  {{ tag_name }} <span class="caret pointer"></span>
-</a>
-<ul class="menu-posts" data-index="{{ forloop.index }}">{% for post in site.tags[tag_name] %}
-	<li{% if post.url == page.url %} class="active"{% endif %}>
-    <a href="{{ post.url }}">{{ post.title }}</a>
-  </li>{% endfor %}{% endif %}{% endunless %}
-</ul>{% endfor %}
+	<a class="menu-tag" href="/tag/{{ tag_name }}.html">
+		{{ tag_name }} <span class="caret pointer"></span>
+	</a>
+	<ul class="menu-posts" data-index="{{ forloop.index }}">
+		{% for post in site.tags[tag_name] %}
+			<li{% if post.url == page.url %} class="active"{% endif %}>
+    		<a href="{{ post.url }}">{{ post.title }}</a>
+  		</li>
+		{% endfor %}
+	</ul>
+{% endfor %}
+{% for tag in site.tags %}
+		{% capture tag_name %}{{ tag[0] }}{% endcapture %}
+		{% unless site.sidebar.tag_order contains tag_name %}
+			{% if site.sidebar.show_others %}
+				<a class="menu-tag" href="/tag/{{ tag_name }}.html">
+					{{ tag_name }} <span class="caret pointer"></span>
+				</a>
+				<ul class="menu-posts" data-index="{{ forloop.index }}">
+					{% for post in site.tags[tag_name] %}
+						<li{% if post.url == page.url %} class="active"{% endif %}>
+							<a href="{{ post.url }}">{{ post.title }}</a>
+						</li>
+			{% endfor %}
+		</ul>
+				{% endif %}
+			{% endunless %}
+{% endfor %}
+
