@@ -11,7 +11,7 @@ tags:
 # Describing package.json
 
 For every Node.js application you want to deploy on the Clever Cloud, you need
-to provide a `package.json` file at the root of your project’s directory.
+to provide a `package.json` file at the root of your project’s directory, even if your app has no dependencies.
 
 The package.json should *at least* contain the following fields:
 
