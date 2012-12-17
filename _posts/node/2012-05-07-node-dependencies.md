@@ -1,20 +1,21 @@
 ---
 layout: page
 
-title: package.json
+title: Node dependencies
 tags:
 - Javascript
 - Node.js
 
 ---
 
-# the package.json file
+# Describing package.json
 
 For every Node.js application you want to deploy on the Clever Cloud, you need
 to provide a `package.json` file at the root of your project’s directory.
 
 The package.json should *at least* contain the following fields:
 
+{% highlight javascript%}
     {
         "main" : "myapp.js",
         "scripts" : {
@@ -24,14 +25,15 @@ The package.json should *at least* contain the following fields:
             "node" : ">=0.6"
         }
     }
+{% endhighlight %}
 
-main
-: should be the relative path to the main file we will start using node.
+**main**
+: Should be the relative path to the main file we will start using node.
 
-scripts.start
-: if you prefer something more complicated, just provide a `script.start` field *instead of* the `main` one.
+**scripts.start**
+: If you prefer something more complicated, just provide a `script.start` field *instead of* the `main` one.
 
-engines.node
-: sets the node engine version you app runs with. Any ">=" version will lead to run the application with the latest local version (which will be updated to the latest version at the moment).
+**engines.node**
+: Sets the node engine version you app runs with. Any ">=" version will lead to run the application with the latest local version (which will be updated to the latest version at the moment).
 
 More help about the package.json file at <a href="http://package.json.nodejitsu.com/">http://package.json.nodejitsu.com/</a>.
