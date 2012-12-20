@@ -10,13 +10,18 @@ tags:
 
 # Node.js supported versions
 
+The Clever Cloud can virtually run any version of node >= 0.6 and any module. We did not tried
+lesser (pre-npm) versions.
+
+## Pre-installed versions and modules
+
 We currently host the following Node.js versions, with these modules already installed:
 
 <table class="table table-bordered table-striped">
 	<thead>
 		<tr>
 			<th>Available Node Versions</th>
-			<th>Modules supported</th>
+			<th>Pre-installed modules</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -41,5 +46,16 @@ We currently host the following Node.js versions, with these modules already ins
 
 We will add the new versions as they go out. They will all be documented in this section.
 
-If you think more modules are commonly used and should be already present, do no
+## Defining "pre-installed"
+
+The above table describes the versions and modules pre-installed for these versions.
+These modules are available at deploy time, without the need to download and
+install them.
+
+If you use modules that are not pre-installed, we will just get them with npm
+(provided they are in the npm repository), and install it before we start your
+application. The deploy will then be a little longer, due to probable
+compilation of some of these modules.
+
+If you think more modules are commonly used and should be pre-installed, do not
 hesitate to contact us at <mailto:support@clever-cloud.com>
