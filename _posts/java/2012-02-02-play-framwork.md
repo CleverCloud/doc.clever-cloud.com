@@ -27,13 +27,9 @@ tags:
 	</li>
 </ul>
 ## Introducing Play
+Play! is a framework created by Guillaume Bort. It allows you to quickly create ready-to-use web application with Java or Scala. There are currently two major versions of this framework: 1.2 and 2. They are really different from each other. This guide will show you how to deploy application for both versions of the Play! Framework.  
 
-<a href="http://www.playframework.org/">Play!</a>
-is a framework created by Guillaume Bort. It allows you to quickly create
-ready-to-use web application with Java or Scala. There are currently two major
-versions of this framework: 1.2 and 2. They are really different from each
-other. This guide will show you how to deploy application for both versions of
-the Play! Framework.
+<small>More infos about here: <a href="http://www.playframework.org">Play!Framework</a></small>
 
 ## Play! 1.2.x
 
@@ -64,10 +60,16 @@ The Clever Cloud supports Play 2.0.x applications natively. The present guide ex
 To [create an accout](/create-an-account), [an application](/create-an-application) or [manage your databases](/services), please read the dedicated sections.
 
 ## Configure your application
-
 To configure you Play! 2 application, you might need a file called `cc_conf.json` at
-the root of your application. That file is optional and is used to set more
-configuration elements to the start command. The file must contains the
+the root of your application.
+
+<div class="alert alert-hot-problems">
+	<h4>Please note:</h4>
+	<p>That file is optional and is used to set more
+configuration elements to the start command.</p>
+</div>
+
+The file must contains the
 following fields:
 
 {% highlight javascript %}
@@ -84,6 +86,7 @@ following fields:
 
 ### Deployment via Git
 
+Like all java-based applications, Play apps have to be deployed *via* Git.
 To deploy via Git, see details here: <a href="/git-deploy-java">Git deploy</a>.
 
 <script type="text/javascript">
