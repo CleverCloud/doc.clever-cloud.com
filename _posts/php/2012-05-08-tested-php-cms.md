@@ -33,7 +33,7 @@ The following list is the list of tested CMS by our team.
     </tr>
     <tr>
       <td>Magento</td>
-      <td> </td>
+      <td>Status.net</td>
   </tr>
   </tbody>
 </table>
