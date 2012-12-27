@@ -82,7 +82,7 @@ following fields:
 
 **goal**
 : That field should contain additional configuration like
-"-Dconfig.resource=clevercloud.conf".
+`-Dconfig.resource=clevercloud.conf`.
 
 ### Deployment via Git
 
