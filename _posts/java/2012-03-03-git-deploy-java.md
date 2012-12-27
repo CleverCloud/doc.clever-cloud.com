@@ -24,4 +24,4 @@ If you didn't already track your app with git, start by typing:
 
 		$ git push <name> master
 
-If you send a Java app, and want to use Maven, Ant or SBT, don't forget to include the cc_conf.json. For more details, check the [deployment configuration page](/app-configuration/cc-conf.html)
+If you send a Java app, and want to use Maven, Ant or SBT, don't forget to include the cc_conf.json. For more details, check the [deployment configuration page](/cc-conf/)
