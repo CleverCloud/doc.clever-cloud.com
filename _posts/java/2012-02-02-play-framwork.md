@@ -29,7 +29,7 @@ tags:
 ## Introducing Play
 Play! is a framework created by Guillaume Bort. It allows you to quickly create ready-to-use web application with Java or Scala. There are currently two major versions of this framework: 1.2 and 2. They are really different from each other. This guide will show you how to deploy application for both versions of the Play! Framework.  
 
-<small>More infos about here: <a href="http://www.playframework.org">Play!Framework</a></small>
+<small>More infos: <a href="http://www.playframework.org">Play!Framework</a></small>
 
 ## Play! 1.2.x
 
@@ -42,7 +42,7 @@ To [create an accout](/create-an-account), [an application](/create-an-applicati
 The only file you have to modify is your application.conf in the conf directory.
 Your application will be run with the option `--%clevercloud`. It means that you can define special keys in your application configuration file that will be used only on the Clever Cloud.
 
-Production mode: Set application.mode to PROD so the files are compiled at startup time and the errors are logged in a file.
+Production mode: Set `application.mode` to `PROD` so the files are compiled at startup time and the errors are logged in a file.
 
 {% highlight properties %}
 %clevercloud.application.mode=PROD
