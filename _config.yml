@@ -7,6 +7,9 @@ permalink: /:categories/:title/
 
 pygments: true
 
+prod:
+  url: http://doc.clever-cloud.com
+
 # meta data
 
 portal:
