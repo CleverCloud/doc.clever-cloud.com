@@ -82,7 +82,12 @@ following fields:
 
 **goal**
 : That field should contain additional configuration like
-`-Dconfig.resource=clevercloud.conf`.
+`"-Dconfig.resource=clevercloud.conf"`. 
+
+<div class="alert alert-hot-problems">
+	Tip: do not forget the double quotes
+	around the "goal"’s value.
+</div>
 
 ### Deployment via Git
 
