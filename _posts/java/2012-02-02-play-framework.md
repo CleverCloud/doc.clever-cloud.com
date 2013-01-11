@@ -7,7 +7,7 @@ tags:
 
 ---
 
-# Play Framework
+# <span class="label">Beta</span> Play Framework 
 ####Table of Contents
 <ul style="list-style:none">
 	<li>
@@ -28,6 +28,11 @@ tags:
 </ul>
 ## Introducing Play
 Play! is a framework created by Guillaume Bort. It allows you to quickly create ready-to-use web application with Java or Scala. There are currently two major versions of this framework: 1.2 and 2. They are really different from each other. This guide will show you how to deploy application for both versions of the Play! Framework.  
+
+<div class="alert alert-hot-problems">
+<h4>Please note:</h4>
+<p>This framework is still in beta.</p>
+</div>
 
 <small>More infos: <a href="http://www.playframework.org">Play!Framework</a></small>
 
