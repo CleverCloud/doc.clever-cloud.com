@@ -16,5 +16,6 @@ You will receive immediately database credentials by email.
 
 ##Migrate from an old database
 Some migration requires a populated database.  
-As the new databases are empty by default, create a **.sql** dump an old database and use the follwing tool&nbsp;:
-To populate a database, go to <a href="https://dbms-adminer.clever-cloud.com/adminer/">https://dbms-adminer.clever-cloud.com/adminer/</a>.
+If you want to import your **SQL** dump, go to <a href="https://dbms-adminer.clever-cloud.com/adminer/">https://dbms-adminer.clever-cloud.com/adminer/</a>.
+
+If you need to import a very large dump, please send an email to **support@clever-cloud.com**.
