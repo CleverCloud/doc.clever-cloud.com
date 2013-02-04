@@ -19,5 +19,5 @@ The last screen give you a review of the informations you enter. At anytime, you
 <img class="thumbnail img_doc" src="/img/newapp5.png">  
 Your app's deployment is now processing.  
 The following modal will allow you to add a new database or service.  
-For more info about these, please read [Managing databases](/services.html).
+For more info about these, please read [Managing databases](/services).
 <img class="thumbnail img_doc" src="/img/newapp6.png">

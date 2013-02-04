@@ -9,7 +9,7 @@ tags:
 # Create a Clever Cloud account
 
 1. Go to <a href="https://console.clever-cloud.com">console.clever-cloud.com</a>.  
-If you have already created your account you can login, skip this step and go to the section called “<a href="/getting-started/your-profile.html">Your profile</a>”.
+If you have already created your account you can login, skip this step and go to the section called “<a href="/your-profile/">Your profile</a>”.
 2. Otherwise, click on Sign up.
 <img class="thumbnail img_doc" src="/img/login1.png">  
 3. Then, simply enter your email address and choose a password.  
