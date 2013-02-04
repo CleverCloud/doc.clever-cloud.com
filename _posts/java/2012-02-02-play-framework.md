@@ -39,7 +39,7 @@ Play! is a framework created by Guillaume Bort. It allows you to quickly create 
 ## Play! 1.2.x
 
 The Clever Cloud supports Play 1.2 applications natively. The present guide explains how to set up your application to run on the Clever Cloud.
-To [create an accout](/create-an-account), [an application](/create-an-application) or [manage your databases](/services), please read the dedicated sections.
+To [create an accout](/create-an-account), [an application](/create-an-app) or [manage your databases](/services), please read the dedicated sections.
 
 
 ### Configure your application
@@ -62,7 +62,7 @@ Production mode: Set `application.mode` to `PROD` so the files are compiled at s
 ## Play! 2
 
 The Clever Cloud supports Play 2.0.x applications natively. The present guide explains how to set up your application to run on the Clever Cloud.
-To [create an accout](/create-an-account), [an application](/create-an-application) or [manage your databases](/services), please read the dedicated sections.
+To [create an accout](/create-an-account), [an application](/create-an-app) or [manage your databases](/services), please read the dedicated sections.
 
 ## Configure your application
 To configure you Play! 2 application, you might need a file called `cc_conf.json` at
