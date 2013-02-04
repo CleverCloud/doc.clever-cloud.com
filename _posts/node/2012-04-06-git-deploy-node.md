@@ -31,4 +31,4 @@ If you didn't already track your app with git, start by typing:
 
 		$ git push <name> master
 
-If you send a Node.js app, do not forget the [package.json](/package.json) file. 
+If you send a Node.js app, do not forget the [package.json](/node-dependencies) file. 
