@@ -150,6 +150,15 @@ menu #inner{
 	margin-bottom: 0px;
 }
 
+/* For usage in the node dependencies page */
+#nodedeps td {
+	vertical-align : middle;
+}
+
+#nodedeps .cc-depusage {
+	text-align : center;
+}
+
 /* class-based css from now on */
 .cc-tutorials {
   padding-top: 20px;
