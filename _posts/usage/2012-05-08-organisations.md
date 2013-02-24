@@ -20,7 +20,7 @@ You can also create a new one, by clicking on "Add an organisation", located in 
 
 <div class="alert alert-hot-problems">
 <h4>Please note:</h4>
-	<p>Organizations are unique by their names. You can't create </p>
+	<p>Organizations are unique by their names. You can't create a new one if someone else is already using the same name.</p>
 </div>
 
 ## Roles and privileges
