@@ -12,7 +12,7 @@ tags:
 In order to host a node app on Clever Cloud, you will need to declare this new app by following [these steps](/create-an-app/).
 
 After you created an app in the [console](https://console.clever-cloud.com), the console prompt you the following message&nbsp;:
-<img class="thumbnail img_doc" src="/img/newapp6.png">
+<img class="thumbnail img_doc" src="/img/newapp6node.png">
 
 ## Git and deployement process
 1. Click on "close". The "General information" page gives you your git deployment URL which is of the form ``git+ssh://git@push.clever-cloud.com/<your_app_id>.git``. Copy it in your clipboard.

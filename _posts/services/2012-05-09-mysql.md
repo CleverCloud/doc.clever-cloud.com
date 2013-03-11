@@ -9,7 +9,7 @@ tags:
 
 ## Add a database
 1. Created databases are listed under **Services**. The **Add a service** button allow you to add new databases.
-2. Clicking on this button show available databases:<img class="thumbnail img_doc" src="/img/postgre.png">
+2. Clicking on this button show available databases:<img class="thumbnail img_doc" src="/img/mysql.png">
 3. Click on next
 You will receive immediately database credentials by email.
 
