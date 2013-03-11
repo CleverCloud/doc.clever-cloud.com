@@ -15,7 +15,7 @@ After you created an app in the [console](https://console.clever-cloud.com), the
 <img class="thumbnail img_doc" src="/img/newapp6.png">
 
 ## Git and deployement process
-1. Click on "close". The "General information" page gives you your git deployment URL which is of the form ``git+ssh://gitolite@push.clever-cloud.com/<your_app_id>.git``. Copy it in your clipboard.
+1. Click on "close". The "General information" page gives you your git deployment URL which is of the form ``git+ssh://git@push.clever-cloud.com/<your_app_id>.git``. Copy it in your clipboard.
 2. On your computer, go into your application repository. 
 If you didn't already track your app with git, start by typing:  
 
