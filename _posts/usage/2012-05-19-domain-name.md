@@ -7,15 +7,15 @@ tags:
 ---
 # Domain names configuration
 
-When creating an app, you have two choice for domain names:
+When creating an app, you have two choices for domain names:
 * Using a **cleverapps.io** sub-domain for testing purpose or a quick deploy.
-* Using a custom domain name.
+* Or/and using a custom domain name.
 
 **Choosing a custom domain name require a DNS configuration on the domain's registrar.**
 
 ## Custom domain name configuration
 
-When creating your application, choose the 2nd field named *www.your-custom-domain.com* and enter your domain name. <br/>*(Note that sub-domains are supported)*<img class="thumbnail img_doc" src="/img/domain1.png">
+After your app creation, go to the **Domain Names** section and enter your domain name. <br/>*(Note that sub-domains are supported)*<img class="thumbnail img_doc" src="/img/domain1.png">
 
 ### DNS Configuration
 
