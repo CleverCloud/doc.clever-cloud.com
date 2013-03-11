@@ -22,5 +22,5 @@ If your client does not handle this secure mode, the server will refuse the conn
 <div class="alert alert-hot-problems">
   <h4>Important:</h4>
   <p>Unlike git, FTP deployment starts a instance as soon as you create it.</p>
-  <p>So drops consumption will be effective immetdiatly after y your FTP credentials will be sent.</p>
+  <p>So drops consumption will be effective immediately after your FTP credentials will be sent.</p>
 </div>
