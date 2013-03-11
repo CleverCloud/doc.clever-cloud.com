@@ -4,12 +4,12 @@ layout: home
 title: Home
 
 tutorials:
-- title: Create an account
-  url: /create-an-account/
-  img: /img/account-start.png
 - title: Java basics
   url: /java/
   img: /img/java-start.png
+- title: Node basics
+  url: /node/
+  img: /img/node-start.png
 - title: PHP basics
   url: /php/
   img: /img/php-start.png
