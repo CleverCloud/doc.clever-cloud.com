@@ -17,6 +17,8 @@ lesser (pre-npm) versions.
 
 We currently host the following Node.js versions, with these modules already installed:
 
+**You can use any version of node you need and any modules you need. Preinstall version is only for faster deployment process.**
+
 <table class="table table-bordered table-striped">
 	<thead>
 		<tr>
