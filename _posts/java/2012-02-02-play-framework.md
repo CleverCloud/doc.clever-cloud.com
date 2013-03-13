@@ -63,6 +63,7 @@ Production mode: Set `application.mode` to `PROD` so the files are compiled at s
 
 The Clever Cloud supports Play 2.0.x applications natively. The present guide explains how to set up your application to run on the Clever Cloud.
 To [create an accout](/create-an-account), [an application](/create-an-app) or [manage your databases](/services), please read the dedicated sections.
+The code of your application and, if you use one, the cc_conf.json must be at the root of your git repository.
 
 ## Configure your application
 To configure you Play! 2 application, you might need a file called `cc_conf.json` at
