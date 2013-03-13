@@ -77,6 +77,31 @@ The following table describes each of the fields formerly mentioned.
 	</tbody>
 </table>
 
+## NPM modules dependencies
+
+If you need some modules you can easily add some with the *dependencies* field.
+
+Here is an example :
+
+{% highlight javascript%}
+    {
+        "name" : "myapp",
+        "version" : "0.1.0",
+        "main" : "myapp.js",
+        "scripts" : {
+            "start" : "node myapp.js"
+        },
+        "engines": {
+           "node": "0.8.15"
+        },
+       "dependencies": {
+          "express": "3.x",
+          "socket.io": "0.9.x",
+          "underscore": "1.4.3"
+       }
+    }
+{% endhighlight %}
+
 ## More information
 
 The `package.json` file is commonly used for dependency management by npm. A lot
