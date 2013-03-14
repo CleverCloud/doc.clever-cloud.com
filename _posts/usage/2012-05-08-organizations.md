@@ -13,7 +13,7 @@ This page describes the Clever Cloud's feature named Organizations, released in 
 Organizations simplify management of group-owned applications (for instance, your company's apps or your personal apps), with a permissions management system, to grant differents kinds of privileges to each member of your organizations.
 <img class="thumbnail img_doc" src="/img/orga.png">
 
-## Get satarted with organizations
+## Get started with organizations
 
 By default, after your account creation, you have your personal organisation. You can add members to it.
 
