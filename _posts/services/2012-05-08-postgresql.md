@@ -8,10 +8,14 @@ tags:
 #PostgreSQL : Managing databases
 
 ## Add a database
-1. Created databases are listed under **Services**. The **Add a service** button allow you to add new databases.
-2. Clicking on this button show available databases:<img class="thumbnail img_doc" src="/img/mysql.png">
-3. Click on next
-You will receive immediately database credentials by email.
+1. Select in the headbar the appropriate organisation.
+2. Click on the "Services" tab in you organisation : <img class="thumbnail img_doc" src="/img/services.png">
+4. You can now choose PostgreSQL through the available services : <img class="thumbnail img_doc" src="/img/mysql.png">
+5. Clicking on the database's button will create it. You will receive database's credentials by email a few minutes later.
+6. Under **Installed** you will find your running services. A tagging system allow you to easily identify services for differents apps or purposes.
+<div>
+<a href="/img/screenshot-services.png" target="_blank"><img class="thumbnail img_doc" src="/img/screenshot-services.png"></a>
+</div>
 
 
 ##Migrate from an old database
