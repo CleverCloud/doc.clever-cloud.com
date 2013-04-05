@@ -75,7 +75,7 @@ the root of your application.
 configuration elements to the start command.</p>
 </div>
 
-The file must contains the
+The file must contain the
 following fields:
 
 {% highlight javascript %}
