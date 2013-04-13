@@ -159,6 +159,11 @@ menu #inner{
 	text-align : center;
 }
 
+.doc-contribution{
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
 /* class-based css from now on */
 .cc-tutorials {
   padding-top: 20px;

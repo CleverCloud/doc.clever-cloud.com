@@ -13,6 +13,9 @@ tutorials:
 - title: PHP basics
   url: /php/
   img: /img/php-start.png
+- title: SBT basics
+  url: /sbt/
+  img: /img/sbt-start.png
 
 tables:
 - title: FAQ
