@@ -12,10 +12,30 @@ For more information about the general usage of configuration files, please refe
 
 ## For Maven deploy type
 
+### Mandatory configuration
 For every Java project using Maven, you need to write a small specific JSON
-file, placed at the root of your project. Make sure this file is called **cc_conf.json**
+file, named **maven.json** in the **clevercloud** folder placed at the
+root of your application.
 
-This JSON is the configuration file that you will need for some deployments and builds. Here is the syntax:
+The `maven.json` has to contain at least the following value:
+
+{% highlight javascript%}
+    {
+      "deploy": {
+        "goal": <string>
+      }
+    }
+{% endhighlight %}
+
+**goal**
+: that field must contain the maven goal you want to execute on deploy.
+An example of what can be found as a `goal` value is
+"-Dtest.active=false -Dexec.mainClass=\"com.example.Main\" assembly:jar-with-dependencies exec:java".
+Note that the `goal` field must be double-quoted.
+
+### Optional configuration
+
+The full configuration can look like the following:
 {% highlight javascript%}
     {
         "build": {
@@ -29,7 +49,6 @@ This JSON is the configuration file that you will need for some deployments and 
     }
 {% endhighlight %}
 
-
 * ``"build"`` is an object with the goal to execute.
   * ``"type"`` can be ``"maven"`` or ``"ant"``.
   * ``"goal"`` is the target you want to use to build your project.
@@ -37,32 +56,10 @@ This JSON is the configuration file that you will need for some deployments and 
   * ``"goal"``: the goal/target and options you want to execute to deploy/run you project.
   * ``"javaVersion"``: the version of java you want to use to run your app. Values: 6, 7. Default : 7.
 
-Example of cc_conf.json for a Maven deploy:
-
-{% highlight javascript%}
-    {
-      "deploy": {
-        "goal": "-Dtest.active=false -Dexec.mainClass=\"com.example.Main\" assembly:jar-with-dependencies exec:java"
-      }
-    }
-
-{% endhighlight %}
-
-Example of cc_conf.json for Ant (available soon) build:
-
-{% highlight javascript%}
-    {
-      "build": {
-        "type": "ant",
-        "goal": "exterminate -Ddoctor.version=11"
-      }
-    }
-{% endhighlight %}
-
 ## For War deploy type
 
-For java applications, you need the following fields in the cc_conf.json:
-
+For java applications, you need the following fields in
+**clevercloud/war.json**:
 {% highlight javascript %}
     {
        "deploy": {

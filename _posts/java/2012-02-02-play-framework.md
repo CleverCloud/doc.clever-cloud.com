@@ -27,7 +27,7 @@ tags:
 	</li>
 </ul>
 ## Introducing Play
-Play! is a framework created by Guillaume Bort. It allows you to quickly create ready-to-use web application with Java or Scala. There are currently two major versions of this framework: 1.2 and 2. They are really different from each other. This guide will show you how to deploy application for both versions of the Play! Framework.  
+Play! is a framework created by Guillaume Bort. It allows you to quickly create ready-to-use web application with Java or Scala. There are currently two major versions of this framework: 1.2 and 2. They are really different from each other. This guide will show you how to deploy application for both versions of the Play! Framework.
 
 <div class="alert alert-hot-problems">
 <h4>Please note:</h4>
@@ -63,11 +63,13 @@ Production mode: Set `application.mode` to `PROD` so the files are compiled at s
 
 The Clever Cloud supports Play 2.0.x applications natively. The present guide explains how to set up your application to run on the Clever Cloud.
 To [create an accout](/create-an-account), [an application](/create-an-app) or [manage your databases](/services), please read the dedicated sections.
-The code of your application and, if you use one, the cc_conf.json must be at the root of your git repository.
+The code of your application and, if you use one, the
+`clevercloud` folder containing the `play.json` file must be placed at the root of your git repository.
 
 ## Configure your application
-To configure you Play! 2 application, you might need a file called `cc_conf.json` at
-the root of your application.
+To configure you Play! 2 application, you might need a file named
+`clevercloud/play.json` that is a `play.json` file placed in a
+`clevercloud` folder at the root of your application.
 
 <div class="alert alert-hot-problems">
 	<h4>Please note:</h4>
@@ -88,7 +90,7 @@ following fields:
 
 **goal**
 : That field should contain additional configuration like
-`"-Dconfig.resource=clevercloud.conf"`. 
+`"-Dconfig.resource=clevercloud.conf"`.
 
 <div class="alert alert-hot-problems">
 	Tip: do not forget the double quotes
