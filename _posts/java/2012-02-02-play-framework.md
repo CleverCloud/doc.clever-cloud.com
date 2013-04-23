@@ -66,7 +66,7 @@ To [create an accout](/create-an-account), [an application](/create-an-app) or [
 The code of your application and, if you use one, the
 `clevercloud` folder containing the `play.json` file must be placed at the root of your git repository.
 
-## Configure your application
+### Configure your application
 To configure you Play! 2 application, you might need a file named
 `clevercloud/play.json` that is a `play.json` file placed in a
 `clevercloud` folder at the root of your application.
@@ -96,6 +96,42 @@ following fields:
 	Tip: do not forget the double quotes
 	around the "goal"’s value.
 </div>
+
+### Known problems with Play! 2
+
+If your project fails with error **sbt.ResolveException: unresolved
+dependency: play#sbt-plugin;2.0: not found** read the following:
+
+Some versions of Play2 try to retrieve a nonexistent version of
+"sbt-plugin" which is required by the framework to work.
+You have two options to fix this problem:
+
+(Best version) You can set the "play.version" environment variable in the
+`clevercloud/play.json` file. For example, for Play 2.0.4:
+
+{% highlight javascript %}
+{
+	"deploy": {
+		"goal": "-Dplay.version=2.0.4"
+	}
+}
+{% endhighlight %}
+
+Otherwise, you can modify plugins.sbt in the project folder of your
+app like the following:
+
+{% highlight scala %}
+// Comment to get more information during initialization
+logLevel := Level.Warn
+
+// The Typesafe repository
+resolvers += "Typesafe repository" at "http://repo.typesafe.com/typesafe/releases/"
+
+// Use the Play sbt plugin for Play projects
+addSbtPlugin("play" % "sbt-plugin" % "2.0.4") // The important part of the configuration
+{% endhighlight %}
+
+The two solutions do the job, you can pick your favorite.
 
 ### Deployment via Git
 
