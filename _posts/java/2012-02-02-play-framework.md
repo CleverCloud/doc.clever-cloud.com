@@ -7,7 +7,7 @@ tags:
 
 ---
 
-# <span class="label">Beta</span> Play Framework 
+#Play Framework 
 ####Table of Contents
 <ul style="list-style:none">
 	<li>

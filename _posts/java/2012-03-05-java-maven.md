@@ -1,12 +1,12 @@
 ---
 layout: page
 
-title: Java+Maven
+title: Java + Maven
 tags:
 - Java
 ---
 
-#Java basics
+#Java + maven
 
 For now, Java can be deployed on the Clever Cloud using maven.
 

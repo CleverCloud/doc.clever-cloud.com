@@ -4,16 +4,16 @@ layout: home
 title: Home
 
 tutorials:
-- title: Java basics
+- title: Java
   url: /java/
   img: /img/java-start.png
-- title: Node basics
+- title: Node
   url: /node/
   img: /img/node-start.png
-- title: PHP basics
+- title: PHP
   url: /php/
   img: /img/php-start.png
-- title: SBT basics
+- title: Scala
   url: /sbt/
   img: /img/sbt-start.png
 

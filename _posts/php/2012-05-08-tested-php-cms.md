@@ -11,8 +11,7 @@ tags:
 The following list is the list of tested CMS by our team.
 
 **Note:** This list is not exhaustive and doesn't mean that other CMS can't work on the Clever Cloud platform.
-
-<div class="span4">
+<div class="">
 <table class="table table-bordered">
   <tbody>
     <tr>
