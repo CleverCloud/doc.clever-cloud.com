@@ -16,7 +16,8 @@
 				<div class="span3 cc_headbar__logo">
           <a class="" href="/" title="Clever Cloud Documentation" alt="CC-Documentation"><span>CC</span>Documentation</a>
         </div>
-				<div class="span9 cc_headbar__menu">
+        <div class="span4"><gcse:search></gcse:search></div>
+				<div class="span5 cc_headbar__menu">
           <div class="pull-right">
             <a class="cc_headbar__btn" href="/support">cc network <i class="icon-caret-down"> </i></a>
             <a class="cc_headbar__btn cc_login__btn" href="/login">Connect</a>
@@ -115,5 +116,17 @@
             $('.fancybox').fancybox();
         });
     </script>
+    <script>
+      (function() {
+        var cx = '012473291061139659466:1crqef6cvmc';
+        var gcse = document.createElement('script');
+        gcse.type = 'text/javascript';
+        gcse.async = true;
+        gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+            '//www.google.com/cse/cse.js?cx=' + cx;
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(gcse, s);
+      })();
+</script>
 </body>
 </html>
