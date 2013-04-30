@@ -1,0 +1,131 @@
+/* coding rules:
+ * tab width = 2
+ * all spaces
+ * 
+ * naming convention:
+ * cc_ prefix
+ * __  component part
+ * --  variant
+ * example: cc_alert--info__close = style that is specific to the close button
+ *                                  of the info alert box only.
+ * more about this: engineering.appfolio.com/2012/11/16/css-architecture
+ */
+body{
+  background-color: @lightgrey;
+  a{
+    color:          @black;
+  }
+  a:hover,a:focus{
+    color:           @black;
+    text-decoration: none;
+    outline:        none;
+  }
+}
+
+h1{
+  font-size:   @text--2XL;
+  .header;
+}
+h2{
+  font-family: @header-font;
+  font-size:   @text--XL;
+  .header;
+}
+h3{
+  font-size:   @text--L;
+  .header;
+}
+h4{
+  font-size:   @text--M;
+  .header;
+}
+h5{
+  font-size:   @text;
+  text-transform: capitalize;
+  .header;
+}
+figcaption{
+  font-style: italic;
+}
+.cc_main{
+  background:  @lightgrey;
+}
+.cc_headbar {
+  background-color: @white;
+  a{
+  text-decoration: 	none;
+}
+}
+
+.cc_headbar__logo a{
+  font-family:   @main-font;
+  font-size:     20px;
+  color:         @black;
+  span{
+    color:       @pink;
+    font-weight: bold;
+  }
+}
+.cc_headbar__btn{
+  cursor:    pointer;
+  color:     @pink;
+  font-size: 12px;
+}
+.cc_headbar__btn.cc_login__btn{
+  .cc_rounded;
+  background-color: @pink;
+  color:            @white;
+  padding:          7px 20px;
+}
+
+.cc_headbar__menu {
+  font-weight: bold;
+}
+
+.cc-sidebar__item{
+  font-weight: bold;
+  font-size:   18px;
+  color:       @darkgrey;
+  outline:     none;
+
+}
+
+.cc-sidebar__item__list{
+    list-style:      none;
+  a{
+    color:           @mediumgrey;
+    outline:         none;
+    list-style:      none;
+  }
+  a:hover{
+    color: 		   @pink;
+    font-weight:   bold;
+  }
+}
+
+.cc-content{
+  .cc_rounded;
+  color:      @black;
+  background: @white;
+  border:     1px solid @lightborder;
+}
+.cc-content__text{
+  max-width: 600px;
+}
+
+.cc-content-imglarge{
+  border-top:    1px solid @lightborder;
+  border-bottom: 1px solid @lightborder;
+}
+.cc-contrib{
+  font-style: italic;
+  font-size: 12px;
+  text-align: center;
+  a{
+    color: @pink;
+  }
+  a:hover{
+    text-decoration: underline;
+  }
+    ;
+}

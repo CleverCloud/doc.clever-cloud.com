@@ -3,18 +3,33 @@
 import           Control.Applicative ((<$>))
 import           Data.Monoid         (mappend)
 import           Hakyll
-
-
 --------------------------------------------------------------------------------
 main :: IO ()
 main = hakyll $ do
-    match "images/*" $ do
+    match "assets/images/*" $ do
         route   idRoute
         compile copyFileCompiler
 
-    match "css/*" $ do
+    match "assets/js/*" $ do
+        route   idRoute
+        compile copyFileCompiler
+
+    match "assets/font/*" $ do
+        route   idRoute
+        compile copyFileCompiler
+
+    match "assets/fancybox/*" $ do
+        route   idRoute
+        compile copyFileCompiler
+
+    match "assets/css/*.css" $ do
         route   idRoute
         compile compressCssCompiler
+
+    match "assets/css/*.less" $ do
+        route   $ setExtension "css"
+        compile $ getResourceString >>=
+            withItemBody (unixFilter "lessc" ["-","--yui-compress","-O2"])
 
     match "posts/*/*" $ do
         route $ setExtension "html"

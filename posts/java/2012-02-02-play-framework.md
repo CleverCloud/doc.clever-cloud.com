@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Play! Framework
+tags: playframework, scala
 ---
 
 #Play Framework 
