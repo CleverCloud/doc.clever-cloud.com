@@ -3,6 +3,7 @@
 import           Control.Applicative ((<$>))
 import           Data.Monoid         (mappend)
 import           Hakyll
+import           System.FilePath.Posix  (takeBaseName,takeDirectory,(</>),splitFileName)
 --------------------------------------------------------------------------------
 
 main :: IO ()
@@ -26,7 +27,7 @@ main = hakyll $ do
 
     -- Render posts
     match "posts/*/*" $ do
-        route $ setExtension "html"
+        route $ niceRoute
         compile $ pandocCompiler
             >>= loadAndApplyTemplate "templates/post.html"    postCtx
             >>= loadAndApplyTemplate "templates/default.html" postCtx
@@ -48,7 +49,7 @@ main = hakyll $ do
 --------------------------------------------------------------------------------
 postCtx :: Context String
 postCtx =
-    dateField "date" "%B %e, %Y" `mappend`
+    --dateField "date"-- "%B %e, %Y" `mappend`
     defaultContext
 
 
@@ -59,3 +60,13 @@ postList sortFilter = do
     itemTpl <- loadBody "templates/post-item.html"
     list    <- applyTemplateList itemTpl postCtx posts
     return list
+
+--------------------------------------------------------------------------------
+--
+-- replace a foo/bar.md by foo/bar/index.html
+-- this way the url looks like: foo/bar in most browsers
+niceRoute :: Routes
+niceRoute = customRoute createIndexRoute
+  where
+    createIndexRoute ident = takeBaseName p </> "index.html"
+      where p = toFilePath ident
