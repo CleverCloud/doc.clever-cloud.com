@@ -70,3 +70,10 @@
   color:       @black;
   line-height: 1;
 }
+
+.transition (@element; @duration){
+  transition:         @element @duration;
+  -moz-transition:    @element @duration;
+  -webkit-transition: @element @duration;
+  -o-transition:      @element @duration;
+}
