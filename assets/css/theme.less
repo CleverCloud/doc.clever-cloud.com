@@ -53,9 +53,18 @@ figcaption{
   background-color: @white;
   a{
   text-decoration: 	none;
+  }
 }
+ul#cc-header__dropdown.dropdown-menu li>a:hover, ul#cc-header__dropdown.dropdown-menu li>a:focus, ul#cc-header__dropdown.dropdown-submenu:hover>a{
+  background-color: @pink;
+  background-image: -moz-linear-gradient(top, @lightpink, @pink);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(@lightpink), to(@pink));
+  background-image: -webkit-linear-gradient(top, @lightpink, @pink);
+  background-image: -o-linear-gradient(top, @lightpink, @pink);
+  background-image: linear-gradient(to bottom, @lightpink, @pink);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@lightpink', endColorstr='@pink', GradientType=0);
 }
-
 .cc_headbar__logo a{
   font-family:   @main-font;
   font-size:     20px;
@@ -90,15 +99,15 @@ figcaption{
 }
 
 .cc-sidebar__item__list{
-    list-style:      none;
+    list-style: none;
   a{
-    color:           @mediumgrey;
-    outline:         none;
-    list-style:      none;
+    color:      @mediumgrey;
+    outline:    none;
+    list-style: none;
   }
   a:hover{
     color: 		   @pink;
-    font-weight:   bold;
+    font-weight: bold;
   }
 }
 
