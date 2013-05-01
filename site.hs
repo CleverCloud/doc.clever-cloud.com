@@ -10,7 +10,7 @@ main :: IO ()
 main = hakyll $ do
 
     -- Copy files and images
-    match ("assets/images/*" .||. "assets/js/*" .||. "assets/font/*" .||. "assets/fancybox/*") $ do
+    match ("assets/images/*" .||. "assets/js/*" .||. "assets/font/*" .||. "assets/fancybox/*" .||. "assets/img/*") $ do
         route   idRoute
         compile copyFileCompiler
 
@@ -36,7 +36,7 @@ main = hakyll $ do
     match "index.html" $ do
         route idRoute
         compile $ do
-            let indexCtx = field "posts" $ \_ -> postList (take 3 . recentFirst)
+            let indexCtx = field "posts" $ \_ -> postList
 
             getResourceBody
                 >>= applyAsTemplate indexCtx
@@ -54,9 +54,9 @@ postCtx =
 
 
 --------------------------------------------------------------------------------
-postList :: ([Item String] -> [Item String]) -> Compiler String
-postList sortFilter = do
-    posts   <- sortFilter <$> loadAll "posts/*/*"
+postList :: Compiler String
+postList = do
+    posts   <- loadAll "posts/*/*"
     itemTpl <- loadBody "templates/post-item.html"
     list    <- applyTemplateList itemTpl postCtx posts
     return list
