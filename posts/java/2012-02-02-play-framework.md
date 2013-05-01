@@ -8,36 +8,37 @@ tags: playframework, scala
 ####Table of Contents
 <ul style="list-style:none">
 	<li>
-		<a href="#introducing_play">
-			<div class="unselectable " >Introducing Play<span class="unselectable caret pointer-table-content"></span></div>
+		<a href="#introducing-play">
+			Introducing Play
 		</a>
 	</li>
 	<li>
-		<a href="#play_12x">
-			<div class="unselectable " >Play 1.2.x<span class="unselectable caret pointer-table-content"></span></div>
+		<a href="#play-1">
+			Play! 1
 		</a>
 	</li>
 	<li>
-		<a href="#play_2">
-		<div class="unselectable " >Play 2<span class="unselectable caret pointer-table-content"></span></div>
+		<a href="#play-2">
+		Play! 2
 		</a>
 	</li>
 </ul>
 ## Introducing Play
 Play! is a framework created by Guillaume Bort. It allows you to quickly create ready-to-use web application with Java or Scala. There are currently two major versions of this framework: 1.2 and 2. They are really different from each other. This guide will show you how to deploy application for both versions of the Play! Framework.
 
-<div class="alert alert-hot-problems">
+<div class="alert">
 <h4>Please note:</h4>
 <p>This framework is still in beta.</p>
 </div>
 
-<small>More infos: <a href="http://www.playframework.org">Play!Framework</a></small>
+<span>More infos: <a href="http://www.playframework.org">Play!Framework</a></span>
 
-## Play! 1.2.x
+## Play! 1
 
 The Clever Cloud supports Play 1.2 applications natively. The present guide explains how to set up your application to run on the Clever Cloud.
 To [create an accout](/create-an-account), [an application](/create-an-app) or [manage your databases](/services), please read the dedicated sections.
 
+<pre class="sourceCode haskell"><code class="sourceCode haskell">fac n <span class="fu">=</span> <span class="fu">foldr</span> (<span class="fu">*</span>) <span class="dv">1</span> [<span class="dv">1</span><span class="fu">..</span>n]</code></pre>
 
 ### Configure your application
 
@@ -46,8 +47,9 @@ Your application will be run with the option `--%clevercloud`. It means that you
 
 Production mode: Set `application.mode` to `PROD` so the files are compiled at startup time and the errors are logged in a file.
 
-{% highlight properties %}
+```haskell
 %clevercloud.application.mode=PROD
+```
 
 ### Example: set up a mysql database
 %clevercloud.db.url=jdbc:mysql://{yourcleverdbhost}/{dbname}
@@ -77,21 +79,22 @@ configuration elements to the start command.</p>
 The file must contain the
 following fields:
 
-{% highlight javascript %}
+```javascript
 {
    "deploy":{
 	   "goal":<string>
 	}
 }
-{% endhighlight %}
+```
 
 **goal**
 : That field should contain additional configuration like
 `"-Dconfig.resource=clevercloud.conf"`.
 
 <div class="alert alert-hot-problems">
-	Tip: do not forget the double quotes
-	around the "goal"’s value.
+	<h4>Tip:</h4>
+	<p>do not forget the double quotes
+	around the "goal"’s value.</p>
 </div>
 
 ### Known problems with Play! 2
@@ -106,18 +109,18 @@ You have two options to fix this problem:
 (Best version) You can set the "play.version" environment variable in the
 `clevercloud/play.json` file. For example, for Play 2.0.4:
 
-{% highlight javascript %}
+``` javascript
 {
 	"deploy": {
 		"goal": "-Dplay.version=2.0.4"
 	}
 }
-{% endhighlight %}
+```
 
 Otherwise, you can modify plugins.sbt in the project folder of your
 app like the following:
 
-{% highlight scala %}
+``` scala
 // Comment to get more information during initialization
 logLevel := Level.Warn
 
@@ -126,7 +129,7 @@ resolvers += "Typesafe repository" at "http://repo.typesafe.com/typesafe/release
 
 // Use the Play sbt plugin for Play projects
 addSbtPlugin("play" % "sbt-plugin" % "2.0.4") // The important part of the configuration
-{% endhighlight %}
+```
 
 The two solutions do the job, you can pick your favorite.
 
@@ -136,9 +139,9 @@ Like all java-based applications, Play apps have to be deployed *via* Git.
 To deploy via Git, see details here: <a href="/git-deploy-java">Git deploy</a>.
 
 <script type="text/javascript">
-$('#center a').click(function(){
+$('.cc-content__text ul li a').click(function(){
     $('html, body').animate({
-        scrollTop: $( $(this).attr('href') ).offset().top - 0
+        scrollTop: $( $(this).attr('href') ).offset().top - 1
     }, 500);
     return false;
 });
