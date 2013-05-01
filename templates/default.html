@@ -13,25 +13,35 @@
   <body>
     <nav class="cc_headbar">
     <div class="container">
-      <div class="row">
-        <div class="span7 cc_headbar__logo">
-          <a class="" href="/" title="Clever Cloud Documentation" alt="CC-Documentation"><span>CC</span>Documentation</a>
-        </div>
-        <div class="span5 cc_headbar__menu">
-          <div class="pull-right">
-            <div class="cc-dropdown">
-              <a class="cc_headbar__btn dropdown-toggle" data-toggle="dropdown" data-target="#" href="#">cc network <i class="icon-caret-down"> </i></a>
-              <ul id="cc-header__dropdown" class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-                <li><a role="menuitem" tabindex="-1" href="#">Clever Cloud</a></li>
-                <li><a role="menuitem" tabindex="-1" href="#">Corporate Blog</a></li>
-                <li><a role="menuitem" tabindex="-1" href="#">Engineering Blog</a></li>
-              </ul>
-            </div>
-            <a class="cc_headbar__btn cc_login__btn" href="/login">Connect</a>
-          </div>
-        </div>
-      </div>
+    <a href="/" title="Clever Cloud Documentation" alt="CC-Documentation" class="cc_headbar__logo">
+      <span>CC</span>Documentation
+    </a>
+      <ul class="cc-nav pull-right cc_headbar__menu">
+        <li class="dropdown">
+          <a href="#" role="button" class="dropdown-toggle cc_headbar__btn" data-toggle="dropdown">
+            cc network 
+          <i class="icon-caret-down"></i>
+          </a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a role="menuitem" tabindex="-1" href="http://www.clever-cloud.com/" target="_blank">
+              <i class="icon-home"></i>  Clever Cloud</a>
+            </li>
+            <li><a role="menuitem" tabindex="-1" href="http://blog.clever-cloud.com/" target="_blank">
+              <i class="icon-briefcase"></i>  Corporate Blog</a>
+            </li>
+            <li><a role="menuitem" tabindex="-1" href="http://engineering.clever-cloud.com/" target="_blank">
+              <i class="icon-cogs"></i>  Engineering Blog</a>
+            </li>
+            <li class="divider"></li>
+            <li><a role="menuitem" tabindex="-1" href="https://github.com/CleverCloud/doc.clever-cloud.com" target="_blank">
+              <i class="icon-heart"></i>  Contribute</a>
+            </li>
+          </ul>
+        </li>
+        <li><a class="cc_headbar__btn cc_login__btn" href="https://console.clever-cloud.com/">Connect</a></li>
+      </ul>
     </div>
+    <!---->
   </nav>
   <div class="cc_main">
     <div class="container">
