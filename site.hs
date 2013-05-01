@@ -35,7 +35,7 @@ main = hakyll $ do
     match "index.html" $ do
         route idRoute
         compile $ do
-          let indexCtx = field "posts" $ \_ -> postList (take 3 . recentFirst)
+            let indexCtx = field "posts" $ \_ -> postList (take 3 . recentFirst)
 
             getResourceBody
                 >>= applyAsTemplate indexCtx
