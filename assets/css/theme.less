@@ -55,7 +55,7 @@ figcaption{
   text-decoration: 	none;
   }
 }
-ul#cc-header__dropdown.dropdown-menu li>a:hover, ul#cc-header__dropdown.dropdown-menu li>a:focus, ul#cc-header__dropdown.dropdown-submenu:hover>a{
+.cc_headbar .dropdown-menu>li>a:hover, .cc_headbar .dropdown-menu>li>a:focus, .cc_headbar .dropdown-submenu:hover>a, .cc_headbar .dropdown-submenu:focus>a{
   background-color: @pink;
   background-image: -moz-linear-gradient(top, @lightpink, @pink);
   background-image: -webkit-gradient(linear, 0 0, 0 100%, from(@lightpink), to(@pink));
@@ -65,7 +65,7 @@ ul#cc-header__dropdown.dropdown-menu li>a:hover, ul#cc-header__dropdown.dropdown
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@lightpink', endColorstr='@pink', GradientType=0);
 }
-.cc_headbar__logo a{
+.cc_headbar__logo{
   font-family:   @main-font;
   font-size:     20px;
   color:         @black;
@@ -84,6 +84,11 @@ ul#cc-header__dropdown.dropdown-menu li>a:hover, ul#cc-header__dropdown.dropdown
   background-color: @pink;
   color:            @white;
   padding:          7px 20px;
+  .transition (background; 0.2s);
+}
+.cc_headbar__btn.cc_login__btn:hover{
+  background-color: @lightpink;
+  .transition (background; 0.2s);
 }
 
 .cc_headbar__menu {
@@ -135,5 +140,18 @@ ul#cc-header__dropdown.dropdown-menu li>a:hover, ul#cc-header__dropdown.dropdown
   a:hover{
     text-decoration: underline;
   }
-    ;
+}
+.alert, .alert-hot-problems {
+  background: #f9f6e7;
+  border:     1px solid #dfddcf;
+  box-shadow: 0 1px 0 #fff, 0 1px 0 #fff inset;
+  color:      #3f3f3f;
+  padding:    4px 35px 4px 14px;
+  margin:     15px 0px 15px 0px;
+  .cc_rounded ()
+}
+
+.alert-hot-problems h4, .alert-hot-problems p{
+  padding-top: 5px;
+  color:       #3f3f3f;
 }
