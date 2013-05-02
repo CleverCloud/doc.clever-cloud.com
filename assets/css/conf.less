@@ -69,9 +69,10 @@
   font-family: @header-font;
   color:       @black;
   line-height: 1;
+  margin: 1em 0 0;
 }
 
-.transition (@element; @duration){
+.transition (@element; @duration; @timing: ease){
   transition:         @element @duration;
   -moz-transition:    @element @duration;
   -webkit-transition: @element @duration;
