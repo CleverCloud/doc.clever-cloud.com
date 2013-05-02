@@ -13,11 +13,11 @@
 body{
   background-color: @lightgrey;
   a{
-    color:          @black;
+    color:          @pink;
   }
   a:hover,a:focus{
-    color:           @black;
-    text-decoration: none;
+    color:           @darkpink;
+    text-decoration: underline;
     outline:        none;
   }
 }
@@ -74,6 +74,9 @@ figcaption{
     font-weight: bold;
   }
 }
+  a.cc_headbar__logo:hover{
+    text-decoration: none;
+  }
 .cc_headbar__btn{
   cursor:    pointer;
   color:     @pink;
@@ -112,7 +115,7 @@ figcaption{
   }
   a:hover{
     color: 		   @pink;
-    font-weight: bold;
+    text-decoration: underline;
   }
 }
 
@@ -154,4 +157,30 @@ figcaption{
 .alert-hot-problems h4, .alert-hot-problems p{
   padding-top: 5px;
   color:       #3f3f3f;
+}
+ul#cc-tableofcontent__list{
+  list-style: none;
+  font-size: 13px;
+  li:before{
+    content: "\f105";
+    margin-right: 5px;
+    font-family: FontAwesome;
+  }
+}
+span.cc-alpha{
+  display: inline-block;
+  padding: 9px 8px 12px 8px;
+  font-size: 16.844px;
+  font-weight: bold;
+  line-height: 6px;
+  color: #ffffff;
+  margin-top: 4px;
+  vertical-align: baseline;
+  white-space: nowrap;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background-color: #b94a48;
+  border-radius: 35px;
+}
+span.cc-alpha:before{
+    content: "𝛂";
 }
