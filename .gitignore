@@ -2,4 +2,4 @@ _site
 _cache
 site
 site.o
-site.hi
+site.hi.DS_Store
