@@ -2,6 +2,8 @@
 layout: page
 title: [SAMPLE] Template for design overview
 ---
+## Main h2 title w/ alpha warning <span class="cc-alpha pull-right" title="Currently in Alpha version"></span>
+
 1. Lorem ipsum In exercitation irure anim aute aute dolor ex reprehenderit fugiat in id tempor non officia.
 2. Church-key fugiat exercitation you probably haven't heard of them odio. American apparel ut high life
 3. Do you see any Teletubbies in here?
@@ -20,7 +22,7 @@ Well, that's what you see at a toy store. And you must think you're in a toy sto
   	<a href="http://www.flickr.com/photos/rclark/">Richard Clark</a>
   </figcaption>
 </figure>
-  
+
 Squid YOLO banksy raw denim, hashtag letterpress ennui retro mlkshk.
 
 ### How to create an app ?
