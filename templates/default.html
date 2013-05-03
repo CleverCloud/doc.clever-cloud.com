@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="/assets/css/all.css" />
     <link rel="stylesheet" type="text/css" href="/assets/css/syntax.css" />
     <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/magnific-popup/magnific-popup.css" />
     <script type="text/javascript" src="/assets/js/jquery.js"></script>
   </head>
   <body>
@@ -146,11 +147,14 @@
       </div>
     </div>
   </div>
-  <script type="text/javascript" src="/assets/fancybox/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/assets/magnific-popup/jquery.magnific-popup.min.js"></script>
   <script type="text/javascript" src="/assets/js/bootstrap.min.js"></script>
     <script>
       $(document).ready(function() {
-        $('.fancybox').fancybox();
+        $('.cc-content-img').magnificPopup({
+          delegate: 'a',
+          type: 'image'
+        });
       });
     </script>      
   </body>

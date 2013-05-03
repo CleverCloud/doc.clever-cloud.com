@@ -66,25 +66,30 @@ figcaption{
   padding: 0 22px;
 }
 
-ol {
+.cc-content__text ol {
   counter-reset: item;
-  margin-left: 0;
-  padding-left: 0;
+  margin: 0;
+  padding: 0;
 }
 ol>li {
   display: block;
-  margin-bottom: .5em;
+  margin-bottom: 0.5em;
   margin-top: 25px;
-  background: url("../img/circle.png")top left;
-  background-repeat:no-repeat;
 }
 ol>li:before {
   display: inline-block;
   content: counter(item);
   counter-increment: item;
   font-weight: bold;
-  width: 2em;
-  margin-left: 0.4em;
+  width: 14px;
+  height: 20px;
+  font-size: 13px;
+  border: 1px solid @lightborder;
+  border-radius: 15px;
+  margin-left: -33px;
+  margin-right: 7px;
+  padding-left: 6px;
+  background-color: white;
 }
 
 .cc-content-imglarge {
