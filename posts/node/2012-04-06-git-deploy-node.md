@@ -2,7 +2,6 @@
 layout: page
 title: Git deployment
 ---
-
 ## Git Deployment
 *You will need git on your computer to deploy via this tool. Here is the official website of Git to get more informations&nbsp;: <a href="http://git-scm.com">git-scm.com</a>*
 ### Create a Node app in the console
@@ -16,9 +15,11 @@ After you created an app in the [console](https://console.clever-cloud.com), the
 2. On your computer, go into your application repository. 
 If you didn't already track your app with git, start by typing:  
 
+```haskell
     	$ git init
     	$ git add .
 		$ git commit -m "init"
+```
 
 3. Then, use the "git remote" command to add the deploy URL:
 
