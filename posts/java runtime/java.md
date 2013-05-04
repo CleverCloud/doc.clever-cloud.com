@@ -1,0 +1,22 @@
+---
+layout: page
+title: Java overview
+---
+
+## How to deploy java applications?
+
+At the moment there are 4 ways to create a java application that the
+Clever Cloud supports.
+
+- [Maven](/java-maven/)
+- [Play1](/play-framework/#play_12x)
+- [Play2](/play-framework/#play_2)
+- [WAR/EAR](/java-war/)
+
+### Requirements for all applications
+
+Your application must be set to listen on the port 8080.
+
+### Deployment via Git
+The java projects only support Git deployment.
+To deploy via Git, see details here: <a href="/git-deploy-java">Git Deploy</a>.
