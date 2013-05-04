@@ -20,28 +20,29 @@ body{
     text-decoration: underline;
     outline:        none;
   }
+  h1, h2, h3, h4 {
+  .header;
 }
-
+}
+acronym{
+  border-bottom:dotted 1px black;
+   cursor:help;
+}
 h1{
   font-size:   @text--2XL;
-  .header;
 }
 h2{
-  font-family: @header-font;
   font-size:   @text--XL;
-  .header;
 }
 h3{
   font-size:   @text--L;
-  .header;
 }
 h4{
   font-size:   @text--M;
-  .header;
 }
 h5{
   font-size:   @text;
-  .header;
+  margin: 5px 0 5px 0;
 }
 figcaption{
   font-style: italic;
@@ -150,33 +151,21 @@ figcaption{
   border:     1px solid #dfddcf;
   box-shadow: 0 1px 0 #fff, 0 1px 0 #fff inset;
   color:      #3f3f3f;
-  padding:    4px 35px 4px 14px;
-  margin:     15px 0px 15px 0px;
   .cc_rounded ()
 }
 
-.alert-hot-problems h4, .alert-hot-problems p{
-  padding-top: 5px;
-  color:       #3f3f3f;
-}
 ul#cc-tableofcontent__list{
   list-style: none;
   font-size: 13px;
   li:before{
     content: "\f105";
-    margin-right: 5px;
     font-family: FontAwesome;
   }
 }
 span.cc-alpha{
-  display: inline-block;
-  padding: 9px 8px 12px 8px;
   font-size: 16.844px;
   font-weight: bold;
-  line-height: 6px;
   color: #ffffff;
-  margin-top: 4px;
-  vertical-align: baseline;
   white-space: nowrap;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
   background-color: #b94a48;
