@@ -21,7 +21,8 @@
 @lightgrey:  #F4F4F4;
 @mediumgrey: #707070;
 @darkgrey:   #323232;
-@lightborder: #E7E7E7;
+@lightborder:#E7E7E7;
+@alertbg:    #f9f6e7;
 
 // fonts
 @font-face {
@@ -49,6 +50,7 @@
 }
 
 @main-font:   "Helvetica", "DejaVu Sans", "Arial", sans-serif;
+@logo-font:   "Lucida Grande", "Helvetica", "Arial", sans-serif;
 @header-font: "LatoRegular", sans-serif;
 
 
@@ -74,8 +76,14 @@
 }
 
 .transition (@element; @duration; @timing: ease){
-  transition:         @element @duration;
-  -moz-transition:    @element @duration;
-  -webkit-transition: @element @duration;
-  -o-transition:      @element @duration;
+  transition:         @element @duration @timing;
+  -moz-transition:    @element @duration @timing;
+  -webkit-transition: @element @duration @timing;
+  -o-transition:      @element @duration @timing;
+}
+.grayscale (@percent) {
+  -webkit-filter: grayscale(@percent);
+     -moz-filter: grayscale(@percent);
+      -ms-filter: grayscale(@percent);
+       -o-filter: grayscale(@percent);
 }
