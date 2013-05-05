@@ -57,43 +57,46 @@ figcaption{
   text-decoration: 	none;
   }
 }
-.cc_headbar .dropdown-menu>li>a:hover, .cc_headbar .dropdown-menu>li>a:focus, .cc_headbar .dropdown-submenu:hover>a, .cc_headbar .dropdown-submenu:focus>a{
-  background-color: @pink;
-  background-image: -moz-linear-gradient(top, @lightpink, @pink);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(@lightpink), to(@pink));
-  background-image: -webkit-linear-gradient(top, @lightpink, @pink);
-  background-image: -o-linear-gradient(top, @lightpink, @pink);
-  background-image: linear-gradient(to bottom, @lightpink, @pink);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@lightpink', endColorstr='@pink', GradientType=0);
-}
+
 .cc_headbar__logo{
-  font-family:   @main-font;
+  font-family:   @logo-font;
   font-size:     20px;
-  color:         @black;
+  color:         @pink;
   span{
-    color:       @pink;
-    font-weight: bold;
+    color:       @black;
   }
 }
-  a.cc_headbar__logo:hover{
+.cc_headbar__btn:hover{
     text-decoration: none;
-  }
+    padding-bottom:  23px;
+    border-bottom:   3px solid;
+    color:           @pink;
+}
+
+.cc_headbar__logo:hover, {
+    text-decoration: none;
+    color:           @pink;
+}
+
 .cc_headbar__btn{
   cursor:    pointer;
-  color:     @pink;
-  font-size: 12px;
+  color:     @mediumgrey;
+  font-size: 14px;
 }
-.cc_headbar__btn.cc_login__btn{
+
+.cc_login__btn{
   .cc_rounded;
   background-color: @pink;
   color:            @white;
   padding:          7px 20px;
+  font-size: 12px;
   .transition (background; 0.2s);
 }
-.cc_headbar__btn.cc_login__btn:hover{
-  background-color: @lightpink;
-  .transition (background; 0.2s);
+.cc_login__btn:hover{
+  background-color: @darkpink;
+  text-decoration:  none;
+  color:            white;
+  .transition       (background; 0.2s);
 }
 
 .cc_headbar__menu {
@@ -123,9 +126,12 @@ figcaption{
 
 .cc-content{
   .cc_rounded;
-  color:      @black;
-  background: @white;
-  border:     1px solid @lightborder;
+  color:              @black;
+  border:             1px solid @lightborder;
+  background:         @white;
+  -webkit-box-shadow: 0 2px 5px rgba(100,100,100,0.1);
+     -moz-box-shadow: 0 2px 5px rgba(100,100,100,0.1);
+          box-shadow: 0 2px 5px rgba(100,100,100,0.1);
 }
 .cc-content__text{
   max-width: 600px;
@@ -134,6 +140,15 @@ figcaption{
 .cc-content-imglarge{
   border-top:    1px solid @lightborder;
   border-bottom: 1px solid @lightborder;
+  opacity: 0.5;
+  .transition (all; 0.2s);
+  .grayscale (100%);
+}
+.cc-content-imglarge:hover{
+  .grayscale (0%);
+  .transition (all; 0.2s);
+  filter:none;
+  opacity: 1;
 }
 .cc-contrib{
   font-style: italic;
@@ -147,10 +162,10 @@ figcaption{
   }
 }
 .alert, .alert-hot-problems {
-  background: #f9f6e7;
+  background: @alertbg;
   border:     1px solid #dfddcf;
   box-shadow: 0 1px 0 #fff, 0 1px 0 #fff inset;
-  color:      #3f3f3f;
+  color:      @darkgrey;
   .cc_rounded ()
 }
 
@@ -170,6 +185,7 @@ span.cc-alpha{
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
   background-color: #b94a48;
   border-radius: 35px;
+  cursor:help;
 }
 span.cc-alpha:before{
     content: "𝛂";
