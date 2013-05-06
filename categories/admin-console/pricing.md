@@ -1,0 +1,45 @@
+---
+layout: page
+title: Pricing
+---
+## Pricing
+This is Clever Cloud charge your application's consumption.
+
+### Instances
+
+Instances are virtual machines which host and run your application's code.
+These instances come in three sizes (aka flavors), which represent different levels of capacities (allocated RAM, allocated CPU).
+
+Based on the needs of your app, the flavors are automatically adjusted. 
+
+Java applications can't run on the *tiny flavor* since Java apps use a significant amount of RAM.
+
+<div class="alert alert-hot-problems">
+<h5>Please note:</h5>
+	<p>The system checks consumption and takes Drops every ten minutes.</p>
+</div>
+<table class="table table-striped">
+   <tr><th>Instance type</th><th colspan="2">Drops (per 10 min)</th></tr>
+   <tr><th>&nbsp;</th><th>PHP</th><th>Java</th></tr>
+	<tr><td>Tiny flavor</td><td>1</td><td>-</td></tr>
+	<tr><td>Medium flavor</td><td>2</td><td>2</td></tr>
+	<tr><td>Large flavor</td><td>4</td><td>4</td></tr>
+</table>
+
+### Services
+
+You can attach services to your apps (databases, cache systems, search engines…).
+
+As of now, MySQL and PostgreSQL are available.
+
+<table class="table table-striped">
+   <tr><th>Action</th><th colspan="2">Drops</th></tr>
+	<tr><th>&nbsp;</th><th>mySQL</th><th>PostgreSQL</th></tr>
+	<tr><td>Create DB</td><td>6</td><td>6</td></tr>
+	<tr><td>10k SELECT Queries</td><td>1</td><td>1</td></tr>
+	<tr><td>10k INSERT Queries</td><td>2</td><td>2</td></tr>
+	<tr><td>10k DELETE Queries</td><td>2</td><td>2</td></tr>
+	<tr><td>10k UPDATE Queries</td><td>2</td><td>2</td></tr>
+	<tr><td>10k other Queries</td><td>2</td><td>2</td></tr>
+</table>
+
