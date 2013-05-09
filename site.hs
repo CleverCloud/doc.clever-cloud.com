@@ -26,7 +26,7 @@ main = hakyll $ do
             withItemBody (unixFilter "lessc" ["-","--yui-compress","-O2"])
 
     -- Render posts
-    match "posts/*/*" $ do
+    match "categories/*/*" $ do
         route $ niceRoute
         compile $ pandocCompiler
             >>= loadAndApplyTemplate "templates/post.html"    postCtx
@@ -56,7 +56,7 @@ postCtx =
 --------------------------------------------------------------------------------
 postList :: Compiler String
 postList = do
-    posts   <- loadAll "posts/*/*"
+    posts   <- loadAll "categories/*/*"
     itemTpl <- loadBody "templates/post-item.html"
     list    <- applyTemplateList itemTpl postCtx posts
     return list
