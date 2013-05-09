@@ -3,49 +3,123 @@ layout: page
 title: Billing
 ---
 ## Billing
-The billing section is divided in two parts: the review of your drop consumption and the diffrents drops packages plans.
+Each app and service consume computing ressources. Ressources are defined by two factors : time and drops. The drop is the unit of computing energy used by workers.
+Workers are virtual machine dedicated to apps. When your application needs more ressrouces, you can decide to add workers or switch for a more powerful one.
+
+
+### Estimating Costs
+
+When you deploy an app, a worker is created to host it. Each languages have four type of workers
+
+* Tiny
+* Medium
+* Large
+* X-Large
+
+#### Workers billing rates
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>Ressource</th>
+      <th>Unit</th>
+      <th>Unit cost</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><span class="label label-info">Small</span> Worker Java</td>
+      <td>2 Drops</td>
+      <td>0,012c €</td>
+    </tr>
+    <tr>
+      <td>Medium Worker Java</td>
+      <td>2 Drops</td>
+      <td>0,012c €</td>
+    </tr>
+    <tr>
+      <td><span class="label label-info">Small</span> Worker Node</td>
+      <td>2 Drops</td>
+      <td>0,012c €</td>
+    </tr>
+      <td>Medium Worker Node</td>
+      <td>2 Drops</td>
+      <td>0,012c €</td>
+    </tr>
+    <tr>
+      <td><span class="label label-info">Small</span> Worker Python</td>
+      <td>2 Drops</td>
+      <td>0,012c €</td>
+    </tr>
+    <tr>
+      <td>Medium Worker Python</td>
+      <td>2 Drops</td>
+      <td>0,012c €</td>
+    </tr>
+    <tr>
+      <td><span class="label label-info">Small</span> Worker Play!</td>
+      <td>2 Drops</td>
+      <td>0,012c €</td>
+    </tr>
+    <tr>
+      <td>Medium Worker Play!</td>
+      <td>2 Drops</td>
+      <td>0,012c €</td>
+    </tr>
+    <tr>
+      <td><span class="label label-info">Small</span> Worker PHP</td>
+      <td>2 Drops</td>
+      <td>0,012c €</td>
+    </tr>
+    <tr>
+      <td>Medium Worker PHP</td>
+      <td>2 Drops</td>
+      <td>0,012c €</td>
+    </tr>
+  </tbody>
+</table>
+
+#### Databases & Services billing rates
+
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>Operation</th>
+      <th>Service</th>
+      <th>Unit cost</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Read</td>
+      <td>mySQL</td>
+      <td>$0.10 per 100k operations</td>
+    </tr>
+    <tr>
+      <td>Read</td>
+      <td>PostgreSQL</td>
+      <td>$0.10 per 100k operations</td>
+    </tr>
+    <tr>
+      <td>Read</td>
+      <td>Couchbase</td>
+      <td>$0.10 per 100k operations</td>
+    </tr>
+  </tbody>
+</table>
+
+### Automatic Scaling
+
+Clever Cloud allows you to scale your apps automatically if your application is under an unexpected load.
+Go to your app's configuration to enable auto-scaling.
 
 <div class="alert alert-hot-problems">
-	<h5>Please note:</h5>
-	<p>The payment flow is managed by Paypal for now. Credit card payment and recurrent billing will be available soon.
-	</p>
-	<p>If you have any question about payment or billing, feel free to send a mail at <a href="mailto:support@clever-cloud.com">support@clever-cloud.com</a>.</p>
-</div>
+  <h5>Automatic-scaling and variable costs</h5>
+  <p>
+    Many of our users may fear auto-scaling if their is suddenly consuming a lot of ressources. First note you can set an interval for scaling.
+  </p>
+  <p>In the other hand, the apps scales down by itself if a low activity is observed on the app during a period of 10min.</p>
+</div> 
 
-### Consumption and billing overview
-In the *Summary* section, you have the details of your bills, with the number of remaining drops you have and it translation in euros.  
-<img  src="/img/bills.png">
-
-### Buying Drops
-This is the section dedicated to refill your account with drops. You can choose between four plans:
-
-* **First steps**: 2500 Drops
-
-* **Highway driver**: 10000 Drops
-
-* **Aviator**: 25000 Drops
-
-* **Astronaut**: 50000 Drops  
-
-<p>When an application is still not restarted after a payment, you may have to redeploy it, especially if you ran out of drops.</p>
-
-<div class="alert alert-hot-problems ">
-	<h5>How long will last my Drops?</h5>
-	<p>
-	Buying Drops without knowing how much your app will consume may sounds quite inappropriate. To have an  idea on your expected Drops consumption, please have a look at our <strong><a href="/pricing/">detailed pricing page</a></strong>.
-	</p>
-</div>
-<img  src="/img/bills2.png">
-
-
-
-
-
-
-
-
-
-
-
-
-
+### Payment Management
+#### Credit Card
+#### Paypal
