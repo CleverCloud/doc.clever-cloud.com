@@ -27,23 +27,21 @@ We currently host the following Node.js versions, with these modules already ins
 		</tr>
 	</thead>
 	<tbody>
-		<tr><td>v0.10.3 </td><td>socket.io</td></tr>
-		<tr><td>v0.10.2 </td><td>express  </td></tr>
-		<tr><td>v0.10.1 </td><td>async    </td></tr>
-		<tr><td>v0.10.0 </td><td>mysql    </td></tr>
-		<tr><td>v0.9.3  </td><td>pg       </td></tr>
-		<tr><td>v0.9.2  </td><td>         </td></tr>
-		<tr><td>v0.9.1  </td><td>         </td></tr>
-		<tr><td>v0.9.0  </td><td>         </td></tr>
-		<tr><td>v0.8.9  </td><td>         </td></tr>
-		<tr><td>v0.8.8  </td><td>         </td></tr>
-		<tr><td>v0.8.16 </td><td>         </td></tr>
-		<tr><td>v0.8.15 </td><td>         </td></tr>
-		<tr><td>v0.8.14 </td><td>         </td></tr>
-		<tr><td>v0.8.13 </td><td>         </td></tr>
-		<tr><td>v0.8.12 </td><td>         </td></tr>
-		<tr><td>v0.8.11 </td><td>         </td></tr>
-		<tr><td>v0.8.10 </td><td>         </td></tr>
+		<tr><td>v0.10.5 </td><td>socket.io</td></tr>
+		<tr><td>v0.10.4 </td><td>express  </td></tr>
+		<tr><td>v0.10.3 </td><td>async    </td></tr>
+		<tr><td>v0.10.2 </td><td>mysql    </td></tr>
+		<tr><td>v0.10.1 </td><td>pg       </td></tr>
+		<tr><td>v0.10.0 </td><td>couchbase</td></tr>
+		<tr><td>v0.9.12 </td><td>         </td></tr>
+		<tr><td>v0.9.11 </td><td>         </td></tr>
+		<tr><td>v0.9.10 </td><td>         </td></tr>
+		<tr><td>v0.9.9  </td><td>         </td></tr>
+		<tr><td>v0.9.8  </td><td>         </td></tr>
+		<tr><td>v0.8.18 </td><td>         </td></tr>
+		<tr><td>v0.8.19 </td><td>         </td></tr>
+		<tr><td>v0.8.20 </td><td>         </td></tr>
+		<tr><td>v0.8.21 </td><td>         </td></tr>
 		<tr><td>v0.7.12 </td><td>         </td></tr>
 		<tr><td>v0.6.21 </td><td>         </td></tr>
 	</tbody>
