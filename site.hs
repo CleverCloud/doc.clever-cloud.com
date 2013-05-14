@@ -136,7 +136,7 @@ makeCategoryMenuItem dir current (id, md) = mkItem $ do
     category_name = fromMaybe "" $ M.lookup "name" md
     category_id = takeBaseName . toFilePath $ id
     mkCtx id = constField "cc-sidebar__item__active" $
-        if id == itemIdentifier current then " class=\"active\""
+        if id == itemIdentifier current then " class=\"cc-sidebar__item__active\""
         else ""
 
 makeDefaultContext :: (Identifier, Metadata) -> Context String
