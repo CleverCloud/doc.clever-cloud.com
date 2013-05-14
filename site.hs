@@ -3,7 +3,7 @@
 import           Control.Applicative ((<$>))
 import           Data.Monoid         (mappend)
 import           Hakyll
-import           System.FilePath.Posix  (takeBaseName,takeDirectory,(</>),splitFileName)
+import           System.FilePath.Posix  (dropExtension,(</>),splitDirectories,joinPath)
 --------------------------------------------------------------------------------
 
 main :: IO ()
@@ -68,5 +68,6 @@ postList = do
 niceRoute :: Routes
 niceRoute = customRoute createIndexRoute
   where
-    createIndexRoute ident = takeBaseName p </> "index.html"
+    createIndexRoute ident = withoutCategory </> "index.html"
       where p = toFilePath ident
+            withoutCategory = joinPath . drop 1 . splitDirectories $ dropExtension p
