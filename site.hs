@@ -1,7 +1,7 @@
 --------------------------------------------------------------------------------
 {-# LANGUAGE OverloadedStrings #-}
 import           Control.Applicative ((<$>))
-import           Control.Monad (mapM,(>=>))
+import           Control.Monad (forM_, mapM,(>=>))
 import           Data.List          (intersperse)
 import           Data.Maybe          (fromMaybe)
 import           Data.Monoid         (mappend,mempty)
@@ -48,20 +48,18 @@ main = hakyll $ do
                 >>= cleanUrls
 
     match "templates/*" $ compile templateCompiler
-    match "commons/**.md" $ do
-        route niceRoute
-        compile $
-            pandocCompiler
-            >>= loadAndApplyTemplate "templates/default.html" postCtx
-            >>= cleanUrls
 
-    match "runtimes/**.md" $ do
-        route niceRoute
-        compile $
-            pandocCompiler
-            >>= loadAndApplyTemplate "templates/default.html" postCtx
-            >>= cleanUrls
+    forM_ ["commons", "runtimes"] $ (\dir ->
+        match (fromGlob $ dir ++ "/*.md") $ do
+            route niceRoute
+            compile (getResourceBody >>= makeCatPage dir))
 
+    forM_ ["commons", "runtimes"] $ (\dir ->
+        match (fromGlob $ dir ++ "/*/*.md") $ do
+            route niceRoute
+            compile $
+                pandocCompiler
+                    >>= loadAndApplyTemplate "templates/default.html" postCtx >>= cleanUrls)
 
 --------------------------------------------------------------------------------
 postCtx :: Context String
@@ -125,6 +123,20 @@ makeRuntimesMenu item = do
     applyTemplateList tpl ctx blocks
   where
     ctx = defaultContext
+
+makeCatPage :: String -> Item String -> Compiler (Item String)
+makeCatPage dir cat = do
+    md <- getMetadata $ itemIdentifier cat
+    pages_md <- getAllMetadata (fromGlob $ dir ++ "/" ++ category_id ++ "/*.md")
+    tpl <- loadBody "templates/cat-index-item.html"
+    applyTemplateListWithContexts tpl (makeItemContextPairList pages_md)
+        >>= makeItem
+        >>= loadAndApplyTemplate "templates/category-page.html" postCtx
+        >>= loadAndApplyTemplate "templates/default.html" postCtx
+        >>= cleanUrls
+  where
+    category_name md = fromMaybe "" $ M.lookup "name" md
+    category_id = takeBaseName . toFilePath . itemIdentifier $ cat
 
 makeCategoryMenuItem :: String -> Item String -> (Identifier,Metadata) -> Compiler (Item String)
 makeCategoryMenuItem dir current (id, md) = mkItem $ do
