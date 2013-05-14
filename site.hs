@@ -6,7 +6,7 @@ import           Data.List          (intersperse)
 import           Data.Maybe          (fromMaybe)
 import           Data.Monoid         (mappend,mempty)
 import           Hakyll
-import           System.FilePath.Posix  (dropExtension,(</>),splitDirectories,joinPath,takeBaseName)
+import           System.FilePath.Posix  (dropExtension,dropFileName,(</>),splitDirectories,joinPath,takeBaseName,takeFileName)
 import qualified Data.Map as M
 --------------------------------------------------------------------------------
 
@@ -35,7 +35,7 @@ main = hakyll $ do
         compile $ pandocCompiler
             >>= loadAndApplyTemplate "templates/post.html"    postCtx
             >>= loadAndApplyTemplate "templates/default.html" postCtx
-            >>= relativizeUrls
+            >>= cleanUrls
 
     match "index.html" $ do
         route idRoute
@@ -45,17 +45,30 @@ main = hakyll $ do
             getResourceBody
                 >>= applyAsTemplate indexCtx
                 >>= loadAndApplyTemplate "templates/default.html" postCtx
-                >>= relativizeUrls
+                >>= cleanUrls
 
     match "templates/*" $ compile templateCompiler
-    match "categories/*.md" $ compile getResourceBody
+    match "commons/**.md" $ do
+        route niceRoute
+        compile $
+            pandocCompiler
+            >>= loadAndApplyTemplate "templates/default.html" postCtx
+            >>= cleanUrls
+
+    match "runtimes/**.md" $ do
+        route niceRoute
+        compile $
+            pandocCompiler
+            >>= loadAndApplyTemplate "templates/default.html" postCtx
+            >>= cleanUrls
 
 
 --------------------------------------------------------------------------------
 postCtx :: Context String
 postCtx =
     --dateField "date"-- "%B %e, %Y" `mappend`
-    field "sidebar" makeSideBar `mappend`
+    field "commons" makeCommonsMenu `mappend`
+    field "runtimes" makeRuntimesMenu `mappend`
     defaultContext
 
 
@@ -66,6 +79,21 @@ postList = do
     itemTpl <- loadBody "templates/post-item.html"
     list    <- applyTemplateList itemTpl postCtx posts
     return list
+
+
+
+cleanUrls :: Item String -> Compiler (Item String)
+cleanUrls = relativizeUrls . fmap removeIndexInUrls
+
+removeIndexInUrls :: String -> String
+removeIndexInUrls = withUrls cleanUrl
+  where
+    cleanUrl u =
+        if (not $ isExternal u) then removeIndex u
+        else u
+    removeIndex u =
+        if(takeFileName u == "index.html") then dropFileName u
+        else u
 
 --------------------------------------------------------------------------------
 --
@@ -78,19 +106,29 @@ niceRoute = customRoute createIndexRoute
       where p = toFilePath ident
             withoutCategory = joinPath . drop 1 . splitDirectories $ dropExtension p
 
-makeSideBar :: Item String -> Compiler String
-makeSideBar item = do
-    categories_md <- getAllMetadata "categories/*.md"
-    blocks <- mapM (makeCategoryMenuItem item) categories_md
+makeCommonsMenu :: Item String -> Compiler String
+makeCommonsMenu item = do
+    categories_md <- getAllMetadata "commons/*.md"
+    blocks <- mapM (makeCategoryMenuItem "commons" item) categories_md
     mapM_ (debugCompiler . show) blocks
     tpl <- loadBody "templates/menu-category.html"
     applyTemplateList tpl ctx blocks
   where
     ctx = defaultContext
 
-makeCategoryMenuItem :: Item String -> (Identifier,Metadata) -> Compiler (Item String)
-makeCategoryMenuItem current (id, md) = mkItem $ do
-    pages_md <- getAllMetadata (fromGlob $ "categories/" ++ category_id ++ "/*.md")
+makeRuntimesMenu :: Item String -> Compiler String
+makeRuntimesMenu item = do
+    categories_md <- getAllMetadata "runtimes/*.md"
+    blocks <- mapM (makeCategoryMenuItem "runtimes" item) categories_md
+    mapM_ (debugCompiler . show) blocks
+    tpl <- loadBody "templates/menu-category.html"
+    applyTemplateList tpl ctx blocks
+  where
+    ctx = defaultContext
+
+makeCategoryMenuItem :: String -> Item String -> (Identifier,Metadata) -> Compiler (Item String)
+makeCategoryMenuItem dir current (id, md) = mkItem $ do
+    pages_md <- getAllMetadata (fromGlob $ dir ++ "/" ++ category_id ++ "/*.md")
     tpl <- loadBody "templates/menu-item.html"
     applyTemplateListWithContexts tpl (makeItemContextPairListWith pages_md mkCtx)
   where
