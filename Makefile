@@ -1,15 +1,19 @@
-preview: hakyll
+preview: site
 	./site preview
 
-hakyll: site.hs
+site: site.hs
 	ghc --make site.hs
 	./site clean
 
-clean: hakyll
+clean: site
 	./site clean
 
-build: hakyll
+build: site
 	./site build
+
+debug: site
+	./site clean
+	./site build -v
 
 #publish: build
 #	git stash save
