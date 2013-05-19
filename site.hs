@@ -30,9 +30,9 @@ main = hakyll $ do
         compile $ getResourceString >>=
             withItemBody (unixFilter "lessc" ["-","--yui-compress","-O2"])
 
-    match "index.md" $ do
-        route $ setExtension "html"
-        compile $ pandocCompiler
+    match "index.html" $ do
+        route $ idRoute
+        compile $ getResourceBody
                 >>= loadAndApplyTemplate "templates/default.html" mainCtx
                 >>= cleanUrls
 
