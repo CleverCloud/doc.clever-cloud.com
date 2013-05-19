@@ -190,14 +190,3 @@ If you didn't already track your app with git, start by typing:
 	```bash
 	$ git push <name> master
 	```
-
-
-
-<script type="text/javascript">
-$('#center a').click(function(){
-    $('html, body').animate({
-        scrollTop: $( $(this).attr('href') ).offset().top - 0
-    }, 500);
-    return false;
-});
-</script>

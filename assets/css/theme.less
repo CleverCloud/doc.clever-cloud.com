@@ -102,7 +102,9 @@ figcaption{
 .cc_headbar__menu {
   font-weight: bold;
 }
-
+.cc-sidebar a{
+  color: @mediumgrey;
+}
 .cc-sidebar__item{
   font-weight: bold;
   font-size:   18px;
@@ -111,10 +113,13 @@ figcaption{
 
 }
 
+.cc-sidebar__item__active{
+  color: @pink !important;
+}
+
 .cc-sidebar__item__list{
     list-style: none;
   a{
-    color:      @mediumgrey;
     outline:    none;
     list-style: none;
   }
@@ -123,7 +128,6 @@ figcaption{
     text-decoration: underline;
   }
 }
-
 .cc-content{
   .cc_rounded;
   color:              @black;
