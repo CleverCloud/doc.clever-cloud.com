@@ -1,5 +1,6 @@
 ---
 title: Deploying Play! 1.x
+position: 1
 ---
 
 ## Deploying Play! Framework 1.x

@@ -1,5 +1,6 @@
 ---
 title: Deploying Play! 2
+position: 2
 ---
 
 ## Deploying Play! Framework 2 Java

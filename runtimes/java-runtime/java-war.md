@@ -1,5 +1,6 @@
 ---
 title: Deploying WAR/EAR
+position: 4
 ---
 
 ## Deploying WAR/EAR projects <span class="cc-alpha pull-right" title="Currently in Alpha version"></span>
