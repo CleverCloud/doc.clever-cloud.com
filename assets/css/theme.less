@@ -48,6 +48,9 @@ figcaption{
   font-style: italic;
   font-size:  @text--S;
 }
+.cc-icon-colored{
+  color: @pink;
+}
 .cc_main{
   background:  @lightgrey;
 }
@@ -114,9 +117,11 @@ figcaption{
 }
 
 .cc-sidebar__item__active{
-  color: @pink !important;
+  color: @pink;
 }
-
+.cc-category-list{
+  list-style: none;
+}
 .cc-sidebar__item__list{
     list-style: none;
   a{
@@ -124,7 +129,7 @@ figcaption{
     list-style: none;
   }
   a:hover{
-    color: 		   @pink;
+    color:@pink;
     text-decoration: underline;
   }
 }
@@ -157,7 +162,7 @@ figcaption{
 .cc-contrib{
   font-style: italic;
   font-size: 12px;
-  text-align: center;
+  color: @mediumgrey;
   a{
     color: @pink;
   }
@@ -193,4 +198,23 @@ span.cc-alpha{
 }
 span.cc-alpha:before{
     content: "𝛂";
+}
+.cc-go-top {
+  position: fixed;
+  bottom: 2em;
+  right: 2em;
+  text-decoration: none;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.3);
+  font-size: 18px;
+  padding: 8px 13px 8px 13px;
+  display: none;
+  .cc_rounded ()
+}
+
+.cc-go-top:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+  text-decoration: none;
+  color: white;
+
 }
