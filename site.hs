@@ -1,10 +1,11 @@
 --------------------------------------------------------------------------------
 {-# LANGUAGE OverloadedStrings #-}
 import           Control.Applicative ((<$>))
-import           Control.Monad (forM_, mapM,(>=>))
-import           Data.List          (intersperse)
+import           Control.Monad       (forM_, mapM, (>=>))
+import           Data.List           (intersperse, sortBy)
 import           Data.Maybe          (fromMaybe)
 import           Data.Monoid         (mappend,mempty)
+import           Data.Ord            (comparing)
 import           Hakyll
 import           System.FilePath.Posix  (dropExtension,dropFileName,(</>),splitDirectories,joinPath,takeBaseName,takeFileName)
 import qualified Data.Map as M
@@ -106,8 +107,8 @@ niceRoute = customRoute createIndexRoute
 
 makeCommonsMenu :: Item String -> Compiler String
 makeCommonsMenu item = do
-    categories_md <- getAllMetadata "commons/*.md"
-    blocks <- mapM (makeCategoryMenuItem "commons" item) categories_md
+    ordered_categories_md <- fmap sortByPosition $  getAllMetadata "commons/*.md"
+    blocks <- mapM (makeCategoryMenuItem "commons" item) ordered_categories_md
     mapM_ (debugCompiler . show) blocks
     tpl <- loadBody "templates/menu-category.html"
     applyTemplateList tpl ctx blocks
@@ -116,8 +117,9 @@ makeCommonsMenu item = do
 
 makeRuntimesMenu :: Item String -> Compiler String
 makeRuntimesMenu item = do
-    categories_md <- getAllMetadata "runtimes/*.md"
-    blocks <- mapM (makeCategoryMenuItem "runtimes" item) categories_md
+    ordered_categories_md <- fmap sortByPosition $  getAllMetadata "runtimes/*.md"
+    blocks <- mapM (makeCategoryMenuItem "commons" item) ordered_categories_md
+    blocks <- mapM (makeCategoryMenuItem "runtimes" item) ordered_categories_md
     mapM_ (debugCompiler . show) blocks
     tpl <- loadBody "templates/menu-category.html"
     applyTemplateList tpl ctx blocks
@@ -127,9 +129,9 @@ makeRuntimesMenu item = do
 makeCatPage :: String -> Item String -> Compiler (Item String)
 makeCatPage dir cat = do
     md <- getMetadata $ itemIdentifier cat
-    pages_md <- getAllMetadata (fromGlob $ dir ++ "/" ++ category_id ++ "/*.md")
+    ordered_pages_md <- fmap sortByPosition $ getAllMetadata (fromGlob $ dir ++ "/" ++ category_id ++ "/*.md")
     tpl <- loadBody "templates/cat-index-item.html"
-    applyTemplateListWithContexts tpl (makeItemContextPairList pages_md)
+    applyTemplateListWithContexts tpl (makeItemContextPairList ordered_pages_md)
         >>= makeItem
         >>= loadAndApplyTemplate "templates/category-page.html" postCtx
         >>= loadAndApplyTemplate "templates/default.html" postCtx
@@ -140,9 +142,9 @@ makeCatPage dir cat = do
 
 makeCategoryMenuItem :: String -> Item String -> (Identifier,Metadata) -> Compiler (Item String)
 makeCategoryMenuItem dir current (id, md) = mkItem $ do
-    pages_md <- getAllMetadata (fromGlob $ dir ++ "/" ++ category_id ++ "/*.md")
+    ordered_pages_md <- fmap sortByPosition $ getAllMetadata (fromGlob $ dir ++ "/" ++ category_id ++ "/*.md")
     tpl <- loadBody "templates/menu-item.html"
-    applyTemplateListWithContexts tpl (makeItemContextPairListWith pages_md mkCtx)
+    applyTemplateListWithContexts tpl (makeItemContextPairListWith ordered_pages_md mkCtx)
   where
     mkItem = fmap (Item id)
     category_name = fromMaybe "" $ M.lookup "name" md
@@ -190,3 +192,7 @@ applyJoinTemplateListWithContexts delimiter tpl pairs = do
     items <- mapM (\p -> applyTemplate tpl (fst p) (snd p)) pairs
     return $ concat $ intersperse delimiter $ map itemBody items
 
+sortByPosition :: [(Identifier, Metadata)] -> [(Identifier, Metadata)]
+sortByPosition = sortBy (comparing (getPosition . snd))
+  where
+    getPosition md = fmap read $ M.lookup "position" md :: Maybe Int
