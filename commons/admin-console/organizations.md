@@ -1,6 +1,6 @@
 ---
-layout: page
 title: Roles and Organisations
+position: 3
 ---
 ## Organisations
 

@@ -1,6 +1,6 @@
 ---
-layout: page
 title: Intro to Apps
+position: 1
 ---
 
 ## Intro to Apps

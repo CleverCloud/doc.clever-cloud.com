@@ -1,6 +1,6 @@
 ---
-layout: page
 title: MySQL
+position: 1
 ---
 ##mySQL : Managing databases
 

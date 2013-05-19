@@ -1,5 +1,4 @@
 ---
-layout: page
 title: DESIGN Template for design overview
 ---
 ## Main h2 title w/ alpha warning <span class="cc-alpha pull-right" title="Currently in Alpha version"></span>

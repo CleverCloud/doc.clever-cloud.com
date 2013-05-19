@@ -1,5 +1,4 @@
 ---
-layout: page
 title: Deploying Node.js apps
 ---
 

@@ -1,6 +1,6 @@
 ---
-layout: page
 title: Couchbase
+position: 4
 ---
 ## <span class="label">Beta</span> Couchbase
 

@@ -1,6 +1,6 @@
 ---
-layout: page
 title: PostgreSQL
+position: 2
 ---
 ##PostgreSQL : Managing databases
 
