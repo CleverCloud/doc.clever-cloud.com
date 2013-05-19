@@ -147,7 +147,7 @@ makeCategoryMenuItem dir current (id, md) = mkItem $ do
     mkItem = fmap (Item id)
     category_name = fromMaybe "" $ M.lookup "name" md
     category_id = takeBaseName . toFilePath $ id
-    mkCtx id = constField "cc-sidebar__item__active" $
+    mkCtx id = constField "active" $
         if id == itemIdentifier current then " class=\"cc-sidebar__item__active\""
         else ""
 
