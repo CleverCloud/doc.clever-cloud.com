@@ -1,5 +1,4 @@
 ---
-layout: page
 title: Domain names
 ---
 ## Domain names configuration

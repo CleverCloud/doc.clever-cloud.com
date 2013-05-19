@@ -1,5 +1,4 @@
 ---
-layout: page
 title: Deploying Play! 2
 ---
 

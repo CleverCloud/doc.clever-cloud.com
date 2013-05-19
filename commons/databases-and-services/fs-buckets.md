@@ -1,6 +1,6 @@
 ---
-layout: page
 title: File System Buckets
+position: 3
 ---
 ## FS Buckets: keep and manage data files.
 

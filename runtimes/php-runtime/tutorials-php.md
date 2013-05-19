@@ -1,5 +1,4 @@
 ---
-layout: page
 title: Tutorials for PHP
 ---
 ## Tutorials for PHP

@@ -1,5 +1,4 @@
 ---
-layout: page
 title: App configuration 
 ---
 ## App Configuration

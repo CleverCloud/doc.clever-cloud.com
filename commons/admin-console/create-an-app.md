@@ -1,5 +1,4 @@
 ---
-layout: page
 title: Create an app
 ---
 ##Create an app
