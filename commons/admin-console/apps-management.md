@@ -100,8 +100,3 @@ You can delete it if needed or add another one.
 
 Once you have declared your SSH key and created an app, a unique Git repository will be generated on the server for your project. 
 A push from your computer to this repository will deploy your app via SSH, using your public key.
-
-
-### Start, stop and delete
-### Cold start
-### Scalability management

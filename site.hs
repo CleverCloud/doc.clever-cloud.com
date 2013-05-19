@@ -30,22 +30,10 @@ main = hakyll $ do
         compile $ getResourceString >>=
             withItemBody (unixFilter "lessc" ["-","--yui-compress","-O2"])
 
-    -- Render posts
-    match "categories/*/*" $ do
-        route $ niceRoute
-        compile $ pandocCompiler
-            >>= loadAndApplyTemplate "templates/post.html"    postCtx
-            >>= loadAndApplyTemplate "templates/default.html" postCtx
-            >>= cleanUrls
-
     match "index.html" $ do
-        route idRoute
-        compile $ do
-            let indexCtx = field "posts" $ \_ -> postList
-
-            getResourceBody
-                >>= applyAsTemplate indexCtx
-                >>= loadAndApplyTemplate "templates/default.html" postCtx
+        route $ idRoute
+        compile $ getResourceBody
+                >>= loadAndApplyTemplate "templates/default.html" mainCtx
                 >>= cleanUrls
 
     match "templates/*" $ compile templateCompiler
@@ -60,26 +48,14 @@ main = hakyll $ do
             route niceRoute
             compile $
                 pandocCompiler
-                    >>= loadAndApplyTemplate "templates/default.html" postCtx >>= cleanUrls)
+                    >>= loadAndApplyTemplate "templates/default.html" mainCtx >>= cleanUrls)
 
 --------------------------------------------------------------------------------
-postCtx :: Context String
-postCtx =
-    --dateField "date"-- "%B %e, %Y" `mappend`
+mainCtx :: Context String
+mainCtx =
     field "commons" makeCommonsMenu `mappend`
     field "runtimes" makeRuntimesMenu `mappend`
     defaultContext
-
-
---------------------------------------------------------------------------------
-postList :: Compiler String
-postList = do
-    posts   <- loadAll "categories/*/*"
-    itemTpl <- loadBody "templates/post-item.html"
-    list    <- applyTemplateList itemTpl postCtx posts
-    return list
-
-
 
 cleanUrls :: Item String -> Compiler (Item String)
 cleanUrls = relativizeUrls . fmap removeIndexInUrls
@@ -133,8 +109,8 @@ makeCatPage dir cat = do
     tpl <- loadBody "templates/cat-index-item.html"
     applyTemplateListWithContexts tpl (makeItemContextPairList ordered_pages_md)
         >>= makeItem
-        >>= loadAndApplyTemplate "templates/category-page.html" postCtx
-        >>= loadAndApplyTemplate "templates/default.html" postCtx
+        >>= loadAndApplyTemplate "templates/category-page.html" mainCtx
+        >>= loadAndApplyTemplate "templates/default.html" mainCtx
         >>= cleanUrls
   where
     category_name md = fromMaybe "" $ M.lookup "name" md

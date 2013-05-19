@@ -1,5 +1,5 @@
 ---
-title: Deploying Java Maven
+title: Java Maven
 position: 3
 ---
 

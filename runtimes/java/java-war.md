@@ -1,5 +1,5 @@
 ---
-title: Deploying WAR/EAR
+title: Java War/Ear
 position: 4
 ---
 
