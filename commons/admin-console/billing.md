@@ -119,6 +119,6 @@ Go to your app's configuration to enable auto-scaling.
   <p>In the other hand, the apps scales down by itself if a low activity is observed on the app during a period of 10min.</p>
 </div> 
 
-### Payment Management
+### Making a Payment
 #### Credit Card
 #### Paypal
