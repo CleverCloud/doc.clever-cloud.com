@@ -38,13 +38,9 @@ main = hakyll $ do
             >>= loadAndApplyTemplate "templates/default.html" postCtx
             >>= cleanUrls
 
-    match "index.html" $ do
-        route idRoute
-        compile $ do
-            let indexCtx = field "posts" $ \_ -> postList
-
-            getResourceBody
-                >>= applyAsTemplate indexCtx
+    match "index.md" $ do
+        route $ setExtension "html"
+        compile $ pandocCompiler
                 >>= loadAndApplyTemplate "templates/default.html" postCtx
                 >>= cleanUrls
 
