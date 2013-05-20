@@ -1,5 +1,5 @@
 ---
-title: Deploying Node.js apps
+title: Node.js apps
 ---
 
 ## Deploying Node.js apps

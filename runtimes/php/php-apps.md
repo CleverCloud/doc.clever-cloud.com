@@ -1,5 +1,5 @@
 ---
-title: Deploying PHP apps
+title: PHP apps
 ---
 
 ## Deploying PHP apps
