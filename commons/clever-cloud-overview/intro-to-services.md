@@ -15,7 +15,7 @@ These are all billable elements.
 
 ### Defining Services
 
-First, services are declared on the Console. A service could be a database, a cache system or a search engine. Like Apps, Services' environment is embed into Clever Cloud's architecture: these are not external services.
+First, services are declared on the Console. A service could be a database, a cache system or a search engine. Like Apps, Services' environment is embed into Clever Cloud's architecture: these are not services external to Clever Cloud.
 
 Available services are listed below: 
 
