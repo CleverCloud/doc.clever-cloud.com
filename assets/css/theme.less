@@ -11,7 +11,7 @@
  * more about this: engineering.appfolio.com/2012/11/16/css-architecture
  */
 body{
-  background-color: @lightgrey;
+  background-color: #f4f4f4;
   a{
     color:          @pink;
   }
@@ -48,6 +48,9 @@ figcaption{
   font-style: italic;
   font-size:  @text--S;
 }
+.cc-icon-colored{
+  color: @pink;
+}
 .cc_main{
   background:  @lightgrey;
 }
@@ -57,7 +60,6 @@ figcaption{
   text-decoration: 	none;
   }
 }
-
 .cc_headbar__logo{
   font-family:   @logo-font;
   font-size:     20px;
@@ -89,7 +91,8 @@ figcaption{
   background-color: @pink;
   color:            @white;
   padding:          7px 20px;
-  font-size: 12px;
+  font-size:        12px;
+  cursor:           pointer;
   .transition (background; 0.2s);
 }
 .cc_login__btn:hover{
@@ -102,7 +105,9 @@ figcaption{
 .cc_headbar__menu {
   font-weight: bold;
 }
-
+.cc-sidebar a{
+  color: @mediumgrey;
+}
 .cc-sidebar__item{
   font-weight: bold;
   font-size:   18px;
@@ -111,19 +116,23 @@ figcaption{
 
 }
 
+.cc-sidebar__item__active{
+  color: @pink;
+}
+.cc-category-list{
+  list-style: none;
+}
 .cc-sidebar__item__list{
     list-style: none;
   a{
-    color:      @mediumgrey;
     outline:    none;
     list-style: none;
   }
   a:hover{
-    color: 		   @pink;
+    color:@pink;
     text-decoration: underline;
   }
 }
-
 .cc-content{
   .cc_rounded;
   color:              @black;
@@ -153,7 +162,7 @@ figcaption{
 .cc-contrib{
   font-style: italic;
   font-size: 12px;
-  text-align: center;
+  color: @mediumgrey;
   a{
     color: @pink;
   }
@@ -189,4 +198,37 @@ span.cc-alpha{
 }
 span.cc-alpha:before{
     content: "𝛂";
+}
+
+span.cc-beta{
+  font-size: 16.844px;
+  font-weight: bold;
+  color: white;
+  white-space: nowrap;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background-color: #3a87ad;
+  border-radius: 35px;
+  cursor:help;
+}
+span.cc-beta:before{
+    content: "β";
+}
+.cc-go-top {
+  position: fixed;
+  bottom: 2em;
+  right: 2em;
+  text-decoration: none;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.3);
+  font-size: 18px;
+  padding: 8px 13px 8px 13px;
+  display: none;
+  .cc_rounded ()
+}
+
+.cc-go-top:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+  text-decoration: none;
+  color: white;
+
 }

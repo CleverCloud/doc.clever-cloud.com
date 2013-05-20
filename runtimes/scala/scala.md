@@ -1,5 +1,5 @@
 ---
-title: Deploying scala apps
+title: Scala with SBT
 ---
 
 ## Deploying Scala apps

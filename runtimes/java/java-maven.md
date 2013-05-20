@@ -1,5 +1,6 @@
 ---
-title: Deploying Java Maven
+title: Java Maven
+position: 3
 ---
 
 ## Deploying Java Maven projects

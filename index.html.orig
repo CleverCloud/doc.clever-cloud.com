@@ -1,3 +1,6 @@
+<h1>Clever cloud doc</h1>
+
+<<<<<<< HEAD
 <h1 class="cc-home__header">Clever Cloud Documentation</h1>
 <hr>
 <h3 class="cc-home__header"><small>This documentation will help you to configure your apps to run it on Clever Cloud. <br/>Get started with your favorite language:</small></h3>
@@ -65,3 +68,6 @@
 <p>Create an account now and get 2000 Drops for trial.</p>
 
 <p><a href="https://console.clever-cloud.com" class="cc_login__btn">Singup</a></p>
+=======
+<p>Text block</p>
+>>>>>>> 3083032e46a71731e1e45d98b1463f1616ff67b8
