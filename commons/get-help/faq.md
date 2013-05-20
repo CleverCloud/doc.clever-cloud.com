@@ -10,8 +10,12 @@ position: 3
 A <dfn id="def-scaler">scaler</dfn> is a individual container hosting your app. You can attribute one or more Scalers to your apps. Scalers comes in three sizes:
 
 * Tiny Scalers
+* Small Scalers
 * Medium Scalers
 * Large Scalers
+* XtraLarge Scalers
+* Huge Scalers
+* XtraHuge Scalers
 
 Each [scaler](#def-scaler) is given a fixed set of resources, depending on the chosen language. A Java [scaler](#def-scaler) will have more RAM than a PHP [scaler](#def-scaler).
 The way you scale an application is by assigning it new [scalers](#def-scaler).

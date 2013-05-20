@@ -9,14 +9,17 @@ Workers are virtual machine dedicated to apps. When your application needs more 
 
 ### Estimating Costs
 
-When you deploy an app, a worker is created to host it. Each languages have four type of workers
+When you deploy an app, a worker is created to host it. Each languages have four type of scalers, aka workers:
 
-* Tiny
-* Medium
-* Large
-* X-Large
+* Tiny 
+* Small 
+* Medium 
+* Large 
+* XtraLarge 
+* Huge 
+* XtraHuge 
 
-#### Workers billing rates
+#### Scalers billing rates
 <table class="table table-bordered table-striped">
   <thead>
     <tr>
