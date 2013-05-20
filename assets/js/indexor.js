@@ -8,7 +8,7 @@ $(document).ready(function() {
     var Text = $(this).text();
     Text = Text.toLowerCase();
     Text = Text.replace(/\s/g,'-');
-    Text = Text.replace(/[^a-zA-Z0-9\-]/g,'');
+    Text = Text.replace(/[^a-zA-Z0-9\-\.]/g,'');
     var line = "<li><a href=#"+Text+'>'+$(this).text()+'</a></li>';
     var $newli = $(line);
     $("#cc-tableofcontent__list").append($newli);
