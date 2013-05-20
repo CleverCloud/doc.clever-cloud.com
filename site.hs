@@ -24,11 +24,16 @@ main = hakyll $ do
         route   idRoute
         compile compressCssCompiler
 
-    -- Compile less
-    match "assets/css/*.less" $ do
-        route   $ setExtension "css"
-        compile $ getResourceString >>=
-            withItemBody (unixFilter "lessc" ["-","--yui-compress","-O2"])
+    match "assets/css/**.less" $ do
+        compile $ getResourceBody
+
+    d <- makePatternDependency $ "assets/css/**.less"
+    rulesExtraDependencies [d] $ create ["assets/css/all.css"] $ do
+       route idRoute
+       compile $
+        loadBody "assets/css/all.less"
+        >>= makeItem
+        >>= withItemBody (unixFilter "lessc" ["-","--yui-compress","-O2"])
 
     match "index.html" $ do
         route $ idRoute
