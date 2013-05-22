@@ -15,8 +15,8 @@ Python is available on our platform with the version 2.7.3. You can use Git to d
 
 1. Create a new app by clicking on the **Add an App** button, in the headbar. 
 2. Enter your application's name and description and click "Next".<figure class="cc-content-imglarge">
-  <img src="/assets/images/appjavawar.png"/></figure>
-3. The next screen called "Choose an instance" and let you choose the instances types. Here, we select "Java with WAR/EAR":  <figure class="cc-content-imglarge"><img src="/assets/images/apppython.png"></figure>
+  <img src="/assets/images/apppython.png"/></figure>
+3. The next screen called "Choose an instance" and let you choose the instances types. Here, we select "Python":  <figure class="cc-content-imglarge"><img src="/assets/images/javawarapp.png"></figure>
 4. The next screen called "App Creation Review" . This is the last step before creating your app. Click on **Create** to get your git URI  : <figure class="cc-content-imglarge"><img src="/assets/images/appcreationreviewpython.png"></figure>
 5. *Optional*: If you need a database, go to your the dashboard of your personal account or of your organisation. Select your name or your organisation in the headbard. <figure class="cc-content-img">
   <a href="/assets/images/gotohome.png"><img src="/assets/images/gotohome.png"/></a>
