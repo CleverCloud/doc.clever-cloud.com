@@ -21,5 +21,5 @@ If you need to import a very large dump, please send an email to **support@cleve
 
 ### Video demo
 <p>
-<iframe style="width:738px" height="415" src="http://www.youtube.com/embed/6rJ8zQqIhUw?rel=0&autohide=1&showinfo=0" frameborder="0" controls="0"  allowfullscreen="allowfullscreen"> </iframe>  
+<iframe style="width:640px" height="360" src="http://www.youtube.com/embed/6rJ8zQqIhUw?rel=0&autohide=1&showinfo=0" frameborder="0" controls="0"  allowfullscreen="allowfullscreen"> </iframe>
 </p>
