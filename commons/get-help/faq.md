@@ -24,9 +24,10 @@ When enabling auto-scalability, you have to set a minimum and a maximum of activ
 ### What languages and frameworks are supported by Clever Cloud?
 
 Currently Clever Cloud supports:
+
 * Java (Play Framework 1 & 2, Maven, War files… )
 * Node.js
-* PHP ([see frameworks and CMS](http://localhost:8000/php/php-apps/#frameworks-and-cms))
+* PHP ([see frameworks and CMS](/php/php-apps/#frameworks-and-cms))
 * Python (Django)
 
 ### How many applications can I create with Clever Cloud?
@@ -66,11 +67,11 @@ Absolutely! For now, it's not automatic. Contact us at <support@clever-cloud.com
 
 ### I'd like to map my app to http://mydomain.com.
 
-See [Custom domain Names](http://localhost:8000/admin-console/apps-management/#custom-domain-names) section of Apps Management.
+See [Custom domain Names](/admin-console/apps-management/#custom-domain-names) section of Apps Management.
 
 ### How do I define cron jobs for my application?
 
-See [Custom domain Names](http://localhost:8000/admin-console/apps-management/#custom-domain-names) section of Apps Management.
+See [Custom domain Names](/admin-console/apps-management/#custom-domain-names) section of Apps Management.
 
 ### How many active requests can my app serve at one time?
 
