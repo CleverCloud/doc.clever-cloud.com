@@ -23,65 +23,29 @@ When you deploy an app, a worker is created to host it. Each languages have four
 <table class="table table-bordered table-striped">
   <thead>
     <tr>
+      <th>Size</th>
       <th>Ressource</th>
       <th>Unit</th>
-      <th>Unit cost</th>
+      <th>Unit cost per hour</th>
     </tr>
   </thead>
-  <tbody>
-    <tr>
-      <td><span class="label label-info">Small</span> Worker Java</td>
-      <td>2 Drops</td>
-      <td>0,012c €</td>
-    </tr>
-    <tr>
-      <td>Medium Worker Java</td>
-      <td>2 Drops</td>
-      <td>0,012c €</td>
-    </tr>
-    <tr>
-      <td><span class="label label-info">Small</span> Worker Node</td>
-      <td>2 Drops</td>
-      <td>0,012c €</td>
-    </tr>
-      <td>Medium Worker Node</td>
-      <td>2 Drops</td>
-      <td>0,012c €</td>
-    </tr>
-    <tr>
-      <td><span class="label label-info">Small</span> Worker Python</td>
-      <td>2 Drops</td>
-      <td>0,012c €</td>
-    </tr>
-    <tr>
-      <td>Medium Worker Python</td>
-      <td>2 Drops</td>
-      <td>0,012c €</td>
-    </tr>
-    <tr>
-      <td><span class="label label-info">Small</span> Worker Play!</td>
-      <td>2 Drops</td>
-      <td>0,012c €</td>
-    </tr>
-    <tr>
-      <td>Medium Worker Play!</td>
-      <td>2 Drops</td>
-      <td>0,012c €</td>
-    </tr>
-    <tr>
-      <td><span class="label label-info">Small</span> Worker PHP</td>
-      <td>2 Drops</td>
-      <td>0,012c €</td>
-    </tr>
-    <tr>
-      <td>Medium Worker PHP</td>
-      <td>2 Drops</td>
-      <td>0,012c €</td>
-    </tr>
+  <tbody class="billing-table">
   </tbody>
 </table>
 
 #### Databases & Services billing rates
+
+<table class="table table-bordered table-striped">
+   <tbody><tr><th>Action</th><th colspan="2">Drops</th></tr>
+  <tr><th>&nbsp;</th><th>mySQL</th><th>PostgreSQL</th></tr>
+  <tr><td>Create DB</td><td>6</td><td>6</td></tr>
+  <tr><td>10k SELECT Queries</td><td>1</td><td>1</td></tr>
+  <tr><td>10k INSERT Queries</td><td>2</td><td>2</td></tr>
+  <tr><td>10k DELETE Queries</td><td>2</td><td>2</td></tr>
+  <tr><td>10k UPDATE Queries</td><td>2</td><td>2</td></tr>
+  <tr><td>10k other Queries</td><td>2</td><td>2</td></tr>
+</tbody></table>
+
 
 <table class="table table-bordered table-striped">
   <thead>
@@ -93,19 +57,44 @@ When you deploy an app, a worker is created to host it. Each languages have four
   </thead>
   <tbody>
     <tr>
+      <td>Create DB</td>
+      <td>mySQL</td>
+      <td>6 Drop per 10k operations</td>
+    </tr>
+    <tr>
       <td>Read</td>
       <td>mySQL</td>
-      <td>$0.10 per 100k operations</td>
+      <td>1 Drop per 10k operations</td>
+    </tr>
+    <tr>
+      <td>Insert</td>
+      <td>mySQL</td>
+      <td>2 Drops per 10k operations</td>
+    </tr>
+    <tr>
+      <td>Delete</td>
+      <td>mySQL</td>
+      <td>2 Drops per 10k operations</td>
+    </tr>
+    <tr>
+      <td>Create DB</td>
+      <td>PostgreSQL</td>
+      <td>6 Drop per 10k operations</td>
     </tr>
     <tr>
       <td>Read</td>
       <td>PostgreSQL</td>
-      <td>$0.10 per 100k operations</td>
+      <td>1 Drop per 10k operations</td>
     </tr>
     <tr>
-      <td>Read</td>
-      <td>Couchbase</td>
-      <td>$0.10 per 100k operations</td>
+      <td>Insert</td>
+      <td>PostgreSQL</td>
+      <td>2 Drops per 10k operations</td>
+    </tr>
+    <tr>
+      <td>Delete</td>
+      <td>PostgreSQL</td>
+      <td>2 Drops per 10k operations</td>
     </tr>
   </tbody>
 </table>
@@ -122,7 +111,3 @@ Go to your app's configuration to enable auto-scaling.
   </p>
   <p>In the other hand, the apps scales down by itself if a low activity is observed on the app during a period of 10min.</p>
 </div> 
-
-### Making a Payment
-#### Credit Card
-#### Paypal
