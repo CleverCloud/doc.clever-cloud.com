@@ -39,17 +39,20 @@ The `buckets.json` file must have the following structure:
 It's a json array containing objects with two fields:
 
 * **Bucket**
-: The bucket id. You receive it by mail, or can get it in your
-"services" tab.
+: The bucket id which begins with `bucket_`. You receive it by mail.
 
 * **Folder**
 : The folder you want the bucket to be mounted in. Using the example
 *myFolder*, you can access your buckets via the *myFolder* folder at
-the root of your application.  
-If the folder already exists, it is
-overriden by the bucket. 
-You can also access the bucket using the
-*/app/myFolder* path.
+the root of your application or via */app/myFolder*.  
+
+<div class="alert alert-hot-problems">
+  <h5>Note about target folder</h5>
+  <p>
+    If the folder already exists and is not empty or is
+not a directory, the bucket will be ignored.
+  </p>
+</div>
 
 ### Video demo
 <p>
