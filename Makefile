@@ -25,6 +25,6 @@ publish: build
 	git add -A . && git commit -m "Publish" || true
 	rm -fr ./*
 	git push -f clever publish:master
-	git checkout hakyll
+	git checkout master
 	git checkout -- .
 	git stash pop || true
