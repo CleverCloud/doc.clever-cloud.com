@@ -51,15 +51,19 @@ Then, a *package.json* file is mandatory to initiate your app deployement on Cle
 
 #### Describing package.json  
 
-<div class="alert">
-  <h5>About the package.json file</h5>
-  <p>For every Node.js project you **HAVE TO** provide a package.json file at the root of your project’s
-directory.</p>
-</div>  
   
 
 For every Node.js application you want to deploy on the Clever Cloud, you **HAVE TO**
 provide a `package.json` file at the root of your project’s directory, even if your app has no dependencies.
+
+<div class="alert">
+  <h5>About depedencies:</h5>
+  <ul>
+  <li>For every Node.js project you **HAVE TO** provide a package.json file at the root of your project’s
+directory.</li>
+  <li>Additionally, make sure that the folder "/node_modules" is in your .gitignore file before pushing your app.</li>
+  </ul>
+</div>  
 
 If you already are a Node.js guru, you probably won’t have to change anything to that
 file. Just check the required fields below.
@@ -257,3 +261,10 @@ If you didn't already track your app with git, start by typing:
     ```bash
     $ git push <name> master
     ```
+
+<div class="alert alert-hot-problems">
+<h4>Warning:</h4>
+  <p>The remote branch on Clever Cloud is <strong>ALWAYS</strong> master. If your local branch is not "master", use this syntax:</p>
+  <pre>git push < name > yourbranch:master</pre>
+
+</div>

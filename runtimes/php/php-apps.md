@@ -188,3 +188,10 @@ If you didn't already track your app with git, start by typing:
     $ git push <name> master
     ```
 
+
+<div class="alert alert-hot-problems">
+<h4>Warning:</h4>
+  <p>The remote branch on Clever Cloud is <strong>ALWAYS</strong> master. If your local branch is not "master", use this syntax:</p>
+  <pre>git push < name > yourbranch:master</pre>
+
+</div>
