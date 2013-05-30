@@ -49,6 +49,11 @@ SSH keys are used to establish a secure connection between your computer and Cle
 Adding a SSH key to your Clever Cloud's account is mandatory to deploy via Git.  
 Please note that SSH keys are unique to one user.
 
+<div class="alert alert-hot-problems">
+<h4>Warning:</h4>
+  <p>It's important to not add the same SSH key to more than one account. Otherwise, you'll get an error in the console.</p>
+</div>
+
 1. First we will use the Terminal on linux or Mac for this operation.  
 This could be Git Bash on Windows (you can download it here: [http://msysgit.github.com](http://msysgit.github.com)).
 Open up the command line and run:
@@ -81,12 +86,6 @@ The key fingerprint is:
 
 3. 
 To declare your public SSH key on Clever Cloud, click on My account and go to SSH keys, located in the left pane.
-<figure class="cc-content-img">
-  <img style=" margin: auto; display: block" src="/assets/images/logs.png"/>
-  <figcaption>
-    App's left-pane.
-  </figcaption>
-</figure>
 
 
 In the first field, pass a name for your SSH keys, and in the the second, paste your public SSH key.
@@ -100,3 +99,10 @@ You can delete it if needed or add another one.
 
 Once you have declared your SSH key and created an app, a unique Git repository will be generated on the server for your project. 
 A push from your computer to this repository will deploy your app via SSH, using your public key.
+
+**Rememeber**: your public SSH key should be setup on only one account.  
+
+If you see "*access denied*" or "*password:*", your SSH key may be invalid. 
+
+<i class="icon-question-sign"></i> **Need help about SSH keys?**  
+Contact us at <support@clever-cloud.com> or you can [read more about SSH Keys](http://git-scm.com/book/en/Git-on-the-Server-Generating-Your-SSH-Public-Key).
