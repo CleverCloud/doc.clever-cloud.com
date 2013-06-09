@@ -1,3 +1,30 @@
+//Pricer
+$.ajax({
+  url: 'https://console.clever-cloud.com/ccapi/v1/instances',
+  datatype: 'jsonp',
+  success: _.bind(function(ii) {
+     $.ajax({
+        url: 'https://console.clever-cloud.com/ccapi/v1/prices',
+      datatype: 'jsonp',
+        success: _.bind(function(pp) {
+          var change = _.find(pp, function(p) { return p.currency == 'EUR'; }).value;
+          _.foldl(
+              ii, function($ii, i){
+                _.each(i.flavors, function (f){
+                  $ii.append('<tr><td class="cc-col__price"><span class="label cc-label__price label-info">'
+                    +f.name+
+                    '</span></td><td>'
+                    +i.name+
+                    '</td><td>'+f.price+' Drops</td><td>' + (Math.round(f.price*change*1000) / 1000) + ' €</td></tr>');
+                });
+                return $ii;
+              }, $('.billing-table')
+            )
+        }, this)
+  });
+  }, this)
+});
+
 $(document).ready(function() {
 
   $("h2").append("<h4>Table of Contents</h4><ul id='cc-tableofcontent__list'></ul>");
@@ -33,32 +60,4 @@ $('.cc-go-top').click(function(event) {
   
   $('html, body').animate({scrollTop: 0}, 300);
 })
-});
-
-
-//Pricer
-$.ajax({
-  url: 'https://console.clever-cloud.com/ccapi/v1/instances',
-  datatype: 'jsonp',
-  success: _.bind(function(ii) {
-     $.ajax({
-        url: 'https://console.clever-cloud.com/ccapi/v1/prices',
-      datatype: 'jsonp',
-        success: _.bind(function(pp) {
-          var change = _.find(pp, function(p) { return p.currency == 'EUR'; }).value;
-          _.foldl(
-              ii, function($ii, i){
-                _.each(i.flavors, function (f){
-                  $ii.append('<tr><td class="cc-col__price"><span class="label cc-label__price label-info">'
-                    +f.name+
-                    '</span></td><td>Worker '
-                    +i.name+
-                    '</td><td>'+f.price+' Drops</td><td>' + (Math.round(f.price*change*1000) / 1000) + ' €</td></tr>');
-                });
-                return $ii;
-              }, $('.billing-table')
-            )
-        }, this)
-  });
-  }, this)
 });

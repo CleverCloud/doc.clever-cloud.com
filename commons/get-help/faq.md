@@ -7,7 +7,7 @@ position: 3
 
 ### What is a Scaler?
 
-A <dfn id="def-scaler">scaler</dfn> is a individual container hosting your app. You can attribute one or more Scalers to your apps. Scalers comes in three sizes:
+A <dfn id="def-scaler">scaler</dfn> is a individual container hosting your app. You can attribute one or more Scalers to your apps. Scalers comes in many sizes:
 
 * Tiny Scalers
 * Small Scalers
