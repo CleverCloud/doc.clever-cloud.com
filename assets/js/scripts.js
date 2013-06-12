@@ -15,7 +15,7 @@ $.ajax({
                     +f.name+
                     '</span></td><td>'
                     +i.name+
-                    '</td><td>'+f.price+' Drops</td><td>' + (Math.round(f.price*change*1000) / 1000) + ' €</td></tr>');
+                    '</td><td>'+f.price+' Drops</td><td>' + (Math.round((f.price*6)*change*1000) / 1000) + ' €</td></tr>');
                 });
                 return $ii;
               }, $('.billing-table')
