@@ -47,17 +47,16 @@ $(document).ready(function() {
 
   // Show or hide the sticky footer button
   $(window).scroll(function() {
-  if ($(this).scrollTop() > 200) {
-    $('.cc-go-top').fadeIn(200);
-  } else {
-    $('.cc-go-top').fadeOut(200);
-  }
-});
+    if ($(this).scrollTop() > 200) {
+      $('.cc-go-top').fadeIn(200);
+    } else {
+      $('.cc-go-top').fadeOut(200);
+    }
+  });
 
-// Animate the scroll to top
-$('.cc-go-top').click(function(event) {
-  event.preventDefault();
-  
-  $('html, body').animate({scrollTop: 0}, 300);
-})
+  // Animate the scroll to top
+  $('.cc-go-top').click(function(event) {
+    event.preventDefault();
+    $('html, body').animate({scrollTop: 0}, 300);
+  })
 });
