@@ -124,7 +124,7 @@ It's quite not exhaustive, so it doesn't mean that other CMS can't work on the C
       <td>Status.net</td>
   </tr>
     <tr>
-      <td>Symphony</td>
+      <td>Symfony</td>
       <td> </td>
   </tr>
   </tbody>
