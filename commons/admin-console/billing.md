@@ -35,68 +35,68 @@ When you deploy an app, a worker is created to host it. Each languages have four
 
 #### Databases & Services billing rates
 
-<table class="table table-bordered table-striped">
-   <tbody><tr><th>Action</th><th colspan="2">Drops</th></tr>
-  <tr><th>&nbsp;</th><th>mySQL</th><th>PostgreSQL</th></tr>
-  <tr><td>Create DB</td><td>6</td><td>6</td></tr>
-  <tr><td>10k SELECT Queries</td><td>1</td><td>1</td></tr>
-  <tr><td>10k INSERT Queries</td><td>2</td><td>2</td></tr>
-  <tr><td>10k DELETE Queries</td><td>2</td><td>2</td></tr>
-  <tr><td>10k UPDATE Queries</td><td>2</td><td>2</td></tr>
-  <tr><td>10k other Queries</td><td>2</td><td>2</td></tr>
-</tbody></table>
+<table class="table-pricing-services table table-bordered table-striped">
+    <caption>MySQL pricing plans</caption>
+    <thead>
+      <tr>
+        <td></td>
+        <td><strong>S</strong></td>
+        <td><strong>M</strong></td>
+        <td><strong>L</strong></td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Connexions</strong></td>
+        <td>15</td>
+        <td>30</td>
+        <td>40</td>
+      </tr>
+      <tr>
+        <td><strong>Size</strong></td>
+        <td>1 Go</td>
+        <td>5 Go</td>
+        <td>10 Go</td>
+      </tr>
+      <tr>
+        <td><strong>Price</strong></td>
+        <td>7 €/month (0,23 €/day)</td>
+        <td>35 €/month (1,17 €/day)</td>
+        <td>70 €/month (2,33 €/day)</td>
+      </tr>
+    </tbody>
+</table>
 
-
-<table class="table table-bordered table-striped">
-  <thead>
-    <tr>
-      <th>Operation</th>
-      <th>Service</th>
-      <th>Unit cost</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Create DB</td>
-      <td>mySQL</td>
-      <td>6 Drop per 10k operations</td>
-    </tr>
-    <tr>
-      <td>Read</td>
-      <td>mySQL</td>
-      <td>1 Drop per 10k operations</td>
-    </tr>
-    <tr>
-      <td>Insert</td>
-      <td>mySQL</td>
-      <td>2 Drops per 10k operations</td>
-    </tr>
-    <tr>
-      <td>Delete</td>
-      <td>mySQL</td>
-      <td>2 Drops per 10k operations</td>
-    </tr>
-    <tr>
-      <td>Create DB</td>
-      <td>PostgreSQL</td>
-      <td>6 Drop per 10k operations</td>
-    </tr>
-    <tr>
-      <td>Read</td>
-      <td>PostgreSQL</td>
-      <td>1 Drop per 10k operations</td>
-    </tr>
-    <tr>
-      <td>Insert</td>
-      <td>PostgreSQL</td>
-      <td>2 Drops per 10k operations</td>
-    </tr>
-    <tr>
-      <td>Delete</td>
-      <td>PostgreSQL</td>
-      <td>2 Drops per 10k operations</td>
-    </tr>
-  </tbody>
+<table class="table-pricing-services table table-bordered table-striped">
+    <caption>PostgreSQL pricing plans</caption>
+    <thead>
+      <tr>
+        <td></td>
+        <td><strong>S</strong></td>
+        <td><strong>M</strong></td>
+        <td><strong>L</strong></td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Connexions</strong></td>
+        <td>15</td>
+        <td>30</td>
+        <td>40</td>
+      </tr>
+      <tr>
+        <td><strong>Size</strong></td>
+        <td>1 Go</td>
+        <td>5 Go</td>
+        <td>10 Go</td>
+      </tr>
+      <tr>
+        <td><strong>Price</strong></td>
+        <td>7 €/month (0,23 €/day)</td>
+        <td>35 €/month (1,17 €/day)</td>
+        <td>70 €/month (2,33 €/day)</td>
+      </tr>
+    </tbody>
 </table>
 
 ### Manual Scaling
