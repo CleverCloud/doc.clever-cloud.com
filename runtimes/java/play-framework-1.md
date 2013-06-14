@@ -43,7 +43,7 @@ It means that you can define special keys in your application configuration file
 
 ### Example: set up a mysql database
 ```bash
-%clevercloud.db.url="jdbc:mysql://{yourcleverdbhost}/{dbname}"
+%clevercloud.db.url=jdbc:mysql://{yourcleverdbhost}/{dbname}
 %clevercloud.db.driver=com.mysql.jdbc.Driver
 %clevercloud.db.user={yourcleveruser}
 %clevercloud.db.pass={yourcleverpass}
