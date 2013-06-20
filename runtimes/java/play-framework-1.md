@@ -35,10 +35,10 @@ The only file you have to modify is your application.conf in the conf directory.
 Your application will be run with the option `--%clevercloud`.  
 It means that you can define special keys in your application configuration file that will be used only on the Clever Cloud.
 
-**Production mode**: Set `application.mode` to `PROD` so the files are compiled at startup time and the errors are logged in a file.
+**Production mode**: Set `application.mode` to `prod` so the files are compiled at startup time and the errors are logged in a file.
 
 ```bash
-%clevercloud.application.mode=PROD
+%clevercloud.application.mode=prod
 ```
 
 ### Example: set up a mysql database
