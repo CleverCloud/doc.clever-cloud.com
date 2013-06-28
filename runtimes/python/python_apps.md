@@ -66,6 +66,8 @@ To select which module you want to start, use the key `module` in `deploy` like 
    }
 ```
 
+The module (without .py) must be importable, i.e. be in `PYTHONPATH`. For example with Django: "module":"cc_django_wsgi".
+
 
 #### Manage your static files
 
