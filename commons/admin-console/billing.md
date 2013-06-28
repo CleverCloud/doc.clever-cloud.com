@@ -9,7 +9,7 @@ Workers are virtual machine dedicated to apps. When your application needs more 
 
 ### Estimating Costs
 
-When you deploy an app, a worker is created to host it. Each languages have four type of scalers, aka workers (see [what is a scaler](http://localhost:8000/get-help/faq/#what-is-a-scaler)):
+When you deploy an app, a worker is created to host it. Each languages have four type of scalers, aka workers (see [what is a scaler](/get-help/faq/#what-is-a-scaler)):
 
 * Tiny 
 * Small 
