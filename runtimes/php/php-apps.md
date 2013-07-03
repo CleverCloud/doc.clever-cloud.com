@@ -139,7 +139,7 @@ If you have a request about modules or if you have any question, feel free to as
 ### FTP deployment
 After you created your PHP app in the console and choosed FTP to deploy, your FTP credentials are sent by email within minutes.
 
-1. Use a FTP client with FTPS compliance, able to negotiate using the AUTH TLS method.  
+1. Use a FTP client with support of secure connections using FTPES or SFTP.  
 If your client does not handle this secure mode, the server will refuse the connection.
 2. The credentials are like:  
 
@@ -148,6 +148,9 @@ host = ftpes://upload.clever-cloud.com/
 username = userxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 password = ***************
 ```
+
+_Note: you can also use `sftp://upload.clever-cloud.com` as hostname._
+
 <div class="alert alert-hot-problems">
   <h5>Important:</h5>
   <p>Unlike git, FTP deployment starts a instance **as soon as** you create it.</p>
