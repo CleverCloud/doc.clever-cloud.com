@@ -25,6 +25,35 @@ PHP is a widely-used general-purpose scripting language that is especially suite
 </figure>
 7. Then, click on **Services** in the left tab, and choose a database. In our case, we will choose mySQL. Click on the mySQL button, and then on "Add service". Your credentials will be sent by email.<figure class="cc-content-imglarge"><img src="/assets/images/mysql.png"></figure>
 
+###Configuration file
+
+The configuration file for your PHP application must be
+`clevercloud/php.json`, that is a *php.json* file in a *clevercloud*
+folder at the root of your application.
+
+#### Change the webroot
+
+Since one of the best practices of PHP development is to take the libraries and core files outside the webroot, you may want to set another webroot than the default one (*the root of your application*).
+
+To change the webroot, just set the key `webroot` in the `deploy` part
+of the configuration file *clevercloud/php.json* with the absolute path (*from the root of your application*) of your new public folder.
+
+In the following example we want to set the webroot to the folder `/public`:
+
+```javascript
+  {
+    "deploy": {
+      "webroot": "/public"
+    }
+  }
+```
+
+Please note the absolute path style: `/public`.
+
+#### Limitation
+
+The change of the webroot will be rejected during the deployment if the target directory does not exist or is not a directory.
+
 ### Cron configuration file
 
 The configuration file used for crontab is `clevercloud/cron.json`.
@@ -63,36 +92,6 @@ Example of cc_cron.json which executes the file `cron.php` every 5 minutes:
 
 
 _* For more information about the syntax, you can check <a href="http://en.wikipedia.org/wiki/Cron">this page</a>_
-
-
-###Configuration file
-
-The configuration file for your PHP application must be
-`clevercloud/php.json`, that is a *php.json* file in a *clevercloud*
-folder at the root of your application.
-
-#### Change the webroot
-
-Since one of the best practices of PHP development is to take the libraries and core files outside the webroot, you may want to set another webroot than the default one (*the root of your application*).
-
-To change the webroot, just set the key `webroot` in the `deploy` part
-of the configuration file *clevercloud/php.json* with the absolute path (*from the root of your application*) of your new public folder.
-
-In the following example we want to set the webroot to the folder `/public`:
-
-```javascript
-  {
-    "deploy": {
-      "webroot": "/public"
-    }
-  }
-```
-
-Please note the absolute path style: `/public`.
-
-#### Limitation
-
-The change of the webroot will be rejected during the deployment if the target directory does not exist or is not a directory.
 
 ### Frameworks and CMS
 
