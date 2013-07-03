@@ -25,10 +25,9 @@ PHP is a widely-used general-purpose scripting language that is especially suite
 </figure>
 7. Then, click on **Services** in the left tab, and choose a database. In our case, we will choose mySQL. Click on the mySQL button, and then on "Add service". Your credentials will be sent by email.<figure class="cc-content-imglarge"><img src="/assets/images/mysql.png"></figure>
 
-### CRON configuration file
+### Cron configuration file
 
-The configuration file used for crontab is **clevercloud/cron.json**. It
-is only available for <strong>PHP</strong> applications at this time.
+The configuration file used for crontab is `clevercloud/cron.json`.
 
 Here is the general syntax:
 
@@ -57,10 +56,11 @@ Example of cc_cron.json which executes the file `cron.php` every 5 minutes:
   ]
 ```
 
+<div class="alert alert-hot-problems">
+<h4>Warning:</h4>
+  <p>We do not currently support the clustering of cron tasks, you must manage it yourself if your application requires more than one instance.</p>
+</div>
 
-#### Note about crontab clustering
-
-We do not currently support the clustering of crontab, you must manage it yourself if your application requires more than one instance.
 
 _* For more information about the syntax, you can check <a href="http://en.wikipedia.org/wiki/Cron">this page</a>_
 

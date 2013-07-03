@@ -86,7 +86,7 @@ When your bucket is available, you must set your public folder in `clevercloud/p
 *Note: the path of your must be absolute regarding the root of your application.*
 
 
-### CRON configuration file
+### Cron configuration file
 
 The configuration file used for crontab is `clevercloud/cron.json`.
 
@@ -109,10 +109,10 @@ There are two restrictions about the usage of crontab on our platform:
 
 You can use the special variable `$ROOT` to refer to the root folder of your application.
 
-
-#### Note about crontab clustering
-
-We do not currently support the clustering of crontab, you must manage it yourself if your application requires more than one instance.
+<div class="alert alert-hot-problems">
+<h4>Warning:</h4>
+  <p>We do not currently support the clustering of cron tasks, you must manage it yourself if your application requires more than one instance.</p>
+</div>
 
 _* For more information about the syntax, you can check <a href="http://en.wikipedia.org/wiki/Cron">this page</a>_
 
