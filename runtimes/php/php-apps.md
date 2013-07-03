@@ -65,7 +65,7 @@ We do not currently support the clustering of crontab, you must manage it yourse
 _* For more information about the syntax, you can check <a href="http://en.wikipedia.org/wiki/Cron">this page</a>_
 
 
-###Configuration files for PHP applications
+###Configuration file
 
 The configuration file for your PHP application must be
 `clevercloud/php.json`, that is a *php.json* file in a *clevercloud*
