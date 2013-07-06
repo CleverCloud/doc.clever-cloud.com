@@ -9,7 +9,7 @@ Workers are virtual machine dedicated to apps. When your application needs more 
 
 ### Estimating Costs
 
-When you deploy an app, a worker is created to host it. Each languages have four type of scalers, aka workers (see [what is a scaler](/get-help/faq/#what-is-a-scaler)):
+When you deploy an app, a worker is created to host it. Each languages have four types of scaler, aka worker (see [what is a scaler](/get-help/faq/#what-is-a-scaler)):
 
 * Tiny 
 * Small 
@@ -19,7 +19,7 @@ When you deploy an app, a worker is created to host it. Each languages have four
 * Huge 
 * XtraHuge 
 
-#### Scalers billing rates
+#### Scaler billing rates
 <table class="table table-bordered table-striped">
   <thead>
     <tr>
@@ -33,7 +33,7 @@ When you deploy an app, a worker is created to host it. Each languages have four
   </tbody>
 </table>
 
-#### Databases & Services billing rates
+#### Database & Service billing rates
 
 <table class="table-pricing-services table table-bordered table-striped">
     <caption>MySQL pricing plans</caption>
