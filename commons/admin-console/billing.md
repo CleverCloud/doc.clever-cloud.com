@@ -4,7 +4,7 @@ position: 2
 ---
 ## Billing
 Each app and service consume computing ressources. Ressources are defined by two factors : time and drops. The drop is the unit of computing energy used by workers.
-Workers are virtual machine dedicated to apps. When your application needs more ressrouces, you can decide to add workers or switch for a more powerful one.
+Workers are virtual machine dedicated to apps. When your application needs more ressources, you can decide to add workers or switch for a more powerful one.
 
 
 ### Estimating Costs
