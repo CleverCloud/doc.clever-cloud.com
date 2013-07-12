@@ -59,4 +59,35 @@ $(document).ready(function() {
     event.preventDefault();
     $('html, body').animate({scrollTop: 0}, 300);
   })
+
+  // Parts of menu hidden if needed
+  activeHeadbar();
+  
+  // reorder left-menu
+  reorderLeftMenu();
 });
+
+var activeHeadbar = function() {
+  _.each(["java", "php", "scala", "nodejs", "python"], function(x, y) {
+    if (_.contains(window.location.pathname.split( '/' ), x)) {
+      $($(".cc_headbar__menu li")[y]).addClass("active");
+    }
+  })
+}
+
+var list = ["Clever Cloud Overview", "Java Runtime", "PHP Runtime", "Scala Runtime", "Node.js Runtime", "Python Runtime", "Databases and Services", "Add-ons", "Admin Console", "Get Help"];
+
+var reorderLeftMenu = function() {
+  var temp = Array();
+  _.each($(".cc-sidebar span"), function(key, val){
+    temp.push({"val":$(key).text(), "span": key, "ul": $(".cc-sidebar ul")[val]});
+  })
+  var html = "";
+  _.each(list, function(elt) {
+    var htmltemp = _.find(temp, function(elt1){
+      return elt1.val == elt;
+    });
+    html = html + htmltemp.span.outerHTML + htmltemp.ul.outerHTML;
+  });
+  $(".cc-sidebar").html(html);
+}
