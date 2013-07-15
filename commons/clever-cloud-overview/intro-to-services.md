@@ -5,14 +5,6 @@ position: 2
 
 ## Intro to Services
 
-The aim of this article is to help you to make the difference between these three entities: 
-
-* Apps
-* Services
-* Add-ons
-
-These are all billable elements.
-
 ### Defining Services
 
 First, services are declared on the Console. A service could be a database, a cache system or a search engine. Like Apps, Services' environment is embed into Clever Cloud's architecture: these are not services external to Clever Cloud.
