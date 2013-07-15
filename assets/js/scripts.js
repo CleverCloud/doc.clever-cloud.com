@@ -27,15 +27,16 @@ $.ajax({
 
 $(document).ready(function() {
 
-  $("h2").append("<h4>Table of Contents</h4><ul id='cc-tableofcontent__list'></ul>");
-
-  //Instanciate an index for each h3 
-  $(".cc-content h3").each( function() {
-    var section_id = $(this).attr("id");
-    var line = "<li><a href=#"+section_id+'>'+$(this).text()+'</a></li>';
-    var $newli = $(line);
-    $("#cc-tableofcontent__list").append($newli);
-  });
+  //Instanciate an index for each h3
+  if($(".cc-content h3").length > 1) {
+    $("h2").append("<h4>Table of Contents</h4><ul id='cc-tableofcontent__list'></ul>");
+    $(".cc-content h3").each( function() {
+      var section_id = $(this).attr("id");
+      var line = "<li><a href=#"+section_id+'>'+$(this).text()+'</a></li>';
+      var $newli = $(line);
+      $("#cc-tableofcontent__list").append($newli);
+    });
+  }
   
   //Smooth scrolling
   $('.cc-content__text ul li a').click(function(){
