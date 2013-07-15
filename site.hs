@@ -38,8 +38,14 @@ main = hakyll $ do
     match "index.html" $ do
         route $ idRoute
         compile $ getResourceBody
-                >>= loadAndApplyTemplate "templates/default.html" mainCtx
-                >>= cleanUrls
+            >>= loadAndApplyTemplate "templates/default.html" mainCtx
+            >>= cleanUrls
+
+    match "results.html" $ do
+        route $ idRoute
+        compile $ getResourceBody
+            >>= loadAndApplyTemplate "templates/default.html" mainCtx
+            >>= cleanUrls
 
     match "templates/*" $ compile templateCompiler
 
