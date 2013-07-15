@@ -134,5 +134,10 @@ If you didn't already track your app with git, start by typing:
 <h4>Warning:</h4>
   <p>The remote branch on Clever Cloud is <strong>ALWAYS</strong> master. If your local branch is not "master", use this syntax:</p>
   <pre>git push < name > yourbranch:master</pre>
-
 </div>
+
+### Tutorial - Play! application deployment
+
+<p>
+	<iframe width="640"; height="360" src="//www.youtube.com/embed/HL366BhWFMw" frameborder="0" allowfullscreen></iframe>
+</p>
