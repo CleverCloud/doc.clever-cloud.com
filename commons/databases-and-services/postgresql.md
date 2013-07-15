@@ -2,7 +2,7 @@
 title: PostgreSQL
 position: 2
 ---
-##PostgreSQL : Managing databases
+##PostgreSQL
 
 ### Add a database
 1. Select in the headbar the appropriate organisation.
@@ -11,7 +11,7 @@ position: 2
     Adding Services in Clever Cloud.
 </figcaption>
 4. You can now choose PostgreSQL among the available services : <img class="thumbnail img_doc" src="/img/mysql.png">
-5. Clicking on the PostgreSQL button will create it. You will receive the new database's credentials by email a few minutes later. <br>You can choose to store your credentials in Clever Cloud if you want to. Mail <support@clever-cloud.com> if you need to retrieve them.
+5. Click on the PostgreSQL button to create it. You will receive the new database's credentials by email a few seconds later. <br>You can choose to store your credentials in Clever Cloud if you want to. Mail <support@clever-cloud.com> if you need to retrieve them.
 6. Under **Installed** you will find your running services. A tagging system allows you to easily identify services for differents apps or purposes.
 <figure class="cc-content-img"><a href="/assets/images/intro-services2.png"><img src="/assets/images/intro-services2.png"></a></figure>
   <figcaption>
@@ -21,7 +21,10 @@ position: 2
 
 ### Migrate from an old database
 Some applications require a populated database to run properly. 
-If you want to import your **SQL** dump, go to <a href="https://dbms-adminer.clever-cloud.com/adminer/">https://dbms-adminer.clever-cloud.com/adminer/</a>.
+If you want to import your **SQL** dump, you can use several methods:
+1. <a href="https://dbms-adminer.clever-cloud.com/adminer/">Our WebGUI (Adminer)</a>.
+2. `psql`
+3. or any PostgreSQL client such as pgAdmin 3.
 
 If you need to import a very large dump, please send an email to **support@clever-cloud.com**.
 
