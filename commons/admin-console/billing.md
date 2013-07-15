@@ -3,8 +3,8 @@ title: Billing
 position: 2
 ---
 ## Billing
-Each app and service consume computing ressources. Ressources are defined by two factors : time and drops. The drop is the unit of computing energy used by workers.
-Workers are virtual machine dedicated to apps. When your application needs more ressources, you can decide to add workers or switch for a more powerful one.
+Each app and service consume computing resources. resources are defined by two factors : time and drops. The drop is the unit of computing energy used by workers.
+Workers are virtual machine dedicated to apps. When your application needs more resources, you can decide to add workers or switch for a more powerful one.
 
 
 ### Estimating Costs
@@ -24,7 +24,7 @@ When you deploy an app, a worker is created to host it. Each languages have four
   <thead>
     <tr>
       <th>Size</th>
-      <th>Ressource</th>
+      <th>Resource</th>
       <th>Unit</th>
       <th>Unit cost per hour</th>
     </tr>
@@ -128,5 +128,5 @@ Clever Cloud allows you to scale your apps automatically if your application is 
 When you app will experience a load, it will progressively use more and more scalers, until it reaches the maximum amount you have setup.
 
 <div class="alert alert-hot-problems"><h5>Automatic-scaling and variable costs</h5>
-<p>Many of our users may fear auto-scaling if their is suddenly consuming a lot of ressources.</p><p>But the apps scales down by itself if a low activity is observed during a period of 10min.</p></div> 
+<p>Many of our users may fear auto-scaling if their is suddenly consuming a lot of resources.</p><p>But the apps scales down by itself if a low activity is observed during a period of 10min.</p></div> 
 
