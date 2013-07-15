@@ -62,13 +62,19 @@ $(document).ready(function() {
 
   // Parts of menu hidden if needed
   activeHeadbar();
+
+  // hide non concerned parts in left menu bar
+  hideNonConcernedMenuElts();
   
   // reorder left-menu
   reorderLeftMenu();
+
 });
 
+var lgList = ["java", "php", "scala", "nodejs", "python"];
+
 var activeHeadbar = function() {
-  _.each(["java", "php", "scala", "nodejs", "python"], function(x, y) {
+  _.each(lgList, function(x, y) {
     if (_.contains(window.location.pathname.split( '/' ), x)) {
       $($(".cc_headbar__menu li")[y]).addClass("active");
     }
@@ -90,4 +96,13 @@ var reorderLeftMenu = function() {
     html = html + htmltemp.span.outerHTML + htmltemp.ul.outerHTML;
   });
   $(".cc-sidebar").html(html);
+}
+
+var hideNonConcernedMenuElts = function() {
+  _.each(lgList, function(x, y) {
+    if (!_.contains(window.location.pathname.split( '/' ), x)) {
+      $($($(".cc-sidebar ." + x))[0]).hide();
+      $($($(".cc-sidebar ." + x))[1]).hide();
+    }
+  })
 }
