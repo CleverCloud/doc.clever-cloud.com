@@ -25,19 +25,9 @@
           <div class="span9">
 
             <div class="searchbar">
-              <script>
-                (function() {
-                  var cx = '013002337599173140716:gpthov9nywo';
-                  var gcse = document.createElement('script');
-                  gcse.type = 'text/javascript';
-                  gcse.async = true;
-                  gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
-                      '//www.google.com/cse/cse.js?cx=' + cx;
-                  var s = document.getElementsByTagName('script')[0];
-                  s.parentNode.insertBefore(gcse, s);
-                })();
-              </script>
-              <gcse:searchbox-only></gcse:searchbox-only>
+              <form method="get" id="searchform" action="/search.html">
+                <input type="text" placeholder="Search" class="field" name="q" id="q">
+              </form>
             </div>
             <ul class="cc-nav pull-right cc_headbar__menu">
               <li><a class="cc_headbar__btn " href="/java">Java</a></li>
