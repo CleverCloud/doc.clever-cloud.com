@@ -14,9 +14,8 @@ You will be able to retrieve generated data between two deployments.
 
 1. Select in the headbar the appropriate organization.
 2. Click on the "Services" tab in your organization: <figure class="cc-content-img"><a href="/assets/images/intro-services1.png"><img src="/assets/images/intro-services1.png"></a></figure><figcaption>Adding Services in Clever Cloud.</figcaption>
-4. You can now choose FS Buckets among the available services.
-5. Click on the FS Buckets' button to create it. You will receive the new bucket's credentials by email a few seconds later.
-6. Under **Installed** you will find your running services. A tagging system allows you to easily identify services for differents applications or purposes.
+3. Click on the FS Buckets' button to create it. You will receive the new bucket's credentials by email a few seconds later.
+4. Under **Installed** you will find your running services. A tagging system allows you to easily identify services for differents applications or purposes.
 <figure class="cc-content-img"><a href="/assets/images/intro-services2.png"><img src="/assets/images/intro-services2.png"></a></figure>
   <figcaption>
     Services Management in Clever Cloud.
