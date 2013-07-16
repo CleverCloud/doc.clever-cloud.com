@@ -4,20 +4,20 @@ position: 4
 ---
 ## Couchbase <span class="cc-beta pull-right" title="Currently in Beta version"></span>
 
-*Couchbase is an open source, distributed (shared-nothing architecture) NoSQL document-oriented database.*
+*Couchbase is an open source, distributed (shared nothing architecture) NoSQL document-oriented database.*
 
 ### Add a database
-1. Select in the headbar the appropriate organisation.
-2. Click on the "Services" tab in you organisation : <figure class="cc-content-img"><a href="/assets/images/intro-services1.png"><img src="/assets/images/intro-services1.png"></a></figure><figcaption>Adding Services in Clever Cloud.</figcaption>
-4. You can now choose Couchbase among the available services.
-5. Click on the CouchBase's button to create it. You will receive the new database's credentials by email a few seconds later. <br>You can choose to store your credentials in Clever Cloud if you want to. Mail <support@clever-cloud.com> if you need to retrieve them.
-6. Under **Installed** you will find your running services. A tagging system allows you to easily identify services for differents apps or purposes.
+
+1. Select in the headbar the appropriate organization.
+2. Click on the "Services" tab in you organization: <figure class="cc-content-img"><a href="/assets/images/intro-services1.png"><img src="/assets/images/intro-services1.png"></a></figure><figcaption>Adding Services in Clever Cloud.</figcaption>
+3. Click on the CouchBase's button to create it. You will receive the new database's credentials by email a few seconds later. <br>You can choose to store your credentials in Clever Cloud if you want to. Mail <support@clever-cloud.com> if you need to retrieve them.
+4. Under **Installed** you will find your running services. A tagging system allows you to easily identify services for differents applications or purposes.
 <figure class="cc-content-img"><a href="/assets/images/intro-services2.png"><img src="/assets/images/intro-services2.png"></a></figure>
   <figcaption>
     Services Management in Clever Cloud.
 </figcaption>
 
-If you need to import a very large dump, please send an email to **support@clever-cloud.com**.
+If you need to import a very large dump, please send an email to <support@clever-cloud.com>.
 
 ### Video demo
 <p>
