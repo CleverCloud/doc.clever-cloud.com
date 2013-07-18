@@ -2,7 +2,12 @@
 title: File System Buckets
 position: 3
 ---
-## FS Buckets: keep and manage data files.
+## FS Buckets: keep and manage data files <span class="cc-beta pull-right" title="Currently in Beta version"></span>
+
+<div class="alert alert-hot-problems">
+  <h5>Note for Beta Version</h5>
+  <div>FS Buckets are free during the beta period. No credits wil be charged.</div>
+</div>
 
 The Git deployment does not allow to keep generated data files between deployments. To avoid the loss of your data, you have to mount a persistent filesystem. That is what FS Buckets are for.
 

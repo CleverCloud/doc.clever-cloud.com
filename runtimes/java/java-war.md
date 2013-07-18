@@ -17,7 +17,7 @@ In <abbr title="Java Enterprise Edition">J2EE</abbr> application modules are pac
 
 <div class="alert alert-hot-problems">
 	<h5>Note for Alpha Version</h5>
-	<div>WAR and EAR apps are free during the Alpha period. No Drops wil be charged.</div>
+	<div>WAR and EAR apps are free during the Alpha period. No credits wil be charged.</div>
 </div>
 
 ### Available containers
