@@ -27,6 +27,9 @@ $.ajax({
 
 $(document).ready(function() {
 
+  // redirections
+  checkRedirections();
+
   //Instanciate an index for each h3
   if($(".cc-content h3").length > 1) {
     $("h2").append("<h4>Table of Contents</h4><ul id='cc-tableofcontent__list'></ul>");
@@ -106,4 +109,10 @@ var hideNonConcernedMenuElts = function() {
       $($($(".cc-sidebar ." + x))[1]).hide();
     }
   })
+}
+
+var checkRedirections = function() {
+  if (window.location.pathname == "/admin-console/apps-management/" && window.location.hash == "#ssh-keys") {
+    window.location = "/admin-console/ssh-keys/";
+  }
 }
