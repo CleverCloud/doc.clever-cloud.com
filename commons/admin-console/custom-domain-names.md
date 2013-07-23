@@ -11,6 +11,7 @@ When creating an application, you have two (non exclusive) choices for domain na
 * Using a personal domain name
 
 <figure class="cc-content-img"><img  src="/assets/images/domain1.png"></figure>
+<figcaption>Example of domain names customization</figcaption>
 
 ### *.cleverapps.io domain
 
@@ -33,6 +34,7 @@ You have two non exclusive choices to add custom personal domain names:
     <figure class="cc-content-img">
       <img  src="/assets/images/domain2.png">
     </figure>
+    <figcaption>CNAME records example</figcaption>
 
 <!-- -->
 <br/>
