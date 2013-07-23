@@ -24,12 +24,12 @@ publish: build
 	rm -fr _source
 	git add -A . && git commit -m "Publish" || true
 	rm -fr ./*
-	git push -f git+ssh://git@push.clever-cloud.com/app_90ba6f3c-065a-471b-9ca1-f2e98fcdddb3.git publish:master
+	git push -f git+ssh://git@push.clever-cloud.com/app_1c28a3c0-6e4c-4064-8c41-edb2b4a582c3.git publish:master
 	git checkout master
 	git checkout -- .
 	git stash pop || true
 
-testpublish: build
+preprodpublish: build
 	git stash save
 	git checkout publish || git checkout --orphan publish
 	mkdir _source
@@ -38,7 +38,7 @@ testpublish: build
 	rm -fr _source
 	git add -A . && git commit -m "Publish" || true
 	rm -fr ./*
-	git push -f git+ssh://git@push.clever-cloud.com/app_da73f1cf-915c-4fb1-af1f-a21ed1cfaf1c.git publish:master
+	git push -f git+ssh://git@push.clever-cloud.com/app_c9396b59-7f1b-42c1-9855-90b7cc135dc9.git publish:master
 	git checkout master
 	git checkout -- .
 	git stash pop || true
