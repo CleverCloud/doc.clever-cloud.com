@@ -1,6 +1,6 @@
 ---
 title: SSH Keys
-position: 5
+position: 1
 ---
 
 ## SSH keys

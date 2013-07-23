@@ -1,6 +1,6 @@
 ---
 title: Billing
-position: 2
+position: 4
 ---
 ## Billing
 Each app and service consume computing resources. resources are defined by two factors : time and drops. The drop is the unit of computing energy used by workers.

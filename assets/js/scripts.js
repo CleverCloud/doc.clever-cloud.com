@@ -115,4 +115,8 @@ var checkRedirections = function() {
   if (window.location.pathname == "/admin-console/apps-management/" && window.location.hash == "#ssh-keys") {
     window.location = "/admin-console/ssh-keys/";
   }
+
+  if (window.location.pathname == "/admin-console/apps-management/" && window.location.hash == "#custom-domain-names") {
+    window.location = "/admin-console/custom-domain-names/";
+  }
 }
