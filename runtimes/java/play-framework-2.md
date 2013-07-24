@@ -11,7 +11,7 @@ This guide will show you how to deploy applications for Play Framework 2 only.
 ### Overview
 Play! is a framework created by Guillaume Bort. It allows you to quickly create ready-to-use web application with Java or Scala. There are currently two major versions of this framework: 1.2 and 2. They are really different from each other. This guide will show you how to deploy applications for both versions of the Play! Framework.
 
-More infos on <a target="_blank" href="http://www.playframework.org">Play Framework.com</a>. 
+More info on <a target="_blank" href="http://www.playframework.com">playframework.com</a>.
 
 ### Getting started
 
@@ -139,5 +139,5 @@ If you didn't already track your app with git, start by typing:
 ### Tutorial - Play! application deployment
 
 <p>
-	<iframe width="640"; height="360" src="//www.youtube.com/embed/HL366BhWFMw" frameborder="0" allowfullscreen></iframe>
+	<iframe width="640"; height="360" src="http://www.youtube.com/embed/HL366BhWFMw" frameborder="0" allowfullscreen></iframe>
 </p>

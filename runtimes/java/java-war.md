@@ -104,7 +104,7 @@ Availables onfiguration values for "container" of war.json:
       <tr>
          <td>JBOSS6</td>
          <td>Use JBoss AS 6.x
-         (see <a href="http://www.jboss.org/jbossas">http://www.jboss.org/jbossas</a></td>
+         (see <a href="http://www.jboss.org/jbossas">http://www.jboss.org/jbossas</a>)</td>
       </tr>
       <tr>
          <td>JBOSS7</td>
