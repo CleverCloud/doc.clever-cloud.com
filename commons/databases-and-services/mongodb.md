@@ -31,4 +31,4 @@ You can connect to your database like on your local machine with this prompt:
 
 ### MongoDB + Node.js sample application
 
-Simple MongoDB + Node.js todo list: 
+This [page](/nodejs/nodejs-mongodb-sample-app/) points out the process to deploy a Simple MongoDB + Node.js Todolist application on Clever Cloud.
