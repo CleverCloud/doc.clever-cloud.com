@@ -12,7 +12,7 @@ You will be able to retrieve generated data between two deployments.
 
 ### Create a FS Bucket
 
-[This article](/databases-and-services/add-service/) describes the process to add a File Bucket System on Clever Cloud.
+[This article](/databases-and-services/add-service/) describes the process to add a File System Bucket on Clever Cloud.
 
 
 ### Configure your application
