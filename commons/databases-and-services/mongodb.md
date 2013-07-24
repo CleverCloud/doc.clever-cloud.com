@@ -28,6 +28,28 @@ You can connect to your database like on your local machine with this prompt:
 
 ``mongo db_name -u db_username -p db_password --host db_host``
 
+#### Web administration tools
+
+Below are some examples of web tools that can be used to manage your Mongo database :
+
+* [https://github.com/wearefractal/smog](https://github.com/wearefractal/smog)
+
+<figure class="cc-content-img">
+  <img src="/assets/images/mongo-smog-screenshot.png"/></a>
+</figure>
+<figcaption>
+    Smog admin panel overview
+</figcaption>
+
+* [https://github.com/andzdroid/mongo-express](https://github.com/andzdroid/mongo-express)
+
+<figure class="cc-content-img">
+  <img src="/assets/images/mongo-express-screenshot.png"/></a>
+</figure>
+<figcaption>
+    Express-Mongo admin panel overview
+</figcaption>
+
 
 ### MongoDB + Node.js sample application
 
