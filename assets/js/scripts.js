@@ -27,15 +27,19 @@ $.ajax({
 
 $(document).ready(function() {
 
-  $("h2").append("<h4>Table of Contents</h4><ul id='cc-tableofcontent__list'></ul>");
+  // redirections
+  checkRedirections();
 
-  //Instanciate an index for each h3 
-  $(".cc-content h3").each( function() {
-    var section_id = $(this).attr("id");
-    var line = "<li><a href=#"+section_id+'>'+$(this).text()+'</a></li>';
-    var $newli = $(line);
-    $("#cc-tableofcontent__list").append($newli);
-  });
+  //Instanciate an index for each h3
+  if($(".cc-content h3").length > 1) {
+    $("h2").append("<h4>Table of Contents</h4><ul id='cc-tableofcontent__list'></ul>");
+    $(".cc-content h3").each( function() {
+      var section_id = $(this).attr("id");
+      var line = "<li><a href=#"+section_id+'>'+$(this).text()+'</a></li>';
+      var $newli = $(line);
+      $("#cc-tableofcontent__list").append($newli);
+    });
+  }
   
   //Smooth scrolling
   $('.cc-content__text ul li a').click(function(){
@@ -62,13 +66,19 @@ $(document).ready(function() {
 
   // Parts of menu hidden if needed
   activeHeadbar();
+
+  // hide non concerned parts in left menu bar
+  hideNonConcernedMenuElts();
   
   // reorder left-menu
   reorderLeftMenu();
+
 });
 
+var lgList = ["java", "php", "scala", "nodejs", "python"];
+
 var activeHeadbar = function() {
-  _.each(["java", "php", "scala", "nodejs", "python"], function(x, y) {
+  _.each(lgList, function(x, y) {
     if (_.contains(window.location.pathname.split( '/' ), x)) {
       $($(".cc_headbar__menu li")[y]).addClass("active");
     }
@@ -90,4 +100,23 @@ var reorderLeftMenu = function() {
     html = html + htmltemp.span.outerHTML + htmltemp.ul.outerHTML;
   });
   $(".cc-sidebar").html(html);
+}
+
+var hideNonConcernedMenuElts = function() {
+  _.each(lgList, function(x, y) {
+    if (!_.contains(window.location.pathname.split( '/' ), x)) {
+      $($($(".cc-sidebar ." + x))[0]).hide();
+      $($($(".cc-sidebar ." + x))[1]).hide();
+    }
+  })
+}
+
+var checkRedirections = function() {
+  if (window.location.pathname == "/admin-console/apps-management/" && window.location.hash == "#ssh-keys") {
+    window.location = "/admin-console/ssh-keys/";
+  }
+
+  if (window.location.pathname == "/admin-console/apps-management/" && window.location.hash == "#custom-domain-names") {
+    window.location = "/admin-console/custom-domain-names/";
+  }
 }

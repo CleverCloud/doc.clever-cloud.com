@@ -71,12 +71,7 @@ figcaption{
     color:       @black;
   }
 }
-.cc_headbar__btn:hover{
-    text-decoration: none;
-    padding-bottom:  23px;
-    border-bottom:   3px solid;
-    color:           @pink;
-}
+
 .cc_headbar__btn:hover{
     text-decoration: none;
     padding-bottom:  23px;
@@ -93,15 +88,19 @@ figcaption{
   }
 }
 
-.cc_headbar__logo:hover, {
+.cc_headbar__logo:hover {
     text-decoration: none;
     color:           @pink;
 }
 
-.cc_headbar__btn{
+.cc_headbar__btn {
   cursor:    pointer;
   color:     @mediumgrey;
   font-size: 14px;
+}
+
+.cc_headbar__logo_parent {
+  padding-top: 3px;
 }
 
 .cc_login__btn{
@@ -122,6 +121,7 @@ figcaption{
 
 .cc_headbar__menu {
   font-weight: bold;
+  padding-top: 4px;
 }
 .cc-sidebar a{
   color: @mediumgrey;
@@ -254,5 +254,20 @@ span.cc-beta:before{
   background-color: rgba(0, 0, 0, 0.6);
   text-decoration: none;
   color: white;
+}
 
+.searchbar {
+  width: 40%;
+  float: left;
+  height: 30px;
+  input {
+    box-shadow: none;
+    &:focus {
+      box-shadow: none;
+    };
+  }
+}
+
+.gsc-search-button {
+  display: none;
 }

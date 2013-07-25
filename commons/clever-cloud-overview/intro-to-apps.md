@@ -3,44 +3,30 @@ title: Intro to Apps
 position: 1
 ---
 
-## Intro to Apps
+## Introduction to Applications
 
-The aim of this article is to help you to make the difference between these three entities: 
+### Application's definition
 
-* Apps
-* Services
-* Add-ons
+An application is defined on Clever Cloud by the following elements:
 
-These are all billable elements.
+* a dedicated language/framework
+* a deployment method (FTP and/or Git)
+* RAM and CPU consumption, depending on the language or framework used
+* an optional configuration file you've added to your project
 
-### Defining Apps
+If one of these elements is missing, Clever Cloud can't deploy your application properly (except the configuration file, optional in some cases).
 
-First, apps are declared on the Console. Each kind of app have :
-
-* A dedicated language / framework
-* A way of deployment (FTP and / or Git)
-* Specific resources consumption (RAM, CPU etc.), depending on the language or framework used
-* An optional configuration file you've added to your project
-
-If one of these elements is missing, Clever Cloud can't deploy your app properly (except the configuration file, optional in some cases).
 Available languages are listed below: 
 
-* Java [Play Framework 1 & 2, Maven, War files… ]
-* Node.js
-* PHP 
-* Python [Django]
-
-Each app is located in a Clever Cloud organisation. If you haven't created an organisation, the default location of your app in Clever Cloud console is your personal organisation.  
-Once you create an app, Clever Cloud gives you immediately the way to deploy your app: via Git (a URL is generated) or via FTP (credentials are sent to you via email).
+* [Java](/java) [Play Framework 1 & 2, Maven, War files… ]
+* [Node.js](/nodejs)
+* [PHP](/php)
+* [Python](/python)
+* [Scala](/scala)
 
 
-### Clever Cloud's architecture
+### How it works
 
-When an app is pushed via Git, the platform receive it. Then its look at the resources' requirements, and and initiate the creation of your new app in the platform, when its target environment is ready.  
-Our log system retrieves every traces from your application, to stream it to the console. The console gives you the ability to check your apps status, and to pause or restart it.
+When an application is pushed, the platform receives it. It then checks the resources’ requirements. If they are complete, the deployment is launched. When finished and successfull, the application is up and running.
 
-### Analytic and consumption
-An app is billed according to its consumption. Clever Cloud checks every ten minutes an apps consumption, and fire an event of consumption to your account.  
-So you can monitor in real time through the console your apps consumptions the amount of credits you have consumed (drops).  
-
-The charts in the homepage shows you how many Drops were consumed each days:<figure class="cc-content-imglarge"><img src="/assets/images/analytics.png"></figure>
+The log system retrieves every traces from the application and display theme in your admin console.
