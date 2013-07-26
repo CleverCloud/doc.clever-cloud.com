@@ -30,6 +30,6 @@ The table below describes rights assigned to roles:
 <figure class="cc-content-img">
   <a href="/assets/images/organisation-roles.png"><img src="/assets/images/organisation-roles.png"/></a>
   <figcaption>
-    Rights assiged by role
+    Rights assigned by role
   </figcaption>
 </figure>
