@@ -8,7 +8,7 @@ position: 5
 
 MongoDB is an open source NoSQL document-oriented database.
 
-
+ 
 ### Add a database
 
 [This article](/databases-and-services/add-service/) describes the process to add a database on Clever Cloud.
