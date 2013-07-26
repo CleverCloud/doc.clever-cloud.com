@@ -3,7 +3,6 @@ title: New Relic
 position: 1
 ---
 
-# New Relic is coming soon
+# New Relic
 
-
-Want to try it anyway? Feel free to send us [an email](mailto:support@clever-cloud.com).
+The famous applications and databases monitoring tool is available on request to our [support](mailto:support@clever-cloud.com).
