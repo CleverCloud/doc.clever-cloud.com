@@ -12,17 +12,26 @@ position: 3
 A Scaler is the Clever Cloud "instance". It is an individual container hosting your application. They are not virtual machines and are independent.  
 A Scaler is defined by two factors: RAM and CPU.  
 
-With the Scalers, Clever Cloud gives you the ability to scale your application with <b>two non exclusive methods</b>: horizontal and vertical scaling.
+With the Scalers, Clever Cloud gives you the ability to scale your application <b>up and down</b> with <b>two non exclusive methods</b>: horizontal and vertical scaling.
 
 ### Horizontal scaling
 
 Provided by most PaaS providers. 
 
-In case of large traffic, we detect a high load on your application and setup <b>another instance in parallel</b>.
-You give more power to your application by setting up another identical application. Both will run in parallel with load balancing. And so on.  
+In case of large traffic, we detect a high load on your application and spawn <b>another instance in parallel</b>.
+It gives more power to your application by setting up another identical application. Both will run in parallel with load balancing. And so on.  
 When the traffic is lower, the number of Scalers decrease to the required level.
 
-You can manage the range of Scalers you consider in the application configurator. The range is from 1 to 40. Contact us for more.
+The following scheme depicts a Scaler replication in case of a load increase:  
+
+<figure class="cc-content-img" >
+  <a href="/assets/images/scaling_horizontal_scheme.jpg"><img src="/assets/images/scaling_horizontal_scheme.jpg"/></a>
+</figure>
+
+<br/>
+<br/>
+
+You can manage the range of Scalers you consider in the application configurator. The range is from 1 to 40.
 
 <figure class="cc-content-img" style="width:355px">
   <a href="/assets/images/scaling_horizontal.png"><img src="/assets/images/scaling_horizontal.png"/></a>
@@ -37,7 +46,19 @@ In case of large traffic, we detect a high load on your application and setup <b
 
 In case of low traffic, we detect a low load and setup <b>a new smaller Scaler</b>.  
 
-You give more power to your application by setting up a larger instance that will replace the previous one. The more the load, the larger the instance.
+You give more power to your application by setting up a larger instance that will replace the previous one. The more the load, the larger the instance.  
+
+The following scheme depicts a larger Scaler replacement in case of a load increase:
+
+
+<figure class="cc-content-img">
+  <a href="/assets/images/scaling_vertical_scheme.jpg"><img src="/assets/images/scaling_vertical_scheme.jpg"/></a>
+</figure>
+
+<br/>
+<br/>
+
+You can choose the type of Scalers you consider of just let Clever Cloud choose for you:
 
 <figure class="cc-content-img">
   <a href="/assets/images/scaling_vertical.png"><img src="/assets/images/scaling_vertical.png"/></a>
