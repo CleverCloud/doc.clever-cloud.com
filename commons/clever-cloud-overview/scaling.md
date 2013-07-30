@@ -5,12 +5,14 @@ position: 3
 
 ## Scaling management
 
-Clever Cloud gives you the ability to fine tune your application's scaling by managing both horizontal and vertical scaling. These two parameters can be combined or not and are based on the notion of Scaler. 
+*Clever Cloud gives you the ability to fine tune your application's scaling by managing both horizontal and vertical scaling. These two parameters can be combined or not and are based on the notion of Scaler.*
 
 ### What is a Scaler?
 
-A Scaler is the Clever Cloud "instance". It is an individual container hosting your application. Scalers are not virtual machines and are independent.  
-A Scaler is defined by two factors: RAM and CPU.
+A Scaler is the Clever Cloud "instance". It is an individual container hosting your application. They are not virtual machines and are independent.  
+A Scaler is defined by two factors: RAM and CPU.  
+
+With the Scalers, Clever Cloud gives you the ability to scale your application with <b>two non exclusive methods</b>: horizontal and vertical scaling.
 
 ### Horizontal scaling
 
