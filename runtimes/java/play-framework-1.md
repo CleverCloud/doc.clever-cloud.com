@@ -7,9 +7,9 @@ position: 1
 
 The Clever Cloud supports Play 1.x applications natively. The present guide explains how to set up your application to run on the Clever Cloud.  
 
-Play! is a framework created by Guillaume Bort. It allows you to quickly create ready-to-use web applications with Java or Scala (only Play! 2).  
+### Necessary information
 
-The following information are dedicated to Play! 1 applications:
+* the application must be located at the **root** of the git repository
 
 
 ### Configuration
