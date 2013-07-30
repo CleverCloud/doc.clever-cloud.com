@@ -1,0 +1,48 @@
+---
+title: Scaling
+position: 3
+---
+
+## Scaling management
+
+Clever Cloud gives you the ability to fine tune your application's scaling by managing both horizontal and vertical scaling. These two parameters can be combined or not and are based on the notion of Scaler. 
+
+### What is a Scaler?
+
+A Scaler is the Clever Cloud "instance". It is an individual container hosting your application. Scalers are not virtual machines and are independent.  
+A Scaler is defined by two factors: RAM and CPU.
+
+### Horizontal scaling
+
+Provided by most PaaS providers. 
+
+In case of large traffic, we detect a high load on your application and setup <b>another instance in parallel</b>.
+You give more power to your application by setting up another identical application. Both will run in parallel with load balancing. And so on.  
+When the traffic is lower, the number of Scalers decrease to the required level.
+
+You can manage the range of Scalers you consider in the application configurator.
+
+<figure class="cc-content-img" style="width:355px">
+  <a href="/assets/images/scaling_horizontal.png"><img src="/assets/images/scaling_horizontal.png"/></a>
+  <figcaption>Horizontal scaling range</figcaption>
+</figure>
+
+
+
+### Vertical scaling
+
+In case of large traffic, we detect a high load on your application and setup <b>a new larger Scaler</b>.  
+
+In case of low traffic, we detect a low load and setup <b>a new smaller Scaler</b>.  
+
+You give more power to your application by setting up a larger instance that will replace the previous one. The more the load, the larger the instance.
+
+<figure class="cc-content-img">
+  <a href="/assets/images/scaling_vertical.png"><img src="/assets/images/scaling_vertical.png"/></a>
+  <figcaption>Vertical scaling</figcaption>
+</figure>
+
+
+### Combination of both scalings
+
+When both scalings are set up, Clever Cloud adjusts the required resources based on our own allocation system.
