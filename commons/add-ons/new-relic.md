@@ -5,4 +5,6 @@ position: 1
 
 # New Relic
 
-The famous applications and databases monitoring tool is available on request to our [support](mailto:support@clever-cloud.com).
+New Relic is <b>currently</b> available on request.  
+
+[Contact us](mailto:support@clever-cloud.com) and we will install it for you.  
