@@ -20,7 +20,8 @@ Provided by most PaaS providers.
 
 In case of large traffic, we detect a high load on your application and spawn <b>another instance in parallel</b>.
 It gives more power to your application by setting up another identical application. Both will run in parallel with load balancing. And so on.  
-When the traffic is lower, the number of Scalers decrease to the required level.
+
+This process is exactly the opposite when the <b>load decreases</b>. A Scaler is removed and so on till a <b>minimum reasonable level</b>.
 
 The following scheme depicts a Scaler replication in case of a load increase:  
 
@@ -64,6 +65,7 @@ You can choose the type of Scalers you consider of just let Clever Cloud choose 
   <a href="/assets/images/scaling_vertical.png"><img src="/assets/images/scaling_vertical.png"/></a>
   <figcaption>Vertical scaling</figcaption>
 </figure>
+
 
 
 ### Combination of both scalings
