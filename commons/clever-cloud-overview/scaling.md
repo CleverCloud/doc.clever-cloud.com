@@ -22,11 +22,11 @@ In case of large traffic, we detect a high load on your application and setup <b
 You give more power to your application by setting up another identical application. Both will run in parallel with load balancing. And so on.  
 When the traffic is lower, the number of Scalers decrease to the required level.
 
-You can manage the range of Scalers you consider in the application configurator.
+You can manage the range of Scalers you consider in the application configurator. The range is from 1 to 40. Contact us for more.
 
 <figure class="cc-content-img" style="width:355px">
   <a href="/assets/images/scaling_horizontal.png"><img src="/assets/images/scaling_horizontal.png"/></a>
-  <figcaption>Horizontal scaling range</figcaption>
+  <figcaption>Horizontal scaling range - number of scalers</figcaption>
 </figure>
 
 
