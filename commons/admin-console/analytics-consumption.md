@@ -5,7 +5,9 @@ position: 5
 
 ## Analytics and consumption
 
-An app is billed according to its consumption. Clever Cloud checks every ten minutes an apps consumption, and fire an event of consumption to your account.  
-So you can monitor in real time through the console your apps consumptions the amount of credits you have consumed (drops).  
+You only pay what you consume. It means that every 10 minutes, we check your applications consumption and affect it to your credits account.
 
-The charts in the homepage shows you how many Drops were consumed each days:<figure class="cc-content-imglarge"><img src="/assets/images/analytics.png"></figure>
+The following charts on the dashboard main page presents daily credits consumption:  
+
+<br/>
+<figure class="cc-content-img"><img src="/assets/images/analytics.png"></figure>

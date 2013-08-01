@@ -1,5 +1,5 @@
 ---
-title: Custom domain
+title: Custom domain names
 position: 2
 ---
 
