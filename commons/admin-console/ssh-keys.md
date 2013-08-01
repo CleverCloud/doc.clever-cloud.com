@@ -46,7 +46,7 @@ You can already have an SSH key and so do not need to generate a new one. To che
     Enter same passphrase again: [Type passphrase again]
     ```
 
-    Which should give you something like this:
+    <div>Which should give you something like this:</div>
 
     ```bash
     Your identification has been saved in /your_home_path/.ssh/id_rsa.
