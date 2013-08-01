@@ -3,18 +3,21 @@ title: Apps Management
 position: 6
 ---
 
-## Apps Management
+## Application Management
+
+### Restart, stop, delete
+
+You can restart, stop and delete your application in the associated configuration panel.
+
+Stop functionality is usefull during the development of the application to limits its credit consumption.
+
+<figure class="cc-content-img">
+  <img src="/assets/images/app-management.png"/></a>
+</figure>
+<figcaption>Manage your application</figcaption>
 
 ### Logs
 
-The Clever Cloud console gives you the ability to get logs from your apps.
+The Clever Cloud dashboard gives you the ability to retrieve your application logs.
 
-To retrive an app's logs, select your app in the headbar.
-Then, click on the *Logs* tab in the left-pane:
-
-<figure class="cc-content-img">
-  <img style=" margin: auto; display: block" src="/assets/images/logs.png"/>
-  <figcaption>
-    App's left-pane.
-  </figcaption>
-</figure>
+To get them, just click on *Logs* in the left navbar.
