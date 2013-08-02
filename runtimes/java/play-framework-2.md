@@ -31,7 +31,7 @@ You can configure your application start command by adding a `./clevercloud/play
 
 Please read the following if your project fails with this error:  
 
-`sbt.ResolveException: unresolved dependency: play#sbt-plugin;2.0: not found
+`sbt.ResolveException: unresolved dependency: play#sbt-plugin;2.0: not found`
 
 Some versions of Play2 try to retrieve a nonexistent version of
 "sbt-plugin" which is required by the framework to work.

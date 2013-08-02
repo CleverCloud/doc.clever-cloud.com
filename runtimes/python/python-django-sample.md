@@ -8,7 +8,7 @@ The goal of this article is to show you how to deploy a Django application on Cl
 
 The application is a very basic one. More information about the application:  
 
-*  [Github repo](https://github.com/CleverCloud/django-example).
+*  [Github repo](https://github.com/CleverCloud/django-example)
 *  [Clever Cloud demo](http://django.cleverapps.io/)
 
 <br/>

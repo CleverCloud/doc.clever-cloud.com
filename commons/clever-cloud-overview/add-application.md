@@ -57,6 +57,8 @@ Follow these steps to deploy your application:
 
 ### FTP Deployment
 
+It is possible to deploy via FTP with PHP and static applications.  
+
 To deploy via FTP, you need an FTP software installed on your machine. Filezilla is one of them.
 
 When you have chosen to deploy your application via FTP, you have received associated FTP credentials by email. Enter the host, username and password in your FTP software and deploy the files.

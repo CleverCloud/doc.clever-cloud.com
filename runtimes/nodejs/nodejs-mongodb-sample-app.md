@@ -1,5 +1,5 @@
 ---
-title: Sample application
+title: Node.js + MongoDB sample application
 ---
 
 ## Node.js + MongoDB sample application
