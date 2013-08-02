@@ -4,7 +4,12 @@ position: 4
 ---
 ## Couchbase <span class="cc-beta pull-right" title="Currently in Beta version"></span>
 
-*Couchbase is an open source, distributed (shared nothing architecture) NoSQL document-oriented database.*
+<div class="alert alert-hot-problems">
+  <h5>Note for Beta Version</h5>
+  <div>Couchbase is free during the beta period. No credits wil be charged.</div>
+</div>
+
+Couchbase is an open source, distributed (shared nothing architecture) NoSQL document-oriented database.
 
 ### Add a database
 
