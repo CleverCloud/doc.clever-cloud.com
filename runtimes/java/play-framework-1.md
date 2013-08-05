@@ -48,7 +48,7 @@ You can for example:
 
 More information on <a target="_blank" href="http://www.playframework.com">playframework.com</a>.
 
-### Deploy it on Clever Cloud
+### Deploy on Clever Cloud
 
 Application deployment on Clever Cloud is via Git. Follow [these steps](/clever-cloud-overview/add-application/) to deploy your application.
 

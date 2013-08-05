@@ -77,7 +77,7 @@ addSbtPlugin("play" % "sbt-plugin" % "2.0.4") // The important part of the confi
 
 The two solutions do the job, you can pick your favorite.
 
-### Deploy it on Clever Cloud
+### Deploy on Clever Cloud
 
 Application deployment on Clever Cloud is via Git. Follow [these steps](/clever-cloud-overview/add-application/) to deploy your application.
 
