@@ -3,7 +3,6 @@ title: Tutorials for PHP
 ---
 ## Tutorials for PHP
 
-Browse our free tutorial videos.
 
 ### New account setup and PHP App
 
