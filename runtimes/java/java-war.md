@@ -5,7 +5,7 @@ position: 4
 
 ## Deploying WAR/EAR projects <span class="cc-alpha pull-right" title="Currently in Alpha version"></span>
 
-The Clever Cloud offers you to run your WAR or EAR apps. You can deploy this kind of project without changing your code, but running it on Clever Cloud needs some configuration files, to add parameters like your targeted container for instance.
+Clever Cloud allows you to run WAR or EAR applications. You can deploy these projects without changing your code. We just need a configuration file with your targeted container.
 
 ### Overview
 
