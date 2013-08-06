@@ -17,7 +17,7 @@ From the *Credit Manager* section, there are three alternatives to buy credit fo
 
 Invoices are available in the *Invoices* tab of the *Credits Manager* section. It lists all the payments made.
 
-### Changing Billing Information
+### Change Billing Information
 
 * for personal account: available in *Profile > Informations*
 
