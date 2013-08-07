@@ -30,7 +30,7 @@ During the creation of a PHP application, it is asked if you want to deploy it v
 3. Rename the file `wp-config-sample.php` to `wp-config.php`
 4. Replace in `wp-config.php` the host (like this: bj79c949bvl2deb6.mysql.clvrcld.net), database name, username and password that has been sent by email after the database creation
 5. As mentioned in this [article](/databases-and-services/fs-buckets/), with Git deployments, files that are uploaded by users must be persisted in a File System Bucket. In order to do so, [add a File Bucket](/databases-and-services/add-service/) via the console. You will then receive your bucket id.
-6. At the root of your application, create a `clevercloud/buckets.json` file.
+6. At the root of your application, create a `clevercloud/buckets.json` file (a `buckets.json` file located in `clevercloud` folder).
 7. Add the following lines in this file. Do not forget to replace bucketId by the bucketId you received by email:
 
     ```javascript
