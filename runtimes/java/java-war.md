@@ -16,8 +16,8 @@ In <abbr title="Java Enterprise Edition">J2EE</abbr> application modules are pac
 * <acronym title="Enterprise Archive">EAR</acronym>: *.war* and *.jar* files are packaged as JAR file with .ear extension and deployed into Application Server. EAR file contains configuration such as application security role mapping, EJB reference mapping and context root url mapping of web modules.
 
 <div class="alert alert-hot-problems">
-	<h5>Note for Alpha Version</h5>
-	<div>WAR and EAR apps are free during the Alpha period. No credits will be charged.</div>
+  <h5>Note for Alpha Version</h5>
+  <div>WAR and EAR apps are free during the Alpha period. No credits will be charged.</div>
 </div>
 
 ### Available containers
@@ -26,21 +26,21 @@ The Clever Cloud supports many servlet containers.
 The supported containers are listed below:
 
 <table id="containers" class="table table-bordered table-striped">
-	<thead>
-		<tr>
-			<th>Apache</th>
-			<th>Jetty</th>
-			<th>Jboss</th>
-			<th>Glassfish</th>
-			<th>Resin</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr><td>Apache Tomcat 4.1</td><td>Jetty 6.1</td><td>Jboss 6.1</td><td>Glassfish 3.1</td><td>Resin 3.1</td></tr>
-		<tr><td>Apache Tomcat 5.5</td><td>Jetty 7.6</td><td>Jboss AS 7.1</td><td> </td><td> </td></tr>
-		<tr><td>Apache Tomcat 6.0</td><td>Jetty 8.1</td><td> </td><td> </td><td> </td></tr>
-		<tr><td>Apache Tomcat 7.0</td><td>Jetty 9.0</td><td> </td><td> </td><td> </td></tr>
-	</tbody>
+  <thead>
+    <tr>
+      <th>Apache</th>
+      <th>Jetty</th>
+      <th>Jboss</th>
+      <th>Glassfish</th>
+      <th>Resin</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Apache Tomcat 4.1</td><td>Jetty 6.1</td><td>Jboss 6.1</td><td>Glassfish 3.1</td><td>Resin 3.1</td></tr>
+    <tr><td>Apache Tomcat 5.5</td><td>Jetty 7.6</td><td>Jboss AS 7.1</td><td> </td><td> </td></tr>
+    <tr><td>Apache Tomcat 6.0</td><td>Jetty 8.1</td><td> </td><td> </td><td> </td></tr>
+    <tr><td>Apache Tomcat 7.0</td><td>Jetty 9.0</td><td> </td><td> </td><td> </td></tr>
+  </tbody>
 </table>
 
 ### Create an application
@@ -51,39 +51,30 @@ The supported containers are listed below:
   <img src="/assets/images/appjavawar.png"/>
 </figure>
 3. Then select the language/framework:  <figure class="cc-content-img"><img src="/assets/images/javawarapp.png"></figure>
-3. *Optional:* in case of PHP or static applications, you can choose between FTP and Git deployment
 4. Check that the information are correct and validate: <figure class="cc-content-img"><img src="/assets/images/appcreationreviewjavawar.png"></figure>
 5. *Optional*: <a href="/databases-and-services/add-service/">add a database or service</a>
 
-
-### Configuration file
+### Necessary information
 
 To deploy war and ear files on the Clever Cloud, you need to provide a `clevercloud/war.json` file describing the container you want and the archives you want to deploy.
 
-The file must contain the following fields:
+This file must contain the following fields:
 
-```haskell
+```javascript
 {
   "deploy":{
-    "container":<string>,
-    "war" : [<string>]
-    }
+     "container":"<string>",
+     "war" : ["<string>"]
+   }
 }
 ```
 
-* **container**: that field should contain one of the values in the right column of the table below. Pick the "configuration value" in the corresponding cell of your container's version.
-
-* **war** : This field is a list of strings. It should contain the paths of the
+* **container**: that field should contain one of the values in the left column of the table below.
+* **war** : this field is a list of strings. It should contain the paths of the
 war/ear files relative to your application root.
 
 
-<div class="alert alert-hot-problems">
-	<h5>Tip</h5>Do not forget the double quotes
-	around the "container"’s value, and the strings in the "war" list.
-	The "war" value must be a list, so don't forget the brackets.
-</div>
-
-Availables onfiguration values for "container" of war.json:
+Available configuration values for "container" of war.json:
 <table class="table table-bordered table-stripped">
    <thead>
       <tr>
@@ -153,8 +144,26 @@ Availables onfiguration values for "container" of war.json:
          href="https://tomcat.apache.org/">https://tomcat.apache.org/</a>)</td>
       </tr>
    </tbody>
-</table>     
+</table>
 
+### Configuration file
+
+You can configure your application start command by adding a `clevercloud/war.json` file with the following fields:
+
+```javascript
+{
+  "deploy":{
+    "container":"<string>",
+    "war" : ["<string>"]
+   },
+  "hooks": {
+    "postDeploy": "pathtoyourscript"
+  }
+}
+```
+
+**postDeploy**: execute a custom script after the deploy. Some frameworks or custom applications might require bootstrapping before the application may run.
+You can achieve this by creating a custom script with your commands and adding the associated file name in `clevercloud/war.json`.
 
 ### Deploy on Clever Cloud
 
