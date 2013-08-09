@@ -33,30 +33,20 @@ Your application must be set to listen on the port 8080.
   <img src="/assets/images/appjavawar.png"/>
 </figure>
 3. Then select the language/framework:  <figure class="cc-content-img"><img src="/assets/images/javawarapp.png"></figure>
-3. *Optional:* in case of PHP or static applications, you can choose between FTP and Git deployment
 4. Check that the information are correct and validate: <figure class="cc-content-img"><img src="/assets/images/appcreationreviewjavawar.png"></figure>
 5. *Optional*: <a href="/databases-and-services/add-service/">add a database or service</a>
 
-### Configuration file
+### Necessary information
 
-For every Java project using Maven, you **HAVE TO** to write a small specific JSON
-file, named *maven.json* in the *clevercloud* folder placed at the
-root of your application.
+The `.clevercloud/maven.json` (maven.json file in clevercloud folder which is at the root of you application) file must contain the _goal_ field to indicate how to start your application:
 
-The `maven.json` has to contain at least the following value:
-
-```haskell
+```javascript
   {
     "deploy": {
-    "goal": <string>
+      "goal": "yourgoal"
     }
   }
 ```
-
-<div class="alert">
-<h5>About the field *goal*</h5>
-That field must contain the maven goal you want to execute on deploy.
-</div>
 
 An example of what can be found as a goal value is:  
 
@@ -64,9 +54,7 @@ An example of what can be found as a goal value is:
 "-Dtest.active=false -Dexec.mainClass=\"com.example.Main\" assembly:jar-with-dependencies exec:java"
 ```
 
-*Note that the goal field must be double-quoted.*
-
-#### Optional configuration
+### Optional configuration
 
 The full configuration can look like the following:
 
@@ -79,18 +67,20 @@ The full configuration can look like the following:
   "deploy": {
     "javaVersion": <integer>,
     "goal": "<string>"
+  },
+  "hooks": {
+     "postDeploy": "pathtoyourscript"
   }
 }
 ```
 You can use the following properties: 
 
-* ``"build"`` is an object with the goal to execute.
-  * ``"type"`` can be ``"maven"`` or ``"ant"``.
-  * ``"goal"`` is the target you want to use to build your project.
-* ``"deploy"`` is an object containing the type of deploy (Maven, Ant or SBT) and the goal to execute.
-  * ``"goal"``: the goal/target and options you want to execute to deploy/run you project.
-  * ``"javaVersion"``: the version of java you want to use to run your app.  
-Values can be 6 or 7. Default is 7.
+* ``"type"`` can be ``"maven"`` or ``"ant"``.
+* ``"goal"`` is the target you want to use to build your project.
+* ``"goal"``: the goal/target and options you want to execute to deploy/run you project.
+* ``"javaVersion"``: the version of java you want to use to run your app. Values can be 6 or 7. Default is 7.
+* ``postDeploy``: execute a custom script after the deployment. Some frameworks or custom applications might require bootstrapping before the application may run.
+You can achieve this by creating a custom script with your commands and adding the associated file name.
 
 ### Deploy on Clever Cloud
 
