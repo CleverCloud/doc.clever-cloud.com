@@ -88,9 +88,49 @@ In the following example we want to set the webroot to the folder `/public`:
 
 Please note the absolute path style: `/public`.
 
-#### Limitation
+<div class="alert alert-hot-problems">
+<h4>Warning:</h4>
+ <p>The change of the webroot will be rejected during the deployment if the target directory does not exist or is not a directory.</p>
+</div>
 
-The change of the webroot will be rejected during the deployment if the target directory does not exist or is not a directory.
+#### Execute a custom script after the deploy
+
+Some frameworks or custom applications might require bootstrapping before the application may run (_e.g. Composer_).
+You can achieve this by creating a custom script with your commands and adding the following line in `clevercloud/php.json`:
+
+```javascript
+   {
+      "hooks": {
+         "postDeploy": "pathtoyourscript"
+      }
+   }
+```
+
+##### Example
+
+You use Composer to manage dependencies of your project and you want to execute _composer.phar install_ before running your app.
+
+First, add a file `ccbuild.sh` at the root of your project with these lines:
+
+```bash
+#!/bin/bash
+
+php composer.phar install
+```
+
+Then add these lines in `clevercloud/php.json`:
+
+```javascript
+   {
+      "hooks": {
+         "postDeploy": "ccbuild.sh"
+      }
+   }
+```
+
+<strong>Note: </strong>You must add the _execute_ permission to your file (`chmod u+x yourfile`) before pushing it.
+
+
 
 ### Frameworks and CMS
 
