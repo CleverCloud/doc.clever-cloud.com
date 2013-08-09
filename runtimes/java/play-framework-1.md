@@ -15,7 +15,6 @@ The Clever Cloud supports Play 1.x applications natively. The present guide expl
   <img src="/assets/images/appjavawar.png"/>
 </figure>
 3. Then select the language/framework:  <figure class="cc-content-img"><img src="/assets/images/javawarapp.png"></figure>
-3. *Optional:* in case of PHP or static applications, you can choose between FTP and Git deployment
 4. Check that the information are correct and validate: <figure class="cc-content-img"><img src="/assets/images/appcreationreviewjavawar.png"></figure>
 5. *Optional*: <a href="/databases-and-services/add-service/">add a database or service</a>
 
@@ -23,7 +22,7 @@ The Clever Cloud supports Play 1.x applications natively. The present guide expl
 
 * the application must be located at the **root** of the git repository
 
-### Configuration
+### Play! configuration
 
 By default, your application will run on Clever Cloud with the option `--%clevercloud`.  
 It means that you can define special keys in your `application.conf` file that will be used only on Clever Cloud.
@@ -47,6 +46,23 @@ You can for example:
 
 
 More information on <a target="_blank" href="http://www.playframework.com">playframework.com</a>.
+
+### Configuration file
+
+You can configure your application start command by adding a `./clevercloud/play.json` file with the following fields:
+
+```javascript
+{
+  "hooks": {
+     "postDeploy": "pathtoyourscript"
+  }
+}
+```
+
+**postDeploy**: execute a custom script after the deploy. Some frameworks or custom applications might require bootstrapping before the application may run.
+You can achieve this by creating a custom script with your commands and adding the associated file name in `clevercloud/play.json`.
+
+
 
 ### Deploy on Clever Cloud
 
