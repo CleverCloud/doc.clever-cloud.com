@@ -30,13 +30,21 @@ You can configure your application start command by adding a `./clevercloud/play
 ```javascript
 {
   "deploy":{
-    "goal":<string>
+    "goal": "yourgoal"
+  },
+  "hooks": {
+     "postDeploy": "pathtoyourscript"
   }
 }
 ```
 
-**goal** can for example contain additional configuration like
+**goal**: can for example contain additional configuration like
 `"-Dconfig.resource=clevercloud.conf"` or `"-Dplay.version=2.0.4"`.
+
+
+**custom script after the deploy**: some frameworks or custom applications might require bootstrapping before the application may run.
+You can achieve this by creating a custom script with your commands and adding the following line in `clevercloud/play.json`:
+
 
 
 ### Known problems with Play! 2
