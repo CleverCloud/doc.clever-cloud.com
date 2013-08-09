@@ -23,7 +23,7 @@ Clever Cloud supports Play! 2 applications natively. The following guide explain
 
 * the application must be located at the **root** of the git repository
 
-### Configure your application
+### Configuration file
 
 You can configure your application start command by adding a `./clevercloud/play.json` file with the following fields:
 
@@ -42,8 +42,8 @@ You can configure your application start command by adding a `./clevercloud/play
 `"-Dconfig.resource=clevercloud.conf"` or `"-Dplay.version=2.0.4"`.
 
 
-**custom script after the deploy**: some frameworks or custom applications might require bootstrapping before the application may run.
-You can achieve this by creating a custom script with your commands and adding the following line in `clevercloud/play.json`:
+**postDeploy**: execute a custom script after the deploy. Some frameworks or custom applications might require bootstrapping before the application may run.
+You can achieve this by creating a custom script with your commands and adding the associated file name in `clevercloud/play.json`.
 
 
 
