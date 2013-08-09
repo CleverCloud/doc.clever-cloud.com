@@ -46,7 +46,7 @@ There are two restrictions about the usage of crontab on our platform:
 
 You can use the special variable `$ROOT` to refer to the root folder of your application.
 
-Example of `cc_cron.json` which executes the file `cron.php` every 5 minutes:
+Example of `clevercloud/cron.json` which executes the file `cron.php` every 5 minutes:
 
 ```haskell
   [
