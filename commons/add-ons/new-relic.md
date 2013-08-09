@@ -3,7 +3,8 @@ title: New Relic
 position: 1
 ---
 
-# New Relic is coming soon
+# New Relic
 
+New Relic is <b>currently</b> available on request.  
 
-Want to try it anyway? Drop us [an email](deals@clever-cloud.com).
+[Contact us](mailto:support@clever-cloud.com) and we will install it for you.  

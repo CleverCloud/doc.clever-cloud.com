@@ -1,15 +1,15 @@
 ---
-title: Deploying Python
+title: Deploy Your App
 position: 1
 ---
 
-## Deploying Python apps
+## Deploy Python apps
 
-Python is a programming language that lets you work more quickly and integrate your systems more effectively. You can learn to use Python and see almost immediate gains in productivity and lower maintenance costs.
+Python is a programming language that lets you work more quickly and integrate your systems more effectively. You can learn how to use Python and see almost immediate gains in productivity and lower maintenance costs.
 
 ### Overview
 
-Python is available on our platform with the version 2.7.3. You can use Git to deploy your application.
+Python 2.7.3 is available on our platform. You can use Git to deploy your application.
 
 ### Getting started
 
@@ -71,9 +71,9 @@ The module (without .py) must be importable, i.e. be in `PYTHONPATH`. For exampl
 
 #### Manage your static files
 
-You are able to use a Filesystem Bucket to store your static files. Please refer to the [File System Buckets](/databases-and-services/fs-buckets/) section for creating it.
+You are able to use a Filesystem Bucket to store your static files. Please refer to the [File System Buckets](/databases-and-services/fs-buckets/) section.
 
-When your bucket is available, you must set your public folder in `clevercloud/python.json` like below to enable Nginx to serve your static resources:
+When your bucket is available, to enable Nginx to serve your static resources you must set your public folder in `clevercloud/python.json` like below:
 
 ```haskell
    {
@@ -83,7 +83,7 @@ When your bucket is available, you must set your public folder in `clevercloud/p
    }
 ```
 
-*Note: the path of your must be absolute regarding the root of your application.*
+*Note: the path of your folder must be absolute regarding the root of your application.*
 
 
 ### Cron configuration file
@@ -104,7 +104,7 @@ The string `<string>` must use the cron format\*:
 
 There are two restrictions about the usage of crontab on our platform:
 
-* The special date `@reboot` is not available since the crontab is added after the startup of the instance
+* The special date `@reboot` is not available since the crontab is added after the startup of the instance.
 * You must use the absolute path of commands
 
 You can use the special variable `$ROOT` to refer to the root folder of your application.
@@ -152,6 +152,6 @@ If you didn't already track your app with git, start by typing:
 <div class="alert alert-hot-problems">
 <h4>Warning:</h4>
   <p>The remote branch on Clever Cloud is <strong>ALWAYS</strong> master. If your local branch is not "master", use this syntax:</p>
-  <pre>git push < name > yourbranch:master</pre>
+  <pre>git push < name > yourbranch:master</pre>
 
 </div>
