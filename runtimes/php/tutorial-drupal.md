@@ -34,8 +34,15 @@ During the creation of a PHP application, it is asked if you want to deploy it v
 2. [Add a MySQL database](/databases-and-services/add-service/)
 3. Open `.gitignore` file and delete `sites/*/settings*.php` line
 4. Copy the file `sites/default/default.settings.php` to `sites/default/settings.php`
-5. Open `sites/default/settings.php` and line 213, replace `$databases = array();` by 
+5. Open `sites/default/settings.php` and line 213, replace 
 
+    ```php
+    $databases = array();
+    ```
+    
+    <br/>
+    by
+    
     ```php
     $databases = array (
       'default' => 
@@ -68,4 +75,10 @@ During the creation of a PHP application, it is asked if you want to deploy it v
     ```
 
 5. Send these Drupal files via Git. Read this [article](/clever-cloud-overview/add-application/#git-deployment) if you need more information about it.
-6. When finished, you can launch the application with the url that you can find in the *domains* panel in the left sidebar.
+6. When finished, get the url that you can find in the *domains* panel in the left sidebar. Then open the following link:  
+
+`http://yourapplication.cleverapps.io/install.php`  
+
+Do not forget the **/install.php** page otherwise installation will not happen.
+Follow the steps and you're done!
+
