@@ -19,7 +19,7 @@ During the creation of a PHP application, it is asked if you want to deploy it v
 2. [Add a MySQL database](/databases-and-services/add-service/)
 3. Rename the file `wp-config-sample.php` to `wp-config.php`
 4. Replace in `wp-config.php` the host (like this: bj79c949bvl2deb6.mysql.clvrcld.net), database name, username and password that has been sent by email after the database creation.
-3. [Send these Drupal files via FTP](/clever-cloud-overview/add-application/#ftp-deployment) using the FTP credentials you received by email when you created the application.
+3. [Send these Wordpress files via FTP](/clever-cloud-overview/add-application/#ftp-deployment) using the FTP credentials you received by email when you created the application.
 6. When finished, you can launch the application with the url that you can find in the *domains* panel in the left sidebar.
 
 
