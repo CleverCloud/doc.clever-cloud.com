@@ -1,5 +1,5 @@
 ---
-title: Deploy a Drupal application
+title: Deploy a Drupal website
 ---
 
 ## Deploy a Drupal website

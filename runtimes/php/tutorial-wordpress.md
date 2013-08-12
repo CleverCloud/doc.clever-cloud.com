@@ -1,5 +1,5 @@
 ---
-title: Deploy a Wordpress application
+title: Deploy a Wordpress website
 ---
 
 ## Deploy a Wordpress website
