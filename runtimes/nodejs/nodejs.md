@@ -236,3 +236,11 @@ hesitate to contact us at <mailto:support@clever-cloud.com>
 ### Deploy on Clever Cloud
 
 Application deployment on Clever Cloud is via Git. Follow [these steps](/clever-cloud-overview/add-application/) to deploy your application.
+
+### Tutorial - Node.js application deployment
+
+<p>
+  <iframe width="560" height="315" src="http://www.youtube.com/embed/pTCcminQwaI" frameborder="0" allowfullscreen></iframe>
+</p>
+
+More info on <a target="_blank" http://nodejs.org/">nodejs.org</a>.
