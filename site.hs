@@ -147,7 +147,7 @@ makeDefaultContext (i, m) =
     where
         makeMetadataContext m =
             (Context $ \k _ -> do
-                return $ fromMaybe "" $ M.lookup k m)
+                return $ StringField $ fromMaybe "" $ M.lookup k m)
 
         makeUrlField id =
             field "url" $ \_ -> do
