@@ -5,7 +5,7 @@ PREREQUISITES
 =============
 
 1. Haskell Platform [http://www.haskell.org/platform/](http://www.haskell.org/platform/).
-3. Hakyll version 4.2.2.0
+3. Hakyll version 4.3.3.0
 2. Less compiler [http://lesscss.org/](http://lesscss.org/)
 
 WRITING A PAGE
