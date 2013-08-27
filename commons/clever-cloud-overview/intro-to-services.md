@@ -5,7 +5,7 @@ position: 2
 
 ## Intro to Services
 
-Services are can be attached or not to an application. It could be a database, a cache system or a search engine. 
+Services can be attached or not to an application. It could be a database, a cache system or a search engine. 
 
 Services are internal and not provided by external partners. They all run on Clever Cloud core architecture.
 
