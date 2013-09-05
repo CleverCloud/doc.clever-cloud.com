@@ -120,3 +120,9 @@ var checkRedirections = function() {
     window.location = "/admin-console/custom-domain-names/";
   }
 }
+$(document).ready(function() {
+  $('.cc-content-img').magnificPopup({
+    delegate: 'a',
+    type: 'image'
+  });
+});
