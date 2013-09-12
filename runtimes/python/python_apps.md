@@ -1,6 +1,7 @@
 ---
 title: Deploy Your App
 position: 1
+shortdesc: Python 2.7.3 is available on our platform. You can use Git to deploy your application.
 ---
 
 ## Deploy Python apps

@@ -1,6 +1,7 @@
 ---
 title: Java Maven
 position: 3
+shortdesc: Maven is essentially a project management and comprehension tool...
 ---
 
 ## Deploying Java Maven projects

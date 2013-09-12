@@ -1,5 +1,6 @@
 ---
 title: Deploying Node.js apps
+shortdesc: Node.js is a platform built on Chrome's JavaScript runtime for building fast, scalable network applications.
 ---
 
 ## Deploying Node.js apps
@@ -29,8 +30,9 @@ Node.js is a platform built on Chrome's JavaScript runtime for building fast, sc
 ### Necessary information
 
 Be sure that:
+
 * you have pushed in <b>master branch</b>
-* you listen on <p>port 8080</p>
+* you listen on <b>port 8080</b>
 * you have added application <b>name</b> in package.json
 * you have added application <b>version</b> in package.json
 * you have added application <b>start script</b> in package.json

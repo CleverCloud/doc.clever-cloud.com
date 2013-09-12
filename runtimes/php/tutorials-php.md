@@ -1,6 +1,8 @@
 ---
 title: Tutorials for PHP
+shortdesc: Collection of tutorials for the PHP platform on the Clever Cloud.
 ---
+
 ## Tutorials for PHP
 
 

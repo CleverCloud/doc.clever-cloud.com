@@ -1,5 +1,6 @@
 ---
 title: Scala with SBT
+shortdesc: Scala is an object-functional programming and scripting language that runs on the Java platform…
 ---
 
 ## Deploying Scala apps
@@ -7,6 +8,9 @@ title: Scala with SBT
 The Clever Cloud allows you to deploy Scala and Java applications built with <acronym title=" Simple Build Tool">SBT</acronym>.  
 This document will explain you how to set up your app to run on our service.
 
+### Overview
+
+Scala is an object-functional programming and scripting language that runs on the Java platform for general software applications, statically typed, designed to concisely express solutions in an elegant, type-safe and lightweight manner. Scala includes full support for functional programming (including currying, pattern matching, algebraic data types, lazy evaluation, tail recursion, immutability, etc.).
 
 ### Create an application
 

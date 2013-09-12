@@ -1,5 +1,6 @@
 ---
 title: Deploy a Drupal website
+shortdesc: This article shows you how to deploy a Drupal-based website on the Clever Cloud.
 ---
 
 ## Deploy a Drupal website
@@ -9,8 +10,8 @@ title: Deploy a Drupal website
 You can find in [this article](/clever-cloud-overview/add-application/#create-an-application) the process to create an application.
 
 ### Two choices for deployment
-During the creation of a PHP application, it is asked if you want to deploy it via FTP or via Git. These two techniques have their own pros and cons but have the same end result.
 
+During the creation of a PHP application, it is asked if you want to deploy it via FTP or via Git. These two techniques have their own pros and cons but have the same end result.
 
 ### Deploy via FTP
 
