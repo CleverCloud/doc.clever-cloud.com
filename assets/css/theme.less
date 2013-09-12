@@ -1,0 +1,273 @@
+/* coding rules:
+ * tab width = 2
+ * all spaces
+ * 
+ * naming convention:
+ * cc_ prefix
+ * __  component part
+ * --  variant
+ * example: cc_alert--info__close = style that is specific to the close button
+ *                                  of the info alert box only.
+ * more about this: engineering.appfolio.com/2012/11/16/css-architecture
+ */
+html body {
+  background-color: @lightgrey;
+}
+body{
+  background-color: #f4f4f4;
+  a{
+    color:          @pink;
+  }
+  a:hover,a:focus{
+    color:           @darkpink;
+    text-decoration: underline;
+    outline:        none;
+  }
+  h1, h2, h3, h4 {
+  .header;
+}
+}
+acronym{
+  border-bottom:dotted 1px black;
+   cursor:help;
+}
+h1{
+  font-size:   @text--2XL;
+}
+h2{
+  font-size:   @text--XL;
+}
+h3{
+  font-size:   @text--L;
+}
+h4{
+  font-size:   @text--M;
+}
+h5{
+  font-size:   @text;
+  margin: 5px 0 5px 0;
+}
+figcaption{
+  font-style: italic;
+  font-size:  @text--S;
+}
+.cc-icon-colored{
+  color: @pink;
+}
+.cc_main{
+  background:  @lightgrey;
+}
+.cc_headbar {
+  background-color: @white;
+  a{
+  text-decoration: 	none;
+  }
+}
+.cc_headbar__logo{
+  font-family:   @logo-font;
+  font-size:     20px;
+  color:         @darkred;
+  span{
+    color:       @black;
+  }
+}
+
+.cc_headbar__btn:hover{
+    text-decoration: none;
+    padding-bottom:  23px;
+    border-bottom:   3px solid;
+    color:           @pink;
+}
+
+.cc_headbar__menu .active {
+  .cc_headbar__btn {
+    text-decoration: none;
+    padding-bottom:  23px;
+    border-bottom:   3px solid;
+    color:           @pink;
+  }
+}
+
+.cc_headbar__logo:hover {
+    text-decoration: none;
+    color:           @pink;
+}
+
+.cc_headbar__btn {
+  cursor:    pointer;
+  color:     @mediumgrey;
+  font-size: 14px;
+}
+
+.cc_headbar__logo_parent {
+  padding-top: 3px;
+}
+
+.cc_login__btn{
+  .cc_rounded;
+  background-color: @darkred;
+  color:            @white;
+  padding:          7px 20px;
+  font-size:        12px;
+  cursor:           pointer;
+  .transition (background; 0.2s);
+}
+.cc_login__btn:hover{
+  background-color: @pink;
+  text-decoration:  none;
+  color:            white;
+  .transition       (background; 0.2s);
+}
+
+.cc_headbar__menu {
+  font-weight: bold;
+  padding-top: 4px;
+}
+.cc-sidebar a{
+  color: @mediumgrey;
+}
+.cc-sidebar__item{
+  font-weight: bold;
+  font-size:   11px;
+  text-transform: uppercase;
+  color:       @darkgrey;
+  outline:     none;
+
+}
+
+.cc-sidebar .cc-sidebar__item__active {
+  font-weight: bold;
+  color: @pink;
+}
+.cc-category-list{
+  list-style: none;
+}
+.cc-sidebar__item__list{
+    list-style: none;
+  a{
+    outline:    none;
+    list-style: none;
+  }
+  a:hover{
+    color:@pink;
+    text-decoration: underline;
+  }
+}
+.cc-content{
+  .cc_rounded;
+  color:              @black;
+  border:             1px solid @lightborder;
+  background:         @white;
+  -webkit-box-shadow: 0 2px 5px rgba(100,100,100,0.1);
+     -moz-box-shadow: 0 2px 5px rgba(100,100,100,0.1);
+          box-shadow: 0 2px 5px rgba(100,100,100,0.1);
+}
+
+.cc-content-imglarge{
+  border-top:    1px solid @lightborder;
+  border-bottom: 1px solid @lightborder;
+  opacity: 0.5;
+  .transition (all; 0.2s);
+  .grayscale (100%);
+}
+.cc-content-imglarge:hover{
+  .grayscale (0%);
+  .transition (all; 0.2s);
+  filter:none;
+  opacity: 1;
+}
+.cc-contrib{
+  font-style: italic;
+  font-size: 12px;
+  color: @mediumgrey;
+  a{
+    color: @pink;
+  }
+  a:hover{
+    text-decoration: underline;
+  }
+}
+.alert, .alert-hot-problems {
+  background: @alertbg;
+  border:     1px solid #dfddcf;
+  box-shadow: 0 1px 0 #fff, 0 1px 0 #fff inset;
+  color:      @darkgrey;
+  .cc_rounded ()
+}
+
+ul#cc-tableofcontent__list{
+  list-style: none;
+  font-size: 13px;
+  li:before{
+    content: "\f105";
+    font-family: FontAwesome;
+  }
+}
+.table td.cc-col__price{
+  text-align: center;
+}
+.cc-label__price{
+  min-width: 17px;
+}
+
+span.cc-alpha{
+  font-size: 16.844px;
+  font-weight: bold;
+  color: #ffffff;
+  white-space: nowrap;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background-color: #b94a48;
+  border-radius: 35px;
+  cursor:help;
+}
+span.cc-alpha:before{
+    content: "𝛂";
+}
+
+span.cc-beta{
+  font-size: 16.844px;
+  font-weight: bold;
+  color: white;
+  white-space: nowrap;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background-color: #3a87ad;
+  border-radius: 35px;
+  cursor:help;
+}
+span.cc-beta:before{
+    content: "β";
+}
+.cc-go-top {
+  position: fixed;
+  bottom: 2em;
+  right: 2em;
+  text-decoration: none;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.3);
+  font-size: 18px;
+  padding: 8px 13px 8px 13px;
+  display: none;
+  .cc_rounded ()
+}
+
+.cc-go-top:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+  text-decoration: none;
+  color: white;
+}
+
+.searchbar {
+  width: 40%;
+  float: left;
+  height: 30px;
+  input {
+    box-shadow: none;
+    &:focus {
+      box-shadow: none;
+    };
+  }
+}
+
+.gsc-search-button {
+  display: none;
+}

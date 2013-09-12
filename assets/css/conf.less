@@ -1,0 +1,66 @@
+/* coding rules:
+ * tab width = 2
+ * all spaces
+ * 
+ * naming convention:
+ * cc_ prefix
+ * __  component part
+ * --  variant
+ * example: cc_alert--info__close = style that is specific to the close button
+ *                                  of the info alert box only.
+ * more about this: engineering.appfolio.com/2012/11/16/css-architecture
+ */
+
+// colors
+
+@black:      #000;
+@white:      #fff;
+@lightpink:  #DF9FA4;
+@pink:       #CB646C;
+@darkpink:   #501B1F;
+@lightgrey:  #F4F4F4;
+@mediumgrey: #707070;
+@darkgrey:   #323232;
+@lightborder:#E7E7E7;
+@alertbg:    #f9f6e7;
+@darkred:    #6e2627;
+
+@main-font:   "Helvetica", "DejaVu Sans", "Arial", sans-serif;
+@logo-font:   "Lucida Grande", "Helvetica", "Arial", sans-serif;
+@header-font: "Lato", sans-serif;
+
+
+// font sizes
+
+@text:      14px;
+@text--S:   (@text * 0.9);
+@text--M:   (@text * 1.2);
+@text--L:   (@text * 1.5);
+@text--XL:  (@text * 2.3);
+@text--2XL: (@text * 3);
+
+// mixins
+
+.cc_rounded () {
+  border-radius: 4px;
+}
+.header () {
+  font-family: @header-font;
+  font-weight: normal;
+  color:       @black;
+  line-height: 1.2;
+  margin: 1em 0 0.5em 0;
+}
+
+.transition (@element; @duration; @timing: ease){
+  transition:         @element @duration @timing;
+  -moz-transition:    @element @duration @timing;
+  -webkit-transition: @element @duration @timing;
+  -o-transition:      @element @duration @timing;
+}
+.grayscale (@percent) {
+  -webkit-filter: grayscale(@percent);
+     -moz-filter: grayscale(@percent);
+      -ms-filter: grayscale(@percent);
+       -o-filter: grayscale(@percent);
+}

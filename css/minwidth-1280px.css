@@ -1,9 +1,0 @@
-.row .stats .graphics {
-  display: inline;
-}
-#rightbar {
-  width: 320px;
-  }
-  #rightbar + #center {
-    margin-right: 350px;
-}
