@@ -3,12 +3,12 @@ title: Deploying Ruby on Rails apps
 shortdesc: Ruby on Rails is an open source web application framework which runs on the Ruby programming language.
 ---
 
-## Deploying Ruby on Rails apps
+## Deploying Ruby on Rails applications
 
-Clever Cloud allows you to deploy any RoR application. This page will
+Clever Cloud allows you to deploy any Ruby on Rails application. This page will
 explain you how to set up your application to run it on our service.
 
-You do not need to change a lot in your application, the *requierments* will help you to configure your apps with some mandatory files to add, and properties to setup.
+You do not need to change a lot in your application, the *requirements* will help you configure your applications with some mandatory files to add, and properties to setup.
 
 ### Overview
 
@@ -42,13 +42,13 @@ Be sure that:
 First, your application must use rack. This implies that a config.ru
 file is present.
 
-Then, you need to provide a Gemfile.lock. To do that, please run
+Then, you need to provide a Gemfile.lock. To do that, please run:
 
-	```
-	.../myapp $ bundle install ## That will generate Gemfile.lock
-	.../myapp $ git add Gemfile.lock
-	.../myapp $ git commit -m "Add production dependency file"
-	```
+```bash
+.../myapp $ bundle install ## That will generate Gemfile.lock
+.../myapp $ git add Gemfile.lock
+.../myapp $ git commit -m "Add production dependency file"
+```
 
 ### Deploy on Clever Cloud
 

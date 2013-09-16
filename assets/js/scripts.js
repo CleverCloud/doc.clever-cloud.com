@@ -75,7 +75,7 @@ $(document).ready(function() {
 
 });
 
-var lgList = ["java", "php", "scala", "nodejs", "python"];
+var lgList = ["ruby", "java", "php", "scala", "nodejs", "python"];
 
 var activeHeadbar = function() {
   _.each(lgList, function(x, y) {
