@@ -12,7 +12,7 @@ web applications.
 
 ## Dependencies
 
-To follow this tutorial, you will need
+To follow this tutorial, you will need:
 
 * Ruby >= 1.9.2 (w/ Rubygems)
 
@@ -21,6 +21,12 @@ To follow this tutorial, you will need
 * Your prefered editor
 
 * Git (for the deploy part)
+
+<div class="alert">
+To manage your gems and ruby versions, we recommend <a href="https://github.com/sstephenson/rbenv">rbenv</a>.
+If you use a system-wide installation of ruby, You will have to use `sudo` with the `gem` and `bundle` commands,
+or use arguments that will make gem and bundle install the gem in directories you have write-permissions in.
+</div>
 
 
 ## Create and write your application
