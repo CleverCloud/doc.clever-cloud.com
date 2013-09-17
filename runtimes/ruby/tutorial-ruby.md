@@ -1,6 +1,6 @@
 ---
 title: Hello world tutorial
-shortdesc: How to write a hello world webapp using Rack and deploy it on the Clever Cloud.
+shortdesc: How to write a hello world web application using Rack and deploy it on the Clever Cloud.
 ---
 
 ## Introduction
