@@ -14,7 +14,7 @@ Some applications require a populated database to run properly.
 If you want to import your **SQL** dump, you can use several methods:
 
 1. <a href="https://dbms-adminer.clever-cloud.com/adminer/">our WebGUI (Adminer)</a>
-2. command line tool for MySQL administration like `psql`
+2. command line tool for PostgreSQL administration like `psql`
 3. any PostgreSQL client such as pgAdmin 3.
 
 <br/><br/>If you need to import a very large dump, please send an email to <support@clever-cloud.com>.
