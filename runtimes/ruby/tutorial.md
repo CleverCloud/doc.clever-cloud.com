@@ -5,8 +5,8 @@ shortdesc: How to write a hello world webapp using Rack and deploy it on the Cle
 
 ## Introduction
 
-Currently, the Clever Cloud supports Rack-based applications only.
-Created in the year 2007, Rack has become the de-facto standard for ruby
+Currently, the Clever Cloud supports Rack-based applications.
+Created in 2007, Rack has become the de-facto standard for ruby
 web applications.
 
 
@@ -117,5 +117,5 @@ To git+ssh://git@push.clever-cloud.com/app_xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx.
 ```
 
 
-And now, wait 'til it deploys, and check it on the Clever Cloud!
-Our demo for this tutorial can be seen here: <a href="https://helloworld-rack-demo.cleverapps.io/">https://helloworld-rack-demo.cleverapps.io/</a>.
+And now, wait till the end of the deployment. You can check the logs in the console.
+Our demo for this tutorial is here: <a href="https://helloworld-rack-demo.cleverapps.io/">https://helloworld-rack-demo.cleverapps.io/</a>.
