@@ -50,6 +50,46 @@ Then, you need to provide a Gemfile.lock. To do that, please run:
 .../myapp $ git commit -m "Add production dependency file"
 ```
 
+### More configuration
+
+You can configure your deployment via the `clevercloud/ruby.json`
+configration file. This file is optional:
+
+```javascript
+{
+  "deploy" : {
+    "env": "<string>",
+    "rakegoals": [<string>]
+  }
+}
+```
+
+The following table describe each field:
+
+<table id="nodedeps" class="table table-bordered table-striped">
+	<thead>
+		<tr>
+			<th>Usage</th>
+			<th>Field</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+		<td><span class="label label-inverse">Optional</span></td>
+		<td>deploy.env</td>
+		<td>This is the value of the RAILS_ENV variable used when
+		bundle-ing the app. The default value is *production*</td>
+		</tr>
+		<tr>
+		<td><span class="label label-inverse">Optional</span></td>
+		<td>deploy.rakegoals</td>
+		<td>This is an array of string setting the rake goals to run
+		during the deployment.</td>
+		</tr>
+	</tbody>
+</table>
+
 ### Deploy on Clever Cloud
 
 Application deployment on Clever Cloud is via Git. Follow [these steps](/clever-cloud-overview/add-application/) to deploy your application.
