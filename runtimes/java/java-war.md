@@ -57,23 +57,44 @@ The supported containers are listed below:
 
 ### Necessary information
 
-To deploy war and ear files on the Clever Cloud, you need to provide a `clevercloud/war.json` file describing the container you want and the archives you want to deploy.
+* your application must be set to listen on **port 8080**
 
-This file must contain the following fields:
+* you need to provide a `clevercloud/war.json` file describing the container you want and the archives you want to deploy:
 
-```javascript
-{
-  "deploy":{
-     "container":"<string>",
-     "war" : ["<string>"]
-   }
-}
-```
+    ```javascript
+    {
+      "deploy":{
+         "container":"<string>",
+         "war" : ["<string>"]
+       }
+    }
+    ```
 
-* **container**: that field should contain one of the values in the left column of the table below.
-* **war** : this field is a list of strings. It should contain the paths of the
+    * **container**: that field should contain one of the values in the left column of the table below.
+    * **war** : this field is a list of strings. It should contain the paths of the
 war/ear files relative to your application root.
 
+<br/>
+
+* Optional: you can add a postdeploy webhook by adding its path:
+
+    ```javascript
+    {
+      "deploy":{
+        "container":"<string>",
+        "war" : ["<string>"]
+       },
+      "hooks": {
+        "postDeploy": "pathtoyourscript"
+      }
+    }
+    ```
+
+    **postDeploy**: execute a custom script after the deploy. Some frameworks or custom applications might require bootstrapping before the application may run.
+    You can achieve this by creating a custom script with your commands and adding the associated file name in `clevercloud/war.json`.
+
+
+### Available containers
 
 Available configuration values for "container" of war.json:
 <table class="table table-bordered table-stripped">
@@ -146,25 +167,6 @@ Available configuration values for "container" of war.json:
       </tr>
    </tbody>
 </table>
-
-### Configuration file
-
-You can configure your application start command by adding a `clevercloud/war.json` file with the following fields:
-
-```javascript
-{
-  "deploy":{
-    "container":"<string>",
-    "war" : ["<string>"]
-   },
-  "hooks": {
-    "postDeploy": "pathtoyourscript"
-  }
-}
-```
-
-**postDeploy**: execute a custom script after the deploy. Some frameworks or custom applications might require bootstrapping before the application may run.
-You can achieve this by creating a custom script with your commands and adding the associated file name in `clevercloud/war.json`.
 
 ### Deploy on Clever Cloud
 
