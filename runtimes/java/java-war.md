@@ -44,9 +44,6 @@ The supported containers are listed below:
   </tbody>
 </table>
 
-### Runtime
-
-Your application must be set to listen on **port 8080**.
 
 ### Create an application
 
