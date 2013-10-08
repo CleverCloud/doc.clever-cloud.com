@@ -19,7 +19,12 @@ PHP is a widely-used general-purpose scripting language that is especially suite
   <img src="/assets/images/appjavawar.png"/>
 </figure>
 3. Then select the language/framework:  <figure class="cc-content-img"><img src="/assets/images/javawarapp.png"></figure>
-3. *Optional:* in case of PHP or static applications, you can choose between FTP and Git deployment
+3. You can choose between FTP and Git deployment
+<div class="alert alert-hot-problems">
+  <h4>Warning:</h4>
+  <p>An FTP application is automatically started once the application is created, even if no code has been sent.</p>
+</div>
+
 4. Check that the information are correct and validate: <figure class="cc-content-img"><img src="/assets/images/appcreationreviewjavawar.png"></figure>
 5. *Optional*: <a href="/databases-and-services/add-service/">add a database or service</a>
 

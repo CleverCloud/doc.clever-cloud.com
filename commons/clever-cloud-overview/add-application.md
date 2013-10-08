@@ -64,3 +64,8 @@ To deploy via FTP, you need an FTP software installed on your machine. Filezilla
 When you have chosen to deploy your application via FTP, you have received associated FTP credentials by email. Enter the host, username and password in your FTP software and deploy the files.
 
 More documentation about Filezilla: <a href="https://wiki.filezilla-project.org/FileZilla_Client_Tutorial_(en)" target="_blank">https://wiki.filezilla-project.org/FileZilla_Client_Tutorial_(en)</a>
+
+<div class="alert alert-hot-problems">
+  <h4>Warning:</h4>
+  <p>An FTP application is automatically started once the application is created, even if no code has been sent.</p>
+</div>
