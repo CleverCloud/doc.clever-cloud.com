@@ -1,30 +1,3 @@
-//Pricer
-$.ajax({
-  url: 'https://console.clever-cloud.com/ccapi/v1/instances',
-  datatype: 'jsonp',
-  success: _.bind(function(ii) {
-     $.ajax({
-        url: 'https://console.clever-cloud.com/ccapi/v1/prices',
-      datatype: 'jsonp',
-        success: _.bind(function(pp) {
-          var change = _.find(pp, function(p) { return p.currency == 'EUR'; }).value;
-          _.foldl(
-              ii, function($ii, i){
-                _.each(i.flavors, function (f){
-                  $ii.append('<tr><td class="cc-col__price"><span class="label cc-label__price label-info">'
-                    +f.name+
-                    '</span></td><td>'
-                    +i.name+
-                    '</td><td>'+f.price+' Drops</td><td>' + (Math.round((f.price*6)*change*1000) / 1000) + ' €</td></tr>');
-                });
-                return $ii;
-              }, $('.billing-table')
-            )
-        }, this)
-  });
-  }, this)
-});
-
 $(document).ready(function() {
 
   // redirections
@@ -72,6 +45,9 @@ $(document).ready(function() {
   
   // reorder left-menu
   reorderLeftMenu();
+
+  // initiate pricing table if needed
+  initatePricingTable();
 
 });
 
@@ -126,3 +102,36 @@ $(document).ready(function() {
     type: 'image'
   });
 });
+
+var initatePricingTable = function() {
+  if (!_.contains(window.location.pathname.split( '/' ), "pricing")) {
+    return;
+  }
+
+  //Pricer
+  $.ajax({
+    url: 'https://console.clever-cloud.com/ccapi/v1/instances',
+    datatype: 'jsonp',
+    success: _.bind(function(ii) {
+       $.ajax({
+          url: 'https://console.clever-cloud.com/ccapi/v1/prices',
+        datatype: 'jsonp',
+          success: _.bind(function(pp) {
+            var change = _.find(pp, function(p) { return p.currency == 'EUR'; }).value;
+            _.foldl(
+                ii, function($ii, i){
+                  _.each(i.flavors, function (f){
+                    $ii.append('<tr><td class="cc-col__price"><span class="label cc-label__price label-info">'
+                      +f.name+
+                      '</span></td><td>'
+                      +i.name+
+                      '</td><td>' + (Math.round((f.price*6)*change*1000) / 1000) + ' €</td></tr>');
+                  });
+                  return $ii;
+                }, $('.billing-table')
+              )
+          }, this)
+    });
+    }, this)
+  });
+}
