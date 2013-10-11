@@ -77,3 +77,15 @@ If you see "*access denied*" or "*password:*", your SSH key may be invalid.
 
 <i class="icon-question-sign"></i> **Need help about SSH keys?**  
 Contact us at <support@clever-cloud.com> or you can [read more about SSH Keys](http://git-scm.com/book/en/Git-on-the-Server-Generating-Your-SSH-Public-Key).
+
+### Check you ssh configuration
+
+To check if your ssh key is correctly configured, you can try to run:
+
+```bash
+    ssh git@push.clever-cloud.com
+```
+
+The first time, you may have to type "yes" to continue.
+
+If you see "Permission denied (publickey).", something went wrong, feel free to contact the support, otherwise everything should be fine.
