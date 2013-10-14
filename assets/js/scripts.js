@@ -123,9 +123,11 @@ var initatePricingTable = function() {
                 _.each(i.flavors, function (f){
                   $ii.append('<tr><td class="cc-col__price"><span class="label cc-label__price label-info">'
                     +f.name+
-                    '</span></td><td>'
-                    +i.name+
-                    '</td><td>' + (Math.round((f.price*6)*change*1000) / 1000) + ' €</td></tr>');
+                    '</span></td>' +
+                    '<td>' +i.name+ '</td>' +
+                    '<td>' + displayRam(f.mem) + '</td>' +
+                    '<td>' + f.cpus + '</td>' +
+                    '<td>' + (Math.round((f.price*6)*change*1000) / 1000) + ' €</td></tr>');
                 });
                 return $ii;
               }, $('.billing-table')
@@ -135,6 +137,14 @@ var initatePricingTable = function() {
     });
     }, this)
   });
+}
+
+var displayRam = function(mem) {
+  if(mem > 1000) {
+    return Math.round(mem/1000, 0) + " Go";
+  } else {
+    return mem + " Mo";
+  }
 }
 
 /* Table initialisation */
