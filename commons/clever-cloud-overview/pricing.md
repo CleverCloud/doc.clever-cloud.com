@@ -8,7 +8,7 @@ Clever Cloud billing is counted every 10 minutes. The following prices are based
 <br/>
 
 #### Per hour applications billing rates
-<table class="table table-bordered table-striped">
+<table class="table table-bordered table-striped" id="example">
   <thead>
     <tr>
       <th>Size</th>

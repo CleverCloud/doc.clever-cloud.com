@@ -119,19 +119,39 @@ var initatePricingTable = function() {
           success: _.bind(function(pp) {
             var change = _.find(pp, function(p) { return p.currency == 'EUR'; }).value;
             _.foldl(
-                ii, function($ii, i){
-                  _.each(i.flavors, function (f){
-                    $ii.append('<tr><td class="cc-col__price"><span class="label cc-label__price label-info">'
-                      +f.name+
-                      '</span></td><td>'
-                      +i.name+
-                      '</td><td>' + (Math.round((f.price*6)*change*1000) / 1000) + ' €</td></tr>');
-                  });
-                  return $ii;
-                }, $('.billing-table')
-              )
+              ii, function($ii, i){
+                _.each(i.flavors, function (f){
+                  $ii.append('<tr><td class="cc-col__price"><span class="label cc-label__price label-info">'
+                    +f.name+
+                    '</span></td><td>'
+                    +i.name+
+                    '</td><td>' + (Math.round((f.price*6)*change*1000) / 1000) + ' €</td></tr>');
+                });
+                return $ii;
+              }, $('.billing-table')
+            )
+            initSortingTable();
           }, this)
     });
     }, this)
   });
 }
+
+/* Table initialisation */
+//$(document).ready(function() {
+var initSortingTable = function() {
+  $('#example').dataTable( {
+    "sDom": "<'row-fluid'<'span6'l><'span6'f>r>t<'row'<'span6'i><'span6'p>>",
+    "sPaginationType": "bootstrap",
+    "bPaginate": false,
+    "bInfo": false,
+    "oLanguage": {
+      "sLengthMenu": "_MENU_ records per page"
+    },
+    "aaSorting": [],
+    "aoColumnDefs": [
+      //{ "asSorting": [ "asc" ], "aDataSort": [ 1 ], "aTargets": [ 1 ] }
+    ]
+  });
+}
+//} );
