@@ -1,9 +1,9 @@
 ---
-title: Deploying Go apps
+title: Deploy Go apps
 shortdesc: Go, otherwise known as Golang, is an open source, compiled, garbage-collected, concurrent system programming language.
 ---
 
-## Deploying Go applications
+## Deploy Go applications
 
 Clever Cloud allows you to deploy any Go application. This page will
 explain you how to set up your application to run it on our service.

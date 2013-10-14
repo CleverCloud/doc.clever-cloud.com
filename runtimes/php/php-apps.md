@@ -3,7 +3,7 @@ title: Deploy PHP applications
 shortdesc: PHP is a widely-used general-purpose scripting language that is especially suited for Web development and can be embedded into HTML.
 ---
 
-## Deploying PHP apps
+## Deploy PHP apps
 
 PHP is available on our platform with the version 5.3.23. You can use FTP or Git to deploy your applications.
 
