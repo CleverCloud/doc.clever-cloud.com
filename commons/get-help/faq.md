@@ -71,7 +71,7 @@ See [Custom Domain Names](/admin-console/apps-management/#custom-domain-names) s
 
 ### How do I define cron jobs for my application?
 
-See [Cron Configuration File](/php/php-apps/#cron-configuration-file) section of Deploying PHP apps.
+See [Cron Configuration File](/php/php-apps/#cron-configuration-file) section of Deploy PHP apps.
 
 ### How many active requests can my app serve at one time?
 

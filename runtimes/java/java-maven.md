@@ -4,7 +4,7 @@ position: 3
 shortdesc: Maven is essentially a project management and comprehension tool...
 ---
 
-## Deploying Java Maven projects
+## Deploy Java Maven projects
 
 The Clever Cloud offers you to run your Java Maven projects. You can deploy this kind of project without changing your code, but running it on Clever Cloud needs some configuration files, to add parameters like your targeted container for instance.
 
