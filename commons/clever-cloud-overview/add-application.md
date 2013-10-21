@@ -15,7 +15,7 @@ Application deployment has two main steps: application creation and application 
   <img src="/assets/images/appjavawar.png"/>
 </figure>
 3. Then select the language/framework:  <figure class="cc-content-img"><img src="/assets/images/javawarapp.png"></figure>
-3. *Optional:* in case of PHP or static applications, you can choose between FTP and Git deployment
+3. *Optional:* in case of PHP applications, you can choose between FTP and Git deployment
 4. Check that the information are correct and validate: <figure class="cc-content-img"><img src="/assets/images/appcreationreviewjavawar.png"></figure>
 5. *Optional*: <a href="/databases-and-services/add-service/">add a database or service</a>
 
@@ -57,7 +57,7 @@ Follow these steps to deploy your application:
 
 ### FTP Deployment
 
-It is possible to deploy via FTP with PHP and static applications.  
+It is possible to deploy via FTP with PHP applications.  
 
 To deploy via FTP, you need an FTP software installed on your machine. Filezilla is one of them.
 
