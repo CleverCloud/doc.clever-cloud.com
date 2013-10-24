@@ -69,3 +69,8 @@ More documentation about Filezilla: <a href="https://wiki.filezilla-project.org/
   <h4>Warning:</h4>
   <p>An FTP application is automatically started once the application is created, even if no code has been sent.</p>
 </div>
+
+<div class="alert alert-hot-problems">
+  <h4>Our advice</h4>
+  <p>FTP deployment is ok for small websites but not for large ones. We strongly recommend you to use <b>Git</b> deployment for <b>large PHP websites</b>.</p>
+</div>
