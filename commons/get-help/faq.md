@@ -7,15 +7,7 @@ position: 3
 
 ### What is a Scaler?
 
-A <dfn id="def-scaler">scaler</dfn> is a individual container hosting your app. You can attribute one or more Scalers to your apps. Scalers comes in many sizes:
-
-* Tiny Scalers
-* Small Scalers
-* Medium Scalers
-* Large Scalers
-* XtraLarge Scalers
-* Huge Scalers
-* XtraHuge Scalers
+A <dfn id="def-scaler">scaler</dfn> is a individual container hosting your app. You can attribute one or more Scalers to your apps. Scalers comes in many sizes based on each language requirement from XS to XXXL.
 
 Each [scaler](#def-scaler) is given a fixed set of resources, depending on the chosen language. A Java [scaler](#def-scaler) will have more RAM than a PHP [scaler](#def-scaler).
 The way you scale an application is by assigning it new [scalers](#def-scaler).
@@ -29,6 +21,8 @@ Currently Clever Cloud supports:
 * Node.js
 * PHP ([see frameworks and CMS](/php/php-apps/#frameworks-and-cms))
 * Python (Django)
+* Ruby
+* Go
 
 ### How many applications can I create with Clever Cloud?
 
@@ -55,11 +49,9 @@ Log in with your account to [console.clever-cloud.com](https://console.clever-cl
 
 ### How do I report an application that is in violation of your Terms and Conditions?
 
-To report an application that is in violation of the Clever Cloud's Terms and Condition, please contact us: 
+To report an application that is in violation of the Clever Cloud's Terms and Condition, please contact us at <abuse@clever-cloud.com>.
 
-* <abuse@clever-cloud.com>
-
-We will investigate an contact the application's developer over the violation if needed.
+We will investigate and contact the application's owner over the violation if needed.
 
 ### Does Clever Cloud support SSL (HTTPS)?
 
@@ -71,7 +63,7 @@ See [Custom Domain Names](/admin-console/apps-management/#custom-domain-names) s
 
 ### How do I define cron jobs for my application?
 
-See [Cron Configuration File](/php/php-apps/#cron-configuration-file) section of Deploy PHP apps.
+This feature is currently only available for PHP, Python and Ruby applications. See [Cron Configuration File](/php/php-apps/#cron-configuration-file) for more information.
 
 ### How many active requests can my app serve at one time?
 
