@@ -31,7 +31,7 @@ Be sure that:
 
 * you push in <strong>master branch</strong>
 
-* your application listens at the <strong>8080</strong> port
+* your application listens on port <strong>8080</strong>
 
 ### Requirements
 
