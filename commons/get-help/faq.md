@@ -71,3 +71,10 @@ There are two possibilities, according to the scalability settings you've opted 
 
 1. You have set a single [scaler](#def-scaler) : the maximum active requests depends on your [scaler's](#def-scaler) computing limits.
 2. You have set auto-scalability, new [scalers](#def-scaler) will be started as long as your app need more resources (until it reaches the maximum number of [scalers](#def-scaler) you have defined).
+
+### How to know if a user comes from a secure connection?
+
+All connections are handled by load-balancers ahead of your applications and forwarded in plain http, you cannot rely on the server port to know the scheme used by the user.
+
+Instead of it you can use the `X-Forwarded-Proto` HTTP header to get the information, it is set to '*http*' or '*https*'.
+
