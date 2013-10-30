@@ -29,66 +29,18 @@ Go, otherwise known as Golang, is an open source, compiled, garbage-collected, c
 
 Be sure that:
 
-* you push in <b>master branch</b>
+* you push in <strong>master branch</strong>
 
-* you commit a <strong>Makefile</strong>
-
-* you have a <strong>clevercloud/go.json</strong> file containing the informations listed in <a href="#the-go.json-file">This section</a>.
+* your application listens at the <strong>8080</strong> port
 
 ### Requirements
 
-#### The Makefile
+Appart from <strong>listening on port 8080</strong>, there is nothing to
+change on your application.
 
-This file should contain the actions needed to build the application. It is a standard Makefile. You might probably already have one.
-More documentation about make can be found here: <a href="https://www.gnu.org/software/make/">https://www.gnu.org/software/make/</a>.
-
-#### The go.json file
-
-You **HAVE TO** provide a clevercloud/go.json file. (That is a go.json file in the clevercloud folder at the root of your application)
-This file should look like the following:
-
-```javascript
-{
-	"build": {
-		"makefile": "somefile",
-		"target": "sometarget"
-	},
-	"deploy": {
-		"exec": "path-to-executable"
-	}
-}
-```
-
-##### Required fields
-
-<table id="godeps" class="table table-bordered table-striped">
-	<thead>
-		<tr>
-			<th>Usage</th>
-			<th>Field</th>
-			<th>Description</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-		<td><span class="label label-important">Required</span></td>
-		<td>deploy.exec</td>
-		<td>This must be the path (relatively to the application root) of the generated executable file. This field is required.</td>
-		</tr>
-		<tr>
-		<td><span class="label label-inverse">Optional</span></td>
-		<td>build.makefile</td>
-		<td>This is the path (relatively to the application root) of the makefile to use. If none given, the file named `Makefile` will be used.</td>
-		</tr>
-		<tr>
-		<td><span class="label label-inverse">Optional</span></td>
-		<td>build.target</td>
-		<td>This is the target to use when calling make. If none given, the make command will use the first target of the file. (Standard make behaviour.)</td>
-		</tr>
-	</tbody>
-</table>
-
-
+We currently support single module applications only. That means that
+your sources files just need to be at the project's root, and you can't
+have multiple modules running.
 
 ### Deploy on Clever Cloud
 
