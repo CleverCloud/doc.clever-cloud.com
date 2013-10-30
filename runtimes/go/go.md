@@ -38,6 +38,11 @@ Be sure that:
 Appart from <strong>listening on port 8080</strong>, there is nothing to
 change on your application.
 
+We automatically build and run your application, as `go get myapp` would
+build it. The executable is run with the application's root as its
+current path. So if your application has a "static" folder at its root, it will be
+accessible via "./static" in your application.
+
 We currently support single module applications only. That means that
 your sources files just need to be at the project's root, and you can't
 have multiple modules running.
