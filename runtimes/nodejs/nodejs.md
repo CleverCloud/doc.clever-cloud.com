@@ -20,11 +20,11 @@ Node.js is a platform built on Chrome's JavaScript runtime for building fast, sc
 1. Create a new app by clicking on the **Add an App** button, in the headbar. 
 2. Enter your application's name and description and click "Next".
 <figure class="cc-content-img">
-  <img src="/assets/images/appjavawar.png"/>
+  <img src="/assets/images/screens/nodejs/nodejs_create.png"/>
 </figure>
 3. Then select the language/framework:  <figure class="cc-content-img"><img src="/assets/images/javawarapp.png"></figure>
 3. *Optional:* in case of PHP applications, you can choose between FTP and Git deployment
-4. Check that the information are correct and validate: <figure class="cc-content-img"><img src="/assets/images/appcreationreviewjavawar.png"></figure>
+4. Check that the information are correct and validate: <figure class="cc-content-img"><img src="/assets/images/screens/nodejs/nodejs_validation.png"/></figure>
 5. *Optional*: <a href="/databases-and-services/add-service/">add a database or service</a>
 
 ### Necessary information

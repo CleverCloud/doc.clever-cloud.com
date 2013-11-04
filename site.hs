@@ -15,7 +15,7 @@ main :: IO ()
 main = hakyll $ do
 
     -- Copy files and images
-    match ("assets/images/*" .||. "assets/js/*" .||. "assets/font/*" .||. "assets/magnific-popup/*") $ do
+    match ("assets/images/**" .||. "assets/js/*" .||. "assets/font/*" .||. "assets/magnific-popup/*") $ do
         route   idRoute
         compile copyFileCompiler
 

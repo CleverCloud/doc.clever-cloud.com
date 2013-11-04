@@ -15,16 +15,18 @@ Python 2.7.3 is available on our platform. You can use Git to deploy your applic
 ### Getting started
 
 1. Create a new app by clicking on the **Add an App** button, in the headbar. 
-2. Enter your application's name and description and click "Next".<figure class="cc-content-imglarge">
-  <img src="/assets/images/apppython.png"/></figure>
-3. The next screen called "Choose an instance" and let you choose the instances types. Here, we select "Python":  <figure class="cc-content-imglarge"><img src="/assets/images/javawarapp.png"></figure>
-4. The next screen called "App Creation Review" . This is the last step before creating your app. Click on **Create** to get your git URI  : <figure class="cc-content-imglarge"><img src="/assets/images/appcreationreviewpython.png"></figure>
+2. Enter your application's name and description and click "Next".
+<figure class="cc-content-img">
+  <img src="/assets/images/screens/python/python_create.png"/>
+</figure>
+3. The next screen called "Choose an instance" and let you choose the instances types. Here, we select "Python":  <figure class="cc-content-img"><img src="/assets/images/javawarapp.png"></figure>
+4. The next screen called "App Creation Review" . This is the last step before creating your app. Click on **Create** to get your git URI  : <figure class="cc-content-img"><img src="/assets/images/screens/python/python_validation.png"/></figure>
 5. *Optional*: If you need a database, go to your the dashboard of your personal account or of your organisation. Select your name or your organisation in the headbard. <figure class="cc-content-img">
   <a href="/assets/images/gotohome.png"><img src="/assets/images/gotohome.png"/></a>
   <figcaption>Use the headbar to head back to your dashboard. 
   </figcaption>
 </figure>
-6. Then, click on **Services** in the left tab, and choose a database. In our case, we will choose mySQL. Click on the mySQL button, and then on "Add service". Your credentials will be sent by email.<figure class="cc-content-imglarge"><img src="/assets/images/mysql.png"></figure>
+6. Then, click on **Services** in the left tab, and choose a database. In our case, we will choose mySQL. Click on the mySQL button, and then on "Add service". Your credentials will be sent by email.<figure class="cc-content-img"><img src="/assets/images/mysql.png"></figure>
 
 ### Available extensions and modules
 
@@ -122,8 +124,8 @@ _* For more information about the syntax, you can check <a href="http://en.wikip
 
 After you created an app in the [console](https://console.clever-cloud.com), the console prompt you the following message:
 
-<figure class="cc-content-imglarge">
-  <img src="/assets/images/newgitapp.png"/></a>
+<figure class="cc-content-img">
+  <img src="/assets/images/newgitapp.png"/>
 </figure>
 
 #### Setting up your remotes

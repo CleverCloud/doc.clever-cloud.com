@@ -17,10 +17,10 @@ Play is an open source web application framework, written in Scala and Java, whi
 1. Create a new app by clicking on the **Add an App** button, in the headbar. 
 2. Enter your application's name and description and click "Next".
 <figure class="cc-content-img">
-  <img src="/assets/images/appjavawar.png"/>
+  <img src="/assets/images/screens/javaplay1/javaplay1_create.png"/>
 </figure>
 3. Then select the language/framework:  <figure class="cc-content-img"><img src="/assets/images/javawarapp.png"></figure>
-4. Check that the information are correct and validate: <figure class="cc-content-img"><img src="/assets/images/appcreationreviewjavawar.png"></figure>
+4. Check that the information are correct and validate: <figure class="cc-content-img"><img src="/assets/images/screens/javaplay1/javaplay1_validation.png"/></figure>
 5. *Optional*: <a href="/databases-and-services/add-service/">add a database or service</a>
 
 ### Necessary information
