@@ -78,3 +78,7 @@ All connections are handled by load-balancers ahead of your applications and for
 
 Instead of it you can use the `X-Forwarded-Proto` HTTP header to get the information, it is set to '*http*' or '*https*'.
 
+<div class="alert alert-hot-problems">
+   <h4>Note for Play Framework! 1.2.x users</h4>
+   <p>In order to use `request.secure` instead of accessing the header, you must add `XForwardedSupport=all` in your *application.conf*.</p>
+</div>
