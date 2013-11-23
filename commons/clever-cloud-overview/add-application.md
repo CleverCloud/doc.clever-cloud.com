@@ -49,8 +49,9 @@ Follow these steps to deploy your application:
 
   <div class="alert alert-hot-problems">
     <h4>Warning:</h4>
-    <p>The remote branch on Clever Cloud is <strong>ALWAYS</strong> master. If your local branch is not "master", use this syntax:</p>
-    <pre>git push < name > yourbranch:master</pre>
+    <p>You can only push to the <strong>master</strong> branch for deployment. Trying to push in another branch will trigger an error.</p>
+    <p>In order to push to <strong>master</strong> from a non-master local branch, use this syntax:</p>
+    <pre>git push &lt; name &gt; yourbranch:master</pre>
   </div>
   
   Checkout your application <b>logs</b> in the dashboard to <b>monitor the deployment</b>.
