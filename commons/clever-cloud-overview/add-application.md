@@ -15,7 +15,7 @@ Application deployment has two main steps: application creation and application 
   <img src="/assets/images/appjavawar.png"/>
 </figure>
 3. Then select the language/framework:  <figure class="cc-content-img"><img src="/assets/images/javawarapp.png"></figure>
-3. *Optional:* in case of PHP applications, you can choose between FTP and Git deployment
+3. *Optional:* in case of PHP or static applications, you can choose between FTP and Git deployment
 4. Check that the information are correct and validate: <figure class="cc-content-img"><img src="/assets/images/appcreationreviewjavawar.png"></figure>
 5. *Optional*: <a href="/databases-and-services/add-service/">add a database or service</a>
 
@@ -49,15 +49,16 @@ Follow these steps to deploy your application:
 
   <div class="alert alert-hot-problems">
     <h4>Warning:</h4>
-    <p>The remote branch on Clever Cloud is <strong>ALWAYS</strong> master. If your local branch is not "master", use this syntax:</p>
-    <pre>git push < name > yourbranch:master</pre>
+    <p>You can only push to the <strong>master</strong> branch for deployment. Trying to push in another branch will trigger an error.</p>
+    <p>In order to push to <strong>master</strong> from a non-master local branch, use this syntax:</p>
+    <pre>git push &lt; name &gt; yourbranch:master</pre>
   </div>
   
   Checkout your application <b>logs</b> in the dashboard to <b>monitor the deployment</b>.
 
 ### FTP Deployment
 
-It is possible to deploy via FTP with PHP applications.  
+It is possible to deploy via FTP with PHP and static applications.  
 
 To deploy via FTP, you need an FTP software installed on your machine. Filezilla is one of them.
 
