@@ -52,7 +52,7 @@ the root of your application or via */app/myFolder*.
 <div class="alert alert-hot-problems">
   <h5>Important note about target folder</h5>
   <p>
-    If the folder **already exists** and is not empty nor is an **existing directory**, the mount of your bucket will be ignored.
+    The folder must not exists in your repository (or it needs to be empty). Otherwise, the mount of your bucket will be ignored.
   </p>
 </div>
 
