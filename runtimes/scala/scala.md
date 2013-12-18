@@ -29,15 +29,23 @@ Scala is an object-functional programming and scripting language that runs on th
 First, your application must be set to listen on the 8080 port, for worldwide
 connections.
 
-And for now, you need to add the sbt-start-script plugin to your project.
+We currently support both sbt-start-script and sbt-native-packager. So
+you need to add one of them to your project.
 
-That plugin will add the "stage" goal that we will use to create a target/start
-script we will execute.
+These plugins will add the "stage" goal that we will use to create a
+start script we will execute.
 
 In project/plugins.sbt:
 
 ```scala
-addSbtPlugin("com.typesafe.sbt" % "sbt-start-script" % "0.7.0")
+addSbtPlugin("com.typesafe.sbt" % "sbt-start-script" % "0.10.0")
+// Or 0.9.0 if you use sbt ≤0.12
+```
+
+or
+
+```scala
+addSbtPlugin("com.typesafe.sbt" % "sbt-native-packager" % "0.6.4")
 ```
 
 You can also use newer (or older) versions of the plugin.
@@ -50,7 +58,15 @@ import com.typesafe.sbt.SbtStartScript
 seq(SbtStartScript.startScriptForClassesSettings: _*)
 ```
 
+or
+
+```scala
+settings(com.typesafe.sbt.SbtNativePackager.packageArchetype.java_application: _*)
+```
+
 That should be enough for a project with a main method.
+
+Please note that the sbt-start-script plugin is going toward deprecation.
 
 For more configuration, please go to <a href="https://github.com/sbt/sbt-start-script" target="_blank">https://github.com/sbt/sbt-start-script</a>.
 
