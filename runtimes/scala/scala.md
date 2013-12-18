@@ -61,7 +61,7 @@ seq(SbtStartScript.startScriptForClassesSettings: _*)
 or
 
 ```scala
-settings(com.typesafe.sbt.SbtNativePackager.packageArchetype.java_application: _*)
+packageArchetype.java_application
 ```
 
 That should be enough for a project with a main method.
