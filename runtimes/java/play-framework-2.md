@@ -14,7 +14,7 @@ Play is an open source web application framework, written in Scala and Java, whi
 
 ### Create an application
 
-1. Create a new app by clicking on the **Add an App** button, in the headbar. 
+1. Create a new app by clicking on the **Add an App** button, in the headbar.
 2. Enter your application's name and description and click "Next".
 <figure class="cc-content-img">
   <img src="/assets/images/screens/javaplay2/javaplay2_create.png"/>
@@ -29,7 +29,8 @@ Play is an open source web application framework, written in Scala and Java, whi
 
 ### Configuration file
 
-You can configure your application start command by adding a `./clevercloud/play.json` file with the following fields:
+You can configure your application start command by adding a
+`./clevercloud/sbt.json` file with the following fields:
 
 ```javascript
 {
@@ -47,13 +48,14 @@ You can configure your application start command by adding a `./clevercloud/play
 
 
 **postDeploy**: execute a custom script after the deploy. Some frameworks or custom applications might require bootstrapping before the application may run.
-You can achieve this by creating a custom script with your commands and adding the associated file name in `clevercloud/play.json`.
+You can achieve this by creating a custom script with your commands and
+adding the associated file name in `clevercloud/sbt.json`.
 
 
 
 ### Known problems with Play! 2
 
-Please read the following if your project fails with this error:  
+Please read the following if your project fails with this error:
 
 `sbt.ResolveException: unresolved dependency: play#sbt-plugin;2.0: not found`
 
@@ -62,7 +64,7 @@ Some versions of Play2 try to retrieve a nonexistent version of
 You have two options to fix this problem:
 
 You can set the "play.version" environment variable in the
-`clevercloud/play.json` file.  
+`clevercloud/sbt.json` file.
 For example, for Play 2.0.4:
 
 ``` javascript
