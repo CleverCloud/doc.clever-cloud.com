@@ -8,17 +8,38 @@ Clever Cloud billing is counted every 10 minutes. The following prices are based
 <br/>
 
 #### Per hour applications billing rates
-<table class="table table-bordered table-striped" id="example">
+<table class="table table-bordered table-striped dataTable" id="example">
   <thead>
-    <tr>
+    <tr >
       <th>Size</th>
-      <th>Resource</th>
       <th>RAM</th>
       <th>vCPU</th>
       <th>Cost per hour</th>
     </tr>
   </thead>
   <tbody class="billing-table">
+  <tr>
+    <td class="cc-col__price "><span class="label cc-label__price label-info">Solo</span></td>
+    <td class=" ">768 Mo</td>
+    <td class=" ">1</td>
+    <td class=" ">0.02&nbsp;€</td>
+  </tr>
+  <tr class="even">
+    <td class="cc-col__price "><span class="label cc-label__price label-info">S</span></td>
+    <td class=" ">1 Go</td><td class=" ">2</td>
+    <td class=" ">0.04&nbsp;€</td></tr><tr class="odd">
+    <td class="cc-col__price "><span class="label cc-label__price label-info">M</span></td>
+    <td class=" ">4 Go</td>
+    <td class=" ">4</td><td class=" ">0.15&nbsp;€</td></tr><tr class="even">
+    <td class="cc-col__price "><span class="label cc-label__price label-info">L</span></td>
+    <td class=" ">8 Go</td>
+    <td class=" ">6</td><td class=" ">0.25&nbsp;€</td>
+  </tr>
+  <tr class="odd">
+    <td class="cc-col__price "><span class="label cc-label__price label-info">XL</span></td>
+    <td class=" ">16 Go</td><td class=" ">8</td>
+    <td class=" ">0.45&nbsp;€</td>
+  </tr>
   </tbody>
 </table>
 

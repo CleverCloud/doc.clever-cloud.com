@@ -107,7 +107,7 @@ var initatePricingTable = function() {
   if (!_.contains(window.location.pathname.split( '/' ), "pricing")) {
     return;
   }
-
+  /*
   //Pricer
   $.ajax({
     url: 'https://console.clever-cloud.com/ccapi/v1/instances',
@@ -124,7 +124,6 @@ var initatePricingTable = function() {
                   $ii.append('<tr><td class="cc-col__price"><span class="label cc-label__price label-info">'
                     +f.name+
                     '</span></td>' +
-                    '<td>' +i.name+ '</td>' +
                     '<td>' + displayRam(f.mem) + '</td>' +
                     '<td>' + f.cpus + '</td>' +
                     '<td>' + (Math.round((f.price*6)*change*1000) / 1000) + ' €</td></tr>');
@@ -136,7 +135,7 @@ var initatePricingTable = function() {
           }, this)
     });
     }, this)
-  });
+  });*/
 }
 
 var displayRam = function(mem) {
