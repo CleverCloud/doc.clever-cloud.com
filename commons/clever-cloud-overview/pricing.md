@@ -20,24 +20,24 @@ Clever Cloud billing is counted every 10 minutes. The following prices are based
   <tbody class="billing-table">
   <tr>
     <td class="cc-col__price "><span class="label cc-label__price label-info">Solo</span></td>
-    <td class=" ">768 Mo</td>
+    <td class=" ">768 MB</td>
     <td class=" ">1</td>
     <td class=" ">0.02&nbsp;€</td>
   </tr>
   <tr class="even">
     <td class="cc-col__price "><span class="label cc-label__price label-info">S</span></td>
-    <td class=" ">1 Go</td><td class=" ">2</td>
+    <td class=" ">1 GB</td><td class=" ">2</td>
     <td class=" ">0.04&nbsp;€</td></tr><tr class="odd">
     <td class="cc-col__price "><span class="label cc-label__price label-info">M</span></td>
-    <td class=" ">4 Go</td>
+    <td class=" ">4 GB</td>
     <td class=" ">4</td><td class=" ">0.15&nbsp;€</td></tr><tr class="even">
     <td class="cc-col__price "><span class="label cc-label__price label-info">L</span></td>
-    <td class=" ">8 Go</td>
+    <td class=" ">8 GB</td>
     <td class=" ">6</td><td class=" ">0.25&nbsp;€</td>
   </tr>
   <tr class="odd">
     <td class="cc-col__price "><span class="label cc-label__price label-info">XL</span></td>
-    <td class=" ">16 Go</td><td class=" ">8</td>
+    <td class=" ">16 GB</td><td class=" ">8</td>
     <td class=" ">0.45&nbsp;€</td>
   </tr>
   </tbody>
@@ -66,9 +66,9 @@ Clever Cloud billing is counted every 10 minutes. The following prices are based
       </tr>
       <tr>
         <td><strong>Size</strong></td>
-        <td>1 Go</td>
-        <td>5 Go</td>
-        <td>10 Go</td>
+        <td>1 GB</td>
+        <td>5 GB</td>
+        <td>10 GB</td>
       </tr>
       <tr>
         <td><strong>Price</strong></td>
@@ -98,9 +98,9 @@ Clever Cloud billing is counted every 10 minutes. The following prices are based
       </tr>
       <tr>
         <td><strong>Size</strong></td>
-        <td>1 Go</td>
-        <td>5 Go</td>
-        <td>10 Go</td>
+        <td>1 GB</td>
+        <td>5 GB</td>
+        <td>10 GB</td>
       </tr>
       <tr>
         <td><strong>Price</strong></td>
