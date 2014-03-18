@@ -23,7 +23,7 @@ Available languages are listed below:
 * [Node.js](/nodejs)
 * [PHP](/php)
 * [Python](/python)
-* [Ruby] (/ruby)
+* [Ruby](/ruby)
 * [Scala](/scala)
 
 
