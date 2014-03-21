@@ -2,13 +2,30 @@
 title: Add-on API
 position: 1
 ---
-## Clever Cloud add-on API
+# Clever Cloud add-on API
 
-Clever Cloud provides an API to add-on providers. This document is a handbook for this API.
+Clever Cloud offers you to sell your service as an add-on through the dashboard.
+This article will document how you can technically plug into the platform to provide add-on provision, deprovision, and configuration via the dashboard.
+
+There are two faces here:
+
+* [The addon provider API](#addon-provider-api) - The API *you* need to provide and document to allow the Clever Cloud's backend to request provision and deprovision of add-ons.
+
+* [The addon infos API](#addon-infos-api) - The API Clever Cloud provides to allow you to get informations about provisioned add-ons and their owners.
+
+## Preamble
+
+In the PaaS world, an add-on system is preceding the others, therefore is well known by a lot of developers: the Heroku one. To ease up the transition between Heroku and Clever Cloud, we decided to support (then iterate over) the Heroku standard for add-on provisioning API.
+
+So, if you already have been integrated as an add-on provider for the Heroku platform, you will have no trouble integrating in the Clever Cloud's add-on platform. This explains why we handle "heroku\_id" fields instead of "clevercloud\_id" or equivalent.
+
+## Addon Provider API
+
+This is the API *you* need to provide to allow Clever Cloud to provision an add-on for a customer.
 
 ### How it works
 
-When a Clever Cloud customer use the marketplace to provision an add-on, Clever Cloud sends a request to your service which provides a new add-on for this app.
+When a Clever Cloud customer uses the marketplace to provision an add-on, Clever Cloud sends a request to your service which provides a new add-on for this app.
 
 ### Build an add-on
 
@@ -247,19 +264,69 @@ This will return:
 
 This API is part of the Clever Cloud API. The base URL for the Clever Cloud API is:
 
-#### Endpoints
+```http
+https://ccapi.cleverapps.io/v2
+```
 
-##### Vendor
+You should prefix your calls by this base URL.
+
+### Endpoints
 
 ```http
 GET /vendor/apps
+Response Body: [
+	{
+		"provider_id": "addon-name",
+		"heroku_id": "addon_xxx",
+		"callback_url": "https://ccapi.cleverapps.io/vendor/apps/addon_xxx",
+		"plan": "test"
+	}, {
+		"provider_id": "addon-name",
+		"heroku_id": "addon_yyy",
+		"callback_url": "https://ccapi.cleverapps.io/vendor/apps/addon_yyy",
+		"plan": "premium"
+	}
+]
 ```
-List all add-ons
+
+List all add-ons provided by you.
+
+* `provider_id` - Should be the same as the "id" field of your uploaded manifest.
+
+* `heroku_id` - The add-on's id from Clever Cloud's POV.
+
+* `callback_url` - URL to call to get more informations about this add-on.
+
+* `plan` - The current plan of this add-on.
+
+Now, you can get more informations about a specific add-on:
 
 ```http
 GET /vendor/apps/{addonId}
+Response Body: {
+	"id": "addon_xxx",
+	"name": "My addon-name instance",
+	"config": {"MYADDON_URL": "http://myaddon.com/52e82f5d73"},
+	"callback_url": "https://ccapi.cleverapps.io/vendor/apps/addon_xxx",
+	"owner_email": "user@example.com",
+	"region": "eu",
+	"domains": []
+}
 ```
-Get information for one specific add-on.
+
+* `id` - The addon id from Clever Cloud's POV.
+
+* `name` - The name the user gave to this add-on in the Clever Cloud's dashboard.
+
+* `config` - Config vars as you defined during the provision call.
+
+* `callback_url` - The URL you just called.
+
+* `owner_email` - One of the owner's email address.
+
+* `region` - The region this add-on is located in. As for now, we only support "eu".
+
+* `domains` - Originally the domains names for the application owning the add-on. We return an empty list.
 
 ```http
 PUT /vendor/apps/{addonId}
