@@ -3,15 +3,15 @@ title: Deploy PHP applications
 shortdesc: PHP is a widely-used general-purpose scripting language that is especially suited for Web development and can be embedded into HTML.
 ---
 
-## Deploy PHP apps
+# Deploy PHP apps
 
 PHP is available on our platform with the version 5.3.23. You can use FTP or Git to deploy your applications.
 
-### Overview
+## Overview
 
 PHP is a widely-used general-purpose scripting language that is especially suited for Web development and can be embedded into HTML.
 
-### Create an application
+## Create an application
 
 1. Create a new app by clicking on the **Add an App** button, in the headbar. 
 2. Enter your application's name and description and click "Next".
@@ -28,7 +28,7 @@ PHP is a widely-used general-purpose scripting language that is especially suite
 4. Check that the information are correct and validate: <figure class="cc-content-img"><img src="/assets/images/screens/php5.5/php5.5_create.png"/></figure>
 5. *Optional*: <a href="/databases-and-services/add-service/">add a database or service</a>
 
-### CRON configuration file
+## CRON configuration file
 
 The configuration file used for crontab is **clevercloud/cron.json**. It
 is only available for <strong>PHP</strong> applications at this time.
@@ -69,13 +69,13 @@ Example of `clevercloud/cron.json` which executes the file `cron.php` every 5 mi
 _* For more information about the syntax, you can check <a href="http://en.wikipedia.org/wiki/Cron">this page</a>_
 
 
-###Configuration files for PHP applications
+##Configuration files for PHP applications
 
 The configuration file for your PHP application must be
 `clevercloud/php.json`, that is a *php.json* file in a *clevercloud*
 folder at the root of your application.
 
-#### Change the webroot
+### Change the webroot
 
 Since one of the best practices of PHP development is to take the libraries and core files outside the webroot, you may want to set another webroot than the default one (*the root of your application*).
 
@@ -99,7 +99,7 @@ Please note the absolute path style: `/public`.
  <p>The change of the webroot will be rejected during the deployment if the target directory does not exist or is not a directory.</p>
 </div>
 
-#### Execute a custom script after the deploy
+### Execute a custom script after the deploy
 
 Some frameworks or custom applications might require bootstrapping before the application may run (_e.g. Composer_).
 You can achieve this by creating a custom script with your commands and adding the following line in `clevercloud/php.json`:
@@ -112,7 +112,7 @@ You can achieve this by creating a custom script with your commands and adding t
    }
 ```
 
-##### Example
+#### Example
 
 You use Composer to manage dependencies of your project and you want to execute _composer.phar install_ before running your app.
 
@@ -138,7 +138,7 @@ Then add these lines in `clevercloud/php.json`:
 
 
 
-### Frameworks and CMS
+## Frameworks and CMS
 
 The following is the list of tested CMS by our team.
 
@@ -175,13 +175,13 @@ It's quite not exhaustive, so it doesn't mean that other CMS can't work on the C
 </table>
 </div>
 
-### Available extensions and modules
+## Available extensions and modules
 
 You can check enabled extensions and versions by viewing our <a href="http://phpinfo.cleverapps.io" target="_blank">phpinfo() example</a>.
 
 If you have a request about modules, feel free to ask on <a href="https://groups.google.com/forum/?fromgroups#!forum/clever-cloud-users" target="_blank">Clever Cloud user group</a>.
 
 
-### Deploy on Clever Cloud
+## Deploy on Clever Cloud
 
 Application deployment on Clever Cloud is via **Git or FTP**. Follow [these steps](/clever-cloud-overview/add-application/) to deploy your application.

@@ -4,11 +4,11 @@ position: 4
 shortdesc: In <abbr title="Java Enterprise Edition">J2EE</abbr> applications modules are packaged as EAR and WAR based on their functionality.
 ---
 
-## Deploy WAR/EAR projects <span class="cc-alpha pull-right" title="Currently in Alpha version"></span>
+# Deploy WAR/EAR projects <span class="cc-alpha pull-right" title="Currently in Alpha version"></span>
 
 Clever Cloud allows you to run WAR or EAR applications. You can deploy these projects without changing your code. We just need a configuration file with your targeted container.
 
-### Overview
+## Overview
 
 In <abbr title="Java Enterprise Edition">J2EE</abbr> application modules are packaged as EAR and WAR based on their functionality.
 
@@ -21,7 +21,7 @@ In <abbr title="Java Enterprise Edition">J2EE</abbr> application modules are pac
   <div>WAR and EAR apps are free during the Alpha period. No credits will be charged.</div>
 </div>
 
-### Available containers
+## Available containers
 
 The Clever Cloud supports many servlet containers.
 The supported containers are listed below:
@@ -45,7 +45,7 @@ The supported containers are listed below:
 </table>
 
 
-### Create an application
+## Create an application
 
 1. Create a new app by clicking on the **Add an App** button, in the headbar. 
 2. Enter your application's name and description and click "Next".
@@ -56,7 +56,7 @@ The supported containers are listed below:
 4. Check that the information are correct and validate: <figure class="cc-content-img"><img src="/assets/images/screens/javawar/javawar_create.png"/></figure>
 5. *Optional*: <a href="/databases-and-services/add-service/">add a database or service</a>
 
-### Necessary information
+## Necessary information
 
 * your application must be set to listen on **port 8080**
 
@@ -95,7 +95,7 @@ war/ear files relative to your application root.
     You can achieve this by creating a custom script with your commands and adding the associated file name in `clevercloud/war.json`.
 
 
-### Available containers
+## Available containers
 
 Available configuration values for "container" of war.json:
 <table class="table table-bordered table-stripped">
@@ -169,6 +169,6 @@ Available configuration values for "container" of war.json:
    </tbody>
 </table>
 
-### Deploy on Clever Cloud
+## Deploy on Clever Cloud
 
 Application deployment on Clever Cloud is via Git. Follow [these steps](/clever-cloud-overview/add-application/) to deploy your application.

@@ -3,9 +3,9 @@ title: Intro to Apps
 position: 1
 ---
 
-## Introduction to Applications
+# Introduction to Applications
 
-### Application's definition
+## Application's definition
 
 An application is defined on Clever Cloud by the following elements:
 
@@ -27,7 +27,7 @@ Available languages are listed below:
 * [Scala](/scala)
 
 
-### How it works
+## How it works
 
 When an application is pushed, the platform receives it. It then checks the resources’ requirements. If they are complete, the deployment is launched. When finished and successfull, the application is up and running.
 

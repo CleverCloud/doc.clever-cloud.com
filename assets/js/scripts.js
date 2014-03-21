@@ -4,9 +4,9 @@ $(document).ready(function() {
   checkRedirections();
 
   //Instanciate an index for each h3
-  if($(".cc-content h3").length > 1) {
-    $("h2").append("<h4>Table of Contents</h4><ul id='cc-tableofcontent__list'></ul>");
-    $(".cc-content h3").each( function() {
+  if($(".cc-content h2").length > 1) {
+    $("article>h1").append('<nav class="cc-toc"><h1>Table of Contents</h1><ul id="cc-tableofcontent__list"></ul></nav>');
+    $(".cc-content h2").each( function() {
       var section_id = $(this).attr("id");
       var line = "<li><a href=#"+section_id+'>'+$(this).text()+'</a></li>';
       var $newli = $(line);

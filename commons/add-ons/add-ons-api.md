@@ -16,7 +16,7 @@ You can write your service in any language.
 
 You need to create a manifest file, this file is a JSON that describes your add-on.
 
-##### Example manifest
+#### Example manifest
 
 ```json
 {
@@ -62,7 +62,7 @@ Fields
 
 Your service is expected to authenticate all calls with the add-on id and password found as described in the add-on manifest. A failed authentication should return 401 Not Authorized.
 
-##### Sample with Flask in Python
+#### Sample with Flask in Python
 
 ```python
 from functools import wraps
@@ -207,7 +207,7 @@ id=<id>&token=<token>&timestamp=<timestamp>&nav-data=<nav-data>&email=<email>
 * the token is computed using the formula below.
 * Nav data contains information like the current app name and installed add-ons for Clever Cloud Dashboard.
 
-##### Token
+#### Token
 
 The token field in the sso call, is created as follow:
 
@@ -224,7 +224,7 @@ the provision call.
 
 * `timestamp` - The timestamp field of the sso request.
 
-##### Sample in Python
+#### Sample in Python
 
 ```python
 from hashlib import sha1
@@ -243,7 +243,9 @@ This will return:
 'aca601ba464437cbaa12b2fedd7db755c32ddb5e'
 ```
 
-### API Documentation
+## Addon Infos API
+
+This API is part of the Clever Cloud API. The base URL for the Clever Cloud API is:
 
 #### Endpoints
 
@@ -264,9 +266,9 @@ PUT /vendor/apps/{addonId}
 ```
 Modify your config vars, you should update your manifest too.
 
-### Sample code
+## Sample code
 
-##### Add-on Skeleton in Python
+### Add-on Skeleton in Python
 
 ```python
 #!/usr/bin/env/python

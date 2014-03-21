@@ -2,12 +2,12 @@
 title: Pricing
 position: 5
 ---
-## Billing
+# Billing
 Clever Cloud billing is counted every 10 minutes. The following prices are based on the language you use.
 
 <br/>
 
-#### Per hour applications billing rates
+## Per hour applications billing rates
 <table class="table table-bordered table-striped dataTable" id="example">
   <thead>
     <tr >
@@ -45,7 +45,7 @@ Clever Cloud billing is counted every 10 minutes. The following prices are based
 
 <br/>
 
-#### Databases billing rates
+## Databases billing rates
 
 <table class="table-pricing-services table table-bordered table-striped">
     <caption>MySQL pricing plans</caption>

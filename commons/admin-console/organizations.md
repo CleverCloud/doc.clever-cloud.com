@@ -2,14 +2,14 @@
 title: Roles and Organizations
 position: 3
 ---
-## Organizations
+# Organizations
 
 In order to improve team collaboration between developers, accountants, managers and admins, we have introduced organizations.
 
 Once you create an organization, you can add collaborators and assign them [roles](#roles-and-privileges) which give them rights.
 
 
-### Add an organization
+## Add an organization
 
 Organization names are uniques. It means that you cannot use an organization name that is already used.
 
@@ -23,7 +23,7 @@ In order to add an organization, just click on "Add an organization" in the top 
 </figure>
 
 
-### Roles and privileges
+## Roles and privileges
 
 The table below describes rights assigned to roles:
 

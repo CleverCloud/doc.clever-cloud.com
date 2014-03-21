@@ -2,7 +2,7 @@
 title: File System Buckets
 position: 3
 ---
-## FS Buckets: keep and manage data files <span class="cc-beta pull-right" title="Currently in Beta version"></span>
+# FS Buckets: keep and manage data files <span class="cc-beta pull-right" title="Currently in Beta version"></span>
 
 <div class="alert alert-hot-problems">
   <h5>Note for Beta Version</h5>
@@ -15,12 +15,12 @@ The Git deployment does not allow you to keep generated data files between deplo
 
 You will be able to retrieve generated data between two deployments.
 
-### Create a FS Bucket
+## Create a FS Bucket
 
 [This article](/databases-and-services/add-service/) describes the process to add a File System Bucket on Clever Cloud.
 
 
-### Configure your application
+## Configure your application
 
 To configure your application to use buckets, use the
 `clevercloud/buckets.json` file.
@@ -56,7 +56,7 @@ the root of your application or via */app/myFolder*.
   </p>
 </div>
 
-### Video demo
+## Video demo
 <p>
   <iframe style="width:640px" height="360" src="http://www.youtube.com/embed/6rJ8zQqIhUw?rel=0&autohide=1&showinfo=0" frameborder="0" controls="0"  allowfullscreen="allowfullscreen"> </iframe>
 </p>

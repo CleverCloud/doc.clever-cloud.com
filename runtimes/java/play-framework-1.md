@@ -4,15 +4,15 @@ position: 1
 shortdesc: Play is an open source web application framework, written in Scala and Java, which follows the model–view–controller (MVC) architectural pattern.
 ---
 
-## Deploy Play Framework 1.x
+# Deploy Play Framework 1.x
 
 The Clever Cloud supports Play 1.x applications natively. The present guide explains how to set up your application to run on the Clever Cloud.  
 
-### Overview
+## Overview
 
 Play is an open source web application framework, written in Scala and Java, which follows the model–view–controller (MVC) architectural pattern. It aims to optimize developer productivity by using convention over configuration, hot code reloading and display of errors in the browser.
 
-### Create an application
+## Create an application
 
 1. Create a new app by clicking on the **Add an App** button, in the headbar. 
 2. Enter your application's name and description and click "Next".
@@ -23,11 +23,11 @@ Play is an open source web application framework, written in Scala and Java, whi
 4. Check that the information are correct and validate: <figure class="cc-content-img"><img src="/assets/images/screens/javaplay1/javaplay1_validation.png"/></figure>
 5. *Optional*: <a href="/databases-and-services/add-service/">add a database or service</a>
 
-### Necessary information
+## Necessary information
 
 * the application must be located at the **root** of the git repository
 
-### Play! configuration
+## Play! configuration
 
 By default, your application will run on Clever Cloud with the option `--%clevercloud`.  
 It means that you can define special keys in your `application.conf` file that will be used only on Clever Cloud.
@@ -52,7 +52,7 @@ You can for example:
 
 More information on <a target="_blank" href="http://www.playframework.com">playframework.com</a>.
 
-### Configuration file
+## Configuration file
 
 You can configure your application start command by adding a `./clevercloud/play.json` file with the following fields:
 
@@ -69,7 +69,7 @@ You can achieve this by creating a custom script with your commands and adding t
 
 
 
-### Deploy on Clever Cloud
+## Deploy on Clever Cloud
 
 Application deployment on Clever Cloud is via Git. Follow [these steps](/clever-cloud-overview/add-application/) to deploy your application.
 

@@ -3,16 +3,16 @@ title: Scala with SBT
 shortdesc: Scala is an object-functional programming and scripting language that runs on the Java platform…
 ---
 
-## Deploy Scala apps
+# Deploy Scala apps
 
 The Clever Cloud allows you to deploy Scala and Java applications built with <acronym title=" Simple Build Tool">SBT</acronym>.  
 This document will explain you how to set up your app to run on our service.
 
-### Overview
+## Overview
 
 Scala is an object-functional programming and scripting language that runs on the Java platform for general software applications, statically typed, designed to concisely express solutions in an elegant, type-safe and lightweight manner. Scala includes full support for functional programming (including currying, pattern matching, algebraic data types, lazy evaluation, tail recursion, immutability, etc.).
 
-### Create an application
+## Create an application
 
 1. Create a new app by clicking on the **Add an App** button, in the headbar. 
 2. Enter your application's name and description and click "Next".
@@ -24,7 +24,7 @@ Scala is an object-functional programming and scripting language that runs on th
 4. Check that the information are correct and validate: <figure class="cc-content-img"><img src="/assets/images/screens/scalasbt/scalasbt_validation.png"/></figure>
 5. *Optional*: <a href="/databases-and-services/add-service/">add a database or service</a>
 
-### Requirements
+## Requirements
 
 First, your application must be set to listen on the 8080 port, for worldwide
 connections.
@@ -70,6 +70,6 @@ Please note that the sbt-start-script plugin is going toward deprecation.
 
 For more configuration, please go to <a href="https://github.com/sbt/sbt-start-script" target="_blank">https://github.com/sbt/sbt-start-script</a>.
 
-### Deploy on Clever Cloud
+## Deploy on Clever Cloud
 
 Application deployment on Clever Cloud is via Git. Follow [these steps](/clever-cloud-overview/add-application/) to deploy your application.
