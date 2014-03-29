@@ -162,7 +162,7 @@ The request body contains the following fields:
 
 * `callback_url` - The URL you can use to get informations about the add-on and the user. This URL is available as soon as the provisioning is done. You can't use this URL during the POST call.
 
-* `logplex_token` - Token used to identify what you send to our log aggregator. [Need link to logplex doc]
+* `logplex_token` - Token used to identify what you send to our log collector. The log collector API doc is here: [/add-ons/add-ons-log-collector/](/add-ons/add-ons-log-collector/)
 
 * `options` - String -> String map with options. We don't currently support this, so it will be empty for now.
 
