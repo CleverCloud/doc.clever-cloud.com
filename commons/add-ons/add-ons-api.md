@@ -138,7 +138,7 @@ Request: POST {base_url}
 Request Body: {
   "heroku_id": "addon_xxx",
   "plan": "basic",
-  "region": "eu",
+  "region": "EU",
   "callback_url": "https://ccapi.cleverapps.io/vendor/apps/addon_xxx",
   "logplex_token": "logtoken_yyy",
   "options": {}
@@ -156,9 +156,12 @@ The request body contains the following fields:
 
 * `heroku_id` - The id we give to your add-on to identify it on our side.
 
-* `plan` - The plan name the user chose. You can create plans in the dashboard once your add-on manifest has been uploaded to the Clever Cloud's platform.
+* `plan` - The slug field for the plan the user chose. You can create
+plans in the dashboard once your add-on manifest has been uploaded to
+the Clever Cloud's platform. We send you the slug of the given plan,
+not its name.
 
-* `region` - The region to provision the add-on. As for now, only "eu" will be sent.
+* `region` - The region to provision the add-on. As for now, only "EU" will be sent.
 
 * `callback_url` - The URL you can use to get informations about the add-on and the user. This URL is available as soon as the provisioning is done. You can't use this URL during the POST call.
 
