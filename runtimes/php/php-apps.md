@@ -5,7 +5,7 @@ shortdesc: PHP is a widely-used general-purpose scripting language that is espec
 
 ## Deploy PHP apps
 
-PHP is available on our platform with the version 5.3.23. You can use FTP or Git to deploy your applications.
+PHP is available on our platform with the version 5.5.11. You can use FTP or Git to deploy your applications.
 
 ### Overview
 
