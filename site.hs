@@ -33,9 +33,15 @@ main = hakyll $ do
        compile $
         loadBody "assets/css/all.less"
         >>= makeItem
-        >>= withItemBody (unixFilter "lessc" ["-","--yui-compress","-O2"])
+        >>= withItemBody (unixFilter "lessc" ["-","--yui-compress"])
 
     match "index.html" $ do
+        route $ idRoute
+        compile $ getResourceBody
+            >>= loadAndApplyTemplate "templates/default.html" mainCtx
+            >>= cleanUrls
+
+    match "write-a-tutorial-and-get-rewarded.html" $ do
         route $ idRoute
         compile $ getResourceBody
             >>= loadAndApplyTemplate "templates/default.html" mainCtx
