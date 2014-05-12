@@ -169,7 +169,7 @@ It's quite not exhaustive, so it doesn't mean that other CMS can't work on the C
   </tr>
     <tr>
       <td>Symfony</td>
-      <td> </td>
+      <td>Thelia</td>
   </tr>
   </tbody>
 </table>
