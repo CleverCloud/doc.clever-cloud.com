@@ -81,7 +81,7 @@ war/ear files relative to your application root.
 
     ```javascript
     {
-      "deploy":{
+      "deploy": {
         "container":"<string>",
         "war" : ["<string>"]
        },
@@ -94,6 +94,21 @@ war/ear files relative to your application root.
     **postDeploy**: execute a custom script after the deploy. Some frameworks or custom applications might require bootstrapping before the application may run.
     You can achieve this by creating a custom script with your commands and adding the associated file name in `clevercloud/war.json`.
 
+### Prebuild your application
+
+In addition to the war paths in the `clevercloud/war.json` file, you can just push your application's code and build it with maven. In order to do that, juste add the *build* field in your `clevercloud/war.json`:
+
+	```javascript
+	{
+	  "build": {
+	    "type": "maven",
+	    "goal": "package",
+	  },
+	  "deploy": { … }
+	}
+	```
+
+   **goal**: the maven goal to execute. That will be appended to the "mvn" command.
 
 ### Available containers
 
@@ -112,6 +127,11 @@ Available configuration values for "container" of war.json:
          (see <a href="http://glassfish.java.net/">http://glassfish.java.net/</a>)</td>
       </tr>
       <tr>
+         <td>GLASSFISH4</td>
+         <td>Use Glassfish 4.x
+         (see <a href="http://glassfish.java.net/">http://glassfish.java.net/</a>)</td>
+      </tr>
+      <tr>
          <td>JBOSS6</td>
          <td>Use JBoss AS 6.x
          (see <a href="http://www.jboss.org/jbossas">http://www.jboss.org/jbossas</a>)</td>
@@ -123,8 +143,11 @@ Available configuration values for "container" of war.json:
       </tr>
       <tr>
          <td>RESIN3</td>
-         <td>Use Resin AS 3.x (see <a
-         href="http://www.caucho.com/resin-3.1/doc/">http://www.caucho.com/resin-3.1/doc/</a>)</td>
+         <td>Use Resin AS 3.x (see <a href="http://www.caucho.com/resin-3.1/doc/">http://www.caucho.com/resin-3.1/doc/</a>)</td>
+      </tr>
+      <tr>
+         <td>RESIN4</td>
+         <td>Use Resin AS 4.x (see <a href="http://www.caucho.com/resin-4/doc/">http://www.caucho.com/resin-4/doc/</a>)</td>
       </tr>
       <tr>
          <td>JETTY6</td>
@@ -164,6 +187,11 @@ Available configuration values for "container" of war.json:
       <tr>
          <td>TOMCAT7</td>
          <td>Use Tomcat servlet container 7.x (see <a
+         href="https://tomcat.apache.org/">https://tomcat.apache.org/</a>)</td>
+      </tr>
+      <tr>
+         <td>TOMCAT8</td>
+         <td>Use Tomcat servlet container 8.x (see <a
          href="https://tomcat.apache.org/">https://tomcat.apache.org/</a>)</td>
       </tr>
    </tbody>
