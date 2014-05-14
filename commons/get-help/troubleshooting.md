@@ -52,7 +52,7 @@ position: 4
 
 #### <i class="icon-double-angle-right"></i> Git and File Persistence
 
-> Why are my files disappearing after an application restart?”
+> "Why are my files disappearing after an application restart?”
 
 Clever Cloud use Git to transfer your code and application's assets from your local host to your scaler. If your application writes files on the local file system, those files are not commited: so you can't save these files from a instance to an other.
 
@@ -67,29 +67,48 @@ The Json contains two parameters: the ID of the FS Bucket, and the path you want
 
 #### <i class="icon-double-angle-right"></i> Error about Empty Repository
 
-> “Logs are telling me that I may have cloned an empty repository”
+> “Logs are telling me \"warning: You appear to have cloned an empty repository\"”
 
-Most of the time, this error shows up because of an empty repository. The origin may have several explanations:
+This usually means that you created an application and asked to start it in the console without having pushed to it before.
 
-*You just have created you Git repository and tried to push*
+*You are not working on the master branch and pushed your branch to Clever Cloud*
 
-You may have pushed a empty repository, and the files of your project have not been added properly. Using the command `git add` will add the
-
-```bash
-# Using the '.' after 'add' will add all the files to the index of git
-$ git add .
-$ git commit -m "commiting files"
-```
-
-*You are working on a non-master branch but pushed it to Clever Cloud*
-
-So you need to push your specific branch to master by using the following command. To do so, you have to explicitly mention your current local branch and the remote master branch using the following command:
+Clever Cloud uses the master branch to deploy your application but this does not mean that you cannot use another one on your computer.
+The only thing that differs if you use another branch than the master one on your computer is that you need to explicitely tell that Clever Cloud needs to consider your branch as the master one.
 
 ```bash
 $ git push <cleverRemote> <yourSpcificBranchName>:master
 ```
 
+If you called the Clever Cloud repository "clever" and your local branch is "production", this becomes
+
+```bash
+$ git push clever production:master
+```
+
 *Related page: [Deploy an application](/clever-cloud-overview/add-application/).*
+
+#### <i class="icon-double-angle-right"></i> Error about not being a git repository
+
+> “I get errors telling me that it's not a git repository, what does it mean?
+
+This can mean several things, depending on the exact error message
+
+*fatal: Not a git repository (or any of the parent directories)*
+
+This means that the folder in which you are is not a git repository.
+Please refer to our "git deployment" documentation for how to set it up properly.
+
+*fatal: 'clever' does not appear to be a git repository*
+
+"clever" is a name used in our examples to represent the Clever Cloud servers.
+In order to be able to use the same name for yourself, you will add to create it like this:
+
+```bash
+$ git remote add clever <your-git-deployment-url>
+```
+
+*Related page: [Git deployment](/clever-cloud-overview/add-application/)*
 
 #### <i class="icon-double-angle-right"></i> SSH: Password is Asked
 
