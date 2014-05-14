@@ -77,6 +77,24 @@ war/ear files relative to your application root.
 
 <br/>
 
+* Optional but recommended: you can add an array of paths to GET in order to check that your application is responding:
+
+	```javascript
+	{
+	  "deploy": {
+	    "container":"<string>",
+	    "war": ["<string>"],
+	    "pingPaths": ["<string>"]
+	  }
+	}
+	```
+
+   **pingPaths**: each string of this array should begin with a "/". They will all be tested. If you provide this field and the array is not empty, the deployer
+   will try to issue a HTTP GET request to each of the paths: The deploy will succeed if and only if *all* the paths return a `200 OK` response.
+   If you do not provide this field, we will try to `GET /` until the container replies. So your application might not be fully deployed by the time we switch backend servers in the reverse proxy.
+
+<br />
+
 * Optional: you can add a postdeploy webhook by adding its path:
 
     ```javascript
