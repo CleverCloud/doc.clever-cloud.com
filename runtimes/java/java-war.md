@@ -215,6 +215,15 @@ Available configuration values for "container" of war.json:
    </tbody>
 </table>
 
+### Environment injection
+
+Clever Cloud can inject environment variables that are defined in the
+dashboard and by add-ons linked to your application.
+
+For WAR/EAR applications, the environment is injected in the
+`System.getProperties()` object. So, to use a variable, you just do
+`System.getProperties().getProperty("MY_VARIABLE")`.
+
 ### Deploy on Clever Cloud
 
 Application deployment on Clever Cloud is via Git. Follow [these steps](/clever-cloud-overview/add-application/) to deploy your application.

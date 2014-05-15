@@ -235,6 +235,15 @@ compilation of some of these modules.
 If you think more modules are commonly used and should be pre-installed, do not
 hesitate to contact us at <mailto:support@clever-cloud.com>
 
+### Environment variables
+
+Clever Cloud can inject environment variables that are defined in the
+dashboard and by add-ons linked to your application.
+
+To access your variable in your application, nothing simpler! Just get
+it from your environment, like you would with `PATH`:
+`process.env["MY_VARIABLE"]`.
+
 ### Deploy on Clever Cloud
 
 Application deployment on Clever Cloud is via Git. Follow [these steps](/clever-cloud-overview/add-application/) to deploy your application.

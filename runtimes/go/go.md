@@ -121,6 +121,16 @@ following will explain you how to do it:
 	The `execDir` value must be relative to the root of your repo. In the
 	example above, we will run the application in the src/myapp directory.
 
+### Environment variables
+
+
+Clever Cloud can inject environment variables that are defined in the
+dashboard and by add-ons linked to your application.
+
+To access your variable in your application, nothing simpler! Just get
+it from your environment, like you would with `PATH`:
+`os.Getenv("MY_VARIABLE")`.
+
 ### Deploy on Clever Cloud
 
 Application deployment on Clever Cloud is via Git. Follow [these steps](/clever-cloud-overview/add-application/) to deploy your application.

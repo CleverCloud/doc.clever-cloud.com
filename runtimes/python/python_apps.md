@@ -119,6 +119,19 @@ You can use the special variable `$ROOT` to refer to the root folder of your app
 
 _* For more information about the syntax, you can check <a href="http://en.wikipedia.org/wiki/Cron">this page</a>_
 
+### Environment injection
+
+Clever Cloud can inject environment variables that are defined in the
+dashboard and by add-ons linked to your application.
+
+The access to these variables is simple: just get them as you would with
+any environment variable:
+
+	```python
+	import os
+	os.getenv("MY_VARIABLE")
+	```
+
 ### Git Deployment
 *You will need git on your computer to deploy via this tool. Here is the official website of Git to get more informations&nbsp;: <a href="http://git-scm.com">git-scm.com</a>*
 

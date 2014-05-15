@@ -70,6 +70,13 @@ Please note that the sbt-start-script plugin is going toward deprecation.
 
 For more configuration, please go to <a href="https://github.com/sbt/sbt-start-script" target="_blank">https://github.com/sbt/sbt-start-script</a>.
 
+### Environment injection
+
+Clever Cloud can inject environment variables that are defined in the
+dashboard and by add-ons linked to your application.
+
+To get an env variable from your code, you can use the `System.getenv("MY_VARIABLE")` method. Be aware that it can return null.
+
 ### Deploy on Clever Cloud
 
 Application deployment on Clever Cloud is via Git. Follow [these steps](/clever-cloud-overview/add-application/) to deploy your application.

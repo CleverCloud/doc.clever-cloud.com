@@ -90,6 +90,15 @@ The following table describe each field:
 	</tbody>
 </table>
 
+### Environment variables
+
+Clever Cloud can inject environment variables that are defined in the
+dashboard and by add-ons linked to your application.
+
+To access your variable in your application, nothing simpler! Just get
+it from your environment, like you would with `PATH`:
+`ENV["MY_VARIABLE"]`.
+
 ### Deploy on Clever Cloud
 
 Application deployment on Clever Cloud is via Git. Follow [these steps](/clever-cloud-overview/add-application/) to deploy your application.
