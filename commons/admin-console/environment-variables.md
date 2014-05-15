@@ -38,13 +38,43 @@ Depending on the type of your application, you will need to use
 different ways. You can find the various ways in the specific instances
 documentations.
 
- * <a href="/nodejs/nodejs/#environment-injection">Node.js</a> (TL;DR: process.env["MY_VAR"])
- * <a href="/java/java-war/#environment-injection">Java WAR</a> (TL;DR: System.getProperties().getProperty("MY_VAR"))
- * <a href="/java/play-framework-1/#environment-injection">Play!  * Framework 1</a> (TL;DR: System.getenv("MY\_VAR") or ${MY_VAR} in application.conf)
- * <a href="/java/play-framework-2/#environment-injection">Play! Framework 2</a> (TL;DR: System.getenv("MY\_VAR") or ${MY_VAR} in application.conf)
- * <a href="/scala/scala/#environment-injection">Play! Framework 2</a> (TL;DR: System.getenv("MY\_VAR"))
- * <a href="/php/php-apps/#environment-injection">PHP</a> (TL;DR: getenv("MY_VAR"))
- * <a href="/python/python-apps/#environment-injection">Python</a> (TL;DR: os.getenv("MY_VAR"))
- * <a href="/ruby/ruby/#environment-injection">Ruby</a> (TL;DR: ENV["MY_VAR"])
+<table class="table table-bordered table-striped dataTable">
+    <tr>
+        <th>language</th>
+        <th>use case</th>
+    </tr>
+    <tr>
+        <td><a href="/nodejs/nodejs/#environment-injection">Node.js</a>  </td>
+        <td>process.env["MY_VAR"]</td>
+    </tr>
+    <tr>
+        <td><a href="/java/java-war/#environment-injection">Java WAR</a> </td>
+        <td>System.getProperties().getProperty("MY_VAR")</td>
+    </tr>
+    <tr>
+        <td><a href="/java/play-framework-1/#environment-injection">Play! * Framework 1</a></td>
+        <td>System.getenv("MY\_VAR") or \${MY_VAR} in application.conf</td>
+    </tr>
+    <tr>
+        <td><a href="/java/play-framework-2/#environment-injection">Play! Framework 2</a></td>
+        <td>System.getenv("MY\_VAR") or \${MY_VAR} in application.conf</td>
+    </tr>
+    <tr>
+        <td><a href="/scala/scala/#environment-injection">Scala</a> </td>
+        <td>System.getenv("MY\_VAR")</td>
+    </tr>
+    <tr>
+        <td><a href="/php/php-apps/#environment-injection">PHP</a></td>
+        <td>getenv("MY_VAR")</td>
+    </tr>
+    <tr>
+        <td><a href="/python/python-apps/#environment-injection">Python</a></td>
+        <td>os.getenv("MY_VAR")</td>
+    </tr>
+    <tr>
+        <td><a href="/ruby/ruby/#environment-injection">Ruby</a></td>
+        <td>env[“my_var”]<br></td>
+    </tr>
+</table>
 
 
