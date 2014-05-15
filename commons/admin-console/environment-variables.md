@@ -42,7 +42,7 @@ documentations.
  * <a href="/java/java-war/#environment-injection">Java WAR</a> (TL;DR: System.getProperties().getProperty("MY_VAR"))
  * <a href="/java/play-framework-1/#environment-injection">Play!  * Framework 1</a> (TL;DR: System.getenv("MY\_VAR") or ${MY_VAR} in application.conf)
  * <a href="/java/play-framework-2/#environment-injection">Play! Framework 2</a> (TL;DR: System.getenv("MY\_VAR") or ${MY_VAR} in application.conf)
- * <a href="/java/sbt/#environment-injection">Play! Framework 2</a> (TL;DR: System.getenv("MY\_VAR") or ${MY_VAR} in application.conf)
+ * <a href="/scala/scala/#environment-injection">Play! Framework 2</a> (TL;DR: System.getenv("MY\_VAR"))
  * <a href="/php/php-apps/#environment-injection">PHP</a> (TL;DR: getenv("MY_VAR"))
  * <a href="/python/python-apps/#environment-injection">Python</a> (TL;DR: os.getenv("MY_VAR"))
  * <a href="/ruby/ruby/#environment-injection">Ruby</a> (TL;DR: ENV["MY_VAR"])
