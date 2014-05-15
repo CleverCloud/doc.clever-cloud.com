@@ -159,47 +159,20 @@ Here is an example :
   }
 }
 ```
+
 ### Node.js supported versions
 
-The Clever Cloud can virtually run any version of node >= 0.6 and any module. Lesser (pre-npm) versions are not officially supported.
+The Clever Cloud can virtually run any version of node >= 0.6 and any
+module. Lesser (pre-npm) versions are not officially supported. Unstable
+versions are not supported either.
 
-#### Pre-installed versions and modules
+#### Pre-installed modules
 
 We currently host the following Node.js versions, with these modules already installed:
 
 **You can use any version of node you need and any modules you need. Preinstall version is only for faster deployment process.**
 
 <div class="row">
-  <div class="span3">
-    <table class="table table-bordered table-striped">
-    	<thead>
-    		<tr>
-    			<th>Available Node Versions</th>
-    		</tr>
-    	</thead>
-    	<tbody>
-    		<tr><td>v0.10.3 </td></tr>
-    		<tr><td>v0.10.2 </td></tr>
-    		<tr><td>v0.10.1 </td></tr>
-    		<tr><td>v0.10.0 </td></tr>
-    		<tr><td>v0.9.3  </td></tr>
-    		<tr><td>v0.9.2  </td></tr>
-    		<tr><td>v0.9.1  </td></tr>
-    		<tr><td>v0.9.0  </td></tr>
-    		<tr><td>v0.8.9  </td></tr>
-    		<tr><td>v0.8.8  </td></tr>
-    		<tr><td>v0.8.16 </td></tr>
-    		<tr><td>v0.8.15 </td></tr>
-    		<tr><td>v0.8.14 </td></tr>
-    		<tr><td>v0.8.13 </td></tr>
-    		<tr><td>v0.8.12 </td></tr>
-    		<tr><td>v0.8.11 </td></tr>
-    		<tr><td>v0.8.10 </td></tr>
-    		<tr><td>v0.7.12 </td></tr>
-    		<tr><td>v0.6.21 </td></tr>
-    	</tbody>
-    </table>
-  </div>
   <div class="span4">
     <table class="table table-bordered table-striped span1">
       <thead>
@@ -223,7 +196,7 @@ New versions will be added as they go out.
 
 #### Defining *pre-installed*
 
-The above table describes the versions and modules pre-installed for these versions.
+The above table describes the modules pre-installed.
 These modules are available at deploy time, without the need to download and
 install them.
 
@@ -231,6 +204,9 @@ If you use modules that are not pre-installed, we will just get them with npm
 (provided they are in the npm repository), and install it before we start your
 application. The deploy will then be a little longer, due to probable
 compilation of some of these modules.
+
+Some modules require system dependencies to build, require to rebuild node… so
+we installed the most used ones.
 
 If you think more modules are commonly used and should be pre-installed, do not
 hesitate to contact us at <mailto:support@clever-cloud.com>
