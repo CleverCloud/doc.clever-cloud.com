@@ -68,7 +68,7 @@ documentations.
         <td>getenv("MY_VAR")</td>
     </tr>
     <tr>
-        <td><a href="/python/python-apps/#environment-injection">Python</a></td>
+        <td><a href="/python/python_apps/#environment-injection">Python</a></td>
         <td>os.getenv("MY_VAR")</td>
     </tr>
     <tr>

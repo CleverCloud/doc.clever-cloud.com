@@ -90,7 +90,7 @@ The following table describe each field:
 	</tbody>
 </table>
 
-### Environment variables
+### Environment injection
 
 Clever Cloud can inject environment variables that are defined in the
 dashboard and by add-ons linked to your application.

@@ -211,7 +211,7 @@ we installed the most used ones.
 If you think more modules are commonly used and should be pre-installed, do not
 hesitate to contact us at <mailto:support@clever-cloud.com>
 
-### Environment variables
+### Environment injection
 
 Clever Cloud can inject environment variables that are defined in the
 dashboard and by add-ons linked to your application.
