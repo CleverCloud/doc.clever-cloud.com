@@ -3,9 +3,9 @@ title: Apps Management
 position: 6
 ---
 
-## Application Management
+# Application Management
 
-### Restart, stop, delete
+## Restart, stop, delete
 
 You can restart, stop and delete your application in the associated configuration panel.
 
@@ -16,7 +16,7 @@ Stop functionality is usefull during the development of the application to limit
 </figure>
 <figcaption>Manage your application</figcaption>
 
-### Logs
+## Logs
 
 The Clever Cloud dashboard gives you the ability to retrieve your application logs.
 

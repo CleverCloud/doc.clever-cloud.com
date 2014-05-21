@@ -3,7 +3,7 @@ title: SSH Keys
 position: 1
 ---
 
-## SSH keys
+# SSH keys
 
 SSH keys are used to establish a secure connection between your computer and Clever Cloud.  
 You must add a SSH key to your Clever Cloud's account to deploy via Git.  
@@ -14,19 +14,19 @@ A user can have multiple SSH keys.
   <p>It's important to not add the same SSH key to more than one account. Otherwise, you'll get an error in the console.</p>
 </div>
 
-### How to add your SSH key on Clever Cloud?
+How to add your SSH key on Clever Cloud?
 
-#### Find your SSH key
+## Find your SSH key
 
 You can already have an SSH key and so do not need to generate a new one. To check if you have one, follow the steps:  
 
 1. Wether you use Mac, Linux or Windows, open your Terminal application. On Windows, it is provided by this software: [http://msysgit.github.com](http://msysgit.github.com)
-2. Run ``` $ cd ~/.ssh/``` in your Terminal.
+2. Run ` $ cd ~/.ssh/` in your Terminal.
 3. If it is found, you do not need to generate a new one, simply switch to the following "Add you key on Clever Cloud"!
 
 <br/>
 
-#### Create your SSH key
+## Create your SSH key
 
 1.  In your Terminal, enter the following bash line:
 
@@ -57,7 +57,7 @@ You can already have an SSH key and so do not need to generate a new one. To che
 
 <br/>
 
-#### Add your SSH key on Clever Cloud
+## Add your SSH key on Clever Cloud
 
 To declare your public SSH key on Clever Cloud, click on your account, then on the left menu "Profile", and "ssh keys".
 
@@ -78,7 +78,7 @@ If you see "*access denied*" or "*password:*", your SSH key may be invalid.
 <i class="icon-question-sign"></i> **Need help about SSH keys?**  
 Contact us at <support@clever-cloud.com> or you can [read more about SSH Keys](http://git-scm.com/book/en/Git-on-the-Server-Generating-Your-SSH-Public-Key).
 
-### Check you ssh configuration
+## Check you ssh configuration
 
 To check if your ssh key is correctly configured, you can try to run:
 

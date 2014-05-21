@@ -4,15 +4,15 @@ position: 1
 shortdesc: Python 2.7.3 is available on our platform. You can use Git to deploy your application.
 ---
 
-## Deploy Python apps
+# Deploy Python apps
 
 Python is a programming language that lets you work more quickly and integrate your systems more effectively. You can learn how to use Python and see almost immediate gains in productivity and lower maintenance costs.
 
-### Overview
+## Overview
 
 Python 2.7.3 is available on our platform. You can use Git to deploy your application.
 
-### Getting started
+## Getting started
 
 1. Create a new app by clicking on the **Add an App** button, in the headbar. 
 2. Enter your application's name and description and click "Next".
@@ -28,7 +28,7 @@ Python 2.7.3 is available on our platform. You can use Git to deploy your applic
 </figure>
 6. Then, click on **Services** in the left tab, and choose a database. In our case, we will choose mySQL. Click on the mySQL button, and then on "Add service". Your credentials will be sent by email.<figure class="cc-content-img"><img src="/assets/images/mysql.png"></figure>
 
-### Available extensions and modules
+## Available extensions and modules
 
 You are granted to install external libs. As you can do on your workstation you can easily use pip and requirements.txt
 
@@ -53,11 +53,11 @@ psycopg2==2.4.5
 If you have any question, please refer to Support section.
 
 
-### Configuration file
+## Configuration file
 
 The configuration file for your Python application must be `clevercloud/python.json`.
 
-#### Select your module
+### Select your module
 
 To select which module you want to start, use the key `module` in `deploy` like the following:
 
@@ -72,7 +72,7 @@ To select which module you want to start, use the key `module` in `deploy` like 
 The module (without .py) must be importable, i.e. be in `PYTHONPATH`. For example with Django: "module":"cc_django_wsgi".
 
 
-#### Manage your static files
+### Manage your static files
 
 You are able to use a Filesystem Bucket to store your static files. Please refer to the [File System Buckets](/databases-and-services/fs-buckets/) section.
 
@@ -89,7 +89,7 @@ When your bucket is available, to enable Nginx to serve your static resources yo
 *Note: the path of your folder must be absolute regarding the root of your application.*
 
 
-### Cron configuration file
+## Cron configuration file
 
 The configuration file used for crontab is `clevercloud/cron.json`.
 
@@ -119,7 +119,7 @@ You can use the special variable `$ROOT` to refer to the root folder of your app
 
 _* For more information about the syntax, you can check <a href="http://en.wikipedia.org/wiki/Cron">this page</a>_
 
-### Environment injection
+## Environment injection
 
 Clever Cloud can inject environment variables that are defined in the
 dashboard and by add-ons linked to your application.
@@ -132,7 +132,8 @@ any environment variable:
 	os.getenv("MY_VARIABLE")
 	```
 
-### Git Deployment
+## Git Deployment
+
 *You will need git on your computer to deploy via this tool. Here is the official website of Git to get more informations&nbsp;: <a href="http://git-scm.com">git-scm.com</a>*
 
 After you created an app in the [console](https://console.clever-cloud.com), the console prompt you the following message:
@@ -141,7 +142,7 @@ After you created an app in the [console](https://console.clever-cloud.com), the
   <img src="/assets/images/newgitapp.png"/>
 </figure>
 
-#### Setting up your remotes
+### Setting up your remotes
 
 1. The "Information" page of your app gives you your git deployment URL.  
 It looks like this:  ``git+ssh://git@push.clever-cloud.com/<your_app_id>.git``.  

@@ -3,18 +3,18 @@ title: Deploy Go apps
 shortdesc: Go, otherwise known as Golang, is an open source, compiled, garbage-collected, concurrent system programming language.
 ---
 
-## Deploy Go applications
+# Deploy Go applications
 
 Clever Cloud allows you to deploy any Go application. This page will
 explain you how to set up your application to run it on our service.
 
 You do not need to change a lot in your application, the *requirements* will help you configure your applications with some mandatory files to add, and properties to setup.
 
-### Overview
+## Overview
 
 Go, otherwise known as Golang, is an open source, compiled, garbage-collected, concurrent system programming language. It was first designed and developed at Google Inc. beginning in September 2007 by Robert Griesemer, Rob Pike, and Ken Thompson.
 
-### Create an application
+## Create an application
 
 1. Create a new app by clicking on the **Add an App** button, in the headbar. 
 2. Enter your application's name and description and click "Next".
@@ -25,7 +25,7 @@ Go, otherwise known as Golang, is an open source, compiled, garbage-collected, c
 4. Check that the information are correct and validate: <figure class="cc-content-img"><img src="/assets/images/screens/go/go_validation.png"/></figure>
 5. *Optional*: <a href="/databases-and-services/add-service/">add a database or service</a>
 
-### Necessary information
+## Necessary information
 
 Be sure that:
 
@@ -36,7 +36,7 @@ Be sure that:
 
 * your application listens on port <strong>8080</strong>
 
-### Requirements
+## Requirements
 
 Apart from <strong>listening on port 8080</strong>, there is nothing to
 change on your application.
@@ -50,7 +50,7 @@ We currently support single module applications only. That means that
 your sources files just need to be at the project's root, and you can't
 have multiple modules running.
 
-### More configuration
+## More configuration
 
 By default, we consider that your repository contains a single
 application. We put your application in ${GOPATH}/src/{app_id} and then
@@ -121,8 +121,7 @@ following will explain you how to do it:
 	The `execDir` value must be relative to the root of your repo. In the
 	example above, we will run the application in the src/myapp directory.
 
-### Environment variables
-
+## Environment variables
 
 Clever Cloud can inject environment variables that are defined in the
 dashboard and by add-ons linked to your application.
@@ -131,6 +130,6 @@ To access your variable in your application, nothing simpler! Just get
 it from your environment, like you would with `PATH`:
 `os.Getenv("MY_VARIABLE")`.
 
-### Deploy on Clever Cloud
+## Deploy on Clever Cloud
 
 Application deployment on Clever Cloud is via Git. Follow [these steps](/clever-cloud-overview/add-application/) to deploy your application.

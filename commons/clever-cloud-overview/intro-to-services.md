@@ -3,7 +3,7 @@ title: Intro to Services
 position: 2
 ---
 
-## Intro to Services
+# Intro to Services
 
 Services can be attached or not to an application. It could be a database, a cache system or a search engine. 
 

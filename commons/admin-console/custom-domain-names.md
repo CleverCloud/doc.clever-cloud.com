@@ -3,7 +3,7 @@ title: Custom domain names
 position: 2
 ---
 
-## Custom domain names
+# Custom domain names
 
 When creating an application, you have two (non exclusive) choices for domain names:
 
@@ -13,12 +13,12 @@ When creating an application, you have two (non exclusive) choices for domain na
 <figure class="cc-content-img"><img  src="/assets/images/domain1.png"></figure>
 <figcaption>Example of domain names customization</figcaption>
 
-### *.cleverapps.io domain
+## *.cleverapps.io domain
 
 In your application's domain section, just enter ``example.cleverapps.io``.
 
 
-### Personal domain name
+## Personal domain name
 
 You have two non exclusive choices to add custom personal domain names:
 

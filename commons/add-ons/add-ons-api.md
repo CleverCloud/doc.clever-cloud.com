@@ -2,25 +2,50 @@
 title: Add-on API
 position: 1
 ---
-## Clever Cloud add-on API
+# Clever Cloud add-on API
 
-Clever Cloud provides an API to add-on providers. This document is a handbook for this API.
+Clever Cloud offers you to sell your service as an add-on through the dashboard.
+This article will document how you can technically plug into the platform to provide add-on provision, deprovision, and configuration via the dashboard.
+
+There are two faces here:
+
+* [The add-on provider API](#add-on-provider-api) - The API *you* need to provide and document to allow the Clever Cloud's backend to request provision and deprovision of add-ons.
+
+* [The add-on infos API](#add-on-infos-api) - The API Clever Cloud provides to allow you to get informations about provisioned add-ons and their owners.
+
+## Preamble
+
+In the PaaS world, an add-on system is preceding the others, therefore is well known by a lot of developers: the Heroku one. To ease up the transition between Heroku and Clever Cloud, we decided to support (then iterate over) the Heroku standard for add-on provisioning API.
+
+So, if you already have been integrated as an add-on provider for the Heroku platform, you will have no trouble integrating in the Clever Cloud's add-on platform. This explains why we handle "heroku\_id" fields instead of "clevercloud\_id" or equivalent.
+
+## Add-on Provider API
+
+This is the API *you* need to provide to allow Clever Cloud to provision an add-on for a customer.
 
 ### How it works
 
-When a Clever Cloud customer use the marketplace to provision an add-on, Clever Cloud sends a request to your service which provides a new add-on for this app.
+When a Clever Cloud customer uses the marketplace to provision an add-on, Clever Cloud sends a request to your service which provides a new add-on for this app.
 
 ### Build an add-on
 
-You can write your service in any language.
+To become an add-on provider, you need to provide the provisioning API
+as defined below. You can implement your API in any language. The
+[Sample Code](#sample-code) section will show you examples in various
+languages / frameworks.
 
-You need to create a manifest file, this file is a JSON that describes your add-on.
+To document your API, and start the process of becoming an add-on
+provider, you need to send to <support@clever-cloud.com> a manifest
+file. This file contains a JSON that describes your add-on.
 
-##### Example manifest
+#### Example manifest
+
+Here is what the manifest JSON must look like:
 
 ```json
 {
   "id": "addon-name",
+  "name": "Addon Name",
   "api": {
     "config_vars": [ "ADDON_NAME_MY_VAR" ],
     "regions": [ "eu" ],
@@ -42,7 +67,9 @@ Fields
 
 * `id` - An id for your add-on. All lower case, no spaces or punctuation. Underscores and dashes are allowed. This can’t be changed after the first push. It is also used for HTTP basic auth when making provisioning calls.
 
-* `api/config_vars` - A list of config vars that will be returned on provisioning calls. Each config_var name *MUST* start with the capitalized, underscorized addon id, as in the example.
+* `name` (Optional) - A human readable name for your add-on. You will be able to change it later in the dashboard, so you don't even have to provide it right now.
+
+* `api/config_vars` - A list of config vars that will be returned on provisioning calls. Each config_var name *MUST* start with the capitalized, underscorized add-on id, as in the example.
 
 * `api/password` - Password that Clever Cloud will send in HTTP basic auth when making provisioning calls. You should generate a long random string for that field.
 
@@ -60,9 +87,16 @@ Fields
 
 ### Authentication
 
-Your service is expected to authenticate all calls with the add-on id and password found as described in the add-on manifest. A failed authentication should return 401 Not Authorized.
+To secure the calls between your Clever Cloud and API, please provide a
+HTTPS connection. The second step to secure the calls is to use a Basic
+authentication. The username must be your provider id (in our example,
+it is 'addon-name'), and the password must be the the `password` field
+set in your manifest.
 
-##### Sample with Flask in Python
+So your provider API must check that all calls to it are authenticated
+with these user and password.
+
+#### Sample with Flask in Python
 
 ```python
 from functools import wraps
@@ -104,37 +138,40 @@ Request: POST {base_url}
 Request Body: {
   "heroku_id": "addon_xxx",
   "plan": "basic",
-  "region": "eu",
+  "region": "EU",
   "callback_url": "https://ccapi.cleverapps.io/vendor/apps/addon_xxx",
   "logplex_token": "logtoken_yyy",
   "options": {}
 }
 Response Body: {
-	"id": "myaddon_id",
-	"config": {
-		"ADDON_NAME_MY_VAR": "some value"
-	},
-	"message": "Some provisioning message"
+  "id": "myaddon_id",
+  "config": {
+    "ADDON_NAME_MY_VAR": "some value"
+  },
+  "message": "Some provisioning message"
 }
 ```
 
 The request body contains the following fields:
 
-* `heroku_id` - The id we give to your addon to identify it on our side.
+* `heroku_id` - The id we give to your add-on to identify it on our side.
 
-* `plan` - The plan name the user chose.
+* `plan` - The slug field for the plan the user chose. You can create
+plans in the dashboard once your add-on manifest has been uploaded to
+the Clever Cloud's platform. We send you the slug of the given plan,
+not its name.
 
-* `region` - The region to provision the addon. As for now, only "eu" will be sent.
+* `region` - The region to provision the add-on. As for now, only "EU" will be sent.
 
-* `callback_url` - The URL you can use to get informations about the addon and the user. This URL is available as soon as the provisioning is done. You can't use this URL during the POST call.
+* `callback_url` - The URL you can use to get informations about the add-on and the user. This URL is available as soon as the provisioning is done. You can't use this URL during the POST call.
 
-* `logplex_token` - Token used to identify what you send to our log aggregator. [Need link to logplex doc]
+* `logplex_token` - Token used to identify what you send to our log collector. The log collector API doc is here: [/add-ons/add-ons-log-collector/](/add-ons/add-ons-log-collector/)
 
 * `options` - String -> String map with options. We don't currently support this, so it will be empty for now.
 
 The response body contains the following fields:
 
-* `id` - The addon id as seen from your side. The difference with the heroku api is that the id *MUST* be a String.
+* `id` - The add-on id as seen from your side. The difference with the heroku api is that the id *MUST* be a String.
 
 * `config` (Optional) - A String -> String map with value for each config\_var defined in your manifest. A key that is not in your config\_vars will be ignored.
 
@@ -156,19 +193,19 @@ Response Status: 200
 
 ### Plan change
 
-When a customer wants to change it's addon's plan, Clever Cloud issues a PUT request to your service.
+When a customer wants to change it's add-on's plan, Clever Cloud issues a PUT request to your service.
 
 The request will be the following:
 
 ```json
 Request: PUT {base_url}/{addon_id}
 Request Body: {
-	"heroku_id": "addon_xxx",
-	"plan": "premium"
+  "heroku_id": "addon_xxx",
+  "plan": "premium"
 }
 Response Body: {
-	"config": { ... },
-	"message": "your message here"
+  "config": { ... },
+  "message": "your message here"
 }
 ```
 
@@ -176,7 +213,7 @@ Response Body: {
 
 The request body contains:
 
-* `heroku_id` - The addon's id as seen from our side.
+* `heroku_id` - The add-on's id as seen from our side.
 
 * `plan` - The name of the new plan.
 
@@ -198,7 +235,7 @@ When the user clicks your add-on in their add-on menu, they will be directed via
 
 ```http
 POST <production/sso_url>
-id=<id>&token=<token>&timestamp=<timestamp>&nav-data=<nav-data>&email=<email>
+Request Body: id=<id>&token=<token>&timestamp=<timestamp>&nav-data=<nav-data>&email=<email>
 ```
 
 * The hostname or sso_url comes from your add-on manifest.
@@ -207,7 +244,7 @@ id=<id>&token=<token>&timestamp=<timestamp>&nav-data=<nav-data>&email=<email>
 * the token is computed using the formula below.
 * Nav data contains information like the current app name and installed add-ons for Clever Cloud Dashboard.
 
-##### Token
+#### Token
 
 The token field in the sso call, is created as follow:
 
@@ -217,14 +254,14 @@ sha1sum(id + ':' + sso_salt + ':' + timestamp)
 
 Where:
 
-* `id` - The id of the connecting addon. This is the id you returned on
+* `id` - The id of the connecting add-on. This is the id you returned on
 the provision call.
 
 * `sso_salt` - The sso_salt field defined in your manifest.
 
 * `timestamp` - The timestamp field of the sso request.
 
-##### Sample in Python
+#### Sample in Python
 
 ```python
 from hashlib import sha1
@@ -243,30 +280,102 @@ This will return:
 'aca601ba464437cbaa12b2fedd7db755c32ddb5e'
 ```
 
-### API Documentation
+## Add-on Infos API
 
-#### Endpoints
-
-##### Vendor
+This API is part of the Clever Cloud API. The base URL for the Clever Cloud API is:
 
 ```http
+https://ccapi.cleverapps.io/v2
+```
+
+You should prefix your calls by this base URL.
+
+### Authentication
+
+To secure the calls between your API and Clever Cloud, The Clever Cloud
+API is behind a HTTPS connection. The second step to secure your calls is to use a Basic
+authentication. The username must be your provider id (in our example,
+it is 'addon-name'), and the password must be the `password` field
+set in your manifest.
+
+#### Example call to Clever Cloud add-on infos API
+
+```bash
+$ curl -XGET https://ccapi.cleverapps.io/v2/vendor/apps -u addon-name:44ca82ddf8d4e74d52494ce2895152ee
+```
+
+### Endpoints
+
+```json
 GET /vendor/apps
+Response Body: [
+  {
+    "provider_id": "addon-name",
+    "heroku_id": "addon_xxx",
+    "callback_url": "https://ccapi.cleverapps.io/vendor/apps/addon_xxx",
+    "plan": "test"
+  }, {
+    "provider_id": "addon-name",
+    "heroku_id": "addon_yyy",
+    "callback_url": "https://ccapi.cleverapps.io/vendor/apps/addon_yyy",
+    "plan": "premium"
+  }
+]
 ```
-List all add-ons
 
-```http
+List all add-ons provided by you.
+
+* `provider_id` - Should be the same as the "id" field of your uploaded manifest.
+
+* `heroku_id` - The add-on's id from Clever Cloud's POV.
+
+* `callback_url` - URL to call to get more informations about this add-on.
+
+* `plan` - The current plan of this add-on.
+
+Now, you can get more informations about a specific add-on:
+
+```json
 GET /vendor/apps/{addonId}
+Response Body: {
+  "id": "addon_xxx",
+  "name": "My addon-name instance",
+  "config": {"MYADDON_URL": "http://myaddon.com/52e82f5d73"},
+  "callback_url": "https://ccapi.cleverapps.io/vendor/apps/addon_xxx",
+  "owner_email": "user@example.com",
+  "region": "eu",
+  "domains": []
+}
 ```
-Get information for one specific add-on.
 
-```http
+* `id` - The add-on id from Clever Cloud's POV.
+
+* `name` - The name the user gave to this add-on in the Clever Cloud's dashboard.
+
+* `config` - Config vars as you defined during the provision call.
+
+* `callback_url` - The URL you just called.
+
+* `owner_email` - One of the owner's email address.
+
+* `region` - The region this add-on is located in. As for now, we only support "eu".
+
+* `domains` - Originally the domains names for the application owning the add-on. We return an empty list.
+
+```json
 PUT /vendor/apps/{addonId}
+Request Body: {
+  "config": {
+    "ADDON_NAME_URL": "http://myaddon.com/ABC123"
+  }
+}
+Response Status: 200 OK
 ```
 Modify your config vars, you should update your manifest too.
 
-### Sample code
+## Sample code
 
-##### Add-on Skeleton in Python
+### Add-on Skeleton in Python
 
 ```python
 #!/usr/bin/env/python
@@ -318,3 +427,6 @@ if __name__ == "__main__":
   app.run(host='0.0.0.0',port=9000,debug=True)
 ```
 
+### Add-on API template using scala and Play! framework 2.
+
+[https://github.com/CleverCloud/addon-provider-template](https://github.com/CleverCloud/addon-provider-template)

@@ -39,6 +39,6 @@ preprodpublish: build
 	git add -A . && git commit -m "Publish" || true
 	rm -fr ./*
 	git push -f git+ssh://git@push.clever-cloud.com/app_c9396b59-7f1b-42c1-9855-90b7cc135dc9.git publish:master
-	git checkout master
+	git checkout addon-api
 	git checkout -- .
 	git stash pop || true

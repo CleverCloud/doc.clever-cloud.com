@@ -3,11 +3,11 @@ title: Deploy an application
 position: 4
 ---
 
-## Deploy an application
+# Deploy an application
 
 Application deployment has two main steps: application creation and application deployment.
 
-### Create an application
+## Create an application
 
 1. Create a new app by clicking on the **Add an App** button, in the headbar. 
 2. Enter your application's name and description and click "Next".
@@ -21,7 +21,7 @@ Application deployment has two main steps: application creation and application 
 
 
 
-### Git Deployment
+## Git Deployment
 *To deploy via Git, you need it installed on your machine. You can find more information on Git website: <a href="http://git-scm.com">git-scm.com</a>*  
 
 Follow these steps to deploy your application:
@@ -56,7 +56,7 @@ Follow these steps to deploy your application:
   
   Checkout your application <b>logs</b> in the dashboard to <b>monitor the deployment</b>.
 
-### FTP Deployment
+## FTP Deployment
 
 It is possible to deploy via FTP with PHP and static applications.  
 

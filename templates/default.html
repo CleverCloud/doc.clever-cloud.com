@@ -1,5 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -13,15 +12,15 @@
     <script type="text/javascript" src="/assets/js/jquery.js"></script>
   </head>
   <body>
-    <nav class="cc_headbar">
+    <header class="cc_headbar">
       <div class="container">
         <div class="row-fluid">
-          <div class="span3 cc_headbar__logo_parent">
+          <h1 class="span3 cc_headbar__logo_parent">
             <a href="/" title="Clever Cloud Documentation" alt="CC-Documentation" class="cc_headbar__logo">
               <span>CC.</span>Documentation
             </a>
-          </div>
-          <div class="span9">
+          </h1>
+          <nav class="span9">
             <div class="searchbar">
               <form method="get" id="searchform" action="/search.html">
                 <input type="text" placeholder="Search" class="field" name="q" id="q">
@@ -37,23 +36,23 @@
               <li><a class="cc_headbar__btn " href="/go">Go</a></li>
               <li><a class="cc_login__btn" href="https://console.clever-cloud.com/">Connect</a></li>
             </ul>
-          </div>
+          </nav>
         </div>
       </div>
-    </nav>
+    </header>
   <div class="cc_main">
     <div class="container">
       <div class="row">
-        <div class="span3 cc-sidebar">
+        <nav class="span3 cc-sidebar">
             $commons$
             $runtimes$
-        </div>
+        </nav>
         <div class="span9 cc-content-parent">
           <div class="cc-content">
             <!-- Content is always in this div-->
-            <div class="cc-content__text"> 
+            <article class="cc-content__text">
               $body$
-            </div>
+            </article>
             <div class="cc-contrib">
               <hr>
             Write a Tutorial and Get Rewarded.<a href="/write-a-tutorial-and-get-rewarded.html"> Learn More</a>
@@ -81,6 +80,6 @@
         ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
       })();
-    </script>     
+    </script>
   </body>
 </html>

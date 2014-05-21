@@ -3,19 +3,19 @@ title: Deploy Node.js apps
 shortdesc: Node.js is a platform built on Chrome's JavaScript runtime for building fast, scalable network applications.
 ---
 
-## Deploy Node.js apps
+# Deploy Node.js apps
 
 Clever Cloud allows you to deploy any Node.js application. This page will
 explain you how to set up your application to run it on our service.
 
 You do not need to change a lot in your application, the *requierments* will help you to configure your apps with some mandatory files to add, and properties to setup.
 
-### Overview
+## Overview
 
 Node.js is a platform built on Chrome's JavaScript runtime for building fast, scalable network applications. Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient, pretty good for data-intensive real-time applications that run across distributed devices.
 
 
-### Create an application
+## Create an application
 
 1. Create a new app by clicking on the **Add an App** button, in the headbar. 
 2. Enter your application's name and description and click "Next".
@@ -27,7 +27,7 @@ Node.js is a platform built on Chrome's JavaScript runtime for building fast, sc
 4. Check that the information are correct and validate: <figure class="cc-content-img"><img src="/assets/images/screens/nodejs/nodejs_validation.png"/></figure>
 5. *Optional*: <a href="/databases-and-services/add-service/">add a database or service</a>
 
-### Necessary information
+## Necessary information
 
 Be sure that:
 
@@ -37,7 +37,7 @@ Be sure that:
 * you have added application <b>version</b> in package.json
 * you have added application <b>start script</b> in package.json
 
-### Requirements
+## Requirements
 
 First, your application must be set to listen on the 8080 port, for worldwide
 connections. The following code describes a Hello world application listening on
@@ -58,7 +58,7 @@ server.listen(8080);
 ```
 Then, a *package.json* file is mandatory to initiate your app deployement on Clever Cloud. The next section will detail this point.
 
-#### Describing package.json  
+### Describing package.json  
 
 Even if you have no dependencies, you have to provide a `package.json` file at the root of your project’s directory.
 
@@ -90,7 +90,7 @@ The `package.json` file should look like the following:
 }
 ```
 
-#### The required fields
+### The required fields
 
 The following table describes each of the fields formerly mentioned.
 
@@ -135,7 +135,7 @@ The following table describes each of the fields formerly mentioned.
 	</tbody>
 </table>
 
-#### NPM modules dependencies
+### NPM modules dependencies
 
 If you need some modules you can easily add some with the *dependencies* field.
 
@@ -160,13 +160,13 @@ Here is an example :
 }
 ```
 
-### Node.js supported versions
+## Node.js supported versions
 
 The Clever Cloud can virtually run any version of node >= 0.6 and any
 module. Lesser (pre-npm) versions are not officially supported. Unstable
 versions are not supported either.
 
-#### Pre-installed modules
+### Pre-installed modules
 
 We currently host the following Node.js versions, with these modules already installed:
 
@@ -194,7 +194,7 @@ We currently host the following Node.js versions, with these modules already ins
 
 New versions will be added as they go out.
 
-#### Defining *pre-installed*
+### Defining *pre-installed*
 
 The above table describes the modules pre-installed.
 These modules are available at deploy time, without the need to download and
@@ -211,7 +211,7 @@ we installed the most used ones.
 If you think more modules are commonly used and should be pre-installed, do not
 hesitate to contact us at <mailto:support@clever-cloud.com>
 
-### Environment injection
+## Environment injection
 
 Clever Cloud can inject environment variables that are defined in the
 dashboard and by add-ons linked to your application.
@@ -220,11 +220,11 @@ To access your variable in your application, nothing simpler! Just get
 it from your environment, like you would with `PATH`:
 `process.env["MY_VARIABLE"]`.
 
-### Deploy on Clever Cloud
+## Deploy on Clever Cloud
 
 Application deployment on Clever Cloud is via Git. Follow [these steps](/clever-cloud-overview/add-application/) to deploy your application.
 
-### Deployment video
+## Deployment video
 
 <p>
   <iframe width="560" height="315" src="http://www.youtube.com/embed/pTCcminQwaI" frameborder="0" allowfullscreen></iframe>

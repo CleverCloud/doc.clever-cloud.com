@@ -3,7 +3,7 @@ title: Add service
 position: 1
 ---
 
-## Add a service
+# Add a service
 
 The process is similar to add whatever service or a database on Clever Cloud:
 
@@ -19,7 +19,7 @@ The process is similar to add whatever service or a database on Clever Cloud:
 
 If you need to import a very large dump, please send an email to <support@clever-cloud.com>.
 
-### Video demo
+## Video demo
 <p>
 <iframe style="width:640px" height="360" src="http://www.youtube.com/embed/6rJ8zQqIhUw?rel=0&autohide=1&showinfo=0" frameborder="0" controls="0"  allowfullscreen="allowfullscreen"> </iframe>
 </p>

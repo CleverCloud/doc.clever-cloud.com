@@ -4,12 +4,12 @@ position: 3
 shortdesc: Maven is essentially a project management and comprehension tool...
 ---
 
-## Deploy Java Maven projects
+# Deploy Java Maven projects
 
 The Clever Cloud offers you to run your Java Maven projects. You can deploy this kind of project without changing your code, but running it on Clever Cloud needs some configuration files, to add parameters like your targeted container for instance.
 
 
-### Overview
+## Overview
 Maven is essentially a project management and comprehension tool and as such provides a way to help with managing:
 
 * Builds
@@ -21,12 +21,12 @@ Maven is essentially a project management and comprehension tool and as such pro
 * Distribution
 
 
-### About Cargo
+## About Cargo
 To run your app, you can, for example, use plugins like cargo
 (<a href="http://cargo.codehaus.org/Maven2+plugin">Find it here</a>).
 Your application must be set to listen on the port 8080.
 
-### Create an application
+## Create an application
 
 1. Create a new app by clicking on the **Add an App** button, in the headbar. 
 2. Enter your application's name and description and click "Next".
@@ -37,7 +37,7 @@ Your application must be set to listen on the port 8080.
 4. Check that the information are correct and validate: <figure class="cc-content-img"><img src="/assets/images/screens/javamaven/javamaven_validation.png"/></figure>
 5. *Optional*: <a href="/databases-and-services/add-service/">add a database or service</a>
 
-### Necessary information
+## Necessary information
 
 The `clevercloud/maven.json` (maven.json file in clevercloud folder which is at the root of you application) file must contain the _goal_ field to indicate how to start your application:
 
@@ -55,7 +55,7 @@ An example of what can be found as a goal value is:
 "-Dtest.active=false -Dexec.mainClass=\"com.example.Main\" assembly:jar-with-dependencies exec:java"
 ```
 
-### Optional configuration
+## Optional configuration
 
 The full configuration can look like the following:
 
@@ -86,6 +86,6 @@ You can use the following properties:
     * ``postDeploy`` execute a custom script after the deployment. Some frameworks or custom applications might require bootstrapping before the application may run.
 You can achieve this by creating a custom script with your commands and adding the associated file name.
 
-### Deploy on Clever Cloud
+## Deploy on Clever Cloud
 
 Application deployment on Clever Cloud is via Git. Follow [these steps](/clever-cloud-overview/add-application/) to deploy your application.
