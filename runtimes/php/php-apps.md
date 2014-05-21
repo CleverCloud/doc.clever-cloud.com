@@ -137,7 +137,7 @@ Then add these lines in `clevercloud/php.json`:
 <strong>Note: </strong>You must add the _execute_ permission to your file (`chmod u+x yourfile`) before pushing it.
 
 
-### Environment injection
+## Environment injection
 
 Clever Cloud can inject environment variables that are defined in the
 dashboard and by add-ons linked to your application.
@@ -145,10 +145,15 @@ dashboard and by add-ons linked to your application.
 To access the variables, use the `getenv` function. So, for example, if
 your application has a postgresql add-on linked:
 
-	```php
-	<?php
-	$dbh = new PDO('postgresql:host='.getenv("POSTGRESQL_ADDON_HOST").';dbname='.getenv("POSTGRESQL_ADDON_DB"), getenv("POSTGRESQL_ADDON_USER"), getenv("POSTGRESQL_ADDON_PASSWORD"));
-	```
+```php
+<?php
+
+$dbh = new PDO(
+	'postgresql:host='.getenv("POSTGRESQL_ADDON_HOST").';dbname='.getenv("POSTGRESQL_ADDON_DB"),
+	getenv("POSTGRESQL_ADDON_USER"),
+	getenv("POSTGRESQL_ADDON_PASSWORD")
+);
+```
 
 ## Frameworks and CMS
 
