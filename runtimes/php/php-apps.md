@@ -145,10 +145,18 @@ dashboard and by add-ons linked to your application.
 To access the variables, use the `getenv` function. So, for example, if
 your application has a postgresql add-on linked:
 
-	```php
-	<?php
-	$dbh = new PDO('postgresql:host='.getenv("POSTGRESQL_ADDON_HOST").';dbname='.getenv("POSTGRESQL_ADDON_DB"), getenv("POSTGRESQL_ADDON_USER"), getenv("POSTGRESQL_ADDON_PASSWORD"));
-	```
+```php
+  <?php
+    $dbh = new PDO(
+      'postgresql:host='.
+      getenv("POSTGRESQL_ADDON_HOST").
+      ';dbname='.
+      getenv("POSTGRESQL_ADDON_DB"), 
+      getenv("POSTGRESQL_ADDON_USER"), 
+      getenv("POSTGRESQL_ADDON_PASSWORD")
+    );
+  ?>
+```
 
 ## Frameworks and CMS
 
