@@ -82,3 +82,18 @@ Instead of it you can use the `X-Forwarded-Proto` HTTP header to get the informa
    <h4>Note for Play Framework! 1.2.x users</h4>
    <p>In order to use `request.secure` instead of accessing the header, you must add `XForwardedSupport=all` in your *application.conf*.</p>
 </div>
+
+
+## How to get the user's IP address?
+
+All connections are handled by load-balancers ahead of your applications
+and forwarded in plain http.
+
+So if you get the `REMOTE_ADDR` or `Client-IP` header, you will only
+get the IP of the front loadbalancer that forwarded the user request.
+
+Instead of these headers you need to use the `X-Forwarded-For` HTTP
+header, which is set by our loadbalancer to the client's address. Please
+remember that it is a list, containing the address of each proxy the request
+has been through, if the said proxy has modified the `X-Forwarded-For`
+header: [Read the Wikipedia page for more informations](https://en.wikipedia.org/wiki/X-Forwarded-For)
