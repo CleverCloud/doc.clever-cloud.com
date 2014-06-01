@@ -53,7 +53,9 @@ Then, you need to provide a Gemfile.lock. To do that, please run:
 ## More configuration
 
 You can configure your deployment via the `clevercloud/ruby.json`
-configration file. This file is optional:
+configration file. This file is optional.
+
+### Set deployment RUB_ENV and rake goals to execute
 
 ```javascript
 {
@@ -85,10 +87,27 @@ The following table describe each field:
 		<td><span class="label label-inverse">Optional</span></td>
 		<td>deploy.rakegoals</td>
 		<td>This is an array of string setting the rake goals to run
-		during the deployment.</td>
+		during the deployment. E.g. "db:migrate". rake {thegoal} will be
+		run for each goal. </td>
 		</tr>
 	</tbody>
 </table>
+
+### Manage your static files
+
+You are able to use a Filesystem Bucket to store your static files. Please refer to the [File System Buckets](/databases-and-services/fs-buckets/) section.
+
+When your bucket is available, to enable Nginx to serve your static resources you must set your public folder in `clevercloud/python.json` like below:
+
+```haskell
+   {
+      "deploy": {
+         "static": "/mypublicfolder"
+      }
+   }
+```
+
+*Note: the path of your folder must be absolute regarding the root of your application.*
 
 ## Environment injection
 
