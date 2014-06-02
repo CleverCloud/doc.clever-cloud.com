@@ -23,6 +23,10 @@ PHP is a widely-used general-purpose scripting language that is especially suite
 <div class="alert alert-hot-problems">
   <h4>Warning:</h4>
   <p>An FTP application is automatically started once the application is created, even if no code has been sent.</p>
+  <p>When you create a FTP application, a free [FS Bucket](databases-and-services/fs-buckets/) add-on is
+     provisioned, named after the application. You will find the FTP
+     credentials in the configuration tab of this add-on.
+  </p>
 </div>
 
 4. Check that the information are correct and validate: <figure class="cc-content-img"><img src="/assets/images/screens/php5.5/php5.5_create.png"/></figure>
