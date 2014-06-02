@@ -1,23 +1,23 @@
 ---
-title: Deploy an application
+title: Deploying an application
 position: 4
 ---
 
-# Deploy an application
+# Deploying an application
 
-Application deployment has two main steps: application creation and application deployment.
+There is two steps in this section: application creation (requiring actions from dashboard) and application deployment (requiring actions from git for your FTP access).
 
 ## Create an application
 
-1. Create a new app by clicking on the **Add an App** button, in the headbar. 
-2. Enter your application's name and description and click "Next".
+1. First, select the proper organization you want to add to application to. Then, click on the **Add an application** button, in the **Orgnization Manager** panel. This starts the application creation wizard.
+2. *Optional:* in case of PHP or static applications, you can choose between FTP and Git deployment
+3. Then select the language or the framework you need:  <figure class="cc-content-img"><img src="/assets/images/javawarapp.png"></figure>
+4. In the next step, you will be prompted to select your scaling configuration. If you need help to configure your scaling options, please refer to <a href="/clever-cloud-overview/scaling/">the dedicated section</a>.
 <figure class="cc-content-img">
-  <img src="/assets/images/appjavawar.png"/>
+  <img src="/assets/images/appcreationscaling.png"/>
 </figure>
-3. Then select the language/framework:  <figure class="cc-content-img"><img src="/assets/images/javawarapp.png"></figure>
-3. *Optional:* in case of PHP or static applications, you can choose between FTP and Git deployment
-4. Check that the information are correct and validate: <figure class="cc-content-img"><img src="/assets/images/appcreationreviewjavawar.png"></figure>
-5. *Optional*: <a href="/databases-and-services/add-service/">add a database or service</a>
+5. Enter the name and description of you app.
+6. *Optional*: <a href="/databases-and-services/add-service/">add an add-on</a> to your app.
 
 
 
