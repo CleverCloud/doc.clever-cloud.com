@@ -103,6 +103,44 @@ Please note the absolute path style: `/public`.
  <p>The change of the webroot will be rejected during the deployment if the target directory does not exist or is not a directory.</p>
 </div>
 
+### Change PHP settings
+
+Most of PHP settings can be changed using a `.user.ini` file. Please refer to the <a href="http://www.php.net/manual/en/configuration.file.per-user.php" target="_blank">official documentation</a> for more information.
+
+Other settings can be changed by adding the following line in `clevercloud/php.json`:
+
+```javascript
+   {
+      "configuration": {
+         "mbstring.func_overload": 2,
+         "another.setting: "value"
+      }
+   }
+```
+
+Here is the list of available settings:
+
+* `mbstring.func_overload`
+
+<strong>Note: </strong>You can send a request to the support if you need to change a setting which is not in this list.
+
+#### Maximum PHP Children per instance
+
+You can fix the number of PHP children per instance using the following line in `clevercloud/php.json`:
+
+```javascript
+   {
+      "configuration": {
+         "pm.max_children": 32
+      }
+   }
+```
+
+This setting is usefull if you need to limit number of running processes according to the maximum connections limit of your MySQL or PostgreSQL database.
+
+By default, `pm.max_children` is set to *10*.
+
+
 ### Execute a custom script after the deploy
 
 Some frameworks or custom applications might require bootstrapping before the application may run (_e.g. Composer_).
