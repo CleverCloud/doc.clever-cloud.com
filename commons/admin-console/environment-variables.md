@@ -77,4 +77,9 @@ documentations.
     </tr>
 </table>
 
-
+Please note that the variables are available at build-time, for
+runtimes that support build-time instructions, such as
+<a href="/java/java-war/#environment-injection">Java WAR</a>,
+<a href="/java/play-framework-1/#environment-injection">Play! * Framework 1</a>,
+<a href="/java/play-framework-2/#environment-injection">Play! Framework 2</a>
+or <a href="/scala/scala/#environment-injection">Scala</a>.
