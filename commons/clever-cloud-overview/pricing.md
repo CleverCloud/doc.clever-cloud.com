@@ -54,7 +54,7 @@ The following add-ons are the production databases maintained internally by Clev
     <th>Cache (Memory)</th>
     <th>Disk</th>
     <th>Conn. limit</th>
-    <th>Price /mo</th>
+    <th>Price /month</th>
   </tr> 
   <tr>
     <td class="cc-col__price "><span class="label cc-label__price label-info">Dev</span></td>
@@ -109,7 +109,7 @@ The following add-ons are the production databases maintained internally by Clev
     <th>Cache (Memory)</th>
     <th>Disk</th>
     <th>Conn. limit</th>
-    <th>Price /mo</th>
+    <th>Price /month</th>
   </tr> 
   <tr>
     <td class="cc-col__price "><span class="label cc-label__price label-info">Dev</span></td>
