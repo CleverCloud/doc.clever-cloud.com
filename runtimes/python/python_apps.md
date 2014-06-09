@@ -74,7 +74,7 @@ The module (without .py) must be importable, i.e. be in `PYTHONPATH`. For exampl
 
 ### Manage your static files
 
-You are able to use a Filesystem Bucket to store your static files. Please refer to the [File System Buckets](/databases-and-services/fs-buckets/) section.
+You are able to use a Filesystem Bucket to store your static files. Please refer to the [File System Buckets](/addons/clever-cloud-addons/#fs-buckets-file-system-with-persistance/) section.
 
 When your bucket is available, to enable Nginx to serve your static resources you must set your public folder in `clevercloud/python.json` like below:
 

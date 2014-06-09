@@ -25,7 +25,7 @@ Ruby on Rails is an open source web application framework which runs on the Ruby
 </figure>
 3. Then select the language/framework:  <figure class="cc-content-img"><img src="/assets/images/javawarapp.png"></figure>
 4. Check that the information are correct and validate: <figure class="cc-content-img"><img src="/assets/images/screens/ruby/ruby_validation.png"/></figure>
-5. *Optional*: <a href="/databases-and-services/add-service/">add a database or service</a>
+5. *Optional*: <a href="/addons/add-an-addon/">add an add-on</a>
 
 ## Necessary information
 
@@ -95,7 +95,7 @@ The following table describe each field:
 
 ### Manage your static files
 
-You are able to use a Filesystem Bucket to store your static files. Please refer to the [File System Buckets](/databases-and-services/fs-buckets/) section.
+You are able to use a Filesystem Bucket to store your static files. Please refer to the [File System Buckets](/addons/clever-cloud-addons/#fs-buckets-file-system-with-persistance/) section.
 
 When your bucket is available, to enable Nginx to serve your static resources you must set your public folder in `clevercloud/python.json` like below:
 

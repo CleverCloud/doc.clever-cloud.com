@@ -17,7 +17,7 @@ There is two steps in this section: application creation (requiring actions from
   <img src="/assets/images/appcreationscaling.png"/>
 </figure>
 5. Enter the name and description of you app.
-6. *Optional*: <a href="/databases-and-services/add-service/">add an add-on</a> to your app.
+6. *Optional*: <a href="/addons/add-an-addon/">add an add-on</a> to your app.
 
 
 

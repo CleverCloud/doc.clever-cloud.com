@@ -16,7 +16,7 @@ During the creation of a PHP application, it is asked if you want to deploy it v
 ## Deploy via FTP
 
 1. Download the Drupal source files on [drupal.org](http://drupal.org)
-2. [Add a MySQL database](/databases-and-services/add-service/)
+2. [Add a MySQL database add-on](/addons/add-an-addon/)
 3. [Send these Drupal files via FTP](/clever-cloud-overview/add-application/#ftp-deployment) using the FTP credentials you received by email when you created the application.
 4. When finished, launch the application with the url that you can find in the *domains* panel in the left sidebar.
 5. Follow the Drupal installation steps
@@ -31,7 +31,7 @@ During the creation of a PHP application, it is asked if you want to deploy it v
 ## Deploy via Git
 
 1. Download the Drupal source files on [drupal.org](http://drupal.org)
-2. [Add a MySQL database](/databases-and-services/add-service/)
+2. [Add a MySQL database add-on](/addons/add-an-addon/)
 3. Open `.gitignore` file and delete `sites/*/settings*.php` line
 4. Copy the file `sites/default/default.settings.php` to `sites/default/settings.php`
 5. Open `sites/default/settings.php` and line 213, replace 
@@ -61,7 +61,7 @@ During the creation of a PHP application, it is asked if you want to deploy it v
     );
     ```
 6. Replace the line `$drupal_hash_salt = ''` with `$drupal_hash_salt = 'yoursalt'`. You can generate salts with [this link](http://www.passwordtool.hu/).
-5. As mentioned in this [article](/databases-and-services/fs-buckets/), with Git deployments, files that are uploaded by users must be persisted in a File System Bucket. In order to do so, [add a File Bucket](/databases-and-services/add-service/) via the console. You will then receive your bucket id.
+5. As mentioned in this [article](/addons/clever-cloud-addons/#fs-buckets-file-system-with-persistance/), with Git deployments, files that are uploaded by users must be persisted in a File System Bucket. In order to do so, [add a File Bucket](/addons/clever-cloud-addons/#fs-buckets-file-system-with-persistance/) via the console. You will then receive your bucket id.
 6. At the root of your application, create a `clevercloud/buckets.json` file (create a `clevercloud` folder in which you create a `buckets.json` file).
 7. Add the following lines in this file. Do not forget to replace bucketId by the bucketId you received by email:
 

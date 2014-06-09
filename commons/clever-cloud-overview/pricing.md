@@ -57,11 +57,18 @@ The following add-ons are the production databases maintained internally by Clev
     <th>Price /mo</th>
   </tr> 
   <tr>
-    <td class="cc-col__price "><span class="label cc-label__price label-info">S</span></td>
+    <td class="cc-col__price "><span class="label cc-label__price label-info">Dev</span></td>
     <td>SHARED</td>
     <td>256 MB</td>
     <td>2</td>
     <td>Free</td>
+  </tr>
+  <tr>
+    <td class="cc-col__price "><span class="label cc-label__price label-info">S</span></td>
+    <td>SHARED</td>
+    <td>1 GB</td>
+    <td>10</td>
+    <td>10 €</td>
   </tr>
   <tr>
     <td class="cc-col__price "><span class="label cc-label__price label-info">M</span></td>
@@ -105,11 +112,18 @@ The following add-ons are the production databases maintained internally by Clev
     <th>Price /mo</th>
   </tr> 
   <tr>
-    <td class="cc-col__price "><span class="label cc-label__price label-info">S</span></td>
+    <td class="cc-col__price "><span class="label cc-label__price label-info">Dev</span></td>
     <td>SHARED</td>
     <td>10 MB</td>
     <td>5</td>
     <td>Free</td>
+  </tr>
+  <tr>
+    <td class="cc-col__price "><span class="label cc-label__price label-info">S</span></td>
+    <td>SHARED</td>
+    <td>256 MB</td>
+    <td>10</td>
+    <td>15 €</td>
   </tr>
   <tr>
     <td class="cc-col__price "><span class="label cc-label__price label-info">M</span></td>

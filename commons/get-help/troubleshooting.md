@@ -62,7 +62,7 @@ Setup FS Bucket for your app is kinda straightforward, because it consist in add
 
 The Json contains two parameters: the ID of the FS Bucket, and the path you want to use as a FS.
 
-*Related page: [File System buckets](/databases-and-services/fs-buckets/).*
+*Related page: [File System buckets](/addons/clever-cloud-addons/#fs-buckets-file-system-with-persistance/).*
 
 
 #### <i class="icon-double-angle-right"></i> Error about Empty Repository

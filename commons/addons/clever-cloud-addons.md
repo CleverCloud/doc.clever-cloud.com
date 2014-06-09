@@ -66,7 +66,7 @@ Clever Cloud provides internally the following add-ons:
 Some applications require a populated database to run properly.  
 If you want to import your **SQL** dump, you can use several methods:
 
-1. <a href="https://dbms-pma.clever-cloud.com/adminer/">our WebGUI (PHP My Admin)</a>
+1. <a href="https://dbms-pma.clever-cloud.com/">our WebGUI (PHP My Admin)</a>
 2. command line tool for MySQL administration
 3. any MySQL client such as MySQL Workbench.
 
@@ -147,7 +147,7 @@ You will be able to retrieve generated data between two deployments.
 
 ### Creating a FS Bucket
 
-[This article](/databases-and-services/add-service/) describes the process to add a File System Bucket on Clever Cloud.
+[This article](/addons/clever-cloud-addons/) describes the process to add a File System Bucket on Clever Cloud.
 
 
 ### Configuring your application

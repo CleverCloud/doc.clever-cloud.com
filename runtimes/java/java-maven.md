@@ -35,7 +35,7 @@ Your application must be set to listen on the port 8080.
 </figure>
 3. Then select the language/framework:  <figure class="cc-content-img"><img src="/assets/images/javawarapp.png"></figure>
 4. Check that the information are correct and validate: <figure class="cc-content-img"><img src="/assets/images/screens/javamaven/javamaven_validation.png"/></figure>
-5. *Optional*: <a href="/databases-and-services/add-service/">add a database or service</a>
+5. *Optional*: <a href="/addons/add-an-addon/">add an add-on</a>
 
 ## Necessary information
 

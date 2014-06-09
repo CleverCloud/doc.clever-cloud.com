@@ -16,7 +16,7 @@ The application is a very simple todo list. You can add, edit and delete a task.
 If you want to test our platform and deploy this application, just follow these simple steps:
 
 1. Clone the [Github repo](https://github.com/CleverCloud/mongo-nodejs-todo-example)
-2. Create a MongoDB database on Clever Cloud [dashboard](http://console.clever-cloud.com). Full process described [here](/databases-and-services/add-service/).
+2. Create a MongoDB database on Clever Cloud [dashboard](http://console.clever-cloud.com). Full process described [here](/addons/add-an-addon/).
 3. Fill the db.js file with the credentials you received by email.
 4. Git push (deploy) your application.
 
