@@ -1,5 +1,5 @@
 ---
-title: Intro to addon-ons
+title: Intro to add-ons
 position: 2
 ---
 
@@ -30,4 +30,4 @@ To add an addon, please refer to the [dedicated section](/addons/add-an-addon/).
 
 ## Billing
 
-Each add-on is billed monthly. The price showed for each plan does not inclued taxes.
+Each add-on is billed monthly. The price showed for each plan does not include taxes.

@@ -24,7 +24,7 @@ Features and environnement varaibles (if applicable) are shown.
   </figcaption>
 </figure>
 
-## Configuraiton screen
+## Configuration screen
 
 Add-ons can be managed from the Configuration tab.
 This screen is managed directly by the provider of the add-on.
