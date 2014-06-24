@@ -55,7 +55,34 @@ Then, you need to provide a Gemfile.lock. To do that, please run:
 You can configure your deployment via the `clevercloud/ruby.json`
 configration file. This file is optional.
 
-### Set deployment RUB_ENV and rake goals to execute
+### Choose ruby version
+
+```javascript
+{
+  "deploy" : {
+    "rubyversion": "<ver>"
+  }
+}
+```
+
+`rubyversion` must be a string. The given string is tested against the
+available versions by using the /^<ver>/ regexp.
+
+ * "2" will select the greatest "2.X.Y" version available.
+ * "2.0" will select the greatest "2.0.Y" version available.
+ * "2.0.0-p481" will select the "2.0.0-p481" version.
+
+If given `rubyversion` does not match any available version, your
+deployment will fail.
+
+If you need a version that is not yet installed, please contact the
+support to ask for the version to be added. We try to follow the
+releases, but, hey, we're human!
+
+Due to actual landscape in ruby applications, the default version is the
+greatest 2.0.Y.
+
+### Set deployment RUBY_ENV and rake goals to execute
 
 ```javascript
 {
