@@ -79,7 +79,7 @@ If you need a version that is not yet installed, please contact the
 support to ask for the version to be added. We try to follow the
 releases, but, hey, we're human!
 
-Due to actual landscape in ruby applications, the default version is the
+Due to current landscape in ruby applications, the default version is the
 greatest 2.0.Y.
 
 ### Set deployment RUBY_ENV and rake goals to execute
