@@ -62,7 +62,11 @@ It is possible to deploy via FTP with PHP and static applications.
 
 To deploy via FTP, you need an FTP software installed on your machine. Filezilla is one of them.
 
-When you have chosen to deploy your application via FTP, you have received associated FTP credentials by email. Enter the host, username and password in your FTP software and deploy the files.
+When you have chosen to deploy your application via FTP, a <a
+href="/addons/clever-cloud-addons/#fs-buckets-file-system-with-persistence">FS
+Bucket</a> has been created with an ID matching your application's ID.
+You will find the FTP credentials in the configuration tab of this
+particular FS Bucket.
 
 More documentation about Filezilla: <a href="https://wiki.filezilla-project.org/FileZilla_Client_Tutorial_(en)" target="_blank">https://wiki.filezilla-project.org/FileZilla_Client_Tutorial_(en)</a>
 
