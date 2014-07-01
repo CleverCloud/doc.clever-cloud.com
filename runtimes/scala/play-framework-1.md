@@ -67,7 +67,24 @@ You can configure your application start command by adding a `./clevercloud/play
 **postDeploy**: execute a custom script after the deploy. Some frameworks or custom applications might require bootstrapping before the application may run.
 You can achieve this by creating a custom script with your commands and adding the associated file name in `clevercloud/play.json`.
 
+## Environment injection
 
+Clever Cloud can inject environment variables that are defined in the
+dashboard and by add-ons linked to your application.
+
+To access the environment variables from your application, you need to
+reference them in your application.conf file:
+you just have to put `my.option=${MY_VARIABLE}` in your application.conf file, and then use
+the configuration item `my.option` in your application.
+
+So for an application using the MySQL add-on, you can set:
+
+```bash
+%clevercloud.db.url=jdbc:mysql://${MYSQL_ADDON_HOST}/${MYSQL_ADDON_DB}
+%clevercloud.db.driver=com.mysql.jdbc.Driver
+%clevercloud.db.user=${MYSQL_ADDON_USER}
+%clevercloud.db.pass=${MYSQL_ADDON_PASSWORD}
+```
 
 ## Deploy on Clever Cloud
 

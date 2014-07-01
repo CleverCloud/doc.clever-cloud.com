@@ -19,18 +19,19 @@ PHP is a widely-used general-purpose scripting language that is especially suite
   <img src="/assets/images/screens/php5.5/php5.5_create.png"/>
 </figure>
 3. Then select the language/framework:  <figure class="cc-content-img"><img src="/assets/images/javawarapp.png"></figure>
-3. You can choose between FTP and Git deployment
+4. You can choose between FTP and Git deployment
+5. Check that the information are correct and validate: <figure class="cc-content-img"><img src="/assets/images/screens/php5.5/php5.5_create.png"/></figure>
+6. *Optional*: <a href="/addons/add-an-addon/">add an add-on</a>
+
 <div class="alert alert-hot-problems">
   <h4>Warning:</h4>
   <p>An FTP application is automatically started once the application is created, even if no code has been sent.</p>
-  <p>When you create a FTP application, a free [FS Bucket](addons/clever-cloud-addons/#fs-buckets-file-system-with-persistance/) add-on is
+  <p>
+     When you create a FTP application, a free [FS Bucket](addons/clever-cloud-addons/#fs-buckets-file-system-with-persistance/) add-on is
      provisioned, named after the application. You will find the FTP
      credentials in the configuration tab of this add-on.
   </p>
 </div>
-
-4. Check that the information are correct and validate: <figure class="cc-content-img"><img src="/assets/images/screens/php5.5/php5.5_create.png"/></figure>
-5. *Optional*: <a href="/addons/add-an-addon/">add an add-on</a>
 
 ## CRON configuration file
 
@@ -46,7 +47,7 @@ Here is the general syntax:
   ]
 ```
 
-The string `<string>` must use the cron format\*:
+The string `<string>` must use the cron format:
 <pre>M H d m Y command</pre>
 
 There are two restrictions about the usage of crontab on our platform:

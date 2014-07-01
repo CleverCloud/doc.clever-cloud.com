@@ -121,7 +121,7 @@ following will explain you how to do it:
 	The `execDir` value must be relative to the root of your repo. In the
 	example above, we will run the application in the src/myapp directory.
 
-## Environment variables
+## Environment injection
 
 Clever Cloud can inject environment variables that are defined in the
 dashboard and by add-ons linked to your application.

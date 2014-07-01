@@ -127,10 +127,10 @@ dashboard and by add-ons linked to your application.
 The access to these variables is simple: just get them as you would with
 any environment variable:
 
-	```python
-	import os
-	os.getenv("MY_VARIABLE")
-	```
+```python
+import os
+os.getenv("MY_VARIABLE")
+```
 
 ## Git Deployment
 

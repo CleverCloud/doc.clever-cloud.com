@@ -306,6 +306,8 @@ $ curl -XGET https://ccapi.cleverapps.io/v2/vendor/apps -u addon-name:44ca82ddf8
 
 ### Endpoints
 
+#### List all add-ons provided by you
+
 ```json
 GET /vendor/apps
 Response Body: [
@@ -313,17 +315,17 @@ Response Body: [
     "provider_id": "addon-name",
     "heroku_id": "addon_xxx",
     "callback_url": "https://ccapi.cleverapps.io/vendor/apps/addon_xxx",
-    "plan": "test"
+    "plan": "test",
+    "owner_id": "user_foobar"
   }, {
     "provider_id": "addon-name",
     "heroku_id": "addon_yyy",
     "callback_url": "https://ccapi.cleverapps.io/vendor/apps/addon_yyy",
-    "plan": "premium"
+    "plan": "premium",
+    "owner_id": "orga_baz"
   }
 ]
 ```
-
-List all add-ons provided by you.
 
 * `provider_id` - Should be the same as the "id" field of your uploaded manifest.
 
@@ -333,7 +335,10 @@ List all add-ons provided by you.
 
 * `plan` - The current plan of this add-on.
 
-Now, you can get more informations about a specific add-on:
+* `owner_id` - The id of the owner that provisioned the add-on. This should never change.
+
+
+#### Get informations about a specific add-on
 
 ```json
 GET /vendor/apps/{addonId}
@@ -343,10 +348,14 @@ Response Body: {
   "config": {"MYADDON_URL": "http://myaddon.com/52e82f5d73"},
   "callback_url": "https://ccapi.cleverapps.io/vendor/apps/addon_xxx",
   "owner_email": "user@example.com",
+  "owner_id": "orga_baz",
+  "owner_emails": ["user@example.com", "foobar@baz.com"],
   "region": "eu",
   "domains": []
 }
 ```
+
+This endpoint gives you more informations about a provisioned add-on.
 
 * `id` - The add-on id from Clever Cloud's POV.
 
@@ -358,9 +367,15 @@ Response Body: {
 
 * `owner_email` - One of the owner's email address.
 
+* `owner_emails` - All the owner's email addresses. This is not in the Heroku specification.
+
+* `owner_id` - The id of the owner that provisioned the add-on. This should never change.
+
 * `region` - The region this add-on is located in. As for now, we only support "eu".
 
 * `domains` - Originally the domains names for the application owning the add-on. We return an empty list.
+
+#### Update the config vars for an add-on
 
 ```json
 PUT /vendor/apps/{addonId}
@@ -371,7 +386,8 @@ Request Body: {
 }
 Response Status: 200 OK
 ```
-Modify your config vars, you should update your manifest too.
+The object should only contain the `config` object your API returned
+during the provisioning.
 
 ## Sample code
 

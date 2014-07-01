@@ -4,3 +4,5 @@ site
 site.o
 site.hi
 .DS_Store
+cabal*
+.cabal*

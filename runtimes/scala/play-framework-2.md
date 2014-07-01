@@ -51,7 +51,7 @@ You can configure your application start command by adding a `./clevercloud/sbt.
 You can achieve this by creating a custom script with your commands and
 adding the associated file name in `clevercloud/sbt.json`.
 
-### Environment injection
+## Environment injection
 
 Clever Cloud can inject environment variables that are defined in the
 dashboard and by add-ons linked to your application.
@@ -66,12 +66,12 @@ There are two way to access the environment variables from your application:
 
 So for an application using the MySQL add-on, you can set:
 
-	```bash
-	db.default.driver=org.postgresql.Driver
-	db.default.url=jdbc:postgresql://${POSTGRESQL_ADDON_HOST}/${POSTGRESQL_ADDON_DB}
-	db.default.user=${POSTGRESQL_ADDON_USER}
-	db.default.password=${POSTGRESQL_ADDON_PASSWORD}
-	```
+```bash
+db.default.driver=org.postgresql.Driver
+db.default.url=jdbc:postgresql://${POSTGRESQL_ADDON_HOST}/${POSTGRESQL_ADDON_DB}
+db.default.user=${POSTGRESQL_ADDON_USER}
+db.default.password=${POSTGRESQL_ADDON_PASSWORD}
+```
 
 ## Known problems with Play! 2
 
