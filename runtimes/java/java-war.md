@@ -4,7 +4,7 @@ position: 4
 shortdesc: In <abbr title="Java Enterprise Edition">J2EE</abbr> applications modules are packaged as EAR and WAR based on their functionality.
 ---
 
-# Deploy WAR/EAR projects <span class="cc-alpha pull-right" title="Currently in Alpha version"></span>
+# Deploy WAR/EAR projects
 
 Clever Cloud allows you to run WAR or EAR applications. You can deploy these projects without changing your code. We just need a configuration file with your targeted container.
 
@@ -18,7 +18,7 @@ In <abbr title="Java Enterprise Edition">J2EE</abbr> application modules are pac
 
 <div class="alert alert-hot-problems">
   <h5>Note for Alpha Version</h5>
-  <div>WAR and EAR apps are free during the Alpha period. No credits will be charged.</div>
+  <div>The alpha version ends by the 18th of July 2014. WAR and EAR apps will not be free of charge anymore.</div>
 </div>
 
 ## Available containers
