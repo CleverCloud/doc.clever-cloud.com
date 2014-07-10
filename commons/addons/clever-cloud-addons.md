@@ -25,11 +25,18 @@ Clever Cloud provides internally the following add-ons:
     <th>Price /mo</th>
   </tr> 
   <tr>
+    <td class="cc-col__price "><span class="label cc-label__price label-info">DEV</span></td>
+    <td>SHARED</td>
+    <td>10 MB</td>
+    <td>5</td>
+    <td>Free</td>
+  </tr>
+  <tr>
     <td class="cc-col__price "><span class="label cc-label__price label-info">S</span></td>
     <td>SHARED</td>
     <td>256 MB</td>
-    <td>2</td>
-    <td>Free</td>
+    <td>10</td>
+    <td>15 €</td>
   </tr>
   <tr>
     <td class="cc-col__price "><span class="label cc-label__price label-info">M</span></td>
@@ -85,11 +92,19 @@ If you want to import your **SQL** dump, you can use several methods:
     <th>Price /mo</th>
   </tr> 
   <tr>
-    <td class="cc-col__price "><span class="label cc-label__price label-info">S</span></td>
+    <td class="cc-col__price "><span class="label cc-label__price label-info">DEV</span></td>
     <td>SHARED</td>
     <td>256 MB</td>
     <td>2</td>
     <td>Free</td>
+  </tr>
+
+  <tr>
+    <td class="cc-col__price "><span class="label cc-label__price label-info">S</span></td>
+    <td>SHARED</td>
+    <td>256 MB</td>
+    <td>10</td>
+    <td>10 €</td>
   </tr>
   <tr>
     <td class="cc-col__price "><span class="label cc-label__price label-info">M</span></td>
