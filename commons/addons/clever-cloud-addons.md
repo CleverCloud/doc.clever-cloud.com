@@ -41,16 +41,16 @@ Clever Cloud provides internally the following add-ons:
   <tr>
     <td class="cc-col__price "><span class="label cc-label__price label-info">M</span></td>
     <td>1 GB</td>
-    <td>100 GB</td>
+    <td>10 GB</td>
     <td>75</td>
-    <td>30 €</td>
+    <td>45 €</td>
   </tr>
   <tr>
     <td class="cc-col__price "><span class="label cc-label__price label-info">L</span></td>
     <td>8 GB</td>
-    <td>450 GB</td>
+    <td>250 GB</td>
     <td>500</td>
-    <td>240 €</td>
+    <td>300 €</td>
   </tr>
   <tr>
     <td class="cc-col__price "><span class="label cc-label__price label-info">XL</span></td>
