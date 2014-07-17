@@ -18,7 +18,7 @@ In order to add an organization, just click on "Add an organization" in the top 
 <figure class="cc-content-img">
   <a href="/assets/images/gotohome.png"><img src="/assets/images/gotohome.png"/></a>
   <figcaption>
-    Access to your organizations via the headbar
+    Access to your organizations via the red sidebar
   </figcaption>
 </figure>
 
