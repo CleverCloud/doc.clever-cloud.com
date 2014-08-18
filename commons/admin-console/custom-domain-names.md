@@ -26,7 +26,7 @@ You have two non exclusive choices to add custom personal domain names:
   
     On your domain name provider, point the **A record** to ``62.210.121.146``
 
-  * Sub-domains like ``hello.example.com``
+  * Sub-domains like ``hello.example.com`` and wildcard sub-domains like ``*.example.com``
 
     On your domain name provider, point the associated *hello* **CNAME record** to ``domain.clever-cloud.com``
 
@@ -39,6 +39,10 @@ You have two non exclusive choices to add custom personal domain names:
 <!-- -->
 <br/>
 <div class="alert alert-hot-problems">
-  <h4>Reminder:</h4>
+  <h4>Using a domain wildcard:</h4>
   <p>Remember that it may take up to a full day for DNS changes to propagate, so be patient.</p>
+  <p><strong>*.example.com</strong> will match e.g. <strong>blog.example.com</strong> or <strong>www.example.com</strong>.
+  </p>
+  <p> But for the raw domain <strong>example.com</strong>, you will have to add
+both <strong>*.example.com</strong> and example.com to your application.</p>
 </div>
