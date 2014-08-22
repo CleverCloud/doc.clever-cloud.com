@@ -18,7 +18,7 @@ In <abbr title="Java Enterprise Edition">J2EE</abbr> application modules are pac
 
 <div class="alert alert-hot-problems">
   <h5>Note for Alpha Version</h5>
-  <div>The alpha version ends by the 18th of July 2014. WAR and EAR apps will not be free of charge anymore.</div>
+  <div>The alpha version ends by the 1st of September 2014. WAR and EAR apps will not be free of charge anymore.</div>
 </div>
 
 ## Available containers
