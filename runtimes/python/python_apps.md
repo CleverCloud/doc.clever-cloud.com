@@ -10,7 +10,7 @@ Python is a programming language that lets you work more quickly and integrate y
 
 ## Overview
 
-Python 2.7.3 is available on our platform. You can use Git to deploy your application.
+Python 2.7.8 and 3.4.1 are available on our platform. You can use Git to deploy your application.
 
 ## Getting started
 
@@ -87,6 +87,22 @@ When your bucket is available, to enable Nginx to serve your static resources yo
 ```
 
 *Note: the path of your folder must be absolute regarding the root of your application.*
+
+
+### Use Python 3
+
+The default version of python on Clever Cloud is 2.7, if you want to use python 3.4 instead, use the key
+`python_version` in `deploy` like the following:
+
+```haskell
+   {
+      "deploy": {
+         "python_version": 3
+      }
+   }
+```
+
+*Note: the version is an integer, do do not use quotes. valued allowed are 2 and 3.*
 
 
 ## Cron configuration file
