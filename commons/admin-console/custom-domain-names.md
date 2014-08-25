@@ -39,8 +39,9 @@ You have two non exclusive choices to add custom personal domain names:
 <!-- -->
 <br/>
 <div class="alert alert-hot-problems">
-  <h4>Using a domain wildcard:</h4>
+  <h4>Reminder:</h4>
   <p>Remember that it may take up to a full day for DNS changes to propagate, so be patient.</p>
+  <h4>Using a domain wildcard:</h4>
   <p><strong>*.example.com</strong> will match e.g. <strong>blog.example.com</strong> or <strong>www.example.com</strong>.
   </p>
   <p> But for the raw domain <strong>example.com</strong>, you will have to add
