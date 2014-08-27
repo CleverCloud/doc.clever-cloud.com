@@ -38,7 +38,7 @@ position: 4
     </a>
   </div>
   <div class="span3">
-    <a href="/scala/">
+    <a href="#node-failed-to-deploy">
       <center>
         <img  src="/assets/images/faq/node_fail.png" alt="instance">
       <center>
