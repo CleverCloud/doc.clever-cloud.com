@@ -56,7 +56,7 @@ position: 4
 
 Clever Cloud use Git to transfer your code and application's assets from your local host to your scaler. If your application writes files on the local file system, those files are not commited: so you can't save these files from a instance to an other.
 
-For most of Cloud providers, the use of the file system is not a good practice. Bu we know it could be sometimes pretty useful. That's why we provide an on-demand file system, easily pluggable to your app. In that case, your files will not be stored on the Git file system, but on a clustered file system, dedicated to it, accessible via FTP. This is the FS Bucket add-on.
+For most of Cloud providers, the use of the file system is not a good practice. But we know it could be sometimes pretty useful. That's why we provide an on-demand file system, easily pluggable to your app. In that case, your files will not be stored on the Git file system, but on a clustered file system, dedicated to it, accessible via FTP. This is the FS Bucket add-on.
 
 Setup FS Bucket for your app is kinda straightforward, because it consist in add a simple Json file at the root of your application.
 
