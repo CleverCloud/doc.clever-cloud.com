@@ -80,7 +80,8 @@ support to ask for the version to be added. We try to follow the
 releases, but, hey, we're human!
 
 Due to actual landscape in ruby applications, the default version is the
-greatest 2.0.Y.
+greatest 2.0.Y. We provide also the latest 2.1.Y version and the latest
+1.9.Y too, but prefer the current stable one : 2.0.
 
 ### Set deployment RUBY_ENV and rake goals to execute
 
