@@ -60,7 +60,7 @@ The following add-ons are the production databases maintained internally by Clev
     <td class="cc-col__price "><span class="label cc-label__price label-info">Dev</span></td>
     <td>SHARED</td>
     <td>256 MB</td>
-    <td>2</td>
+    <td>5</td>
     <td>Free</td>
   </tr>
   <tr>
