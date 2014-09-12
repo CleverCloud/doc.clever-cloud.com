@@ -14,13 +14,11 @@ Play is an open source web application framework, written in Scala and Java, whi
 
 ## Create an application
 
-1. Create a new app by clicking on the **Add an App** button, in the headbar.
-2. Enter your application's name and description and click "Next".
-<figure class="cc-content-img">
-  <img src="/assets/images/screens/javaplay2/javaplay2_create.png"/>
-</figure>
-3. Then select the language/framework:  <figure class="cc-content-img"><img src="/assets/images/javawarapp.png"></figure>
-4. Check that the information are correct and validate: <figure class="cc-content-img"><img src="/assets/images/screens/javaplay2/javaplay2_validation.png"/></figure>
+1. Create a new app by clicking on the **Add an application** button, in the headbar.
+2. Select the language/framework: <figure class="cc-content-img"><img src="/assets/images/select-lang.png"/></figure>
+3. Select the scalability options: <figure class="cc-content-img"><img src="/assets/images/select-scalab.png"/></figure>
+4. Enter your application's name and description, choose your deployment zone and click "Create".
+<figure class="cc-content-img"><img src="/assets/images/choose-name.png"/></figure>
 5. *Optional*: <a href="/addons/add-an-addon/">add an add-on</a>
 
 ## Necessary information

@@ -6,7 +6,7 @@ shortdesc: Maven is essentially a project management and comprehension tool...
 
 # Deploy Java Maven projects
 
-The Clever Cloud offers you to run your Java Maven projects. You can deploy this kind of project without changing your code, but running it on Clever Cloud needs some configuration files, to add parameters like your targeted container for instance.
+Clever Cloud offers you to run your Java Maven projects. You can deploy this kind of project without changing your code, but running it on Clever Cloud needs some configuration files, to add parameters like your targeted container for instance.
 
 
 ## Overview
@@ -28,13 +28,11 @@ Your application must be set to listen on the port 8080.
 
 ## Create an application
 
-1. Create a new app by clicking on the **Add an App** button, in the headbar. 
-2. Enter your application's name and description and click "Next".
-<figure class="cc-content-img">
-  <img src="/assets/images/screens/javamaven/javamaven_create.png"/>
-</figure>
-3. Then select the language/framework:  <figure class="cc-content-img"><img src="/assets/images/javawarapp.png"></figure>
-4. Check that the information are correct and validate: <figure class="cc-content-img"><img src="/assets/images/screens/javamaven/javamaven_validation.png"/></figure>
+1. Create a new app by clicking on the **Add an application** button, in the headbar.
+2. Select the language/framework: <figure class="cc-content-img"><img src="/assets/images/select-lang.png"></figure>
+3. Select the scalability options: <figure class="cc-content-img"><img src="/assets/images/select-scalab.png"/></figure>
+3. Enter your application's name and description, choose your deployment zone and click "Create".
+<figure class="cc-content-img"><img src="/assets/images/choose-name.png"/></figure>
 5. *Optional*: <a href="/addons/add-an-addon/">add an add-on</a>
 
 ## Necessary information
@@ -74,13 +72,14 @@ The full configuration can look like the following:
   }
 }
 ```
-You can use the following properties: 
+You can use the following properties:
 
 * ``build``
-    * ``"type"`` can be ``"maven"`` or ``"ant"``.
+    * ``"type"`` can be ``"maven"``, ``"gradle"`` or ``"ant"``.
     * ``"goal"`` is the target you want to use to build your project.
 * ``deploy``
-    * ``"goal"`` the goal/target and options you want to execute to deploy/run you project.
+    * ``"goal"`` the goal/target and options you want to execute to
+		  deploy/run you project. (This one is mandatory.)
     * ``"javaVersion"`` the version of java you want to use to run your app. Values can be 6 or 7, default is 7.
 * ``hooks``
     * ``postDeploy`` execute a custom script after the deployment. Some frameworks or custom applications might require bootstrapping before the application may run.

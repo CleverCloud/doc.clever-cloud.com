@@ -13,15 +13,13 @@ PHP is a widely-used general-purpose scripting language that is especially suite
 
 ## Create an application
 
-1. Create a new app by clicking on the **Add an App** button, in the headbar. 
-2. Enter your application's name and description and click "Next".
-<figure class="cc-content-img">
-  <img src="/assets/images/screens/php5.5/php5.5_create.png"/>
-</figure>
-3. Then select the language/framework:  <figure class="cc-content-img"><img src="/assets/images/javawarapp.png"></figure>
-4. You can choose between FTP and Git deployment
-5. Check that the information are correct and validate: <figure class="cc-content-img"><img src="/assets/images/screens/php5.5/php5.5_create.png"/></figure>
-6. *Optional*: <a href="/addons/add-an-addon/">add an add-on</a>
+1. Create a new app by clicking on the **Add an application** button, in the headbar.
+2. Select the language/framework: <figure class="cc-content-img"><img src="/assets/images/select-lang.png"/></figure>
+3. Select between Git and FTP deployments.<figure class="cc-content-img"><img src="/assets/images/select-depl.png"/></figure>
+3. Select the scalability options: <figure class="cc-content-img"><img src="/assets/images/select-scalab.png"/></figure>
+3. Enter your application's name and description, choose your deployment zone and click "Create".
+<figure class="cc-content-img"><img src="/assets/images/choose-name.png"/></figure>
+5. *Optional*: <a href="/addons/add-an-addon/">add an add-on</a>
 
 <div class="alert alert-hot-problems">
   <h4>Warning:</h4>

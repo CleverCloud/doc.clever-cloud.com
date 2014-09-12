@@ -12,21 +12,14 @@ Python is a programming language that lets you work more quickly and integrate y
 
 Python 2.7.8 and 3.4.1 are available on our platform. You can use Git to deploy your application.
 
-## Getting started
+## Create an application
 
-1. Create a new app by clicking on the **Add an App** button, in the headbar. 
-2. Enter your application's name and description and click "Next".
-<figure class="cc-content-img">
-  <img src="/assets/images/screens/python/python_create.png"/>
-</figure>
-3. The next screen called "Choose an instance" and let you choose the instances types. Here, we select "Python":  <figure class="cc-content-img"><img src="/assets/images/javawarapp.png"></figure>
-4. The next screen called "App Creation Review" . This is the last step before creating your app. Click on **Create** to get your git URI  : <figure class="cc-content-img"><img src="/assets/images/screens/python/python_validation.png"/></figure>
-5. *Optional*: If you need a database, go to your the dashboard of your personal account or of your organisation. Select your name or your organisation in the headbard. <figure class="cc-content-img">
-  <a href="/assets/images/gotohome.png"><img src="/assets/images/gotohome.png"/></a>
-  <figcaption>Use the headbar to head back to your dashboard. 
-  </figcaption>
-</figure>
-6. Then, click on **Services** in the left tab, and choose a database. In our case, we will choose mySQL. Click on the mySQL button, and then on "Add service". Your credentials will be sent by email.<figure class="cc-content-img"><img src="/assets/images/mysql.png"></figure>
+1. Create a new app by clicking on the **Add an application** button, in the headbar.
+2. Select the language/framework: <figure class="cc-content-img"><img src="/assets/images/select-lang.png"/></figure>
+3. Select the scalability options: <figure class="cc-content-img"><img src="/assets/images/select-scalab.png"/></figure>
+4. Enter your application's name and description, choose your deployment zone and click "Create".
+<figure class="cc-content-img"><img src="/assets/images/choose-name.png"/></figure>
+5. *Optional*: <a href="/addons/add-an-addon/">add an add-on</a>
 
 ## Available extensions and modules
 
