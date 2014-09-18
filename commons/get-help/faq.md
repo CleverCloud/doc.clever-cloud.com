@@ -97,3 +97,11 @@ header, which is set by our loadbalancer to the client's address. Please
 remember that it is a list, containing the address of each proxy the request
 has been through, if the said proxy has modified the `X-Forwarded-For`
 header: [Read the Wikipedia page for more informations](https://en.wikipedia.org/wiki/X-Forwarded-For)
+
+## When my application runs on multiple instances, how can I differenciate them?
+
+If your application needs to differenciate all the running nodes internally,
+you can use the `INSTANCE_NUMBER` environment variable.
+
+For example, if 3 instances are running for your application, this environment variable will
+contain `0` on the first, `1` on the second and `2` on the third.

@@ -17,8 +17,19 @@ Variables are defined on a per-application basis. They are defined by two ways:
  * By adding variables yourself in the "Environment variables" panel of
    your application.
 
+ * A special environment vaiable `INSTANCE_NUMBER` is added automatically for each application.
+
 Please note that if you define or modify environment variables, you will
 need to redeploy you application to make it use the variables.
+
+### What is the `INSTANCE_NUMBER` varianle used for?
+
+This variable allows your application to differentiate each running node on the applicative level.
+
+It will contain a different number for each instance of your application.
+
+For example, if three instances are running, it will contain `0` for the first, `1` for the second and `2` for the
+third.
 
 ### Variable definition constraints
 
