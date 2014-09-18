@@ -6,7 +6,9 @@ shortdesc: Gradle is a project automation tool that builds…
 
 # Deploy Gradle projects
 
-Clever Cloud offers you to run your Gradle projects. You can deploy this kind of project without changing your code, but running it on Clever Cloud needs some configuration files, to add parameters like your targeted container for instance.
+Clever Cloud offers you to run your Gradle projects. You can deploy this kind of project
+without changing your code, but running it on Clever Cloud needs some configuration files,
+to add parameters like your gradle task for example.
 
 ## Overview
 
