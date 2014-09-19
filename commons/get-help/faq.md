@@ -105,3 +105,14 @@ you can use the `INSTANCE_NUMBER` environment variable.
 
 For example, if 3 instances are running for your application, this environment variable will
 contain `0` on the first, `1` on the second and `2` on the third.
+
+## I need a private ssh key to fetch my private dependencies. How do I do that?
+
+If your company manages its own artifacts in a private repository (like, you can only
+access them via git+ssh or sftp), and you need a private key to connect to the server, you
+can commit them in your application's Clever Cloud repository and then add the
+`clevercloud/ssh.json`.
+
+The ssh.json file is documented in the [common configuration page](/common-application-configuration)
+
+

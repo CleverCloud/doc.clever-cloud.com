@@ -142,7 +142,7 @@ Some applications require a populated database to run properly.
 If you want to import your **SQL** dump, you can use several methods:
 
 1. <a href="https://dbms-adminer.clever-cloud.com/adminer/">our WebGUI (Adminer)</a>
-2. command line tool for PostgreSQL administration like psql`
+2. command line tool for PostgreSQL administration like `psql`
 3. any PostgreSQL client such as pgAdmin 3.
 
 
@@ -199,9 +199,17 @@ the root of your application or via */app/myFolder*.
   <p>
     The folder must not exists in your repository (or it needs to be empty). Otherwise, the mount of your bucket will be ignored.
   </p>
+  <p>
+    You can mount the same bucket in different folders, but they will share the same
+    content, so it's not the solution. You should prefer to mount the bucket in only one
+    folder and then manage multiple subfolders in it.
+  </p>
 </div>
 
+### Accessing your data inside the FS Bucket
 
+The "configuration" tab of your FS Bucket add-on displays the information you need to connect to
+your bucket using FTP.
 
 ## MongoDB <span class="cc-beta pull-right" title="Currently in Beta version"></span>
 <div class="alert alert-hot-problems">
