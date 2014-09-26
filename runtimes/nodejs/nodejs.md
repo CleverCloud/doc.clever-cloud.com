@@ -217,6 +217,10 @@ To access your variable in your application, nothing simpler! Just get
 it from your environment, like you would with `PATH`:
 `process.env["MY_VARIABLE"]`.
 
+You can, for example, inject the NODE_ENV variable to define it at "production". It is not
+currently set on our machimes, because we need to build the project first. Beware,
+devDependencies do not get fetched if NODE_ENV=production.
+
 ## Deploy on Clever Cloud
 
 Application deployment on Clever Cloud is via Git. Follow [these steps](/clever-cloud-overview/add-application/) to deploy your application.
