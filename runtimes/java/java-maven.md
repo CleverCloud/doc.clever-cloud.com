@@ -64,7 +64,6 @@ The full configuration can look like the following:
     "goal": "<string>"
   },
   "deploy": {
-    "javaVersion": <integer>,
     "goal": "<string>"
   },
   "hooks": {
@@ -80,7 +79,6 @@ You can use the following properties:
 * ``deploy``
     * ``"goal"`` the goal/target and options you want to execute to
 		  deploy/run you project. (This one is mandatory.)
-    * ``"javaVersion"`` the version of java you want to use to run your app. Values can be 6 or 7, default is 7.
 * ``hooks``
     * ``postDeploy`` execute a custom script after the deployment. Some frameworks or custom applications might require bootstrapping before the application may run.
 You can achieve this by creating a custom script with your commands and adding the associated file name.
