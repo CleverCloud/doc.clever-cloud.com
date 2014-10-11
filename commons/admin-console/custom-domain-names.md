@@ -20,15 +20,35 @@ In your application's domain section, just enter ``example.cleverapps.io``.
 
 ## Personal domain name
 
+### Your application runs in the Europe zone
+
 You have two non exclusive choices to add custom personal domain names:
 
   * Domains like ``example.com``
-  
+
     On your domain name provider, point the **A record** to ``62.210.121.146``
 
   * Sub-domains like ``hello.example.com`` and wildcard sub-domains like ``*.example.com``
 
-    On your domain name provider, point the associated *hello* **CNAME record** to ``domain.clever-cloud.com``
+    On your domain name provider, point the associated *hello* **CNAME record** to ``domain.par.clever-cloud.com``
+
+    <a href="http://www.gandi.net" target="_blank">Gandi.net</a> example :
+    <figure class="cc-content-img">
+      <img  src="/assets/images/domain2.png">
+    </figure>
+    <figcaption>CNAME records example</figcaption>
+
+### Your application runs in the North-America zone
+
+You have two non exclusive choices to add custom personal domain names:
+
+  * Domains like ``example.com``
+
+    On your domain name provider, point the **A record** to ``68.71.34.21``
+
+  * Sub-domains like ``hello.example.com`` and wildcard sub-domains like ``*.example.com``
+
+    On your domain name provider, point the associated *hello* **CNAME record** to ``domain.mtl.clever-cloud.com``
 
     <a href="http://www.gandi.net" target="_blank">Gandi.net</a> example :
     <figure class="cc-content-img">

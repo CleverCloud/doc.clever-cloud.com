@@ -1,5 +1,5 @@
 ---
-title: common-applications-configuration
+title: Common apps configuration
 position: 5
 ---
 
