@@ -78,7 +78,7 @@ the configuration item `my.option` in your application.
 So for an application using the MySQL add-on, you can set:
 
 ```bash
-%clevercloud.db.url=jdbc:mysql://${MYSQL_ADDON_HOST}/${MYSQL_ADDON_DB}
+%clevercloud.db.url="jdbc:mysql://"${MYSQL_ADDON_HOST}"/"${MYSQL_ADDON_DB}
 %clevercloud.db.driver=com.mysql.jdbc.Driver
 %clevercloud.db.user=${MYSQL_ADDON_USER}
 %clevercloud.db.pass=${MYSQL_ADDON_PASSWORD}

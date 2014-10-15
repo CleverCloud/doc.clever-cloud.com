@@ -66,7 +66,7 @@ So for an application using the MySQL add-on, you can set:
 
 ```bash
 db.default.driver=org.postgresql.Driver
-db.default.url=jdbc:postgresql://${POSTGRESQL_ADDON_HOST}/${POSTGRESQL_ADDON_DB}
+db.default.url="jdbc:postgresql://"${POSTGRESQL_ADDON_HOST}"/"${POSTGRESQL_ADDON_DB}
 db.default.user=${POSTGRESQL_ADDON_USER}
 db.default.password=${POSTGRESQL_ADDON_PASSWORD}
 ```
