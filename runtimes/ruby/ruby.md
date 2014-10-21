@@ -97,27 +97,27 @@ greatest 2.0.Y. We provide also the latest 2.1.Y version and the latest
 The following table describe each field:
 
 
-  <table id="nodedeps" class="table table-bordered table-striped">
-  	<thead>
-  		<tr>
-  			<th>Usage</th>
-  			<th>Field</th>
-  			<th>Description</th>
-  		</tr>
-  	</thead>
-  	<tbody>
-  		<tr>
-  		<td><span class="label label-inverse">Optional</span></td>
-  		<td>deploy.env</td>
-  		<td></td>
-  		</tr>
-  		<tr>
-  		<td><span class="label label-inverse">Optional</span></td>
-  		<td>deploy.rakegoals</td>
-  		<td> </td>
-  		</tr>
-  	</tbody>
-  </table>
+<table id="nodedeps" class="table table-bordered table-striped">
+<thead>
+<tr>
+<th>Usage</th>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="label label-inverse">Optional</span></td>
+<td>deploy.env</td>
+<td></td>
+</tr>
+<tr>
+<td><span class="label label-inverse">Optional</span></td>
+<td>deploy.rakegoals</td>
+<td> </td>
+</tr>
+</tbody>
+</table>
 
 
 ### Manage your static files

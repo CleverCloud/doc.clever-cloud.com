@@ -47,13 +47,13 @@ Follow these steps to deploy your application:
 	$ git push <remote-name> <branch-name>:master
 	```
 
-  <div class="alert alert-hot-problems">
-    <h4>Warning:</h4>
-    <p>You can only push to the <strong>master</strong> branch for deployment. Trying to push in another branch will trigger an error.</p>
-    <p>In order to push to <strong>master</strong> from a non-master local branch, use this syntax:</p>
-    <pre>git push &lt; name &gt; yourbranch:master</pre>
-  </div>
-  
+<div class="alert alert-hot-problems">
+  <h4>Warning:</h4>
+  <p>You can only push to the <strong>master</strong> branch for deployment. Trying to push in another branch will trigger an error.</p>
+  <p>In order to push to <strong>master</strong> from a non-master local branch, use this syntax:</p>
+  <pre>git push &lt; name &gt; yourbranch:master</pre>
+</div>
+
   Checkout your application <b>logs</b> in the dashboard to <b>monitor the deployment</b>.
 
 ## FTP Deployment
@@ -70,12 +70,16 @@ particular FS Bucket.
 
 More documentation about Filezilla: <a href="https://wiki.filezilla-project.org/FileZilla_Client_Tutorial_(en)" target="_blank">https://wiki.filezilla-project.org/FileZilla_Client_Tutorial_(en)</a>
 
-<div class="alert alert-hot-problems">
-  <h4>Warning:</h4>
-  <p>An FTP application is automatically started once the application is created, even if no code has been sent.</p>
-</div>
 
 <div class="alert alert-hot-problems">
-  <h4>Our advice</h4>
-  <p>FTP deployment is ok for small websites but not for large ones. We strongly recommend you to use <b>Git</b> deployment for <b>large PHP websites</b>.</p>
+<h4>Warning:</h4>
+<p>An FTP application is automatically started once the application is created, even if no code has been sent.</p>
 </div>
+
+
+<div class="alert alert-hot-problems">
+<h4>Our advice</h4>
+<p>FTP deployment is ok for small websites but not for large ones. We strongly recommend you to use <b>Git</b> deployment for <b>large PHP websites</b>.</p>
+</div>
+
+
