@@ -2,7 +2,7 @@ preview: site
 	./site preview
 
 site: site.hs
-	ghc --make site.hs
+	ghc -package-db ../.cabal-sandbox/x86_64-linux-ghc-7.8.2-packages.conf.d --make site.hs
 	./site clean
 
 clean: site

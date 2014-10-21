@@ -125,15 +125,15 @@ context.
 
 In addition to the war paths in the `clevercloud/war.json` file, you can just push your application's code and build it with maven. In order to do that, juste add the *build* field in your `clevercloud/war.json`:
 
-	```javascript
-	{
-	  "build": {
-	    "type": "maven",
-	    "goal": "package",
-	  },
-	  "deploy": { … }
-	}
-	```
+    ```javascript
+    {
+      "build": {
+        "type": "maven",
+        "goal": "package"
+      },
+      "deploy": { … }
+    }
+    ```
 
    **goal**: the maven goal to execute. That will be appended to the "mvn" command.
 
