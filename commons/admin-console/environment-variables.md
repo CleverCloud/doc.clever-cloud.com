@@ -50,42 +50,42 @@ different ways. You can find the various ways in the specific instances
 documentations.
 
 <table class="table table-bordered table-striped dataTable">
-    <tr>
-        <th>language</th>
-        <th>use case</th>
-    </tr>
-    <tr>
-        <td><a href="/nodejs/nodejs/#environment-injection">Node.js</a>  </td>
-        <td>process.env["MY_VAR"]</td>
-    </tr>
-    <tr>
-        <td><a href="/java/java-war/#environment-injection">Java WAR</a> </td>
-        <td>System.getProperties().getProperty("MY_VAR")</td>
-    </tr>
-    <tr>
-        <td><a href="/java/play-framework-1/#environment-injection">Play! Framework 1</a></td>
-        <td>System.getenv("MY\_VAR") or \${MY_VAR} in application.conf</td>
-    </tr>
-    <tr>
-        <td><a href="/java/play-framework-2/#environment-injection">Play! Framework 2</a></td>
-        <td>System.getenv("MY\_VAR") or \${MY_VAR} in application.conf</td>
-    </tr>
-    <tr>
-        <td><a href="/scala/scala/#environment-injection">Scala</a> </td>
-        <td>System.getenv("MY\_VAR")</td>
-    </tr>
-    <tr>
-        <td><a href="/php/php-apps/#environment-injection">PHP</a></td>
-        <td>getenv("MY_VAR")</td>
-    </tr>
-    <tr>
-        <td><a href="/python/python_apps/#environment-injection">Python</a></td>
-        <td>os.getenv("MY_VAR")</td>
-    </tr>
-    <tr>
-        <td><a href="/ruby/ruby/#environment-injection">Ruby</a></td>
-        <td>env[“my_var”]<br></td>
-    </tr>
+<tr>
+<th>language</th>
+<th>use case</th>
+</tr>
+<tr>
+<td><a href="/nodejs/nodejs/#environment-injection">Node.js</a>  </td>
+<td>process.env["MY_VAR"]</td>
+</tr>
+<tr>
+<td><a href="/java/java-war/#environment-injection">Java WAR</a> </td>
+<td>System.getProperties().getProperty("MY_VAR")</td>
+</tr>
+<tr>
+<td><a href="/java/play-framework-1/#environment-injection">Play! Framework 1</a></td>
+<td>System.getenv("MY\_VAR") or \${MY_VAR} in application.conf</td>
+</tr>
+<tr>
+<td><a href="/java/play-framework-2/#environment-injection">Play! Framework 2</a></td>
+<td>System.getenv("MY\_VAR") or \${MY_VAR} in application.conf</td>
+</tr>
+<tr>
+<td><a href="/scala/scala/#environment-injection">Scala</a> </td>
+<td>System.getenv("MY\_VAR")</td>
+</tr>
+<tr>
+<td><a href="/php/php-apps/#environment-injection">PHP</a></td>
+<td>getenv("MY_VAR")</td>
+</tr>
+<tr>
+<td><a href="/python/python_apps/#environment-injection">Python</a></td>
+<td>os.getenv("MY_VAR")</td>
+</tr>
+<tr>
+<td><a href="/ruby/ruby/#environment-injection">Ruby</a></td>
+<td>env[“my_var”]<br></td>
+</tr>
 </table>
 
 Please note that the variables are available at build-time, for
