@@ -1,19 +1,7 @@
-preview: site
-	./site preview
+all: build
 
-site: site.hs
-	ghc --make site.hs
-	./site clean
-
-clean: site
-	./site clean
-
-build: site
-	./site build
-
-debug: site
-	./site clean
-	./site build -v
+mrproper: clean
+	cabal clean
 
 publish: build
 	git stash save
@@ -42,3 +30,20 @@ preprodpublish: build
 	git checkout master
 	git checkout -- .
 	git stash pop || true
+
+cabal.sandbox.config:
+	cabal sandbox init --sandbox=../hakyll-cabal-sandbox
+
+build: dist/build/doc-clevercloud/doc-clevercloud
+	./dist/build/doc-clevercloud/doc-clevercloud build
+
+dist/build/doc-clevercloud/doc-clevercloud: Main.hs cabal.sandbox.config
+	cabal build
+	./dist/build/doc-clevercloud/doc-clevercloud clean
+
+
+preview: dist/build/doc-clevercloud/doc-clevercloud
+	./dist/build/doc-clevercloud/doc-clevercloud preview -p 9000
+
+clean: dist/build/doc-clevercloud/doc-clevercloud
+	./dist/build/doc-clevercloud/doc-clevercloud clean
