@@ -27,21 +27,21 @@ The Clever Cloud supports many servlet containers.
 The supported containers are listed below:
 
 <table id="containers" class="table table-bordered table-striped">
-  <thead>
-    <tr>
-      <th>Apache</th>
-      <th>Jetty</th>
-      <th>Jboss</th>
-      <th>Glassfish</th>
-      <th>Resin</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr><td>Apache Tomcat 4.1</td><td>Jetty 6.1</td><td>Jboss 6.1</td><td>Glassfish 3.1</td><td>Resin 3.1</td></tr>
-    <tr><td>Apache Tomcat 5.5</td><td>Jetty 7.6</td><td>Jboss AS 7.1</td><td> </td><td> </td></tr>
-    <tr><td>Apache Tomcat 6.0</td><td>Jetty 8.1</td><td> </td><td> </td><td> </td></tr>
-    <tr><td>Apache Tomcat 7.0</td><td>Jetty 9.0</td><td> </td><td> </td><td> </td></tr>
-  </tbody>
+<thead>
+<tr>
+<th>Apache</th>
+<th>Jetty</th>
+<th>Jboss</th>
+<th>Glassfish</th>
+<th>Resin</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>Apache Tomcat 4.1</td><td>Jetty 6.1</td><td>Jboss 6.1</td><td>Glassfish 3.1</td><td>Resin 3.1</td></tr>
+<tr><td>Apache Tomcat 5.5</td><td>Jetty 7.6</td><td>Jboss AS 7.1</td><td> </td><td> </td></tr>
+<tr><td>Apache Tomcat 6.0</td><td>Jetty 8.1</td><td> </td><td> </td><td> </td></tr>
+<tr><td>Apache Tomcat 7.0</td><td>Jetty 9.0</td><td> </td><td> </td><td> </td></tr>
+</tbody>
 </table>
 
 
@@ -125,15 +125,15 @@ context.
 
 In addition to the war paths in the `clevercloud/war.json` file, you can just push your application's code and build it with maven. In order to do that, juste add the *build* field in your `clevercloud/war.json`:
 
-	```javascript
-	{
-	  "build": {
-	    "type": "maven",
-	    "goal": "package",
-	  },
-	  "deploy": { … }
-	}
-	```
+    ```javascript
+    {
+      "build": {
+        "type": "maven",
+        "goal": "package"
+      },
+      "deploy": { … }
+    }
+    ```
 
    **goal**: the maven goal to execute. That will be appended to the "mvn" command.
 
@@ -141,87 +141,78 @@ In addition to the war paths in the `clevercloud/war.json` file, you can just pu
 
 Available configuration values for "container" of war.json:
 <table class="table table-bordered table-stripped">
-   <thead>
-      <tr>
-         <th>Value</th>
-         <th>Description</th>
-      </tr>
-   </thead>
-   <tbody>
-      <tr>
-         <td>GLASSFISH3</td>
-         <td>Use Glassfish 3.x
-         (see <a href="http://glassfish.java.net/">http://glassfish.java.net/</a>)</td>
-      </tr>
-      <tr>
-         <td>GLASSFISH4</td>
-         <td>Use Glassfish 4.x
-         (see <a href="http://glassfish.java.net/">http://glassfish.java.net/</a>)</td>
-      </tr>
-      <tr>
-         <td>JBOSS6</td>
-         <td>Use JBoss AS 6.x
-         (see <a href="http://www.jboss.org/jbossas">http://www.jboss.org/jbossas</a>)</td>
-      </tr>
-      <tr>
-         <td>JBOSS7</td>
-         <td>Use JBoss AS 7.x
-         (see <a href="http://www.jboss.org/jbossas">http://www.jboss.org/jbossas</a>) </td>
-      </tr>
-      <tr>
-         <td>RESIN3</td>
-         <td>Use Resin AS 3.x (see <a href="http://www.caucho.com/resin-3.1/doc/">http://www.caucho.com/resin-3.1/doc/</a>)</td>
-      </tr>
-      <tr>
-         <td>RESIN4</td>
-         <td>Use Resin AS 4.x (see <a href="http://www.caucho.com/resin-4/doc/">http://www.caucho.com/resin-4/doc/</a>)</td>
-      </tr>
-      <tr>
-         <td>JETTY6</td>
-         <td>Use Jetty servlet container 6.x (see <a
-         href="http://jetty.codehaus.org/jetty/">http://jetty.codehaus.org/jetty/</a>)</td>
-      </tr>
-      <tr>
-         <td>JETTY7</td>
-         <td>Use Jetty servlet container 7.x (see <a
-         href="https://www.eclipse.org/jetty/">https://www.eclipse.org/jetty/</a>)</td>
-      </tr>
-      <tr>
-         <td>JETTY8</td>
-         <td>Use Jetty servlet container 8.x (see <a
-         href="https://www.eclipse.org/jetty/">https://www.eclipse.org/jetty/</a>)</td>
-      </tr>
-      <tr>
-         <td>JETTY9</td>
-         <td>Use Jetty servlet container 9.x (see <a
-         href="http://www.eclipse.org/jetty/documentation/current/">http://www.eclipse.org/jetty/documentation/current/</a>)</td>
-      </tr>
-      <tr>
-         <td>TOMCAT4</td>
-         <td>Use Tomcat servlet container 4.x (see <a
-         href="https://tomcat.apache.org/">https://tomcat.apache.org/</a>)</td>
-      </tr>
-      <tr>
-         <td>TOMCAT5</td>
-         <td>Use Tomcat servlet container 5.x (see <a
-         href="https://tomcat.apache.org/">https://tomcat.apache.org/</a>)</td>
-      </tr>
-      <tr>
-         <td>TOMCAT6</td>
-         <td>Use Tomcat servlet container 6.x (see <a
-         href="https://tomcat.apache.org/">https://tomcat.apache.org/</a>)</td>
-      </tr>
-      <tr>
-         <td>TOMCAT7</td>
-         <td>Use Tomcat servlet container 7.x (see <a
-         href="https://tomcat.apache.org/">https://tomcat.apache.org/</a>)</td>
-      </tr>
-      <tr>
-         <td>TOMCAT8</td>
-         <td>Use Tomcat servlet container 8.x (see <a
-         href="https://tomcat.apache.org/">https://tomcat.apache.org/</a>)</td>
-      </tr>
-   </tbody>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GLASSFISH3</td>
+<td>Use Glassfish 3.x
+(see <a href="http://glassfish.java.net/">http://glassfish.java.net/</a>)</td>
+</tr>
+<tr>
+<td>GLASSFISH4</td>
+<td>Use Glassfish 4.x
+(see <a href="http://glassfish.java.net/">http://glassfish.java.net/</a>)</td>
+</tr>
+<tr>
+<td>JBOSS6</td>
+<td>Use JBoss AS 6.x
+(see <a href="http://www.jboss.org/jbossas">http://www.jboss.org/jbossas</a>)</td>
+</tr>
+<tr>
+<td>JBOSS7</td>
+<td>Use JBoss AS 7.x
+(see <a href="http://www.jboss.org/jbossas">http://www.jboss.org/jbossas</a>) </td>
+</tr>
+<tr>
+<td>RESIN3</td>
+<td>Use Resin AS 3.x (see <a href="http://www.caucho.com/resin-3.1/doc/">http://www.caucho.com/resin-3.1/doc/</a>)</td>
+</tr>
+<tr>
+<td>RESIN4</td>
+<td>Use Resin AS 4.x (see <a href="http://www.caucho.com/resin-4/doc/">http://www.caucho.com/resin-4/doc/</a>)</td>
+</tr>
+<tr>
+<td>JETTY6</td>
+<td>Use Jetty servlet container 6.x (see <a href="http://jetty.codehaus.org/jetty/">http://jetty.codehaus.org/jetty/</a>)</td>
+</tr>
+<tr>
+<td>JETTY7</td>
+<td>Use Jetty servlet container 7.x (see <a href="https://www.eclipse.org/jetty/">https://www.eclipse.org/jetty/</a>)</td>
+</tr>
+<tr>
+<td>JETTY8</td>
+<td>Use Jetty servlet container 8.x (see <a href="https://www.eclipse.org/jetty/">https://www.eclipse.org/jetty/</a>)</td>
+</tr>
+<tr>
+<td>JETTY9</td>
+<td>Use Jetty servlet container 9.x (see <a href="http://www.eclipse.org/jetty/documentation/current/">http://www.eclipse.org/jetty/documentation/current/</a>)</td>
+</tr>
+<tr>
+<td>TOMCAT4</td>
+<td>Use Tomcat servlet container 4.x (see <a href="https://tomcat.apache.org/">https://tomcat.apache.org/</a>)</td>
+</tr>
+<tr>
+<td>TOMCAT5</td>
+<td>Use Tomcat servlet container 5.x (see <a href="https://tomcat.apache.org/">https://tomcat.apache.org/</a>)</td>
+</tr>
+<tr>
+<td>TOMCAT6</td>
+<td>Use Tomcat servlet container 6.x (see <a href="https://tomcat.apache.org/">https://tomcat.apache.org/</a>)</td>
+</tr>
+<tr>
+<td>TOMCAT7</td>
+<td>Use Tomcat servlet container 7.x (see <a href="https://tomcat.apache.org/">https://tomcat.apache.org/</a>)</td>
+</tr>
+<tr>
+<td>TOMCAT8</td>
+<td>Use Tomcat servlet container 8.x (see <a href="https://tomcat.apache.org/">https://tomcat.apache.org/</a>)</td>
+</tr>
+</tbody>
 </table>
 
 ## Environment injection

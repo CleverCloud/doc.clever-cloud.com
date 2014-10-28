@@ -7,9 +7,26 @@ import           Data.Maybe          (fromMaybe)
 import           Data.Monoid         (mappend,mempty)
 import           Data.Ord            (comparing)
 import           Hakyll
+import           Text.Pandoc.Options
 import           System.FilePath.Posix  (dropExtension,dropFileName,(</>),splitDirectories,joinPath,takeBaseName,takeFileName)
 import qualified Data.Map as M
+import qualified Data.Set as S
 --------------------------------------------------------------------------------
+
+customPandocCompiler :: Compiler (Item String)
+customPandocCompiler =
+    let customExtensions = [Ext_raw_html,Ext_markdown_in_html_blocks]
+        defaultExtensions = readerExtensions defaultHakyllReaderOptions
+        defaultWExtensions = writerExtensions defaultHakyllWriterOptions
+        newExtensions = foldr S.insert defaultExtensions customExtensions
+        newWExtensions = foldr S.insert defaultWExtensions customExtensions
+        readerOptions = defaultHakyllReaderOptions {
+                          readerExtensions = newExtensions
+                        }
+        writerOptions = defaultHakyllWriterOptions {
+                          writerExtensions = newWExtensions
+                        }
+    in pandocCompilerWith readerOptions writerOptions
 
 main :: IO ()
 main = hakyll $ do
@@ -64,7 +81,7 @@ main = hakyll $ do
         match (fromGlob $ dir ++ "/*/*.md") $ do
             route niceRoute
             compile $
-                pandocCompiler
+                customPandocCompiler
                     >>= loadAndApplyTemplate "templates/default.html" mainCtx >>= cleanUrls)
 
 --------------------------------------------------------------------------------

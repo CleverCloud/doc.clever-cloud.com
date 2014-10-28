@@ -17,55 +17,55 @@ Clever Cloud provides internally the following add-ons:
 ## MySQL plans
 
 <table class="table table-bordered table-striped dataTable"><caption>PostgreSQL pricing plans</caption>
-  <tr>
-    <th>Name</th>
-    <th>Cache (Memory)</th>
-    <th>Disk</th>
-    <th>Conn. limit</th>
-    <th>Price /mo</th>
-  </tr> 
-  <tr>
-    <td class="cc-col__price "><span class="label cc-label__price label-info">DEV</span></td>
-    <td>SHARED</td>
-    <td>10 MB</td>
-    <td>5</td>
-    <td>Free</td>
-  </tr>
-  <tr>
-    <td class="cc-col__price "><span class="label cc-label__price label-info">S</span></td>
-    <td>SHARED</td>
-    <td>256 MB</td>
-    <td>10</td>
-    <td>15 €</td>
-  </tr>
-  <tr>
-    <td class="cc-col__price "><span class="label cc-label__price label-info">M</span></td>
-    <td>1 GB</td>
-    <td>10 GB</td>
-    <td>75</td>
-    <td>45 €</td>
-  </tr>
-  <tr>
-    <td class="cc-col__price "><span class="label cc-label__price label-info">L</span></td>
-    <td>8 GB</td>
-    <td>250 GB</td>
-    <td>500</td>
-    <td>300 €</td>
-  </tr>
-  <tr>
-    <td class="cc-col__price "><span class="label cc-label__price label-info">XL</span></td>
-    <td>32 GB</td>
-    <td>600 GB</td>
-    <td>750</td>
-    <td>700 €</td>
-  </tr>
-  <tr>
-    <td class="cc-col__price "><span class="label cc-label__price label-info">XXL</span></td>
-    <td>64 GB</td>
-    <td>900 GB</td>
-    <td>1000</td>
-    <td>1200 €</td>
-  </tr>
+<tr>
+<th>Name</th>
+<th>Cache (Memory)</th>
+<th>Disk</th>
+<th>Conn. limit</th>
+<th>Price /mo</th>
+</tr> 
+<tr>
+<td class="cc-col__price "><span class="label cc-label__price label-info">DEV</span></td>
+<td>SHARED</td>
+<td>10 MB</td>
+<td>5</td>
+<td>Free</td>
+</tr>
+<tr>
+<td class="cc-col__price "><span class="label cc-label__price label-info">S</span></td>
+<td>SHARED</td>
+<td>256 MB</td>
+<td>10</td>
+<td>15 €</td>
+</tr>
+<tr>
+<td class="cc-col__price "><span class="label cc-label__price label-info">M</span></td>
+<td>1 GB</td>
+<td>10 GB</td>
+<td>75</td>
+<td>45 €</td>
+</tr>
+<tr>
+<td class="cc-col__price "><span class="label cc-label__price label-info">L</span></td>
+<td>8 GB</td>
+<td>250 GB</td>
+<td>500</td>
+<td>300 €</td>
+</tr>
+<tr>
+<td class="cc-col__price "><span class="label cc-label__price label-info">XL</span></td>
+<td>32 GB</td>
+<td>600 GB</td>
+<td>750</td>
+<td>700 €</td>
+</tr>
+<tr>
+<td class="cc-col__price "><span class="label cc-label__price label-info">XXL</span></td>
+<td>64 GB</td>
+<td>900 GB</td>
+<td>1000</td>
+<td>1200 €</td>
+</tr>
 </table>
 
 ### Migrating from an old database
@@ -84,56 +84,56 @@ If you want to import your **SQL** dump, you can use several methods:
 ## PostgreSQL plans
 
 <table class="table table-bordered table-striped dataTable"><caption>PostgreSQL pricing plans</caption>
-  <tr>
-    <th>Name</th>
-    <th>Cache (Memory)</th>
-    <th>Disk</th>
-    <th>Conn. limit</th>
-    <th>Price /mo</th>
-  </tr> 
-  <tr>
-    <td class="cc-col__price "><span class="label cc-label__price label-info">DEV</span></td>
-    <td>SHARED</td>
-    <td>256 MB</td>
-    <td>2</td>
-    <td>Free</td>
-  </tr>
+<tr>
+<th>Name</th>
+<th>Cache (Memory)</th>
+<th>Disk</th>
+<th>Conn. limit</th>
+<th>Price /mo</th>
+</tr> 
+<tr>
+<td class="cc-col__price "><span class="label cc-label__price label-info">DEV</span></td>
+<td>SHARED</td>
+<td>256 MB</td>
+<td>2</td>
+<td>Free</td>
+</tr>
 
-  <tr>
-    <td class="cc-col__price "><span class="label cc-label__price label-info">S</span></td>
-    <td>SHARED</td>
-    <td>256 MB</td>
-    <td>10</td>
-    <td>10 €</td>
-  </tr>
-  <tr>
-    <td class="cc-col__price "><span class="label cc-label__price label-info">M</span></td>
-    <td>1 GB</td>
-    <td>100 GB</td>
-    <td>75</td>
-    <td>30 €</td>
-  </tr>
-  <tr>
-    <td class="cc-col__price "><span class="label cc-label__price label-info">L</span></td>
-    <td>8 GB</td>
-    <td>450 GB</td>
-    <td>500</td>
-    <td>240 €</td>
-  </tr>
-  <tr>
-    <td class="cc-col__price "><span class="label cc-label__price label-info">XL</span></td>
-    <td>32 GB</td>
-    <td>600 GB</td>
-    <td>750</td>
-    <td>700 €</td>
-  </tr>
-  <tr>
-    <td class="cc-col__price "><span class="label cc-label__price label-info">XXL</span></td>
-    <td>64 GB</td>
-    <td>900 GB</td>
-    <td>1000</td>
-    <td>1200 €</td>
-  </tr>
+<tr>
+<td class="cc-col__price "><span class="label cc-label__price label-info">S</span></td>
+<td>SHARED</td>
+<td>256 MB</td>
+<td>10</td>
+<td>10 €</td>
+</tr>
+<tr>
+<td class="cc-col__price "><span class="label cc-label__price label-info">M</span></td>
+<td>1 GB</td>
+<td>100 GB</td>
+<td>75</td>
+<td>30 €</td>
+</tr>
+<tr>
+<td class="cc-col__price "><span class="label cc-label__price label-info">L</span></td>
+<td>8 GB</td>
+<td>450 GB</td>
+<td>500</td>
+<td>240 €</td>
+</tr>
+<tr>
+<td class="cc-col__price "><span class="label cc-label__price label-info">XL</span></td>
+<td>32 GB</td>
+<td>600 GB</td>
+<td>750</td>
+<td>700 €</td>
+</tr>
+<tr>
+<td class="cc-col__price "><span class="label cc-label__price label-info">XXL</span></td>
+<td>64 GB</td>
+<td>900 GB</td>
+<td>1000</td>
+<td>1200 €</td>
+</tr>
 </table>
 
 ### Migrating from an old database
@@ -195,15 +195,15 @@ It's a json array containing objects with two fields:
 the root of your application or via */app/myFolder*.
 
 <div class="alert alert-hot-problems">
-  <h5>Important note about target folder</h5>
-  <p>
-    The folder must not exists in your repository (or it needs to be empty). Otherwise, the mount of your bucket will be ignored.
-  </p>
-  <p>
-    You can mount the same bucket in different folders, but they will share the same
-    content, so it's not the solution. You should prefer to mount the bucket in only one
-    folder and then manage multiple subfolders in it.
-  </p>
+<h5>Important note about target folder</h5>
+<p>
+The folder must not exists in your repository (or it needs to be empty). Otherwise, the mount of your bucket will be ignored.
+</p>
+<p>
+You can mount the same bucket in different folders, but they will share the same
+content, so it's not the solution. You should prefer to mount the bucket in only one
+folder and then manage multiple subfolders in it.
+</p>
 </div>
 
 ### Accessing your data inside the FS Bucket
