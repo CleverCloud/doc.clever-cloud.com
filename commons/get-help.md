@@ -1,5 +1,5 @@
 ---
 name: Get Help
-position: 5
+position: 6
 nameclass: get-help
 ---

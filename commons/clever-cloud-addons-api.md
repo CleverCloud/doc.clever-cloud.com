@@ -1,6 +1,6 @@
 ---
 name: Clever Cloud Add-on API
-position: 3
+position: 4
 nameclass: clever-cloud-addons-api
 ---
 

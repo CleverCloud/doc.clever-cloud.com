@@ -98,34 +98,6 @@ The default version of python on Clever Cloud is 2.7, if you want to use python 
 *Note: the version is an integer, do do not use quotes. valued allowed are 2 and 3.*
 
 
-## Cron configuration file
-
-The configuration file used for crontab is `clevercloud/cron.json`.
-
-Here is the general syntax:
-
-```haskell
-  [
-    "<string>",
-    "<string>"
- ]
-```
-
-The string `<string>` must use the cron format\*:
-<pre>M H d m Y command</pre>
-
-There are two restrictions about the usage of crontab on our platform:
-
-* The special date `@reboot` is not available since the crontab is added after the startup of the instance.
-* You must use the absolute path of commands
-
-You can use the special variable `$ROOT` to refer to the root folder of your application.
-
-<div class="alert alert-hot-problems">
-<h4>Warning:</h4>
-  <p>We do not currently support the clustering of cron tasks, you must manage it yourself if your application requires more than one instance.</p>
-</div>
-
 _* For more information about the syntax, you can check <a href="http://en.wikipedia.org/wiki/Cron">this page</a>_
 
 ## Environment injection
