@@ -84,21 +84,11 @@ When your bucket is available, to enable Nginx to serve your static resources yo
 
 ### Use Python 3
 
-The default version of python on Clever Cloud is 2.7, if you want to use python 3.4 instead, use the key
-`python_version` in `deploy` like the following:
+The default version of python on Clever Cloud is 2.7, if you want to use python 3.4 instead, use the file
+**clevercloud/python_version** and put `3` in it.
 
-```haskell
-   {
-      "deploy": {
-         "python_version": 3
-      }
-   }
-```
+*Note: the version is an integer, do not use quotes. values allowed are 2 and 3.*
 
-*Note: the version is an integer, do do not use quotes. valued allowed are 2 and 3.*
-
-
-_* For more information about the syntax, you can check <a href="http://en.wikipedia.org/wiki/Cron">this page</a>_
 
 ## Environment injection
 
