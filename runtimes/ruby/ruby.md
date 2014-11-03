@@ -50,19 +50,12 @@ Then, you need to provide a Gemfile.lock. To do that, please run:
 .../myapp $ git commit -m "Add production dependency file"
 ```
 
-## More configuration
+## Choose ruby version
 
-You can configure your deployment via the `clevercloud/ruby.json`
-configration file. This file is optional.
+Simply add this to your Gemfile
 
-### Choose ruby version
-
-```javascript
-{
-  "deploy" : {
-    "rubyversion": "<ver>"
-  }
-}
+```
+ruby '2.1'
 ```
 
 `rubyversion` must be a string. The given string is tested against the
@@ -82,6 +75,11 @@ releases, but, hey, we're human!
 Due to actual landscape in ruby applications, the default version is the
 greatest 2.0.Y. We provide also the latest 2.1.Y version and the latest
 1.9.Y too, but prefer the current stable one : 2.0.
+
+## More configuration
+
+You can configure your deployment via the `clevercloud/ruby.json`
+configration file. This file is optional.
 
 ### Set deployment RUBY_ENV and rake goals to execute
 
