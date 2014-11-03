@@ -63,7 +63,7 @@ See [Custom Domain Names](/admin-console/apps-management/#custom-domain-names) s
 
 ## How do I define cron jobs for my application?
 
-This feature is currently only available for PHP, Python and Ruby applications. See [Cron Configuration File](/php/php-apps/#cron-configuration-file) for more information.
+See [Cron Configuration File](/commons/crons/) for more information.
 
 ## How many active requests can my app serve at one time?
 
