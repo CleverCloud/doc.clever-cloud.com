@@ -51,7 +51,7 @@ $(document).ready(function() {
 
 });
 
-var lgList = ["ruby", "java", "php", "scala", "nodejs", "python"];
+var lgList = ["ruby", "java", "php", "scala", "nodejs", "python", "go"];
 
 var activeHeadbar = function() {
   _.each(lgList, function(x, y) {
@@ -61,7 +61,7 @@ var activeHeadbar = function() {
   })
 }
 
-var list = ["Clever Cloud Overview", "Ruby Runtime", "Java Runtime", "PHP Runtime", "Scala Runtime", "Node.js Runtime", "Python Runtime", "Add-ons", "Clever Cloud Add-on API", "Admin Console", "Get Help"];
+var list = ["Clever Cloud Overview", "Ruby Runtime", "Java Runtime", "PHP Runtime", "Scala Runtime", "Node.js Runtime", "Python Runtime", "Add-ons", "Running Crons", "Clever Cloud Add-on API", "Admin Console", "Get Help", "Go Runtime"];
 
 var reorderLeftMenu = function() {
   var temp = Array();

@@ -1,7 +1,5 @@
 ---
-name: Running crons on Clever Cloud
+name: Running Crons
 position: 3
 nameclass: crons
 ---
-
-
