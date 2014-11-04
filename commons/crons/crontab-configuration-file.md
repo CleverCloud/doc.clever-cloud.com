@@ -1,5 +1,5 @@
 ---
-title: Running crons on Clever Cloud
+title: Running crons 
 position: 1
 ---
 
