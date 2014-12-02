@@ -63,7 +63,7 @@ See [Custom Domain Names](/admin-console/apps-management/#custom-domain-names) s
 
 ## How do I define cron jobs for my application?
 
-See [Cron Configuration File](/commons/crons/) for more information.
+See [Cron Configuration File](/crons/crontab-configuration-file/) for more information.
 
 ## How many active requests can my app serve at one time?
 
