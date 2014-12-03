@@ -56,6 +56,16 @@ Follow these steps to deploy your application:
 
   Checkout your application <b>logs</b> in the dashboard to <b>monitor the deployment</b>.
 
+### Automatic Deployment with GitHub
+
+If you want to enable automatic deployment, it’s easy: in your application information tab, if you have created your application from a GitHub one, you will see a new field: a secret for your GitHub application’s settings. Here are the steps to trigger a deploy on Clever Cloud from a push to GitHub:
+
+1. Grab this secret and go to the GitHub repository settings.
+2. Click on “add a service” and select “Clever Cloud” from the list.
+3. Paste the secret
+
+From now, a push to your GitHub repo will also trigger a Clever Cloud deployment.
+
 ## FTP Deployment
 
 It is possible to deploy via FTP with PHP and static applications.  
