@@ -1,6 +1,6 @@
 ---
 title: Apps Management
-position: 6
+position: 7
 ---
 
 # Application Management

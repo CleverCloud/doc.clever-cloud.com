@@ -1,6 +1,6 @@
 ---
 title: Analytics and consumption
-position: 5
+position: 6
 ---
 
 # Analytics and consumption

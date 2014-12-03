@@ -1,6 +1,6 @@
 ---
 title: Custom domain names
-position: 2
+position: 3
 ---
 
 # Custom domain names

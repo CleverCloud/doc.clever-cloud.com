@@ -1,6 +1,6 @@
 ---
 title: SSH Keys
-position: 1
+position: 2
 ---
 
 # SSH keys
@@ -89,3 +89,8 @@ To check if your ssh key is correctly configured, you can try to run:
 The first time, you may have to type "yes" to continue.
 
 If you see "Permission denied (publickey).", something went wrong, feel free to contact the support, otherwise everything should be fine.
+
+## Github account and SSH key on Clever Cloud
+
+If your account is linked to Github, a new panel with your GitHub SSH key will appear in the "SSH Key" menu.
+So you can add every key via a simple click.
