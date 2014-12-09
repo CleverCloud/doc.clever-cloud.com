@@ -24,7 +24,7 @@ Node.js is a platform built on Chrome's JavaScript runtime for building fast, sc
 </figure>
 3. Then select the language/framework:  <figure class="cc-content-img"><img src="/assets/images/javawarapp.png"></figure>
 3. *Optional:* in case of PHP applications, you can choose between FTP and Git deployment
-4. Check that the information are correct and validate: <figure class="cc-content-img"><img src="/assets/images/screens/nodejs/nodejs_validation.png"/></figure>
+4. Check that the application information is correct and validate: <figure class="cc-content-img"><img src="/assets/images/screens/nodejs/nodejs_validation.png"/></figure>
 5. *Optional*: <a href="/addons/add-an-addon/">add an add-on</a>
 
 ## Necessary information

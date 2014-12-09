@@ -29,7 +29,7 @@ PHP is a widely-used general-purpose scripting language that is especially suite
   </p>
 </div>
 
-4. Check that the information are correct and validate: <figure class="cc-content-img"><img src="/assets/images/screens/php5.5/php5.5_create.png"/></figure>
+4. Check that the application information is correct and validate: <figure class="cc-content-img"><img src="/assets/images/screens/php5.5/php5.5_create.png"/></figure>
 5. *Optional*: <a href="/addons/add-an-addon/">add an add-on</a>
 
 ## CRON configuration file
