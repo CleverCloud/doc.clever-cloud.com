@@ -163,32 +163,32 @@ It's quite not exhaustive, so it doesn't mean that other CMS can't work on the C
 
 <div class="">
 <table class="table table-bordered">
-  <tbody>
-    <tr>
-      <td>Wordpress</td>
-      <td>Prestashop</td>
-    </tr>
-  </tbody>
-  <tbody>
-    <tr>
-      <td>Dokuwiki</td>
-      <td>Joomla</td>
-    </tr>
-  </tbody>
-  <tbody>
-    <tr>
-      <td>SugarCRM</td>
-      <td>Drupal</td>
-    </tr>
-    <tr>
-      <td>Magento</td>
-      <td>Status.net</td>
-  </tr>
-    <tr>
-      <td>Symfony</td>
-      <td> </td>
-  </tr>
-  </tbody>
+<tbody>
+<tr>
+<td>Wordpress</td>
+<td>Prestashop</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td>Dokuwiki</td>
+<td>Joomla</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td>SugarCRM</td>
+<td>Drupal</td>
+</tr>
+<tr>
+<td>Magento</td>
+<td>Status.net</td>
+</tr>
+<tr>
+<td>Symfony</td>
+<td> </td>
+</tr>
+</tbody>
 </table>
 </div>
 

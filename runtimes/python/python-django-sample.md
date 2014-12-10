@@ -21,8 +21,7 @@ If you want to test our platform and deploy this application, just follow these 
 <br/><br/>
 <div class="alert alert-hot-problems">
   <h5>Reminder</h5>
-  <p>
-    Do not forget to add the [clevercloud/python.json](https://github.com/CleverCloud/django-example/blob/master/clevercloud/python.json) in any Python project so that we get your required modules.
+  <p>Do not forget to add the [clevercloud/python.json](https://github.com/CleverCloud/django-example/blob/master/clevercloud/python.json) in any Python project so that we get your required modules.
   </p>
 </div>
 

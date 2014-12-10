@@ -92,44 +92,44 @@ The `package.json` file should look like the following:
 The following table describes each of the fields formerly mentioned.
 
 <table id="nodedeps" class="table table-bordered table-striped">
-	<thead>
-		<tr>
-			<th>Usage</th>
-			<th>Field</th>
-			<th>Description</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-		<td><span class="label label-important">Required</span></td>
-		<td>name</td>
-		<td>Name of your application. You need to fill this field.</td>
-		</tr>
-		<tr>
-		<td><span class="label label-important">Required</span></td>
-		<td>version</td>
-		<td>Version of you application. You need to fill this field.</td>
-		</tr>
-		<tr>
-			<td class="cc-depusage" rowspan="2"><span class="label label-important">At least one</span></td>
-			<td>main</td>
-			<td>This field allows you to specify the file you want to run. It should
-			be the relative path of the file starting at the project's root. It's used prior to the next one.</td>
-		</tr>
-		<tr>
-			<td>scripts.start</td>
-			<td>This field provides a command line to run. It is required if the <code>main</code> one is missing. You need one
-			of <code>scripts.start</code> and <code>main</code>. If both exist, we use the <code>main</code> one.</td>
-		</tr>
-		<tr>
-			<td class="cc-depusage" ><span class="label label-inverse">Optional</span></td>
-			<td>engines.node</td>
-			<td>Sets the node engine version you app runs with. Any ">=" version will lead to
-			run the application with the latest local version. Any "A.B.x" version will lead
-			to run the application with le latest "A.B" local version. If this field is
-			missing, we use the greatest local version.</td>
-		</tr>
-	</tbody>
+<thead>
+<tr>
+<th>Usage</th>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="label label-important">Required</span></td>
+<td>name</td>
+<td>Name of your application. You need to fill this field.</td>
+</tr>
+<tr>
+<td><span class="label label-important">Required</span></td>
+<td>version</td>
+<td>Version of you application. You need to fill this field.</td>
+</tr>
+<tr>
+<td class="cc-depusage" rowspan="2"><span class="label label-important">At least one</span></td>
+<td>main</td>
+<td>This field allows you to specify the file you want to run. It should
+be the relative path of the file starting at the project's root. It's used prior to the next one.</td>
+</tr>
+<tr>
+<td>scripts.start</td>
+<td>This field provides a command line to run. It is required if the <code>main</code> one is missing. You need one
+of <code>scripts.start</code> and <code>main</code>. If both exist, we use the <code>main</code> one.</td>
+</tr>
+<tr>
+<td class="cc-depusage" ><span class="label label-inverse">Optional</span></td>
+<td>engines.node</td>
+<td>Sets the node engine version you app runs with. Any ">=" version will lead to
+run the application with the latest local version. Any "A.B.x" version will lead
+to run the application with le latest "A.B" local version. If this field is
+missing, we use the greatest local version.</td>
+</tr>
+</tbody>
 </table>
 
 ### NPM modules dependencies
@@ -170,22 +170,22 @@ We currently host the following Node.js versions, with these modules already ins
 **You can use any version of node you need and any modules you need. Preinstall version is only for faster deployment process.**
 
 <div class="row">
-  <div class="span4">
-    <table class="table table-bordered table-striped span1">
-      <thead>
-        <tr>
-          <th>Pre-installed modules</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td>socket.io</td></tr>
-        <tr><td>express  </td></tr>
-        <tr><td>async    </td></tr>
-        <tr><td>mysql    </td></tr>
-        <tr><td>pg       </td></tr>
-      </tbody>
-    </table>
-  </div>
+<div class="span4">
+<table class="table table-bordered table-striped span1">
+<thead>
+<tr>
+<th>Pre-installed modules</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>socket.io</td></tr>
+<tr><td>express  </td></tr>
+<tr><td>async    </td></tr>
+<tr><td>mysql    </td></tr>
+<tr><td>pg       </td></tr>
+</tbody>
+</table>
+</div>
 </div>
 
 

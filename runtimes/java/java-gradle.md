@@ -79,7 +79,7 @@ Since Gradle can come in many versions, Clever Cloud automatically support the
 Just create and commit the `gradlew` file and the wrapper `jar` and
 `properties` files:
 
-```
+```haskell
 ./
 	clevercloud/
 		gradle.json

@@ -39,13 +39,9 @@ the root of your application or via */app/myFolder*.
 
 <div class="alert alert-hot-problems">
   <h5>Important note about target folder</h5>
-  <p>
-    The folder must not exists in your repository (or it needs to be empty). Otherwise, the mount of your bucket will be ignored.
+  <p>The folder must not exists in your repository (or it needs to be empty). Otherwise, the mount of your bucket will be ignored.
   </p>
-  <p>
-    You can mount the same bucket in different folders, but they will share the same
-    content, so it's not the solution. You should prefer to mount the bucket in only one
-    folder and then manage multiple subfolders in it.
+  <p>You can mount the same bucket in different folders, but they will share the same content, so it's not the solution. You should prefer to mount the bucket in only one folder and then manage multiple subfolders in it.
   </p>
 </div>
 

@@ -60,64 +60,64 @@ following will explain you how to do it:
 
 1. Make your repository have a GOPATH structure:
 
-	```
-	./
-	   src/
-	      myapp/
-	      foo/
-	         module1/
-	         module2/
-	      module3/
-	```
+``` haskell
+./
+   src/
+      myapp/
+      foo/
+         module1/
+         module2/
+      module3/
+```
 <br />
 
-	Here you have the modules `myapp`, `foo/module1`, `foo/module2` and `module3`.
+Here you have the modules `myapp`, `foo/module1`, `foo/module2` and `module3`.
 
 2. Create a *clevercloud/go.json* file at the top of your repository:
 
-	```
-	./
-	   clevercloud/
-	      go.json
-	   src/
-	      myapp/
-	      ...
-	```
+``` haskell
+./
+   clevercloud/
+      go.json
+   src/
+      myapp/
+      ...
+```
 
 
 3. In the go.json file, put the following:
 
-	```javascript
-	{
-	    "deploy": {
-	        "appIsGoPath": true,
-	        "main": "myapp"
-	    }
-	}
-	```
+```javascript
+{
+    "deploy": {
+        "appIsGoPath": true,
+        "main": "myapp"
+    }
+}
+```
 <br />
 
-	If `appIsGoPath` is present and equals `true`, then we consider that
-	your repo root is the *GOPATH*. the `main` field then becomes mandatory
-	and must be the name of the module you want to run. e.g. if you want
-	to run `module1`, `main` must be `foo/module1`.
+If `appIsGoPath` is present and equals `true`, then we consider that
+your repo root is the *GOPATH*. the `main` field then becomes mandatory
+and must be the name of the module you want to run. e.g. if you want
+to run `module1`, `main` must be `foo/module1`.
 
 4. (Optional) Add a "execDir" field to the "deploy" object:
 
-	```javascript
-	{
-	    "deploy": {
-	        "appIsGoPath": true,
-	        "main": "myapp"
-	        "execDir": "src/myapp"
-	    }
-	}
+```javascript
+{
+    "deploy": {
+        "appIsGoPath": true,
+        "main": "myapp"
+        "execDir": "src/myapp"
+    }
+}
 	```
 <br />
 
 
-	The `execDir` value must be relative to the root of your repo. In the
-	example above, we will run the application in the src/myapp directory.
+The `execDir` value must be relative to the root of your repo. In the
+example above, we will run the application in the src/myapp directory.
 
 ## Environment injection
 

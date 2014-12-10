@@ -60,19 +60,19 @@ The supported containers are listed below:
 
 * you need to provide a `clevercloud/war.json` file describing the container you want and the archives you want to deploy:
 
-    ```javascript
-    {
-      "deploy":{
-         "container":"<string>",
-         "war" : [
-				{
-					"file":"<string>",
-					"context":"/<string>"
-				}
-			]
-       }
-    }
-    ```
+```javascript
+{
+  "deploy":{
+     "container":"<string>",
+     "war" : [
+		{
+			"file":"<string>",
+			"context":"/<string>"
+		}
+	]
+   }
+}
+```
 
     * **container**: that field should contain one of the values in the left column of the table below.
     * **war** : this field is a list of objects. **file** is mandatory
@@ -106,17 +106,17 @@ context.
 
 * Optional: you can add a postdeploy webhook by adding its path:
 
-    ```javascript
-    {
-      "deploy": {
-        "container":"<string>",
-        "war" : ["<string>"]
-       },
-      "hooks": {
-        "postDeploy": "pathtoyourscript"
-      }
-    }
-    ```
+```javascript
+{
+  "deploy": {
+    "container":"<string>",
+    "war" : ["<string>"]
+   },
+  "hooks": {
+    "postDeploy": "pathtoyourscript"
+  }
+}
+```
 
     **postDeploy**: execute a custom script after the deploy. Some frameworks or custom applications might require bootstrapping before the application may run.
     You can achieve this by creating a custom script with your commands and adding the associated file name in `clevercloud/war.json`.
@@ -125,15 +125,15 @@ context.
 
 In addition to the war paths in the `clevercloud/war.json` file, you can just push your application's code and build it with maven. In order to do that, juste add the *build* field in your `clevercloud/war.json`:
 
-    ```javascript
-    {
-      "build": {
-        "type": "maven",
-        "goal": "package"
-      },
-      "deploy": { … }
-    }
-    ```
+```javascript
+{
+  "build": {
+    "type": "maven",
+    "goal": "package"
+  },
+  "deploy": { … }
+}
+```
 
    **goal**: the maven goal to execute. That will be appended to the "mvn" command.
 
