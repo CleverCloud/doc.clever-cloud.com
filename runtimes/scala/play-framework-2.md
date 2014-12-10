@@ -21,7 +21,7 @@ Play is an open source web application framework, written in Scala and Java, whi
   <img src="/assets/images/screens/scalaplay2/scalaplay2_create.png"/>
 </figure>
 3. Then select the language/framework:  <figure class="cc-content-img"><img src="/assets/images/javawarapp.png"></figure>
-4. Check that the information are correct and validate: <figure class="cc-content-img"><img src="/assets/images/screens/scalaplay2/scalaplay2_validation.png"/></figure>
+4. Check that the application information is correct and validate: <figure class="cc-content-img"><img src="/assets/images/screens/scalaplay2/scalaplay2_validation.png"/></figure>
 5. *Optional*: <a href="/addons/add-an-addon/">add an add-on</a>
 
 ## Necessary information
