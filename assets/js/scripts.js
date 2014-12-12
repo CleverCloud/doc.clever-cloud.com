@@ -61,7 +61,7 @@ var activeHeadbar = function() {
   })
 }
 
-var list = ["Clever Cloud Overview", "Ruby Runtime", "Java Runtime", "PHP Runtime", "Scala Runtime", "Node.js Runtime", "Python Runtime", "Add-ons", "Running Crons", "Clever Cloud Add-on API", "Admin Console", "Get Help", "Go Runtime"];
+var list = ["Clever Cloud Overview", "Ruby Runtime", "Java Runtime", "PHP Runtime", "Scala Runtime", "Node.js Runtime", "Python Runtime", "Add-ons", "Running Crons", "Clever Cloud Add-on API", "Admin Console", "Get Help", "Go Runtime","Docker"];
 
 var reorderLeftMenu = function() {
   var temp = Array();

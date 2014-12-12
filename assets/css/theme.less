@@ -210,7 +210,7 @@ figcaption{
     text-decoration: underline;
   }
 }
-.alert, .alert-hot-problems {
+.alert.alert-hot-problems {
   background: @alertbg;
   border:     1px solid #dfddcf;
   box-shadow: 0 1px 0 #fff, 0 1px 0 #fff inset;
@@ -218,8 +218,20 @@ figcaption{
   .cc_rounded ()
 }
 
-.alert, .alert-hot-problems h4{
+.alert.alert-hot-problems h4{
   margin: 0.5em 0 0.5em 0;
+}
+
+.alert.alert-infos {
+  background: @alertinfo;
+  border:     none;
+  box-shadow: none;
+  color:      @alertinfo-color;
+  .cc_rounded ();
+  h4{
+    margin: 0.5em 0 0.5em 0;
+    color: @alertinfo-color;
+  }
 }
 
 ol li .alert p {
