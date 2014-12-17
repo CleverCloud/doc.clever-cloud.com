@@ -6,7 +6,7 @@ shortdesc: Docker is an easy, lightweight virtualized environment for portable a
 ## Deploy Docker images
 
 Clever Cloud allows you to deploy any application running inside a
-Docker process. This page will explain you how to set up your application
+Docker container. This page will explain how to set up your application
 to run it on our service.
 
 <div class="alert alert-hot-problems">
@@ -31,9 +31,9 @@ bare-metal servers, public instances, or combinations of the above.
 
 1. Create a new app by clicking on the **Add an Appplication** button, in the sidebar. 
 2. Select a brand new instance (or a repository from GitHub if your account is linked).
-3. Then select Docker the language list.
-4. Configure your sclaing options.
-5. Enter your application's name and description and click "Next". You can also select the region you want (US or Europe)
+3. Then select Docker in the platforms list.
+4. Configure your scaling options.
+5. Enter your application's name and description and click "Next". You can also select the region you want (North America or Europe).
 <figure class="cc-content-img">
   <img src="/assets/images/choose-name.png"/>
 </figure>
@@ -41,7 +41,7 @@ bare-metal servers, public instances, or combinations of the above.
 
 ### Requirements
 
-Clever Cloud do not need a lot of requirements here are what you *need*
+Clever Cloud does not have a lot of requirements, here is what you *need*
 to do to ensure that your application will run:
 
 * Push on the **master branch**.
@@ -74,7 +74,7 @@ example, we invite you to read their [well-written blog post](http://blog.gemnas
 about that repository.
 
 You can find our demonstration application [on Github](https://github.com/clevercloud/rails-meet-docker-and-clever-cloud).
-Fell free to clone it and play with it.
+Feel free to clone it and play with it.
 
 So, what's in this repo?
 
