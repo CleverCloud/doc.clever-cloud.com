@@ -67,7 +67,7 @@ CMD <command to run>
 
 ### Sample app
 
-We forked the [**rails-meets-docker**](https://github.com/gemnasium/rails-meet-docker) demonstration
+We forked the [**rails-meets-docker**](https://github.com/gemnasium/rails-meets-docker) demonstration
 repository by [Gemnasium](https://gemnasium.com/) and adapted it so it
 would run on Clever Cloud. If you want more information about this
 example, we invite you to read their [well-written blog post](http://blog.gemnasium.com/post/66356385701/your-dockerfile-for-rails "Dockerfile for rails blog post")
