@@ -29,7 +29,7 @@ bare-metal servers, public instances, or combinations of the above.
 
 ### Create an application
 
-1. Create a new app by clicking on the **Add an Appplication** button, in the sidebar. 
+1. Create a new app by clicking on the **Add an Application** button, in the sidebar. 
 2. Select a brand new instance (or a repository from GitHub if your account is linked).
 3. Then select Docker in the platforms list.
 4. Configure your scaling options.
