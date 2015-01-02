@@ -74,10 +74,11 @@ The supported containers are listed below:
 }
 ```
 
-    * **container**: that field should contain one of the values in the left column of the table below.
-    * **war** : this field is a list of objects. **file** is mandatory
-    and should contain the path of the war/ear file relative to your
-application root. **context** is optional, *should start with a /* and
+* **container**: that field should contain one of the values in the left column of the table below.
+* **war** : this field is a list of objects. **file** is mandatory
+and should contain the path of the war/ear file relative to your
+application root.
+* **context** is optional, *should start with a /* and
 is the context under which you want your war to be deployed. If your
 file is an ear, you do not need the **context** field. If you do not
 define it, the default context will be the name of the war without the
