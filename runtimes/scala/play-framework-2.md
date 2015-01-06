@@ -117,7 +117,7 @@ Application deployment on Clever Cloud is via Git. Follow [these steps](/clever-
 ## Tutorial - Play! application deployment
 
 <p>
-  <iframe width="640"; height="360" src="http://www.youtube.com/embed/HL366BhWFMw" frameborder="0" allowfullscreen></iframe>
+  <iframe width="640"; height="360" src="//www.youtube.com/embed/HL366BhWFMw" frameborder="0" allowfullscreen></iframe>
 </p>
 
 
