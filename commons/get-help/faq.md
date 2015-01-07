@@ -83,6 +83,11 @@ Instead of it you can use the `X-Forwarded-Proto` HTTP header to get the informa
    <p>In order to use `request.secure` instead of accessing the header, you must add `XForwardedSupport=all` in your *application.conf*.</p>
 </div>
 
+<div class="alert alert-hot-problems">
+   <h4>Note for Play Framework! 2.3+ users</h4>
+   <p>In order to use `request.secure` instead of accessing the header, you must add `trustxforwarded=true` in your *application.conf*.</p>
+</div>
+
 
 ## How to get the user's IP address?
 

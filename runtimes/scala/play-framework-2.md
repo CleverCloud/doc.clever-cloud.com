@@ -109,6 +109,12 @@ addSbtPlugin("play" % "sbt-plugin" % "2.0.4") // The important part of the confi
 
 The two solutions do the job, you can pick your favorite.
 
+## HTTPS support
+
+HTTPS is handled by Clever Cloud ahead of your application, your application
+retrieves the traffic in plain http. To be able to use `request.secure`, you
+have to add `trustxforwarded=true` in `application.conf`.
+
 ## Deploy on Clever Cloud
 
 Application deployment on Clever Cloud is via Git. Follow [these steps](/clever-cloud-overview/add-application/) to deploy your application.
