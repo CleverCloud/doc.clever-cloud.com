@@ -22,7 +22,7 @@ Variables are defined on a per-application basis. They are defined by two ways:
 Please note that if you define or modify environment variables, you will
 need to redeploy you application to make it use the variables.
 
-### What is the `INSTANCE_NUMBER` varianle used for?
+### What is the `INSTANCE_NUMBER` variable used for?
 
 This variable allows your application to differentiate each running node on the applicative level.
 
