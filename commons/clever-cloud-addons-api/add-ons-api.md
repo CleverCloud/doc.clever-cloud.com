@@ -285,7 +285,7 @@ This will return:
 This API is part of the Clever Cloud API. The base URL for the Clever Cloud API is:
 
 ```http
-https://ccapi.cleverapps.io/v2
+https://api.clever-cloud.com/v2
 ```
 
 You should prefix your calls by this base URL.
@@ -340,6 +340,10 @@ Response Body: [
 
 #### Get informations about a specific add-on
 
+**Caution**: this endpoint is **not** available during the provisioning call. If you want
+informations, you need to reply to the provisioning call, **then** you can call this
+endpoint.
+
 ```json
 GET /vendor/apps/{addonId}
 Response Body: {
@@ -376,6 +380,10 @@ This endpoint gives you more informations about a provisioned add-on.
 * `domains` - Originally the domains names for the application owning the add-on. We return an empty list.
 
 #### Update the config vars for an add-on
+
+**Caution**: this endpoint is **not** available during the provisioning call. If you want
+informations, you need to reply to the provisioning call, **then** you can call this
+endpoint.
 
 ```json
 PUT /vendor/apps/{addonId}
