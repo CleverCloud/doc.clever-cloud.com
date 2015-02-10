@@ -85,6 +85,12 @@ So for an application using the MySQL add-on, you can set:
 %clevercloud.db.pass=${MYSQL_ADDON_PASSWORD}
 ```
 
+## HTTPS support
+
+HTTPS is handled by Clever Cloud ahead of your application, your application
+retrieves the traffic in plain http. To be able to use `request.secure`, you
+have to add `XForwardedSupport=all` in `application.conf`.
+
 ## Deploy on Clever Cloud
 
 Application deployment on Clever Cloud is via Git. Follow [these steps](/clever-cloud-overview/add-application/) to deploy your application.

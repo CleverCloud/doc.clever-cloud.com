@@ -127,7 +127,9 @@ of <code>scripts.start</code> and <code>main</code>. If both exist, we use the <
 <td>Sets the node engine version you app runs with. Any ">=" version will lead to
 run the application with the latest local version. Any "A.B.x" version will lead
 to run the application with le latest "A.B" local version. If this field is
-missing, we use the greatest local version.</td>
+missing, we use the greatest local version. If you want to use <a
+href="http://iojs.org/">iojs</a>, put either "iojs", "iojs-v1.0.3", or any truncated
+version number (e.g. "iojs-1" will work).</td>
 </tr>
 </tbody>
 </table>
@@ -161,7 +163,7 @@ Here is an example :
 
 The Clever Cloud can virtually run any version of node >= 0.6 and any
 module. Lesser (pre-npm) versions are not officially supported. Unstable
-versions are not supported either.
+versions are not supported either. We support the iojs runtime.
 
 ### Pre-installed modules
 
