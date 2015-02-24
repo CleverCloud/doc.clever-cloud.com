@@ -16,7 +16,7 @@ Clever Cloud provides internally the following add-ons:
 
 ## MySQL plans
 
-<table class="table table-bordered table-striped dataTable"><caption>PostgreSQL pricing plans</caption>
+<table class="table table-bordered table-striped dataTable"><caption>MySQL pricing plans</caption>
 <tr>
 <th>Name</th>
 <th>Cache (Memory)</th>
