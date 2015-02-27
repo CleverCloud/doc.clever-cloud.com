@@ -99,6 +99,47 @@ This setting is usefull if you need to limit the number of running processes acc
 By default, `pm.max_children` is set to **10**.
 
 
+### Composer
+
+We support composer build out of the box. You just need to provide a `composer.json` file in the root of
+your repository, and we will run `composer.phar install` for you.
+
+Example of a `composer.json` file:
+
+```javascript
+{
+   "require": {
+      "laravel/framework": "4.1.*",
+      "ruflin/Elastica": "dev-master",
+      "shift31/laravel-elasticsearch": "dev-master",
+      "natxet/CssMin": "dev-master"
+   },
+   "repositories": [
+      {
+         "type": "vcs",
+         "url": "https://github.com/timothylhuillier/laravel-elasticsearch.git"
+      }
+   ],
+   "autoload": {
+      "classmap": [
+         "app/controllers",
+         "app/models",
+         "app/database/migrations",
+         "app/database/seeds"
+      ],
+      "psr-0": {
+         "SomeApp": "app"
+      }
+   },
+   "config": {
+      "preferred-install": "dist"
+   },
+   "minimum-stability": "dev"
+}
+```
+
+You can find more documentation at [getcomposer.com](https://getcomposer.org/doc/04-schema.md).
+
 ### Execute a custom script after the deploy
 
 Some frameworks or custom applications might require bootstrapping before the application may run (_e.g. Composer_).
