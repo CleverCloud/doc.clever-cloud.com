@@ -120,9 +120,7 @@ The following table describe each field:
 
 ### Manage your static files
 
-You are able to use a Filesystem Bucket to store your static files. Please refer to the [File System Buckets](/addons/clever-cloud-addons/#fs-buckets-file-system-with-persistance/) section.
-
-When your bucket is available, to enable Nginx to serve your static resources you must set your public folder in `clevercloud/ruby.json` like below:
+To make Nginx serve your static resources you must set your public folder in `clevercloud/ruby.json` like below:
 
 ```haskell
    {
