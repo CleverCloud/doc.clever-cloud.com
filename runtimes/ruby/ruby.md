@@ -73,8 +73,8 @@ support to ask for the version to be added. We try to follow the
 releases, but, hey, we're human!
 
 Due to actual landscape in ruby applications, the default version is the
-greatest 2.0.Y. We provide also the latest 2.1.Y version and the latest
-1.9.Y too, but prefer the current stable one : 2.0.
+greatest 2.1.Y. We provide also the latest 2.2.Y version and the latest
+1.9.Y too, but prefer the current stable one : 2.1.
 
 ## More configuration
 
@@ -88,6 +88,7 @@ configration file. This file is optional.
   "deploy" : {
     "env": "<string>",
     "rakegoals": [<string>]
+    "sidekiq": true
   }
 }
 ```
@@ -107,12 +108,26 @@ The following table describe each field:
 <tr>
 <td><span class="label label-inverse">Optional</span></td>
 <td>deploy.env</td>
-<td></td>
+<td>This field is only used for overriding the default "production" RAILS_ENV value.</td>
 </tr>
 <tr>
 <td><span class="label label-inverse">Optional</span></td>
 <td>deploy.rakegoals</td>
-<td> </td>
+<td>
+Specify a list of rake goals to execute.
+They will be executed in the order of the list:<br />
+<pre>bundle exec rake "goal1"</pre><br />
+<pre>bundle exec rake "goal2"</pre>&hellip;<br />
+We <strong>do not</strong> execute any rake goals by default.
+</td>
+</tr>
+<tr>
+<td><span class="label label-inverse">Optional</span></td>
+<td>deploy.sidekiq</td>
+<td>
+Run a sidekiq process in background. Beware, you will need a redis instance to use this
+feature.
+</td>
 </tr>
 </tbody>
 </table>

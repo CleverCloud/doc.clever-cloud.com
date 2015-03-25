@@ -139,7 +139,7 @@ Request Body: {
   "heroku_id": "addon_xxx",
   "plan": "basic",
   "region": "EU",
-  "callback_url": "https://ccapi.cleverapps.io/vendor/apps/addon_xxx",
+  "callback_url": "https://api.clever-cloud.com/v2/vendor/apps/addon_xxx",
   "logplex_token": "logtoken_yyy",
   "options": {}
 }
@@ -301,7 +301,7 @@ set in your manifest.
 #### Example call to Clever Cloud add-on infos API
 
 ```bash
-$ curl -XGET https://ccapi.cleverapps.io/v2/vendor/apps -u addon-name:44ca82ddf8d4e74d52494ce2895152ee
+$ curl -XGET https://api.clever-cloud.com/v2/vendor/apps -u addon-name:44ca82ddf8d4e74d52494ce2895152ee
 ```
 
 ### Endpoints
@@ -314,13 +314,13 @@ Response Body: [
   {
     "provider_id": "addon-name",
     "heroku_id": "addon_xxx",
-    "callback_url": "https://ccapi.cleverapps.io/vendor/apps/addon_xxx",
+    "callback_url": "https://api.clever-cloud.com/v2/vendor/apps/addon_xxx",
     "plan": "test",
     "owner_id": "user_foobar"
   }, {
     "provider_id": "addon-name",
     "heroku_id": "addon_yyy",
-    "callback_url": "https://ccapi.cleverapps.io/vendor/apps/addon_yyy",
+    "callback_url": "https://api.clever-cloud.com/v2/vendor/apps/addon_yyy",
     "plan": "premium",
     "owner_id": "orga_baz"
   }
@@ -350,7 +350,7 @@ Response Body: {
   "id": "addon_xxx",
   "name": "My addon-name instance",
   "config": {"MYADDON_URL": "http://myaddon.com/52e82f5d73"},
-  "callback_url": "https://ccapi.cleverapps.io/vendor/apps/addon_xxx",
+  "callback_url": "https://api.clever-cloud.com/v2/vendor/apps/addon_xxx",
   "owner_email": "user@example.com",
   "owner_id": "orga_baz",
   "owner_emails": ["user@example.com", "foobar@baz.com"],
