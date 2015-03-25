@@ -454,3 +454,7 @@ if __name__ == "__main__":
 ### Add-on API template using scala and Play! framework 2.
 
 [https://github.com/CleverCloud/addon-provider-template](https://github.com/CleverCloud/addon-provider-template)
+
+### Add-on API template using NodeJS
+
+[https://github.com/Redsmin/passport-clevercloud](https://github.com/Redsmin/passport-clevercloud)
