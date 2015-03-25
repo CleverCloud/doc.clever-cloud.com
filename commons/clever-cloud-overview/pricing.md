@@ -20,8 +20,8 @@ Clever Cloud billing is counted every 10 minutes. The following prices are based
 </thead>
 <tbody class="billing-table">
 <tr>
-  <td class="cc-col__price "><span class="label cc-label__price label-info">Solo</span></td>
-  <td class=" ">768 MB</td>
+  <td class="cc-col__price "><span class="label cc-label__price label-info">XS</span></td>
+  <td class=" ">1 GB</td>
   <td class=" ">1</td>
   <td class=" ">0.02&nbsp;€</td>
 </tr>
