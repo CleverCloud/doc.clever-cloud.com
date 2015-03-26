@@ -98,6 +98,27 @@ This setting is usefull if you need to limit the number of running processes acc
 
 By default, `pm.max_children` is set to **10**.
 
+### Prevent Apache to redirect HTTPS calls to HTTP when adding a trailing slash
+
+`DirectorySlash` is enabled by default on the PHP scalers, therefore Apache will add a trailing slash to a resource when it detects that it is a directory.
+
+eg. if foobar is a directory, Apache will automatically redirect http://example.com/foobar to http://example.com/foobar/
+
+Unfortunately the module is unable to detect if the request comes from a secure connection or not. As a result it will force an HTTPS call to be redirected to HTTP.
+
+In order to prevent this behavior, you can add the following statements in a `.htaccess` file:
+
+```apache
+DirectorySlash Off
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^(.+[^/])$          %{HTTP:X-Forwarded-Proto}://%{HTTP_HOST}/$1/  [R=301,L,QSA]
+```
+
+These statements will keep the former protocol of the request when issuying the redirect. Assuming that the header X-Forwarded-Proto is always filled (which is the case on our platform).
+
+If you want to force all redirections to HTTPS, you can replace `%{HTTP:X-Forwarded-Proto}` with `https`.
+
 
 ### Composer
 
