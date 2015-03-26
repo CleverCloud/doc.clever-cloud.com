@@ -8,7 +8,7 @@ shortdesc: Node.js is a platform built on Chrome's JavaScript runtime for buildi
 Clever Cloud allows you to deploy any Node.js application. This page will
 explain you how to set up your application to run it on our service.
 
-You do not need to change a lot in your application, the *requierments* will help you to configure your apps with some mandatory files to add, and properties to setup.
+You do not need to change a lot in your application, the *requirements* will help you to configure your apps with some mandatory files to add, and properties to setup.
 
 ## Overview
 
@@ -60,7 +60,7 @@ Then, a *package.json* file is mandatory to initiate your app deployement on Cle
 Even if you have no dependencies, you have to provide a `package.json` file at the root of your project’s directory.
 
 <div class="alert">
-  <h5>About depedencies:</h5>
+  <h5>About dependencies:</h5>
   <ul>
   <li>For every Node.js project you **HAVE TO** provide a package.json file at the root of your project’s
 directory.</li>
@@ -87,7 +87,7 @@ The `package.json` file should look like the following:
 }
 ```
 
-### The required fields
+### The json fields
 
 The following table describes each of the fields formerly mentioned.
 
