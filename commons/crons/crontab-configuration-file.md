@@ -17,7 +17,10 @@ Here is the general syntax:
 ```
 
 The string `<string>` must use the cron format:
-<pre>M H d m Y command</pre>
+
+```javascript
+M H d m Y command
+```
 
 There are two restrictions about the usage of crontab on our platform:
 
