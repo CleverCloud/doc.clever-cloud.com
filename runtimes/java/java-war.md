@@ -38,9 +38,10 @@ The supported containers are listed below:
 </thead>
 <tbody>
 <tr><td>Apache Tomcat 4.1</td><td>Jetty 6.1</td><td>Jboss 6.1</td><td>Glassfish 3.1</td><td>Resin 3.1</td></tr>
-<tr><td>Apache Tomcat 5.5</td><td>Jetty 7.6</td><td>Jboss AS 7.1</td><td> </td><td> </td></tr>
+<tr><td>Apache Tomcat 5.5</td><td>Jetty 7.6</td><td>Jboss AS 7.1</td><td>Glassfish 4.1</td><td> </td></tr>
 <tr><td>Apache Tomcat 6.0</td><td>Jetty 8.1</td><td> </td><td> </td><td> </td></tr>
 <tr><td>Apache Tomcat 7.0</td><td>Jetty 9.0</td><td> </td><td> </td><td> </td></tr>
+<tr><td>Apache Tomcat 8.8</td><td> </td><td> </td><td> </td><td> </td></tr>
 </tbody>
 </table>
 
@@ -54,93 +55,166 @@ The supported containers are listed below:
 <figure class="cc-content-img"><img src="/assets/images/choose-name.png"/></figure>
 5. *Optional*: <a href="/addons/add-an-addon/">add an add-on</a>
 
-## Necessary information
+## Configure your application
 
-* your application must be set to listen on **port 8080**
+<div class="alert alert-hot-problems">
+<h4>**Warning!**</h4>
+You **must** provide a `clevercloud/war.json` file in your application repository.
+</div>
 
-* you need to provide a `clevercloud/war.json` file describing the container you want and the archives you want to deploy:
+### Full configuration example.
+
+Here's what your configuration file can look like:
 
 ```javascript
 {
-  "deploy":{
-     "container":"<string>",
-     "war" : [
-		{
-			"file":"<string>",
-			"context":"/<string>"
-		}
-	]
+   "build": {
+      "type": "maven",
+      "target": "package"
+   },
+   "deploy": {
+      "container": "TOMCAT8",
+      "war": [
+         {
+            "file": "target/my-app-1.0-SNAPSHOT.war",
+            "context": "/app1",
+            "checkMe": "/app1/ping"
+         },
+         {
+            "file": "my-second-app.war",
+            "context": "/app2",
+            "checkMe": "/app2/web/foobar"
+         }
+      ]
    }
 }
 ```
 
-* **container**: that field should contain one of the values in the left column of the table below.
-* **war** : this field is a list of objects. **file** is mandatory
-and should contain the path of the war/ear file relative to your
-application root.
-* **context** is optional, *should start with a /* and
-is the context under which you want your war to be deployed. If your
-file is an ear, you do not need the **context** field. If you do not
-define it, the default context will be the name of the war without the
-extension. To deploy a WAR to the root context, just use the "/"
-context.
+### Ok, but what does all this configuration mean?
 
-<br/>
-
-* Optional but recommended: you can add an array of paths to GET in order to check that your application is responding:
-
-	```javascript
-	{
-	  "deploy": {
-	    "container":"<string>",
-	    "war": ["<string>"],
-	    "pingPaths": ["<string>"]
-	  }
-	}
-	```
-
-   **pingPaths**: each string of this array should begin with a "/". They will all be tested. If you provide this field and the array is not empty, the deployer
-   will try to issue a HTTP GET request to each of the paths: The deploy will succeed if and only if *all* the paths return a `200 OK` response.
-   If you do not provide this field, we will try to `GET /` until the container replies. So your application might not be fully deployed by the time we switch backend servers in the reverse proxy.
-
-<br />
-
-* Optional: you can add a postdeploy webhook by adding its path:
+#### Let's start with the mandatory part:
 
 ```javascript
 {
-  "deploy": {
-    "container":"<string>",
-    "war" : ["<string>"]
-   },
-  "hooks": {
-    "postDeploy": "pathtoyourscript"
-  }
+   "deploy":{
+      "container":"<string>",
+      "war" : [
+         {
+            "file":"<string>",
+            "context":"/<string>",
+            "checkMe":"/<string>"
+         }
+      ]
+   }
 }
 ```
 
-    **postDeploy**: execute a custom script after the deploy. Some frameworks or custom applications might require bootstrapping before the application may run.
-    You can achieve this by creating a custom script with your commands and adding the associated file name in `clevercloud/war.json`.
+<table class="table table-bordered table-striped">
+<thead>
+<tr>
+<th>Usage</th>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="label label-important">Required</span></td>
+<td>**container**</td>
+<td>Name of the container to use. Should contain one of the values in the left column of the [containers table](#available-containers) (in uppercase and all).</td>
+</tr>
+<tr>
+<td><span class="label label-important">Required</span></td>
+<td>**file**</td>
+<td>Should contain the path of the war/ear file relative to your application root.</td>
+</tr>
+<tr>
+<td><span class="label label-inverse">Optional</span></td>
+<td>**context**</td>
+<td>
+<ul>
+<li>Must start with a slash (/), can be "/".</li>
+<li>Defines the base path you want your app to be under. If your app has a /foobar endpoint, it will be available under the `/{my-context}/foobar` path.</li>
+<li>Not needed for an `ear` file.</li>
+<li>The default value for a war is the name of the war without the extensions: helloworld-1.0.war will be deployed under the `/helloworld-1.0` context.</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><span class="label label-inverse">Optional</span></td>
+<td>**checkMe**</td>
+<td>
+<ul>
+<li>This field is recommended</li>
+<li>A path to GET in order to test if the application is really running.</li>
+<li>By default we will consider that the application is up if the container is up.</li>
+<li>With this option, we will try to `GET /{checkMe}` for each one of your wars and consider the app down until every single checkMe path that replies a 200.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 
-### Prebuild your application
+#### Build your application on Clever Cloud
 
-In addition to the war paths in the `clevercloud/war.json` file, you can just push your application's code and build it with maven. In order to do that, juste add the *build* field in your `clevercloud/war.json`:
+The mandatory part alone is enough… if you directly push a dry war file to deploy. You
+might want to just push your code to Clever Cloud and let us build the app and generate
+the war.
+
+That you can do, by setting the "build" field object in the `war.json` file:
 
 ```javascript
 {
   "build": {
-    "type": "maven",
-    "goal": "package"
-  },
-  "deploy": { … }
+    "type": "<string>",
+    "goal": "<string>"
+  }
 }
 ```
 
-   **goal**: the maven goal to execute. That will be appended to the "mvn" command.
+<table class="table table-bordered table-striped">
+<thead>
+<tr>
+<th>Usage</th>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="label label-important">Required</span></td>
+<td>**type**</td>
+<td>
+<ul>
+<li>The tool you want to use to build your app</li>
+<li>Can be "maven" or "ant"</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><span class="label label-important">Required</span></td>
+<td>**goal**</td>
+<td>
+<ul>
+<li>
+The goal you want the tool to execute.
+</li>
+<li>Basically, for maven, you want to put "package" in here.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+
+#### More configuration
+
+Need more configuration? To run a script at the end of your deployment? To add your
+private SSH key to access private dependencies? Go check the [Common configuration page](/clever-cloud-overview/common-application-configuration/).
 
 ## Available containers
 
-Available configuration values for "container" of war.json:
+Here's the list of the configuration values for the "container" field in `war.json`:
+
 <table class="table table-bordered table-stripped">
 <thead>
 <tr>

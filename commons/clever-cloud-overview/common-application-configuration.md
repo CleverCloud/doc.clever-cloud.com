@@ -69,3 +69,23 @@ folder and is named `my_key`, the `privateKeyFile` field will be `"clevercloud/m
 
 That key will be installed as `~/.ssh/id_rsa` before the start of the build. So the
 dependency manager will use it to fetch libs only accessible by ssh.
+
+## Post deploy hook
+
+If you need to perform additional actions after your app is started, you can define a
+"postDeploy" hook in your `<instance_type>.json` file (e.g. if you are deploying a ruby app,
+put it in your `ruby.json` file):
+
+```javascript
+{
+  "hooks": {
+    "postDeploy": "./clevercloud/myScript"
+  }
+}
+```
+
+The `postDeploy` field must contain the path to a script, relative to the root of your
+repository. The script file **MUST** have execution right set.
+
+In the example above, the script is a file named `myScript` in the `clevercloud` folder.
+That is, right besides the `<instance_type>.json` file.
