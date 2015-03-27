@@ -5,7 +5,7 @@ shortdesc: PHP is a widely-used general-purpose scripting language that is espec
 
 # Deploy PHP apps
 
-PHP is available on our platform with the version 5.5.11. You can use FTP or Git to deploy your applications.
+PHP is available on our platform with the branches 5.4 and 5.5. You can use FTP or Git to deploy your applications.
 
 ## Overview
 
@@ -267,7 +267,7 @@ It's quite not exhaustive, so it doesn't mean that other CMS can't work on the C
 
 ## Available extensions and modules
 
-You can check enabled extensions and versions by viewing our <a href="http://phpinfo.cleverapps.io" target="_blank">phpinfo() example</a>.
+You can check enabled extensions and versions by viewing our `phpinfo()` example for <a href="https://php54info.cleverapps.io" target="_blank">PHP 5.4</a> and <a href="https://php55info.cleverapps.io" target="_blank">PHP 5.5</a>.
 
 If you have a request about modules, feel free to ask on <a href="https://groups.google.com/forum/?fromgroups#!forum/clever-cloud-users" target="_blank">Clever Cloud user group</a>.
 
