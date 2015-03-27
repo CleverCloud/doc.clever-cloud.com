@@ -5,7 +5,7 @@ shortdesc: PHP is a widely-used general-purpose scripting language that is espec
 
 # Deploy PHP apps
 
-PHP is available on our platform with the version 5.5.11. You can use FTP or Git to deploy your applications.
+PHP is available on our platform with the branches 5.4 and 5.5. You can use FTP or Git to deploy your applications.
 
 ## Overview
 
@@ -122,8 +122,19 @@ If you want to force all redirections to HTTPS, you can replace `%{HTTP:X-Forwar
 
 ### Composer
 
-We support composer build out of the box. You just need to provide a `composer.json` file in the root of
-your repository, and we will run `composer.phar install` for you.
+We support Composer build out of the box. You just need to provide a `composer.json` file in the root of
+your repository and we will run `composer.phar install` for you.
+
+The PHP instances embed the latest release of Composer. You can check it on the following pages:
+
+* [php54info.cleverapps.io/composer](https://php54info.cleverapps.io/composer) for PHP 5.4
+* [php55info.cleverapps.io/composer](https://php55info.cleverapps.io/composer) for PHP 5.5
+
+<div class="alert alert-hot-problems">
+ <h4>Note:</h4>
+ <p>Add your own `composer.phar` file in the root of your repository if you need to override our version for the build phase.</p>
+</div>
+
 
 Example of a `composer.json` file:
 
@@ -176,14 +187,14 @@ You can achieve this by creating a custom script with your commands and adding t
 
 #### Example
 
-You use Composer to manage dependencies of your project and you want to execute _composer.phar install_ before running your app.
+You use Artisan to manage your project and you want to execute _artisan migrate_ before running your app.
 
 First, add a file `ccbuild.sh` at the root of your project with these lines:
 
 ```bash
 #!/bin/bash
 
-php composer.phar install
+php artisan migrate
 ```
 
 Then add these lines in `clevercloud/php.json`:
@@ -256,7 +267,7 @@ It's quite not exhaustive, so it doesn't mean that other CMS can't work on the C
 
 ## Available extensions and modules
 
-You can check enabled extensions and versions by viewing our <a href="http://phpinfo.cleverapps.io" target="_blank">phpinfo() example</a>.
+You can check enabled extensions and versions by viewing our `phpinfo()` example for <a href="https://php54info.cleverapps.io" target="_blank">PHP 5.4</a> and <a href="https://php55info.cleverapps.io" target="_blank">PHP 5.5</a>.
 
 If you have a request about modules, feel free to ask on <a href="https://groups.google.com/forum/?fromgroups#!forum/clever-cloud-users" target="_blank">Clever Cloud user group</a>.
 
