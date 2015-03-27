@@ -176,14 +176,14 @@ You can achieve this by creating a custom script with your commands and adding t
 
 #### Example
 
-You use Composer to manage dependencies of your project and you want to execute _composer.phar install_ before running your app.
+You use Artisan to manage your project and you want to execute _artisan migrate_ before running your app.
 
 First, add a file `ccbuild.sh` at the root of your project with these lines:
 
 ```bash
 #!/bin/bash
 
-php composer.phar install
+php artisan migrate
 ```
 
 Then add these lines in `clevercloud/php.json`:
