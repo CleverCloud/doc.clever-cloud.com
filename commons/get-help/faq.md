@@ -118,4 +118,4 @@ access them via git+ssh or sftp), and you need a private key to connect to the s
 can commit them in your application's Clever Cloud repository and then add the
 `clevercloud/ssh.json`.
 
-The ssh.json file is documented in the [common configuration page](/common-application-configuration)
+The ssh.json file is documented in the [common configuration page](/clever-cloud-overview/common-application-configuration/#private-ssh-key)
