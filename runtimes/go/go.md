@@ -48,6 +48,10 @@ We currently support single module applications only. That means that
 your sources files just need to be at the project's root, and you can't
 have multiple modules running.
 
+Also, the go tool requires that you put your main code in a file named `main.go`. If you
+do not do that, go will generate a library and not an executable. So if you get a `Nothing
+listening on port 8080`, please check that your main file is named `main.go`.
+
 ## More configuration
 
 By default, we consider that your repository contains a single
