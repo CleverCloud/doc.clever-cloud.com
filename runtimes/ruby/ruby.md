@@ -72,7 +72,7 @@ If you need a version that is not yet installed, please contact the
 support to ask for the version to be added. We try to follow the
 releases, but, hey, we're human!
 
-Due to actual landscape in ruby applications, the default version is the
+Due to current landscape in ruby applications, the default version is the
 greatest 2.1.Y. We provide also the latest 2.2.Y version and the latest
 1.9.Y too, but prefer the current stable one : 2.1.
 
