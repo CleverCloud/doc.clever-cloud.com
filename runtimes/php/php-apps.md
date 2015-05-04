@@ -170,7 +170,17 @@ Example of a `composer.json` file:
 }
 ```
 
-You can find more documentation at [getcomposer.com](https://getcomposer.org/doc/04-schema.md).
+#### GitHub rate limit
+
+To prevent download dependencies's fails like 
+
+```Failed to download symfony/symfony from dist: Could not authenticate against github.com```
+
+that is often caused by rate limit of GitHub API while deploying your apps, we recommend you to add `oauth` token in your composer configuration file or in separate file nammed as describe in [this](https://getcomposer.org/doc/articles/troubleshooting.md#api-rate-limit-and-oauth-tokens) FAQ entry.
+
+You can find more documentation about composer configuration at [getcomposer.com](https://getcomposer.org/doc/04-schema.md).
+
+
 
 ### Execute a custom script after the deploy
 
