@@ -223,6 +223,23 @@ You can, for example, inject the NODE_ENV variable to define it at "production".
 currently set on our machimes, because we need to build the project first. Beware,
 devDependencies do not get fetched if NODE_ENV=production.
 
+### Special env NPM_TOKEN
+
+Since April 2015, npmjs.com allows you to have private respositories. The bad news is,
+you have to write a specific line in your `.npmrc` for that. The good news is, on Clever
+Cloud, you only need to provide the *token* part, and we set up everything for you!
+
+So to register your npm auth token, you need to add to your application the `NPM_TOKEN`
+environment variable.
+
+```
+Example:
+NPM_TOKEN=00000000-0000-0000-0000-000000000000
+```
+
+As you can see, only the `authToken` value is needed, not the full url you can find in
+your .npmrc.
+
 ## Deploy on Clever Cloud
 
 Application deployment on Clever Cloud is via Git. Follow [these steps](/clever-cloud-overview/add-application/) to deploy your application.
