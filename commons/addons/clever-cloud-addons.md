@@ -9,7 +9,6 @@ Clever Cloud provides internally the following add-ons:
 
 * MySQL
 * PostgreSQL
-* Couchbase
 * MongoDB
 * FS bukets
 
@@ -218,14 +217,3 @@ your bucket using FTP.
 </div>
 MongoDB is an open source NoSQL document-oriented database.
 
-
-
-
-## Couchbase <span class="cc-beta pull-right" title="Currently in Beta version"></span>
-
-<div class="alert alert-hot-problems">
-  <h5>Note for Beta Version</h5>
-  <div>Couchbase is free during the beta period. No credits wil be charged.</div>
-</div>
-
-Couchbase is an open source, distributed (shared nothing architecture) NoSQL document-oriented database.
