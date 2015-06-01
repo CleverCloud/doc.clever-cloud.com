@@ -177,7 +177,14 @@ The `buckets.json` file must contain the following structure:
 [
   {
     "bucket" : "bucketId",
-    "folder" : "/myFolder"
+    "folder" : "/myFolder",
+    "apps"   : ["app_id"]
+
+  },
+  {
+    "bucket" : "bucketId2",
+    "folder" : "/myotherFolder",
+    "apps"   : ["app_id_2"]
   }
 ]
 ```
@@ -185,13 +192,36 @@ The `buckets.json` file must contain the following structure:
 
 It's a json array containing objects with two fields:
 
-* **bucket**
-: The bucket id you received by email which begins with `bucket_`.
-
-* **folder**
-: The folder you want the bucket to be mounted in. Using the example
+<table id="nodedeps" class="table table-bordered table-striped">
+<thead>
+<tr>
+<th>Usage</th>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="label label-important">Required</span></td>
+<td>bucket</td>
+<td>The bucket id you can find in the console. It begins with `bucket_`</td>
+</tr>
+<tr>
+<td><span class="label label-important">Required</span></td>
+<td>folder</td>
+<td>The folder you want the bucket to be mounted in. Should start with `/`. Using the example
 *myFolder*, you can access your buckets via the *myFolder* folder at
-the root of your application or via */app/myFolder*.
+the root of your application or via */app/myFolder*</td>
+</tr>
+<tr>
+<td class="cc-depusage"><span class="label label-inverse">Optional</span></td>
+<td>apps</td>
+<td>Whitelist of the applications allowed to mount this bucket. It's helpful if you need
+to deploy a *preprod* app and a *prod* app using the exact same codebase but different
+buckets</td>
+</tr>
+</tbody>
+</table>
 
 <div class="alert alert-hot-problems">
 <h5>Important note about target folder</h5>
@@ -202,6 +232,17 @@ The folder must not exists in your repository (or it needs to be empty). Otherwi
 You can mount the same bucket in different folders, but they will share the same
 content, so it's not the solution. You should prefer to mount the bucket in only one
 folder and then manage multiple subfolders in it.
+</p>
+</div>
+
+<div class="alert alert-hot-problems">
+<h5>Other things you *must* know</h5>
+<p>
+You cannot mount two buckets in the same folder for the same app.
+</p>
+<p>
+If you put the same "folder" value for two entries in the *buckets.json* array, **you better
+make sure** that the "apps" fields make the two buckets mutually exclusive upon deployment!
 </p>
 </div>
 
