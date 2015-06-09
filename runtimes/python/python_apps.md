@@ -57,12 +57,14 @@ To select which module you want to start, use the key `module` in `deploy` like 
 ```haskell
    {
       "deploy": {
-         "module": "myapplication"
+         "module": "mymodule:app"
       }
    }
 ```
 
-The module (without .py) must be importable, i.e. be in `PYTHONPATH`. For example with Django: "module":"cc_django_wsgi".
+The module (without .py) must be importable, i.e. be in `PYTHONPATH`. For example with Flask, it's gonna be the name of your main server file followed by your Flask object: `server:app` for exemple if you have a `server.py` file at the root of your project with a Flask `app` object inside.
+
+As a generality, you should just point to a WSGI capable object.
 
 
 ### Manage your static files
