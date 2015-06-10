@@ -65,74 +65,98 @@ CMD <command to run>
    the CMD instruction.
 
 
-### Sample app
+### Sample apps
 
-We forked the [**rails-meets-docker**](https://github.com/gemnasium/rails-meets-docker) demonstration
-repository by [Gemnasium](https://gemnasium.com/) and adapted it so it
-would run on Clever Cloud. If you want more information about this
-example, we invite you to read their [well-written blog post](http://blog.gemnasium.com/post/66356385701/your-dockerfile-for-rails "Dockerfile for rails blog post")
-about that repository.
+We provide a few examples of dockerized applications on Clever Cloud.
 
-You can find our demonstration application [on Github](https://github.com/clevercloud/rails-meet-docker-and-clever-cloud).
-Feel free to clone it and play with it.
+[Elixir App](https://github.com/CleverCloud/demo-docker-elixir/blob/master/Dockerfile)
+[Haskell App](https://github.com/CleverCloud/demo-haskell)
+[Haskell App](https://github.com/CleverCloud/demo-haskell)
+[Hack / HHVM App](https://github.com/CleverCloud/demo-hhvm)
+[Seaside / Smalltalk App](https://github.com/CleverCloud/demo-seaside)
+[Rust App](https://github.com/CleverCloud/demo-rust)
 
-So, what's in this repo?
+### Deploying a Rust application
 
-* Dockerfile
+To make your dockerized application run on clever Cloud, you need to:
 
-* rails/
+ - expose port 8080 in your docker file
+ - run the application with `CMD` or `ENTRYPOINT`
 
-* scripts/setup
-
-* scripts/start
-
-The *setup* and *start* scripts will be injected in the docker image
-(see the Dockerfile below). The *rails* folder contains the rails
-application that will be started. It's injected into the docker image
-too.
-
-The Dockerfile contains the following:
+For instance, here is the `Dockerfile` used for the Rust application.
 
 ```bash
-# -*- sh -*-
-FROM fcat/ubuntu-universe:12.04
+# rust tooling is provided by `archlinux-rust`
+FROM geal/archlinux-rust
+MAINTAINER Geoffroy Couprie, contact@geoffroycouprie.com
 
-# development tools
-RUN apt-get -qy install git vim tmux
+# needed by rust
+ENV LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
 
-# ruby 1.9.3 and build dependencies
-RUN apt-get -qy install ruby1.9.1 ruby1.9.1-dev build-essential
-libpq-dev libv8-dev libsqlite3-dev
+# relevant files are in `./source`
+ADD . /source
+WORKDIR /source
 
-# bundler
-RUN gem install bundler
+# Clever Cloud expects your app to listen on port 8080
+EXPOSE 8080
+RUN rustc -V
 
-# create a "rails" user
-# the Rails application will live in the /rails directory
-RUN adduser --disabled-password --home=/rails --gecos "" rails
+# Build your application
+RUN cargo build
 
-# copy the Rails app
-# we assume we have cloned the "docrails" repository locally
-#  and it is clean; see the "prepare" script
-ADD rails /rails
-
-# Fix ownership to avoid permissions problems.
-RUN chown rails -R /rails
-
-# copy and execute the setup script
-# this will run bundler, setup the database, etc.
-ADD scripts/setup /setup
-RUN su rails -c /setup
-
-# copy the start script
-ADD scripts/start /start
-
-# What's following is about the "docker run" command.
-# Define the user that will do the next instructions
-USER rails
-# This defines a default command to run if someone executes
-# `docker run my_image` without specifying any command.
-# This is mandatory to make your app run on Clever Cloud.
-CMD /start
+# Run the application with `CMD`
+CMD cargo run
 ```
 
+#### Deploying a HHVM application
+
+Deploying a HHVM application is a bit trickier as it needs to have both HHVM
+and nginx running as daemons. To be able to have them running both, we need to
+put them in a start script:
+
+```bash
+#!/bin/sh
+
+hhvm --mode server -vServer.Type=fastcgi -vServer.Port=9000&
+
+service nginx start
+
+composer install
+
+echo "App running on port 8080"
+
+tail -f /var/log/hhvm/error.log
+```
+
+Since the two servers are running as daemons, we need to start a long-running
+process. In this case we use `tail -f`
+
+We then add `start.sh` as the `CMD` in the `Dockerfile`
+
+```bash
+# We need HHVM
+FROM jolicode/hhvm
+
+# We need nginx
+RUN sudo apt-get update \
+ && sudo apt-get install -y nginx
+
+ADD . /root
+RUN sudo chmod +x /root/start.sh
+
+# Nginx configuration
+ADD hhvm.hdf /etc/hhvm/server.hdf
+ADD nginx.conf /etc/nginx/sites-available/hack.conf
+RUN sudo ln -s /etc/nginx/sites-available/hack.conf /etc/nginx/sites-enabled/hack.conf
+# Checking nginx config
+RUN sudo nginx -t
+
+RUN sudo chown -R www-data:www-data /root
+WORKDIR /root
+
+# The app needs to listen on port 8080
+EXPOSE 8080
+
+# Launch the start script
+CMD ["sudo","/root/start.sh"]
+```
