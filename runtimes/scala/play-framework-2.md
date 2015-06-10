@@ -109,6 +109,32 @@ addSbtPlugin("play" % "sbt-plugin" % "2.0.4") // The important part of the confi
 
 The two solutions do the job, you can pick your favorite.
 
+## Failed to acquire connection: Too many connections
+
+You may run into this error during deployments:
+
+```
+[error] c.j.b.h.AbstractConnectionHook - Failed to acquire connection to jdbc:<address> Sleeping for 1000ms and trying again. Attempts left: 10. Exception: null.Message:FATAL: too many connections for role "<user>"
+```
+
+By default, Play! opens a pool of 10 connections, which is more than the
+connection limit allowed by DEV database plans. During a no-downtime
+deployment, there are at least two instances of the application running in
+parallel, so it's 20 connections.
+
+To avoid connection exhaustion, you should limit your pool at half the number
+of available connections (if you have horizontal scaling enabled, adjust
+accordingly).
+
+```
+# conf/application.conf
+
+db.default.partitionCount=2
+db.default.maxConnectionsPerPartition=5
+db.default.minConnectionsPerPartition=5
+```
+
+
 ## HTTPS support
 
 HTTPS is handled by Clever Cloud ahead of your application, your application
