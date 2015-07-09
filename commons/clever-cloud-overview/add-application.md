@@ -9,7 +9,7 @@ There is two steps in this section: application creation (requiring actions from
 
 ## Create an application
 
-1. First, select the proper organization you want to add to application to. Then, click on the **Add an application** button, in the **Orgnization Manager** panel. This starts the application creation wizard. If you account has been linked to GitHub, you can select a repository from your GitHub account.
+1. First, select the proper organization you want to add to application to. Then, click on the **Add an application** button, in the **Organization Manager** panel. This starts the application creation wizard. If you account has been linked to GitHub, you can select a repository from your GitHub account.
 2. *Optional:* in case of PHP or static applications, you can choose between FTP and Git deployment
 3. Then select the language or the framework you need:  <figure class="cc-content-img"><img src="/assets/images/javawarapp.png"></figure>
 4. In the next step, you will be prompted to select your scaling configuration. If you need help to configure your scaling options, please refer to <a href="/clever-cloud-overview/scaling/">the dedicated section</a>.
