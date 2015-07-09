@@ -46,5 +46,5 @@ Authors
 =======
 * [@crmfrsh](http://twitter.com/crmfrsh)
 * [@waxzce](http://twitter.com/waxzce)
-* [@R_Foucault‎](http://twitter.com/R_Foucault‎)
+* [@R_Foucault](http://twitter.com/R_Foucault)
 * [@cnivolle](http://twitter.com/cnivolle)
