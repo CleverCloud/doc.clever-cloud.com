@@ -71,7 +71,7 @@ Add the key by entering a name and the public SSH key. The key is the entire con
 You can delete it if needed or add another one.  
 
 
-**Rememeber**: your public SSH key should be setup on only one account.  
+**Remember**: your public SSH key should be setup on only one account.  
 
 If you see "*access denied*" or "*password:*", your SSH key may be invalid. 
 
