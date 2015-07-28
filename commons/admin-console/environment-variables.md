@@ -24,24 +24,25 @@ need to redeploy you application to make it use the variables.
 
 ### Special environment variables
 
-Some variables are injected to the environment of your application when you deploy it, to inform you
-about the current context of your application and about the application itself.
+Some variables are injected to the environment of your application when you deploy it,
+to inform you about the current context of your application and about the application itself.
 
-They can be accessed as classics environment variables and can be used in your application to give you
-information about the current context of the application.
+They can be accessed as classics environment variables and can be used in your application to
+give you information about the current context of the application.
 
- * `APP_ID` : the ID of the application. Each application has a unique identifier used to identify it in our system.
-  This ID is the same than the one you can find in the information section of your application.
+ * `APP_ID` : the ID of the application. Each application has a unique identifier used to
+ identify it in our system. This ID is the same than the one you can find in the information
+ section of your application.
 
- * `INSTANCE_ID` : the ID of the current instance of your application. It's unique for each instance of your application
- and change every time you deploy it.
+ * `INSTANCE_ID` : the ID of the current instance of your application. It's unique for each
+ instance of your application and change every time you deploy it.
 
- * `COMMIT_ID` : the commit ID used as a base to deploy your application. As we remove the `.git` directory before the
- deployment (to avoid security problems), it can be used to know which version of your application is running on
- the server.
+ * `COMMIT_ID` : the commit ID used as a base to deploy your application. As we remove
+ the `.git` directory before the deployment (to avoid security problems), it can be used
+ to know which version of your application is running on the server.
 
- * `APP_HOME` : The absolute path of your application on the server. Can be used to create absolute link
- in you application (ex : ${APP_HOME}/foo/bar).
+ * `APP_HOME` : The absolute path of your application on the server. Can be used to
+ create absolute link in you application (ex : ${APP_HOME}/foo/bar).
 
  * `INSTANCE_NUMBER`
 
@@ -51,8 +52,8 @@ This variable allows your application to differentiate each running node on the 
 
 It will contain a different number for each instance of your application.
 
-For example, if three instances are running, it will contain `0` for the first, `1` for the second and `2` for the
-third.
+For example, if three instances are running, it will contain `0` for the first, `1`
+for the second and `2` for the third.
 
 ### Variable definition constraints
 
