@@ -34,11 +34,7 @@ third.
 ### Variable definition constraints
 
 For the second way, please note that *spaces are not allowed* in the
-name of the variables, and that this name is automatically uppercased.
-
-So if you define a "foobar" variable, il will register is "FOOBAR", so
-you don't have to think about it, and you always use uppercased
-variables.
+name of the variables.
 
 As written in the previous section: please note that if you define or modify
 environment variables, you will need to redeploy you application to make it use the variables.
