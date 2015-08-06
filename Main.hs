@@ -50,7 +50,7 @@ main = hakyll $ do
        compile $
         loadBody "assets/css/all.less"
         >>= makeItem
-        >>= withItemBody (unixFilter "lessc" ["-","--yui-compress"])
+        >>= withItemBody (unixFilter "lessc" ["-"])
 
     match "index.html" $ do
         route $ idRoute
