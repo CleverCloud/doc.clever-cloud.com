@@ -6,5 +6,5 @@ site.hi
 .DS_Store
 cabal*
 .cabal*
-dist/
+dist/*
 doc-clevercloud
