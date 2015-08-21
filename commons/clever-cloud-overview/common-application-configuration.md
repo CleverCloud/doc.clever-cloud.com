@@ -70,6 +70,8 @@ folder and is named `my_key`, the `privateKeyFile` field will be `"clevercloud/m
 That key will be installed as `~/.ssh/id_rsa` before the start of the build. So the
 dependency manager will use it to fetch libs only accessible by ssh.
 
+*NB: Please provide a key without pass phrase, or the system will be unable to unlock it*
+
 ## Post deploy hook
 
 If you need to perform additional actions after your app is started, you can define a

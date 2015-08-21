@@ -50,7 +50,7 @@ main = hakyll $ do
        compile $
         loadBody "assets/css/all.less"
         >>= makeItem
-        >>= withItemBody (unixFilter "lessc" ["-","--yui-compress"])
+        >>= withItemBody (unixFilter "lessc" ["-"])
 
     match "index.html" $ do
         route $ idRoute
@@ -170,7 +170,7 @@ makeDefaultContext (i, m) =
     where
         makeMetadataContext m =
             (Context $ \k _ -> do
-                return $ StringField $ fromMaybe "" $ M.lookup k m)
+                return $ return $ StringField $ fromMaybe "" $ M.lookup k m)
 
         makeUrlField id =
             field "url" $ \_ -> do
