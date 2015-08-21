@@ -251,10 +251,11 @@ make sure** that the "apps" fields make the two buckets mutually exclusive upon 
 The "configuration" tab of your FS Bucket add-on displays the information you need to connect to
 your bucket using FTP.
 
-## Cellar <span class="cc-beta pull-right" title="Currently in Beta version"></span>
+## Cellar <span class="cc-beta pull-right" title="Currently in private Beta version"></span>
 <div class="alert alert-hot-problems">
   <h5>Note for Beta Version</h5>
-  <div>Cellar is free during the beta period. No credits wil be charged.</div>
+  <div>Cellar is currently in private Beta. If you want to use it, please send a mail at support@clever-cloud.com<br />
+  Cellar is free during the beta period. No credits wil be charged.</div>
 </div>
 Cellar
 
