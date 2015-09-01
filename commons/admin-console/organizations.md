@@ -16,10 +16,18 @@ Organization names are uniques. It means that you cannot use an organization nam
 In order to add an organization, just click on "Add an organization" in the top left dropdown menu:
 
 <figure class="cc-content-img">
-  <a href="/assets/images/gotohome.png"><img src="/assets/images/gotohome.png"/></a>
-  <figcaption>
-    Access to your organizations via the red sidebar
-  </figcaption>
+<a href="/assets/images/gotohome.png"><img src="/assets/images/gotohome.png"/></a>
+<figcaption>
+Access to your organizations via the red sidebar
+</figcaption>
+</figure>
+
+
+<figure class="cc-content-img">
+<a href="/assets/images/gotohome.png"><img src="/assets/images/orga-enterprise.png"/></a>
+<figcaption>
+An organization can represent an enterprise, for an easier invoicing process
+</figcaption>
 </figure>
 
 
