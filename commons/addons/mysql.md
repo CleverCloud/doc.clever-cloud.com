@@ -1,3 +1,5 @@
+# MySQL
+
 ## MySQL plans
 
 <table class="table table-bordered table-striped dataTable"><caption>MySQL pricing plans</caption>
