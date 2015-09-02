@@ -5,6 +5,17 @@ position: 3
 
 # Clever Cloud Add-ons
 
+Add-on are a way to add services to your application, for example a database or a caching system, to enrich its
+features.
+
+An add-on can be shared by different applications to share data between them. It can be a database shared by two or
+three applications of your infrastructure for example, or they can be independent.
+
+The add-ons offer different plan to adapt to your needs. You can find details about them on the documentation page of
+the add-on.
+
+## Available add-on
+
 Clever Cloud provides multiple add-on to work with you application :
 
 * [MySQL](mysql.md)
@@ -14,7 +25,7 @@ Clever Cloud provides multiple add-on to work with you application :
 * [Cellar](cellar.md)
 * [Redis](redis.md)
 
-## Create an addon for your application
+## Create an add-on for your application
 
 In order to create an add-on for your application, go to the [Clever Cloud Console](https://console.clever-cloud.com/).
 When you are in the main page of the console, go to the organisation in which you wan to create the add-on,
