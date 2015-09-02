@@ -3,8 +3,8 @@
 <table class="table table-bordered table-striped dataTable"><caption>PostgreSQL pricing plans</caption>
 <tr>
 <th>Name</th>
-<th>Cache (Memory)</th>
-<th>Disk</th>
+<th>Memory</th>
+<th>DB size</th>
 <th>Conn. limit</th>
 <th>Price /mo</th>
 </tr>
@@ -12,10 +12,9 @@
 <td class="cc-col__price "><span class="label cc-label__price label-info">DEV</span></td>
 <td>SHARED</td>
 <td>256 MB</td>
-<td>10</td>
+<td>5</td>
 <td>Free</td>
 </tr>
-
 <tr>
 <td class="cc-col__price "><span class="label cc-label__price label-info">S</span></td>
 <td>SHARED</td>
@@ -41,15 +40,8 @@
 <td class="cc-col__price "><span class="label cc-label__price label-info">XL</span></td>
 <td>32 GB</td>
 <td>600 GB</td>
-<td>750</td>
-<td>700 €</td>
-</tr>
-<tr>
-<td class="cc-col__price "><span class="label cc-label__price label-info">XXL</span></td>
-<td>64 GB</td>
-<td>900 GB</td>
 <td>1000</td>
-<td>1200 €</td>
+<td>700 €</td>
 </tr>
 </table>
 
