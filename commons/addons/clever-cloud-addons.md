@@ -48,3 +48,7 @@ localization of the database provided by the add-on.
 The last step let you choose the name of the add-on (for example "My database") and the region where the add-on is
 hosted. Click on the button **Create** and the add-on will now available in your organisation, and corresponding
 variables will be available for the applications linked to the add-on you just created.
+
+## Managing your add-on
+
+You can find information on how to manage your add-ons [here](/addons/managing-addons.md).

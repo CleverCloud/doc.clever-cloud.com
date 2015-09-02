@@ -9,35 +9,35 @@
 <th>Price /mo</th>
 </tr>
 <tr>
-<td class="cc-col__price "><span class="label cc-label__price label-info">DEV</span></td>
+<td class="cc-col__price"><span class="label cc-label__price label-info">DEV</span></td>
 <td>SHARED</td>
 <td>256 MB</td>
 <td>5</td>
 <td>Free</td>
 </tr>
 <tr>
-<td class="cc-col__price "><span class="label cc-label__price label-info">S</span></td>
+<td class="cc-col__price"><span class="label cc-label__price label-info">S</span></td>
 <td>SHARED</td>
 <td>1 GB</td>
 <td>10</td>
 <td>10 €</td>
 </tr>
 <tr>
-<td class="cc-col__price "><span class="label cc-label__price label-info">M</span></td>
+<td class="cc-col__price"><span class="label cc-label__price label-info">M</span></td>
 <td>1 GB</td>
 <td>100 GB</td>
 <td>75</td>
 <td>30 €</td>
 </tr>
 <tr>
-<td class="cc-col__price "><span class="label cc-label__price label-info">L</span></td>
+<td class="cc-col__price"><span class="label cc-label__price label-info">L</span></td>
 <td>8 GB</td>
 <td>450 GB</td>
 <td>500</td>
 <td>240 €</td>
 </tr>
 <tr>
-<td class="cc-col__price "><span class="label cc-label__price label-info">XL</span></td>
+<td class="cc-col__price"><span class="label cc-label__price label-info">XL</span></td>
 <td>32 GB</td>
 <td>600 GB</td>
 <td>1000</td>
@@ -45,11 +45,11 @@
 </tr>
 </table>
 
-### Migrating from an old database
+## Migrating from an old database
 
 Some applications require a populated database to run properly.
 If you want to import your **SQL** dump, you can use several methods:
 
-1. <a href="https://dbms-adminer.clever-cloud.com/adminer/">our WebGUI (Adminer)</a>
-2. command line tool for PostgreSQL administration like `psql`
-3. any PostgreSQL client such as pgAdmin 3.
+1. [Our WebGUI (Adminer)](https://dbms-adminer.clever-cloud.com/adminer/).
+2. Command line tool for PostgreSQL administration like `psql`.
+3. Any PostgreSQL client such as [pgAdmin](http://www.pgadmin.org/).
