@@ -68,10 +68,10 @@ To connect to a WebSocket API URL follow this guide.
 
  * Take a URL in the API for the WebSocket.
  * Ex : `https://api.clever-cloud.com/v2/events/event-socket`
- * Sign the OAuth request with this url.
+ * Sign the OAuth request with this URL.
  * Replace `https://` by `wss://`
  * `wss://api.clever-cloud.com/v2/events/event-socket`
- * Connect to this url in WebSocket
+ * Connect to this URL in WebSocket
  * When the WebSocket connection is opened, you need to send the OAuth1 header in
 this format :
 ```json
@@ -82,7 +82,7 @@ this format :
 ```
 You need to replace `<oauth_header>` by the signed OAuth1 header.
 
-### Avaible WebSocket
+### Available WebSocket endpoints
 
  * [Logs](https://www.clever-cloud.com/doc/api/#!/logs/logs_logs-socket_appId_get)
  * [Events](https://www.clever-cloud.com/doc/api/#!/events/events_event-socket_get)
