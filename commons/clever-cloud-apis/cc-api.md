@@ -12,9 +12,17 @@ use it.
 
 ### Authentication
 
-Clever Cloud API works with an OAuth1 based authentication. First, you need to
-[create some tokens](https://console.clever-cloud.com/users/me/tokens) in
-the Clever Cloud console. Use these tokens to make an OAuth1 authentication.
+Clever Cloud API works with an OAuth1 based authentication.
+
+ * [Create some tokens](https://console.clever-cloud.com/users/me/tokens) in
+the Clever Cloud console.
+ * [Get a request token](https://www.clever-cloud.com/doc/api/#!/oauth/oauth_request_token_post)
+ * [Get the authorisation URL](https://www.clever-cloud.com/doc/api/#!/oauth/oauth_authorize_get)
+ * Connect with your account on the url
+ * Get the `oauth_verifier` in the callback url
+ * [Generate the access token](https://www.clever-cloud.com/doc/api/#!/oauth/oauth_access_token_post)
+ with your request token and the verifier.
+ * You can use this access token to make OAuth1 requests.
 
 ### API request links
 
