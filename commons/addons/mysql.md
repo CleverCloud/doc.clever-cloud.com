@@ -1,3 +1,8 @@
+---
+title: MySQL add-on
+position: 7
+---
+
 # MySQL
 
 ## MySQL plans

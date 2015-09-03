@@ -1,3 +1,8 @@
+---
+title: Cellar add-on
+position: 4
+---
+
 # Cellar <span class="cc-beta pull-right" title="Currently in private Beta version"></span>
 <div class="alert alert-hot-problems">
   <h5>Note for Beta Version</h5>

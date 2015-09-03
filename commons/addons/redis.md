@@ -1,3 +1,8 @@
+---
+title: Redis add-on
+position: 9
+---
+
 # Redis
 
 ## Redis plans

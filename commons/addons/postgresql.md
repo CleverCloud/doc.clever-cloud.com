@@ -1,3 +1,8 @@
+---
+title: PostgreSQL add-on
+position: 8
+---
+
 # PostgreSQL
 
 ## PostgreSQL plans

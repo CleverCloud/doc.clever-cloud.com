@@ -1,3 +1,8 @@
+---
+title: Redsmin add-on
+position: 10
+---
+
 # Redsmin
 
 ## Redsmin plans
