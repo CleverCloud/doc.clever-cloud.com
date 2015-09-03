@@ -7,7 +7,7 @@ position: 10
 
 ## Redsmin plans
 
-<table class="table table-bordered table-striped dataTable"><caption>MySQL pricing plans</caption>
+<table class="table table-bordered table-striped dataTable"><caption>Redsmin pricing plans</caption>
 <tr>
 <th>Name</th>
 <th>Conn. Redis Instances</th>

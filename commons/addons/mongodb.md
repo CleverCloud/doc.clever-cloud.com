@@ -14,7 +14,7 @@ MongoDB is an open source NoSQL document-oriented database.
 
 ## MongoDB plans
 
-<table class="table table-bordered table-striped dataTable"><caption>MySQL pricing plans</caption>
+<table class="table table-bordered table-striped dataTable"><caption>MongoDB pricing plans</caption>
 <tr>
 <th>Name</th>
 <th>Disk</th>

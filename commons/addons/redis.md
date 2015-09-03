@@ -7,7 +7,7 @@ position: 9
 
 ## Redis plans
 
-<table class="table table-bordered table-striped dataTable"><caption>MySQL pricing plans</caption>
+<table class="table table-bordered table-striped dataTable"><caption>Redis pricing plans</caption>
 <tr>
 <th>Name</th>
 <th>DATABASES</th>
@@ -57,4 +57,4 @@ position: 9
 <td>500</td>
 <td>190,71 €</td>
 </tr>
-</table
+</table>

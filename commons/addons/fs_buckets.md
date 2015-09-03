@@ -21,7 +21,7 @@ You will be able to retrieve generated data between two deployments.
 
 ## FS Buckets plans
 
-<table class="table table-bordered table-striped dataTable"><caption>MySQL pricing plans</caption>
+<table class="table table-bordered table-striped dataTable"><caption>FS Buckets pricing plans</caption>
 <tr>
 <th>Name</th>
 <th>Disk</th>
