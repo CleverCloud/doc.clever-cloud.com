@@ -1,8 +1,8 @@
-## Cellar <span class="cc-beta pull-right" title="Currently in private Beta version"></span>
+# Cellar <span class="cc-beta pull-right" title="Currently in private Beta version"></span>
 <div class="alert alert-hot-problems">
   <h5>Note for Beta Version</h5>
   <div>Cellar is currently in private Beta. If you want to use it, please send a mail at support@clever-cloud.com<br />
-  Cellar is free during the beta period. No credits wil be charged.</div>
+  Cellar is free during the beta period with a fair use at 20 GB. No credits wil be charged under the fair use.</div>
 </div>
 Cellar
 
@@ -13,7 +13,7 @@ Do manually manage the files, you can use [s3cmd](http://s3tools.org/s3cmd).
 You can download a s3cmd configuration file from the add-on configuration
 page.
 
-### Creating a bucket
+## Creating a bucket
 
 In Cellar, files are stored in buckets. When you create a Cellar addon, no
 bucket is created yet.

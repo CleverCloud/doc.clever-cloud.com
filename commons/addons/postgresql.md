@@ -1,3 +1,5 @@
+# PostgreSQL
+
 ## PostgreSQL plans
 
 <table class="table table-bordered table-striped dataTable"><caption>PostgreSQL pricing plans</caption>

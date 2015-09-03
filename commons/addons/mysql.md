@@ -10,7 +10,6 @@
 <th>Conn. limit</th>
 <th>Price /mo</th>
 </tr>
-
 <tr>
 <td class="cc-col__price "><span class="label cc-label__price label-info">DEV</span></td>
 <td>SHARED</td>
@@ -18,7 +17,6 @@
 <td>5</td>
 <td>Free</td>
 </tr>
-
 <tr>
 <td class="cc-col__price "><span class="label cc-label__price label-info">S</span></td>
 <td>SHARED</td>
@@ -26,7 +24,6 @@
 <td>10</td>
 <td>15 €</td>
 </tr>
-
 <tr>
 <td class="cc-col__price "><span class="label cc-label__price label-info">M</span></td>
 <td>1 GB</td>
@@ -34,7 +31,6 @@
 <td>75</td>
 <td>45 €</td>
 </tr>
-
 <tr>
 <td class="cc-col__price "><span class="label cc-label__price label-info">L</span></td>
 <td>2 GB</td>

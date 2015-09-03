@@ -14,12 +14,24 @@ you have to mount a persistent filesystem. This is why we created File System Bu
 
 You will be able to retrieve generated data between two deployments.
 
-### Creating a FS Bucket
+## FS Buckets plans
 
-[This article](/addons/clever-cloud-addons/) describes the process to add a File System Bucket on Clever Cloud.
+<table class="table table-bordered table-striped dataTable"><caption>MySQL pricing plans</caption>
+<tr>
+<th>Name</th>
+<th>Disk</th>
+<th>Mounts</th>
+<th>Price /mo</th>
+</tr>
+<tr>
+<td class="cc-col__price "><span class="label cc-label__price label-info">S</span></td>
+<td>UNLIMITED</td>
+<td>UNLIMITED</td>
+<td>Free</td>
+</tr>
+</table>
 
-
-### Configuring your application
+## Configuring your application
 
 To configure your application to use buckets, use the
 `clevercloud/buckets.json` file.
@@ -101,7 +113,7 @@ make sure** that the "apps" fields make the two buckets mutually exclusive upon 
 </p>
 </div>
 
-### Accessing your data inside the FS Bucket
+## Accessing your data inside the FS Bucket
 
 The "configuration" tab of your FS Bucket add-on displays the information you need to connect to
 your bucket using FTP.
