@@ -49,7 +49,7 @@ You can use this access token to make OAuth1 signed requests.
 
 More information about [OAuth dance](http://oauth.net/core/1.0/#anchor9).
 
-### API request links
+### **API request links**
 
 All the API links are referenced in a swagger documentation.
 
@@ -61,7 +61,7 @@ The base URL for the API is :
 
 ## WebSocket API requests
 
-### Connection protocol
+### **Connection protocol**
 
 Clever Cloud API can handle WebSocket-Security requests for the logs or events.
 To connect to a WebSocket API URL follow this guide.
@@ -82,7 +82,14 @@ this format :
 ```
 You need to replace `<oauth_header>` by the signed OAuth1 header.
 
-### Available WebSocket endpoints
+### **Available WebSocket endpoints**
 
- * [Logs](https://www.clever-cloud.com/doc/api/#!/logs/logs_logs-socket_appId_get)
- * [Events](https://www.clever-cloud.com/doc/api/#!/events/events_event-socket_get)
+#### **Logs-Socket**
+
+[This endpoint](https://www.clever-cloud.com/doc/api/#!/logs/logs_logs-socket_appId_get)
+allow you to receive real-time logs of an application via WebSocket.
+
+#### **Events**
+[This endpoint](https://www.clever-cloud.com/doc/api/#!/events/events_event-socket_get)
+allow you to receive a stream of events on you account. It can be application
+deployments that success or fail, application creation or deletion.
