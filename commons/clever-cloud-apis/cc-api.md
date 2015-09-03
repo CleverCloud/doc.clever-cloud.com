@@ -12,9 +12,9 @@ use it.
 
 ### Authentication
 
-Clever Cloud API works with an OAuth based authentication. First, you need to
+Clever Cloud API works with an OAuth1 based authentication. First, you need to
 [create some tokens](https://console.clever-cloud.com/users/me/tokens) in
-the Clever Cloud console. Use these tokens to make an OAuth authentication.
+the Clever Cloud console. Use these tokens to make an OAuth1 authentication.
 
 ### API request links
 
@@ -53,7 +53,7 @@ You can request the logs in a websocket stream, to get real time logs.
  this URL :
  * `https://api.clever-cloud.com/v2/logs/logs-socket/<app_id>`
 
-When the websocket connection is opened, you need to send the OAuth header in
+When the websocket connection is opened, you need to send the OAuth1 header in
 this format :
 ```json
 {
@@ -61,7 +61,7 @@ this format :
 	"authorization": "<oauth_header>"
 }
 ```
-You need to replace `<oauth_header>` by a signed OAuth header.
+You need to replace `<oauth_header>` by a signed OAuth1 header.
 
 When you are connected to the websocket logs-api, the server will send you a
 json each time there is a log.
