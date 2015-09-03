@@ -4,25 +4,48 @@ position: 1
 ---
 # Clever Cloud API
 
-Clever Cloud console is built on top of an API that allow you to manage your
+The Clever Cloud console is built on top of an API that allow you to manage your
 account and products. This article will explain how to connect to this API and
 use it.
 
-## Make a request on the API
+## HTTP calls
 
-### Authentication
+### **Authentication**
 
 Clever Cloud API works with an OAuth1 based authentication.
 
- * [Create some tokens](https://console.clever-cloud.com/users/me/tokens) in
-the Clever Cloud console.
- * [Get a request token](https://www.clever-cloud.com/doc/api/#!/oauth/oauth_request_token_post)
- * [Get the authorisation URL](https://www.clever-cloud.com/doc/api/#!/oauth/oauth_authorize_get)
- * Connect with your account on the url
- * Get the `oauth_verifier` in the callback url
- * [Generate the access token](https://www.clever-cloud.com/doc/api/#!/oauth/oauth_access_token_post)
+#### **Create consumers tokens**
+
+You need to [create some consumers tokens](https://console.clever-cloud.com/users/me/tokens)
+in the Clever Cloud console. Theses tokens allow you to select the permissions
+you ask to the user which permissions you need for your application. You need
+to set a callback URL, it will send you to this URL after authentication.
+
+#### **Get a request token**
+
+You have to make a `POST`request to get a
+[request token](https://www.clever-cloud.com/doc/api/#!/oauth/oauth_request_token_post)
+to the API.
+
+#### **Get the authorisation URL**
+
+Ask the API for the [authorisation URL](https://www.clever-cloud.com/doc/api/#!/oauth/oauth_authorize_get)
+and go to this URL with a browser. Log in with your account and it will send you
+to the callback URL.
+
+#### **Get the verifier token**
+
+In the callback URL you have the verifier token :
+
+`http://www.example.com/callback?oauth_verifier=<verifierToken>`
+
+Where `<verifierToken>` is your token.
+
+#### **Get the access token**
+Make a `POST`  request to get the
+[access token](https://www.clever-cloud.com/doc/api/#!/oauth/oauth_access_token_post)
  with your request token and the verifier.
- * You can use this access token to make OAuth1 signed requests.
+You can use this access token to make OAuth1 signed requests.
 
 More information about [OAuth dance](http://oauth.net/core/1.0/#anchor9).
 
