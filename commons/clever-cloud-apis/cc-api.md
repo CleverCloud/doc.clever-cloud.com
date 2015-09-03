@@ -22,7 +22,7 @@ the Clever Cloud console.
  * Get the `oauth_verifier` in the callback url
  * [Generate the access token](https://www.clever-cloud.com/doc/api/#!/oauth/oauth_access_token_post)
  with your request token and the verifier.
- * You can use this access token to make OAuth1 requests.
+ * You can use this access token to make OAuth1 signed requests.
 
 ### API request links
 
@@ -34,34 +34,20 @@ The base URL for the API is :
 
  * `https://api.clever-cloud.com/v2/`
 
-## Logs API
+## WebSocket API requests
 
-You have two ways to get logs of an application, you can get them via http or
-open a stream via websocket.
+### Connection protocol
 
-### Http method
+Clever Cloud API can handle WebSocket-Security requests for the logs or events.
+To connect to a WebSocket API URL follow this guide.
 
-You can request the logs of an application on this URL :
-
- * `https://api.clever-cloud.com/v2/logs/<app_id>?limit=<limit>`
- * `<app_id>` is the id of the app you request the logs.
- * `<limit>` is the number of log lines you want to have.
- * **Note :** For using HMAC authentication you need to sign your request with
- this URL :
- * `https://api.clever-cloud.com/v2/logs/<app_id>`
-
-### Websocket Method
-
-You can request the logs in a websocket stream, to get real time logs.
-
- * `wss://logs-api.clever-cloud.com/logs-socket/<app_id>?since=<timestamp>`
- * `<app_id>` is the id of the app you request the logs.
- * `<timestamp>` the timestamp of the first log you will recieve in `iso 8601`.
- * **Note :** For using HMAC authentication you need to sign your request with
- this URL :
- * `https://api.clever-cloud.com/v2/logs/logs-socket/<app_id>`
-
-When the websocket connection is opened, you need to send the OAuth1 header in
+ * Take a URL in the API for the WebSocket.
+ * Ex : `https://api.clever-cloud.com/v2/events/event-socket`
+ * Sign the OAuth request with this url.
+ * Replace `https://` by `wss://`
+ * `wss://api.clever-cloud.com/v2/events/event-socket`
+ * Connect to this url in WebSocket
+ * When the WebSocket connection is opened, you need to send the OAuth1 header in
 this format :
 ```json
 {
@@ -69,19 +55,9 @@ this format :
 	"authorization": "<oauth_header>"
 }
 ```
-You need to replace `<oauth_header>` by a signed OAuth1 header.
+You need to replace `<oauth_header>` by the signed OAuth1 header.
 
-When you are connected to the websocket logs-api, the server will send you a
-json each time there is a log.
+### Avaible WebSocket
 
-## Event API
-
-You can stream events on your account via websocket. This is used by the console
-for the notifications.
-
- * `wss://event-api-clever-cloud.cleverapps.io/event-socket/`
- * **Note :** For using HMAC authentication you need to sign your request with
- this URL :
- * `https://api.clever-cloud.com/v2/events/event-socket`
-
-The authentication is the same as logs via websocket.
+ * [Logs](https://www.clever-cloud.com/doc/api/#!/logs/logs_logs-socket_appId_get)
+ * [Events](https://www.clever-cloud.com/doc/api/#!/events/events_event-socket_get)
