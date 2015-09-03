@@ -24,6 +24,8 @@ the Clever Cloud console.
  with your request token and the verifier.
  * You can use this access token to make OAuth1 signed requests.
 
+More information about [OAuth dance](http://oauth.net/core/1.0/#anchor9).
+
 ### API request links
 
 All the API links are referenced in a swagger documentation.
