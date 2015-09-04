@@ -20,7 +20,7 @@ executable doc-clevercloud
   -- other-modules:       
   -- other-extensions:    
   build-depends:
-      base >=4.7 && <4.8,
+      base >=4.8 && <4.9,
       text,
       unix,
       time,
