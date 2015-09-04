@@ -5,6 +5,13 @@ position: 8
 
 # Redsmin
 
+<div class="alert alert-hot-problems">
+  <h5>New Redis add-on</h5>
+  <div>Clever Cloud now provide a Redis add-on, who comes with Redsmin.<br />
+  Read [this blog](https://www.clever-cloud.com/blog/features/2015/08/26/introducing-redis-by-clever-cloud/) post to
+  know more about it.</div>
+</div>
+
 ## Redsmin plans
 
 <table class="table table-bordered table-striped dataTable"><caption>Redsmin pricing plans</caption>
