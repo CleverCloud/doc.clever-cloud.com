@@ -5,9 +5,9 @@ position: 7
 
 # Application Management
 
-## Restart, stop, delete
+## Start, restart and stop
 
-You can restart, stop and delete your application in the associated configuration panel.
+You can start, restart, and stop your application in the associated configuration panel.
 
 Stop functionality is usefull during the development of the application to limits its credit consumption.
 
@@ -15,6 +15,15 @@ Stop functionality is usefull during the development of the application to limit
   <img src="/assets/images/app-management.png"/></a>
 </figure>
 <figcaption>Manage your application</figcaption>
+
+## Edit and delete
+
+You can edit your application in the information panel. You can rename, change region, delete and change some properties.
+
+<figure class="cc-content-img">
+  <img src="/assets/images/application-edit.png"/></a>
+</figure>
+<figcaption>Edit your application</figcaption>
 
 ## Logs
 

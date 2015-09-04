@@ -19,14 +19,14 @@ There is two steps in this section: application creation (requiring actions from
  and Git deployment
 
  3. Then select the language or the framework you need:
- <figure class="cc-content-img"><img src="/assets/images/javawarapp.png"></figure>
+ <figure class="cc-content-img"><img src="/assets/images/select-lang.png"></figure>
 
  4. In the next step, you will be prompted to select your scaling configuration.
  If you need help to configure your scaling options, please refer to
  <a href="/clever-cloud-overview/scaling/">the dedicated section</a>.
 
  <figure class="cc-content-img">
-   <img src="/assets/images/appcreationscaling.png"/>
+   <img src="/assets/images/select-scalab.png"/>
  </figure>
 
  5. Enter the name and description of you app.
