@@ -7,7 +7,8 @@ position: 2
 <div class="alert alert-hot-problems">
   <h5>Note for Beta Version</h5>
   <div>Cellar is currently in private Beta. If you want to use it, please send a mail at support@clever-cloud.com<br />
-  Cellar is free during the beta period with a fair use at 20 GB. No credits wil be charged under the fair use.</div>
+  Cellar is free during the beta period with a fair use at 20 GB. No credits wil be charged during the beta period,
+  and under the fair use.</div>
 </div>
 Cellar
 
