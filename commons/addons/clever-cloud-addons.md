@@ -14,9 +14,9 @@ three applications of your infrastructure for example, or they can be independen
 The add-ons offer different plan to adapt to your needs. You can find details about them on the documentation page of
 the add-on.
 
-## Available add-on
+## Available add-ons
 
-Clever Cloud provides multiple add-on to work with you application :
+Clever Cloud provides multiple add-ons to work with you application :
 
 * [MySQL](mysql.md)
 * [PostgreSQL](postgresql.md)
@@ -41,12 +41,12 @@ corresponding pages for a description and information.
 Now, select the plan you need for you add-on. You can find details about the pricing, the capacity of the add-on, ...
 on this page or in the corresponding documentation page.
 
-The third step offer you to choose with which application you want to link you add-on. Linking an add-on with an
-application add [environment variables](/admin-console/environment-variables.md) to the application.
+The third step offers you to choose with which application you want to link you add-on. Linking an add-on to an
+application will provide configuration to the application through [environment variables](/admin-console/environment-variables.md).
 This environment variables must be used in your application to, for example, provide the credentials and the
 localization of the database provided by the add-on.
 
-The last step let you choose the name of the add-on (for example "My database") and the region where the add-on is
+The last step lets you choose the name of the add-on (for example "My database") and the region where the add-on is
 hosted. Click on the button **Create** and the add-on will now available in your organisation, and corresponding
 variables will be available for the applications linked to the add-on you just created.
 
