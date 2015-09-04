@@ -5,6 +5,8 @@ position: 7
 
 # Redis
 
+Redis is an open source, in-memory data structure store, used as database, cache and message broker.
+
 ## Redis plans
 
 <table class="table table-bordered table-striped dataTable"><caption>Redis pricing plans</caption>

@@ -5,6 +5,9 @@ position: 6
 
 # PostgreSQL
 
+PostgreSQL is an object-relational database management system (ORDBMS) with an emphasis on extensibility
+and on standards-compliance.
+
 ## PostgreSQL plans
 
 <table class="table table-bordered table-striped dataTable"><caption>PostgreSQL pricing plans</caption>

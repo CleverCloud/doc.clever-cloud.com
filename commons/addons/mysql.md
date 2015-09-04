@@ -5,6 +5,8 @@ position: 5
 
 # MySQL
 
+MySQL is an open-source relational database management system (RDBMS).
+
 ## MySQL plans
 
 <table class="table table-bordered table-striped dataTable"><caption>MySQL pricing plans</caption>
