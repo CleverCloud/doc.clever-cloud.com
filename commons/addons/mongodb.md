@@ -1,6 +1,6 @@
 ---
 title: MongoDB add-on
-position: 6
+position: 4
 ---
 
 # MongoDB <span class="cc-beta pull-right" title="Currently in Beta version"></span>

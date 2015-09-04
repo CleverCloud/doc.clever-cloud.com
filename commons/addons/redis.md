@@ -1,6 +1,6 @@
 ---
 title: Redis add-on
-position: 9
+position: 7
 ---
 
 # Redis

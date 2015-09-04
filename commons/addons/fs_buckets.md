@@ -1,6 +1,6 @@
 ---
 title: FS Buckets add-on
-position: 5
+position: 3
 ---
 
 # FS Buckets: file system with persistance <span class="cc-beta pull-right" title="Currently in Beta version"></span>

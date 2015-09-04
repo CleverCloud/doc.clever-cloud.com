@@ -1,6 +1,6 @@
 ---
 title: PostgreSQL add-on
-position: 8
+position: 6
 ---
 
 # PostgreSQL

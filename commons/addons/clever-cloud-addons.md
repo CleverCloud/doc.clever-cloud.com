@@ -1,6 +1,6 @@
 ---
 title: Clever Cloud Add-ons
-position: 3
+position: 1
 ---
 
 # Clever Cloud Add-ons
@@ -52,4 +52,41 @@ variables will be available for the applications linked to the add-on you just c
 
 ## Managing your add-on
 
-You can find information on how to manage your add-ons [here](/addons/managing-addons.md).
+Once an add-on is created, two tabs are avaialble:
+
+* the information tab
+* the Configuration tab
+
+
+### Information screen
+
+This screen sum-up the caracteristic of the selected add-on.
+Features and environnement varaibles (if applicable) are shown.
+
+<figure class="cc-content-img">
+  <a class="cc-content-img" href="/assets/images/managing-addons-info.png">
+    <img src="/assets/images/managing-addons-info.png">
+  </a>
+  <figcaption>
+    Example of the information tab of an add-on
+  </figcaption>
+</figure>
+
+### Configuration screen
+
+Add-ons can be managed from the Configuration tab.
+This screen is managed directly by the provider of the add-on.
+
+<figure class="cc-content-img">
+  <a class="cc-content-img" href="/assets/images/managing-addons-config.png">
+    <img src="/assets/images/managing-addons-config.png">
+  </a>
+  <figcaption>
+    Example of the configuration tab of an add-on
+  </figcaption>
+</figure>
+
+## Delete an add-on
+
+To delete an add-on, go to the *Configuration* page of the add-on, and click on *Remove add-on*.
+Warning : after deletion of the add-on, all associated data will be removed.

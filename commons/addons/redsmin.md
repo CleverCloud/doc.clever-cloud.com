@@ -1,6 +1,6 @@
 ---
 title: Redsmin add-on
-position: 10
+position: 8
 ---
 
 # Redsmin
