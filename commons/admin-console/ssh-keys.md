@@ -63,9 +63,9 @@ To declare your public SSH key on Clever Cloud, click on your account, then on t
 
 Add the key by entering a name and the public SSH key. The key is the entire container of the *.pub file.
 <br><figure class="cc-content-img"><a href="/assets/images/ssh1.png"><img src="/assets/images/ssh1.png"></a></figure>
-  <figcaption>
-    The SSH Key manager.
-  </figcaption>
+<figcaption>
+The SSH Key manager.
+</figcaption>
 <br>
 
 You can delete it if needed or add another one.  
@@ -78,7 +78,7 @@ If you see "*access denied*" or "*password:*", your SSH key may be invalid.
 <i class="icon-question-sign"></i> **Need help about SSH keys?**  
 Contact us at <support@clever-cloud.com> or you can [read more about SSH Keys](http://git-scm.com/book/en/Git-on-the-Server-Generating-Your-SSH-Public-Key).
 
-## Check you ssh configuration
+## Check your ssh configuration
 
 To check if your ssh key is correctly configured, you can try to run:
 

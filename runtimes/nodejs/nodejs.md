@@ -232,7 +232,7 @@ Cloud, you only need to provide the *token* part, and we set up everything for y
 So to register your npm auth token, you need to add to your application the `NPM_TOKEN`
 environment variable.
 
-```
+``` javascript
 Example:
 NPM_TOKEN=00000000-0000-0000-0000-000000000000
 ```

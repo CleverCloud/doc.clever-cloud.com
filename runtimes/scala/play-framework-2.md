@@ -113,7 +113,7 @@ The two solutions do the job, you can pick your favorite.
 
 You may run into this error during deployments:
 
-```
+``` scala
 [error] c.j.b.h.AbstractConnectionHook - Failed to acquire connection to jdbc:<address> Sleeping for 1000ms and trying again. Attempts left: 10. Exception: null.Message:FATAL: too many connections for role "<user>"
 ```
 
@@ -126,7 +126,7 @@ To avoid connection exhaustion, you should limit your pool at half the number
 of available connections (if you have horizontal scaling enabled, adjust
 accordingly).
 
-```
+``` scala
 # conf/application.conf
 
 db.default.partitionCount=2
