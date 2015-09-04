@@ -16,7 +16,7 @@ the add-on.
 
 ## Available add-ons
 
-Clever Cloud provides multiple add-ons to work with you application :
+Clever Cloud provides multiple add-ons to work with you applications :
 
 * [MySQL](mysql.md)
 * [PostgreSQL](postgresql.md)
@@ -60,7 +60,7 @@ Once an add-on is created, two tabs are avaialble:
 
 ### Information screen
 
-This screen sum-up the caracteristic of the selected add-on.
+This screen sums-up the caracteristic of the selected add-on.
 Features and environnement varaibles (if applicable) are shown.
 
 <figure class="cc-content-img">
