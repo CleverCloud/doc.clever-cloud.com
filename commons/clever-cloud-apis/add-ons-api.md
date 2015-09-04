@@ -1,6 +1,6 @@
 ---
 title: Add-on API
-position: 1
+position: 2
 ---
 # Clever Cloud add-on API
 

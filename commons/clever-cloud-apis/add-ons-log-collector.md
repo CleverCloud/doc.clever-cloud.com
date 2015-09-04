@@ -1,6 +1,6 @@
 ---
 title: Add-on Log Collector
-position: 1
+position: 3
 ---
 # Add-on Log Collector
 
