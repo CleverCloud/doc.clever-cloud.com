@@ -18,13 +18,13 @@ the add-on.
 
 Clever Cloud provides multiple add-ons to work with you applications :
 
-* [MySQL](mysql.md)
-* [PostgreSQL](postgresql.md)
-* [MongoDB](mongodb.md)
-* [FS buckets](fs_buckets.md)
-* [Cellar](cellar.md)
-* [Redis](redis.md)
-* [Redsmin](redsmin.md)
+* [MySQL](/addons/mysql)
+* [PostgreSQL](/addons/postgresql)
+* [MongoDB](/addons/mongodb)
+* [FS buckets](/addons/fs_buckets)
+* [Cellar](/addons/cellar)
+* [Redis](/addons/redis)
+* [Redsmin](/addons/redsmin)
 
 ## Create an add-on for your application
 
@@ -42,7 +42,7 @@ Now, select the plan you need for you add-on. You can find details about the pri
 on this page or in the corresponding documentation page.
 
 The third step offers you to choose with which application you want to link you add-on. Linking an add-on to an
-application will provide configuration to the application through [environment variables](/admin-console/environment-variables.md).
+application will provide configuration to the application through [environment variables](/admin-console/environment-variables).
 This environment variables must be used in your application to, for example, provide the credentials and the
 localization of the database provided by the add-on.
 
