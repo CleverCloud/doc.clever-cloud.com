@@ -45,6 +45,7 @@ MySQL is an open-source relational database management system (RDBMS).
 <td>500</td>
 <td>300 €</td>
 </tr>
+</table>
 
 ### Migrating from an old database
 
