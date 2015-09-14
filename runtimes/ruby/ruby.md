@@ -145,6 +145,19 @@ To make Nginx serve your static resources you must set your public folder in `cl
 
 *Note: the path of your folder must be absolute regarding the root of your application.*
 
+### Update wsgi buffer size
+
+The default buffer size for headers is 4096. This is enough for most people. But you might
+need to increase that value if your application uses very long query string or headers.
+
+To change the buffer size, set the `WSGI_BUFFER_SIZE` [environment variable](admin-console/environment-variables) in the Clever Cloud console.
+
+Example:
+
+```
+WSGI_BUFFER_SIZE=8192
+```
+
 ## Environment injection
 
 Clever Cloud can inject environment variables that are defined in the
