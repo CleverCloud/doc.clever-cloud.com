@@ -57,7 +57,7 @@ you create a `buckets.json` file).
     [
       {
         "bucket" : "bucketId",
-        "folder" : "/wp-content"
+        "folder" : "/wp-content/uploads"
       }
     ]
     ```
@@ -66,6 +66,22 @@ you create a `buckets.json` file).
 if you need more information about it.
 
 6. When finished, you can launch the application with the url that you can find in the *domains* panel in the left sidebar.
+
+
+### Install a Wordpress plugin with Git
+
+Wordpress plugins can be installed from the administration panel, to help the user. However, this way doesn't work with
+git. Indeed, as explained above, deploying with git prevents to keep files uploaded by the user and the plugin installed
+on the admin panel will be lost at the next deployment, because the code of the plugin isn't tracked by git.
+
+To solve this problem, we recommend to install the plugin manually by copying the content of the plugin to the
+`/wp-content/plugins/` folder, add the new files to git and then deploy your application.
+
+The plugin will then be available in the **Extensions** section of your admin panel and you will be able to manage it
+as others Wordpress plugins. To uninstall the plugin, the procedure is the same as before except that you have to delete
+the folder corresponding to the plugin you want to delete. The extension will be automatically disabled, but we recommend
+you to delete it from you admin panel before removing the file, in order to clean your database and all files that the
+plugin could have created.
 
 
 ## Optimise and speed-up your Wordpress
