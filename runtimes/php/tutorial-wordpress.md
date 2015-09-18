@@ -18,41 +18,53 @@ have their own pros and cons but have the same end result.
 
 ## Deploy via FTP
 
-1. Download the Wordpress source files on [wordpress.org](http://wordpress.org)
-2. [Add a MySQL database add-on](/addons/clever-cloud-addons/)
-3. Rename the file `wp-config-sample.php` to `wp-config.php`
-4. Replace in `wp-config.php` the host (like this: bj79c949bvl2deb6.mysql.clvrcld.net), database name, username and
-password that has been sent by email after the database creation.
+1. Download the Wordpress source files on [wordpress.org](http://wordpress.org).
+
+2. [Add a MySQL database add-on](/addons/clever-cloud-addons/).
+
+3. Rename the file `wp-config-sample.php` to `wp-config.php`.
+
+4. Replace in `wp-config.php` the host (for example: bj79c949bvl2deb6.mysql.clvrcld.net), database name, username and
+password using the [environment variables](/admin-console/environment-variables/) of the add-on.
+
 3. [Send these Wordpress files via FTP](/clever-cloud-overview/add-application/#ftp-deployment) using the FTP
-credentials you received by email when you created the application.
+credentials displayed in the application' information page.
+
 6. When finished, you can launch the application with the url that you can find in the *domains* panel in the left sidebar.
 
 
 ## Deploy via Git
 
-1. Download the Wordpress source files on [wordpress.org](http://wordpress.org)
-2. [Add a MySQL database add-on](/addons/clever-cloud-addons/)
-3. Rename the file `wp-config-sample.php` to `wp-config.php`
-4. Replace in `wp-config.php` the host (like this: bj79c949bvl2deb6.mysql.clvrcld.net), database name, username and
-password that has been sent by email after the database creation
+1. Download the Wordpress source files on [wordpress.org](http://wordpress.org).
+
+2. [Add a MySQL database add-on](/addons/clever-cloud-addons/).
+
+3. Rename the file `wp-config-sample.php` to `wp-config.php`.
+
+4. Replace in `wp-config.php` the host (for example: bj79c949bvl2deb6.mysql.clvrcld.net), database name, username and
+password using the [environment variables](/admin-console/environment-variables/) of the add-on.
+
 5. As mentioned in this [article](/addons/fs_buckets/), with Git deployments, files that are uploaded by users must
-be persisted in a File System Bucket. In order to do so, [add a File Bucket](/addons/fs_buckets/) via the console.
-You will then receive your bucket id.
+be persisted in a File System Bucket. In order to do so, [add a FS Bucket](/addons/fs_buckets/) via the console.
+You will find the bucketId in the [information](/addons/clever-cloud-addons/) section of the FS Bucket add-on.
+
 6. At the root of your application, create a `clevercloud/buckets.json` file (create a `clevercloud` folder in which
 you create a `buckets.json` file).
-7. Add the following lines in this file. Do not forget to replace bucketId by the bucketId you received by email:
 
+7. Add the following lines in this file. Do not forget to replace `bucketId` by the bucketId displayed in the
+[information](/addons/clever-cloud-addons/) section of the FS Bucket add-on.
     ```javascript
     [
       {
         "bucket" : "bucketId",
-        "folder" : "/wp-content/uploads"
+        "folder" : "/wp-content"
       }
     ]
     ```
 
 5. Send these Wordpress files via Git. Read this [article](/clever-cloud-overview/add-application/#git-deployment)
 if you need more information about it.
+
 6. When finished, you can launch the application with the url that you can find in the *domains* panel in the left sidebar.
 
 
