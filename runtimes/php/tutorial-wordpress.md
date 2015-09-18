@@ -70,9 +70,9 @@ if you need more information about it.
 
 ## Optimise and speed-up your Wordpress
 
-There is multiple way to optimise your Wordpress and speed-up its response time.
+There are multiple ways to optimise your Wordpress and speed-up its response time.
 We provide different tools and software to help you in this task as Varnish for the HTTP cache, and Redis for the
-Object Cashing.
+object caching.
 
 ### HTTP Cache with Varnish
 
@@ -178,7 +178,7 @@ of your website.
 
 ### Object cache with Redis
 
-Redis offer you a good way to speed-up your application by caching some of the objects of your application, as the
+Redis offers you a good way to speed-up your application by caching some of the objects of your application, as the
 result of SQL queries of your application, improving the response time.
 
 To enable Redis for your Wordpress, you need to disable other Object Cache and Data Cache of your application (as those
