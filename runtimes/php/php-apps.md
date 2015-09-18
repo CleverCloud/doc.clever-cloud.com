@@ -19,13 +19,13 @@ PHP is a widely-used general-purpose scripting language that is especially suite
 3. Select the scalability options: <figure class="cc-content-img"><img src="/assets/images/select-scalab.png"/></figure>
 3. Enter your application's name and description, choose your deployment zone and click "Create".
 <figure class="cc-content-img"><img src="/assets/images/choose-name.png"/></figure>
-5. *Optional*: <a href="/addons/add-an-addon/">add an add-on</a>
+5. *Optional*: <a href="/addons/clever-cloud-addons/">add an add-on</a>
 
 <div class="alert alert-hot-problems">
 <h4>Warning:</h4>
 <p>An FTP application is automatically started once the application is created, even if no code has been sent.</p>
 <p>
- When you create a FTP application, a free [FS Bucket](addons/clever-cloud-addons/#fs-buckets-file-system-with-persistance/) add-on is
+ When you create a FTP application, a free [FS Bucket](/addons/fs_buckets/) add-on is
  provisioned, named after the application. You will find the FTP
  credentials in the configuration tab of this add-on.
 </p>
