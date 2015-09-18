@@ -5,31 +5,33 @@ shortdesc: This article shows you how enable Varnish on your application.
 
 # Varnish
 
-Varnish is a HTTP cache who works as a reverse proxy between the application server and the client, on the server-side.
-Following rules defined by the user, Varnish will caches the data of an applications to reduce the load.
+Varnish is a HTTP proxy-cache, which works as a reverse proxy between your application and the client.
+Following rules defined by the user, Varnish will caches the data of an application to reduce the load.
+
 
 ## Enable Varnish for you appliaiton
 
 Varnish is provided by default in PHP instances. To enable it, you just have to create a `varnish.vcl` file
 in the `/clevercloud` folder.
 
-This file describe how Varnish caches your applications and how it decides to return a cached resource or not.
+This file describes how Varnish caches your applications and how it decides to return a cached resource or not.
 
-***Warning***: you should not include the `backend` section in your `varnish.vcl` file. We already manage it for you.
+***Warning***: the backend section of the `varnish.vcl` configuration file is not necessary as it is already handled
+by Clever Cloud
+
 
 ## Varnish version / version migration
 
-We provide **Varnish 4**. If you need to upgrade your version of Varnish, you can use script as
-[varnish3to4](https://github.com/fgsch/varnish3to4) to easily upgrade your Varnish version. Do not forget to add the
-following line in top of your Varnish file:
+We use **Varnish 4**. If you already have a configuration file written for varnish 3, you can use
+[varnish3to4](https://github.com/fgsch/varnish3to4) to convert it to varnsih 4. Dont forget to add `vcl 4.0;`
+at the beginning of the config file.
 
-`vcl 4.0;`
 
 ## Example file for Wordpress
 
 If your application is a Wordpress, you can use the following file to enable Varnish on your Wordpress.
 
-We also recommend you to use a plugin as **Varnish HTTP Purge** to automatically purge the Varnish cache when a post is
+We also recommend you to use a plugin such as **Varnish HTTP Purge** to automatically purge the Varnish cache when a post is
 created/updated, a comment is posted, ...
 
 ```
