@@ -213,17 +213,8 @@ define('WP_REDIS_PORT', getenv('REDIS_PORT'));
 define('WP_REDIS_PASSWORD', getenv('REDIS_PASSWORD'));
 ```
 
-3. Download and install the [Redis Object Cache](https://wordpress.org/plugins/redis-cache/) plugin for Wordpress.
-This plugin will enable and manage the Redis connexion for your Wordpress.
+3. Download [this file](http://plugins.svn.wordpress.org/redis-cache/trunk/includes/object-cache.php),
+who manages the connexion with Redis and Wordpress and move it to you `/wp-content` folder. The file **must** be named
+`object-cache.php`.
 
-4. In your Wordpress, go to the **Extensions** section of the *Wordpress admin panel*, and enable the **Redis Object Cache**
-plugin.
-
-5. Click on the **Settings** link of the plugin, and check that the informations are correct (they must correspond to
-the information displayed in the Redsmin top bar).
-
-6. To finally enable the Object Caching with Redis on your Wordpress, click on the **Enable Object Caching** button.
-
-If you need to disable the Redis object caching, just click on the **Disble Object Caching** button.
-
-If you need to flush the cache, just click on the **Flush** button.
+4. Redis should now works with your Wordpress.
