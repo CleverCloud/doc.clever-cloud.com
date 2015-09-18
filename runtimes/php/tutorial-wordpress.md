@@ -62,10 +62,10 @@ you create a `buckets.json` file).
     ]
     ```
 
-5. Send these Wordpress files via Git. Read this [article](/clever-cloud-overview/add-application/#git-deployment)
+8. Send these Wordpress files via Git. Read this [article](/clever-cloud-overview/add-application/#git-deployment)
 if you need more information about it.
 
-6. When finished, you can launch the application with the url that you can find in the *domains* panel in the left sidebar.
+9. When finished, you can launch the application with the url that you can find in the *domains* panel in the left sidebar.
 
 
 ### Install a Wordpress plugin with Git
