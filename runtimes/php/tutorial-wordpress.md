@@ -165,20 +165,12 @@ sub vcl_deliver {
 }
 sub vcl_hit {
   if (req.method == "PURGE") {
-    #
-    # This is now handled in vcl_recv.
-    #
-    # purge;
     return (synth(200, "OK"));
   }
 }
 
 sub vcl_miss {
   if (req.method == "PURGE") {
-    #
-    # This is now handled in vcl_recv.
-    #
-    # purge;
     return (synth(404, "Not cached"));
   }
 }
