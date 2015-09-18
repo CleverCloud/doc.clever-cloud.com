@@ -171,3 +171,43 @@ sub vcl_miss {
 3. To properly purge the Varnish cache of your application when a post is created/updated, a comment is posted, ...
 we recommend you to install the [Varnish HTTP Purge](https://wordpress.org/plugins/varnish-http-purge/) plugin to
 your Wordpress. It'll purge the Varnish cache for you and give you the possibility to purge it manually.
+
+If you need to manually purge the Varnish cache, the plugin provide a **Purge Varnish cache** button on the top bar
+of your website.
+
+
+### Object cache with Redis
+
+Redis offer you a good way to speed-up your application by caching some of the objects of your application, as the
+result of SQL queries of your application, improving the response time.
+
+To enable Redis for your Wordpress, you need to disable other Object Cache and Data Cache of your application (as those
+provided by W3 Total Cache for example). Make sure they aren't enabled to avoid conflicts and performance problems.
+
+1. [Create a Redis add-on](/addons/clever-cloud-addons/) for your application.
+
+2. Add the following lines to your `wp-config.php` file. Make sure they are **before** the
+`require_once(ABSPATH . 'wp-settings.php');` line, otherwise the Redis connexion will not work for your application and
+your application will return only white pages!
+```php
+define('WP_CACHE_KEY_SALT', 'tvm_');
+define('WP_REDIS_CLIENT', 'pecl');
+define('WP_REDIS_HOST', getenv('REDIS_HOST'));
+define('WP_REDIS_PORT', getenv('REDIS_PORT'));
+define('WP_REDIS_PASSWORD', getenv('REDIS_PASSWORD'));
+```
+
+3. Download and install the [Redis Object Cache](https://wordpress.org/plugins/redis-cache/) plugin for Wordpress.
+This plugin will enable and manage the Redis connexion for your Wordpress.
+
+4. In your Wordpress, go to the **Extensions** section of the *Wordpress admin panel*, and enable the **Redis Object Cache**
+plugin.
+
+5. Click on the **Settings** link of the plugin, and check that the informations are correct (they must correspond to
+the information displayed in the Redsmin top bar).
+
+6. To finally enable the Object Caching with Redis on your Wordpress, click on the **Enable Object Caching** button.
+
+If you need to disable the Redis object caching, just click on the **Disble Object Caching** button.
+
+If you need to flush the cache, just click on the **Flush** button.
