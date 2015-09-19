@@ -78,6 +78,13 @@ Follow these steps to deploy your application:
 
  Checkout your application <b>logs</b> in the dashboard to <b>monitor the deployment</b>.
 
+ <div class="alert alert-hot-problems">
+   <h4>Troubleshooting:</h4>
+   <p>If the remote ask you for a password right after a git push attempt, this is may due to a SSH Key misconfiguration.
+   <br>Add your SSH key in your profile here: <a href="https://console.clever-cloud.com/users/me/ssh-keys">https://console.clever-cloud.com/users/me/ssh-keys</a></p>
+   <p>The full tutorial about adding SSH key is here: <a href="/doc/admin-console/ssh-keys/">Adding SSH keys</a> </p>
+ </div>
+
 ### Automatic Deployment with GitHub
 
 If you want to enable automatic deployment, it’s easy: in your application
