@@ -16,8 +16,13 @@ in the `/clevercloud` folder.
 
 This file describes how Varnish caches your applications and how it decides to return a cached resource or not.
 
-***Warning***: the backend section of the `varnish.vcl` configuration file is not necessary as it is already handled
+<div class="alert alert-hot-problems">
+<h5>Warning:</h5>
+<div>
+the backend section of the `varnish.vcl` configuration file is not necessary as it is already handled
 by Clever Cloud
+</div>
+</div>
 
 
 ## Varnish version / version migration
@@ -34,7 +39,7 @@ If your application is a Wordpress, you can use the following file to enable Var
 We also recommend you to use a plugin such as **Varnish HTTP Purge** to automatically purge the Varnish cache when a post is
 created/updated, a comment is posted, ...
 
-```
+``` bash
 vcl 4.0;
 
 acl purge {
