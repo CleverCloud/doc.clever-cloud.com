@@ -11,7 +11,7 @@ A user can have multiple SSH keys.
 
 <div class="alert alert-hot-problems">
 <h4>Warning:</h4>
-<p>A SSH key must be used with only one account. A SSH key is used to identify the actions form a user and must be
+<p>A SSH key can be used with only one account. A SSH key is used to identify the actions made by a user and must be
 associated with only one account.<br />
 If a key is used by more than one account, a warning will be displayed in the console.</p>
 </div>
@@ -31,8 +31,8 @@ You can already have an SSH key and so do not need to generate a new one. To che
 
 1. Wether you use Mac or Linux, open your Terminal application.
 2. Run `$ cd ~/.ssh/` in your Terminal.
-3. If the folder exist, run `$ ls` and check if a pair of key exist : *id_ras* and *id_rsa.pub*.
-   If you can found them, you do not need to generate a new one, simply go to the following
+3. If the folder exists, run `$ ls` and check if a pair of key exists : *id_rsa* and *id_rsa.pub*.
+   If you can find them, you do not need to generate a new one, simply go to the following
    "Add you key on Clever Cloud" part!
 
 <br/>
@@ -42,8 +42,8 @@ You can already have an SSH key and so do not need to generate a new one. To che
 1. If you don't have it, download [Git for Windows](https://git-for-windows.github.io/) and install it.
 2. Run **Git Bash** (from the *Start Menu* or from the *Explorer* with the contextual menu (right click)).
 3. Run `$ cd ~/.ssh/` in your Terminal.
-4. If the folder exist, run `$ ls` and check if a pair of key exist : *id_ras* and *id_rsa.pub*.
-   If you can found them, you do not need to generate a new one, simply go to the following
+4. If the folder exists, run `$ ls` and check if a pair of key exists : *id_rsa* and *id_rsa.pub*.
+   If you can find them, you do not need to generate a new one, simply go to the following
    "Add you key on Clever Cloud" part!
 
 ## Create your SSH key
