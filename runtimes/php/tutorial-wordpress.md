@@ -87,13 +87,24 @@ plugin could have created.
 ## Optimise and speed-up your Wordpress
 
 There are multiple ways to optimise your Wordpress and speed-up its response time.
-We provide different tools and software to help you in this task as Varnish for the HTTP cache, and Redis for the
-object caching.
+We provide different tools and software to help you in this task as [Varnish](/php/varnish/) for the HTTP cache,
+and [Redis](/addons/redis/) for the object caching.
+
+
+### W3 Total Cache
+
+<div class="alert alert-hot-problems">
+<h4>Warning:</h4>
+ <p>We recommend you to <strong>not</strong> use W3 Total Cache as it is intended to be used on a shared hosting server.<br />
+ We noticed performances problems when the plugin is enabled and we recommend to use Varnish instead of W3 Total Cache if
+ you need a HTTP cache.</p>
+</div>
+
 
 ### HTTP Cache with Varnish
 
-Enabling [Varnish](/php/varnish/) for your application is very simple. All instances of PHP provide Varnish, you just
-have to configure your application to use it.
+Enabling [Varnish](/php/varnish/) for your application is very simple. All instances of PHP provide
+[Varnish](/php/varnish/), you just have to configure your application to use it.
 
 1. To use Varnish in your application, you have to create a `varnish.vcl` file in the `clevercloud` folder of
 your application. If this folder doesn't exist, create it in the **root** of your project.
@@ -101,80 +112,80 @@ your application. If this folder doesn't exist, create it in the **root** of you
 2. Copy the following code into the `varnish.vcl` file you just created. It'll configure Varnish to work with your
 Wordpress.
 
-```
-vcl 4.0;
-
-acl purge {
-    "10.0.1.100";
-    "10.0.1.101";
-    "10.0.1.102";
-    "10.0.1.103";
-    "10.0.1.104";
-}
-
-sub vcl_recv {
-  if (req.method == "PURGE") {
-    if (!client.ip ~ purge) {
-      return (synth(405, "Not allowed."));
+    ``` bash
+    vcl 4.0;
+    
+    acl purge {
+        "10.0.1.100";
+        "10.0.1.101";
+        "10.0.1.102";
+        "10.0.1.103";
+        "10.0.1.104";
     }
-    return (hash);
-  }
- 
-  if (req.url ~ "\.(gif|jpg|jpeg|swf|css|js|flv|mp3|mp4|pdf|ico|png)(\?.*|)$") {
-    unset req.http.cookie;
-    set req.url = regsub(req.url, "\?.*$", "");
-  }
-
-  if (req.url ~ "\?(utm_(campaign|medium|source|term)|adParams|client|cx|eid|fbid|feed|ref(id|src)?|v(er|iew))=") {
-    set req.url = regsub(req.url, "\?.*$", "");
-  }
-
-  if (req.url ~ "wp-(login|admin)" || req.url ~ "preview=true" || req.url ~ "xmlrpc.php") {
-    return (pass);
-  }
-
-  if (req.http.cookie) {
-    if (req.http.cookie ~ "(wordpress_|wp-settings-)") {
-      return(pass);
-    } else {
-      unset req.http.cookie;
+    
+    sub vcl_recv {
+      if (req.method == "PURGE") {
+        if (!client.ip ~ purge) {
+          return (synth(405, "Not allowed."));
+        }
+        return (hash);
+      }
+     
+      if (req.url ~ "\.(gif|jpg|jpeg|swf|css|js|flv|mp3|mp4|pdf|ico|png)(\?.*|)$") {
+        unset req.http.cookie;
+        set req.url = regsub(req.url, "\?.*$", "");
+      }
+    
+      if (req.url ~ "\?(utm_(campaign|medium|source|term)|adParams|client|cx|eid|fbid|feed|ref(id|src)?|v(er|iew))=") {
+        set req.url = regsub(req.url, "\?.*$", "");
+      }
+    
+      if (req.url ~ "wp-(login|admin)" || req.url ~ "preview=true" || req.url ~ "xmlrpc.php") {
+        return (pass);
+      }
+    
+      if (req.http.cookie) {
+        if (req.http.cookie ~ "(wordpress_|wp-settings-)") {
+          return(pass);
+        } else {
+          unset req.http.cookie;
+        }
+      }
     }
-  }
-}
-
-sub vcl_backend_response {
-  if ( (!(bereq.url ~ "(wp-(login|admin)|login)")) || (bereq.method == "GET") ) {
-    unset beresp.http.set-cookie;
-    set beresp.ttl = 1h;
-  }
-
-  if (bereq.url ~ "\.(gif|jpg|jpeg|swf|css|js|flv|mp3|mp4|pdf|ico|png)(\?.*|)$") {
-    set beresp.ttl = 365d;
-  }
-}
-
-sub vcl_deliver {
-# multi-server webfarm? set a variable here so you can check
-# the headers to see which frontend served the request
-#   set resp.http.X-Server = "server-01";
-   if (obj.hits > 0) {
-     set resp.http.X-Cache = "HIT";
-   } else {
-     set resp.http.X-Cache = "MISS";
-   }
-}
-sub vcl_hit {
-  if (req.method == "PURGE") {
-    return (synth(200, "OK"));
-  }
-}
-
-sub vcl_miss {
-  if (req.method == "PURGE") {
-    return (synth(404, "Not cached"));
-  }
-}
-```
+    
+    sub vcl_backend_response {
+      if ( (!(bereq.url ~ "(wp-(login|admin)|login)")) || (bereq.method == "GET") ) {
+        unset beresp.http.set-cookie;
+        set beresp.ttl = 1h;
+      }
+    
+      if (bereq.url ~ "\.(gif|jpg|jpeg|swf|css|js|flv|mp3|mp4|pdf|ico|png)(\?.*|)$") {
+        set beresp.ttl = 365d;
+      }
+    }
+    
+    sub vcl_deliver {
+    # multi-server webfarm? set a variable here so you can check
+    # the headers to see which frontend served the request
+    #   set resp.http.X-Server = "server-01";
+       if (obj.hits > 0) {
+         set resp.http.X-Cache = "HIT";
+       } else {
+         set resp.http.X-Cache = "MISS";
+       }
+    }
+    sub vcl_hit {
+      if (req.method == "PURGE") {
+        return (synth(200, "OK"));
+      }
+    }
+    
+    sub vcl_miss {
+      if (req.method == "PURGE") {
+        return (synth(404, "Not cached"));
+      }
+    }
+    ```
 
 3. To properly purge the Varnish cache of your application when a post is created/updated, a comment is posted, ...
 we recommend you to install the [Varnish HTTP Purge](https://wordpress.org/plugins/varnish-http-purge/) plugin to
@@ -186,11 +197,12 @@ of your website.
 
 ### Object cache with Redis
 
-Redis offers you a good way to speed-up your application by caching some of the objects of your application, as the
-result of SQL queries of your application, improving the response time.
+[Redis](/addons/redis/) offers you a good way to speed-up your application by caching some of the objects of your
+application, as the result of SQL queries of your application, improving the response time.
 
-To enable Redis for your Wordpress, you need to disable other Object Cache and Data Cache of your application (as those
-provided by W3 Total Cache for example). Make sure they aren't enabled to avoid conflicts and performance problems.
+To enable [Redis](/addons/redis/ for your Wordpress, you need to disable other Object Cache and Data Cache of your
+application (as those provided by *W3 Total Cache* for example). Make sure they aren't enabled to avoid conflicts and
+performance problems.
 
 1. [Create a Redis add-on](/addons/clever-cloud-addons/) for your application.
 
