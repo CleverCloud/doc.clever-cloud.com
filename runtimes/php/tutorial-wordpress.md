@@ -90,6 +90,17 @@ There are multiple ways to optimise your Wordpress and speed-up its response tim
 We provide different tools and software to help you in this task as [Varnish](/php/varnish/) for the HTTP cache,
 and [Redis](/addons/redis/) for the object caching.
 
+
+### W3 Total Cache
+
+<div class="alert alert-hot-problems">
+<h4>Warning:</h4>
+ <p>We recommend you to <strong>not</strong> use W3 Total Cache as it is intended to be used on a shared hosting server.<br />
+ We noticed performances problems when the plugin is enabled and we recommend to use Varnish instead of W3 Total Cache if
+ you need a HTTP cache.</p>
+</div>
+
+
 ### HTTP Cache with Varnish
 
 Enabling [Varnish](/php/varnish/) for your application is very simple. All instances of PHP provide
