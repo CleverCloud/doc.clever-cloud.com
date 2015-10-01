@@ -120,5 +120,12 @@ make sure** that the "apps" fields make the two buckets mutually exclusive upon 
 
 ## Accessing your data inside the FS Bucket
 
-The "configuration" tab of your FS Bucket add-on displays the information you need to connect to
-your bucket using FTP.
+### From the addon dashboard
+
+The "File explorer" tab of the addon dashboard gives you access to your files
+in the FS bucket.
+
+### From your favourite FTP client
+
+The "Addon information" tab of your FS Bucket add-on displays the information
+you need to connect to your bucket using FTP.
