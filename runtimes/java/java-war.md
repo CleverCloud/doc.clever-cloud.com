@@ -70,7 +70,7 @@ Here's what your configuration file can look like:
 {
    "build": {
       "type": "maven",
-      "target": "package"
+      "goal": "package"
    },
    "deploy": {
       "container": "TOMCAT8",
