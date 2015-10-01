@@ -91,13 +91,14 @@ We provide different tools and software to help you in this task as [Varnish](/p
 and [Redis](/addons/redis/) for the object caching.
 
 
-### W3 Total Cache
+### Performance plugins
 
 <div class="alert alert-hot-problems">
 <h4>Warning:</h4>
- <p>We recommend you to <strong>not</strong> use W3 Total Cache as it is intended to be used on a shared hosting server.<br />
- We noticed performances problems when the plugin is enabled and we recommend to use Varnish instead of W3 Total Cache if
- you need a HTTP cache.</p>
+ <p>We recommend you to <strong>not</strong> use performance plugins like W3 Total Cache or JetPack as they are
+ intended to be used on a shared hosting server.<br />
+ We noticed performances problems when performance plugins are enabled and we recommend to use Varnish and Redis
+ if you need performance optimisations on Clever Cloud.</p>
 </div>
 
 
