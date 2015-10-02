@@ -104,8 +104,8 @@ and [Redis](/addons/redis/) for the object caching.
 
 ### HTTP Cache with Varnish
 
-Enabling [Varnish](/php/varnish/) for your application is very simple. All instances of PHP provide
-[Varnish](/php/varnish/), you just have to configure your application to use it.
+Enabling [Varnish](/tools/varnish/) for your application is very simple. All instances of PHP provide
+[Varnish](/tools/varnish/), you just have to configure your application to use it.
 
 1. To use Varnish in your application, you have to create a `varnish.vcl` file in the `clevercloud` folder of
 your application. If this folder doesn't exist, create it in the **root** of your project.

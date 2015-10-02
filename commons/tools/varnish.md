@@ -1,12 +1,12 @@
 ---
-title: Use Varnish as HTTP Cache
-shortdesc: This article shows you how enable Varnish on your application.
+title: Varnish as HTTP Cache
+position: 3
 ---
 
 # Varnish
 
-Varnish is a HTTP proxy-cache, which works as a reverse proxy between your application and the client.
-Following rules defined by the user, Varnish will caches the data of an application to reduce the load.
+[Varnish](https://www.varnish-cache.org/) is a HTTP proxy-cache, which works as a reverse proxy between your application
+and the client. Following rules defined by the user, Varnish will caches the data of an application to reduce the load.
 
 
 ## Enable Varnish for you applicaiton
