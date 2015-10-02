@@ -1,6 +1,7 @@
 ---
 title: Deploy PHP applications
-shortdesc: PHP is a widely-used general-purpose scripting language that is especially suited for Web development and can be embedded into HTML.
+shortdesc: PHP is a widely-used general-purpose scripting language that is especially suited for Web development and can
+be embedded into HTML.
 ---
 
 # Deploy PHP apps
@@ -9,7 +10,8 @@ PHP is available on our platform with the branches 5.4 and 5.5. You can use FTP 
 
 ## Overview
 
-PHP is a widely-used general-purpose scripting language that is especially suited for Web development and can be embedded into HTML.
+PHP is a widely-used general-purpose scripting language that is especially suited for Web development and can be embedded
+into HTML.
 
 ## Create an application
 
@@ -19,7 +21,7 @@ PHP is a widely-used general-purpose scripting language that is especially suite
 3. Select the scalability options: <figure class="cc-content-img"><img src="/assets/images/select-scalab.png"/></figure>
 3. Enter your application's name and description, choose your deployment zone and click "Create".
 <figure class="cc-content-img"><img src="/assets/images/choose-name.png"/></figure>
-5. *Optional*: <a href="/addons/clever-cloud-addons/">add an add-on</a>
+5. *Optional*: [add an add-on](/addons/clever-cloud-addons/).
 
 <div class="alert alert-hot-problems">
 <h4>Warning:</h4>
@@ -33,13 +35,13 @@ PHP is a widely-used general-purpose scripting language that is especially suite
 
 ##Configuration files for PHP applications
 
-The configuration file for your PHP application must be
-`clevercloud/php.json`, that is a *php.json* file in a *clevercloud*
-folder at the root of your application.
+The configuration file for your PHP application must be `/clevercloud/php.json`, that is a *php.json* file in a
+`/clevercloud` folder at the root of your application.
 
 ### Change the webroot
 
-Since one of the best practices of PHP development is to take the libraries and core files outside the webroot, you may want to set another webroot than the default one (*the root of your application*).
+Since one of the best practices of PHP development is to take the libraries and core files outside the webroot, you may
+want to set another webroot than the default one (*the root of your application*).
 
 To change the webroot, just set the key `webroot` in the `deploy` part
 of the configuration file *clevercloud/php.json* with the absolute path (*from the root of your application*) of your new public folder.
@@ -63,7 +65,8 @@ Please note the absolute path style: `/public`.
 
 ### Change PHP settings
 
-Most of PHP settings can be changed using a `.user.ini` file. Please refer to the <a href="http://www.php.net/manual/en/configuration.file.per-user.php" target="_blank">official documentation</a> for more information.
+Most of PHP settings can be changed using a `.user.ini` file. Please refer to the
+[official documentation](http://www.php.net/manual/en/configuration.file.per-user.php) for more information.
 
 Other settings can be changed by adding the following line in `clevercloud/php.json`:
 
@@ -94,17 +97,20 @@ You can fix the maximum number of PHP running processes per instance by adding t
    }
 ```
 
-This setting is usefull if you need to limit the number of running processes according to the maximum connections limit of your MySQL or PostgreSQL database.
+This setting is usefull if you need to limit the number of running processes according to the maximum connections limit 
+of your MySQL or PostgreSQL database.
 
 By default, `pm.max_children` is set to **10**.
 
 ### Prevent Apache to redirect HTTPS calls to HTTP when adding a trailing slash
 
-`DirectorySlash` is enabled by default on the PHP scalers, therefore Apache will add a trailing slash to a resource when it detects that it is a directory.
+`DirectorySlash` is enabled by default on the PHP scalers, therefore Apache will add a trailing slash to a resource when
+ it detects that it is a directory.
 
 eg. if foobar is a directory, Apache will automatically redirect http://example.com/foobar to http://example.com/foobar/
 
-Unfortunately the module is unable to detect if the request comes from a secure connection or not. As a result it will force an HTTPS call to be redirected to HTTP.
+Unfortunately the module is unable to detect if the request comes from a secure connection or not. As a result it will
+force an HTTPS call to be redirected to HTTP.
 
 In order to prevent this behavior, you can add the following statements in a `.htaccess` file:
 
@@ -115,7 +121,8 @@ RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule ^(.+[^/])$          %{HTTP:X-Forwarded-Proto}://%{HTTP_HOST}/$1/  [R=301,L,QSA]
 ```
 
-These statements will keep the former protocol of the request when issuying the redirect. Assuming that the header X-Forwarded-Proto is always filled (which is the case on our platform).
+These statements will keep the former protocol of the request when issuying the redirect. Assuming that the header
+X-Forwarded-Proto is always filled (which is the case on our platform).
 
 If you want to force all redirections to HTTPS, you can replace `%{HTTP:X-Forwarded-Proto}` with `https`.
 
@@ -174,9 +181,13 @@ Example of a `composer.json` file:
 
 To prevent download dependencies's fails like 
 
-```Failed to download symfony/symfony from dist: Could not authenticate against github.com```
+```
+Failed to download symfony/symfony from dist: Could not authenticate against github.com
+```
 
-that is often caused by rate limit of GitHub API while deploying your apps, we recommend you to add `oauth` token in your composer configuration file or in separate file nammed as describe in [this](https://getcomposer.org/doc/articles/troubleshooting.md#api-rate-limit-and-oauth-tokens) FAQ entry.
+that is often caused by rate limit of GitHub API while deploying your apps, we recommend you to add `oauth` token in
+your composer configuration file or in separate file nammed as describe in
+[this](https://getcomposer.org/doc/articles/troubleshooting.md#api-rate-limit-and-oauth-tokens) FAQ entry.
 
 You can find more documentation about composer configuration at [getcomposer.com](https://getcomposer.org/doc/04-schema.md).
 
@@ -277,11 +288,14 @@ It's quite not exhaustive, so it doesn't mean that other CMS can't work on the C
 
 ## Available extensions and modules
 
-You can check enabled extensions and versions by viewing our `phpinfo()` example for <a href="https://php54info.cleverapps.io" target="_blank">PHP 5.4</a> and <a href="https://php55info.cleverapps.io" target="_blank">PHP 5.5</a>.
+You can check enabled extensions and versions by viewing our `phpinfo()` example for
+[PHP 5.4](https://php54info.cleverapps.io) and [PHP 5.5](https://php55info.cleverapps.io).
 
-If you have a request about modules, feel free to ask on <a href="https://groups.google.com/forum/?fromgroups#!forum/clever-cloud-users" target="_blank">Clever Cloud user group</a>.
+If you have a request about modules, feel free to ask on
+[Clever Cloud user group](https://groups.google.com/forum/?fromgroups#!forum/kclever-cloud-users).
 
 
 ## Deploy on Clever Cloud
 
-Application deployment on Clever Cloud is via **Git or FTP**. Follow [these steps](/clever-cloud-overview/add-application/) to deploy your application.
+Application deployment on Clever Cloud is via **Git or FTP**. Follow
+[these steps](/clever-cloud-overview/add-application/) to deploy your application.
