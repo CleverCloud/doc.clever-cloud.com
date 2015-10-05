@@ -33,7 +33,7 @@ into HTML.
 </p>
 </div>
 
-##Configuration files for PHP applications
+## Configuration files for PHP applications
 
 The configuration file for your PHP application must be `/clevercloud/php.json`, that is a *php.json* file in a
 `/clevercloud` folder at the root of your application.
@@ -293,6 +293,23 @@ You can check enabled extensions and versions by viewing our `phpinfo()` example
 
 If you have a request about modules, feel free to ask on
 [Clever Cloud user group](https://groups.google.com/forum/?fromgroups#!forum/kclever-cloud-users).
+
+
+## Use Redis to store PHP Sessions
+
+We provide the possibility to store the PHP sessions in a [Redis database](/addons/redis/) to improve the performances of
+your application.
+
+To enable this feature, you need a Redis add-on and you have to create an
+[environment variable](/admin-console/environment-variables/) named `SESSION_TYPE` with the value `redis`.
+
+<div class="alert alert-hot-problems">
+ <h4>Warning:</h4>
+ <p>You must have a <a href="/addons/redis/">Redis</a> add-on
+ <a href="/addons/clever-cloud-addons/#link-an-add-on-to-your-applicaiton">linked with your application</a>
+ to enable PHP session storage in Redis.<br />
+ If no Redis add-on is linked with your application, the deployment will fail.</p>
+</div>
 
 
 ## Deploy on Clever Cloud

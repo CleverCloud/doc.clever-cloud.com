@@ -25,7 +25,7 @@ Add-ons from external partners will be released shortly.
 
 ## Adding an add-on
 
-To add an addon, please refer to the [dedicated section](/addons/add-an-addon/).
+To add an addon, please refer to the [dedicated section](/addons/clever-cloud-addons/).
 
 
 ## Billing

@@ -58,6 +58,15 @@ Once an add-on is created, two tabs are avaialble:
 * the Configuration tab
 
 
+### Link an add-on to your applicaiton
+
+To link an add-on with your application, just follow the following steps:
+
+1. Go in the organisation of your application and click on the name of the application you want to link with your add-on.
+2. Go in the **Add-ons** section.
+3. Click on the **Link** button of the add-on you want to link your application with.
+
+
 ### Information screen
 
 This screen sums-up the caracteristic of the selected add-on.
@@ -72,6 +81,7 @@ Features and environnement varaibles (if applicable) are shown.
   </figcaption>
 </figure>
 
+
 ### Configuration screen
 
 Add-ons can be managed from the Configuration tab.
@@ -85,6 +95,7 @@ This screen is managed directly by the provider of the add-on.
     Example of the configuration tab of an add-on
   </figcaption>
 </figure>
+
 
 ## Delete an add-on
 
