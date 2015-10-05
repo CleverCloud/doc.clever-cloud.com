@@ -114,14 +114,9 @@ your application. If this folder doesn't exist, create it in the **root** of you
 Wordpress.
 
     ``` bash
-    vcl 4.0;
-    
     acl purge {
-        "10.0.1.100";
-        "10.0.1.101";
-        "10.0.1.102";
-        "10.0.1.103";
-        "10.0.1.104";
+        "localhost";
+        "127.0.0.1";
     }
     
     sub vcl_recv {

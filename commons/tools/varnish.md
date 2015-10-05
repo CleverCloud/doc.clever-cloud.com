@@ -18,9 +18,8 @@ This file describes how Varnish caches your applications and how it decides to r
 
 <div class="alert alert-hot-problems">
 <h5>Warning:</h5>
-<div>
-the backend section of the `varnish.vcl` configuration file is not necessary as it is already handled
-by Clever Cloud
+<div>The <pre>vcl 4.0;</pre> and backend section of the `varnish.vcl` configuration file is not necessary as they are
+already handled by Clever Cloud
 </div>
 </div>
 
@@ -40,14 +39,9 @@ We also recommend you to use a plugin such as **Varnish HTTP Purge** to automati
 created/updated, a comment is posted, ...
 
 ``` bash
-vcl 4.0;
-
 acl purge {
-    "10.0.1.100";
-    "10.0.1.101";
-    "10.0.1.102";
-    "10.0.1.103";
-    "10.0.1.104";
+    "localhost";
+    "127.0.0.1";
 }
 
 sub vcl_recv {
