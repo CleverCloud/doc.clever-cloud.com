@@ -64,7 +64,7 @@ To link an add-on with your application, just follow the following steps:
 
 1. Go in the organisation of your application and click on the name of the application you want to link with your add-on.
 2. Go in the **Add-ons** section.
-3. Click on the **Link** button of the add-on you want to link your application with.
+3. Click on the **Link** button of the add-on you want to link to your application.
 
 
 ### Information screen
