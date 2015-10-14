@@ -18,8 +18,8 @@ This file describes how Varnish caches your applications and how it decides to r
 
 <div class="alert alert-hot-problems">
 <h5>Warning:</h5>
-<div>The <pre>vcl 4.0;</pre> and backend section of the `varnish.vcl` configuration file is not necessary as they are
-already handled by Clever Cloud
+<div>The <code>vcl 4.0;</code> and backend section of the `varnish.vcl` configuration file are not necessary as they
+arealready handled by Clever Cloud.
 </div>
 </div>
 
