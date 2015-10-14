@@ -44,6 +44,17 @@ acl purge {
     "127.0.0.1";
 }
 
+sub vcl_backend_response {
+  if ( (!(bereq.url ~ "(wp-(login|admin)|login)")) || (bereq.method == "GET") ) {
+    unset beresp.http.set-cookie;
+    set beresp.ttl = 1h;
+  }
+
+  if (bereq.url ~ "\.(gif|jpg|jpeg|swf|css|js|flv|mp3|mp4|pdf|ico|png)(\?.*|)$") {
+    set beresp.ttl = 365d;
+  }
+}
+
 sub vcl_recv {
   if (req.method == "PURGE") {
     if (!client.ip ~ purge) {
@@ -71,17 +82,6 @@ sub vcl_recv {
     } else {
       unset req.http.cookie;
     }
-  }
-}
-
-sub vcl_backend_response {
-  if ( (!(bereq.url ~ "(wp-(login|admin)|login)")) || (bereq.method == "GET") ) {
-    unset beresp.http.set-cookie;
-    set beresp.ttl = 1h;
-  }
-
-  if (bereq.url ~ "\.(gif|jpg|jpeg|swf|css|js|flv|mp3|mp4|pdf|ico|png)(\?.*|)$") {
-    set beresp.ttl = 365d;
   }
 }
 
