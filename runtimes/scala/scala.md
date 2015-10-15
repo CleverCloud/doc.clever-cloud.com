@@ -10,16 +10,14 @@ This document will explain you how to set up your app to run on our service.
 
 ## Overview
 
-Scala is an object-functional programming and scripting language that runs on the Java platform for general software applications, statically typed, designed to concisely express solutions in an elegant, type-safe and lightweight manner. Scala includes full support for functional programming (including currying, pattern matching, algebraic data types, lazy evaluation, tail recursion, immutability, etc.).
+Scala is an object-functional programming and scripting language that runs on the Java platform for general software
+applications, statically typed, designed to concisely express solutions in an elegant, type-safe and lightweight manner.
+Scala includes full support for functional programming (including currying, pattern matching, algebraic data types, lazy
+evaluation, tail recursion, immutability, etc.).
 
 ## Create an application
 
-1. Create a new app by clicking on the **Add an application** button, in the headbar.
-2. Select the language/framework: <figure class="cc-content-img"><img src="/assets/images/select-lang.png"/></figure>
-3. Select the scalability options: <figure class="cc-content-img"><img src="/assets/images/select-scalab.png"/></figure>
-4. Enter your application's name and description, choose your deployment zone and click "Create".
-<figure class="cc-content-img"><img src="/assets/images/choose-name.png"/></figure>
-5. *Optional*: <a href="/addons/add-an-addon/">add an add-on</a>
+Refer to the page [Deploy an application on Clever Cloud](/clever-cloud-overview/add-application/).
 
 ## Requirements
 
