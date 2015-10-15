@@ -63,14 +63,16 @@ See [Custom Domain Names](/admin-console/apps-management/#custom-domain-names) s
 
 ## How do I define cron jobs for my application?
 
-See [Cron Configuration File](/crons/crontab-configuration-file/) for more information.
+See [Cron Configuration File](/tools/crons/) for more information.
 
 ## How many active requests can my app serve at one time?
 
 There are two possibilities, according to the scalability settings you've opted for.
 
-1. You have set a single [scaler](#def-scaler) : the maximum active requests depends on your [scaler's](#def-scaler) computing limits.
-2. You have set auto-scalability, new [scalers](#def-scaler) will be started as long as your app need more resources (until it reaches the maximum number of [scalers](#def-scaler) you have defined).
+1. You have set a single [scaler](#def-scaler) : the maximum active requests depends on your [scaler's](#def-scaler)
+computing limits.
+2. You have set auto-scalability, new [scalers](#def-scaler) will be started as long as your app need more resources
+(until it reaches the maximum number of [scalers](#def-scaler) you have defined).
 
 ## How to know if a user comes from a secure connection?
 

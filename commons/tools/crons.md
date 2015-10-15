@@ -1,11 +1,11 @@
 ---
-title: Running crons 
+title: Running crons
 position: 1
 ---
 
 # CRON configuration file
 
-The configuration file used for crontab is **clevercloud/cron.json**.
+The configuration file used for crontab is `/clevercloud/cron.json`.
 
 Here is the general syntax:
 
