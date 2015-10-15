@@ -10,7 +10,7 @@ and the client. Following rules defined by the user, Varnish will caches the dat
 
 ## Enable Varnish for you applicaiton
 
-Varnish is provided by default in all instances. To enable it, you just have to create a `varnish.vcl` file
+Varnish is provided by default in PHP >= 5.5 instances. To enable it, you just have to create a `varnish.vcl` file
 in the `/clevercloud` folder.
 
 This file describes how Varnish caches your applications and how it decides to return a cached resource or not.
