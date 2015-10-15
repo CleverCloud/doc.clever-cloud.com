@@ -38,17 +38,15 @@ dashboard) and application deployment (requiring actions from git for your FTP a
 *To deploy via Git, you need it installed on your machine. You can find more
 information on Git website: [git-scm.com](http://git-scm.com)*
 
-*Note that during the deployment, the .git folder is automatically deleted to
-avoid security problems. If you need to know which version is used on the server
-please use the `COMMIT_ID` [environment variable](/admin-console/environment-variables/).*
+*Note:* During the deployment, the .git folder is automatically deleted to avoid security problems. If you need to know
+which version is used on the server please use the `COMMIT_ID` [environment variable](/admin-console/environment-variables/).
 
 Follow these steps to deploy your application:
 
- 1. Get the git deployment url in the application information page:
+ 1. Get the git deployment url in the application information page, who looks like:
  ``git+ssh://git@push.clever-cloud.com/<your_app_id>.git``.
 
- 2. In your terminal, go to your application repository. If you do not already
- track your app with git, start by typing:
+ 2. In your terminal, go to your application repository. If you do not already track your app with git, start by typing:
 
 	```bash
 	$ git init
@@ -73,7 +71,7 @@ Follow these steps to deploy your application:
    <p>You can only push to the <strong>master</strong> branch for deployment.
    Trying to push in another branch will trigger an error.</p>
    <p>In order to push to <strong>master</strong> from a non-master local branch, use this syntax:</p>
-   <pre>git push &lt; name &gt; yourbranch:master</pre>
+   <pre>git push &lt;remote&gt; &lt;your branch&gt;:master</pre>
  </div>
 
  Checkout your application **logs** in the dashboard to **monitor the deployment**.
@@ -105,22 +103,18 @@ From now, a push to your GitHub repo will also trigger a Clever Cloud deployment
 
 It is possible to deploy via FTP with PHP and static applications.  
 
-To deploy via FTP, you need an FTP software installed on your machine. Filezilla
-is one of them.
+To deploy via FTP, you need an FTP software installed on your machine. [Filezilla](https://filezilla-project.org/) is 
+one of them.
 
-When you have chosen to deploy your application via FTP, a <a
-href="/addons/clever-cloud-addons/#fs-buckets-file-system-with-persistence">FS
-Bucket</a> has been created with an ID matching your application's ID.
-You will find the FTP credentials in the configuration tab of this
-particular FS Bucket.
+When you have chosen to deploy your application via FTP, a [FS Bucket](/addons/fs_buckets/) has been created with an ID
+matching your application's ID. You will find the FTP credentials in the configuration tab of this particular FS Bucket.
 
-[More documentation about Filezilla.](https://wiki.filezilla-project.org/FileZilla_Client_Tutorial_(en))
+[More documentation about Filezilla.](https://wiki.filezilla-project.org/FileZilla_Client_Tutorial_%28en%29)
 
 
 <div class="alert alert-hot-problems">
 <h4>Warning:</h4>
-<p>An FTP application is automatically started once the application is created,
-even if no code has been sent.</p>
+<p>An FTP application is automatically started once the application is created, even if no code has been sent.</p>
 </div>
 
 
