@@ -1,7 +1,6 @@
 ---
 title: Deploy PHP applications
-shortdesc: PHP is a widely-used general-purpose scripting language that is especially suited for Web development and can
-be embedded into HTML.
+shortdesc: PHP is a widely-used general-purpose scripting language that is especially suited for Web development and can be embedded into HTML.
 ---
 
 # Deploy PHP apps
