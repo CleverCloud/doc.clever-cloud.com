@@ -18,7 +18,9 @@ Refer to the page [Deploy an application on Clever Cloud](/clever-cloud-overview
 
 ## Necessary information
 
-* the application must be located at the **root** of the git repository
+* The application must be located at the **root** of the git repository.
+* Play 2.4 need **Java 8** to work. You need to [select Java 8](https://www.clever-cloud.com/doc/java/select-java-version/)
+for your application.
 
 ## Configuration file
 
