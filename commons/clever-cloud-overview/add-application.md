@@ -99,6 +99,12 @@ steps to trigger a deploy on Clever Cloud from a push to GitHub:
 
 From now, a push to your GitHub repo will also trigger a Clever Cloud deployment.
 
+Note that only push on master will trigger the deployment.
+
+Private GitHub repositories are also supported : you only have to add the <a href="https://github.com/CleverCloudDeployer">CleverCloudDeployer user</a> as a collaborator to your private repository. Note that read only access is sufficient.
+
+Caution : in Github, private repositories in an ordinary user account are an all-or-nothing deal: either someone has full read/write access (i.e., they're a collaborator) or they have no access. However, if you set up an organization, create the repo under the aegis of the organization, and then add the collaborator, you have much more fine-grained control (including giving read-only access to a private repository).
+
 ## FTP Deployment
 
 It is possible to deploy via FTP with PHP and static applications.  
