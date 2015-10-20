@@ -8,6 +8,10 @@ position: 6
 PostgreSQL is an object-relational database management system (ORDBMS) with an emphasis on extensibility
 and on standards-compliance.
 
+## PostgreSQL version
+
+The version currently installed by the add-on is PostgreSQL 9.2.8
+
 ## PostgreSQL plans
 
 <table class="table table-bordered table-striped dataTable"><caption>PostgreSQL pricing plans</caption>
