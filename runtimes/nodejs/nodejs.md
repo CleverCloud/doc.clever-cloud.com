@@ -8,21 +8,16 @@ shortdesc: Node.js is a platform built on Chrome's JavaScript runtime for buildi
 Clever Cloud allows you to deploy any Node.js application. This page will
 explain you how to set up your application to run it on our service.
 
-You do not need to change a lot in your application, the *requirements* will help you to configure your apps with some mandatory files to add, and properties to setup.
+You do not need to change a lot in your application, the *requirements* will help you to configure your apps with some
+mandatory files to add, and properties to setup.
 
 ## Overview
 
 Node.js is a platform built on Chrome's JavaScript runtime for building fast, scalable network applications. Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient, pretty good for data-intensive real-time applications that run across distributed devices.
 
-
 ## Create an application
 
-1. Create a new app by clicking on the **Add an application** button, in the headbar.
-2. Select the language/framework: <figure class="cc-content-img"><img src="/assets/images/select-lang.png"/></figure>
-3. Select the scalability options: <figure class="cc-content-img"><img src="/assets/images/select-scalab.png"/></figure>
-4. Enter your application's name and description, choose your deployment zone and click "Create".
-<figure class="cc-content-img"><img src="/assets/images/choose-name.png"/></figure>
-5. *Optional*: <a href="/addons/add-an-addon/">add an add-on</a>
+Refer to the page [Deploy an application on Clever Cloud](/clever-cloud-overview/add-application/).
 
 ## Necessary information
 

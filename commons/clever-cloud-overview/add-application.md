@@ -6,7 +6,7 @@ position: 4
 # Deploying an application
 
 There is two steps in this section: application creation (requiring actions from
- dashboard) and application deployment (requiring actions from git for your FTP access).
+dashboard) and application deployment (requiring actions from git for your FTP access).
 
 ## Create an application
 
@@ -15,15 +15,15 @@ There is two steps in this section: application creation (requiring actions from
  This starts the application creation wizard. If you account has been linked to
  GitHub, you can select a repository from your GitHub account.
 
- 2. *Optional:* in case of PHP or static applications, you can choose between FTP
- and Git deployment
-
- 3. Then select the language or the framework you need:
+ 2. Then select the language or the framework you need:
  <figure class="cc-content-img"><img src="/assets/images/select-lang.png"></figure>
+
+ 3. *Optional:* in case of PHP or static applications, you can choose between FTP
+ and Git deployment.
 
  4. In the next step, you will be prompted to select your scaling configuration.
  If you need help to configure your scaling options, please refer to
- <a href="/clever-cloud-overview/scaling/">the dedicated section</a>.
+ [the dedicated section](/clever-cloud-overview/scaling/).
 
  <figure class="cc-content-img">
    <img src="/assets/images/select-scalab.png"/>
@@ -31,24 +31,22 @@ There is two steps in this section: application creation (requiring actions from
 
  5. Enter the name and description of you app.
 
- 6. *Optional*: <a href="/addons/add-an-addon/">add an add-on</a> to your app.
+ 6. *Optional*: [add an add-on](/addons/clever-cloud-addons/) to your app.
 
 ## Git Deployment
-*To deploy via Git, you need it installed on your machine. You can find more
-information on Git website: <a href="http://git-scm.com">git-scm.com</a>*
 
-*Note that during the deployment, the .git folder is automatically deleted to
-avoid security problems. If you need to know which version is used on the server
-please use the <a href="/admin-console/environment-variables.md">`COMMIT_ID`</a>
- environment variable.*
+*To deploy via Git, you need it installed on your machine. You can find more
+information on Git website: [git-scm.com](http://git-scm.com)*
+
+*Note:* During the deployment, the .git folder is automatically deleted to avoid security problems. If you need to know
+which version is used on the server please use the `COMMIT_ID` [environment variable](/admin-console/environment-variables/).
 
 Follow these steps to deploy your application:
 
- 1. Get the git deployment url in the application information page:
+ 1. Get the git deployment url in the application information page, who looks like:
  ``git+ssh://git@push.clever-cloud.com/<your_app_id>.git``.
 
- 2. In your terminal, go to your application repository. If you do not already
- track your app with git, start by typing:
+ 2. In your terminal, go to your application repository. If you do not already track your app with git, start by typing:
 
 	```bash
 	$ git init
@@ -73,15 +71,16 @@ Follow these steps to deploy your application:
    <p>You can only push to the <strong>master</strong> branch for deployment.
    Trying to push in another branch will trigger an error.</p>
    <p>In order to push to <strong>master</strong> from a non-master local branch, use this syntax:</p>
-   <pre>git push &lt; name &gt; yourbranch:master</pre>
+   <pre>git push &lt;remote&gt; &lt;your branch&gt;:master</pre>
  </div>
 
- Checkout your application <b>logs</b> in the dashboard to <b>monitor the deployment</b>.
+ Checkout your application **logs** in the dashboard to **monitor the deployment**.
 
  <div class="alert alert-hot-problems">
    <h4>Troubleshooting:</h4>
    <p>If the remote ask you for a password right after a git push attempt, this is may due to a SSH Key misconfiguration.
-   <br>Add your SSH key in your profile here: <a href="https://console.clever-cloud.com/users/me/ssh-keys">https://console.clever-cloud.com/users/me/ssh-keys</a></p>
+   <br>Add your SSH key in your profile here:
+   <a href="https://console.clever-cloud.com/users/me/ssh-keys">https://console.clever-cloud.com/users/me/ssh-keys</a></p>
    <p>The full tutorial about adding SSH key is here: <a href="/doc/admin-console/ssh-keys/">Adding SSH keys</a> </p>
  </div>
 
@@ -104,23 +103,18 @@ From now, a push to your GitHub repo will also trigger a Clever Cloud deployment
 
 It is possible to deploy via FTP with PHP and static applications.  
 
-To deploy via FTP, you need an FTP software installed on your machine. Filezilla
-is one of them.
+To deploy via FTP, you need an FTP software installed on your machine. [Filezilla](https://filezilla-project.org/) is 
+one of them.
 
-When you have chosen to deploy your application via FTP, a <a
-href="/addons/clever-cloud-addons/#fs-buckets-file-system-with-persistence">FS
-Bucket</a> has been created with an ID matching your application's ID.
-You will find the FTP credentials in the configuration tab of this
-particular FS Bucket.
+When you have chosen to deploy your application via FTP, a [FS Bucket](/addons/fs_buckets/) has been created with an ID
+matching your application's ID. You will find the FTP credentials in the configuration tab of this particular FS Bucket.
 
-More documentation about Filezilla: <a href="https://wiki.filezilla-project.org/FileZilla_Client_Tutorial_(en)"
-target="_blank">https://wiki.filezilla-project.org/FileZilla_Client_Tutorial_(en)</a>
+[More documentation about Filezilla.](https://wiki.filezilla-project.org/FileZilla_Client_Tutorial_%28en%29)
 
 
 <div class="alert alert-hot-problems">
 <h4>Warning:</h4>
-<p>An FTP application is automatically started once the application is created,
-even if no code has been sent.</p>
+<p>An FTP application is automatically started once the application is created, even if no code has been sent.</p>
 </div>
 
 

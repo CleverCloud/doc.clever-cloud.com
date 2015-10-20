@@ -18,12 +18,7 @@ Ruby on Rails is an open source web application framework which runs on the Ruby
 
 ## Create an application
 
-1. Create a new app by clicking on the **Add an application** button, in the organisation menu.
-2. Then select the language/framework:  <figure class="cc-content-img"><img src="/assets/images/select-lang.png"></figure>
-3. Select the scalability options: <figure class="cc-content-img"><img src="/assets/images/select-scalab.png"/></figure>
-4. Enter your application's name and description, choose your deployment zone and click "Create".
-<figure class="cc-content-img"><img src="/assets/images/choose-name.png"/></figure>
-5. *Optional*: <a href="/addons/add-an-addon/">add an add-on</a>
+Refer to the page [Deploy an application on Clever Cloud](/clever-cloud-overview/add-application/).
 
 ## Necessary information
 
