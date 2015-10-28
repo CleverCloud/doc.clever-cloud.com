@@ -289,9 +289,9 @@ If you have a request about modules, feel free to contact our support at <suppor
 Some extensions need to be enabled explicitly. To enable this extensions, you'll need to set the corresponding
 [environment variable](/admin-console/environment-variables/):
 
-* OPcache: set the `ENABLE_OPCACHE` to `true`.
-* mysqlnd: set the `ENABLE_MYSQLND_MS` to `true`.
-* IonCube: set the `ENABLE_IONCUBE` to `true`.
+* OPcache: set `ENABLE_OPCACHE` to `true`.
+* mysqlnd: set `ENABLE_MYSQLND_MS` to `true`.
+* IonCube: set `ENABLE_IONCUBE` to `true`.
 
 <div class="alert alert-hot-problems">
  <h4>Warning:</h4>
