@@ -290,8 +290,17 @@ Some extensions need to be enabled explicitly. To enable this extensions, you'll
 [environment variable](/admin-console/environment-variables/):
 
 * OPcache: set `ENABLE_OPCACHE` to `true`.
-* mysqlnd: set `ENABLE_MYSQLND_MS` to `true`.
+
+    OPcache is a cache system who store PHP' compiled bytecode in shared memory to improve PHP performances.
+
+* mysqlnd_ms: set `ENABLE_MYSQLND_MS` to `true`.
+
+    mysqlnd_ms is a load balancing and replication plugin for mysqlnd (MySQLnative driver for PHP). It can be used with
+    a master/slave database system.
+
 * IonCube: set `ENABLE_IONCUBE` to `true`.
+
+    IonCube is a tool to obfuscate PHP code. It's often used by paying Prestashop and Wordpress plugins.
 
 <div class="alert alert-hot-problems">
  <h4>Warning:</h4>
