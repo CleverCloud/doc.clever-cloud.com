@@ -15,7 +15,7 @@ The version currently installed by the add-on is :
 - on shared plans (DEV and S) : PostgreSQL 9.2.8
 - on newly created dedicated databases (plans M and above) : Postgresql 9.3.4
 
-Note that PostgreSQL 9.4 branch (or 9.5 branch whe the final version will be released) will be rolled out as soon as possible on the dedicated databases plans.
+Note that PostgreSQL 9.4 branch (or 9.5 branch when the final version will be released) will be rolled out as soon as possible on the dedicated databases plans.
 
 ## PostgreSQL plans
 
