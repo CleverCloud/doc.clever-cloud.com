@@ -7,6 +7,8 @@ shortdesc: PHP is a widely-used general-purpose scripting language that is espec
 
 PHP is available on our platform with the branches 5.4 and 5.5. You can use FTP or Git to deploy your applications.
 
+The HTTP server is [Apache 2](https://httpd.apache.org/), and the PHP code is executed by [PHP-FPM](http://php-fpm.org/).
+
 ## Overview
 
 PHP is a widely-used general-purpose scripting language that is especially suited for Web development and can be embedded
@@ -95,7 +97,15 @@ of your MySQL or PostgreSQL database.
 
 By default, `pm.max_children` is set to **10**.
 
-### Prevent Apache to redirect HTTPS calls to HTTP when adding a trailing slash
+### Configure Apache
+
+We use Apache 2 as HTTP Server. In order to configure it, you can create a `.htaccess` file and set directives inside
+this file.
+
+The `.htaccess` file can be created everywhere in you app, depending of the part of the application covered by directives.
+However, directives who applies to the entire application must be declared in a `.htaccess` file to the application root.
+
+#### Prevent Apache to redirect HTTPS calls to HTTP when adding a trailing slash
 
 `DirectorySlash` is enabled by default on the PHP scalers, therefore Apache will add a trailing slash to a resource when
  it detects that it is a directory.
@@ -117,7 +127,7 @@ RewriteRule ^(.+[^/])$          %{HTTP:X-Forwarded-Proto}://%{HTTP_HOST}/$1/  [R
 These statements will keep the former protocol of the request when issuying the redirect. Assuming that the header
 X-Forwarded-Proto is always filled (which is the case on our platform).
 
-If you want to force all redirections to HTTPS, you can replace `%{HTTP:X-Forwarded-Proto}` with `https`.
+If you want to force all redirects to HTTPS, you can replace `%{HTTP:X-Forwarded-Proto}` with `https`.
 
 ### Composer
 
@@ -170,15 +180,15 @@ Example of a `composer.json` file:
 
 #### GitHub rate limit
 
-To prevent download dependencies's fails like 
+Sometimes, you can encounter the following error when downloading dependencies:
 
 ```
 Failed to download symfony/symfony from dist: Could not authenticate against github.com
 ```
 
-that is often caused by rate limit of GitHub API while deploying your apps, we recommend you to add `oauth` token in
-your composer configuration file or in separate file nammed as describe in
-[this](https://getcomposer.org/doc/articles/troubleshooting.md#api-rate-limit-and-oauth-tokens) FAQ entry.
+To prevent this download dependencies's fails that is often caused by rate limit of GitHub API while deploying your apps,
+we recommend you to add `oauth` token in your composer configuration file or in separate file named as described in
+[composer FAQ (API rate limit and OAuth tokens)](https://getcomposer.org/doc/articles/troubleshooting.md#api-rate-limit-and-oauth-tokens).
 
 You can find more documentation about composer configuration at [getcomposer.com](https://getcomposer.org/doc/04-schema.md).
 
