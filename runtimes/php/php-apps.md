@@ -78,7 +78,7 @@ Here is the list of available settings:
 
 * `mbstring.func_overload`
 
-<strong>Note: </strong>You can send a request to the support if you need to change a setting which is not in this list.
+**Note**: You can send a request to the support if you need to change a setting which is not in this list.
 
 #### Maximum PHP Children per instance
 
@@ -143,7 +143,6 @@ The PHP instances embed the latest release of Composer. You can check it on the 
  <h4>Note:</h4>
  <p>Add your own `composer.phar` file in the root of your repository if you need to override our version for the build phase.</p>
 </div>
-
 
 Example of a `composer.json` file:
 
@@ -230,7 +229,6 @@ Then add these lines in `clevercloud/php.json`:
 
 <strong>Note: </strong>You must add the _execute_ permission to your file (`chmod u+x yourfile`) before pushing it.
 
-
 ## Environment injection
 
 Clever Cloud can inject environment variables that are defined in the
@@ -253,7 +251,7 @@ $dbh = new PDO(
 
 The following is the list of tested CMS by our team.
 
-It's quite not exhaustive, so it doesn't mean that other CMS can't work on the Clever Cloud platform.  
+It's quite not exhaustive, so it does not mean that other CMS can't work on the Clever Cloud platform.
 
 <div class="">
 <table class="table table-bordered">
@@ -291,9 +289,33 @@ It's quite not exhaustive, so it doesn't mean that other CMS can't work on the C
 You can check enabled extensions and versions by viewing our `phpinfo()` example for
 [PHP 5.4](https://php54info.cleverapps.io) and [PHP 5.5](https://php55info.cleverapps.io).
 
-If you have a request about modules, feel free to ask on
-[Clever Cloud user group](https://groups.google.com/forum/?fromgroups#!forum/kclever-cloud-users).
+**Warning**: some extensions (OPcache, Mysqlnd and IonCube) need to be enabled explicitly. Please read below to know
+how to enable them.
 
+If you have a request about modules, feel free to contact our support at <support@clever-cloud.com>.
+
+### Enable specific extensions
+
+Some extensions need to be enabled explicitly. To enable this extensions, you'll need to set the corresponding
+[environment variable](/admin-console/environment-variables/):
+
+* OPcache: set `ENABLE_OPCACHE` to `true`.
+
+    OPcache is a cache system who store PHP' compiled bytecode in shared memory to improve PHP performances.
+
+* mysqlnd_ms: set `ENABLE_MYSQLND_MS` to `true`.
+
+    mysqlnd_ms is a load balancing and replication plugin for mysqlnd (MySQLnative driver for PHP). It can be used with
+    a master/slave database system.
+
+* IonCube: set `ENABLE_IONCUBE` to `true`.
+
+    IonCube is a tool to obfuscate PHP code. It's often used by paying Prestashop and Wordpress plugins.
+
+<div class="alert alert-hot-problems">
+ <h4>Warning:</h4>
+ <p>This extensions are only available for PHP >= 5.5.</p>
+</div>
 
 ## Use Redis to store PHP Sessions
 
@@ -310,7 +332,6 @@ To enable this feature, you need a Redis add-on and you have to create an
  to enable PHP session storage in Redis.<br />
  If no Redis add-on is linked with your application, the deployment will fail.</p>
 </div>
-
 
 ## Deploy on Clever Cloud
 
