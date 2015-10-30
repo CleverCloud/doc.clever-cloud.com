@@ -6,7 +6,8 @@ shortdesc: PHP is a widely-used general-purpose scripting language that is espec
 # Deploy PHP apps
 
 PHP is available on our platform with the branches 5.4 and 5.5. You can use FTP or Git to deploy your applications.
-As HTTP Server, we use Apache 2.
+
+The HTTP server is [Apache 2](https://httpd.apache.org/), and the PHP code is executed by [PHP-FPM](http://php-fpm.org/).
 
 ## Overview
 
@@ -126,7 +127,7 @@ RewriteRule ^(.+[^/])$          %{HTTP:X-Forwarded-Proto}://%{HTTP_HOST}/$1/  [R
 These statements will keep the former protocol of the request when issuying the redirect. Assuming that the header
 X-Forwarded-Proto is always filled (which is the case on our platform).
 
-If you want to force all redirections to HTTPS, you can replace `%{HTTP:X-Forwarded-Proto}` with `https`.
+If you want to force all redirects to HTTPS, you can replace `%{HTTP:X-Forwarded-Proto}` with `https`.
 
 ### Composer
 
@@ -187,7 +188,7 @@ Failed to download symfony/symfony from dist: Could not authenticate against git
 ```
 
 that is often caused by rate limit of GitHub API while deploying your apps, we recommend you to add `oauth` token in
-your composer configuration file or in separate file named as describe in
+your composer configuration file or in separate file named as described in
 [this](https://getcomposer.org/doc/articles/troubleshooting.md#api-rate-limit-and-oauth-tokens) FAQ entry.
 
 You can find more documentation about composer configuration at [getcomposer.com](https://getcomposer.org/doc/04-schema.md).
