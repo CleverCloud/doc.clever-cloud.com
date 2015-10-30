@@ -268,7 +268,7 @@ It's quite not exhaustive, so it does not mean that other CMS can't work on the 
 </tr>
 <tr>
 <td>Symfony</td>
-<td> </td>
+<td>Thelia</td>
 </tr>
 </tbody>
 </table>
