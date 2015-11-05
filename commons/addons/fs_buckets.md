@@ -3,7 +3,7 @@ title: FS Buckets add-on
 position: 3
 ---
 
-# FS Buckets: file system with persistance <span class="cc-beta pull-right" title="Currently in Beta version"></span>
+# FS Buckets: file system with persistence <span class="cc-beta pull-right" title="Currently in Beta version"></span>
 
 <div class="alert alert-hot-problems">
   <h5>Note for Beta Version</h5>
@@ -98,7 +98,7 @@ buckets</td>
 <div class="alert alert-hot-problems">
 <h5>Important note about target folder</h5>
 <p>
-The folder must not exists in your repository (or it needs to be empty). Otherwise, the mount of your bucket will be ignored.
+The folder must not exist in your repository (or it needs to be empty). Otherwise, the mount of your bucket will be ignored.
 </p>
 <p>
 You can mount the same bucket in different folders, but they will share the same

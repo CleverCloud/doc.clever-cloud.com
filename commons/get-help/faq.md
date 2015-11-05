@@ -7,11 +7,11 @@ position: 3
 
 ## What is a Scaler?
 
-A <dfn id="def-scaler">scaler</dfn> is a individual container hosting your app. You can attribute one or more Scalers to your apps. Scalers comes in many sizes based on each language requirement from XS to XXXL.
+A <dfn id="def-scaler">scaler</dfn> is an individual container hosting your app. You can attribute one or more Scalers to your apps. Scalers comes in many sizes based on each language requirement from XS to XXXL.
 
 Each [scaler](#def-scaler) is given a fixed set of resources, depending on the chosen language. A Java [scaler](#def-scaler) will have more RAM than a PHP [scaler](#def-scaler).
 The way you scale an application is by assigning it new [scalers](#def-scaler).
-When enabling auto-scalability, you have to set a minimum and a maximum of active [scalers](#def-scaler) in your apps settings. This way you can prcisely control your monthly fee.
+When enabling auto-scalability, you have to set a minimum and a maximum of active [scalers](#def-scaler) in your apps settings. This way you can precisely control your monthly fee.
 
 ## What languages and frameworks are supported by Clever Cloud?
 
@@ -38,7 +38,7 @@ Please refer to our Terms and Conditions, article 6, *Obligations and responsibi
 
 ## How is the current load report in my application's admin console generated?
 
-We use custom probes to monitor :
+We use custom probes to monitor:
 
 * hardware's components usage
 * databases read / write / update operations
@@ -97,17 +97,17 @@ All connections are handled by load-balancers ahead of your applications
 and forwarded in plain http.
 
 So if you get the `REMOTE_ADDR` or `Client-IP` header, you will only
-get the IP of the front loadbalancer that forwarded the user request.
+get the IP of the front load balancer that forwarded the user request.
 
 Instead of these headers you need to use the `X-Forwarded-For` HTTP
-header, which is set by our loadbalancer to the client's address. Please
+header, which is set by our load balancer to the client's address. Please
 remember that it is a list, containing the address of each proxy the request
 has been through, if the said proxy has modified the `X-Forwarded-For`
 header: [Read the Wikipedia page for more informations](https://en.wikipedia.org/wiki/X-Forwarded-For)
 
-## When my application runs on multiple instances, how can I differenciate them?
+## When my application runs on multiple instances, how can I differentiate them?
 
-If your application needs to differenciate all the running nodes internally,
+If your application needs to differentiate all the running nodes internally,
 you can use the `INSTANCE_NUMBER` environment variable.
 
 For example, if 3 instances are running for your application, this environment variable will

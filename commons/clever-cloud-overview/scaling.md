@@ -16,12 +16,12 @@ With the Scalers, Clever Cloud gives you the ability to scale your application <
 
 ## Horizontal scaling
 
-Provided by most PaaS providers. 
+Provided by most PaaS providers.
 
 In case of large traffic, we detect a high load on your application and spawn <b>another instance in parallel</b>.
 It gives more power to your application by setting up another identical application. Both will run in parallel with load balancing. And so on.  
 
-This process is exactly the opposite when the <b>load decreases</b>. A Scaler is removed and so on till a <b>minimum reasonable level</b>.
+This process is exactly the opposite when the <b>load decreases</b>. A Scaler is removed and so on till a <b>minimum reasonable level</b> is reached.
 
 The following scheme depicts a Scaler replication in case of a load increase:  
 
@@ -43,9 +43,9 @@ You can manage the range of Scalers you consider in the application configurator
 
 ## Vertical scaling
 
-In case of large traffic, we detect a high load on your application and setup <b>a new larger Scaler</b>.  
+In case of large traffic, we detect a high load on your application and set up <b>a new larger Scaler</b>.  
 
-In case of low traffic, we detect a low load and setup <b>a new smaller Scaler</b>.  
+In case of low traffic, we detect a low load and set up <b>a new smaller Scaler</b>.  
 
 You give more power to your application by setting up a larger instance that will replace the previous one. The more the load, the larger the instance.  
 

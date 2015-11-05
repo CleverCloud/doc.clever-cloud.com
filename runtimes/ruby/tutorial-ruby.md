@@ -19,7 +19,7 @@ To follow this tutorial, you will need:
 
 * Bundler (`gem install bundler` and you're good to go!)
 
-* Your prefered editor
+* Your preferred editor
 
 * Git (for the deploy part)
 

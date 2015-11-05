@@ -8,12 +8,12 @@ position: 2
 Applications often requires one or more services in addition to the runtime itself. For example, you may need databases
 for storing data, cache engine for performances, long time log storage, etc...
 
-Theses services are called add-ons. There is a great number of them, based on many technologies, and developed by many
-companies, or communities. It could be a database, a cache system or a search engine. 
+These services are called add-ons. There is a great number of them, based on many technologies, and developed by many
+companies, or communities. It could be a database, a cache system or a search engine.
 
 ## Clever Cloud add-ons
 
-Some add-ons are developed and maintained by Clever Cloud, exclusively. 
+Some add-ons are developed and maintained by Clever Cloud, exclusively.
 
 * Cellar
 * File System Buckets

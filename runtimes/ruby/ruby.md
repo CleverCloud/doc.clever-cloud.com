@@ -12,7 +12,6 @@ You do not need to change a lot in your application, the *requirements* will hel
 
 ## Overview
 
-
 Ruby on Rails is an open source web application framework which runs on the Ruby programming language. It is a full-stack framework: it allows creating pages and applications that gather information from the web server, talk to or query the database, and render templates out of the box. As a result, Rails features a routing system that is independent of the web server.
 
 
@@ -24,7 +23,7 @@ Refer to the page [Deploy an application on Clever Cloud](/clever-cloud-overview
 
 Be sure that:
 
-* you push in <b>master branch</b>
+* you push to the <b>master branch</b>
 
 * you commit your <strong>Gemfile.lock</strong> file
 
@@ -67,12 +66,12 @@ releases, but, hey, we're human!
 
 Due to current landscape in ruby applications, the default version is the
 greatest 2.1.Y. We provide also the latest 2.2.Y version and the latest
-1.9.Y too, but prefer the current stable one : 2.1.
+1.9.Y too, but prefer the current stable: 2.1.
 
 ## More configuration
 
 You can configure your deployment via the `clevercloud/ruby.json`
-configration file. This file is optional.
+configuration file. This file is optional.
 
 ### Set deployment RUBY_ENV and rake goals to execute
 
@@ -86,7 +85,7 @@ configration file. This file is optional.
 }
 ```
 
-The following table describe each field:
+The following table describes each field:
 
 
 <table id="nodedeps" class="table table-bordered table-striped">
