@@ -15,7 +15,7 @@ Cellar
 Cellar is S3-compatible online file storage web service. You can use it with
 your favorite S3 client.
 
-Do manually manage the files, you can use [s3cmd](http://s3tools.org/s3cmd).
+To manually manage the files, you can use [s3cmd](http://s3tools.org/s3cmd).
 You can download a s3cmd configuration file from the add-on configuration
 page.
 

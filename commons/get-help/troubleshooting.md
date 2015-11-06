@@ -54,7 +54,7 @@ SSH: Password is Asked
 
 > "Why are my files disappearing after an application restart?”
 
-Clever Cloud use Git to transfer your code and application's assets from your local host to your scaler. If your application writes files on the local file system, those files are not commited: so you can't save these files from a instance to an other.
+Clever Cloud use Git to transfer your code and application's assets from your local host to your scaler. If your application writes files on the local file system, those files are not committed: so you can't save these files from a instance to an other.
 
 For most of Cloud providers, the use of the file system is not a good practice. But we know it could be sometimes pretty useful. That's why we provide an on-demand file system, easily pluggable to your app. In that case, your files will not be stored on the Git file system, but on a clustered file system, dedicated to it, accessible via FTP. This is the FS Bucket add-on.
 
@@ -74,7 +74,7 @@ This usually means that you created an application and asked to start it in the 
 *You are not working on the master branch and pushed your branch to Clever Cloud*
 
 Clever Cloud uses the master branch to deploy your application but this does not mean that you cannot use another one on your computer.
-The only thing that differs if you use another branch than the master one on your computer is that you need to explicitely tell that Clever Cloud needs to consider your branch as the master one.
+The only thing that differs if you use another branch than the master one on your computer is that you need to explicitly tell that Clever Cloud needs to consider your branch as the master one.
 
 ```bash
 $ git push <cleverRemote> <yourSpcificBranchName>:master
@@ -112,7 +112,7 @@ $ git remote add clever <your-git-deployment-url>
 
 #### <i class="icon-double-angle-right"></i> SSH: Password is Asked
 
-> “When I try to push my app, the server respond by asking a password.”
+> “When I try to push my app, the server responds by asking a password.”
 
 This occurs when a wrong ssh key has been entered in your Clever Cloud profile, in the dashboard.
 

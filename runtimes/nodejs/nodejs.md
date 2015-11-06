@@ -48,7 +48,7 @@ var server = http.createServer(function (request, response) {
 // Last, but not least, listen on port 8080
 server.listen(8080);
 ```
-Then, a *package.json* file is mandatory to initiate your app deployement on Clever Cloud. The next section will detail this point.
+Then, a *package.json* file is mandatory to initiate your app deployment on Clever Cloud. The next section will detail this point.
 
 ### Describing package.json  
 
@@ -157,7 +157,7 @@ Here is an example :
 
 The Clever Cloud can virtually run any version of node >= 0.6 and any
 module. Lesser (pre-npm) versions are not officially supported. Unstable
-versions are not supported either. We support the iojs runtime.
+versions are not supported either. We support the io.js runtime.
 
 ### Pre-installed modules
 
@@ -185,7 +185,7 @@ We currently host the following Node.js versions, with these modules already ins
 </div>
 
 
-New versions will be added as they go out.
+New versions will be added as they are released.
 
 ### Defining *pre-installed*
 
@@ -214,12 +214,12 @@ it from your environment, like you would with `PATH`:
 `process.env["MY_VARIABLE"]`.
 
 You can, for example, inject the NODE_ENV variable to define it at "production". It is not
-currently set on our machimes, because we need to build the project first. Beware,
+currently set on our machines, because we need to build the project first. Beware,
 devDependencies do not get fetched if NODE_ENV=production.
 
 ### Special env NPM_TOKEN
 
-Since April 2015, npmjs.com allows you to have private respositories. The bad news is,
+Since April 2015, npmjs.com allows you to have private repositories. The bad news is,
 you have to write a specific line in your `.npmrc` for that. The good news is, on Clever
 Cloud, you only need to provide the *token* part, and we set up everything for you!
 

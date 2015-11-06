@@ -5,14 +5,14 @@ position: 4
 
 # Deploying an application
 
-There is two steps in this section: application creation (requiring actions from
+There are two steps in this section: application creation (requiring actions from
 dashboard) and application deployment (requiring actions from git for your FTP access).
 
 ## Create an application
 
  1. First, select the proper organization you want to add to application to. Then,
  click on the **Add an application** button, in the **Organization Manager** panel.
- This starts the application creation wizard. If you account has been linked to
+ This starts the application creation wizard. If your account has been linked to
  GitHub, you can select a repository from your GitHub account.
 
  2. Then select the language or the framework you need:
@@ -69,7 +69,7 @@ Follow these steps to deploy your application:
  <div class="alert alert-hot-problems">
    <h4>Warning:</h4>
    <p>You can only push to the <strong>master</strong> branch for deployment.
-   Trying to push in another branch will trigger an error.</p>
+   Trying to push to another branch will trigger an error.</p>
    <p>In order to push to <strong>master</strong> from a non-master local branch, use this syntax:</p>
    <pre>git push &lt;remote&gt; &lt;your branch&gt;:master</pre>
  </div>
@@ -78,16 +78,16 @@ Follow these steps to deploy your application:
 
  <div class="alert alert-hot-problems">
    <h4>Troubleshooting:</h4>
-   <p>If the remote ask you for a password right after a git push attempt, this is may due to a SSH Key misconfiguration.
-   <br>Add your SSH key in your profile here:
+   <p>If the remote asks you for a password right after a git push attempt, this is may be due to a SSH Key misconfiguration.
+   <br>Add your SSH key to your profile here:
    <a href="https://console.clever-cloud.com/users/me/ssh-keys">https://console.clever-cloud.com/users/me/ssh-keys</a></p>
    <p>The full tutorial about adding SSH key is here: <a href="/doc/admin-console/ssh-keys/">Adding SSH keys</a> </p>
  </div>
 
 ### Automatic Deployment with GitHub
 
-If you want to enable automatic deployment, it’s easy: in your application
-information tab, if you have created your application from a GitHub one, you will
+If you want to enable automatic deployment, follow these easy steps: in your application
+information tab, if you have created your application from GitHub, you will
 see a new field: a secret for your GitHub application’s settings. Here are the
 steps to trigger a deploy on Clever Cloud from a push to GitHub:
 
@@ -97,19 +97,19 @@ steps to trigger a deploy on Clever Cloud from a push to GitHub:
 
  3. Paste the secret
 
-From now, a push to your GitHub repo will also trigger a Clever Cloud deployment.
+From now on, a push to your GitHub repo will also trigger a Clever Cloud deployment.
 
-Note that only push on master will trigger the deployment.
+Note that only a push on master will trigger the deployment.
 
-Private GitHub repositories are also supported : you only have to add the <a href="https://github.com/CleverCloudDeployer">CleverCloudDeployer user</a> as a collaborator to your private repository. Note that read only access is sufficient.
+Private GitHub repositories are also supported: you only have to add the <a href="https://github.com/CleverCloudDeployer">CleverCloudDeployer user</a> as a collaborator to your private repository. Note that read only access is sufficient.
 
-Caution : in Github, private repositories in an ordinary user account are an all-or-nothing deal: either someone has full read/write access (i.e., they're a collaborator) or they have no access. However, if you set up an organization, create the repo under the aegis of the organization, and then add the collaborator, you have much more fine-grained control (including giving read-only access to a private repository).
+Caution: in Github, private repositories in an ordinary user account are an all-or-nothing deal: either someone has full read/write access (i.e., they're a collaborator) or they have no access. However, if you set up an organization, create the repo under the aegis of the organization, and then add the collaborator, you have much more fine-grained control (including giving read-only access to a private repository).
 
 ## FTP Deployment
 
 It is possible to deploy via FTP with PHP and static applications.  
 
-To deploy via FTP, you need an FTP software installed on your machine. [Filezilla](https://filezilla-project.org/) is 
+To deploy via FTP, you need an FTP software installed on your machine. [Filezilla](https://filezilla-project.org/) is
 one of them.
 
 When you have chosen to deploy your application via FTP, a [FS Bucket](/addons/fs_buckets/) has been created with an ID
@@ -129,5 +129,3 @@ matching your application's ID. You will find the FTP credentials in the configu
 <p>FTP deployment is ok for small websites but not for large ones. We strongly
 recommend you to use <b>Git</b> deployment for <b>large PHP websites</b>.</p>
 </div>
-
-

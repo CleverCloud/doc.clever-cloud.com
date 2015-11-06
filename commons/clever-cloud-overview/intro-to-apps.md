@@ -16,7 +16,7 @@ An application is defined on Clever Cloud by the following elements:
 
 If one of these elements is missing, Clever Cloud can't deploy your application properly (except the configuration file, optional in some cases).
 
-Available languages are listed below: 
+Available languages are listed below:
 
 * [Go](/go)
 * [Java](/java) [Play Framework 1 & 2, Maven, War files… ]
@@ -29,6 +29,6 @@ Available languages are listed below:
 
 ## How it works
 
-When an application is pushed, the platform receives it. It then checks the resources’ requirements. If they are complete, the deployment is launched. When finished and successfull, the application is up and running.
+When an application is pushed, the platform receives it. It then checks the resources’ requirements. If they are complete, the deployment is launched. When finished and successful, the application is up and running.
 
-The log system retrieves every traces from the application and display theme in your admin console.
+The log system retrieves all output from the application and displays it in your admin console.

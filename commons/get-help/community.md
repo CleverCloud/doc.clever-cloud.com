@@ -15,6 +15,6 @@ We’re also available on IRC. You can join our channel:
 
 ## Mailing List
 
-Our mailing list is available is where we announce new features and beta programs. Be part of it to try our new features, or having access to our developers community.
+Our mailing list is available is where we announce new features and beta programs. Be part of it to try our new features, or having access to our developer community.
 
 * <clever-cloud-users@googlegroups.com>

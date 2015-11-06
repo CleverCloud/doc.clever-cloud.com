@@ -5,7 +5,7 @@ position: 1
 
 # Clever Cloud Add-ons
 
-Add-on are a way to add services to your application, for example a database or a caching system, to enrich its
+Add-ons are a way to add services to your application, for example a database or a caching system, to enrich its
 features.
 
 An add-on can be shared by different applications to share data between them. It can be a database shared by two or
@@ -16,7 +16,7 @@ the add-on.
 
 ## Available add-ons
 
-Clever Cloud provides multiple add-ons to work with you applications :
+Clever Cloud provides multiple add-ons to work with your applications:
 
 * [MySQL](/addons/mysql)
 * [PostgreSQL](/addons/postgresql)
@@ -47,18 +47,18 @@ This environment variables must be used in your application to, for example, pro
 localization of the database provided by the add-on.
 
 The last step lets you choose the name of the add-on (for example "My database") and the region where the add-on is
-hosted. Click on the button **Create** and the add-on will now available in your organisation, and corresponding
-variables will be available for the applications linked to the add-on you just created.
+hosted. Click on the **Create** button and the add-on will now be available in your organisation, and corresponding
+environment variables will be available for the applications linked to the add-on you just created.
 
 ## Managing your add-on
 
-Once an add-on is created, two tabs are avaialble:
+Once an add-on is created, two tabs are available:
 
-* the information tab
+* the Information tab
 * the Configuration tab
 
 
-### Link an add-on to your applicaiton
+### Link an add-on to your application
 
 To link an add-on with your application, just follow the following steps:
 
@@ -69,8 +69,8 @@ To link an add-on with your application, just follow the following steps:
 
 ### Information screen
 
-This screen sums-up the caracteristic of the selected add-on.
-Features and environnement varaibles (if applicable) are shown.
+This screen sums-up the characteristics of the selected add-on.
+Features and environment variables (if applicable) are shown.
 
 <figure class="cc-content-img">
   <a class="cc-content-img" href="/assets/images/managing-addons-info.png">
@@ -100,4 +100,4 @@ This screen is managed directly by the provider of the add-on.
 ## Delete an add-on
 
 To delete an add-on, go to the *Configuration* page of the add-on, and click on *Remove add-on*.
-Warning : after deletion of the add-on, all associated data will be removed.
+Warning: After deletion of the add-on, all associated data will be removed.

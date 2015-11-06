@@ -90,4 +90,4 @@ The `postDeploy` field must contain the path to a script, relative to the root o
 repository. The script file **MUST** have execution right set.
 
 In the example above, the script is a file named `myScript` in the `clevercloud` folder.
-That is, right besides the `<instance_type>.json` file.
+That is, right beside the `<instance_type>.json` file.
