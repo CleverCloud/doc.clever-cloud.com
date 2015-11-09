@@ -44,7 +44,7 @@ which version is used on the server please use the `COMMIT_ID` [environment vari
 Follow these steps to deploy your application:
 
  1. Get the git deployment url in the application information page, who looks like:
- ``git+ssh://git@push.clever-cloud.com/<your_app_id>.git``.
+ ``git+ssh://git@push.<zone>.clever-cloud.com/<your_app_id>.git``.
 
  2. In your terminal, go to your application repository. If you do not already track your app with git, start by typing:
 
