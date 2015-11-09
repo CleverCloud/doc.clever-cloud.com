@@ -44,7 +44,7 @@ which version is used on the server please use the `COMMIT_ID` [environment vari
 Follow these steps to deploy your application:
 
  1. Get the git deployment url in the application information page, who looks like:
- ``git+ssh://git@push.clever-cloud.com/<your_app_id>.git``.
+ ``git+ssh://git@push.<zone>.clever-cloud.com/<your_app_id>.git``.
 
  2. In your terminal, go to your application repository. If you do not already track your app with git, start by typing:
 
@@ -81,7 +81,7 @@ Follow these steps to deploy your application:
    <p>If the remote asks you for a password right after a git push attempt, this is may be due to a SSH Key misconfiguration.
    <br>Add your SSH key to your profile here:
    <a href="https://console.clever-cloud.com/users/me/ssh-keys">https://console.clever-cloud.com/users/me/ssh-keys</a></p>
-   <p>The full tutorial about adding SSH key is here: <a href="/doc/admin-console/ssh-keys/">Adding SSH keys</a> </p>
+   <p>The full tutorial about adding SSH key is here: <a href="/admin-console/ssh-keys/">Adding SSH keys</a> </p>
  </div>
 
 ### Automatic Deployment with GitHub

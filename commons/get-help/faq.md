@@ -121,3 +121,9 @@ can commit them in your application's Clever Cloud repository and then add the
 `clevercloud/ssh.json`.
 
 The ssh.json file is documented in the [common configuration page](/clever-cloud-overview/common-application-configuration/#private-ssh-key)
+
+## I got a `Unsupported major.minor version` error. How can I fix it ?
+
+If you get this error on a java (or any JVM language) application, it mean that your application requires a specific version of java.
+By default, java 7 is used, but you can change it. Please have a look at [select java version](/doc/java/select-java-version/)
+for more information.
