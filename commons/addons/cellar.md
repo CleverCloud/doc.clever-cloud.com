@@ -10,7 +10,6 @@ position: 2
   Cellar is free during the beta period with a fair use at 20 GB. No credits wil be charged during the beta period,
   and under the fair use.</div>
 </div>
-Cellar
 
 Cellar is S3-compatible online file storage web service. You can use it with
 your favorite S3 client.
@@ -26,15 +25,20 @@ bucket is created yet.
 
 To create a bucket, you can use s3cmd:
 
+```bash
     s3cmd mb s3://bucket-name
-
+```
 You can list files
 
+```bash
     s3cmd ls s3://bucket-name
+```
 
 You can upload files (`--acl-public` makes the file readable by everyone).
 
+```bash
     s3cmd put --acl-public image.jpg s3://bucket-name
+```
 
 <div class="alert alert-hot-problems">
   <h5>S3 signature algorithm</h5>
