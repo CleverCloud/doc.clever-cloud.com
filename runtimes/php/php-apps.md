@@ -105,6 +105,13 @@ this file.
 The `.htaccess` file can be created everywhere in you app, depending of the part of the application covered by directives.
 However, directives who applies to the entire application must be declared in a `.htaccess` file to the application root.
 
+#### Define a custome HTTP timeout
+
+You can define the timeout of an HTTP request in Apache using the `HTTP_TIMEOUT`
+[environment variable](/admin-console/environment-variables/).
+
+By default, the HTTP timeout is se to 3 minutes (180 seconds).
+
 #### Prevent Apache to redirect HTTPS calls to HTTP when adding a trailing slash
 
 `DirectorySlash` is enabled by default on the PHP scalers, therefore Apache will add a trailing slash to a resource when
