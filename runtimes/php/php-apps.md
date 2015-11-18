@@ -192,19 +192,6 @@ we recommend you to add `oauth` token in your composer configuration file or in 
 
 You can find more documentation about composer configuration at [getcomposer.com](https://getcomposer.org/doc/04-schema.md).
 
-### Execute a custom script after the deploy
-
-Some frameworks or custom applications might require bootstrapping before the application may run (_e.g. Composer_).
-You can achieve this by creating a custom script with your commands and adding the following line in `clevercloud/php.json`:
-
-```javascript
-   {
-      "hooks": {
-         "postDeploy": "pathtoyourscript"
-      }
-   }
-```
-
 #### Example
 
 You use Artisan to manage your project and you want to execute _artisan migrate_ before running your app.
