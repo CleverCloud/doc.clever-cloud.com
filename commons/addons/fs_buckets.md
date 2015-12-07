@@ -54,15 +54,21 @@ The `buckets.json` file must contain the following structure:
 
   },
   {
-    "bucket" : "bucketId2",
+    "bucket_host" : "bucket-c65762b6-4086-4c99-84b0-23eb85695809-fsbucket.services.clever-cloud.com",
     "folder" : "/myotherFolder",
     "apps"   : ["app_id_2"]
   }
 ]
 ```
 
+<div class="alert alert-hot-problems">
+<p>
+You can find a pre-filled json object to copy in the dashboard of your FSBucket add-on, in
+the "Configure my application" tab.
+</p>
+</div>
 
-It's a json array containing objects with two fields:
+It's a json array containing objects with at least two fields:
 
 <table id="nodedeps" class="table table-bordered table-striped">
 <thead>
@@ -76,7 +82,14 @@ It's a json array containing objects with two fields:
 <tr>
 <td><span class="label label-important">Required</span></td>
 <td>bucket</td>
-<td>The bucket id you can find in the console. It begins with `bucket_`</td>
+<td>The bucket id you can find in the console. It begins with `bucket_`. This is for
+"old-style" buckets.</td>
+</tr>
+<tr>
+<td><span class="label label-important">Required</span></td>
+<td>bucket</td>
+<td>The bucket host you can find in the console. It begins with `bucket-` and ends with
+`services.clever-cloud.com`. This is for "new-style" buckets.</td>
 </tr>
 <tr>
 <td><span class="label label-important">Required</span></td>
