@@ -26,13 +26,19 @@ You will be able to retrieve generated data between two deployments.
 <th>Name</th>
 <th>Disk</th>
 <th>Mounts</th>
-<th>Price /mo</th>
+<th>Price /Go</th>
+</tr>
+<tr>
+<td class="cc-col__price "><span class="label cc-label__price label-info">DEV</span></td>
+<td>100</td>
+<td>UNLIMITED</td>
+<td>Free</td>
 </tr>
 <tr>
 <td class="cc-col__price "><span class="label cc-label__price label-info">S</span></td>
 <td>UNLIMITED</td>
 <td>UNLIMITED</td>
-<td>Free</td>
+<td>1.50€</td>
 </tr>
 </table>
 
