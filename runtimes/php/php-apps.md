@@ -105,6 +105,13 @@ this file.
 The `.htaccess` file can be created everywhere in you app, depending of the part of the application covered by directives.
 However, directives who applies to the entire application must be declared in a `.htaccess` file to the application root.
 
+#### Define a custome HTTP timeout
+
+You can define the timeout of an HTTP request in Apache using the `HTTP_TIMEOUT`
+[environment variable](/admin-console/environment-variables/).
+
+By default, the HTTP timeout is se to 3 minutes (180 seconds).
+
 #### Prevent Apache to redirect HTTPS calls to HTTP when adding a trailing slash
 
 `DirectorySlash` is enabled by default on the PHP scalers, therefore Apache will add a trailing slash to a resource when
@@ -191,19 +198,6 @@ we recommend you to add `oauth` token in your composer configuration file or in 
 [composer FAQ (API rate limit and OAuth tokens)](https://getcomposer.org/doc/articles/troubleshooting.md#api-rate-limit-and-oauth-tokens).
 
 You can find more documentation about composer configuration at [getcomposer.com](https://getcomposer.org/doc/04-schema.md).
-
-### Execute a custom script after the deploy
-
-Some frameworks or custom applications might require bootstrapping before the application may run (_e.g. Composer_).
-You can achieve this by creating a custom script with your commands and adding the following line in `clevercloud/php.json`:
-
-```javascript
-   {
-      "hooks": {
-         "postDeploy": "pathtoyourscript"
-      }
-   }
-```
 
 #### Example
 
