@@ -16,11 +16,6 @@ In <abbr title="Java Enterprise Edition">J2EE</abbr> application modules are pac
 
 * <acronym title="Enterprise Archive">EAR</acronym>: *.war* and *.jar* files are packaged as JAR file with .ear extension and deployed into Application Server. EAR file contains configuration such as application security role mapping, EJB reference mapping and context root url mapping of web modules.
 
-<div class="alert alert-hot-problems">
-  <h5>Note for Alpha Version</h5>
-  <div>The alpha version ends by the 1st of September 2014. WAR and EAR apps will not be free of charge anymore.</div>
-</div>
-
 ## Available containers
 
 The Clever Cloud supports many servlet containers.
