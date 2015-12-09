@@ -45,6 +45,11 @@ Example of `clevercloud/cron.json` which executes the file `cron.php` every 5 mi
 <div class="alert alert-hot-problems">
 <h4>Warning:</h4>
   <p>We do not currently support the clustering of cron tasks, you must manage it yourself if your application requires more than one instance.</p>
+  <p>Also, please note that environment variables like INSTANCE_NUMBER are not yet injected into crons. You have to add this line at the beginning of your script:
+  ```bash
+    source /home/bas/applicationrc
+  ```
+  </p>
 </div>
 
 
