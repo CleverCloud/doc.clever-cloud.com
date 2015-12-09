@@ -5,11 +5,6 @@ position: 3
 
 # FS Buckets: file system with persistence <span class="cc-beta pull-right" title="Currently in Beta version"></span>
 
-<div class="alert alert-hot-problems">
-  <h5>Note for Beta Version</h5>
-  <div>FS Buckets are free during the beta period with a fair use at 100 MB. No credits will be charged.</div>
-</div>
-
 When you deploy an application on any PaaS, a new application is created, the previous is deleted.
 If your application generates data, for example if you let users upload pictures and you do not store it on external
 services like S3, you will loose data.
