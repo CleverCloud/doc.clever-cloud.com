@@ -84,11 +84,11 @@ It's a json array containing objects with at least two fields:
 <td><span class="label label-important">Required</span></td>
 <td>bucket</td>
 <td>The bucket id you can find in the console. It begins with `bucket_`. This is for
-"old-style" buckets.</td>
+"old-style" buckets (created before the 7 december 2015)</td>
 </tr>
 <tr>
 <td><span class="label label-important">Required</span></td>
-<td>bucket</td>
+<td>bucket_host</td>
 <td>The bucket host you can find in the console. It begins with `bucket-` and ends with
 `services.clever-cloud.com`. This is for "new-style" buckets.</td>
 </tr>
