@@ -5,9 +5,9 @@ position: 3
 
 # FS Buckets: file system with persistence <span class="cc-beta pull-right" title="Currently in Beta version"></span>
 
-When you deploy an application on any PaaS, a new application is created, the previous is deleted.
+When you deploy an application on any PaaS, a new virtual machine is created, the previous one is deleted.
 If your application generates data, for example if you let users upload pictures and you do not store it on external
-services like S3, you will loose data.
+services like S3, you will loose anything stored on the disk.
 
 The Git deployment does not allow you to keep generated data files between deployments. To avoid the loss of your data,
 you have to mount a persistent filesystem. This is why we created File System Buckets.
@@ -65,7 +65,7 @@ The `buckets.json` file must contain the following structure:
 <div class="alert alert-hot-problems">
 <p>
 You can find a pre-filled json object to copy in the dashboard of your FSBucket add-on, in
-the "Configure my application" tab.
+the "Dashboard configuration" tab.
 </p>
 </div>
 
@@ -95,8 +95,8 @@ It's a json array containing objects with at least two fields:
 <tr>
 <td><span class="label label-important">Required</span></td>
 <td>folder</td>
-<td>The folder you want the bucket to be mounted in. Should start with `/`. Using the example
-*myFolder*, you can access your buckets via the *myFolder* folder at
+<td>The folder you want the bucket to be mount in. Should start with `/`. Using the example
+*myFolder*, you can access your bucket via the *myFolder* folder at
 the root of your application or via */app/myFolder*</td>
 </tr>
 <tr>
