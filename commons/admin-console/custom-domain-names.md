@@ -7,26 +7,28 @@ position: 3
 
 When creating an application, you have two (non exclusive) choices for domain names:
 
-* Using a ***.cleverapps.io** free domain
 * Using a personal domain name
+* Using a ***.cleverapps.io** free domain
 
-<figure class="cc-content-img"><img  src="/assets/images/domain1.png"></figure>
-<figcaption>Example of domain names customization</figcaption>
-
-## *.cleverapps.io domain
-
-In your application's domain section, just enter ``example.cleverapps.io``.
-
+Domains management is under the tab "Domain Names" in the dashboard.
 
 ## Personal domain name
 
-### Your application runs in the Europe zone
+
+<div class="alert alert-hot-problems">
+<h5>Important: chosing between A and CNAME</h5>
+<p>
+The preferred way to point your domain name to Clever Cloud is through the use of a CNAME record. Please review the settings below before making changes in production. 
+</p>
+<p>
+If you want to redirect your top-level domain name to a subdomain through HTTP (eg ``domain.com`` to ``www.domain.com``), most domain name registrars provide a web redirection service.
+</p>
+</div>
+
+
+### Your application runs in the Europe ('PAR') zone
 
 You have two non exclusive choices to add custom personal domain names:
-
-  * Domains like ``example.com``
-
-    On your domain name provider, point the **A record** to ``62.210.121.146``
 
   * Sub-domains like ``hello.example.com`` and wildcard sub-domains like ``*.example.com``
 
@@ -38,13 +40,14 @@ You have two non exclusive choices to add custom personal domain names:
     </figure>
     <figcaption>CNAME records example</figcaption>
 
-### Your application runs in the North-America zone
-
-You have two non exclusive choices to add custom personal domain names:
-
   * Domains like ``example.com``
 
-    On your domain name provider, point the **A record** to ``68.71.34.21``
+    On your domain name provider, point two **A records** to ``62.210.112.171`` and ``62.210.92.244``
+
+
+### Your application runs in the North-America ('MTL') zone
+
+You have two non exclusive choices to add custom personal domain names:
 
   * Sub-domains like ``hello.example.com`` and wildcard sub-domains like ``*.example.com``
 
@@ -56,7 +59,11 @@ You have two non exclusive choices to add custom personal domain names:
     </figure>
     <figcaption>CNAME records example</figcaption>
 
-<!-- -->
+  * Domains like ``example.com``
+
+    On your domain name provider, point two **A records** to ``68.71.34.21`` and ``68.71.34.20``
+
+
 <br/>
 <div class="alert alert-hot-problems">
   <h4>Reminder:</h4>
@@ -67,3 +74,8 @@ You have two non exclusive choices to add custom personal domain names:
   <p> But for the raw domain <strong>example.com</strong>, you will have to add
 both <strong>*.example.com</strong> and example.com to your application.</p>
 </div>
+
+
+## *.cleverapps.io domain
+
+In your application's domain section, just enter ``example.cleverapps.io``.
