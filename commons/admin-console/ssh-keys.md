@@ -1,6 +1,16 @@
 ---
 title: SSH Keys
 position: 2
+shortdesc: Add and manage SSH keys for push and deployments
+tags:
+- account-setup
+keywords:
+- git
+- deploy
+- deployment
+- push
+- ssh
+- sshkeys
 ---
 
 # SSH keys
@@ -82,7 +92,7 @@ To declare your **public SSH Key** on Clever Cloud, in the left navigation bar, 
 
 Add the key by entering a name and the public SSH key. The key is the entire content of the **id_rsa.pub** file.
 
-<figure class="cc-content-img"><a href="/assets/images/ssh1.png"><img src="/assets/images/ssh1.png"></a></figure>
+<figure class="cc-content-img"><a href="/assets/images/ssh1.png"><img src="/doc/assets/images/ssh1.png"></a></figure>
 <figcaption>
 The SSH Key manager.
 </figcaption>

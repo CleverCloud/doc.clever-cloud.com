@@ -2,6 +2,8 @@
 title: Play Framework 1
 position: 1
 shortdesc: Play is an open source web application framework, written in Scala and Java, which follows the model–view–controller (MVC) architectural pattern.
+tags:
+- scala
 ---
 
 # Deploy Play Framework 1.x

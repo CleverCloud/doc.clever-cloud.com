@@ -1,6 +1,16 @@
 ---
 title: Roles and Organizations
 position: 4
+shortdesc: Managing users and roles in organizations
+tags:
+- dashboard-setup
+keyworkds:
+- roles
+- users
+- accounts
+- organisations
+- organizations
+- collaboration
 ---
 # Organizations
 
@@ -16,7 +26,7 @@ Organization names are uniques. It means that you cannot use an organization nam
 In order to add an organization, just click on "Add an organization" in the top left dropdown menu:
 
 <figure class="cc-content-img">
-<a href="/assets/images/gotohome.png"><img src="/assets/images/gotohome.png"/></a>
+<a href="/assets/images/gotohome.png"><img src="/doc/assets/images/gotohome.png"/></a>
 <figcaption>
 Access to your organizations via the red sidebar
 </figcaption>
@@ -24,7 +34,7 @@ Access to your organizations via the red sidebar
 
 
 <figure class="cc-content-img">
-<a href="/assets/images/gotohome.png"><img src="/assets/images/orga-enterprise.png"/></a>
+<a href="/assets/images/gotohome.png"><img src="/doc/assets/images/orga-enterprise.png"/></a>
 <figcaption>
 An organization can represent an enterprise, for an easier invoicing process
 </figcaption>
@@ -36,7 +46,7 @@ An organization can represent an enterprise, for an easier invoicing process
 The table below describes rights assigned to roles:
 
 <figure class="cc-content-img">
-  <a href="/assets/images/organisation-roles.png"><img src="/assets/images/organisation-roles.png"/></a>
+  <a href="/assets/images/organisation-roles.png"><img src="/doc/assets/images/organisation-roles.png"/></a>
   <figcaption>
     Rights assigned by role
   </figcaption>

@@ -1,6 +1,8 @@
 ---
 title: Pricing
-position: 6
+position: 1
+tags:
+- billing
 ---
 # Billing
 Clever Cloud billing is counted every 10 minutes. The following prices are based on the language you use.

@@ -1,6 +1,8 @@
 ---
 title: Sample Python application
 shortdesc: The goal of this article is to show you how configure and deploy a simple Flask application on Clever Cloud.
+tags:
+- python
 ---
 
 # Flask Demo

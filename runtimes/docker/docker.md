@@ -1,6 +1,8 @@
 ---
 title: Deploy Docker images
 shortdesc: Docker is an easy, lightweight virtualized environment for portable applications.
+tags:
+- docker
 ---
 
 ## Deploy Docker images
@@ -35,7 +37,7 @@ bare-metal servers, public instances, or combinations of the above.
 4. Configure your scaling options.
 5. Enter your application's name and description and click "Next". You can also select the region you want (North America or Europe).
 <figure class="cc-content-img">
-  <img src="/assets/images/choose-name.png"/>
+  <img src="/doc/assets/images/choose-name.png"/>
 </figure>
 
 

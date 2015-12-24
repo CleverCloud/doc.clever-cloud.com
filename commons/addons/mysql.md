@@ -1,6 +1,14 @@
 ---
 title: MySQL add-on
-position: 5
+position: 6
+shortdesc: MySQL is an open-source relational database management system (RDBMS).
+tags:
+- addons
+keywords:
+- sql
+- mysql
+- mariadb
+- RDBMS
 ---
 
 # MySQL

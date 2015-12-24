@@ -1,6 +1,8 @@
 ---
 title: Running crons
 position: 1
+tags:
+- developer
 ---
 
 # CRON configuration file

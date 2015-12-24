@@ -1,6 +1,8 @@
 ---
 title: Community
 position: 2
+tags:
+- support
 ---
 
 # Community

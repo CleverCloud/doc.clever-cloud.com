@@ -2,6 +2,8 @@
 title: Jar deployment
 position: 3
 shortdesc: Deploy a jar on Clever Cloud...
+tags:
+- java
 ---
 
 # Deploy Jar files

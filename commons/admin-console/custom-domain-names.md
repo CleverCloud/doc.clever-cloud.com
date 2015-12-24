@@ -1,16 +1,25 @@
 ---
 title: Custom domain names
 position: 3
+shortdesc: How to setup and configure domains names for your apps
+tags:
+- dashboard-setup
+- developer
+keywords:
+- DNS
+- domain
+- URL
 ---
 
-# Custom domain names
+# Managing domain names
 
 When creating an application, you have two (non exclusive) choices for domain names:
 
 * Using a personal domain name
 * Using a ***.cleverapps.io** free domain
 
-Domains management is under the tab "Domain Names" in the dashboard.
+<figure class="cc-content-img"><img  src="/doc/assets/images/domain1.png"></figure>
+<figcaption>Example of domain names customization</figcaption>
 
 ## Personal domain name
 
@@ -36,7 +45,7 @@ You have two non exclusive choices to add custom personal domain names:
 
     <a href="http://www.gandi.net" target="_blank">Gandi.net</a> example :
     <figure class="cc-content-img">
-      <img  src="/assets/images/domain2.png">
+      <img  src="/doc/assets/images/domain2.png">
     </figure>
     <figcaption>CNAME records example</figcaption>
 
@@ -55,7 +64,7 @@ You have two non exclusive choices to add custom personal domain names:
 
     <a href="http://www.gandi.net" target="_blank">Gandi.net</a> example :
     <figure class="cc-content-img">
-      <img  src="/assets/images/domain2.png">
+      <img  src="/doc/assets/images/domain2.png">
     </figure>
     <figcaption>CNAME records example</figcaption>
 

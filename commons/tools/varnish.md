@@ -1,6 +1,8 @@
 ---
 title: Varnish as HTTP Cache
 position: 3
+tags:
+- developer
 ---
 
 # Varnish

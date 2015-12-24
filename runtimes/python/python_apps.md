@@ -2,6 +2,8 @@
 title: Deploy Your App
 position: 1
 shortdesc: Python 2.7.8 and 3.4.1 are available on our platform. You can use Git to deploy your application.
+tags:
+- python
 ---
 
 # Deploy Python apps
@@ -117,7 +119,7 @@ information: [git-scm.com](http://git-scm.com)*
 After you created an app in the [console](https://console.clever-cloud.com), the console prompt you the following message:
 
 <figure class="cc-content-img">
-  <img src="/assets/images/newgitapp.png"/>
+  <img src="/doc/assets/images/newgitapp.png"/>
 </figure>
 
 

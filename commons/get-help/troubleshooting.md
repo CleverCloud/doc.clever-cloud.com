@@ -1,6 +1,8 @@
 ---
 title: Troubleshooting
 position: 4
+tags:
+- support
 ---
 
 ## Troubleshooting
@@ -12,7 +14,7 @@ position: 4
 <div class="span3">
 <a href="#git-and-file-persistence">
 <center>
-<img  src="/assets/images/faq/git_persistence.png" alt="instance">
+<img  src="/doc/assets/images/faq/git_persistence.png" alt="instance">
 </center>
 <div class="cc_service__title" style="text-align:center">Git and File Persistence</div>
 </a>
@@ -20,7 +22,7 @@ position: 4
 <div class="span3">
 <a href="#error-about-empty-repository">
 <center>
-<img  src="/assets/images/faq/empty_repo.png" alt="instance">
+<img  src="/doc/assets/images/faq/empty_repo.png" alt="instance">
 </center>
 <div class="cc_service__title" style="text-align:center">
 Error about Empty Repository
@@ -30,7 +32,7 @@ Error about Empty Repository
 <div class="span3">
 <a href="#ssh-password-is-asked">
 <center>
-<img  src="/assets/images/faq/password_asked.png" alt="instance">
+<img  src="/doc/assets/images/faq/password_asked.png" alt="instance">
 </center>
 <div class="cc_service__title" style="text-align:center">
 SSH: Password is Asked
@@ -40,7 +42,7 @@ SSH: Password is Asked
 <div class="span3">
 <a href="#node-failed-to-deploy">
 <center>
-<img  src="/assets/images/faq/node_fail.png" alt="instance">
+<img  src="/doc/assets/images/faq/node_fail.png" alt="instance">
 <center>
 <div class="cc_service__title" style="text-align:center">
   Node failed to deploy

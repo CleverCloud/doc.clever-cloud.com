@@ -1,6 +1,8 @@
 ---
 title: Common apps configuration
 position: 5
+tags:
+- dashboard-setup
 ---
 
 #  Configuration items available on every instance type.

@@ -1,6 +1,15 @@
 ---
 title: Redis add-on
-position: 7
+position: 8
+shortdesc: Redis is an open source, in-memory data structure store, used as database, cache and message broker.
+tags:
+- addons
+keywords:
+- key
+- value
+- key value
+- key-value
+- in-memory
 ---
 
 # Redis

@@ -1,6 +1,15 @@
 ---
 title: Cellar add-on
-position: 2
+position: 3
+shortdesc: Cellar is a Amazon S3-compatible file storage system created and hosted by Clever Cloud.
+tags:
+- addons
+keywords:
+- S3
+- amazon
+- Storage
+- file
+- files
 ---
 
 # Cellar <span class="cc-beta pull-right" title="Currently in private Beta version"></span>

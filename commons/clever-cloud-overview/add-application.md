@@ -1,6 +1,8 @@
 ---
 title: Deploying an application
 position: 4
+tags:
+- dashboard-setup
 ---
 
 # Deploying an application
@@ -16,7 +18,7 @@ dashboard) and application deployment (requiring actions from git for your FTP a
  GitHub, you can select a repository from your GitHub account.
 
  2. Then select the language or the framework you need:
- <figure class="cc-content-img"><img src="/assets/images/select-lang.png"></figure>
+ <figure class="cc-content-img"><img src="/doc/assets/images/select-lang.png"></figure>
 
  3. *Optional:* in case of PHP or static applications, you can choose between FTP
  and Git deployment.
@@ -26,7 +28,7 @@ dashboard) and application deployment (requiring actions from git for your FTP a
  [the dedicated section](/clever-cloud-overview/scaling/).
 
  <figure class="cc-content-img">
-   <img src="/assets/images/select-scalab.png"/>
+   <img src="/doc/assets/images/select-scalab.png"/>
  </figure>
 
  5. Enter the name and description of you app.

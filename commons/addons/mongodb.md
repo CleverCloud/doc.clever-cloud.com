@@ -1,6 +1,15 @@
 ---
 title: MongoDB add-on
-position: 4
+position: 5
+shortdesc: MongoDB is a noSQL and document-oriented database, operated by Clever Cloud.
+tags:
+- addons
+keywords:
+- mongo
+- mongodb
+- document
+- nosql
+- database
 ---
 
 # MongoDB <span class="cc-beta pull-right" title="Currently in Beta version"></span>

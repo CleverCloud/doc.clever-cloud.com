@@ -1,6 +1,14 @@
 ---
 title: Redsmin add-on
-position: 8
+position: 9
+shortdesc: Redsmin is a GUI to help developers monitor their Redis systems.
+tags:
+- addons
+keywords:
+- redis
+- redsmin
+- key-value
+- dashboard
 ---
 
 # Redsmin

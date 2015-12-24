@@ -1,6 +1,8 @@
 ---
 title: Intro to Apps
 position: 1
+tags:
+- dashboard-setup
 ---
 
 # Introduction to Applications
