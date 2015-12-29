@@ -1,10 +1,2 @@
-_site
-_cache
-site
-site.o
-site.hi
+
 .DS_Store
-cabal*
-.cabal*
-dist/*
-doc-clevercloud
