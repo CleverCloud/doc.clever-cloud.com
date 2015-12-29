@@ -45,7 +45,7 @@ The supported containers are listed below:
 
 ## Create an application
 
-Refer to the page [Deploy an application on Clever Cloud](/clever-cloud-overview/add-application/).
+Refer to the page [Deploy an application on Clever Cloud](/doc/clever-cloud-overview/add-application/).
 
 ## Configure your application
 
@@ -201,7 +201,7 @@ The goal you want the tool to execute.
 #### More configuration
 
 Need more configuration? To run a script at the end of your deployment? To add your
-private SSH key to access private dependencies? Go check the [Common configuration page](/clever-cloud-overview/common-application-configuration/).
+private SSH key to access private dependencies? Go check the [Common configuration page](/doc/clever-cloud-overview/common-application-configuration/).
 
 ## Available containers
 
@@ -293,4 +293,4 @@ For WAR/EAR applications, the environment is injected in the
 
 ## Deploy on Clever Cloud
 
-Application deployment on Clever Cloud is via Git. Follow [these steps](/clever-cloud-overview/add-application/) to deploy your application.
+Application deployment on Clever Cloud is via Git. Follow [these steps](/doc/clever-cloud-overview/add-application/) to deploy your application.

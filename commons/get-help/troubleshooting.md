@@ -64,7 +64,7 @@ Setup FS Bucket for your app is kinda straightforward, because it consist in add
 
 The Json contains two parameters: the ID of the FS Bucket, and the path you want to use as a FS.
 
-*Related page: [File System buckets](/addons/clever-cloud-addons/#fs-buckets-file-system-with-persistance/).*
+*Related page: [File System buckets](/doc/addons/clever-cloud-addons/#fs-buckets-file-system-with-persistance/).*
 
 
 #### <i class="icon-double-angle-right"></i> Error about Empty Repository
@@ -88,7 +88,7 @@ If you called the Clever Cloud repository "clever" and your local branch is "pro
 $ git push clever production:master
 ```
 
-*Related page: [Deploy an application](/clever-cloud-overview/add-application/).*
+*Related page: [Deploy an application](/doc/clever-cloud-overview/add-application/).*
 
 #### <i class="icon-double-angle-right"></i> Error about not being a git repository
 
@@ -110,7 +110,7 @@ In order to be able to use the same name for yourself, you will add to create it
 $ git remote add clever <your-git-deployment-url>
 ```
 
-*Related page: [Git deployment](/clever-cloud-overview/add-application/)*
+*Related page: [Git deployment](/doc/clever-cloud-overview/add-application/)*
 
 #### <i class="icon-double-angle-right"></i> SSH: Password is Asked
 
@@ -144,4 +144,4 @@ Most of the time, this simple line could do the trick in your main JS file:
 server.listen(8080);
 ```
 
-*Related page: [Deploy Node.js apps](/nodejs/nodejs/).*
+*Related page: [Deploy Node.js apps](/doc/nodejs/nodejs/).*

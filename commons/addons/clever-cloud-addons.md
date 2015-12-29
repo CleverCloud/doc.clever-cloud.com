@@ -24,13 +24,13 @@ the add-on.
 
 Clever Cloud provides multiple add-ons to work with your applications:
 
-* [MySQL](/addons/mysql)
-* [PostgreSQL](/addons/postgresql)
-* [MongoDB](/addons/mongodb)
-* [FS buckets](/addons/fs_buckets)
-* [Cellar](/addons/cellar)
-* [Redis](/addons/redis)
-* [Redsmin](/addons/redsmin)
+* [MySQL](/doc/addons/mysql)
+* [PostgreSQL](/doc/addons/postgresql)
+* [MongoDB](/doc/addons/mongodb)
+* [FS buckets](/doc/addons/fs_buckets)
+* [Cellar](/doc/addons/cellar)
+* [Redis](/doc/addons/redis)
+* [Redsmin](/doc/addons/redsmin)
 
 ## Create an add-on for your application
 

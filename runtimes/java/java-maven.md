@@ -82,4 +82,4 @@ You can achieve this by creating a custom script with your commands and adding t
 
 ## Deploy on Clever Cloud
 
-Application deployment on Clever Cloud is via Git. Follow [these steps](/clever-cloud-overview/add-application/) to deploy your application.
+Application deployment on Clever Cloud is via Git. Follow [these steps](/doc/clever-cloud-overview/add-application/) to deploy your application.

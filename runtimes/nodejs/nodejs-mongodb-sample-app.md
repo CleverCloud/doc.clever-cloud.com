@@ -20,7 +20,7 @@ If you want to test our platform and deploy this application, just follow these 
 
 1. Fork the [Github repo](https://github.com/CleverCloud/demo-nodejs-mongodb).
 2. Create an application from your github repo.
-3. Create a [MongoDB add-on](/addons/clever-cloud-addons/) and link it to your application.
+3. Create a [MongoDB add-on](/doc/addons/clever-cloud-addons/) and link it to your application.
 4. That's all the application will use the environment variables to connect to MongoDB.
 
 

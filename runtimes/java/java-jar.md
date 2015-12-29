@@ -18,7 +18,7 @@ configuration files, here is what you can do:
 
 ## Create an application
 
-Refer to the page [Deploy an application on Clever Cloud](/clever-cloud-overview/add-application/).
+Refer to the page [Deploy an application on Clever Cloud](/doc/clever-cloud-overview/add-application/).
 
 ## Necessary information
 

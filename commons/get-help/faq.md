@@ -21,7 +21,7 @@ Currently Clever Cloud supports:
 
 * Java (Play Framework 1 & 2, Maven, War files… )
 * Node.js
-* PHP ([see frameworks and CMS](/php/php-apps/#frameworks-and-cms))
+* PHP ([see frameworks and CMS](/doc/php/php-apps/#frameworks-and-cms))
 * Python (Django)
 * Ruby
 * Go
@@ -61,11 +61,11 @@ Absolutely! For now, it's not automatic. Contact us at <support@clever-cloud.com
 
 ## I'd like to map my app to http://mydomain.com.
 
-See [Custom Domain Names](/admin-console/apps-management/#custom-domain-names) section of Apps Management.
+See [Custom Domain Names](/doc/admin-console/apps-management/#custom-domain-names) section of Apps Management.
 
 ## How do I define cron jobs for my application?
 
-See [Cron Configuration File](/tools/crons/) for more information.
+See [Cron Configuration File](/doc/tools/crons/) for more information.
 
 ## How many active requests can my app serve at one time?
 
@@ -122,7 +122,7 @@ access them via git+ssh or sftp), and you need a private key to connect to the s
 can commit them in your application's Clever Cloud repository and then add the
 `clevercloud/ssh.json`.
 
-The ssh.json file is documented in the [common configuration page](/clever-cloud-overview/common-application-configuration/#private-ssh-key)
+The ssh.json file is documented in the [common configuration page](/doc/clever-cloud-overview/common-application-configuration/#private-ssh-key)
 
 ## I got a `Unsupported major.minor version` error. How can I fix it?
 

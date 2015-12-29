@@ -18,13 +18,13 @@ into HTML.
 
 ## Create an application
 
-Refer to the page [Deploy an application on Clever Cloud](/clever-cloud-overview/add-application/).
+Refer to the page [Deploy an application on Clever Cloud](/doc/clever-cloud-overview/add-application/).
 
 <div class="alert alert-hot-problems">
 <h4>Warning:</h4>
 <p>An FTP application is automatically started once the application is created, even if no code has been sent.</p>
 <p>
- When you create a FTP application, a free [FS Bucket](/addons/fs_buckets/) add-on is
+ When you create a FTP application, a free [FS Bucket](/doc/addons/fs_buckets/) add-on is
  provisioned, named after the application. You will find the FTP
  credentials in the configuration tab of this add-on.
 </p>
@@ -110,7 +110,7 @@ However, directives who applies to the entire application must be declared in a 
 #### Define a custome HTTP timeout
 
 You can define the timeout of an HTTP request in Apache using the `HTTP_TIMEOUT`
-[environment variable](/admin-console/environment-variables/).
+[environment variable](/doc/admin-console/environment-variables/).
 
 By default, the HTTP timeout is se to 3 minutes (180 seconds).
 
@@ -293,7 +293,7 @@ If you have a request about modules, feel free to contact our support at <suppor
 ### Enable specific extensions
 
 Some extensions need to be enabled explicitly. To enable this extensions, you'll need to set the corresponding
-[environment variable](/admin-console/environment-variables/):
+[environment variable](/doc/admin-console/environment-variables/):
 
 * OPcache: set `ENABLE_OPCACHE` to `true`.
 
@@ -315,11 +315,11 @@ Some extensions need to be enabled explicitly. To enable this extensions, you'll
 
 ## Use Redis to store PHP Sessions
 
-We provide the possibility to store the PHP sessions in a [Redis database](/addons/redis/) to improve the performances of
+We provide the possibility to store the PHP sessions in a [Redis database](/doc/addons/redis/) to improve the performances of
 your application.
 
 To enable this feature, you need a Redis add-on and you have to create an
-[environment variable](/admin-console/environment-variables/) named `SESSION_TYPE` with the value `redis`.
+[environment variable](/doc/admin-console/environment-variables/) named `SESSION_TYPE` with the value `redis`.
 
 <div class="alert alert-hot-problems">
  <h4>Warning:</h4>
@@ -332,4 +332,4 @@ To enable this feature, you need a Redis add-on and you have to create an
 ## Deploy on Clever Cloud
 
 Application deployment on Clever Cloud is via **Git or FTP**. Follow
-[these steps](/clever-cloud-overview/add-application/) to deploy your application.
+[these steps](/doc/clever-cloud-overview/add-application/) to deploy your application.

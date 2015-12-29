@@ -9,7 +9,7 @@ tags:
 
 ## Create an application
 
-You can find in [this article](/clever-cloud-overview/add-application/#create-an-application) the process to create an
+You can find in [this article](/doc/clever-cloud-overview/add-application/#create-an-application) the process to create an
 application.
 
 
@@ -22,14 +22,14 @@ have their own pros and cons but have the same end result.
 
 1. Download the Wordpress source files on [wordpress.org](http://wordpress.org).
 
-2. [Add a MySQL database add-on](/addons/clever-cloud-addons/).
+2. [Add a MySQL database add-on](/doc/addons/clever-cloud-addons/).
 
 3. Rename the file `wp-config-sample.php` to `wp-config.php`.
 
 4. Replace in `wp-config.php` the host (for example: bj79c949bvl2deb6.mysql.clvrcld.net), database name, username and
-password using the [environment variables](/admin-console/environment-variables/) of the add-on.
+password using the [environment variables](/doc/admin-console/environment-variables/) of the add-on.
 
-3. [Send these Wordpress files via FTP](/clever-cloud-overview/add-application/#ftp-deployment) using the FTP
+3. [Send these Wordpress files via FTP](/doc/clever-cloud-overview/add-application/#ftp-deployment) using the FTP
 credentials displayed in the application' information page.
 
 6. When finished, you can launch the application with the url that you can find in the *domains* panel in the left sidebar.
@@ -39,22 +39,22 @@ credentials displayed in the application' information page.
 
 1. Download the Wordpress source files on [wordpress.org](http://wordpress.org).
 
-2. [Add a MySQL database add-on](/addons/clever-cloud-addons/).
+2. [Add a MySQL database add-on](/doc/addons/clever-cloud-addons/).
 
 3. Rename the file `wp-config-sample.php` to `wp-config.php`.
 
 4. Replace in `wp-config.php` the host (for example: bj79c949bvl2deb6.mysql.clvrcld.net), database name, username and
-password using the [environment variables](/admin-console/environment-variables/) of the add-on.
+password using the [environment variables](/doc/admin-console/environment-variables/) of the add-on.
 
-5. As mentioned in this [article](/addons/fs_buckets/), with Git deployments, files that are uploaded by users must
-be persisted in a File System Bucket. In order to do so, [add a FS Bucket](/addons/fs_buckets/) via the console.
-You will find the bucketId in the [information](/addons/clever-cloud-addons/) section of the FS Bucket add-on.
+5. As mentioned in this [article](/doc/addons/fs_buckets/), with Git deployments, files that are uploaded by users must
+be persisted in a File System Bucket. In order to do so, [add a FS Bucket](/doc/addons/fs_buckets/) via the console.
+You will find the bucketId in the [information](/doc/addons/clever-cloud-addons/) section of the FS Bucket add-on.
 
 6. At the root of your application, create a `clevercloud/buckets.json` file (create a `clevercloud` folder in which
 you create a `buckets.json` file).
 
 7. Add the following lines in this file. Do not forget to replace `bucketId` by the bucketId displayed in the
-[information](/addons/clever-cloud-addons/) section of the FS Bucket add-on.
+[information](/doc/addons/clever-cloud-addons/) section of the FS Bucket add-on.
     ```javascript
     [
       {
@@ -64,7 +64,7 @@ you create a `buckets.json` file).
     ]
     ```
 
-8. Send these Wordpress files via Git. Read this [article](/clever-cloud-overview/add-application/#git-deployment)
+8. Send these Wordpress files via Git. Read this [article](/doc/clever-cloud-overview/add-application/#git-deployment)
 if you need more information about it.
 
 9. When finished, you can launch the application with the url that you can find in the *domains* panel in the left sidebar.
@@ -89,8 +89,8 @@ plugin could have created.
 ## Optimise and speed-up your Wordpress
 
 There are multiple ways to optimise your Wordpress and speed-up its response time.
-We provide different tools and software to help you in this task as [Varnish](/php/varnish/) for the HTTP cache,
-and [Redis](/addons/redis/) for the object caching.
+We provide different tools and software to help you in this task as [Varnish](/doc/php/varnish/) for the HTTP cache,
+and [Redis](/doc/addons/redis/) for the object caching.
 
 
 ### Performance plugins
@@ -106,8 +106,8 @@ and [Redis](/addons/redis/) for the object caching.
 
 ### HTTP Cache with Varnish
 
-Enabling [Varnish](/tools/varnish/) for your application is very simple. All instances of PHP provide
-[Varnish](/tools/varnish/), you just have to configure your application to use it.
+Enabling [Varnish](/doc/tools/varnish/) for your application is very simple. All instances of PHP provide
+[Varnish](/doc/tools/varnish/), you just have to configure your application to use it.
 
 1. To use Varnish in your application, you have to create a `varnish.vcl` file in the `clevercloud` folder of
 your application. If this folder doesn't exist, create it in the **root** of your project.
@@ -125,14 +125,14 @@ of your website.
 
 ### Object cache with Redis
 
-[Redis](/addons/redis/) offers you a good way to speed-up your application by caching some of the objects of your
+[Redis](/doc/addons/redis/) offers you a good way to speed-up your application by caching some of the objects of your
 application, as the result of SQL queries of your application, improving the response time.
 
-To enable [Redis](/addons/redis/ for your Wordpress, you need to disable other Object Cache and Data Cache of your
+To enable [Redis](/doc/addons/redis/ for your Wordpress, you need to disable other Object Cache and Data Cache of your
 application (as those provided by *W3 Total Cache* for example). Make sure they aren't enabled to avoid conflicts and
 performance problems.
 
-1. [Create a Redis add-on](/addons/clever-cloud-addons/) for your application.
+1. [Create a Redis add-on](/doc/addons/clever-cloud-addons/) for your application.
 
 2. Add the following lines to your `wp-config.php` file. Make sure they are **before** the
 `require_once(ABSPATH . 'wp-settings.php');` line, otherwise the Redis connexion will not work for your application and

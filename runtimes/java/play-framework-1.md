@@ -19,7 +19,7 @@ reloading and display of errors in the browser.
 
 ## Create an application
 
-Refer to the page [Deploy an application on Clever Cloud](/clever-cloud-overview/add-application/).
+Refer to the page [Deploy an application on Clever Cloud](/doc/clever-cloud-overview/add-application/).
 
 ## Necessary information
 
@@ -103,5 +103,5 @@ have to add `XForwardedSupport=all` in `application.conf`.
 
 ## Deploy on Clever Cloud
 
-Application deployment on Clever Cloud is via Git. Follow [these steps](/clever-cloud-overview/add-application/) to
+Application deployment on Clever Cloud is via Git. Follow [these steps](/doc/clever-cloud-overview/add-application/) to
 deploy your application.

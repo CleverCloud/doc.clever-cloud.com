@@ -19,7 +19,7 @@ Python 2.7 and 3.4 are available on our platform. You can use Git to deploy your
 
 ## Create an application
 
-Refer to the page [Deploy an application on Clever Cloud](/clever-cloud-overview/add-application/).
+Refer to the page [Deploy an application on Clever Cloud](/doc/clever-cloud-overview/add-application/).
 
 ## Available extensions and modules
 
@@ -50,7 +50,7 @@ If you have any question, feel free to [contact our support](https://www.clever-
 
 The configuration file for your Python application must be `/clevercloud/python.json`.
 
-You can find a [example of Flask application](/python/python-flask-sample-app/) who use concept detailed below.
+You can find a [example of Flask application](/doc/python/python-flask-sample-app/) who use concept detailed below.
 
 
 ### Select your module
@@ -75,7 +75,7 @@ Basically, you should just point to a WSGI capable object.
 ### Manage your static files
 
 You are able to use a Filesystem Bucket to store your static files. Please refer to the
-[File System Buckets](/addons/clever-cloud-addons/#fs-buckets-file-system-with-persistance/) section.
+[File System Buckets](/doc/addons/clever-cloud-addons/#fs-buckets-file-system-with-persistance/) section.
 
 When your bucket is available, to enable Nginx to serve your static resources you must set your public folder in
 `clevercloud/python.json` like below:

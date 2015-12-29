@@ -20,13 +20,13 @@ If one of these elements is missing, Clever Cloud can't deploy your application 
 
 Available languages are listed below:
 
-* [Go](/go)
-* [Java](/java) [Play Framework 1 & 2, Maven, War files… ]
-* [Node.js](/nodejs)
-* [PHP](/php)
-* [Python](/python)
-* [Ruby](/ruby)
-* [Scala](/scala)
+* [Go](/doc/go)
+* [Java](/doc/java) [Play Framework 1 & 2, Maven, War files… ]
+* [Node.js](/doc/nodejs)
+* [PHP](/doc/php)
+* [Python](/doc/python)
+* [Ruby](/doc/ruby)
+* [Scala](/doc/scala)
 
 
 ## How it works

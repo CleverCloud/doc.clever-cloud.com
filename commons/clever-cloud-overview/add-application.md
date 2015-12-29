@@ -25,7 +25,7 @@ dashboard) and application deployment (requiring actions from git for your FTP a
 
  4. In the next step, you will be prompted to select your scaling configuration.
  If you need help to configure your scaling options, please refer to
- [the dedicated section](/clever-cloud-overview/scaling/).
+ [the dedicated section](/doc/clever-cloud-overview/scaling/).
 
  <figure class="cc-content-img">
    <img src="/doc/assets/images/select-scalab.png"/>
@@ -33,7 +33,7 @@ dashboard) and application deployment (requiring actions from git for your FTP a
 
  5. Enter the name and description of you app.
 
- 6. *Optional*: [add an add-on](/addons/clever-cloud-addons/) to your app.
+ 6. *Optional*: [add an add-on](/doc/addons/clever-cloud-addons/) to your app.
 
 ## Git Deployment
 
@@ -41,7 +41,7 @@ dashboard) and application deployment (requiring actions from git for your FTP a
 information on Git website: [git-scm.com](http://git-scm.com)*
 
 *Note:* During the deployment, the .git folder is automatically deleted to avoid security problems. If you need to know
-which version is used on the server please use the `COMMIT_ID` [environment variable](/admin-console/environment-variables/).
+which version is used on the server please use the `COMMIT_ID` [environment variable](/doc/admin-console/environment-variables/).
 
 Follow these steps to deploy your application:
 
@@ -114,7 +114,7 @@ It is possible to deploy via FTP with PHP and static applications.
 To deploy via FTP, you need an FTP software installed on your machine. [Filezilla](https://filezilla-project.org/) is
 one of them.
 
-When you have chosen to deploy your application via FTP, a [FS Bucket](/addons/fs_buckets/) has been created with an ID
+When you have chosen to deploy your application via FTP, a [FS Bucket](/doc/addons/fs_buckets/) has been created with an ID
 matching your application's ID. You will find the FTP credentials in the configuration tab of this particular FS Bucket.
 
 [More documentation about Filezilla.](https://wiki.filezilla-project.org/FileZilla_Client_Tutorial_%28en%29)

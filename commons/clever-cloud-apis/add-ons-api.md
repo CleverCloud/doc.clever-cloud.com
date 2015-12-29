@@ -167,7 +167,7 @@ not its name.
 
 * `callback_url` - The URL you can use to get informations about the add-on and the user. This URL is available as soon as the provisioning is done. You can't use this URL during the POST call.
 
-* `logplex_token` - Token used to identify what you send to our log collector. The log collector API doc is here: [/clever-cloud-addons-api/add-ons-log-collector/](/clever-cloud-addons-api/add-ons-log-collector/)
+* `logplex_token` - Token used to identify what you send to our log collector. The log collector API doc is here: [/clever-cloud-addons-api/add-ons-log-collector/](/doc/clever-cloud-addons-api/add-ons-log-collector/)
 
 * `options` - String -> String map with options. We don't currently support this, so it will be empty for now.
 
