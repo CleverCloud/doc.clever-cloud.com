@@ -1,6 +1,8 @@
 ---
 title: Support
 position: 1
+tags:
+- support
 ---
 
 # Support

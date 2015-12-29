@@ -2,6 +2,8 @@
 title: Java War/Ear
 position: 4
 shortdesc: In <abbr title="Java Enterprise Edition">J2EE</abbr> applications modules are packaged as EAR and WAR based on their functionality.
+tags:
+- java
 ---
 
 # Deploy WAR/EAR projects

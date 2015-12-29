@@ -1,6 +1,8 @@
 ---
 title: Scala with SBT
 shortdesc: Scala is an object-functional programming and scripting language that runs on the Java platform…
+tags:
+- scala
 ---
 
 # Deploy Scala apps

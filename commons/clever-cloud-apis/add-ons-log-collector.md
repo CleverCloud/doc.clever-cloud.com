@@ -1,6 +1,8 @@
 ---
 title: Add-on Log Collector
 position: 3
+tags:
+- developer
 ---
 # Add-on Log Collector
 

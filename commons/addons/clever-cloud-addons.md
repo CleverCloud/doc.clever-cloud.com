@@ -1,9 +1,15 @@
 ---
 title: Clever Cloud Add-ons
-position: 1
+position: 2
+shortdesc: 'This article introduces the add-ons: a way to add services to your application on Clever Cloud.'
+tags:
+- addons
+keywords:
+- addons
+- addon
 ---
 
-# Clever Cloud Add-ons
+# Introduction to Add-ons
 
 Add-ons are a way to add services to your application, for example a database or a caching system, to enrich its
 features.
@@ -74,7 +80,7 @@ Features and environment variables (if applicable) are shown.
 
 <figure class="cc-content-img">
   <a class="cc-content-img" href="/assets/images/managing-addons-info.png">
-    <img src="/assets/images/managing-addons-info.png">
+    <img src="/doc/assets/images/managing-addons-info.png">
   </a>
   <figcaption>
     Example of the information tab of an add-on
@@ -89,7 +95,7 @@ This screen is managed directly by the provider of the add-on.
 
 <figure class="cc-content-img">
   <a class="cc-content-img" href="/assets/images/managing-addons-config.png">
-    <img src="/assets/images/managing-addons-config.png">
+    <img src="/doc/assets/images/managing-addons-config.png">
   </a>
   <figcaption>
     Example of the configuration tab of an add-on

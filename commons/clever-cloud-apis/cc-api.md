@@ -1,6 +1,8 @@
 ---
 title: Clever Cloud API
 position: 1
+tags:
+- developer
 ---
 # Clever Cloud API
 

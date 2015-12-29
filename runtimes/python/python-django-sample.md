@@ -1,6 +1,8 @@
 ---
 title: Sample Django application
 shortdesc: The goal of this article is to show you how to deploy a Django application on Clever Cloud.
+tags:
+- python
 ---
 
 # Django sample application

@@ -1,6 +1,8 @@
 ---
 title: Deploy Ruby on Rails apps
 shortdesc: Ruby on Rails is an open source web application framework which runs on the Ruby programming language.
+tags:
+- ruby
 ---
 
 # Deploy Ruby on Rails applications

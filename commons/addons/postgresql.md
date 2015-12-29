@@ -1,6 +1,15 @@
 ---
 title: PostgreSQL add-on
-position: 6
+position: 7
+shortdesc: PostgreSQL is an open-source relational database management system (RDBMS).
+tags:
+- addons
+keywords:
+- sql
+- postgresql
+- pg
+- pgsql
+- mariadb
 ---
 
 # PostgreSQL

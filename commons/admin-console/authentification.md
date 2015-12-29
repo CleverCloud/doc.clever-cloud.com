@@ -1,6 +1,13 @@
 ---
 title: Authentication
 position: 1
+shortdesc: How to be authenticated on Clever Cloud
+tags:
+- account-setup
+keywords:
+- auth
+- authentication
+- github
 ---
 
 # Authentication On Clever Cloud

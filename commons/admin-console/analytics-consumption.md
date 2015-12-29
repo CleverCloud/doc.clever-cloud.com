@@ -1,6 +1,12 @@
 ---
 title: Analytics and consumption
 position: 6
+shortdesc: Redis is an open source, in-memory data structure store, used as database, cache and message broker.
+tags:
+- billing
+keywords:
+- billing
+- consumption
 ---
 
 # Analytics and consumption
@@ -10,4 +16,4 @@ You only pay what you consume. It means that every 10 minutes, we check your app
 The following charts on the dashboard main page presents daily credits consumption:  
 
 <br/>
-<figure class="cc-content-img"><img src="/assets/images/analytics.png"></figure>
+<figure class="cc-content-img"><img src="/doc/assets/images/analytics.png"></figure>

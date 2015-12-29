@@ -1,6 +1,13 @@
 ---
 title: Payments & invoicing
 position: 5
+shortdesc: Managing invoices and payment on Clever Cloud
+tags:
+- billing
+keywords:
+- invoices
+- tax
+- pricing
 ---
 # Payments & invoicing
 
@@ -24,6 +31,6 @@ Invoices are available in the *Invoices* tab of the *Credits Manager* section. I
 * for organization: available in *Configuration > Informations and Advanced Configuration*
 
 <figure class="cc-content-img">
-  <a href="/assets/images/billing-infos.png"><img src="/assets/images/billing-infos.png"/></a>
+  <a href="/assets/images/billing-infos.png"><img src="/doc/assets/images/billing-infos.png"/></a>
   <figcaption>Organization information</figcaption>
 </figure>

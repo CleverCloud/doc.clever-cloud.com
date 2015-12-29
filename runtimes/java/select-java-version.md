@@ -1,6 +1,8 @@
 ---
 title: Selecting the java version
 shortdesc: This section provides information for selecitng the appropriate java version for your application
+tags:
+- java
 ---
 
 ## Selecting your java version

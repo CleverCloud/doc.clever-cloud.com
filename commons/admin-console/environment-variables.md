@@ -1,8 +1,16 @@
 ---
 title: Environment variables
 position: 8
+shortdesc: How to setup and configure environnement variables for apps and add-ons
+tags:
+- dashboard-setup
+- developer
+keywords:
+- env
+- variables
+- environment variables
 ---
-## Environment variables
+## Configuring Environment variables
 
 Clever Cloud allows you to define environment variables that will be
 injected in your application's environment.

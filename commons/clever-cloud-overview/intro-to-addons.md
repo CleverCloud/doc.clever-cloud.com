@@ -1,6 +1,9 @@
 ---
 title: Intro to add-ons
 position: 2
+tags:
+- dashboard-setup
+- addons
 ---
 
 # Intro to add-ons

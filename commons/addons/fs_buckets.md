@@ -1,6 +1,15 @@
 ---
 title: FS Buckets add-on
-position: 3
+title: FS Buckets add-on
+position: 4
+shortdesc: This add-on allows applications to use a persistent file system, as git-based apps don't have one.
+tags:
+- addons
+keywords:
+- nfs
+- file system
+- buckets
+- fs buckets
 ---
 
 # FS Buckets: file system with persistence <span class="cc-beta pull-right" title="Currently in Beta version"></span>
