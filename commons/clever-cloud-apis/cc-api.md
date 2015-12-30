@@ -16,12 +16,37 @@ use it.
 
 Clever Cloud API works with an OAuth1 based authentication.
 
+There are 2 supported methods for the signature: PLAINTEXT and HMAC-SHA1.
+While PLAINTEXT is way easier for testing, you **should** use HMAC-SHA1
+when it comes to production. This ensures that the request is totaly verified.
+
+We have a [client for javascript on Github](https://github.com/CleverCloud/clever-client.js)
+where you can find a lot of informations.
+Especially in the [src/session.js file](https://github.com/CleverCloud/clever-client.js/blob/master/src/session.js)
+
+This client is being used by the Console. Also, the Console gives you a lot
+of informations in the "network" panel of the devtools. If you're stuck, this
+is one way for debugging.
+
+For the Authorization header, make sure to have something like:
+```bash
+ Authorization: OAuth key="value", key2="value2"
+```
+The ``OAuth`` and doubles quotes around values are mandatory
 #### **Create consumers tokens**
 
-You need to [create some consumers tokens](https://console.clever-cloud.com/users/me/tokens)
-in the Clever Cloud console. Theses tokens allow you to select the permissions
-you ask to the user which permissions you need for your application. You need
-to set a callback URL, it will send you to this URL after authentication.
+You need to create an oauth consumer token in the Clever Cloud console.
+A link "Create an oauth consumer" is available under your organisation's
+addons list. All created consumers will appear below that link, like your
+applications and addons.
+
+These consumers allow you to register an application. By creating a consumer,
+users will be able to grant (or decline) privileges for your application.
+For example, the Clever Cloud Console is using an oauth consumer.
+You (most of the time) give it full access to manage your account.
+
+You need to set a callback URL, this is the url your user will be redirected
+after he has been authenticated.
 
 #### **Get a request token**
 
@@ -93,5 +118,6 @@ allow you to receive real-time logs of an application via WebSocket.
 
 #### **Events**
 [This endpoint](https://www.clever-cloud.com/doc/api/#!/events/events_event-socket_get)
-allow you to receive a stream of events on you account. It can be application
-deployments that success or fail, application creation or deletion.
+allow you to receive a stream of events emitted on your account.
+Events like git push, add or remove an application / addon, deployments success / failed
+are available.
