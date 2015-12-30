@@ -81,7 +81,7 @@ configuration file. This file is optional.
 {
   "deploy" : {
     "env": "<string>",
-    "rakegoals": [<string>]
+    "rakegoals": [<string>],
     "sidekiq": true
   }
 }
