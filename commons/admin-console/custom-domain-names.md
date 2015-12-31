@@ -11,80 +11,121 @@ keywords:
 - URL
 ---
 
-# Managing domain names
+# Managing Domain Names
 
 When creating an application, you have two (non exclusive) choices for domain names:
 
 * Using a personal domain name
-* Using a ***.cleverapps.io** free domain
+* Using a ***.cleverapps.io** free domain, with built-in SSL
 
-<figure class="cc-content-img"><img  src="/doc/assets/images/domain1.png"></figure>
-<figcaption>Example of domain names customization</figcaption>
+## Linking your Domain Name to your Application
 
-## Personal domain name
+You can link one or several domain names in the console.
 
+Add it in the application configuration: in the console, click on your **application name** in the first panel, then choose **domain names**. You'll have to choose to add a custom domain name or use a sub-domain under ``*.cleverapps.io``
 
-<div class="alert alert-hot-problems">
-<h5>Important: chosing between A and CNAME</h5>
-<p>
-The preferred way to point your domain name to Clever Cloud is through the use of a CNAME record. Please review the settings below before making changes in production. 
-</p>
-<p>
-If you want to redirect your top-level domain name to a subdomain through HTTP (eg ``domain.com`` to ``www.domain.com``), most domain name registrars provide a web redirection service.
-</p>
-</div>
+There is a default entry configured by default for every new app: ``yourAppID.cleverapps.io``.
+In your application's domain section, just enter ``example.cleverapps.io``. You have to choose a unique one. Trusted SSL is available on every sub-domains.
 
+If you need to configure a custom domain name, see the steps below.
 
-### Your application runs in the Europe ('PAR') zone
+## Personal Domain Names
 
-You have two non exclusive choices to add custom personal domain names:
+### Your Application Runs in the Europe/Paris ('PAR') Zone
 
-  * Sub-domains like ``hello.example.com`` and wildcard sub-domains like ``*.example.com``
-
-    On your domain name provider, point the associated *hello* **CNAME record** to ``domain.par.clever-cloud.com``
-
-    <a href="http://www.gandi.net" target="_blank">Gandi.net</a> example :
-    <figure class="cc-content-img">
-      <img  src="/doc/assets/images/domain2.png">
-    </figure>
-    <figcaption>CNAME records example</figcaption>
-
-  * Domains like ``example.com``
-
-    On your domain name provider, point two **A records** to ``62.210.112.171`` and ``62.210.92.244``
+<table class="table table-bordered" style="text-align:center">
+  <tr>
+    <th><center>Record Type</center></th>
+    <th><center>Value</center></th>
+  </tr>
+  <tr>
+    <td>CNAME <div><span class="label label-success">Recommended</span></div></td>
+    <td>``domain.par.clever-cloud.com``</td>
+  </tr>
+  <tr>
+    <td>A<div><small>Only if CNAME is not available</small></div></td>
+    <td>Two records on ``62.210.112.171`` and ``62.210.92.244``</td>
+  </tr>
+</table>
 
 
-### Your application runs in the North-America ('MTL') zone
+### Your Application Runs in the North-America/Montreal ('MTL') Zone
 
-You have two non exclusive choices to add custom personal domain names:
-
-  * Sub-domains like ``hello.example.com`` and wildcard sub-domains like ``*.example.com``
-
-    On your domain name provider, point the associated *hello* **CNAME record** to ``domain.mtl.clever-cloud.com``
-
-    <a href="http://www.gandi.net" target="_blank">Gandi.net</a> example :
-    <figure class="cc-content-img">
-      <img  src="/doc/assets/images/domain2.png">
-    </figure>
-    <figcaption>CNAME records example</figcaption>
-
-  * Domains like ``example.com``
-
-    On your domain name provider, point two **A records** to ``68.71.34.21`` and ``68.71.34.20``
+<table class="table table-bordered" style="text-align:center">
+  <tr>
+    <th><center>Record Type</center></th>
+    <th><center>Value</center></th>
+  </tr>
+  <tr>
+    <td>CNAME <div><span class="label label-success">Recommended</span></div></td>
+    <td>``domain.mtl.clever-cloud.com``</td>
+  </tr>
+  <tr>
+    <td>A<div><small>Only if CNAME is not available</small></div></td>
+    <td>Two records on ``68.71.34.21`` and ``68.71.34.20``</td>
+  </tr>
+</table>
 
 
 <br/>
-<div class="alert alert-hot-problems">
-  <h4>Reminder:</h4>
-  <p>Remember that it may take up to a full day for DNS changes to propagate, so be patient.</p>
-  <h4>Using a domain wildcard:</h4>
-  <p><strong>*.example.com</strong> will match e.g. <strong>blog.example.com</strong> or <strong>www.example.com</strong>.
-  </p>
-  <p> But for the raw domain <strong>example.com</strong>, you will have to add
-both <strong>*.example.com</strong> and example.com to your application.</p>
+
+You can point your domain name to clever cloud either with a CNAME record or with A records. **The use of a CNAME record is highly recommended.** With a CNAME record, your DNS configuration is always up-to-date. Using A records will require you to keep the DNS configuration up-to-date manually. Domain names linked to clever cloud applications are monitored, so we will send you an email if your DNS configuration is obsolete or incorrect.
+
+
+<div class="panel panel-warning">
+  <div class="panel-heading">
+     <h4>Warning on CNAME Availability</h4>
+  </div>
+  <div class="panel-body">
+    You cannot use a CNAME  on a top-level domain, or on a subdomain which already has DNS records.
+  </div>
 </div>
 
+If you want to make you application available from a domain name which does not support CNAME records (eg example.com in addition to ``www.example.com``, check if your registrar provides a web redirection service. This way, you only have to make ``www.example.com`` point to Clever Cloud. Please note that web redirection provided registrars only work over HTTP.
 
-## *.cleverapps.io domain
+Remember that DNS changes may take time to propagate (usually a few hours, sometimes up to a day or more). It depends on the TTL setting of your DNS configuration. For faster changes, you can lower the TTL value in advance, and rise it again afterwards.
 
-In your application's domain section, just enter ``example.cleverapps.io``.
+Before changing your domain name configuration, you can lower the TTL of your domain name one day before the migration (like 3min). Any changes on your DNS configuration will be applied faster. Then, when everything is configured properly, you can put the default TTL value.
+
+
+<div class="panel panel-warning">
+  <div class="panel-heading">
+     <h4>Note on using a domain wildcard</h4>
+  </div>
+  <div class="panel-body">
+    <div>
+      ``*.example.com`` will match e.g. ``blog.example.com`` or ``www.example.com``.
+    </div>
+    <div> But for the raw domain ``example.com``, you will have to add both ``*.example.com`` and example.com to your application.</div>
+  </div>
+</div>
+<br>
+### Contextual Example
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Domain Name Use Case</th> <th>CNAME config</th> <th>record A config</th> <th>Web redirection</th>
+    </tr>
+  </thead>
+  <tboby>
+    <tr>
+      <td>``www.example.com`` <br> ``example.com``</td>
+      <td> point ``www.example.com`` to ``domain.par/mtl.clever-cloud.com.``</td>
+      <td>No A record needed</td>
+      <td>Redirect ``example.com`` to ``www.example.com`` </td>
+    </tr>
+    <tr>
+      <td>``www.example.com``</td>
+      <td> point ``www.example.com`` to ``domain.par/mtl.clever-cloud.com.``</td>
+      <td>No A record needed</td>
+      <td>No redirect needed</td>
+    </tr>
+    <tr>
+      <td>``example.com``</td>
+      <td>No CNAME record needed</td>
+      <td>point ``example.com`` to the two IP adresses of the selected region</td>
+      <td>No redirect needed</td>
+    </tr>
+  </tboby>
+</table>
