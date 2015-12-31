@@ -13,11 +13,15 @@ keywords:
 
 # Redsmin
 
-<div class="alert alert-hot-problems">
-  <h5>New Redis add-on</h5>
-  <div>Clever Cloud now provides a Redis add-on, that comes with Redsmin.<br />
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <h4 class="panel-title">Redis + Redsmin</h4>
+  </div>
+  <div class="panel-body">
+    Clever Cloud now provides a Redis add-on, that comes with Redsmin.<br />
   Read [this blog post](https://www.clever-cloud.com/blog/features/2015/08/26/introducing-redis-by-clever-cloud/) to
-  know more about it.</div>
+  know more about it.
+  </div>
 </div>
 
 Redsmin is a GUI to help developers monitor their Redis systems.

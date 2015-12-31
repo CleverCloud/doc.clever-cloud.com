@@ -71,11 +71,13 @@ The `buckets.json` file must contain the following structure:
 ]
 ```
 
-<div class="alert alert-hot-problems">
-<p>
-You can find a pre-filled json object to copy in the dashboard of your FSBucket add-on, in
-the "Dashboard configuration" tab.
-</p>
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <h4 class="panel-title">Getting a pre-filled conf file.</h4>
+  </div>
+  <div class="panel-body">
+    You can find a pre-filled json object to copy in the dashboard of your FSBucket add-on, in the "Dashboard configuration" tab
+  </div>
 </div>
 
 It's a json array containing objects with at least two fields:
@@ -118,27 +120,35 @@ buckets</td>
 </tbody>
 </table>
 
-<div class="alert alert-hot-problems">
-<h5>Important note about target folder</h5>
-<p>
-The folder must not exist in your repository (or it needs to be empty). Otherwise, the mount of your bucket will be ignored.
-</p>
-<p>
-You can mount the same bucket in different folders, but they will share the same
-content, so it's not the solution. You should prefer to mount the bucket in only one
-folder and then manage multiple subfolders in it.
-</p>
+<div class="panel panel-warning">
+  <div class="panel-heading">
+    <h4 class="panel-title">Important note about target folder</h4>
+  </div>
+  <div class="panel-body">
+    <p>
+    The folder must not exist in your repository (or it needs to be empty). Otherwise, the mount of your bucket will be ignored.
+    </p>
+    <p>
+    You can mount the same bucket in different folders, but they will share the same
+    content, so it's not the solution. You should prefer to mount the bucket in only one
+    folder and then manage multiple subfolders in it.
+    </p>
+  </div>
 </div>
 
-<div class="alert alert-hot-problems">
-<h5>Other things you *must* know</h5>
-<p>
-You cannot mount two buckets in the same folder for the same app.
-</p>
-<p>
-If you put the same "folder" value for two entries in the *buckets.json* array, **you better
-make sure** that the "apps" fields make the two buckets mutually exclusive upon deployment!
-</p>
+<div class="panel panel-warning">
+  <div class="panel-heading">
+    <h4 class="panel-title">Important notes</h4>
+  </div>
+  <div class="panel-body">
+    <p>
+    You cannot mount two buckets in the same folder for the same app.
+    </p>
+    <p>
+    If you put the same "folder" value for two entries in the *buckets.json* array, **you better
+    make sure** that the "apps" fields make the two buckets mutually exclusive upon deployment!
+    </p>
+  </div>
 </div>
 
 ## Accessing your data inside the FS Bucket
