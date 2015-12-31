@@ -17,12 +17,16 @@ MySQL is an open-source relational database management system (RDBMS).
 
 ## MySQL plans
 
-<div class="alert alert-hot-problems">
-  <h5>Note for Shared databases</h5>
-  <div>As Shared databases (DEV and S plans) are shared between multiple applications and delays could appear in case of
+<div class="panel panel-warning">
+  <div class="panel-heading">
+    <h4 class="panel-title">Note for Shared databases</h4>
+  </div>
+  <div class="panel-body">
+    As Shared databases (DEV and S plans) are shared between multiple applications and delays could appear in case of
   an high demand.<br />
   If this delays create problems in your application or are problematcs, we recommend you to use a dedicated database
-  (M plans and above).</div>
+  (M plans and above).
+  </div>
 </div>
 
 <table class="table table-bordered table-striped dataTable"><caption>MySQL pricing plans</caption>
