@@ -36,4 +36,16 @@ MongoDB is an open source NoSQL document-oriented database.
 <td>SHARED</td>
 <td>Free</td>
 </tr>
+<tr>
+<td class="cc-col__price "><span class="label cc-label__price label-info">SM</span></td>
+<td>30 GB</td>
+<td>2 GB</td>
+<td>75.00€</td>
+</tr>
+<tr>
+<td class="cc-col__price "><span class="label cc-label__price label-info">M</span></td>
+<td>100 GB</td>
+<td>4 GB</td>
+<td>150.00€</td>
+</tr>
 </table>
