@@ -12,16 +12,7 @@ keywords:
 - database
 ---
 
-# MongoDB <span class="cc-beta pull-right" title="Currently in Beta version"></span>
-
-<div class="panel panel-warning">
-  <div class="panel-heading">
-    <h4 class="panel-title">Note for Beta Version</h4>
-  </div>
-  <div class="panel-body">
-    MongoDB is free during the beta period. No credits wil be charged.
-  </div>
-</div>
+# MongoDB
 
 MongoDB is an open source NoSQL document-oriented database.
 
