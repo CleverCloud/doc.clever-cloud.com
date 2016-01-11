@@ -19,7 +19,7 @@ Node.js is a platform built on Chrome's JavaScript runtime for building fast, sc
 
 ## Create an application
 
-Refer to the page [Deploy an application on Clever Cloud](/clever-cloud-overview/add-application/).
+Refer to the page [Deploy an application on Clever Cloud](/doc/clever-cloud-overview/add-application/).
 
 ## Necessary information
 
