@@ -30,7 +30,7 @@ Your application must be set to listen on the port 8080.
 
 ## Create an application
 
-Refer to the page [Deploy an application on Clever Cloud](/clever-cloud-overview/add-application/).
+Refer to the page [Deploy an application on Clever Cloud](/doc/clever-cloud-overview/add-application/).
 
 ## Necessary information
 
