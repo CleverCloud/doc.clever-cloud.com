@@ -30,6 +30,20 @@ Refer to the page [Deploy an application on Clever Cloud](/doc/clever-cloud-over
 </p>
 </div>
 
+## Choose your PHP version
+
+Since January 2016, choosing a PHP version has gotten easier: just set the PHP_VERSION environment
+variable to one of the following values:
+
+- 5.4
+- 5.5
+- 5.6
+- 7.0
+
+By default, all new PHP applications are created with a default PHP_VERSION, set to 5.6.
+You can of course change it whenever you want then redeploy your application to use the
+version you want.
+
 ## Configuration files for PHP applications
 
 The configuration file for your PHP application must be `/clevercloud/php.json`, that is a *php.json* file in a
