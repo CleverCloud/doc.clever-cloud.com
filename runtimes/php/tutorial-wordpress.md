@@ -119,7 +119,7 @@ your application. If this folder doesn't exist, create it in the **root** of you
 we recommend you to install the [Varnish HTTP Purge](https://wordpress.org/plugins/varnish-http-purge/) plugin to
 your Wordpress. It'll purge the Varnish cache for you and give you the possibility to purge it manually.
 
-If you need to manually purge the Varnish cache, the plugin provide a **Purge Varnish cache** button on the top bar
+If you need to manually purge the Varnish cache, the plugin provides a **Purge Varnish cache** button on the top bar
 of your website.
 
 
@@ -128,7 +128,7 @@ of your website.
 [Redis](/doc/addons/redis/) offers you a good way to speed-up your application by caching some of the objects of your
 application, as the result of SQL queries of your application, improving the response time.
 
-To enable [Redis](/doc/addons/redis/ for your Wordpress, you need to disable other Object Cache and Data Cache of your
+To enable [Redis](/doc/addons/redis/) for your Wordpress, you need to disable other Object Cache and Data Cache of your
 application (as those provided by *W3 Total Cache* for example). Make sure they aren't enabled to avoid conflicts and
 performance problems.
 
@@ -145,8 +145,8 @@ define('WP_REDIS_PORT', getenv('REDIS_PORT'));
 define('WP_REDIS_PASSWORD', getenv('REDIS_PASSWORD'));
 ```
 
-3. Download [this file](http://plugins.svn.wordpress.org/redis-cache/trunk/includes/object-cache.php),
-who manages the connexion with Redis and Wordpress and move it to you `/wp-content` folder. The file **must** be named
+3. Download [this file](http://plugins.svn.wordpress.org/redis-cache/trunk/includes/object-cache.php)
+who manages the connexion with Redis and Wordpress and moves it to your `/wp-content` folder. The file **must** be named
 `object-cache.php`.
 
-4. Redis should now works with your Wordpress.
+4. Redis should now work with your Wordpress.
