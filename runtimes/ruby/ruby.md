@@ -70,6 +70,26 @@ Due to current landscape in ruby applications, the default version is the
 greatest 2.1.Y. We provide also the latest 2.2.Y version and the latest
 1.9.Y too, but prefer the current stable: 2.1.
 
+## Configuration secret key production
+
+You need to use environment injection for `secret_key_base` in file  `./config/secret.yml` :
+
+```yml
+  # You can use `rake secret` to generate a secure secret key.
+  # Do not keep production secrets in the repository,
+  # instead read values from the environment.
+  production:
+    secret_key_base: <%= ENV["SECRET_KEY_BASE"] %>
+```
+
+Clever Cloud can inject environment variables that are defined in the
+dashboard and by add-ons linked to your application.
+
+To access your variable in your application, nothing simpler! Just get
+it from your environment, like you would with `PATH`:
+`ENV["MY_VARIABLE"]`.
+
+
 ## More configuration
 
 You can configure your deployment via the `clevercloud/ruby.json`
@@ -153,15 +173,6 @@ Example:
 ```
 WSGI_BUFFER_SIZE=8192
 ```
-
-## Environment injection
-
-Clever Cloud can inject environment variables that are defined in the
-dashboard and by add-ons linked to your application.
-
-To access your variable in your application, nothing simpler! Just get
-it from your environment, like you would with `PATH`:
-`ENV["MY_VARIABLE"]`.
 
 ## Deploy on Clever Cloud
 
