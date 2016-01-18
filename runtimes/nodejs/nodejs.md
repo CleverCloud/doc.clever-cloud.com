@@ -238,7 +238,7 @@ your .npmrc.
 
 ## Deploy on Clever Cloud
 
-Application deployment on Clever Cloud is via Git. Follow [these steps](/clever-cloud-overview/add-application/) to deploy your application.
+Application deployment on Clever Cloud is via Git. Follow [these steps](/doc/clever-cloud-overview/add-application/) to deploy your application.
 
 ## Deployment video
 
