@@ -7,7 +7,7 @@ tags:
 
 ## Selecting your java version
 
-Simply set the environement varaiable **JAVA_VERSION** to the version you want
+Simply set the environment variable **JAVA_VERSION** to the version you want
 
 Accepted values are `6`, `7` and `8`
 
