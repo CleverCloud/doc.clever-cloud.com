@@ -13,4 +13,4 @@ Accepted values are `6`, `7` and `8`
 
 ## Retrocompatibility with the old configuration system
 
-If you have set your java version with the old system (wich consist by set the version in a file **clevercloud/java_version**), don't worry, we guarantee retrocompatibility with this configuration
+The configuration of the JAVA_VERSION through the **clevercloud/java_version** file still works. This is totally backward compatible.
