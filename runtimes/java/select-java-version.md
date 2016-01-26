@@ -7,6 +7,10 @@ tags:
 
 ## Selecting your java version
 
-Simply create a file **clevercloud/java_version** containing just the java version you want inside.
+Simply set the environment variable **JAVA_VERSION** to the version you want
 
 Accepted values are `6`, `7` and `8`
+
+## Retrocompatibility with the old configuration system
+
+The configuration of the JAVA_VERSION through the **clevercloud/java_version** file still works. This is totally backward compatible.
