@@ -73,7 +73,6 @@ We provide a few examples of dockerized applications on Clever Cloud.
 
 [Elixir App](https://github.com/CleverCloud/demo-docker-elixir/blob/master/Dockerfile)
 [Haskell App](https://github.com/CleverCloud/demo-haskell)
-[Haskell App](https://github.com/CleverCloud/demo-haskell)
 [Hack / HHVM App](https://github.com/CleverCloud/demo-hhvm)
 [Seaside / Smalltalk App](https://github.com/CleverCloud/demo-seaside)
 [Rust App](https://github.com/CleverCloud/demo-rust)
