@@ -74,10 +74,7 @@ Basically, you should just point to a WSGI capable object.
 
 ### Manage your static files
 
-You are able to use a Filesystem Bucket to store your static files. Please refer to the
-[File System Buckets](/doc/addons/clever-cloud-addons/#fs-buckets-file-system-with-persistance/) section.
-
-When your bucket is available, to enable Nginx to serve your static resources you must set your public folder in
+To enable Nginx to serve your static resources you must set your public folder in
 `clevercloud/python.json` like below:
 
 ```haskell
@@ -87,6 +84,9 @@ When your bucket is available, to enable Nginx to serve your static resources yo
       }
    }
 ```
+
+Also, you are able to use a Filesystem Bucket to store your static files. Please refer to the
+[File System Buckets](/doc/addons/clever-cloud-addons/#fs-buckets-file-system-with-persistance/) section.
 
 **Note**: the path of your folder must be absolute regarding the root of your application.
 
