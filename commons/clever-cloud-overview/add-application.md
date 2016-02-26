@@ -83,7 +83,7 @@ Follow these steps to deploy your application:
    <p>If the remote asks you for a password right after a git push attempt, this is may be due to a SSH Key misconfiguration.
    <br>Add your SSH key to your profile here:
    <a href="https://console.clever-cloud.com/users/me/ssh-keys">https://console.clever-cloud.com/users/me/ssh-keys</a></p>
-   <p>The full tutorial about adding SSH key is here: <a href="doc/admin-console/ssh-keys/">Adding SSH keys</a> </p>
+   <p>The full tutorial about adding SSH key is here: <a href="/doc/admin-console/ssh-keys/">Adding SSH keys</a> </p>
  </div>
 
 ### Automatic Deployment with GitHub
