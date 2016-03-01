@@ -116,13 +116,3 @@ have to add `trustxforwarded=true` in `application.conf`.
 ## Deploy on Clever Cloud
 
 Application deployment on Clever Cloud is via Git. Follow [these steps](/doc/clever-cloud-overview/add-application/) to deploy your application.
-
-
-## Tutorial - Play! application deployment
-
-<p>
-  <iframe width="640"; height="360" src="http://www.youtube.com/embed/HL366BhWFMw" frameborder="0" allowfullscreen></iframe>
-</p>
-
-
-More info on <a target="_blank" href="http://www.playframework.com">playframework.com</a>.
