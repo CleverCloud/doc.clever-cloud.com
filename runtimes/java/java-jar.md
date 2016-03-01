@@ -13,8 +13,7 @@ need to change your code, but running it on Clever Cloud needs some
 configuration files, here is what you can do:
 
   * Commit and push a single jar file with all dependencies embedded;
-  * Commit and push your sources, let Clever Cloud build them with maven
-		or gradle, and run the resulting jar;
+  * Commit and push your sources, let Clever Cloud build them with maven or gradle, and run the resulting jar;
 
 ## Create an application
 
