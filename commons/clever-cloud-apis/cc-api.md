@@ -1,6 +1,7 @@
 ---
 title: Clever Cloud API
 position: 1
+shortdesc: Getting started with the Clever Cloud API
 tags:
 - developer
 ---

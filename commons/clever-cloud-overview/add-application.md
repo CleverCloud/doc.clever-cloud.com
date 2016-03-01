@@ -1,6 +1,7 @@
 ---
 title: Deploying an application
 position: 4
+shortdesc: Step by step guide to deploy an application on Clever Cloud.
 tags:
 - dashboard-setup
 ---

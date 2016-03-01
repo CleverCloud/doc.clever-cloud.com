@@ -1,6 +1,7 @@
 ---
 title: Intro to add-ons
 position: 2
+shortdesc: Add-ons allows you to extend your apps with databases, search engines, monitoring etc.
 tags:
 - dashboard-setup
 - addons

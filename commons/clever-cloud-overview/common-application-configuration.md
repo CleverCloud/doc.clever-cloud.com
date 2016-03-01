@@ -1,6 +1,7 @@
 ---
 title: Common apps configuration
 position: 5
+shortdesc: Learn how to do some basic steup configuration to get started
 tags:
 - dashboard-setup
 ---
