@@ -48,7 +48,7 @@ Clever Cloud billing is counted every 10 minutes. The following prices are based
 </table>
 <br/>
 
-## Add-on databases billing rates  
+## Clever Cloud Native Add-ons pricing
 
 The following add-ons are the production databases maintained internally by Clever Cloud.
 
@@ -159,3 +159,147 @@ The following add-ons are the production databases maintained internally by Clev
 </tr>
 </table>
 
+
+<hr>
+<br>
+<table class="table table-bordered table-striped dataTable"><caption>MongoDB pricing plans</caption>
+<tr>
+  <th>Name</th>
+  <th>Memory</th>
+  <th>Storage</th>
+  <th>Price /month</th>
+</tr>
+<tr>
+  <td class="cc-col__price "><span class="label cc-label__price label-info">S</span></td>
+  <td>Shared</td>
+  <td>500 MB</td>
+  <td>Free</td>
+</tr>
+<tr>
+  <td class="cc-col__price "><span class="label cc-label__price label-info">SM</span></td>
+  <td>2 GB</td>
+  <td>30 GB</td>
+  <td>75.00 €</td>
+</tr>
+<tr>
+  <td class="cc-col__price "><span class="label cc-label__price label-info">M</span></td>
+  <td>4 GB</td>
+  <td>100 GB</td>
+  <td>150.00 €</td>
+</tr>
+</table>
+
+
+<hr>
+<br>
+<table class="table table-bordered table-striped dataTable"><caption>Redis pricing plans</caption>
+<tr>
+  <th>Name</th>
+  <th>Size</th>
+  <th>Connection limit</th>
+  <th>Databases</th>
+  <th>Price /month</th>
+</tr>
+<tr>
+  <td class="cc-col__price "><span class="label cc-label__price label-info">DEV</span></td>
+  <td>10 MB</td>
+  <td>10</td>
+  <td>100</td>
+  <td>Free</td>
+</tr>
+<tr>
+  <td class="cc-col__price "><span class="label cc-label__pr
+  ice label-info">S</span></td>
+  <td>100 MB</td>
+  <td>100</td>
+  <td>100</td>
+  <td>8.00 €</td>
+</tr>
+<tr>
+  <td class="cc-col__price "><span class="label cc-label__price label-info">M</span></td>
+  <td>250 MB</td>
+  <td>100</td>
+  <td>100</td>
+  <td>13.00 €</td>
+</tr>
+<tr>
+  <td class="cc-col__price "><span class="label cc-label__price label-info">L</span></td>
+  <td>500 MB</td>
+  <td>250</td>
+  <td>100</td>
+  <td>43.00 €</td>
+</tr>
+<tr>
+  <td class="cc-col__price "><span class="label cc-label__price label-info">XL</span></td>
+  <td>1 GB</td>
+  <td>500</td>
+  <td>100</td>
+  <td>78.00 €</td>
+</tr>
+<tr>
+  <td class="cc-col__price "><span class="label cc-label__price label-info">XXL</span></td>
+  <td>2.5 GB</td>
+  <td>500</td>
+  <td>100</td>
+  <td>190.00 €</td>
+</tr>
+</table>
+
+<hr>
+<br>
+<table class="table table-bordered table-striped dataTable"><caption>FS Buckets pricing plans</caption>
+<tr>
+  <th>Name</th>
+  <th>Mounts</th>
+  <th>Storage</th>
+  <th>Price /month</th>
+</tr>
+<tr>
+  <td class="cc-col__price "><span class="label cc-label__price label-info">Basic</span></td>
+  <td>Unlimited</td>
+  <td>First 100 MB</td>
+  <td>Free</td>
+</tr>
+<tr>
+  <td class="cc-col__price "><span class="label cc-label__price label-info">Basic</span></td>
+  <td>Unlimited</td>
+  <td>Per 1GB</td>
+  <td>1.50 €
+  </td>
+</tr>
+</table>
+
+<hr>
+<br>
+<table class="table table-bordered table-striped dataTable"><caption>Cellar pricing plans</caption>
+<tr><th colspan="2">Storage</th></tr>
+<tr>
+  <td>First 100MB</td>
+  <td>Free</td>
+</tr>
+<tr>
+  <td>First 1TB</td>
+  <td>20.48 € / TB / mo
+</tr>
+<tr>
+  <td>First 25TB</td>
+  <td>15.36 € / TB / mo</td>
+</tr>
+<tr>
+  <td>First 50TB</td>
+  <td>10.24 € / TB / mo</td>
+</tr>
+<tr><th colspan="2">Traffic (outbound)</th></tr>
+<tr>
+  <td>First 100MB</td>
+  <td>Free</td>
+</tr>
+<tr>
+  <td>First 10TB</td>
+  <td>0.09 € / GB / mo</td>
+</tr>
+<tr>
+  <td>First 40TB</td>
+  <td>0.07 € / GB / mo</td>
+</tr>
+</table>
