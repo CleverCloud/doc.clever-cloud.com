@@ -48,7 +48,7 @@ Clever Cloud billing is counted every 10 minutes. The following prices are based
 </table>
 <br/>
 
-## Add-on databases billing rates
+## Add-on databases billing rates  
 
 The following add-ons are the production databases maintained internally by Clever Cloud.
 
