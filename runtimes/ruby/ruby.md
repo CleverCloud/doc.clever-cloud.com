@@ -147,6 +147,33 @@ feature.
 </table>
 
 
+The sidekiq field can also be an array of strings instead of a boolean, like this:
+
+```javascript
+"sidekiq":  [
+   "./config/sidekiq_1.yml",
+   "./config/sidekiq_2.yml",
+   "./config/sidekiq_3.yml"
+]
+```
+
+Each string is the path *from the root of the repository* to a sidekiq configuration file.
+Each file might contain something like the following:
+
+```yaml
+---
+:concurrency: 4
+:pidfile:     tmp/pids/sidekiq_1.pid
+:queues:
+  - [critical, 2]
+  - default
+
+production:
+  :logfile: ./log/sidekiq.log
+```
+
+It's a standard sidekiq.yml configuration file.
+
 ### Manage your static files
 
 To make Nginx serve your static resources you must set your public folder in `clevercloud/ruby.json` like below:
