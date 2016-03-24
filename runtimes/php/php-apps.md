@@ -322,6 +322,10 @@ Some extensions need to be enabled explicitly. To enable this extensions, you'll
 
     IonCube is a tool to obfuscate PHP code. It's often used by paying Prestashop and Wordpress plugins.
 
+* Redis: set `ENABLE_REDIS` to `true`.
+
+    Redis is an in-memory datastructure store. This extension allows to use it from PHP.  
+
 <div class="alert alert-hot-problems">
  <h4>Warning:</h4>
  <p>This extensions are only available for PHP >= 5.5.</p>
@@ -332,8 +336,11 @@ Some extensions need to be enabled explicitly. To enable this extensions, you'll
 We provide the possibility to store the PHP sessions in a [Redis database](/doc/addons/redis/) to improve the performances of
 your application.
 
-To enable this feature, you need a Redis add-on and you have to create an
-[environment variable](/doc/admin-console/environment-variables/) named `SESSION_TYPE` with the value `redis`.
+To enable this feature, you need to:
+
+ - enable Redis support on the application (create an [environment variable](/doc/admin-console/environment-variables/) named `ENABLE_REDIS` with the value `true`.)
+ - create and link a Redis add-on 
+ - create an [environment variable](/doc/admin-console/environment-variables/) named `SESSION_TYPE` with the value `redis`.
 
 <div class="alert alert-hot-problems">
  <h4>Warning:</h4>
