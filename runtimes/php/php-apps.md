@@ -121,7 +121,7 @@ this file.
 The `.htaccess` file can be created everywhere in you app, depending of the part of the application covered by directives.
 However, directives who applies to the entire application must be declared in a `.htaccess` file to the application root.
 
-#### Define a custome HTTP timeout
+#### Define a custom HTTP timeout
 
 You can define the timeout of an HTTP request in Apache using the `HTTP_TIMEOUT`
 [environment variable](/doc/admin-console/environment-variables/).
