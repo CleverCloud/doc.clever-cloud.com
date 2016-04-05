@@ -139,8 +139,15 @@ We <strong>do not</strong> execute any rake goals by default.
 <td><span class="label label-inverse">Optional</span></td>
 <td>deploy.sidekiq</td>
 <td>
-Run a sidekiq process in background. Beware, you will need a redis instance to use this
+Run a sidekiq process in background. Please note you will need a redis instance to use this
 feature.
+</td>
+</tr>
+<tr>
+<td><span class="label label-inverse">Optional</span></td>
+<td>deploy.static</td>
+<td>
+Let nginx serve the assets contained in the directory.
 </td>
 </tr>
 </tbody>
@@ -174,19 +181,24 @@ production:
 
 It's a standard sidekiq.yml configuration file.
 
-### Manage your static files
+### Assets and static files
 
-To make Nginx serve your static resources you must set your public folder in `clevercloud/ruby.json` like below:
+The `deploy.static` field of `clevercloud/ruby.json` allows you to serve
+static files with nginx.
 
-```haskell
-   {
-      "deploy": {
-         "static": "/mypublicfolder"
-      }
-   }
+If you use the asset pipeline, make sure to include the `assets:precompile`
+task in the `rakegoals` field of `clevercloud/ruby.json`.
+
+```json
+{
+    "deploy": {
+        "rakegoals": ["assets:precompile"],
+        "static": "/public"
+    }
+}
 ```
 
-*Note: the path of your folder must be absolute regarding the root of your application.*
+*Note: the path of the static folder must be absolute regarding the root of your application.*
 
 ### Update wsgi buffer size
 
