@@ -86,6 +86,16 @@ You can upload files (`--acl-public` makes the file readable by everyone).
     s3cmd put --acl-public image.jpg s3://bucket-name
 ```
 
+### Using a custom domain
+
+If you want to use a custom domain, for example cdn.example.com, you need to create a bucket named exactly like your domain:
+
+```bash
+    s3cmd mb s3://cdn.example.com
+```
+
+Then, you just have to create a CNAME record on your domain pointing to `cellar.services.clever-cloud.com.`.
+
 <div class="panel panel-warning">
   <div class="panel-heading">
     <h4 class="panel-title">S3 signature algorithm</h4>
