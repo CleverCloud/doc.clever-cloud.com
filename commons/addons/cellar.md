@@ -36,13 +36,13 @@ page.
 </tr>
 <tr>
 <td>Till 25 TB</td>
-<td>0.015€</td>
-<td>15.36€</td>
+<td>€ 0.015</td>
+<td>€ 15.36</td>
 </tr>
 <tr>
 <td>Till 50 TB</td>
-<td>0.01€</td>
-<td>10.24€</td>
+<td>€ 0.01</td>
+<td>€ 10.24</td>
 </tr>
 </table>
 
@@ -54,13 +54,13 @@ page.
 </tr>
 <tr>
 <td>till 10TB </td>
-<td>0.09€</td>
-<td>92.16€</td>
+<td>€ 0.09</td>
+<td>€ 92.16</td>
 </tr>
 <tr>
 <td>Till 40 TB</td>
-<td>0.07€</td>
-<td>71.68€</td>
+<td>€ 0.07</td>
+<td>€ 71.68</td>
 </tr>
 </table>
 
