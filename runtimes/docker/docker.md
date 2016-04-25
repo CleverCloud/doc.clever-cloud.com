@@ -48,7 +48,7 @@ to do to ensure that your application will run:
 
 * Push on the **master branch**.
 
-* Commit a file named **Dockerfile**, [Here is what it will look like](http://docs.docker.io/introduction/working-with-docker/#working-with-the-dockerfile "Dockerfile")
+* Commit a file named **Dockerfile**, [Here is what it will look like](https://docs.docker.com/engine/userguide/eng-image/dockerfile_best-practices "Dockerfile")
 
 * Listen on **port 8080**.
 
