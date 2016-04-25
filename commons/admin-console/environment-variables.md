@@ -83,39 +83,39 @@ documentations.
 <th>use case</th>
 </tr>
 <tr>
-<td><a href="/nodejs/nodejs/#environment-injection">Node.js</a>  </td>
+<td><a href="/doc/nodejs/nodejs/#environment-injection">Node.js</a>  </td>
 <td>process.env["MY_VAR"]</td>
 </tr>
 <tr>
-<td><a href="/java/java-war/#environment-injection">Java WAR</a> </td>
+<td><a href="/doc/java/java-war/#environment-injection">Java WAR</a> </td>
 <td>System.getProperties().getProperty("MY_VAR")</td>
 </tr>
 <tr>
-<td><a href="/java/play-framework-1/#environment-injection">Play! Framework 1</a>
+<td><a href="/doc/java/play-framework-1/#environment-injection">Play! Framework 1</a>
 & <a href="/java/play-framework-2/#environment-injection">Play! Framework 2</a></td>
 <td>System.getenv("MY\_VAR") or \${MY_VAR} in application.conf</td>
 </tr>
 <tr>
-<td><a href="/scala/scala/#environment-injection">Scala</a> </td>
+<td><a href="/doc/scala/scala/#environment-injection">Scala</a> </td>
 <td>System.getenv("MY\_VAR")</td>
 </tr>
 <tr>
-<td><a href="/php/php-apps/#environment-injection">PHP</a></td>
+<td><a href="/doc/php/php-apps/#environment-injection">PHP</a></td>
 <td>getenv("MY_VAR")</td>
 </tr>
 <tr>
-<td><a href="/python/python_apps/#environment-injection">Python</a></td>
+<td><a href="/doc/python/python_apps/#environment-injection">Python</a></td>
 <td>os.getenv("MY_VAR")</td>
 </tr>
 <tr>
-<td><a href="/ruby/ruby/#environment-injection">Ruby</a></td>
+<td><a href="/doc/ruby/ruby/#environment-injection">Ruby</a></td>
 <td>env[“my_var”]<br></td>
 </tr>
 </table>
 
 Please note that the variables are available at build-time, for
 runtimes that support build-time instructions, such as
-<a href="/java/java-war/#environment-injection">Java WAR</a>,
-<a href="/java/play-framework-1/#environment-injection">Play! Framework 1</a>,
-<a href="/java/play-framework-2/#environment-injection">Play! Framework 2</a>
-or <a href="/scala/scala/#environment-injection">Scala</a>.
+<a href="/doc/java/java-war/#environment-injection">Java WAR</a>,
+<a href="/doc/java/play-framework-1/#environment-injection">Play! Framework 1</a>,
+<a href="/doc/java/play-framework-2/#environment-injection">Play! Framework 2</a>
+or <a href="/doc/scala/scala/#environment-injection">Scala</a>.

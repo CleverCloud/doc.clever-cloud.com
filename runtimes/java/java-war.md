@@ -43,6 +43,10 @@ The supported containers are listed below:
 </table>
 
 
+## Available Java versions
+
+Please refer to <a href="/doc/java/select-java-version/">Java: select version</a>
+
 ## Create an application
 
 Refer to the page [Deploy an application on Clever Cloud](/doc/clever-cloud-overview/add-application/).

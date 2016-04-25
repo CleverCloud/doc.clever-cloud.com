@@ -70,6 +70,14 @@ Due to current landscape in ruby applications, the default version is the
 greatest 2.1.Y. We provide also the latest 2.2.Y version and the latest
 1.9.Y too, but prefer the current stable: 2.1.
 
+
+## Environment injection
+
+To access your variable in your application, nothing simpler! Just get
+it from your environment, like you would with `PATH`:
+`ENV["MY_VARIABLE"]`.
+
+
 ## Configuration secret key production
 
 You need to use environment injection for `secret_key_base` in file  `./config/secret.yml` :
@@ -84,10 +92,6 @@ You need to use environment injection for `secret_key_base` in file  `./config/s
 
 Clever Cloud can inject environment variables that are defined in the
 dashboard and by add-ons linked to your application.
-
-To access your variable in your application, nothing simpler! Just get
-it from your environment, like you would with `PATH`:
-`ENV["MY_VARIABLE"]`.
 
 
 ## More configuration
