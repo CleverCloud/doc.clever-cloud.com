@@ -1,7 +1,7 @@
 ---
 title: Environment variables
 position: 8
-shortdesc: How to setup and configure environnement variables for apps and add-ons
+shortdesc: How to setup and configure environment variables for apps and add-ons
 tags:
 - dashboard-setup
 - developer
