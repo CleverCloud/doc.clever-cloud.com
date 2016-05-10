@@ -40,7 +40,7 @@ If you need to configure a custom domain name, see the steps below.
   </tr>
   <tr>
     <td>CNAME <div><span class="label label-success">Recommended</span></div></td>
-    <td>``domain.par.clever-cloud.com``</td>
+    <td>``domain.par.clever-cloud.com.``</td>
   </tr>
   <tr>
     <td>A<div><small>Only if CNAME is not available</small></div></td>
@@ -58,7 +58,7 @@ If you need to configure a custom domain name, see the steps below.
   </tr>
   <tr>
     <td>CNAME <div><span class="label label-success">Recommended</span></div></td>
-    <td>``domain.mtl.clever-cloud.com``</td>
+    <td>``domain.mtl.clever-cloud.com.``</td>
   </tr>
   <tr>
     <td>A<div><small>Only if CNAME is not available</small></div></td>
