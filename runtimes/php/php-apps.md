@@ -257,6 +257,19 @@ $dbh = new PDO(
 );
 ```
 
+<div class="alert alert-hot-problems">
+ <h4>Warning:</h4>
+ <p>Environment variables are displayed in the default output of `phpinfo()`.
+    If you want to use `phpinfo()` without exposing environment variables, you
+have to call it this way:
+
+    ```php
+    phpinfo(INFO_GENERAL | INFO_CREDITS | INFO_CONFIGURATION | INFO_MODULES | INFO_VARIABLES | INFO_LICENSE)
+    ```
+ </p>
+</div>
+
+
 ## Frameworks and CMS
 
 The following is the list of tested CMS by our team.
