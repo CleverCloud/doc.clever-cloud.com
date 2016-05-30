@@ -20,14 +20,18 @@ into HTML.
 
 Refer to the page [Deploy an application on Clever Cloud](/doc/clever-cloud-overview/add-application/).
 
-<div class="alert alert-hot-problems">
-<h4>Warning:</h4>
-<p>An FTP application is automatically started once the application is created, even if no code has been sent.</p>
-<p>
- When you create a FTP application, a free [FS Bucket](/doc/addons/fs_buckets/) add-on is
- provisioned, named after the application. You will find the FTP
- credentials in the configuration tab of this add-on.
-</p>
+<div class="panel panel-warning">
+  <div class="panel-heading">
+    <h4>Warning:</h4>
+  </div>
+  <div class="panel-body">
+    <p>An FTP application is automatically started once the application is created, even if no code has been sent.</p>
+    <p>
+     When you create a FTP application, a free [FS Bucket](/doc/addons/fs_buckets/) add-on is
+     provisioned, named after the application. You will find the FTP
+     credentials in the configuration tab of this add-on.
+    </p>
+  </div>
 </div>
 
 ## Choose your PHP version
@@ -69,9 +73,13 @@ In the following example we want to set the webroot to the folder `/public`:
 
 Please note the absolute path style: `/public`.
 
-<div class="alert alert-hot-problems">
-<h4>Warning:</h4>
- <p>The change of the webroot will be rejected during the deployment if the target directory does not exist or is not a directory.</p>
+<div class="panel panel-warning">
+  <div class="panel-heading">
+    <h4>Warning:</h4>
+  </div>
+  <div class="panel-body">
+    <p>The change of the webroot will be rejected during the deployment if the target directory does not exist or is not a directory.</p>
+  </div>
 </div>
 
 ### Change PHP settings
@@ -162,9 +170,13 @@ The PHP instances embed the latest release of Composer. You can check it on the 
 * [php54info.cleverapps.io/composer](https://php54info.cleverapps.io/composer) for PHP 5.4
 * [php55info.cleverapps.io/composer](https://php55info.cleverapps.io/composer) for PHP 5.5
 
-<div class="alert alert-hot-problems">
- <h4>Note:</h4>
- <p>Add your own `composer.phar` file in the root of your repository if you need to override our version for the build phase.</p>
+<div class="panel panel-warning">
+  <div class="panel-heading">
+   <h4>Note:</h4>
+  </div>
+  <div class="panel-body">
+    <p>Add your own `composer.phar` file in the root of your repository if you need to override our version for the build phase.</p>
+  </div>
 </div>
 
 Example of a `composer.json` file:
@@ -257,15 +269,18 @@ $dbh = new PDO(
 );
 ```
 
-<div class="alert alert-hot-problems">
- <h4>Warning:</h4>
- <p>Environment variables are displayed in the default output of `phpinfo()`.
-    If you want to use `phpinfo()` without exposing environment variables, you
-have to call it this way:
- </p>
+<div class="panel panel-warning">
+  <div class="panel-heading">
+    <h4>Warning:</h4>
+  </div>
+  <div class="panel-body">
+    <p>Environment variables are displayed in the default output of `phpinfo()`.
+    If you want to use `phpinfo()` without exposing environment variables, you have to call it this way:
+    </p>
  ```php
  phpinfo(INFO_GENERAL | INFO_CREDITS | INFO_CONFIGURATION | INFO_MODULES | INFO_VARIABLES | INFO_LICENSE)
  ```
+ </div>
 </div>
 
 
@@ -338,9 +353,13 @@ Some extensions need to be enabled explicitly. To enable this extensions, you'll
 
     Redis is an in-memory datastructure store. This extension allows to use it from PHP.  
 
-<div class="alert alert-hot-problems">
- <h4>Warning:</h4>
- <p>This extensions are only available for PHP >= 5.5.</p>
+<div class="panel panel-warning">
+  <div class="panel-heading">
+    <h4>Warning:</h4>
+  </div>
+  <div class="panel-body">
+    <p>This extensions are only available for PHP >= 5.5.</p>
+  </div>
 </div>
 
 ## Use Redis to store PHP Sessions
@@ -354,12 +373,16 @@ To enable this feature, you need to:
  - create and link a Redis add-on 
  - create an [environment variable](/doc/admin-console/environment-variables/) named `SESSION_TYPE` with the value `redis`.
 
-<div class="alert alert-hot-problems">
- <h4>Warning:</h4>
- <p>You must have a <a href="/addons/redis/">Redis</a> add-on
- <a href="/addons/clever-cloud-addons/#link-an-add-on-to-your-applicaiton">linked with your application</a>
- to enable PHP session storage in Redis.<br />
- If no Redis add-on is linked with your application, the deployment will fail.</p>
+<div class="panel panel-warning">
+  <div class="panel-heading">
+    <h4>Warning:</h4>
+  </div>
+  <div class="panel-body">
+    <p>You must have a <a href="/addons/redis/">Redis</a> add-on
+    <a href="/addons/clever-cloud-addons/#link-an-add-on-to-your-applicaiton">linked with your application</a>
+    to enable PHP session storage in Redis.<br />
+    If no Redis add-on is linked with your application, the deployment will fail.</p>
+    </div>
 </div>
 
 ## Deploy on Clever Cloud
