@@ -52,7 +52,7 @@ give you information about the current context of the application.
  * `APP_HOME` : The absolute path of your application on the server. Can be used to
  create absolute link in you application (ex : ${APP_HOME}/foo/bar).
 
- * `INSTANCE_NUMBER`
+ * `INSTANCE_NUMBER` : See below
 
 ### What is the `INSTANCE_NUMBER` variable used for?
 
@@ -62,6 +62,7 @@ It will contain a different number for each instance of your application.
 
 For example, if three instances are running, it will contain `0` for the first, `1`
 for the second and `2` for the third.
+It's handy if you want to only run crons on 1 instance (e.g. only on instance 0)
 
 ## Variable definition constraints
 
