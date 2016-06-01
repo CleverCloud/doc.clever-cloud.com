@@ -38,3 +38,9 @@ You can edit your application in the information panel. You can rename, change r
 The Clever Cloud dashboard gives you the ability to retrieve your application logs.
 
 To get them, just click on *Logs* in the left navbar.
+
+## Dedicated build
+
+Your application can be built on a different instance (with more ressources) if you need to.
+`pico` and `nano` scalers are using this feature by default.
+You can find the option under your application informations: `Enable dedicated build instance`.
