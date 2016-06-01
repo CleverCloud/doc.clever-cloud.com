@@ -45,6 +45,9 @@ give you information about the current context of the application.
  * `INSTANCE_ID` : the ID of the current instance of your application. It's unique for each
  instance of your application and change every time you deploy it.
 
+ * `INSTANCE_TYPE` : The type of instance. Values can be `build` or `production`. `build` is when
+ your application is being built on a [dedicated instance](/doc/admin-console/apps-management/#dedicated-build).
+
  * `COMMIT_ID` : the commit ID used as a base to deploy your application. As we remove
  the `.git` directory before the deployment (to avoid security problems), it can be used
  to know which version of your application is running on the server.
