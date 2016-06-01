@@ -15,7 +15,7 @@ keywords:
 Clever Cloud allows you to define environment variables that will be
 injected in your application's environment.
 
-### How variables are defined?
+## How variables are defined?
 
 Variables are defined on a per-application basis. They are defined by three ways:
 
@@ -30,7 +30,7 @@ Variables are defined on a per-application basis. They are defined by three ways
 Please note that if you define or modify environment variables, you will
 need to redeploy you application to make it use the variables.
 
-### Special environment variables
+## Special environment variables
 
 Some variables are injected to the environment of your application when you deploy it,
 to inform you about the current context of your application and about the application itself.
@@ -52,9 +52,9 @@ give you information about the current context of the application.
  * `APP_HOME` : The absolute path of your application on the server. Can be used to
  create absolute link in you application (ex : ${APP_HOME}/foo/bar).
 
- * `INSTANCE_NUMBER`
+ * `INSTANCE_NUMBER` : See below
 
-#### What is the `INSTANCE_NUMBER` variable used for?
+### What is the `INSTANCE_NUMBER` variable used for?
 
 This variable allows your application to differentiate each running node on the applicative level.
 
@@ -62,8 +62,9 @@ It will contain a different number for each instance of your application.
 
 For example, if three instances are running, it will contain `0` for the first, `1`
 for the second and `2` for the third.
+It's handy if you want to only run crons on 1 instance (e.g. only on instance 0)
 
-### Variable definition constraints
+## Variable definition constraints
 
 For the second way, please note that *spaces are not allowed* in the
 name of the variables.
@@ -71,7 +72,7 @@ name of the variables.
 As written in the previous section: please note that if you define or modify
 environment variables, you will need to redeploy you application to make it use the variables.
 
-### How do I use these variables?
+## How do I use these variables?
 
 Depending on the type of your application, you will need to use
 different ways. You can find the various ways in the specific instances
