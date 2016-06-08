@@ -3,8 +3,9 @@ title: Installing SSL Certificates
 position: 3
 shortdesc: How to prepare your SSL certificates on Clever Cloud
 tags:
-- varnish
-- caching
+- ssl
+- certificate
+- https
 ---
 
 # Installing SSL Certificates
@@ -16,8 +17,8 @@ If you already have your certificates, we recommend to use a secured way to tran
 
 ## Required Files
 
-* private certificate
-* intermediate certificate
+* private key
+* certification chain (your certificate + intermediates certificates)
 
 or
 
@@ -27,6 +28,15 @@ or
 
 The most secure way to transfert your certificates is using a signed and crypted email.
 Our dedicated email: for receiving certificates is [ssl@clever-cloud.com](mailto:ssl@clever-cloud.com).
+
+<div class="panel panel-warning">
+  <div class="panel-heading">
+    <h4 class="panel-title">Security</h4>
+  </div>
+  <div class="panel-body">
+    Do not send any of these files via an unsecure way. The integrity of your certificate may not be guaranteed.
+  </div>
+</div>
 
 ### Clever Cloud on Keybase
 
