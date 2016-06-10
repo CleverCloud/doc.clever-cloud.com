@@ -98,6 +98,17 @@ The default version of python on Clever Cloud is **2.7**, if you want to use pyt
 
 **Note**: the version is an integer, do not use quotes. values allowed are `2` and `3`.
 
+## UWSGI and Nginx configuration
+
+UWSGI and nginx settings can be configured by setting environment variables:
+
+ - `HARAKIRI`: timeout (in seconds) after which an unresponding process is killed. (Default: 180)
+ - `WSGI_BUFFER_SIZE`: maximal size (in bytes) for the headers of a request. (Defaut: 4096)
+ - `WSGI_POST_BUFFERING`: buffer size (in bytes) for uploads. (Defaut: 4096)
+ - `WSGI_WORKERS`: number of workers. (Defaut: depends on the scaler)
+ - `WSGI_THREADS`: number of threads per worker. (Defaut: depends on the scaler)
+ - `NGINX_READ_TIMEOUT`: a bit like HARAKIRI, the response timeout in seconds. (Defaut: 300)
+ - `GZIP`: "on|yes|true" gzip-compress the output of uwsgi.
 
 ## Environment injection
 

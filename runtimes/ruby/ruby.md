@@ -204,18 +204,17 @@ task in the `rakegoals` field of `clevercloud/ruby.json`.
 
 *Note: the path of the static folder must be absolute regarding the root of your application.*
 
-### Update wsgi buffer size
+### UWSGI and Nginx configuration
 
-The default buffer size for headers is 4096. This is enough for most people. But you might
-need to increase that value if your application uses very long query string or headers.
+UWSGI and nginx settings can be configured by setting environment variables:
 
-To change the buffer size, set the `WSGI_BUFFER_SIZE` [environment variable](admin-console/environment-variables) in the Clever Cloud console.
-
-Example:
-
-```
-WSGI_BUFFER_SIZE=8192
-```
+ - `HARAKIRI`: timeout (in seconds) after which an unresponding process is killed. (Default: 180)
+ - `WSGI_BUFFER_SIZE`: maximal size (in bytes) for the headers of a request. (Defaut: 4096)
+ - `WSGI_POST_BUFFERING`: buffer size (in bytes) for uploads. (Defaut: 4096)
+ - `WSGI_WORKERS`: number of workers. (Defaut: depends on the scaler)
+ - `WSGI_THREADS`: number of threads per worker. (Defaut: depends on the scaler)
+ - `NGINX_READ_TIMEOUT`: a bit like HARAKIRI, the response timeout in seconds. (Defaut: 300)
+ - `GZIP`: "on|yes|true" gzip-compress the output of uwsgi.
 
 ## Deploy on Clever Cloud
 
