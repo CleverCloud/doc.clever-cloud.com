@@ -160,12 +160,12 @@ X-Forwarded-Proto is always filled (which is the case on our platform).
 
 If you want to force all redirects to HTTPS, you can replace `%{HTTP:X-Forwarded-Proto}` with `https`.
 
-### Composer
+## Composer
 
 We support Composer build out of the box. You just need to provide a `composer.json` file in the root of
 your repository and we will run `composer.phar install` for you.
 
-The PHP instances embed the latest release of Composer. You can check it on the following pages:
+You can check out our current version of composer on these pages:
 
 * [php54info.cleverapps.io/composer](https://php54info.cleverapps.io/composer) for PHP 5.4
 * [php55info.cleverapps.io/composer](https://php55info.cleverapps.io/composer) for PHP 5.5
@@ -213,7 +213,9 @@ Example of a `composer.json` file:
 }
 ```
 
-#### GitHub rate limit
+Example of a minimalist PHP application using composer and custom scripts: [php-composer-demo](https://github.com/CleverCloud/php-composer-demo)
+
+### GitHub rate limit
 
 Sometimes, you can encounter the following error when downloading dependencies:
 
