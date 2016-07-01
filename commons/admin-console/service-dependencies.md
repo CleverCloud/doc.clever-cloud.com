@@ -54,7 +54,7 @@ environment.
 When an application updates its exposed configuration, all applications
 depending on it are automatically redeployed.
 
-<figure class="cc-content-img" style="width:355px">
+<figure class="cc-content-img" style="width:100%">
   <a href="/doc/assets/images/service-dependencies-config-update.png"><img src="/doc/assets/images/service-dependencies-config-update.png"></a>
   <figcaption>Automatic redeployment</figcaption>
 </figure>
