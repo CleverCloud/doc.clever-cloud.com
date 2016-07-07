@@ -106,3 +106,48 @@ Then, you just have to create a CNAME record on your domain pointing to `cellar.
     s3cmd configuration file provided on the add-on configuration page already has it.
   </div>
 </div>
+
+## Using AWS SDK
+
+To use cellar from your applications, you can use the [AWS SDK](https://aws.amazon.com/tools/#sdk).
+You only need to specify a custom endpoint (eg `cellar.services.clever-cloud.com`) and to
+force the use of the version 2 of the request signer.
+
+### Node.js
+
+```javascript
+var AWS = require('aws-sdk');
+
+AWS.config.update({accessKeyId: '<cellar_key_id>', secretAccessKey: '<cellar_key_secret>'});
+var ep = new AWS.Endpoint('<cellar_host>');
+var s3 = new AWS.S3({ endpoint: ep, signatureVersion: 'v2' });
+
+s3.listBuckets(function(err, res) {
+  // handle results
+});
+```
+
+
+### Java
+
+Make sure to use at least version `1.11.3`. Older versions don't support
+Server Name Indication, so if you have SSL certificates errors, check that
+you're not using an old version.
+
+```java
+import com.amazonaws.ClientConfiguration;
+import com.amazonaws.auth.BasicAWSCredentials;
+import com.amazonaws.services.s3.AmazonS3Client;
+
+public class Main {
+    public static void main(String[] argv) {
+        ClientConfiguration opts = new ClientConfiguration()
+        opts.setSignerOverride("S3SignerType"); // Force the use of V2 signer
+        AmazonS3Client s3Client = new AmazonS3Client(new BasicAWSCredentials("<key>", "<secret>"), opts)
+        s3Client.setEndpoint("<host>")
+        List<> buckets = s3Client.listBuckets()
+
+        // handle results
+    }
+}
+```
