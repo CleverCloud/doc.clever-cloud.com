@@ -113,7 +113,7 @@ Note that only a push on master will trigger the deployment.
    <p>If you have to push directly to a repo in order to deploy an application (eg if you deploy from a CI), then create a non-github app.</p>
  </div>
 
-<strong>Private GitHub repositories are also supported:</strong> you only have to add the <a href="https://github.com/CleverCloudDeployer">CleverCloudDeployer user</a> as a collaborator to your private repository. Note that read only access is sufficient.
+<strong>Private GitHub repositories are also supported.</strong>
 
 Caution: in Github, private repositories in an ordinary user account are an all-or-nothing deal: either someone has full read/write access (i.e., they're a collaborator) or they have no access. However, if you set up an organization, create the repo under the aegis of the organization, and then add the collaborator, you have much more fine-grained control (including giving read-only access to a private repository).
 
