@@ -48,6 +48,18 @@ By default, all new PHP applications are created with a default PHP_VERSION, set
 You can of course change it whenever you want then redeploy your application to use the
 version you want.
 
+<div class="panel panel-warning">
+  <div class="panel-heading">
+    <h4>Warning:</h4>
+  </div>
+  <div class="panel-body">
+    <p>PHP5.5 is, since July 10, 2016, End Of Life. It's no longer supported and may be exposed to
+    unpatched security vulnerabilities.
+    PHP5.4 is already unsupported since September 3, 2015. We strongly urge you to update to at least PHP 5.6.
+    Support for PHP5.4 will be discontinued in the next months, with PHP5.5 to follow.</p>
+  </div>
+</div>
+
 ## Configuration files for PHP applications
 
 The configuration file for your PHP application must be `/clevercloud/php.json`, that is a *php.json* file in a
