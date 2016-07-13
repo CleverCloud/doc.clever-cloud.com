@@ -179,8 +179,8 @@ your repository and we will run `composer.phar install` for you.
 
 You can check out our current version of composer on these pages:
 
-* [php54info.cleverapps.io/composer](https://php54info.cleverapps.io/composer) for PHP 5.4
-* [php55info.cleverapps.io/composer](https://php55info.cleverapps.io/composer) for PHP 5.5
+* [php56info.cleverapps.io/composer](https://php56info.cleverapps.io/composer) for PHP 5.6
+* [php70info.cleverapps.io/composer](https://php70info.cleverapps.io/composer) for PHP 7.0
 
 <div class="panel panel-warning">
   <div class="panel-heading">
@@ -338,7 +338,7 @@ It's quite not exhaustive, so it does not mean that other CMS can't work on the 
 ## Available extensions and modules
 
 You can check enabled extensions and versions by viewing our `phpinfo()` example for
-[PHP 5.4](https://php54info.cleverapps.io) and [PHP 5.5](https://php55info.cleverapps.io).
+[PHP 5.6](https://php56info.cleverapps.io) and [PHP 7.0](https://php70info.cleverapps.io).
 
 **Warning**: some extensions need to be [enabled explicitely](#enable-specific-extensions)
 
