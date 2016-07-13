@@ -48,6 +48,18 @@ By default, all new PHP applications are created with a default PHP_VERSION, set
 You can of course change it whenever you want then redeploy your application to use the
 version you want.
 
+<div class="panel panel-warning">
+  <div class="panel-heading">
+    <h4>Warning:</h4>
+  </div>
+  <div class="panel-body">
+    <p>PHP5.5 is, since July 10, 2016, End Of Life. It's no longer supported and may be exposed to
+    unpatched security vulnerabilities.
+    PHP5.4 is already unsupported since September 3, 2015. We strongly urge you to update to at least PHP 5.6.
+    Support for PHP5.4 will be discontinued in the next months, with PHP5.5 to follow.</p>
+  </div>
+</div>
+
 ## Configuration files for PHP applications
 
 The configuration file for your PHP application must be `/clevercloud/php.json`, that is a *php.json* file in a
@@ -167,8 +179,8 @@ your repository and we will run `composer.phar install` for you.
 
 You can check out our current version of composer on these pages:
 
-* [php54info.cleverapps.io/composer](https://php54info.cleverapps.io/composer) for PHP 5.4
-* [php55info.cleverapps.io/composer](https://php55info.cleverapps.io/composer) for PHP 5.5
+* [php56info.cleverapps.io/composer](https://php56info.cleverapps.io/composer) for PHP 5.6
+* [php70info.cleverapps.io/composer](https://php70info.cleverapps.io/composer) for PHP 7.0
 
 <div class="panel panel-warning">
   <div class="panel-heading">
@@ -326,41 +338,68 @@ It's quite not exhaustive, so it does not mean that other CMS can't work on the 
 ## Available extensions and modules
 
 You can check enabled extensions and versions by viewing our `phpinfo()` example for
-[PHP 5.4](https://php54info.cleverapps.io) and [PHP 5.5](https://php55info.cleverapps.io).
+[PHP 5.6](https://php56info.cleverapps.io) and [PHP 7.0](https://php70info.cleverapps.io).
 
-**Warning**: some extensions (OPcache, Mysqlnd and IonCube) need to be enabled explicitly. Please read below to know
-how to enable them.
+**Warning**: some extensions need to be [enabled explicitely](#enable-specific-extensions)
+
+The following extensions are enabled by default: `couchbase`, `imagick`, `memcached`,
+`memcache`, `mongodb`, `opcache`, `redis`, `solr`, `ssh2`.
+
+You can add `DISABLE_<extension_name>: true` in your [environment variable](/doc/admin-console/environment-variables/)
+to disable them.
 
 If you have a request about modules, feel free to contact our support at <support@clever-cloud.com>.
-
-### Enable specific extensions
-
-Some extensions need to be enabled explicitly. To enable this extensions, you'll need to set the corresponding
-[environment variable](/doc/admin-console/environment-variables/):
-
-* OPcache: set `ENABLE_OPCACHE` to `true`.
-
-    OPcache is a cache system who store PHP' compiled bytecode in shared memory to improve PHP performances.
-
-* mysqlnd_ms: set `ENABLE_MYSQLND_MS` to `true`.
-
-    mysqlnd_ms is a load balancing and replication plugin for mysqlnd (MySQLnative driver for PHP). It can be used with
-    a master/slave database system.
-
-* IonCube: set `ENABLE_IONCUBE` to `true`.
-
-    IonCube is a tool to obfuscate PHP code. It's often used by paying Prestashop and Wordpress plugins.
-
-* Redis: set `ENABLE_REDIS` to `true`.
-
-    Redis is an in-memory datastructure store. This extension allows to use it from PHP.  
 
 <div class="panel panel-warning">
   <div class="panel-heading">
     <h4>Warning:</h4>
   </div>
   <div class="panel-body">
-    <p>This extensions are only available for PHP >= 5.5.</p>
+    <p>memcache and memcached extensions are not yet available for PHP 7</p>
+  </div>
+</div>
+
+### Enable specific extensions
+
+Some extensions need to be enabled explicitly. To enable these extensions, you'll need to set the corresponding
+[environment variable](/doc/admin-console/environment-variables/):
+
+* APC: set `ENABLE_APC` to `true`.
+
+    APC is a framework for caching and optimizing PHP intermediate code.
+    **Warning**: APC is only available for PHP 5.4.
+
+* APCu: set `ENABLE_APCU` to `true`.
+
+    APCu is an in-memory key-value store for PHP. Keys are of type string and values can be any PHP variables.
+
+* IonCube: set `ENABLE_IONCUBE` to `true`.
+
+    IonCube is a tool to obfuscate PHP code. It's often used by paying Prestashop and Wordpress plugins.
+
+* Mongo: set `ENABLE_MONGO` to `true`.
+
+    MongoDB is a NoSQL Database. This extension allows to use it from PHP.
+    **Warning**: this extension is now superseded by the `mongodb` extension. We provide it for backward compatibility.
+
+* NewRelic: set `ENABLE_NEWRELIC` to `true`.
+
+    Newrelic Agent for PHP. Newrelic is a software analytics tool.
+
+* OAuth: set `ENABLE_OAUTH` to `true`.
+
+    OAuth consumer extension. OAuth is an authorization protocol built on top of HTTP.
+
+* XDebug: set `ENABLE_XDEBUG` to `true`.
+
+    XDebug is a debugger and profiler tool for PHP.
+
+<div class="panel panel-warning">
+  <div class="panel-heading">
+    <h4>Warning:</h4>
+  </div>
+  <div class="panel-body">
+    <p>These extensions (except `APC`) are only available for PHP >= 5.5.</p>
   </div>
 </div>
 
