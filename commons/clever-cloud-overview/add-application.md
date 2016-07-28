@@ -89,7 +89,7 @@ Follow these steps to deploy your application:
 
 ### Automatic Deployment with GitHub
 
-Once you created your application with Github, each push on the `master` branch will trigger
+Once you have created your application with Github, each push on the `master` branch will trigger
 a deployment. If you want to deploy an other branch than `master`, you can go to the `information`
 pane of your application and select the default branch to use.
 
