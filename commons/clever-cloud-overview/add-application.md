@@ -89,20 +89,9 @@ Follow these steps to deploy your application:
 
 ### Automatic Deployment with GitHub
 
-If you want to enable automatic deployment, follow these easy steps: in your application
-information tab, if you have created your application from GitHub, you will
-see a new field: a secret for your GitHub application’s settings. Here are the
-steps to trigger a deploy on Clever Cloud from a push to GitHub:
-
- 1. Grab this secret and go to the GitHub repository settings.
-
- 2. Click on “add a service” and select “Clever Cloud” from the list.
-
- 3. Paste the secret
-
-From now on, a push to your GitHub repo will also trigger a Clever Cloud deployment.
-
-Note that only a push on master will trigger the deployment.
+Once you created your application with Github, each push on the `master` branch will trigger
+a deployment. If you want to deploy an other branch than `master`, you can go to the `information`
+pane of your application and select the default branch to use.
 
  <div class="alert alert-hot-problems">
    <h4>Warning:</h4>
