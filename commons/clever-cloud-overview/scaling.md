@@ -4,7 +4,6 @@ position: 3
 shortdesc: This article introduces the wat Clever Cloud bills apps and services
 tags:
 - apps
-- developer
 ---
 
 # Application scalling

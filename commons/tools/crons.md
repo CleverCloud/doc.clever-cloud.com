@@ -2,7 +2,7 @@
 title: Running crons
 position: 1
 tags:
-- developer
+- apps
 ---
 
 # CRON configuration file

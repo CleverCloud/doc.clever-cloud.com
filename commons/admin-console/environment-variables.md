@@ -4,7 +4,7 @@ position: 8
 shortdesc: How to setup and configure environment variables for apps and add-ons
 tags:
 - dashboard-setup
-- developer
+- apps
 keywords:
 - env
 - variables
