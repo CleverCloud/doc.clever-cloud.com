@@ -31,4 +31,4 @@ Use `rm` to remove an environment variable.
 ## Load environment variables
 
 Clever-tools allows you to load variables from STDIN.
-######################################
+    cat <env-file> | clever env import

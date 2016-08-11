@@ -9,7 +9,7 @@ keywords:
 - clever-tools
 ---
 
-# Create
+# Create an application
 
 `clever create` allows you to create a new application.
 
@@ -35,25 +35,22 @@ First of all, select the type of your application in the list below :
 ## Create your application
 
 In order to create your app in your personal space, use :
-    clever create --type TYPE APP-NAME
+    clever create --type <type> <app-name>
 
 ### Organisation
 
 If you want to create an application for one of your organisation, just add the flag `--org` followed by the organisation ID (or the name, if unambiguous).
-    clever-create --type TYPE APP-NAME --org ORG
+    clever-create --type <type> <app-name> --org <org>
 
 ### Alias
 
 You might want to use an alias instead of the complete name.
-    clever-create --type TYPE APP-NAME --alias ALIAS
+    clever-create --type <type> <app-name> --alias <alias>
 When you want to make reference to this application using an other command, use `--alias ALIAS` instead of the name.
 
 ### Region
 
-Choose your region by adding `--region ZONE` where ZONE can be 'par' for Paris or 'mtl' for Montreal. The default zone is Paris.
-    clever-create --type TYPE APP-NAME --region ZONE
+Choose your region by adding `--region <zone>` where the zone can be 'par' for Paris or 'mtl' for Montreal. The default zone is Paris.
+    clever-create --type <type> <app-name> --region <zone>
 
 ### Github
-
-
-#########################

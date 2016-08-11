@@ -58,3 +58,6 @@ After having written new code, you can deploy it to Clever Cloud
 
     # Will git push your code to Clever Cloud and display logs
     clever deploy
+
+    # Then you can open your application
+    clever open
