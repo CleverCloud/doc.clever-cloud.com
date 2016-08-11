@@ -21,23 +21,23 @@ You can list your addons with `clever addon`
 
 First of all, you have to list addon providers and then, create your addon.
 
-    ## List addon providers
+    # List addon providers
     clever addon providers
 
-    ## Create your addon and link it to your application with --link
+    # Create your addon and link it to your application with --link
     clever addon create <provider-name> <addon-name> --link
 
-    ## Create an addon for an organisation
+    # Create an addon for an organisation
     clever addon create <provider-name> <addon-name> --link --org <org-name>
 
 ## Choosing provider's plan and region
 
 You can choose your addon's plan when you create it using `--plan <plan-name>`. The plan is by default 'dev'. With the flag "--yes" you can skip confirmation even if the addon is not free. You can also select the region that will provision the addon in.
 
-    ## Show more informations about a provider(plans and available regions)
+    # Show more informations about a provider(plans and available regions)
     clever addon providers show <provider-name>
 
-    ## Create your addon
+    # Create your addon
     clever addon create <provider-name> --plan <plan> --region <region-name> <addon-name>
 
 ## Rename or delete an addon
@@ -45,8 +45,8 @@ You can choose your addon's plan when you create it using `--plan <plan-name>`. 
 Use `addon rename` and `addon delete` to respectively rename and delete an addon.
 If you don't want any confirmation, use `--yes`.
 
-    ## Rename an addon
+    # Rename an addon
     clever addon rename <addon-name> <new-name>
 
-    ## Delete an addon
+    # Delete an addon
     clever addon delete <addon-name>
