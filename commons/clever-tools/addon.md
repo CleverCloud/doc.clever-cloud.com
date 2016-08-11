@@ -1,5 +1,5 @@
 ---
-title: Clever Cloud CLI env
+title: Clever Cloud CLI addon
 position: 1
 shortdesc: Manage addons using the Clever Cloud CLI tool
 tags:

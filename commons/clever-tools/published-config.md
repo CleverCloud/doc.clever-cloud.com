@@ -1,5 +1,5 @@
 ---
-title: Clever Cloud CLI env
+title: Clever Cloud CLI published-config
 position: 1
 shortdesc: Manage your application's exposed configuration using the Clever Cloud CLI tool
 tags:
