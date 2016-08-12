@@ -42,20 +42,21 @@ In order to create your app in your personal space, use :
 
 If you want to create an application for one of your organisation, just add the flag `--org` followed by the organisation ID (or the name, if unambiguous).
 
-    clever-create --type <type> <app-name> --org <org>
+    clever create --type <type> <app-name> --org <org>
 
 ### Alias
 
 You might want to use an alias instead of the complete name.
 
-    clever-create --type <type> <app-name> --alias <alias>
+    clever create --type <type> <app-name> --alias <alias>
 
 When you want to make reference to this application using an other command, use `--alias ALIAS` instead of the name.
 
 ### Region
 
-Choose your region by adding `--region <zone>` where the zone can be 'par' for Paris or 'mtl' for Montreal. The default zone is Paris.
+Choose your region by adding `--region <zone>` where `<zone>` can be 'par' for Paris or 'mtl' for Montreal. The default zone is Paris.
 
-    clever-create --type <type> <app-name> --region <zone>
+    clever create --type <type> <app-name> --region <zone>
 
 ### Github
+
