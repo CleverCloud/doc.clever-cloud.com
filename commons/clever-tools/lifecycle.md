@@ -1,32 +1,20 @@
 ---
-title: Clever Cloud CLI manage
-position: 1
-shortdesc: Manage your application using the Clever Cloud CLI tool
+title: Application lifecycle
+position: 4
+shortdesc: Get informations about your application using the Clever Cloud CLI tool
 tags:
 - cli-setup
 keywords:
 - cli
 - clever-tools
-- stop
-- restart
 - logs
+- lifecycle
 - status
 - activity
+- list
 ---
 
-# Manage your application
-
-### Stop or restart your application
-
-`clever stop <app-name>` allows you to stop your application.
-If you want to restart your application, you can use :
-
-    clever restart <app-name>
-
-    # Restart the application with a specific commit id
-    clever restart <app-name> --commit <commit-id>
-
-You can use `--quiet` when you restart, logs won't appear during deployment.
+# Informations about your application
 
 ### Get continuous logs from your application
 
@@ -38,6 +26,16 @@ You can also add a flag `--before` or `--after` followed by a date (ISO8601 form
 
     # Here is an example
     clever logs --before 2016-08-11T14:54:33.971Z
+
+### Listing linked applications
+
+You can list your linked applications with `clever applications`. For each application, the command shows you the alias, the id and the deployment url.
+
+    # List linked applications
+    clever applications
+
+    # List only application aliases
+    clever applications --only-aliases
 
 ### Status of your application
 

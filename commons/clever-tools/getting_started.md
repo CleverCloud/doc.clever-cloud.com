@@ -1,5 +1,5 @@
 ---
-title: Clever Cloud CLI overview
+title: Getting started with Clever Cloud CLI
 position: 1
 shortdesc: Installing and using the Clever Cloud CLI tool
 tags:
@@ -52,6 +52,9 @@ If you have an already existing application, you can start managing it with
     # organisation name if your application is in an organisation.
     clever link --org <org_name> <app_name>
 
+    # Unlink an application
+    clever unlink <app_id>
+
 ## Deploying new code
 
 After having written new code, you can deploy it to Clever Cloud
@@ -59,5 +62,5 @@ After having written new code, you can deploy it to Clever Cloud
     # Will git push your code to Clever Cloud and display logs
     clever deploy
 
-    # Then you can open your application
+    # Will open your application
     clever open
