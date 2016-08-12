@@ -23,6 +23,17 @@ If you want to restart your application, you can use :
 
 You can use `--quiet` when you restart, logs won't appear during deployment.
 
+### Get continuous logs from your application
+
+You can see logs with the command down below.
+
+    clever logs
+
+You can also add a flag `--before` or `--after` followed by a date (ISO8601 format).
+
+    ## Here is an example
+    clever logs --before 2016-08-11T14:54:33.971Z
+
 ### Status of your application
 
 Clever-tools can show you the status of an application on Clever Cloud using `clever status`. This command shows you if the application is running or stopped and informations about the scalability of your application.
@@ -30,11 +41,13 @@ Clever-tools can show you the status of an application on Clever Cloud using `cl
 ### Activity of your application
 
 `clever-tools` can show you the activity of an application. For each deployment, you get :
+
 * date and time of deployment
 * status (OK or FAIL)
 * action (DEPLOY or UNDEPLOY)
 * commit ID
-* tool used (Git/Console/clever-tools/...)
+* tool used to deploy (Git/Console/clever-tools/...)
+
 
     # Show the last 10 deployments
     clever activity
