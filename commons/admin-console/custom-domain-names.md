@@ -4,7 +4,7 @@ position: 3
 shortdesc: How to setup and configure domains names for your apps
 tags:
 - dashboard-setup
-- developer
+- apps
 keywords:
 - DNS
 - domain
