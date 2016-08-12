@@ -60,3 +60,7 @@ Choose your region by adding `--region <zone>` where `<zone>` can be 'par' for P
 
 ### Github
 
+When creating your application, you can link it to github for deployments.
+
+    # Link an application to github
+    clever create --github <owner>/<repository>
