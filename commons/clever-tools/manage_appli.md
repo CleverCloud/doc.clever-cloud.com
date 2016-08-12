@@ -31,7 +31,7 @@ You can see logs with the command down below.
 
 You can also add a flag `--before` or `--after` followed by a date (ISO8601 format).
 
-    ## Here is an example
+    # Here is an example
     clever logs --before 2016-08-11T14:54:33.971Z
 
 ### Status of your application
