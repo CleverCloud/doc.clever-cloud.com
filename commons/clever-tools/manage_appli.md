@@ -48,6 +48,7 @@ Clever-tools can show you the status of an application on Clever Cloud using `cl
 * commit ID
 * tool used to deploy (Git/Console/clever-tools/...)
 
+In order to show those informations, use :
 
     # Show the last 10 deployments
     clever activity
