@@ -7,6 +7,8 @@ tags:
 keywords:
 - cli
 - clever-tools
+- configuration
+- published-config
 ---
 
 # Exposed configuration

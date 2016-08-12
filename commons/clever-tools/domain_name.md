@@ -7,6 +7,7 @@ tags:
 keywords:
 - cli
 - clever-tools
+- domain
 ---
 
 # Manage your domains

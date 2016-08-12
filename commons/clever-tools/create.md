@@ -7,6 +7,8 @@ tags:
 keywords:
 - cli
 - clever-tools
+- create
+- application
 ---
 
 # Create an application

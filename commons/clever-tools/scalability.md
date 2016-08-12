@@ -7,6 +7,10 @@ tags:
 keywords:
 - cli
 - clever-tools
+- scale
+- scalability
+- instance
+- flavor
 ---
 
 # Scalability

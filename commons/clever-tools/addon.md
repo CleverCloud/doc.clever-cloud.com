@@ -7,6 +7,7 @@ tags:
 keywords:
 - cli
 - clever-tools
+- addon
 ---
 
 # Addon

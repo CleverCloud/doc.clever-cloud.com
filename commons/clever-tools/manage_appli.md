@@ -7,6 +7,11 @@ tags:
 keywords:
 - cli
 - clever-tools
+- stop
+- restart
+- logs
+- status
+- activity
 ---
 
 # Manage your application
