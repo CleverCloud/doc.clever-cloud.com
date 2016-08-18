@@ -157,8 +157,7 @@ Here is an example :
 
 #### Deploy with privates dependencies
 
-If your application got privates dependencies, you can add a [Private SSH Key](https://www.clever-cloud.com/doc/clever-cloud-overview/common-application-configuration/#private\
--ssh-key).
+If your application got privates dependencies, you can add a [Private SSH Key](https://www.clever-cloud.com/doc/clever-cloud-overview/common-application-configuration/#private-ssh-key).
 
 
 ## Node.js supported versions
