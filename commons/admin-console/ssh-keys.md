@@ -88,6 +88,7 @@ If you read the previous section, you should have a Terminal open.
 
 ## Add your SSH key on Clever Cloud
 
+### Public SSH Key
 To declare your **public SSH Key** on Clever Cloud, in the left navigation bar, go in "Profile" and in the "SSH Keys" tab.
 
 Add the key by entering a name and the public SSH key. The key is the entire content of the **id_rsa.pub** file.
@@ -107,6 +108,10 @@ If you see "*access denied*" or "*password:*" when you
 [push on Clever Cloud](https://www.clever-cloud.com/doc/clever-cloud-overview/add-application/#git-deployment),
 your SSH Keys may be invalid or not available on Clever cloud. Please check that you SSH Key is present and valid in
 your profile.
+
+### Private SSH Key
+If you want to clone a repository from a private repository, you can add a [Private SSH Key](/doc/commons/clever-cloud-overview/common-application-configuration#private-ssh-key).
+
 
 <i class="icon-question-sign"></i> **Need help about SSH keys?**  
 Contact us at <support@clever-cloud.com> or you can
