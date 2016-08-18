@@ -2,7 +2,7 @@
 title: Deploy Node.js apps
 shortdesc: Node.js is a platform built on Chrome's JavaScript runtime for building fast, scalable network applications.
 tags:
-- nodejs
+- nodejs	
 ---
 
 # Deploy Node.js apps
@@ -154,6 +154,12 @@ Here is an example :
   }
 }
 ```
+
+#### Deploy with privates dependencies
+
+If your application got privates dependencies, you can add a [Private SSH Key](https://www.clever-cloud.com/doc/clever-cloud-overview/common-application-configuration/#private\
+-ssh-key).
+
 
 ## Node.js supported versions
 

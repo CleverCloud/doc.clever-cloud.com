@@ -110,7 +110,8 @@ your SSH Keys may be invalid or not available on Clever cloud. Please check that
 your profile.
 
 ### Private SSH Key
-If you want to clone a repository from a private repository, you can add a [Private SSH Key](/doc/commons/clever-cloud-overview/common-application-configuration#private-ssh-key).
+If you want to clone a repository from a private repository, you can add a [Private SSH Key](https://www.clever-cloud.com/doc/clever-cloud-overview/common-application-configuration/#private-ssh-key).
+
 
 
 <i class="icon-question-sign"></i> **Need help about SSH keys?**  
