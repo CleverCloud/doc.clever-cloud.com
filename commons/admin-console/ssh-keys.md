@@ -11,6 +11,7 @@ keywords:
 - push
 - ssh
 - sshkeys
+- private ssh
 ---
 
 # SSH keys
