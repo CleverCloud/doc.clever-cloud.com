@@ -1,7 +1,7 @@
 ---
 title: Java War/Ear
 position: 4
-shortdesc: In J2EE applications modules are packaged as EAR and WAR based on their functionality.
+shortdesc: In JEE, applications modules are packaged as EAR and WAR based on their functionality.
 tags:
 - java
 ---
@@ -12,7 +12,7 @@ Clever Cloud allows you to run WAR or EAR applications. You can deploy these pro
 
 ## Overview
 
-In <abbr title="Java Enterprise Edition">J2EE</abbr> application modules are packaged as EAR and WAR based on their functionality.
+In <abbr title="Java Enterprise Edition">JEE</abbr>, application modules are packaged as EAR and WAR based on their functionality.
 
 * <acronym title="Web Archive">WAR</acronym>: Web modules which contains Servlet class files, JSP FIles, supporting files, GIF and HTML files are packaged as JAR file with *.war* extension.
 
