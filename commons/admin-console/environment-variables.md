@@ -57,6 +57,10 @@ give you information about the current context of the application.
 
  * `INSTANCE_NUMBER` : See below
 
+ * `IGNORE_FROM_BUILDCACHE`: allow users to specify paths to ignore when the build
+ cache archive is created. Must be relative to your application root.
+ (ex: `foo/bar:foo/baz` where `bar` or `baz` can be either a folder or a file)
+
 ### What is the `INSTANCE_NUMBER` variable used for?
 
 This variable allows your application to differentiate each running node on the applicative level.
