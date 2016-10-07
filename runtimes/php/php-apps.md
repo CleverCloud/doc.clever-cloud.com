@@ -20,14 +20,18 @@ into HTML.
 
 Refer to the page [Deploy an application on Clever Cloud](/doc/clever-cloud-overview/add-application/).
 
-<div class="alert alert-hot-problems">
-<h4>Warning:</h4>
-<p>An FTP application is automatically started once the application is created, even if no code has been sent.</p>
-<p>
- When you create a FTP application, a free [FS Bucket](/doc/addons/fs_buckets/) add-on is
- provisioned, named after the application. You will find the FTP
- credentials in the configuration tab of this add-on.
-</p>
+<div class="panel panel-warning">
+  <div class="panel-heading">
+    <h4>Warning:</h4>
+  </div>
+  <div class="panel-body">
+    <p>An FTP application is automatically started once the application is created, even if no code has been sent.</p>
+    <p>
+     When you create a FTP application, a free [FS Bucket](/doc/addons/fs_buckets/) add-on is
+     provisioned, named after the application. You will find the FTP
+     credentials in the configuration tab of this add-on.
+    </p>
+  </div>
 </div>
 
 ## Choose your PHP version
@@ -43,6 +47,18 @@ variable to one of the following values:
 By default, all new PHP applications are created with a default PHP_VERSION, set to 5.6.
 You can of course change it whenever you want then redeploy your application to use the
 version you want.
+
+<div class="panel panel-warning">
+  <div class="panel-heading">
+    <h4>Warning:</h4>
+  </div>
+  <div class="panel-body">
+    <p>PHP5.5 is, since July 10, 2016, End Of Life. It's no longer supported and may be exposed to
+    unpatched security vulnerabilities.
+    PHP5.4 is already unsupported since September 3, 2015. We strongly urge you to update to at least PHP 5.6.
+    Support for PHP5.4 will be discontinued in the next months, with PHP5.5 to follow.</p>
+  </div>
+</div>
 
 ## Configuration files for PHP applications
 
@@ -69,9 +85,13 @@ In the following example we want to set the webroot to the folder `/public`:
 
 Please note the absolute path style: `/public`.
 
-<div class="alert alert-hot-problems">
-<h4>Warning:</h4>
- <p>The change of the webroot will be rejected during the deployment if the target directory does not exist or is not a directory.</p>
+<div class="panel panel-warning">
+  <div class="panel-heading">
+    <h4>Warning:</h4>
+  </div>
+  <div class="panel-body">
+    <p>The change of the webroot will be rejected during the deployment if the target directory does not exist or is not a directory.</p>
+  </div>
 </div>
 
 ### Change PHP settings
@@ -121,7 +141,7 @@ this file.
 The `.htaccess` file can be created everywhere in you app, depending of the part of the application covered by directives.
 However, directives who applies to the entire application must be declared in a `.htaccess` file to the application root.
 
-#### Define a custome HTTP timeout
+#### Define a custom HTTP timeout
 
 You can define the timeout of an HTTP request in Apache using the `HTTP_TIMEOUT`
 [environment variable](/doc/admin-console/environment-variables/).
@@ -152,19 +172,23 @@ X-Forwarded-Proto is always filled (which is the case on our platform).
 
 If you want to force all redirects to HTTPS, you can replace `%{HTTP:X-Forwarded-Proto}` with `https`.
 
-### Composer
+## Composer
 
 We support Composer build out of the box. You just need to provide a `composer.json` file in the root of
 your repository and we will run `composer.phar install` for you.
 
-The PHP instances embed the latest release of Composer. You can check it on the following pages:
+You can check out our current version of composer on these pages:
 
-* [php54info.cleverapps.io/composer](https://php54info.cleverapps.io/composer) for PHP 5.4
-* [php55info.cleverapps.io/composer](https://php55info.cleverapps.io/composer) for PHP 5.5
+* [php56info.cleverapps.io/composer](https://php56info.cleverapps.io/composer) for PHP 5.6
+* [php70info.cleverapps.io/composer](https://php70info.cleverapps.io/composer) for PHP 7.0
 
-<div class="alert alert-hot-problems">
- <h4>Note:</h4>
- <p>Add your own `composer.phar` file in the root of your repository if you need to override our version for the build phase.</p>
+<div class="panel panel-warning">
+  <div class="panel-heading">
+   <h4>Note:</h4>
+  </div>
+  <div class="panel-body">
+    <p>Add your own `composer.phar` file in the root of your repository if you need to override our version for the build phase.</p>
+  </div>
 </div>
 
 Example of a `composer.json` file:
@@ -201,7 +225,9 @@ Example of a `composer.json` file:
 }
 ```
 
-#### GitHub rate limit
+Example of a minimalist PHP application using composer and custom scripts: [php-composer-demo](https://github.com/CleverCloud/php-composer-demo)
+
+### GitHub rate limit
 
 Sometimes, you can encounter the following error when downloading dependencies:
 
@@ -257,6 +283,21 @@ $dbh = new PDO(
 );
 ```
 
+<div class="panel panel-warning">
+  <div class="panel-heading">
+    <h4>Warning:</h4>
+  </div>
+  <div class="panel-body">
+    <p>Environment variables are displayed in the default output of `phpinfo()`.
+    If you want to use `phpinfo()` without exposing environment variables, you have to call it this way:
+    </p>
+ ```php
+ phpinfo(INFO_GENERAL | INFO_CREDITS | INFO_CONFIGURATION | INFO_MODULES | INFO_VARIABLES | INFO_LICENSE)
+ ```
+ </div>
+</div>
+
+
 ## Frameworks and CMS
 
 The following is the list of tested CMS by our team.
@@ -297,34 +338,69 @@ It's quite not exhaustive, so it does not mean that other CMS can't work on the 
 ## Available extensions and modules
 
 You can check enabled extensions and versions by viewing our `phpinfo()` example for
-[PHP 5.4](https://php54info.cleverapps.io) and [PHP 5.5](https://php55info.cleverapps.io).
+[PHP 5.6](https://php56info.cleverapps.io) and [PHP 7.0](https://php70info.cleverapps.io).
 
-**Warning**: some extensions (OPcache, Mysqlnd and IonCube) need to be enabled explicitly. Please read below to know
-how to enable them.
+**Warning**: some extensions need to be [enabled explicitely](#enable-specific-extensions)
+
+The following extensions are enabled by default: `couchbase`, `imagick`, `memcached`,
+`memcache`, `mongodb`, `opcache`, `redis`, `solr`, `ssh2`.
+
+You can add `DISABLE_<extension_name>: true` in your [environment variable](/doc/admin-console/environment-variables/)
+to disable them.
 
 If you have a request about modules, feel free to contact our support at <support@clever-cloud.com>.
 
+<div class="panel panel-warning">
+  <div class="panel-heading">
+    <h4>Warning:</h4>
+  </div>
+  <div class="panel-body">
+    <p>memcache and memcached extensions are not yet available for PHP 7</p>
+  </div>
+</div>
+
 ### Enable specific extensions
 
-Some extensions need to be enabled explicitly. To enable this extensions, you'll need to set the corresponding
+Some extensions need to be enabled explicitly. To enable these extensions, you'll need to set the corresponding
 [environment variable](/doc/admin-console/environment-variables/):
 
-* OPcache: set `ENABLE_OPCACHE` to `true`.
+* APC: set `ENABLE_APC` to `true`.
 
-    OPcache is a cache system who store PHP' compiled bytecode in shared memory to improve PHP performances.
+    APC is a framework for caching and optimizing PHP intermediate code.
+    **Warning**: APC is only available for PHP 5.4.
 
-* mysqlnd_ms: set `ENABLE_MYSQLND_MS` to `true`.
+* APCu: set `ENABLE_APCU` to `true`.
 
-    mysqlnd_ms is a load balancing and replication plugin for mysqlnd (MySQLnative driver for PHP). It can be used with
-    a master/slave database system.
+    APCu is an in-memory key-value store for PHP. Keys are of type string and values can be any PHP variables.
 
 * IonCube: set `ENABLE_IONCUBE` to `true`.
 
     IonCube is a tool to obfuscate PHP code. It's often used by paying Prestashop and Wordpress plugins.
 
-<div class="alert alert-hot-problems">
- <h4>Warning:</h4>
- <p>This extensions are only available for PHP >= 5.5.</p>
+* Mongo: set `ENABLE_MONGO` to `true`.
+
+    MongoDB is a NoSQL Database. This extension allows to use it from PHP.
+    **Warning**: this extension is now superseded by the `mongodb` extension. We provide it for backward compatibility.
+
+* NewRelic: set `ENABLE_NEWRELIC` to `true`.
+
+    Newrelic Agent for PHP. Newrelic is a software analytics tool.
+
+* OAuth: set `ENABLE_OAUTH` to `true`.
+
+    OAuth consumer extension. OAuth is an authorization protocol built on top of HTTP.
+
+* XDebug: set `ENABLE_XDEBUG` to `true`.
+
+    XDebug is a debugger and profiler tool for PHP.
+
+<div class="panel panel-warning">
+  <div class="panel-heading">
+    <h4>Warning:</h4>
+  </div>
+  <div class="panel-body">
+    <p>These extensions (except `APC`) are only available for PHP >= 5.5.</p>
+  </div>
 </div>
 
 ## Use Redis to store PHP Sessions
@@ -332,15 +408,22 @@ Some extensions need to be enabled explicitly. To enable this extensions, you'll
 We provide the possibility to store the PHP sessions in a [Redis database](/doc/addons/redis/) to improve the performances of
 your application.
 
-To enable this feature, you need a Redis add-on and you have to create an
-[environment variable](/doc/admin-console/environment-variables/) named `SESSION_TYPE` with the value `redis`.
+To enable this feature, you need to:
 
-<div class="alert alert-hot-problems">
- <h4>Warning:</h4>
- <p>You must have a <a href="/addons/redis/">Redis</a> add-on
- <a href="/addons/clever-cloud-addons/#link-an-add-on-to-your-applicaiton">linked with your application</a>
- to enable PHP session storage in Redis.<br />
- If no Redis add-on is linked with your application, the deployment will fail.</p>
+ - enable Redis support on the application (create an [environment variable](/doc/admin-console/environment-variables/) named `ENABLE_REDIS` with the value `true`.)
+ - create and link a Redis add-on 
+ - create an [environment variable](/doc/admin-console/environment-variables/) named `SESSION_TYPE` with the value `redis`.
+
+<div class="panel panel-warning">
+  <div class="panel-heading">
+    <h4>Warning:</h4>
+  </div>
+  <div class="panel-body">
+    <p>You must have a <a href="/addons/redis/">Redis</a> add-on
+    <a href="/addons/clever-cloud-addons/#link-an-add-on-to-your-applicaiton">linked with your application</a>
+    to enable PHP session storage in Redis.<br />
+    If no Redis add-on is linked with your application, the deployment will fail.</p>
+    </div>
 </div>
 
 ## Deploy on Clever Cloud

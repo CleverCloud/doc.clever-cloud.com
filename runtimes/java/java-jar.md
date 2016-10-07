@@ -17,7 +17,8 @@ configuration files, here is what you can do:
 
 ## Create an application
 
-Refer to the page [Deploy an application on Clever Cloud](/doc/clever-cloud-overview/add-application/).
+Create a *Java + Maven* application, more information is available on the page [Deploy an application on Clever Cloud](/doc/clever-cloud-overview/add-application/).
+
 
 ## Necessary information
 

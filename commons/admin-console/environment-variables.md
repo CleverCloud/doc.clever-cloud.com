@@ -1,7 +1,7 @@
 ---
 title: Environment variables
 position: 8
-shortdesc: How to setup and configure environnement variables for apps and add-ons
+shortdesc: How to setup and configure environment variables for apps and add-ons
 tags:
 - dashboard-setup
 - developer
@@ -15,7 +15,7 @@ keywords:
 Clever Cloud allows you to define environment variables that will be
 injected in your application's environment.
 
-### How variables are defined?
+## How variables are defined?
 
 Variables are defined on a per-application basis. They are defined by three ways:
 
@@ -30,7 +30,7 @@ Variables are defined on a per-application basis. They are defined by three ways
 Please note that if you define or modify environment variables, you will
 need to redeploy you application to make it use the variables.
 
-### Special environment variables
+## Special environment variables
 
 Some variables are injected to the environment of your application when you deploy it,
 to inform you about the current context of your application and about the application itself.
@@ -45,6 +45,9 @@ give you information about the current context of the application.
  * `INSTANCE_ID` : the ID of the current instance of your application. It's unique for each
  instance of your application and change every time you deploy it.
 
+ * `INSTANCE_TYPE` : The type of instance. Values can be `build` or `production`. `build` is when
+ your application is being built on a [dedicated instance](/doc/admin-console/apps-management/#dedicated-build).
+
  * `COMMIT_ID` : the commit ID used as a base to deploy your application. As we remove
  the `.git` directory before the deployment (to avoid security problems), it can be used
  to know which version of your application is running on the server.
@@ -52,9 +55,13 @@ give you information about the current context of the application.
  * `APP_HOME` : The absolute path of your application on the server. Can be used to
  create absolute link in you application (ex : ${APP_HOME}/foo/bar).
 
- * `INSTANCE_NUMBER`
+ * `INSTANCE_NUMBER` : See below
 
-#### What is the `INSTANCE_NUMBER` variable used for?
+ * `IGNORE_FROM_BUILDCACHE`: allow users to specify paths to ignore when the build
+ cache archive is created. Must be relative to your application root.
+ (ex: `foo/bar:foo/baz` where `bar` or `baz` can be either a folder or a file)
+
+### What is the `INSTANCE_NUMBER` variable used for?
 
 This variable allows your application to differentiate each running node on the applicative level.
 
@@ -62,8 +69,9 @@ It will contain a different number for each instance of your application.
 
 For example, if three instances are running, it will contain `0` for the first, `1`
 for the second and `2` for the third.
+It's handy if you want to only run crons on 1 instance (e.g. only on instance 0)
 
-### Variable definition constraints
+## Variable definition constraints
 
 For the second way, please note that *spaces are not allowed* in the
 name of the variables.
@@ -71,7 +79,7 @@ name of the variables.
 As written in the previous section: please note that if you define or modify
 environment variables, you will need to redeploy you application to make it use the variables.
 
-### How do I use these variables?
+## How do I use these variables?
 
 Depending on the type of your application, you will need to use
 different ways. You can find the various ways in the specific instances
@@ -83,39 +91,39 @@ documentations.
 <th>use case</th>
 </tr>
 <tr>
-<td><a href="/nodejs/nodejs/#environment-injection">Node.js</a>  </td>
+<td><a href="/doc/nodejs/nodejs/#environment-injection">Node.js</a>  </td>
 <td>process.env["MY_VAR"]</td>
 </tr>
 <tr>
-<td><a href="/java/java-war/#environment-injection">Java WAR</a> </td>
+<td><a href="/doc/java/java-war/#environment-injection">Java WAR</a> </td>
 <td>System.getProperties().getProperty("MY_VAR")</td>
 </tr>
 <tr>
-<td><a href="/java/play-framework-1/#environment-injection">Play! Framework 1</a>
+<td><a href="/doc/java/play-framework-1/#environment-injection">Play! Framework 1</a>
 & <a href="/java/play-framework-2/#environment-injection">Play! Framework 2</a></td>
 <td>System.getenv("MY\_VAR") or \${MY_VAR} in application.conf</td>
 </tr>
 <tr>
-<td><a href="/scala/scala/#environment-injection">Scala</a> </td>
+<td><a href="/doc/scala/scala/#environment-injection">Scala</a> </td>
 <td>System.getenv("MY\_VAR")</td>
 </tr>
 <tr>
-<td><a href="/php/php-apps/#environment-injection">PHP</a></td>
+<td><a href="/doc/php/php-apps/#environment-injection">PHP</a></td>
 <td>getenv("MY_VAR")</td>
 </tr>
 <tr>
-<td><a href="/python/python_apps/#environment-injection">Python</a></td>
+<td><a href="/doc/python/python_apps/#environment-injection">Python</a></td>
 <td>os.getenv("MY_VAR")</td>
 </tr>
 <tr>
-<td><a href="/ruby/ruby/#environment-injection">Ruby</a></td>
+<td><a href="/doc/ruby/ruby/#environment-injection">Ruby</a></td>
 <td>env[“my_var”]<br></td>
 </tr>
 </table>
 
 Please note that the variables are available at build-time, for
 runtimes that support build-time instructions, such as
-<a href="/java/java-war/#environment-injection">Java WAR</a>,
-<a href="/java/play-framework-1/#environment-injection">Play! Framework 1</a>,
-<a href="/java/play-framework-2/#environment-injection">Play! Framework 2</a>
-or <a href="/scala/scala/#environment-injection">Scala</a>.
+<a href="/doc/java/java-war/#environment-injection">Java WAR</a>,
+<a href="/doc/java/play-framework-1/#environment-injection">Play! Framework 1</a>,
+<a href="/doc/java/play-framework-2/#environment-injection">Play! Framework 2</a>
+or <a href="/doc/scala/scala/#environment-injection">Scala</a>.

@@ -70,6 +70,14 @@ Due to current landscape in ruby applications, the default version is the
 greatest 2.1.Y. We provide also the latest 2.2.Y version and the latest
 1.9.Y too, but prefer the current stable: 2.1.
 
+
+## Environment injection
+
+To access your variable in your application, nothing simpler! Just get
+it from your environment, like you would with `PATH`:
+`ENV["MY_VARIABLE"]`.
+
+
 ## Configuration secret key production
 
 You need to use environment injection for `secret_key_base` in file  `./config/secret.yml` :
@@ -84,10 +92,6 @@ You need to use environment injection for `secret_key_base` in file  `./config/s
 
 Clever Cloud can inject environment variables that are defined in the
 dashboard and by add-ons linked to your application.
-
-To access your variable in your application, nothing simpler! Just get
-it from your environment, like you would with `PATH`:
-`ENV["MY_VARIABLE"]`.
 
 
 ## More configuration
@@ -139,8 +143,15 @@ We <strong>do not</strong> execute any rake goals by default.
 <td><span class="label label-inverse">Optional</span></td>
 <td>deploy.sidekiq</td>
 <td>
-Run a sidekiq process in background. Beware, you will need a redis instance to use this
+Run a sidekiq process in background. Please note you will need a redis instance to use this
 feature.
+</td>
+</tr>
+<tr>
+<td><span class="label label-inverse">Optional</span></td>
+<td>deploy.static</td>
+<td>
+Let nginx serve the assets contained in the directory.
 </td>
 </tr>
 </tbody>
@@ -174,32 +185,36 @@ production:
 
 It's a standard sidekiq.yml configuration file.
 
-### Manage your static files
+### Assets and static files
 
-To make Nginx serve your static resources you must set your public folder in `clevercloud/ruby.json` like below:
+The `deploy.static` field of `clevercloud/ruby.json` allows you to serve
+static files with nginx.
 
-```haskell
-   {
-      "deploy": {
-         "static": "/mypublicfolder"
-      }
-   }
+If you use the asset pipeline, make sure to include the `assets:precompile`
+task in the `rakegoals` field of `clevercloud/ruby.json`.
+
+```json
+{
+    "deploy": {
+        "rakegoals": ["assets:precompile"],
+        "static": "/public"
+    }
+}
 ```
 
-*Note: the path of your folder must be absolute regarding the root of your application.*
+*Note: the path of the static folder must be absolute regarding the root of your application.*
 
-### Update wsgi buffer size
+### UWSGI and Nginx configuration
 
-The default buffer size for headers is 4096. This is enough for most people. But you might
-need to increase that value if your application uses very long query string or headers.
+UWSGI and nginx settings can be configured by setting environment variables:
 
-To change the buffer size, set the `WSGI_BUFFER_SIZE` [environment variable](admin-console/environment-variables) in the Clever Cloud console.
-
-Example:
-
-```
-WSGI_BUFFER_SIZE=8192
-```
+ - `HARAKIRI`: timeout (in seconds) after which an unresponding process is killed. (Default: 180)
+ - `WSGI_BUFFER_SIZE`: maximal size (in bytes) for the headers of a request. (Defaut: 4096)
+ - `WSGI_POST_BUFFERING`: buffer size (in bytes) for uploads. (Defaut: 4096)
+ - `WSGI_WORKERS`: number of workers. (Defaut: depends on the scaler)
+ - `WSGI_THREADS`: number of threads per worker. (Defaut: depends on the scaler)
+ - `NGINX_READ_TIMEOUT`: a bit like HARAKIRI, the response timeout in seconds. (Defaut: 300)
+ - `GZIP`: "on|yes|true" gzip-compress the output of uwsgi.
 
 ## Deploy on Clever Cloud
 
