@@ -1,13 +1,12 @@
 ---
 title: Scaling
 position: 3
-shortdesc: This article introduces the wat Clever Cloud bills apps and services
+shortdesc: How does Clever Cloud give your application the resources it needs?
 tags:
-- scaling-tips
-- developer
+- apps
 ---
 
-# Application scalling
+# Application scaling
 
 When your application is running, you don't have the same number of user all the time. During an event for example,
 the number of users can grow up and the loading on the server increase. If too many requests are done on your

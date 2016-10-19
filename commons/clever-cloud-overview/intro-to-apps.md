@@ -4,6 +4,7 @@ position: 1
 shortdesc: A quick overview of the concept of application on Clever Cloud
 tags:
 - dashboard-setup
+- apps
 ---
 
 # Introduction to Applications
