@@ -7,7 +7,7 @@ tags:
 
 # Deploy PHP apps
 
-PHP is available on our platform with the branches 5.4 and 5.5. You can use FTP or Git to deploy your applications.
+PHP is available on our platform with the branches 5.6 and 7.0. You can use FTP or Git to deploy your applications.
 
 The HTTP server is [Apache 2](https://httpd.apache.org/), and the PHP code is executed by [PHP-FPM](http://php-fpm.org/).
 
@@ -39,26 +39,12 @@ Refer to the page [Deploy an application on Clever Cloud](/doc/clever-cloud-over
 Since January 2016, choosing a PHP version has gotten easier: just set the PHP_VERSION environment
 variable to one of the following values:
 
-- 5.4
-- 5.5
 - 5.6
 - 7.0
 
 By default, all new PHP applications are created with a default PHP_VERSION, set to 5.6.
 You can of course change it whenever you want then redeploy your application to use the
 version you want.
-
-<div class="panel panel-warning">
-  <div class="panel-heading">
-    <h4>Warning:</h4>
-  </div>
-  <div class="panel-body">
-    <p>PHP5.5 is, since July 10, 2016, End Of Life. It's no longer supported and may be exposed to
-    unpatched security vulnerabilities.
-    PHP5.4 is already unsupported since September 3, 2015. We strongly urge you to update to at least PHP 5.6.
-    Support for PHP5.4 will be discontinued in the next months, with PHP5.5 to follow.</p>
-  </div>
-</div>
 
 ## Configuration files for PHP applications
 
@@ -128,7 +114,7 @@ You can fix the maximum number of PHP running processes per instance by adding t
    }
 ```
 
-This setting is usefull if you need to limit the number of running processes according to the maximum connections limit 
+This setting is usefull if you need to limit the number of running processes according to the maximum connections limit
 of your MySQL or PostgreSQL database.
 
 By default, `pm.max_children` is set to **10**.
@@ -394,15 +380,6 @@ Some extensions need to be enabled explicitly. To enable these extensions, you'l
 
     XDebug is a debugger and profiler tool for PHP.
 
-<div class="panel panel-warning">
-  <div class="panel-heading">
-    <h4>Warning:</h4>
-  </div>
-  <div class="panel-body">
-    <p>These extensions (except `APC`) are only available for PHP >= 5.5.</p>
-  </div>
-</div>
-
 ## Use Redis to store PHP Sessions
 
 We provide the possibility to store the PHP sessions in a [Redis database](/doc/addons/redis/) to improve the performances of
@@ -411,7 +388,7 @@ your application.
 To enable this feature, you need to:
 
  - enable Redis support on the application (create an [environment variable](/doc/admin-console/environment-variables/) named `ENABLE_REDIS` with the value `true`.)
- - create and link a Redis add-on 
+ - create and link a Redis add-on
  - create an [environment variable](/doc/admin-console/environment-variables/) named `SESSION_TYPE` with the value `redis`.
 
 <div class="panel panel-warning">
