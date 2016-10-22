@@ -43,7 +43,7 @@ Be sure that:
 * you have pushed in <b>master branch</b>
 * you listen on <b>port 8080</b>
 * you have listed all your dependencies in `Cargo.toml`
-* you have one (and only one) binary target in `Cargo.toml`
+* you have at least one binary target in `Cargo.toml`
 
 ## Requirements
 
@@ -68,6 +68,13 @@ fn main() {
 }
 ```
 
+### Multiple binary targets
+
+If your `Cargo.toml` defines multiple targets, you must specify the one you
+want to run, with the `CARGO_BIN` environment variable. If `CARGO_BIN` is
+specified, then `cargo run --release --bin "${CARGO_BIN}"` is used to start
+the application.
+
 ### Dependencies
 
 Make sure to list all your dependencies in `Cargo.toml`. For the example
@@ -82,6 +89,12 @@ authors = []
 [dependencies]
 iron = "0.4.0"
 ```
+
+Compiled dependencies are cached by default to speed up deployments. You can
+disable dependencies caching completely by removing the `CACHE_DEPENDENCIES`
+environment variable. If you want to rebuild your application from scratch,
+you can select "rebuild and restart" from the console or launch `clever
+restart --without-cache` from CLI.
 
 ## Environment injection
 
