@@ -91,33 +91,41 @@ documentations.
 <th>use case</th>
 </tr>
 <tr>
+<td><a href="/doc/go/go/#environment-injection">Go</a>  </td>
+<td>Os.Getenv["MY\_VAR"]</td>
+</tr>
+<tr>
 <td><a href="/doc/nodejs/nodejs/#environment-injection">Node.js</a>  </td>
-<td>process.env["MY_VAR"]</td>
+<td>process.env["MY\_VAR"]</td>
 </tr>
 <tr>
 <td><a href="/doc/java/java-war/#environment-injection">Java WAR</a> </td>
-<td>System.getProperties().getProperty("MY_VAR")</td>
+<td>System.getProperties().getProperty("MY\_VAR")</td>
+</tr>
+<tr>
+<td><a href="/doc/php/php-apps/#environment-injection">PHP</a></td>
+<td>getenv("MY\_VAR")</td>
 </tr>
 <tr>
 <td><a href="/doc/java/play-framework-1/#environment-injection">Play! Framework 1</a>
 & <a href="/java/play-framework-2/#environment-injection">Play! Framework 2</a></td>
-<td>System.getenv("MY\_VAR") or \${MY_VAR} in application.conf</td>
+<td>System.getenv("MY\_VAR") or ${MY\_VAR} in application.conf</td>
+</tr>
+<tr>
+<td><a href="/doc/python/python_apps/#environment-injection">Python</a></td>
+<td>os.getenv("MY\_VAR")</td>
+</tr>
+<tr>
+<td><a href="/doc/ruby/ruby/#environment-injection">Ruby</a></td>
+<td>ENV["MY\_VAR"]<br></td>
+</tr>
+<tr>
+<td><a href="/doc/rust/rust/#environment-injection">Rust</a></td>
+<td>std::env::var("MY\_VAR")<br></td>
 </tr>
 <tr>
 <td><a href="/doc/scala/scala/#environment-injection">Scala</a> </td>
 <td>System.getenv("MY\_VAR")</td>
-</tr>
-<tr>
-<td><a href="/doc/php/php-apps/#environment-injection">PHP</a></td>
-<td>getenv("MY_VAR")</td>
-</tr>
-<tr>
-<td><a href="/doc/python/python_apps/#environment-injection">Python</a></td>
-<td>os.getenv("MY_VAR")</td>
-</tr>
-<tr>
-<td><a href="/doc/ruby/ruby/#environment-injection">Ruby</a></td>
-<td>env[“my_var”]<br></td>
 </tr>
 </table>
 

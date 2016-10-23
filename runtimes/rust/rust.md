@@ -111,14 +111,14 @@ fail early with a descriptive error.
 use std::env;
 
 fn main() {
-    fn hello_world(_: &mut Request) -> IronResult<Response> {
-        Ok(Response::with((status::Ok, "Hello World!")))
-    }
     let my_config_value = env::var("MY_KEY").expect("Missing env var `MY_KEY`");
 
     something_that_runs_a_web_server(my_config_value);
 }
 ```
+
+For more information, you can read about [environment variables on Clever
+Cloud](/doc/admin-console/environment-variables/).
 
 ## Deploy on Clever Cloud
 
