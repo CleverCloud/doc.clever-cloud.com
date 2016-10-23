@@ -10,16 +10,16 @@ keywords:
 - variables
 - environment variables
 ---
-## Configuring Environment variables
+## Configuring environment variables
 
 Clever Cloud allows you to define environment variables that will be
 injected in your application's environment.
 
-## How variables are defined?
+## How are variables defined?
 
 Variables are defined on a per-application basis. They are defined by three ways:
 
- * By provisionned add-ons linked to applications. The variables names
+ * By provisioned add-ons linked to applications. The variables names
    are listed in the add-on's information panel
 
  * By adding variables yourself in the "Environment variables" panel of
@@ -35,7 +35,7 @@ need to redeploy you application to make it use the variables.
 Some variables are injected to the environment of your application when you deploy it,
 to inform you about the current context of your application and about the application itself.
 
-They can be accessed as classics environment variables and can be used in your application to
+They can be accessed as classic environment variables and can be used in your application to
 give you information about the current context of the application.
 
  * `APP_ID` : the ID of the application. Each application has a unique identifier used to
@@ -63,7 +63,7 @@ give you information about the current context of the application.
 
 ### What is the `INSTANCE_NUMBER` variable used for?
 
-This variable allows your application to differentiate each running node on the applicative level.
+This variable allows your application to differentiate each running node on the application level.
 
 It will contain a different number for each instance of your application.
 
@@ -73,10 +73,9 @@ It's handy if you want to only run crons on 1 instance (e.g. only on instance 0)
 
 ## Variable definition constraints
 
-For the second way, please note that *spaces are not allowed* in the
-name of the variables.
+*Spaces are not allowed* in the name of the variables.
 
-As written in the previous section: please note that if you define or modify
+If you define or modify
 environment variables, you will need to redeploy you application to make it use the variables.
 
 ## How do I use these variables?
