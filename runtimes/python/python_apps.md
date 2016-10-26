@@ -91,10 +91,13 @@ Also, you are able to use a Filesystem Bucket to store your static files. Please
 **Note**: the path of your folder must be absolute regarding the root of your application.
 
 
-### Use Python 3
+### Choose Python version
 
-The default version of python on Clever Cloud is **2.7**, if you want to use python **3.4** instead, use the file
-`/clevercloud/python_version` and put `3` in it.
+The default version of python on Clever Cloud is **2.7**. If you want to use python **3.5** instead,
+create an environment variable `PYTHON_VERSION` equals to either `2` or `3`.
+
+Also, the file `/clevercloud/python_version` is still supported for backward compatibility.
+You have to write either `2` or `3` in it to select the python version. Please prefer the environment variable.
 
 **Note**: the version is an integer, do not use quotes. values allowed are `2` and `3`.
 
