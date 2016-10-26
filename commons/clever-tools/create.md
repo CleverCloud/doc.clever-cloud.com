@@ -36,6 +36,7 @@ First of all, select the type of your application in the list below :
 * play2 (Java or Scala + Play! 2)
 * python (Python)
 * ruby (Ruby)
+* rust (Rust)
 * sbt (Scala + SBT)
 * static (Static)
 * war (Java + WAR)
