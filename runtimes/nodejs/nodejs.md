@@ -164,7 +164,15 @@ If your application got privates dependencies, you can add a [Private SSH Key](h
 
 The Clever Cloud can virtually run any version of node >= 0.6 and any
 module. Lesser (pre-npm) versions are not officially supported. Unstable
-versions are not supported either. We support the io.js runtime.
+versions are not supported either.
+
+## Supported package managers
+
+We support [npm](https://www.npmjs.com) and [yarn](https://yarnpkg.com) as package managers.
+You can define the environment variable `NODE_BUILD_TOOL` to `npm` or `yarn` to select the
+one you want. If not specified, `npm` will be used.
+
+`yarn` is only available on `node.js` instances for now.
 
 ### Pre-installed modules
 
