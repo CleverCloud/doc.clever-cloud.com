@@ -28,6 +28,11 @@ are available in [the New Relic documentation](https://docs.newrelic.com/).
 To use New Relic in Java, Scala or Ruby instances, you need to configure it as it is provided directly inside the
 instances.
 
+## New Relic for Python
+
+To use New Relic in Python, you have to add the [newrelic](https://pypi.python.org/pypi/newrelic) dependency into your
+`requirements.txt` file.
+
 ### Necessary information
 
 Before setting up your app, be sure to have a [New Relic Account](http://www.newrelic.com/).
