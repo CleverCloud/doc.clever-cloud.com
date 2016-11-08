@@ -71,6 +71,12 @@ of your project with a Flask `app` object inside.
 
 Basically, you should just point to a WSGI capable object.
 
+## Select the python backend
+
+Currently, we support `uwsgi` and `gunicorn` for python backends. To select one, set the
+`PYTHON_BACKEND` environment variable with either `uwsgi` or `gunicorn`.
+
+If not specified, the default backend is `uwsgi`.
 
 ## Manage your static files
 
