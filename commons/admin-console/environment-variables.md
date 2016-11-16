@@ -94,6 +94,10 @@ documentations.
 <td>Os.Getenv["MY\_VAR"]</td>
 </tr>
 <tr>
+<td><a href="/doc/haskell/haskell/#environment-injection">Haskell</a>  </td>
+<td>getEnv "MY\_VAR"</td>
+</tr>
+<tr>
 <td><a href="/doc/nodejs/nodejs/#environment-injection">Node.js</a>  </td>
 <td>process.env["MY\_VAR"]</td>
 </tr>
