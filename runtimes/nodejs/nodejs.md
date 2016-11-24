@@ -109,14 +109,14 @@ The following table describes each of the fields formerly mentioned.
 </tr>
 <tr>
 <td class="cc-depusage" rowspan="2"><span class="label label-important">At least one</span></td>
-<td>main</td>
-<td>This field allows you to specify the file you want to run. It should
-be the relative path of the file starting at the project's root. It's used prior to the next one.</td>
+<td>scripts.start</td>
+<td>This field provides a command line to run. If defined, <code>npm start</code> will be launched. Otherwise
+we will use the <code>main</code> field</td>
 </tr>
 <tr>
-<td>scripts.start</td>
-<td>This field provides a command line to run. It is required if the <code>main</code> one is missing. You need one
-of <code>scripts.start</code> and <code>main</code>. If both exist, we use the <code>main</code> one.</td>
+<td>main</td>
+<td>This field allows you to specify the file you want to run. It should
+be the relative path of the file starting at the project's root. It's used to launch your application if <code>scripts.start</code> is not defined.</td>
 </tr>
 <tr>
 <td class="cc-depusage" ><span class="label label-inverse">Optional</span></td>
