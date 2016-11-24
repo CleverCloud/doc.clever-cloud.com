@@ -122,10 +122,9 @@ of <code>scripts.start</code> and <code>main</code>. If both exist, we use the <
 <td class="cc-depusage" ><span class="label label-inverse">Optional</span></td>
 <td>engines.node</td>
 <td>Sets the node engine version you app runs with. Any "A.B.x" or "^A.B.C" or "~A.B" version will lead
-to run the application with le latest "A.B" local version. If this field is
-missing, we use the greatest default local version (0.10 until 2015-10-11). If you want to use <a
-href="http://iojs.org/">iojs</a>, put either "iojs", "iojs-v1.0.3", or any truncated
-version number (e.g. "iojs-1" will work).<br />If you want to ensure that your app will always run, please put something of the form "^A.B.C" and avoid setting only ">=A.B.C".</td>
+to run the application with the latest "A.B" local version. If this field is
+missing, we use the latest LTS available. If you want to ensure that your app will always run,
+please put something of the form "^A.B.C" and avoid setting only ">=A.B.C".</td>
 </tr>
 </tbody>
 </table>
