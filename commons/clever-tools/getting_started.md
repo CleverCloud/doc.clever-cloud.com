@@ -12,25 +12,25 @@ keywords:
 # Clever Cloud CLI overview
 
 In addition to the Clever Cloud console, you can manage your addons and
-applications from the command line with `clever-tools`.
+applications from the command line with Clever Tools.
 
-## Installing `clever-tools`
+## Installing Clever Tools
 
-`clever-tools` is packaged and distributed through [npm](https://npmjs.com).
+Clever Tools is packaged and distributed through [npm](https://npmjs.com).
 To use it, you need to have nodeJS and npm running on your system, then
 
     npm install -g clever-tools
 
 ### Installing auto-completion
 
-`clever-tools` comes with a powerful auto-completion support. Make sure to
+Clever Tools comes with a powerful auto-completion support. Make sure to
 enable it for a better experience.
 
     install-clever-completion
 
 ## Linking your account
 
-Once you have installed `clever-tools`, the next step is to link your account:
+Once you have installed Clever Tools, the next step is to link your account:
 
     clever login
 
@@ -40,7 +40,7 @@ tokens. Copy them and paste them in the `clever login` prompt.
 ## Linking an existing application
 
 If you have an already existing application, you can start managing it with
-`clever-tools`.
+Clever Tools.
 
     # First, go to your local repository
     cd /path/to/your/application
