@@ -21,7 +21,7 @@ Python 2.7 and 3.5 are available on our platform. You can use Git to deploy your
 
 Refer to the page [Deploy an application on Clever Cloud](/doc/clever-cloud-overview/add-application/).
 
-## Available extensions and modules
+## Dependencies
 
 You are granted to install external libs. As you can do on your workstation you can easily use **pip** and **requirements.txt**.
 
@@ -42,6 +42,13 @@ webassets==0.8
 pytz==2012d
 psycopg2==2.4.5
 ```
+
+### Cache dependencies
+
+You can cache dependencies to avoid the installation at each deployment. Define the `CACHE_DEPENDENCIES`
+variable to `true` to activate it. If dependencies have changed between deployments, the cache
+will be updated.
+Remove the environment variable or set it to `false` to disable this feature.
 
 If you have any question, feel free to [contact our support](https://www.clever-cloud.com/doc/get-help/support/).
 
