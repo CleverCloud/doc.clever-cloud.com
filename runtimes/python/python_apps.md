@@ -80,7 +80,11 @@ If not specified, the default backend is `uwsgi`.
 
 ## Manage your static files
 
-To enable Nginx to serve your static resources, you can either use environment variables or a configuration file.
+To enable Nginx to serve your static resources, you have to set two environment variables.
+
+`STATIC_FILES_PATH`: should point to a directory where your static files are stored.
+
+`STATIC_URL_PREFIX`: the URL path under which you want to serve static files (e.g. `/public/`)
 
 Also, you are able to use a Filesystem Bucket to store your static files. Please refer to the
 [File System Buckets](/doc/addons/clever-cloud-addons/#fs-buckets-file-system-with-persistance/) section.
@@ -89,44 +93,25 @@ Also, you are able to use a Filesystem Bucket to store your static files. Please
 
 **Note**: setting the `STATIC_URL_PREFIX` to `/` will make the deployment to fail.
 
-### Using environment variables
-
-`STATIC_PATH`: should point to a directory where your static files are stored.
-
-`STATIC_URL_PREFIX`: the URL path under which you want to serve static files (e.g. `/public/`)
-
-### Using a configuration file
-
-You must set your public folder in `clevercloud/python.json` like below:
-
-```haskell
-   {
-      "deploy": {
-         "static": "/mypublicfolder",
-         "static-url-prefix": "/public/"
-      }
-   }
-```
-
 ### Example
 
-Here is how to setup, the `test.txt` being the static file:
+Here is how to serve the static files, the `test.png` being the static file:
 ```
 .
 ├── app
 │   ├── flask-app.py
-│   ├── public
+│   ├── static
 │   │   └── test.png
 │   └── requirements.txt
 ```
 
 Using the environment variables:
 ```
-STATIC_PATH=app/
+STATIC_FILES_PATH=static/
 STATIC_URL_PREFIX=/public/
 ```
 
-The `test.png` file will be accessed under: `http://<domain.tld>/public/test.png`
+The `test.png` file will be accessed under: `https://<domain.tld>/static/test.png`
 
 ## Choose Python version
 
