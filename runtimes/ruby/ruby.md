@@ -49,15 +49,15 @@ Then, you need to provide a Gemfile.lock. To do that, please run:
 Simply add this to your Gemfile
 
 ```
-ruby '2.1'
+ruby '2.3'
 ```
 
 `rubyversion` must be a string. The given string is tested against the
 available versions by using the /^<ver>/ regexp.
 
  * "2" will select the greatest "2.X.Y" version available.
- * "2.0" will select the greatest "2.0.Y" version available.
- * "2.0.0-p481" will select the "2.0.0-p481" version.
+ * "2.3" will select the greatest "2.0.Y" version available.
+ * "2.3.1-p112" will select the "2.3.1-p112" version.
 
 If given `rubyversion` does not match any available version, your
 deployment will fail.
@@ -67,8 +67,7 @@ support to ask for the version to be added. We try to follow the
 releases, but, hey, we're human!
 
 Due to current landscape in ruby applications, the default version is the
-greatest 2.1.Y. We provide also the latest 2.2.Y version and the latest
-1.9.Y too, but prefer the current stable: 2.1.
+greatest 2.3.Y. We provide also the 2.2.Y and 2.1.Y versions.
 
 
 ## Environment injection
