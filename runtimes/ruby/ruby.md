@@ -184,10 +184,20 @@ production:
 
 It's a standard sidekiq.yml configuration file.
 
-### Assets and static files
+## Assets and static files
 
-The `deploy.static` field of `clevercloud/ruby.json` allows you to serve
-static files with nginx.
+Static files are configured with environment variables:
+
+`STATIC_FILES_PATH`: should point to a directory where your static files are stored.
+
+`STATIC_URL_PREFIX`: the URL path under which you want to serve static files (e.g. `/public/`)
+
+Also, you are able to use a Filesystem Bucket to store your static files. Please refer to the
+[File System Buckets](/doc/addons/clever-cloud-addons/#fs-buckets-file-system-with-persistance/) section.
+
+**Note**: the path of your folder must be absolute regarding the root of your application.
+
+**Note**: setting the `STATIC_URL_PREFIX` to `/` will make the deployment to fail.
 
 If you use the asset pipeline, make sure to include the `assets:precompile`
 task in the `rakegoals` field of `clevercloud/ruby.json`.
@@ -195,15 +205,12 @@ task in the `rakegoals` field of `clevercloud/ruby.json`.
 ```json
 {
     "deploy": {
-        "rakegoals": ["assets:precompile"],
-        "static": "/public"
+        "rakegoals": ["assets:precompile"]
     }
 }
 ```
 
-*Note: the path of the static folder must be absolute regarding the root of your application.*
-
-### UWSGI and Nginx configuration
+## UWSGI and Nginx configuration
 
 UWSGI and nginx settings can be configured by setting environment variables:
 
