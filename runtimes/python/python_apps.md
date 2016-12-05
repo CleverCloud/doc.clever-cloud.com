@@ -91,7 +91,7 @@ To enable Nginx to serve your static resources, you have to set two environment 
 
 `STATIC_FILES_PATH`: should point to a directory where your static files are stored.
 
-`STATIC_URL_PREFIX`: the URL path under which you want to serve static files (e.g. `/public/`)
+`STATIC_URL_PREFIX`: the URL path under which you want to serve static files (e.g. `/public`)
 
 Also, you are able to use a Filesystem Bucket to store your static files. Please refer to the
 [File System Buckets](/doc/addons/clever-cloud-addons/#fs-buckets-file-system-with-persistance/) section.
@@ -115,7 +115,7 @@ Here is how to serve the static files, the `test.png` being the static file:
 Using the environment variables:
 ```
 STATIC_FILES_PATH=static/
-STATIC_URL_PREFIX=/public/
+STATIC_URL_PREFIX=/public
 ```
 
 The `test.png` file will be accessed under: `https://<domain.tld>/static/test.png`
