@@ -2,7 +2,7 @@
 title: Deploy Node.js apps
 shortdesc: Node.js is a platform built on Chrome's JavaScript runtime for building fast, scalable network applications.
 tags:
-- nodejs
+- nodejs	
 ---
 
 # Deploy Node.js apps
@@ -109,23 +109,22 @@ The following table describes each of the fields formerly mentioned.
 </tr>
 <tr>
 <td class="cc-depusage" rowspan="2"><span class="label label-important">At least one</span></td>
-<td>main</td>
-<td>This field allows you to specify the file you want to run. It should
-be the relative path of the file starting at the project's root. It's used prior to the next one.</td>
+<td>scripts.start</td>
+<td>This field provides a command line to run. If defined, <code>npm start</code> will be launched. Otherwise
+we will use the <code>main</code> field</td>
 </tr>
 <tr>
-<td>scripts.start</td>
-<td>This field provides a command line to run. It is required if the <code>main</code> one is missing. You need one
-of <code>scripts.start</code> and <code>main</code>. If both exist, we use the <code>main</code> one.</td>
+<td>main</td>
+<td>This field allows you to specify the file you want to run. It should
+be the relative path of the file starting at the project's root. It's used to launch your application if <code>scripts.start</code> is not defined.</td>
 </tr>
 <tr>
 <td class="cc-depusage" ><span class="label label-inverse">Optional</span></td>
 <td>engines.node</td>
 <td>Sets the node engine version you app runs with. Any "A.B.x" or "^A.B.C" or "~A.B" version will lead
-to run the application with le latest "A.B" local version. If this field is
-missing, we use the greatest default local version (0.10 until 2015-10-11). If you want to use <a
-href="http://iojs.org/">iojs</a>, put either "iojs", "iojs-v1.0.3", or any truncated
-version number (e.g. "iojs-1" will work).<br />If you want to ensure that your app will always run, please put something of the form "^A.B.C" and avoid setting only ">=A.B.C".</td>
+to run the application with the latest "A.B" local version. If this field is
+missing, we use the latest LTS available. If you want to ensure that your app will always run,
+please put something of the form "^A.B.C" and avoid setting only ">=A.B.C".</td>
 </tr>
 </tbody>
 </table>
@@ -155,11 +154,24 @@ Here is an example :
 }
 ```
 
+#### Deploy with privates dependencies
+
+If your application got privates dependencies, you can add a [Private SSH Key](https://www.clever-cloud.com/doc/clever-cloud-overview/common-application-configuration/#private-ssh-key).
+
+
 ## Node.js supported versions
 
 The Clever Cloud can virtually run any version of node >= 0.6 and any
 module. Lesser (pre-npm) versions are not officially supported. Unstable
-versions are not supported either. We support the io.js runtime.
+versions are not supported either.
+
+## Supported package managers
+
+We support [npm](https://www.npmjs.com) and [yarn](https://yarnpkg.com) as package managers.
+You can define the environment variable `NODE_BUILD_TOOL` to `npm` or `yarn` to select the
+one you want. If not specified, `npm` will be used.
+
+`yarn` is only available on `node.js` instances for now.
 
 ### Pre-installed modules
 

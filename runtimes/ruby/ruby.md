@@ -49,15 +49,15 @@ Then, you need to provide a Gemfile.lock. To do that, please run:
 Simply add this to your Gemfile
 
 ```
-ruby '2.1'
+ruby '2.3'
 ```
 
 `rubyversion` must be a string. The given string is tested against the
 available versions by using the /^<ver>/ regexp.
 
  * "2" will select the greatest "2.X.Y" version available.
- * "2.0" will select the greatest "2.0.Y" version available.
- * "2.0.0-p481" will select the "2.0.0-p481" version.
+ * "2.3" will select the greatest "2.0.Y" version available.
+ * "2.3.1-p112" will select the "2.3.1-p112" version.
 
 If given `rubyversion` does not match any available version, your
 deployment will fail.
@@ -67,8 +67,15 @@ support to ask for the version to be added. We try to follow the
 releases, but, hey, we're human!
 
 Due to current landscape in ruby applications, the default version is the
-greatest 2.1.Y. We provide also the latest 2.2.Y version and the latest
-1.9.Y too, but prefer the current stable: 2.1.
+greatest 2.3.Y. We provide also the 2.2.Y and 2.1.Y versions.
+
+
+## Environment injection
+
+To access your variable in your application, nothing simpler! Just get
+it from your environment, like you would with `PATH`:
+`ENV["MY_VARIABLE"]`.
+
 
 ## Configuration secret key production
 
@@ -84,10 +91,6 @@ You need to use environment injection for `secret_key_base` in file  `./config/s
 
 Clever Cloud can inject environment variables that are defined in the
 dashboard and by add-ons linked to your application.
-
-To access your variable in your application, nothing simpler! Just get
-it from your environment, like you would with `PATH`:
-`ENV["MY_VARIABLE"]`.
 
 
 ## More configuration
@@ -139,8 +142,15 @@ We <strong>do not</strong> execute any rake goals by default.
 <td><span class="label label-inverse">Optional</span></td>
 <td>deploy.sidekiq</td>
 <td>
-Run a sidekiq process in background. Beware, you will need a redis instance to use this
+Run a sidekiq process in background. Please note you will need a redis instance to use this
 feature.
+</td>
+</tr>
+<tr>
+<td><span class="label label-inverse">Optional</span></td>
+<td>deploy.static</td>
+<td>
+Let nginx serve the assets contained in the directory.
 </td>
 </tr>
 </tbody>
@@ -174,32 +184,43 @@ production:
 
 It's a standard sidekiq.yml configuration file.
 
-### Manage your static files
+## Assets and static files
 
-To make Nginx serve your static resources you must set your public folder in `clevercloud/ruby.json` like below:
+Static files are configured with environment variables:
 
-```haskell
-   {
-      "deploy": {
-         "static": "/mypublicfolder"
-      }
-   }
+`STATIC_FILES_PATH`: should point to a directory where your static files are stored.
+
+`STATIC_URL_PREFIX`: the URL path under which you want to serve static files (e.g. `/public/`)
+
+Also, you are able to use a Filesystem Bucket to store your static files. Please refer to the
+[File System Buckets](/doc/addons/clever-cloud-addons/#fs-buckets-file-system-with-persistance/) section.
+
+**Note**: the path of your folder must be absolute regarding the root of your application.
+
+**Note**: setting the `STATIC_URL_PREFIX` to `/` will make the deployment to fail.
+
+If you use the asset pipeline, make sure to include the `assets:precompile`
+task in the `rakegoals` field of `clevercloud/ruby.json`.
+
+```json
+{
+    "deploy": {
+        "rakegoals": ["assets:precompile"]
+    }
+}
 ```
 
-*Note: the path of your folder must be absolute regarding the root of your application.*
+## UWSGI and Nginx configuration
 
-### Update wsgi buffer size
+UWSGI and nginx settings can be configured by setting environment variables:
 
-The default buffer size for headers is 4096. This is enough for most people. But you might
-need to increase that value if your application uses very long query string or headers.
-
-To change the buffer size, set the `WSGI_BUFFER_SIZE` [environment variable](admin-console/environment-variables) in the Clever Cloud console.
-
-Example:
-
-```
-WSGI_BUFFER_SIZE=8192
-```
+ - `HARAKIRI`: timeout (in seconds) after which an unresponding process is killed. (Default: 180)
+ - `WSGI_BUFFER_SIZE`: maximal size (in bytes) for the headers of a request. (Defaut: 4096)
+ - `WSGI_POST_BUFFERING`: buffer size (in bytes) for uploads. (Defaut: 4096)
+ - `WSGI_WORKERS`: number of workers. (Defaut: depends on the scaler)
+ - `WSGI_THREADS`: number of threads per worker. (Defaut: depends on the scaler)
+ - `NGINX_READ_TIMEOUT`: a bit like HARAKIRI, the response timeout in seconds. (Defaut: 300)
+ - `GZIP`: "on|yes|true" gzip-compress the output of uwsgi.
 
 ## Deploy on Clever Cloud
 

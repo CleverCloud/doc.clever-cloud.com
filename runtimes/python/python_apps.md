@@ -14,14 +14,14 @@ You can learn how to use Python and see almost immediate gains in productivity a
 
 ## Overview
 
-Python 2.7 and 3.4 are available on our platform. You can use Git to deploy your application.
+Python 2.7 and 3.5 are available on our platform. You can use Git to deploy your application.
 
 
 ## Create an application
 
 Refer to the page [Deploy an application on Clever Cloud](/doc/clever-cloud-overview/add-application/).
 
-## Available extensions and modules
+## Dependencies
 
 You are granted to install external libs. As you can do on your workstation you can easily use **pip** and **requirements.txt**.
 
@@ -42,6 +42,13 @@ webassets==0.8
 pytz==2012d
 psycopg2==2.4.5
 ```
+
+### Cache dependencies
+
+You can cache dependencies to avoid the installation at each deployment. Define the `CACHE_DEPENDENCIES`
+variable to `true` to activate it. If dependencies have changed between deployments, the cache
+will be updated.
+Remove the environment variable or set it to `false` to disable this feature.
 
 If you have any question, feel free to [contact our support](https://www.clever-cloud.com/doc/get-help/support/).
 
@@ -71,33 +78,69 @@ of your project with a Flask `app` object inside.
 
 Basically, you should just point to a WSGI capable object.
 
+## Select the python backend
 
-### Manage your static files
+Currently, we support `uwsgi` and `gunicorn` for python backends. To select one, set the
+`PYTHON_BACKEND` environment variable with either `uwsgi` or `gunicorn`.
 
-To enable Nginx to serve your static resources you must set your public folder in
-`clevercloud/python.json` like below:
+If not specified, the default backend is `uwsgi`.
 
-```haskell
-   {
-      "deploy": {
-         "static": "/mypublicfolder"
-      }
-   }
-```
+## Manage your static files
+
+To enable Nginx to serve your static resources, you have to set two environment variables.
+
+`STATIC_FILES_PATH`: should point to a directory where your static files are stored.
+
+`STATIC_URL_PREFIX`: the URL path under which you want to serve static files (e.g. `/public`)
 
 Also, you are able to use a Filesystem Bucket to store your static files. Please refer to the
 [File System Buckets](/doc/addons/clever-cloud-addons/#fs-buckets-file-system-with-persistance/) section.
 
 **Note**: the path of your folder must be absolute regarding the root of your application.
 
+**Note**: setting the `STATIC_URL_PREFIX` to `/` will make the deployment to fail.
 
-### Use Python 3
+### Example
 
-The default version of python on Clever Cloud is **2.7**, if you want to use python **3.4** instead, use the file
-`/clevercloud/python_version` and put `3` in it.
+Here is how to serve the static files, the `test.png` being the static file:
+```
+.
+├── app
+│   ├── flask-app.py
+│   ├── static
+│   │   └── test.png
+│   └── requirements.txt
+```
+
+Using the environment variables:
+```
+STATIC_FILES_PATH=static/
+STATIC_URL_PREFIX=/public
+```
+
+The `test.png` file will be accessed under: `https://<domain.tld>/static/test.png`
+
+## Choose Python version
+
+The default version of python on Clever Cloud is **2.7**. If you want to use python **3.5** instead,
+create an environment variable `PYTHON_VERSION` equals to either `2` or `3`.
+
+Also, the file `/clevercloud/python_version` is still supported for backward compatibility.
+You have to write either `2` or `3` in it to select the python version. Please prefer the environment variable.
 
 **Note**: the version is an integer, do not use quotes. values allowed are `2` and `3`.
 
+## UWSGI and Nginx configuration
+
+UWSGI and nginx settings can be configured by setting environment variables:
+
+ - `HARAKIRI`: timeout (in seconds) after which an unresponding process is killed. (Default: 180)
+ - `WSGI_BUFFER_SIZE`: maximal size (in bytes) for the headers of a request. (Defaut: 4096)
+ - `WSGI_POST_BUFFERING`: buffer size (in bytes) for uploads. (Defaut: 4096)
+ - `WSGI_WORKERS`: number of workers. (Defaut: depends on the scaler)
+ - `WSGI_THREADS`: number of threads per worker. (Defaut: depends on the scaler)
+ - `NGINX_READ_TIMEOUT`: a bit like HARAKIRI, the response timeout in seconds. (Defaut: 300)
+ - `GZIP`: "on|yes|true" gzip-compress the output of uwsgi.
 
 ## Environment injection
 

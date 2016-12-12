@@ -36,13 +36,7 @@ We will build & run the app from this `app` folder.
 
 ## Static files
 
-We set up in `/clevercloud/python.json` a "static" folder: everything in that folder will be served statically.
-Note that the static folder will be the root of static files requests. In this example, to get to Cat.svg which is in
-the "s" folder in the `/clevercloud/static folder`, you need to request "http://{yourdomain}/s/Cat.svg".
-
-You can also see that "s" is a link to the static folder at the root of the app. It's just to show that you can do symlinks.
-
-Documentation: [Manage your static files](https://www.clever-cloud.com/doc/python/python_apps/#manage-your-static-files)
+Documentation for Python static files: [Manage your static files](https://www.clever-cloud.com/doc/python/python_apps/#manage-your-static-files)
 
 ## Run the app
 

@@ -11,7 +11,7 @@ tags:
 
 
 <div class="row-fluid">
-<div class="span3">
+<div class="col-md-3">
 <a href="#git-and-file-persistence">
 <center>
 <img  src="/doc/assets/images/faq/git_persistence.png" alt="instance">
@@ -19,7 +19,7 @@ tags:
 <div class="cc_service__title" style="text-align:center">Git and File Persistence</div>
 </a>
 </div>
-<div class="span3">
+<div class="col-md-3">
 <a href="#error-about-empty-repository">
 <center>
 <img  src="/doc/assets/images/faq/empty_repo.png" alt="instance">
@@ -29,7 +29,7 @@ Error about Empty Repository
 </div>
 </a>
 </div>
-<div class="span3">
+<div class="col-md-3">
 <a href="#ssh-password-is-asked">
 <center>
 <img  src="/doc/assets/images/faq/password_asked.png" alt="instance">
@@ -39,7 +39,7 @@ SSH: Password is Asked
 </div>
 </a>
 </div>
-<div class="span3">
+<div class="col-md-3">
 <a href="#node-failed-to-deploy">
 <center>
 <img  src="/doc/assets/images/faq/node_fail.png" alt="instance">

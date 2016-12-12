@@ -2,7 +2,7 @@
 title: Running crons
 position: 1
 tags:
-- developer
+- apps
 ---
 
 # CRON configuration file
@@ -51,6 +51,8 @@ Example of `clevercloud/cron.json` which executes the file `cron.php` every 5 mi
   ```bash
     source /home/bas/applicationrc
   ```
+  <br>
+  You can refer to [special environment variables](/doc/admin-console/environment-variables#special-environment-variables) to see which variables are available.
   </p>
   <p>Once you added this line at the top of your script, you can access the directory in which your applicaiton is using `$APP_HOME`</p>
 </div>

@@ -4,7 +4,7 @@ position: 3
 shortdesc: How to setup and configure domains names for your apps
 tags:
 - dashboard-setup
-- developer
+- apps
 keywords:
 - DNS
 - domain
@@ -40,7 +40,7 @@ If you need to configure a custom domain name, see the steps below.
   </tr>
   <tr>
     <td>CNAME <div><span class="label label-success">Recommended</span></div></td>
-    <td>``domain.par.clever-cloud.com``</td>
+    <td>``domain.par.clever-cloud.com.``</td>
   </tr>
   <tr>
     <td>A<div><small>Only if CNAME is not available</small></div></td>
@@ -58,11 +58,11 @@ If you need to configure a custom domain name, see the steps below.
   </tr>
   <tr>
     <td>CNAME <div><span class="label label-success">Recommended</span></div></td>
-    <td>``domain.mtl.clever-cloud.com``</td>
+    <td>``domain.mtl.clever-cloud.com.``</td>
   </tr>
   <tr>
     <td>A<div><small>Only if CNAME is not available</small></div></td>
-    <td>Two records on ``68.71.34.21`` and ``68.71.34.20``</td>
+    <td>Two records on ``68.71.34.33`` and ``68.71.34.35``</td>
   </tr>
 </table>
 
