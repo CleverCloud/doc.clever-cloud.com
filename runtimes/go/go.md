@@ -145,11 +145,7 @@ it from your environment, like you would with `PATH`:
 <tr>
 <td>CC_GO_PKG</td>
 <td>
-Makes the deployer run `go get ${CC_GO_PKG}` instead of `go get <app_id>`. This helps if
-you have a "foobar/" folder/package in your "github.com/mememe/myproject" repo and a "main.go" on
-the root containing `import "github.com/mememe/myproject/foobar"`.
-If we run `go get <app_id>`, the deployer won't be able to find the "github.com/mememe/myproject/foobar" package.
-Using that variable will prevent breaking that hierarchy.
+Makes the deployer run `go get ${CC_GO_PKG}` instead of `go get <app_id>`.
 </td>
 </tr>
 </tbody>
