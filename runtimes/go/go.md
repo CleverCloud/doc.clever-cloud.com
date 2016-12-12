@@ -49,6 +49,12 @@ Also, the go tool requires that you put your main code in a file named `main.go`
 do not do that, go will generate a library and not an executable. So if you get a `Nothing
 listening on port 8080`, please check that your main file is named `main.go`.
 
+By default, we deploy your application as a go project named "<app_id>". This might not be
+what you want. If your application has submodules and imports them with their full path *or* your main
+project is an external package hosted, let's say, on github (like `github.com/mememe/myproject`),
+you can define the `CC_GO_PKG=github.com/mememe/myproject` environment variable. We will
+then run `go get ${CC_GO_PKG}` instead of running `go get <app_id>`.
+
 ## More configuration
 
 By default, we consider that your repository contains a single
@@ -128,6 +134,26 @@ dashboard and by add-ons linked to your application.
 To access your variable in your application, nothing simpler! Just get
 it from your environment, like you would with `PATH`:
 `os.Getenv("MY_VARIABLE")`.
+
+## Customize build using environment variables
+
+<table id="go_envs" class="table table-bordered, table-striped">
+<thead>
+<tr><th>Variable</th><th>Usage</th></tr>
+</thead>
+<tbody>
+<tr>
+<td>CC_GO_PKG</td>
+<td>
+Makes the deployer run `go get ${CC_GO_PKG}` instead of `go get <app_id>`. This helps if
+you have a "foobar/" folder/package in your "github.com/mememe/myproject" repo and a "main.go" on
+the root containing `import "github.com/mememe/myproject/foobar"`.
+If we run `go get <app_id>`, the deployer won't be able to find the "github.com/mememe/myproject/foobar" package.
+Using that variable will prevent breaking that hierarchy.
+</td>
+</tr>
+</tbody>
+</table>
 
 ## Deploy on Clever Cloud
 
