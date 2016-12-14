@@ -278,7 +278,7 @@ $dbh = new PDO(
     If you want to use `phpinfo()` without exposing environment variables, you have to call it this way:
     </p>
  ```php
- phpinfo(INFO_GENERAL | INFO_CREDITS | INFO_CONFIGURATION | INFO_MODULES | INFO_VARIABLES | INFO_LICENSE)
+ phpinfo(INFO_GENERAL | INFO_CREDITS | INFO_CONFIGURATION | INFO_MODULES | INFO_LICENSE)
  ```
  </div>
 </div>
