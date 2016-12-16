@@ -210,9 +210,9 @@ task in the `rakegoals` field of `clevercloud/ruby.json`.
 }
 ```
 
-## UWSGI and Nginx configuration
+## uWSGI and Nginx configuration
 
-UWSGI and nginx settings can be configured by setting environment variables:
+uWSGI and nginx settings can be configured by setting environment variables:
 
  - `HARAKIRI`: timeout (in seconds) after which an unresponding process is killed. (Default: 180)
  - `WSGI_BUFFER_SIZE`: maximal size (in bytes) for the headers of a request. (Defaut: 4096)

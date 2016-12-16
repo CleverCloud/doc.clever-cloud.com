@@ -130,9 +130,9 @@ You have to write either `2` or `3` in it to select the python version. Please p
 
 **Note**: the version is an integer, do not use quotes. values allowed are `2` and `3`.
 
-## UWSGI and Nginx configuration
+## uWSGI and Nginx configuration
 
-UWSGI and nginx settings can be configured by setting environment variables:
+uWSGI and nginx settings can be configured by setting environment variables:
 
  - `HARAKIRI`: timeout (in seconds) after which an unresponding process is killed. (Default: 180)
  - `WSGI_BUFFER_SIZE`: maximal size (in bytes) for the headers of a request. (Defaut: 4096)
