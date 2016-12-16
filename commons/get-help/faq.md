@@ -55,9 +55,10 @@ To report an application that is in violation of the Clever Cloud's Terms and Co
 
 We will investigate and contact the application's owner over the violation if needed.
 
-## Does Clever Cloud support SSL (HTTPS)?
+## Does Clever Cloud support TLS/SSL (HTTPS)?
 
-Absolutely! For now, it's not automatic. Contact us at <support@clever-cloud.com>, we will enable it for you. Custom SSL certificates will be available directly in Clever Cloud very soon.
+Absolutely! For testing purposes, `cleverapps.io` domains support TLS out of the box. For custom SSL certificates, you can either order one from us or use an existing one.
+Have a look at [installing SSL certificates](/doc/tools/ssl-certificates/), and feel free to contact us at <contact@clever-cloud.com> if you have questions.
 
 ## I'd like to map my app to http://mydomain.com.
 
