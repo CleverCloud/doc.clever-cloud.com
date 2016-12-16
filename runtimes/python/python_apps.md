@@ -153,6 +153,12 @@ import os
 os.getenv("MY_VARIABLE")
 ```
 
+## uWSGI asynchronous/non-blocking modes
+
+To enable [uWSGI asynchronous](https://uwsgi-docs.readthedocs.io/en/latest/Async.html) mode, you can use these two environment variables:
+
+ - `UWSGI_ASYNC`: [number of cores](https://uwsgi-docs.readthedocs.io/en/latest/Async.html#async-switches) to use for uWSGI asynchronous/non-blocking modes.
+ - `UWSGI_ASYNC_ENGINE`: select the [asynchronous engine for uWSGI](https://uwsgi-docs.readthedocs.io/en/latest/Async.html#suspend-resume-engines) (optional)
 
 ## Git Deployment
 

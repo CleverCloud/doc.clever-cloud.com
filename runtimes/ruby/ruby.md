@@ -222,6 +222,13 @@ UWSGI and nginx settings can be configured by setting environment variables:
  - `NGINX_READ_TIMEOUT`: a bit like HARAKIRI, the response timeout in seconds. (Defaut: 300)
  - `GZIP`: "on|yes|true" gzip-compress the output of uwsgi.
 
+## uWSGI asynchronous/non-blocking modes
+
+To enable [uWSGI asynchronous](https://uwsgi-docs.readthedocs.io/en/latest/Async.html) mode, you can use these two environment variables:
+
+ - `UWSGI_ASYNC`: [number of cores](https://uwsgi-docs.readthedocs.io/en/latest/Async.html#async-switches) to use for uWSGI asynchronous/non-blocking modes.
+ - `UWSGI_ASYNC_ENGINE`: select the [asynchronous engine for uWSGI](https://uwsgi-docs.readthedocs.io/en/latest/Async.html#suspend-resume-engines) (optional)
+
 ## Deploy on Clever Cloud
 
 Application deployment on Clever Cloud is via Git. Follow [these steps](/doc/clever-cloud-overview/add-application/) to deploy your application.
