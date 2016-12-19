@@ -23,10 +23,7 @@ We demonstrate several Clever Cloud possibilities in this application:
 
 ## Choose python version
 
-We have a `python_version` file in the `/clevercloud` folder that contains **3**.
-This will select the latest *Python 3* version installed (at the time of this writing, 3.4).
-
-Documentation: [Use Python 3](https://www.clever-cloud.com/doc/python/python_apps/#use-python-3)
+Please refer to [choose python version](https://www.clever-cloud.com/doc/python/python_apps/#choose-python-version)
 
 ## Build app in a subfolder
 
@@ -40,5 +37,5 @@ Documentation for Python static files: [Manage your static files](https://www.cl
 
 ## Run the app
 
-As explained in [Select your module](https://www.clever-cloud.com/doc/python/python_apps/#select-your-module) 
+As explained in [Select your module](https://www.clever-cloud.com/doc/python/python_apps/#select-your-module)
 we ask Clever Cloud to run the "app" Flask application defined in the `hello.py` file. So the "module" field is `hello:app`.
