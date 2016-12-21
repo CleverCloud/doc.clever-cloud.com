@@ -160,6 +160,14 @@ To enable [uWSGI asynchronous](https://uwsgi-docs.readthedocs.io/en/latest/Async
  - `UWSGI_ASYNC`: [number of cores](https://uwsgi-docs.readthedocs.io/en/latest/Async.html#async-switches) to use for uWSGI asynchronous/non-blocking modes.
  - `UWSGI_ASYNC_ENGINE`: select the [asynchronous engine for uWSGI](https://uwsgi-docs.readthedocs.io/en/latest/Async.html#suspend-resume-engines) (optional)
 
+## Use setup.py
+
+We support execution of a single `setup.py` goal. Usually, this would be to execute custom tasks after
+the installation of dependencies.
+To execute a goal, you can define the environment variable `PYTHON_SETUP_PY_GOAL="build"` (or any other goal).
+
+The goal will be launched after the dependencies from `requirements.txt` have been installed.
+
 ## Git Deployment
 
 *You will need git on your computer to deploy via this tool. Here is the official website of Git to get more
