@@ -8,6 +8,8 @@ keywords:
 - auth
 - authentication
 - github
+- 2FA
+- two factor authentication
 ---
 
 # Authentication On Clever Cloud
@@ -31,3 +33,10 @@ The "repository permission" is used to deploy your GitHub apps directly to Cleve
 
 If you need to give access to Clever Cloud's API to a specific Github organisation, you
 can [do it here](https://github.com/settings/connections/applications/d96bd8fd996d2ca783cc).
+
+## Two Factor Authentication (2FA)
+
+Clever Cloud supports 2FA. You can enable it here: https://console.clever-cloud.com/users/me/authentication
+
+Please, backup your recovery codes, we won't be able to restore access to your account if you loose access to
+your regular codes.
