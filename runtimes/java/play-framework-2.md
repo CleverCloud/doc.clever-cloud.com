@@ -60,7 +60,7 @@ There are two way to access the environment variables from your application:
 
  * you can also use the `System.getenv("MY_VARIABLE")` method. Be aware that it can return null.
 
- So for an application using the MySQL add-on, you can set:
+ So for an application using the PostgreSQL add-on, you can set:
 
 ```bash
 db.default.driver=org.postgresql.Driver
