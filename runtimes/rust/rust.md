@@ -42,12 +42,12 @@ Be sure that:
 
 * you have pushed in <b>master branch</b>
 * you listen on <b>port 8080</b>
-* you have listed all your dependencies in `Cargo.toml`
+* you have committed `Cargo.lock`
 * you have at least one binary target in `Cargo.toml`
 
 ## Requirements
 
-The result of `cargo run --release` must be a process listening on
+The result of `cargo run --release --locked` must be a process listening on
 `0.0.0.0:8080`.
 
 For instance, a minimal iron application can look like this:
