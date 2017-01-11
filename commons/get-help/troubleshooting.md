@@ -145,3 +145,10 @@ server.listen(8080);
 ```
 
 *Related page: [Deploy Node.js apps](/doc/nodejs/nodejs/).*
+
+
+#### <i class="icon-double-angle-right"></i> My github organisation is not listed on the app creation page
+
+Github does not give us access to organisations created or joined *after* you've linked your Github account to
+Clever Cloud (which is a good thing). So you need to let the Clever Cloud API
+access it. You can do that on <https://github.com/settings/applications>.
