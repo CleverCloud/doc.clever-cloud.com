@@ -96,6 +96,13 @@ environment variable. If you want to rebuild your application from scratch,
 you can select "rebuild and restart" from the console or launch `clever
 restart --without-cache` from CLI.
 
+### Rust channels
+
+By default, your application is built with the latest stable version. If you
+require beta, nightly or a specific rust version, you can set `RUSTUP_CHANNEL`
+to `beta`, `nightly` or a specific version (eg. `1.13.0`). The build uses
+`rustup` to select the rust version you need.
+
 ## Environment injection
 
 Clever Cloud can inject environment variables that are defined in the
