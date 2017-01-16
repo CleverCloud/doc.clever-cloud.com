@@ -403,6 +403,11 @@ To enable this feature, you need to:
     </div>
 </div>
 
+## Sending e-mails
+
+The PHP language has the `mail` function to directly send e-mails but we do not support it because of all the maintenance it needs.
+Instead, we recommend you to use [Mailgun](https://www.mailgun.com/) or [Mailjet](https://www.mailjet.com/). These services already have everything you need to send emails from your code.
+
 ## Deploy on Clever Cloud
 
 Application deployment on Clever Cloud is via **Git or FTP**. Follow
