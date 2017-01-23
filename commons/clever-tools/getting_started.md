@@ -17,9 +17,16 @@ applications from the command line with Clever Tools.
 ## Installing Clever Tools
 
 Clever Tools is packaged and distributed through [npm](https://npmjs.com).
-To use it, you need to have nodeJS and npm running on your system, then
+You need nodeJS, npm and openssl headers (openssl-dev on ubuntu / debian)
+installed on your system.
+
+To install Clever Tools for your user only, run
 
     npm install -g clever-tools
+
+To install Clever Tools system-wide, run
+
+    sudo npm install -g clever-tools
 
 ### Installing auto-completion
 
