@@ -328,7 +328,7 @@ You can check enabled extensions and versions by viewing our `phpinfo()` example
 
 **Warning**: some extensions need to be [enabled explicitely](#enable-specific-extensions)
 
-The following extensions are enabled by default: `couchbase`, `imagick`, `memcached`,
+The following extensions are enabled by default: `imagick`, `memcached`,
 `memcache`, `mongodb`, `opcache`, `redis`, `solr`, `ssh2`.
 
 You can add `DISABLE_<extension_name>: true` in your [environment variable](/doc/admin-console/environment-variables/)
@@ -358,6 +358,10 @@ Some extensions need to be enabled explicitly. To enable these extensions, you'l
 * APCu: set `ENABLE_APCU` to `true`.
 
     APCu is an in-memory key-value store for PHP. Keys are of type string and values can be any PHP variables.
+
+* Couchbase: set `ENABLE_COUCHBASE` and `ENABLE_PCS` to `true`
+
+    Couchbase is a document database with a SQL-based query language that is engineered to deliver performance at scale.
 
 * IonCube: set `ENABLE_IONCUBE` to `true`.
 
