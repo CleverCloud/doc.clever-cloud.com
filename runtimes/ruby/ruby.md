@@ -220,7 +220,7 @@ uWSGI and nginx settings can be configured by setting environment variables:
  - `WSGI_WORKERS`: number of workers. (Defaut: depends on the scaler)
  - `WSGI_THREADS`: number of threads per worker. (Defaut: depends on the scaler)
  - `NGINX_READ_TIMEOUT`: a bit like HARAKIRI, the response timeout in seconds. (Defaut: 300)
- - `GZIP`: "on|yes|true" gzip-compress the output of uwsgi.
+ - `ENABLE_GZIP_COMPRESSION`: "on|yes|true" gzip-compress the output of uwsgi.
 
 ## uWSGI asynchronous/non-blocking modes
 
