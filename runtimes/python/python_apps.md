@@ -118,7 +118,7 @@ STATIC_FILES_PATH=static/
 STATIC_URL_PREFIX=/public
 ```
 
-The `test.png` file will be accessed under: `https://<domain.tld>/static/test.png`
+The `test.png` file will be accessed under: `https://<domain.tld>/public/test.png`
 
 ## Choose Python version
 
