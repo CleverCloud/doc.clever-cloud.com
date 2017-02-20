@@ -3,6 +3,13 @@ title: Clever Cloud Unified Invoicing
 position: 1
 tags:
 - support
+keywords:
+- invoice
+- invoicing
+- billing
+- bill
+- payment
+- payments
 ---
 
 # Unified Invoicing
