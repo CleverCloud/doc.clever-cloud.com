@@ -1,5 +1,5 @@
 ---
-title: Clever Cloud Unified Invoicing
+title: Unified Invoicing
 position: 1
 tags:
 - support
