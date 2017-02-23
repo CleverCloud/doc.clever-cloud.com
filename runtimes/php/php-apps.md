@@ -363,6 +363,10 @@ Some extensions need to be enabled explicitly. To enable these extensions, you'l
 
     Couchbase is a document database with a SQL-based query language that is engineered to deliver performance at scale.
 
+* Redis: set `ENABLE_REDIS` to `true`.
+
+    Redis is an open source (BSD licensed), in-memory data structure store, used as database, cache and message broker.
+
 * IonCube: set `ENABLE_IONCUBE` to `true`.
 
     IonCube is a tool to obfuscate PHP code. It's often used by paying Prestashop and Wordpress plugins.
