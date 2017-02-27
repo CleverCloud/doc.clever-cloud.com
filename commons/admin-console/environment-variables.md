@@ -75,9 +75,6 @@ It's handy if you want to only run crons on 1 instance (e.g. only on instance 0)
 
 *Spaces are not allowed* in the name of the variables.
 
-If you define or modify
-environment variables, you will need to redeploy you application to make it use the variables.
-
 ## How do I use these variables?
 
 Depending on the type of your application, you will need to use
