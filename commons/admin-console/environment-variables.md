@@ -28,7 +28,7 @@ Variables are defined on a per-application basis. They are defined by three ways
  * Some special environment variables are added automatically for each application.
 
 Please note that if you define or modify environment variables, you will
-need to redeploy you application to make it use the variables.
+need to redeploy your application to make it use the new variables.
 
 ## Special environment variables
 
@@ -36,7 +36,7 @@ Some variables are injected to the environment of your application when you depl
 to inform you about the current context of your application and about the application itself.
 
 They can be accessed as classic environment variables and can be used in your application to
-give you information about the current context of the application.
+give you informations about the current context of the application.
 
  * `APP_ID` : the ID of the application. Each application has a unique identifier used to
  identify it in our system. This ID is the same than the one you can find in the information
@@ -53,7 +53,7 @@ give you information about the current context of the application.
  to know which version of your application is running on the server.
 
  * `APP_HOME` : The absolute path of your application on the server. Can be used to
- create absolute link in you application (ex : ${APP_HOME}/foo/bar).
+ create absolute link in your application (ex : ${APP_HOME}/foo/bar).
 
  * `INSTANCE_NUMBER` : See below
 
