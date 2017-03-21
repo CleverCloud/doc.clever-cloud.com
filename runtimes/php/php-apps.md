@@ -82,7 +82,7 @@ Please note the absolute path style: `/public`.
 
 ### Change PHP settings
 
-Most of PHP settings can be changed using a `.user.ini` file. Please refer to the
+Most of PHP settings can be changed using a `.user.ini` file. If you want it to be used for any file and you set a different `webroot` than `/`, you need to put this file in that directory instead of the root of your repository. Please refer to the
 [official documentation](http://www.php.net/manual/en/configuration.file.per-user.php) for more information.
 
 Other settings can be changed by adding the following line in `clevercloud/php.json`:
