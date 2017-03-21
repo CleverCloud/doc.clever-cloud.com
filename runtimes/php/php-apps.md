@@ -163,17 +163,12 @@ If you want to force all redirects to HTTPS, you can replace `%{HTTP:X-Forwarded
 We support Composer build out of the box. You just need to provide a `composer.json` file in the root of
 your repository and we will run `composer.phar install` for you.
 
-You can check out our current version of composer on these pages:
-
-* [php56info.cleverapps.io/composer](https://php56info.cleverapps.io/composer) for PHP 5.6
-* [php70info.cleverapps.io/composer](https://php70info.cleverapps.io/composer) for PHP 7.0
-
 <div class="panel panel-warning">
   <div class="panel-heading">
    <h4>Note:</h4>
   </div>
   <div class="panel-body">
-    <p>Add your own `composer.phar` file in the root of your repository if you need to override our version for the build phase.</p>
+    <p>If you encounter any issues, add your own `composer.phar` file in the root of your repository which will override the version we use.</p>
   </div>
 </div>
 
