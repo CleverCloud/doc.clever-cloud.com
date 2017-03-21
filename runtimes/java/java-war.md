@@ -30,15 +30,16 @@ The supported containers are listed below:
 <th>Jetty</th>
 <th>Jboss</th>
 <th>Glassfish</th>
+<th>Payara</th>
 <th>Resin</th>
 </tr>
 </thead>
 <tbody>
-<tr><td>Apache Tomcat 4.1</td><td>Jetty 6.1</td><td>Jboss 6.1</td><td>Glassfish 3.1</td><td>Resin 3.1</td></tr>
-<tr><td>Apache Tomcat 5.5</td><td>Jetty 7.6</td><td>Jboss AS 7.1</td><td>Glassfish 4.1</td><td> </td></tr>
-<tr><td>Apache Tomcat 6.0</td><td>Jetty 8.1</td><td> </td><td> </td><td> </td></tr>
-<tr><td>Apache Tomcat 7.0</td><td>Jetty 9.0</td><td> </td><td> </td><td> </td></tr>
-<tr><td>Apache Tomcat 8.8</td><td> </td><td> </td><td> </td><td> </td></tr>
+<tr><td>Apache Tomcat 4.1 (TOMCAT4)</td><td>Jetty 6.1 (JETTY6)</td><td>Jboss 6.1 (JBOSS6)</td><td>Glassfish 3.1 (GLASSFISH3)</td><td>Payara 4.1 (PAYARA4)</td><td>Resin 3.1 (RESIN3)</td></tr>
+<tr><td>Apache Tomcat 5.5 (TOMCAT5)</td><td>Jetty 7.6 (JETTY7)</td><td>Jboss AS 7.1 (JBOSS7)</td><td>Glassfish 4.1 (GLASSFISH4)</td><td> </td><td> </td></tr>
+<tr><td>Apache Tomcat 6.0 (TOMCAT6)</td><td>Jetty 8.1 (JETTY8)</td><td> </td><td> </td><td> </td><td> </td></tr>
+<tr><td>Apache Tomcat 7.0 (TOMCAT7)</td><td>Jetty 9.0 (JETTY9)</td><td> </td><td> </td><td> </td><td> </td></tr>
+<tr><td>Apache Tomcat 8.8 (TOMCAT8)</td><td> </td><td> </td><td> </td><td> </td><td> </td></tr>
 </tbody>
 </table>
 
@@ -117,7 +118,7 @@ Here's what your configuration file can look like:
 <tr>
 <td><span class="label label-important">Required</span></td>
 <td>**container**</td>
-<td>Name of the container to use. Should contain one of the values in the left column of the [containers table](#available-containers) (in uppercase and all).</td>
+<td>Name of the container to use. Should contain one of the values inside parentheses in the [containers table](#available-containers) (in uppercase and all).</td>
 </tr>
 <tr>
 <td><span class="label label-important">Required</span></td>
