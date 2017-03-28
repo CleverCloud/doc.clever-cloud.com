@@ -125,8 +125,16 @@ By default, `pm.max_children` is set to **10**.
 We use Apache 2 as HTTP Server. In order to configure it, you can create a `.htaccess` file and set directives inside
 this file.
 
+#### htaccess
+
 The `.htaccess` file can be created everywhere in you app, depending of the part of the application covered by directives.
 However, directives who applies to the entire application must be declared in a `.htaccess` file to the application root.
+
+#### htpasswd
+
+If you need basic authentication, you can use the `.htpasswd` file. The path to the `.htpasswd` of the `AuthUserFile` directive
+has to be absolute. Your site root folder is available at `/var/www/bas/site/`, so the directive should look like:
+`AuthUserFile=/var/www/bas/site/.htpasswd`
 
 #### Define a custom HTTP timeout
 
