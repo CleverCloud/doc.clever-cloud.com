@@ -416,6 +416,21 @@ To enable this feature, you need to:
 The PHP language has the `mail` function to directly send e-mails but we do not support it because of all the maintenance it needs.
 Instead, we recommend you to use [Mailgun](https://www.mailgun.com/) or [Mailjet](https://www.mailjet.com/). These services already have everything you need to send emails from your code.
 
+## Configure Monolog
+
+A lot of frameworks (including Symfony) use Monolog to handle logging. The default configuration of Monolog doesn't allow to log errors into the console.
+Here is a basic configuration of Monolog to send your application's logs into our logging system and access them into the Console:
+
+```
+monolog:
+  handlers:
+    clever_logs:
+      type:     error_log
+      level:    warning
+```
+
+You can change the level to whatever level you desire. For Symfony, the configuration file is `app/config/config_prod.yml`.
+
 ## Deploy on Clever Cloud
 
 Application deployment on Clever Cloud is via **Git or FTP**. Follow
