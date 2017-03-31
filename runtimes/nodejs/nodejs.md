@@ -2,7 +2,7 @@
 title: Deploy Node.js apps
 shortdesc: Node.js is a platform built on Chrome's JavaScript runtime for building fast, scalable network applications.
 tags:
-- nodejs	
+- nodejs
 ---
 
 # Deploy Node.js apps
@@ -172,6 +172,10 @@ You can define the environment variable `NODE_BUILD_TOOL` to `npm` or `yarn` to 
 one you want. If not specified, `npm` will be used.
 
 `yarn` is only available on `node.js` instances for now.
+
+If you want to use `yarn`, please note that it's only installed for pre-installed node versions.
+Use `^6` or `^7` in your `engines.node` if you need to target the pre-installed version for a given
+release.
 
 ### Pre-installed modules
 
