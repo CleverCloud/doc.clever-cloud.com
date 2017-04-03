@@ -16,19 +16,19 @@ keyworkds:
 
 In order to improve team collaboration between developers, accountants, managers and admins, we have introduced organizations.
 
-Once you create an organization, you can add collaborators and assign them [roles](#roles-and-privileges) which give them rights.
+Once you created an organization, you can add collaborators and assign them [roles](#roles-and-privileges) which give them rights.
 
 
 ## Add an organization
 
-Organization names are uniques. It means that you cannot use an organization name that is already used.
+Organization names are unique. It means that you cannot use an already used organization name.
 
-In order to add an organization, just click on "Add an organization" in the top left dropdown menu:
+In order to add an organization, just click on "Add an organization" in the top left sidebar:
 
 <figure class="cc-content-img">
 <a href="/assets/images/gotohome.png"><img src="/doc/assets/images/gotohome.png"/></a>
 <figcaption>
-Access to your organizations via the red sidebar
+Access to your organizations via the sidebar.
 </figcaption>
 </figure>
 
@@ -36,7 +36,7 @@ Access to your organizations via the red sidebar
 <figure class="cc-content-img">
 <a href="/assets/images/gotohome.png"><img src="/doc/assets/images/orga-enterprise.png"/></a>
 <figcaption>
-An organization can represent an enterprise, for an easier invoicing process
+An organization can represent a company, for an easier invoicing process.
 </figcaption>
 </figure>
 
@@ -45,9 +45,72 @@ An organization can represent an enterprise, for an easier invoicing process
 
 The table below describes rights assigned to roles:
 
-<figure class="cc-content-img">
-  <a href="/assets/images/organisation-roles.png"><img src="/doc/assets/images/organisation-roles.png"/></a>
-  <figcaption>
-    Rights assigned by role
-  </figcaption>
-</figure>
+<table class="table table-condensed table-bordered table-hover text-center">
+	<thead>
+		<tr>
+			<th> </th>
+			<th class="text-center">Admin</th>
+			<th class="text-center">Manager</th>
+			<th class="text-center">Developer</th>
+			<th class="text-center">Accountant</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th scope="row">Add Member</th>
+			<td>x</td>
+			<td>x</td>
+			<td> </td>
+			<td> </td>
+		</tr>
+		<tr>
+			<th scope="row">Remove Member</th>
+			<td>x</td>
+			<td>x</td>
+			<td> </td>
+			<td> </td>
+		</tr>
+		<tr>
+			<th scope="row">Add Application</th>
+			<td>x</td>
+			<td>x</td>
+			<td>x</td>
+			<td> </td>
+		</tr>
+		<tr>
+			<th scope="row">Remove Application</th>
+			<td>x</td>
+			<td>x</td>
+			<td> </td>
+			<td> </td>
+		</tr>
+		<tr>
+			<th scope="row">Edit Organization</th>
+			<td>x</td>
+			<td>x</td>
+			<td> </td>
+			<td> </td>
+		</tr>
+		<tr>
+			<th scope="row">Delete Organization</th>
+			<td>x</td>
+			<td> </td>
+			<td> </td>
+			<td> </td>
+		</tr>
+		<tr>
+			<th scope="row">Access Bills</th>
+			<td>x</td>
+			<td> </td>
+			<td> </td>
+			<td>x</td>
+		</tr>
+		<tr>
+			<th scope="row">Access Repositories</th>
+			<td>x</td>
+			<td>x</td>
+			<td>x</td>
+			<td> </td>
+		</tr>
+	</tbody>
+</table>
