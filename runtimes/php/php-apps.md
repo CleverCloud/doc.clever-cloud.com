@@ -240,7 +240,7 @@ First, add a file `ccbuild.sh` at the root of your project with these lines:
 ```bash
 #!/bin/bash
 
-php artisan migrate
+php artisan migrate --force
 ```
 
 Then add these lines in `clevercloud/php.json`:
