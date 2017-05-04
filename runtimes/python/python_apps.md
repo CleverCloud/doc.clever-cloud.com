@@ -83,7 +83,7 @@ Basically, you should just point to a WSGI capable object.
 
 We also support celery apps out of the box. To deploy a celery app, use the key `celery` in `deploy` like the following:
 
-```haskell
+```json
    {
       "deploy": {
          "celery": {
@@ -95,7 +95,7 @@ We also support celery apps out of the box. To deploy a celery app, use the key 
 
 You can activate `beat` or add some more configurations like this
 
-```haskell
+```json
    {
       "deploy": {
          "celery": {
