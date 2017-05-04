@@ -107,6 +107,7 @@ You can activate `beat` or add some more configurations like this
    }
 ```
 
+The `log` path will be concatenated to the application's path.
 
 ## Select the python backend
 
