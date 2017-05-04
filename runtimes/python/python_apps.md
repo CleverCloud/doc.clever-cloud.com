@@ -78,6 +78,36 @@ of your project with a Flask `app` object inside.
 
 Basically, you should just point to a WSGI capable object.
 
+
+### Celery apps
+
+We also support celery apps out of the box. To deploy a celery app, use the key `celery` in `deploy` like the following:
+
+```json
+   {
+      "deploy": {
+         "celery": {
+            "module": "mymodule"
+         }
+      }
+   }
+```
+
+You can activate `beat` or add some more configurations like this
+
+```json
+   {
+      "deploy": {
+         "celery": {
+            "module": "mymodule",
+            "log": "/path/to/logdir",
+            "beat": "yes"
+         }
+      }
+   }
+```
+
+
 ## Select the python backend
 
 Currently, we support `uwsgi` and `gunicorn` for python backends. To select one, set the
