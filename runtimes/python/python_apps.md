@@ -93,6 +93,21 @@ We also support celery apps out of the box. To deploy a celery app, use the key 
    }
 ```
 
+You can activate `beat` or add some more configurations like this
+
+```haskell
+   {
+      "deploy": {
+         "celery": {
+            "module": "mymodule",
+            "log": "/path/to/logdir",
+            "beat": "yes"
+         }
+      }
+   }
+```
+
+
 ## Select the python backend
 
 Currently, we support `uwsgi` and `gunicorn` for python backends. To select one, set the
