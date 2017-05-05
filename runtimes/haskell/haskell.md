@@ -54,11 +54,11 @@ The steps ran in order are:
 
  - `stack setup`
  - `stack install --only-dependencies`
- - `stack build`
- - `./<path>/my-exe`
+ - `stack install`
+ - `./<path>/my-exe` (or the contents of `CC_RUN_COMMAND`)
 
-The executable built by `stack build` must start a web server listening on
-`0.0.0.0:8080`.
+The executable built by `stack build` (or the command you specify) must start a
+web server listening on `0.0.0.0:8080`.
 
 For instance, a minimal scotty application can look like this:
 
@@ -121,6 +121,17 @@ This way, the application will refuse to start if `MY_VAR` is not defined.
 
 For more information, you can read about [environment variables on Clever
 Cloud](/doc/admin-console/environment-variables/).
+
+## Custom run command
+
+If you need to run a custom command (or just pass options to the binary built
+by stack), you can specify it through the `CC_RUN_COMMAND` environment variable.
+
+For instance, for a hakyll website, you can put
+
+```
+CC_RUN_COMMAND=~./local/bin/site server --host 0.0.0.0 --port 8080
+```
 
 ## Deploy on Clever Cloud
 
