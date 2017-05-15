@@ -116,7 +116,7 @@ documentations.
 <td>os.getenv("MY\_VAR")</td>
 </tr>
 <tr>
-<td><a href="/doc/ruby/ruby/#environment-injection">Ruby</a></td>
+<td><a href="/doc/ruby/ruby-on-rails/#environment-injection">Ruby</a></td>
 <td>ENV["MY\_VAR"]<br></td>
 </tr>
 <tr>
