@@ -222,6 +222,33 @@ uWSGI and nginx settings can be configured by setting environment variables:
  - `NGINX_READ_TIMEOUT`: a bit like HARAKIRI, the response timeout in seconds. (Defaut: 300)
  - `ENABLE_GZIP_COMPRESSION`: "on|yes|true" gzip-compress the output of uwsgi.
 
+### Nginx configuration
+
+Nginx settings can be configured further in `clevercloud/http.json`. All its fields are optional.
+
+ - `languages`: configure a default language and redirections
+ - `error_pages`: configure custom files for error pages
+ - `force_https`: automatically redirect HTTP traffic to HTTPS
+ - `aliases`: set up redirections
+ - `charset`: force a specific charset
+
+```json
+{
+    "languages": {
+        "default": {"rewrite": "en"},
+        "fr": {"rewrite": "en"}
+    },
+    "error_pages": {
+        "404": "path/to/page"
+    },
+    "force_https": true,
+    "aliases": {
+        "/path": "redirection"
+    },
+    "charset": "latin-1"
+}
+```
+
 ## uWSGI asynchronous/non-blocking modes
 
 To enable [uWSGI asynchronous](https://uwsgi-docs.readthedocs.io/en/latest/Async.html) mode, you can use these two environment variables:
