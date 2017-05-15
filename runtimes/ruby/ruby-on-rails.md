@@ -123,12 +123,12 @@ The following table describes each field:
 </thead>
 <tbody>
 <tr>
-<td><span class="label label-inverse">Optional</span></td>
+<td><span class="label label-default">Optional</span></td>
 <td>deploy.env</td>
 <td>This field is only used for overriding the default "production" RAILS_ENV value.</td>
 </tr>
 <tr>
-<td><span class="label label-inverse">Optional</span></td>
+<td><span class="label label-default">Optional</span></td>
 <td>deploy.rakegoals</td>
 <td>
 Specify a list of rake goals to execute.
@@ -139,7 +139,7 @@ We <strong>do not</strong> execute any rake goals by default.
 </td>
 </tr>
 <tr>
-<td><span class="label label-inverse">Optional</span></td>
+<td><span class="label label-default">Optional</span></td>
 <td>deploy.sidekiq</td>
 <td>
 Run a sidekiq process in background. Please note you will need a redis instance to use this
@@ -147,7 +147,7 @@ feature.
 </td>
 </tr>
 <tr>
-<td><span class="label label-inverse">Optional</span></td>
+<td><span class="label label-default">Optional</span></td>
 <td>deploy.static</td>
 <td>
 Let nginx serve the assets contained in the directory.

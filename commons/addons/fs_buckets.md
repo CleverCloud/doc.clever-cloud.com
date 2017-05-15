@@ -92,26 +92,26 @@ It's a json array containing objects with at least two fields:
 </thead>
 <tbody>
 <tr>
-<td><span class="label label-important">Required</span></td>
+<td><span class="label label-danger">Required</span></td>
 <td>bucket</td>
 <td>The bucket id you can find in the console. It begins with `bucket_`. This is for
 "old-style" buckets (created before the 7 december 2015)</td>
 </tr>
 <tr>
-<td><span class="label label-important">Required</span></td>
+<td><span class="label label-danger">Required</span></td>
 <td>bucket_host</td>
 <td>The bucket host you can find in the console. It begins with `bucket-` and ends with
 `services.clever-cloud.com`. This is for "new-style" buckets.</td>
 </tr>
 <tr>
-<td><span class="label label-important">Required</span></td>
+<td><span class="label label-danger">Required</span></td>
 <td>folder</td>
 <td>The folder you want the bucket to be mount in. Should start with `/`. Using the example
 *myFolder*, you can access your bucket via the *myFolder* folder at
 the root of your application or via */app/myFolder*</td>
 </tr>
 <tr>
-<td class="cc-depusage"><span class="label label-inverse">Optional</span></td>
+<td class="cc-depusage"><span class="label label-default">Optional</span></td>
 <td>apps</td>
 <td>Whitelist of the applications allowed to mount this bucket. It's helpful if you need
 to deploy a *preprod* app and a *prod* app using the exact same codebase but different

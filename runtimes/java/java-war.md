@@ -116,17 +116,17 @@ Here's what your configuration file can look like:
 </thead>
 <tbody>
 <tr>
-<td><span class="label label-important">Required</span></td>
+<td><span class="label label-danger">Required</span></td>
 <td>**container**</td>
 <td>Name of the container to use. Should contain one of the values inside parentheses in the [containers table](#available-containers) (in uppercase and all).</td>
 </tr>
 <tr>
-<td><span class="label label-important">Required</span></td>
+<td><span class="label label-danger">Required</span></td>
 <td>**file**</td>
 <td>Should contain the path of the war/ear file relative to your application root.</td>
 </tr>
 <tr>
-<td><span class="label label-inverse">Optional</span></td>
+<td><span class="label label-default">Optional</span></td>
 <td>**context**</td>
 <td>
 <ul>
@@ -138,7 +138,7 @@ Here's what your configuration file can look like:
 </td>
 </tr>
 <tr>
-<td><span class="label label-inverse">Optional</span></td>
+<td><span class="label label-default">Optional</span></td>
 <td>**checkMe**</td>
 <td>
 <ul>
@@ -179,7 +179,7 @@ That you can do, by setting the "build" field object in the `war.json` file:
 </thead>
 <tbody>
 <tr>
-<td><span class="label label-important">Required</span></td>
+<td><span class="label label-danger">Required</span></td>
 <td>**type**</td>
 <td>
 <ul>
@@ -189,7 +189,7 @@ That you can do, by setting the "build" field object in the `war.json` file:
 </td>
 </tr>
 <tr>
-<td><span class="label label-important">Required</span></td>
+<td><span class="label label-danger">Required</span></td>
 <td>**goal**</td>
 <td>
 <ul>

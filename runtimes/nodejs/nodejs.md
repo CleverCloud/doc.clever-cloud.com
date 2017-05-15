@@ -98,17 +98,17 @@ The following table describes each of the fields formerly mentioned.
 </thead>
 <tbody>
 <tr>
-<td><span class="label label-important">Required</span></td>
+<td><span class="label label-danger">Required</span></td>
 <td>name</td>
 <td>Name of your application. You need to fill this field.</td>
 </tr>
 <tr>
-<td><span class="label label-important">Required</span></td>
+<td><span class="label label-danger">Required</span></td>
 <td>version</td>
 <td>Version of you application. You need to fill this field.</td>
 </tr>
 <tr>
-<td class="cc-depusage" rowspan="2"><span class="label label-important">At least one</span></td>
+<td class="cc-depusage" rowspan="2"><span class="label label-danger">At least one</span></td>
 <td>scripts.start</td>
 <td>This field provides a command line to run. If defined, <code>npm start</code> will be launched. Otherwise
 we will use the <code>main</code> field</td>
@@ -119,7 +119,7 @@ we will use the <code>main</code> field</td>
 be the relative path of the file starting at the project's root. It's used to launch your application if <code>scripts.start</code> is not defined.</td>
 </tr>
 <tr>
-<td class="cc-depusage" ><span class="label label-inverse">Optional</span></td>
+<td class="cc-depusage" ><span class="label label-default">Optional</span></td>
 <td>engines.node</td>
 <td>Sets the node engine version you app runs with. Any "A.B.x" or "^A.B.C" or "~A.B" version will lead
 to run the application with the latest "A.B" local version. If this field is
