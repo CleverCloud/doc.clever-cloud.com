@@ -10,10 +10,11 @@ tags:
 
 <div class="panel panel-warning">
   <div class="panel-heading">
-     <h4>Hooks are not deployed everywhere</h4>
+     <h4>Hooks are not available everywhere yet</h4>
   </div>
   <div class="panel-body">
-    Hooks are currently only available for Haskell applications
+    Hooks are currently only available for Haskell applications. In the meantime,
+    you can continue to use the postDeploy hook.
   </div>
 </div>
 
