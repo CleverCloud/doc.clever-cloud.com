@@ -36,7 +36,22 @@ dependency manager will use it to fetch libs only accessible by ssh.
 
 *NB: Please provide a key without pass phrase, or the system will be unable to unlock it*
 
-## Post deploy hook
+## Hooks
+
+You can run specific tasks during the deployment of your application. Please
+refer to the [hooks documentation](/doc/clever-cloud-overview/hooks/) to learn
+more about them.
+
+### Post deploy hook
+
+<div class="panel panel-warning">
+  <div class="panel-heading">
+     <h4>Post deploy hooks are being deprecated</h4>
+  </div>
+  <div class="panel-body">
+    Please refer to the <a href="/doc/clever-cloud-overview/hooks/">hooks documentation</a> to replace them.
+  </div>
+</div>
 
 If you need to perform additional actions after your app is started, you can define a
 "postDeploy" hook in your `<instance_type>.json` file (e.g. if you are deploying a ruby app,
