@@ -14,7 +14,7 @@ You can learn how to use Python and see almost immediate gains in productivity a
 
 ## Overview
 
-Python 2.7 and 3.5 are available on our platform. You can use Git to deploy your application.
+Python 2.7 and 3.6 are available on our platform. You can use Git to deploy your application.
 
 
 ## Create an application
