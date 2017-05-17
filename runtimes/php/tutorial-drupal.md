@@ -36,25 +36,25 @@ During the creation of a PHP application, it is asked if you want to deploy it v
 2. [Add a MySQL database add-on](/doc/addons/clever-cloud-addons/) and link it to your application
 3. Open `.gitignore` file and delete `sites/*/settings*.php` line
 4. Copy the file `sites/default/default.settings.php` to `sites/default/settings.php`
-5. Open `sites/default/settings.php` and line 213, replace 
+5. Open `sites/default/settings.php` and line 213, replace
 
     ```php
     $databases = array();
     ```
-    
+
     <br/>
     by
-    
+
     ```php
     $databases = array (
-      'default' => 
+      'default' =>
         array (
-          'default' => 
+          'default' =>
           array (
             'database' => getenv('MYSQL_ADDON_DB'),
             'username' => getenv('MYSQL_ADDON_USER'),
             'password' => getenv('MYSQL_ADDON_PASSWORD'),
-            'host' => getenv('MYSQL_ADDON_HOST')
+            'host' => getenv('MYSQL_ADDON_HOST'),
             'port' => getenv('MYSQL_ADDON_PORT'),
             'driver' => 'mysql',
             'prefix' => '',
