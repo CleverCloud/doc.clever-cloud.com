@@ -21,13 +21,16 @@ Most of the add-on catalog is provided by Clever Cloud, but vendors are also all
 
 Some add-ons are developed and maintained by Clever Cloud, exclusively.
 
-* Cellar
+* Cellar S3
 * File System Buckets
 * MongoDB
 * MySQL
 * PostgreSQL
-* Redis
-* Redsmin
+* Redis +
+* Socks
+* Kafka$
+* RabbitMQ
+* Riak KV
 
 
 ## Adding an add-on
