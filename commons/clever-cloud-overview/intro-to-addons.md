@@ -15,7 +15,9 @@ for storing data, cache engine for performances, long time log storage, etc...
 These services are called add-ons. There is a great number of them, based on many technologies, and developed by many
 companies, or communities. It could be a database, a cache system or a search engine.
 
-## Clever Cloud add-ons
+Most of the add-on catalog is provided by Clever Cloud, but vendors are also allowed to provide services external to Clever Cloud.
+
+## Clever Cloud's add-ons
 
 Some add-ons are developed and maintained by Clever Cloud, exclusively.
 
@@ -27,7 +29,6 @@ Some add-ons are developed and maintained by Clever Cloud, exclusively.
 * Redis
 * Redsmin
 
-Add-ons from external partners will be released shortly.
 
 ## Adding an add-on
 
@@ -35,4 +36,9 @@ To add an addon, please refer to the [dedicated section](/doc/addons/clever-clou
 
 ## Billing
 
-Each add-on is billed monthly. The price showed for each plan does not include taxes.
+There is two king of billing regarding add-ons:
+
+* Per-month billing: Add-ons with fixed resources (storage, CPU and RAM)
+* Per-usage billing: Add-ons based on consumption, like [FS-Buckets](/doc/addons/fs_buckets/) and [Cellar](/doc/addons/cellar/)
+
+**Note:** Per usage billing will be taken on runtime credits each day, while per-month add-ons will create a new line in the monthly invoice.
