@@ -7,75 +7,74 @@ tags:
 
 # Deploy Scala apps
 
-The Clever Cloud allows you to deploy Scala and Java applications built with <acronym title="Simple Build Tool">SBT</acronym>.
-This document will explain you how to set up your app to run on our service.
+Clever Cloud allows you to deploy Scala (and Java) applications built with
+<acronym title="Simple Build Tool">SBT</acronym>. This document will explain
+you how to set up your app to run on our service.
 
-## Overview
-
-Scala is an object-functional programming and scripting language that runs on the Java platform for general software
-applications, statically typed, designed to concisely express solutions in an elegant, type-safe and lightweight manner.
-Scala includes full support for functional programming (including currying, pattern matching, algebraic data types, lazy
-evaluation, tail recursion, immutability, etc.).
+If you're looking to deploy a [Play Framework](https://www.playframework.com)
+application, you can have a look at our dedicated [deployment guide for play
+framework applications](/doc/scala/play-framework-2/)
 
 ## Create an application
 
-Refer to the page [Deploy an application on Clever Cloud](/doc/clever-cloud-overview/add-application/).
+Create an application of type "SBT + Scala". Please have a look at [Deploy an
+application on Clever Cloud](/doc/clever-cloud-overview/add-application/) for
+more information on creating applications on Clever Cloud.
 
 ## Requirements
 
-First, your application must be set to listen on the 8080 port, for worldwide
-connections.
+Your application has to listen on port `8080` for worldwide connections
+(`0.0.0.0`). We set the system variable `http.port` to `8080` for you so in
+many cases (like for play applications) you don't have anything to do.
 
-We currently support both sbt-native-packager and sbt-start-script. So
-you need to add one of them to your project. (Please use sbt-native-packager if you can,
-sbt-start-script has some bugs involving environment variables)
+We rely on `sbt-native-packager` to run applications. This plugin provides a
+`stage` task which is run during deployment.
 
-These plugins will add the "stage" goal that we will use to create a
-start script we will execute.
+## 
 
-In project/plugins.sbt:
+### Install `sbt-native-packager`
 
-```scala
-addSbtPlugin("com.typesafe.sbt" % "sbt-native-packager" % "0.8.0")
-```
+If your project doesn't already use `sbt-native-packager`, you need to add it
+to `project/plugins.sbt`. Please make sure you use an up-to-date version.
 
-or
+In `project/plugins.sbt`:
 
 ```scala
-addSbtPlugin("com.typesafe.sbt" % "sbt-start-script" % "0.10.0")
-// Or 0.9.0 if you use sbt ≤0.12
+addSbtPlugin("com.typesafe.sbt" % "sbt-native-packager" % "1.2.0-M9")
 ```
 
+Then you need to configure the package type:
 
-You can also use newer (or older) versions of the plugin.
-
-Prepend to build.sbt:
+In `build.sbt`:
 
 ```scala
-packageArchetype.java_application
+enablePlugins(JavaAppPackaging)
+
+# Disable javadoc packaging
+mappings in (Compile, packageDoc) := Seq()
 ```
 
-or
-
-```scala
-import com.typesafe.sbt.SbtStartScript
-
-seq(SbtStartScript.startScriptForClassesSettings: _*)
-```
-
-That should be enough for a project with a main method.
-
-Please note that the sbt-start-script plugin is going toward deprecation. Also, please
-note that sbt-start-script fails to handle environment variables in a correct way.
-
-For more configuration, please go to <a href="https://github.com/sbt/sbt-start-script" target="_blank">https://github.com/sbt/sbt-start-script</a>.
+For more information, please have a look at [documentation for
+sbt-native-packager](http://www.scala-sbt.org/sbt-native-packager/index.html)
 
 ## Environment injection
 
 Clever Cloud can inject environment variables that are defined in the
 dashboard and by add-ons linked to your application.
 
-To get an env variable from your code, you can use the `System.getenv("MY_VARIABLE")` method. Be aware that it can return null.
+To get an env variable from your code, you can use the
+`System.getenv("MY_VARIABLE")` method. Be aware that it can return null.
+
+### HOCON users
+
+If you're using
+[HOCON](https://github.com/typesafehub/config/blob/master/HOCON.md#hocon-human-optimized-config-object-notation)
+configuration files, then you can have direct acces to environment variables
+from the configuration file:
+
+```
+application.secret=${APPLICATION_SECRET}
+```
 
 ## Custom sbt goal
 
@@ -93,4 +92,5 @@ For instance, if you want to deploy the `service1` module, then add
 
 ## Deploy on Clever Cloud
 
-Application deployment on Clever Cloud is via Git. Follow [these steps](/doc/clever-cloud-overview/add-application/) to deploy your application.
+Application deployment on Clever Cloud is via Git. Follow [these
+steps](/doc/clever-cloud-overview/add-application/) to deploy your application.
