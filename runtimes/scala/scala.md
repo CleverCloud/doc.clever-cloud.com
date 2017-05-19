@@ -7,7 +7,7 @@ tags:
 
 # Deploy Scala apps
 
-The Clever Cloud allows you to deploy Scala and Java applications built with <acronym title=" Simple Build Tool">SBT</acronym>.  
+The Clever Cloud allows you to deploy Scala and Java applications built with <acronym title="Simple Build Tool">SBT</acronym>.
 This document will explain you how to set up your app to run on our service.
 
 ## Overview
@@ -76,6 +76,20 @@ Clever Cloud can inject environment variables that are defined in the
 dashboard and by add-ons linked to your application.
 
 To get an env variable from your code, you can use the `System.getenv("MY_VARIABLE")` method. Be aware that it can return null.
+
+## Custom sbt goal
+
+By default, the deployment system runs `sbt stage`. If you want to run another
+goal, you can specify it with the `SBT_DEPLOY_GOAL` environment variable.
+
+## Multi-module build
+
+If you're having only one repository with multiple modules (and no top-level
+`stage` task), then you can specify which module to build with
+`SBT_DEPLOY_GOAL`.
+
+For instance, if you want to deploy the `service1` module, then add
+`SBT_DEPLOY_GOAL=service1:stage` in the application's environment variables.
 
 ## Deploy on Clever Cloud
 
