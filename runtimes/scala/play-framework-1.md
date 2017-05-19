@@ -8,18 +8,15 @@ tags:
 
 # Deploy Play Framework 1.x
 
-Clever Cloud supports Play 1.x applications natively. The present guide explains how to set up your application to run
-on Clever Cloud.
-
-## Overview
-
-Play is an open source web application framework, written in Scala and Java, which follows the model–view–controller
-(MVC) architectural pattern. It aims to optimize developer productivity by using convention over configuration, hot code
-reloading and display of errors in the browser.
+Clever Cloud supports Play 1.x applications natively. The present guide
+explains how to set up your application to run on Clever Cloud.
 
 ## Create an application
 
-Refer to the page [Deploy an application on Clever Cloud](/doc/clever-cloud-overview/add-application/).
+Create an application of type "Java + Play! 1". Please have a look at
+[Deploy an application on Clever
+Cloud](/doc/clever-cloud-overview/add-application/) for more information on
+creating applications on Clever Cloud.
 
 ## Necessary information
 
@@ -27,14 +24,15 @@ Refer to the page [Deploy an application on Clever Cloud](/doc/clever-cloud-over
 
 ## Select Play! version
 
-Clever Cloud supports Play! **1.2** and **1.3**. You can select the Play! version for your application by creating a
-`play1_version` file in the `/clevercloud` folder.
+Clever Cloud supports Play! **1.2**, **1.3**, **1.4**. You can select the Play!
+version for your application by setting the `PLAY1_VERSION` environment
+variable (or by putting it in a file named `clevercloud/play1_version`).
 
-The `play1_version` file can contain one of the following values:
+The `PLAY1_VERSION` environment variable can contain one of the following values:
 
 * `1.2` or `12` for **Play! 1.2**.
 * `1.3` or `12` for **Play! 1.3**.
-
+* `1.4` or `14` for **Play! 1.4**.
 
 ## Play! configuration
 
@@ -49,32 +47,16 @@ You can for example:
     %clevercloud.application.mode=prod
     ```
 
-* set up a mysql database
+* set up a mysql database (using environment variables)
 
     ```bash
-    %clevercloud.db.url=jdbc:mysql://{yourcleverdbhost}/{dbname}
+    %clevercloud.db.url="jdbc:mysql://"${MYSQL_ADDON_HOST}"/"${MYSQL_ADDON_DB}
     %clevercloud.db.driver=com.mysql.jdbc.Driver
-    %clevercloud.db.user={yourcleveruser}
-    %clevercloud.db.pass={yourcleverpass}
+    %clevercloud.db.user=${MYSQL_ADDON_USER}
+    %clevercloud.db.pass=${MYSQL_ADDON_PASSWORD}
     ```
 
 More information on [playframework.com](http://www.playframework.com).
-
-## Configuration file
-
-You can configure your application start command by adding a `./clevercloud/play.json` file with the following fields:
-
-```javascript
-{
-  "hooks": {
-     "postDeploy": "pathtoyourscript"
-  }
-}
-```
-
-**postDeploy**: execute a custom script after the deploy. Some frameworks or custom applications might require
-bootstrapping before the application may run. You can achieve this by creating a custom script with your commands and
-adding the associated file name in `clevercloud/play.json`.
 
 ## Environment injection
 
@@ -100,6 +82,12 @@ So for an application using the MySQL add-on, you can set:
 HTTPS is handled by Clever Cloud ahead of your application, your application
 retrieves the traffic in plain http. To be able to use `request.secure`, you
 have to add `XForwardedSupport=all` in `application.conf`.
+
+## Hooks
+
+If you need to run specific tasks during deployment, you can specify hooks that
+will be run during the build. Please have a look at [documentation on
+hooks](/doc/clever-cloud-overview/hooks/)
 
 ## Deploy on Clever Cloud
 
