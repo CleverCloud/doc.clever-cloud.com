@@ -9,7 +9,7 @@ tags:
 # Deploy Play Framework 2 Scala
 
 Clever Cloud supports Play! 2 applications natively. The following guide
-explains how to set up your application to run the Clever Cloud. Play 2
+explains how to set up your application to run on Clever Cloud. Play 2
 applications use sbt.
 
 ## Create an application
@@ -61,10 +61,16 @@ SBT_DEPLOY_GOAL=-Dconfig.resource=clevercloud.conf
 ## HTTPS support
 
 HTTPS is handled by Clever Cloud ahead of your application, your application
-retrieves the traffic in plain http. To be able to use `request.secure`, you
-have to add `trustxforwarded=true` in `application.conf`. If you need an
-example, please have a look at [How to Redirect to HTTPS With Play
-2.4](https://www.clever-cloud.com/blog/engineering/2015/12/01/redirect-to-https-in-play/)
+retrieves the traffic in plain http.
+
+If you want to redirect HTTP traffic to HTTPS, please have a look at [How to
+Redirect to HTTPS With Play
+2.4](https://www.clever-cloud.com/blog/engineering/2015/12/01/redirect-to-https-in-play/).
+
+## Before play 2.4
+
+To be able to use `request.secure`, you have to add `trustxforwarded=true` in
+`application.conf`.
 
 ## Deploy on Clever Cloud
 
@@ -103,7 +109,7 @@ Please read the following if your project fails with this error:
 `sbt.ResolveException: unresolved dependency: play#sbt-plugin;2.0: not found`
 
 Some versions of Play2 try to retrieve a nonexistent version of
-"sbt-plugin" which is required by the framework to work.
+"sbt-plugin" which is required by the framework.
 You have two options to fix this problem:
 
 You can set the "play.version" environment variable in the

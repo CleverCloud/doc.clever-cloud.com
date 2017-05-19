@@ -81,9 +81,8 @@ goal, you can specify it with the `SBT_DEPLOY_GOAL` environment variable.
 
 ## Multi-module build
 
-If you're having only one repository with multiple modules (and no top-level
-`stage` task), then you can specify which module to build with
-`SBT_DEPLOY_GOAL`.
+If you have a single repository with multiple modules (and no top-level `stage`
+task), then you can specify which module to build with `SBT_DEPLOY_GOAL`.
 
 For instance, if you want to deploy the `service1` module, then add
 `SBT_DEPLOY_GOAL=service1:stage` in the application's environment variables.
