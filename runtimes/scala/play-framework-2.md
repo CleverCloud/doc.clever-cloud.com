@@ -49,6 +49,15 @@ db.default.username=${POSTGRESQL_ADDON_USER}
 db.default.password=${POSTGRESQL_ADDON_PASSWORD}
 ```
 
+## Custom config file
+
+If you don't want to use the default `conf/application.conf` configuration
+file, you can use the `SBT_DEPLOY_GOAL` environment variable:
+
+```
+SBT_DEPLOY_GOAL=-Dconfig.resource=clevercloud.conf
+```
+
 ## HTTPS support
 
 HTTPS is handled by Clever Cloud ahead of your application, your application
