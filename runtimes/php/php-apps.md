@@ -143,6 +143,21 @@ You can define the timeout of an HTTP request in Apache using the `HTTP_TIMEOUT`
 
 By default, the HTTP timeout is se to 3 minutes (180 seconds).
 
+#### Force HTTPS traffic
+
+Load balancers handle HTTPS traffic ahead of your application. You can use the
+`X-Forwarded-Proto` header to know the original protocol (`http` or `https`).
+
+Place the following snippet in a `.htaccess` file to ensure that your visitors
+only access your application through HTTPS.
+
+```apache
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteCond %{HTTP:X-Forwarded-Proto} !https
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+```
+
 #### Prevent Apache to redirect HTTPS calls to HTTP when adding a trailing slash
 
 `DirectorySlash` is enabled by default on the PHP scalers, therefore Apache will add a trailing slash to a resource when
