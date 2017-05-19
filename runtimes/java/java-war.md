@@ -184,7 +184,7 @@ That you can do, by setting the "build" field object in the `war.json` file:
 <td>
 <ul>
 <li>The tool you want to use to build your app</li>
-<li>Can be "maven" or "ant"</li>
+<li>Can be "maven", "gradle", "sbt" or "ant"</li>
 </ul>
 </td>
 </tr>
