@@ -30,8 +30,6 @@ many cases (like for play applications) you don't have anything to do.
 We rely on `sbt-native-packager` to run applications. This plugin provides a
 `stage` task which is run during deployment.
 
-## 
-
 ### Install `sbt-native-packager`
 
 If your project doesn't already use `sbt-native-packager`, you need to add it
@@ -89,6 +87,12 @@ If you're having only one repository with multiple modules (and no top-level
 
 For instance, if you want to deploy the `service1` module, then add
 `SBT_DEPLOY_GOAL=service1:stage` in the application's environment variables.
+
+## Hooks
+
+If you need to run specific tasks during deployment, you can specify hooks that
+will be run during the build. Please have a look at [documentation on
+hooks](/doc/clever-cloud-overview/hooks/)
 
 ## Deploy on Clever Cloud
 
