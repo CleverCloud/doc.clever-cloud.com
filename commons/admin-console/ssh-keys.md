@@ -31,20 +31,20 @@ How to add your SSH key on Clever Cloud?
 
 ### Github account and SSH key on Clever Cloud
 
-If your account is linked to GitHub, a new panel with your GitHub SSH key will appear in the "SSH Key" menu.
-So you can add every key via a simple click and you don't have to add it manually.
+If your account is linked to GitHub, a panel with your GitHub SSH keys will appear in the "SSH Keys" tab.
+You can add any key already present in your GitHub account by clicking on the import button next to it.
 
 ## Find your SSH key
 
-You can already have an SSH key and so do not need to generate a new one. To check if you have one, follow the steps:  
+You may already have an SSH key and so do not need to generate a new one. To check if you have one, follow the steps:
 
 ### Linux and Mac
 
 1. Wether you use Mac or Linux, open your Terminal application.
-2. Run `$ cd ~/.ssh/` in your Terminal.
-3. If the folder exists, run `$ ls` and check if a pair of key exists : *id_rsa* and *id_rsa.pub*.
+2. Run `cd ~/.ssh/` in your Terminal.
+3. If the folder exists, run `ls` and check if a pair of key exists : *id_rsa* and *id_rsa.pub*.
    If you can find them, you do not need to generate a new one, simply go to the following
-   "Add you key on Clever Cloud" part!
+   "Add your key on Clever Cloud" part!
 
 <br/>
 
@@ -52,8 +52,8 @@ You can already have an SSH key and so do not need to generate a new one. To che
 
 1. If you don't have it, download [Git for Windows](https://git-for-windows.github.io/) and install it.
 2. Run **Git Bash** (from the *Start Menu* or from the *Explorer* with the contextual menu (right click)).
-3. Run `$ cd ~/.ssh/` in your Terminal.
-4. If the folder exists, run `$ ls` and check if a pair of key exists : *id_rsa* and *id_rsa.pub*.
+3. Run `cd ~/.ssh/` in your Terminal.
+4. If the folder exists, run `ls` and check if a pair of key exists : *id_rsa* and *id_rsa.pub*.
    If you can find them, you do not need to generate a new one, simply go to the following
    "Add you key on Clever Cloud" part!
 
@@ -64,7 +64,7 @@ If you read the previous section, you should have a Terminal open.
 1.  In your Terminal, enter the following bash line:
 
     ```bash
-    $ ssh-keygen -t rsa -C "your_email@youremail.com"
+    ssh-keygen -t rsa -C "your_email@youremail.com"
     ```
     This command creates a new ssh key using the provided email, so that the owner of the key can be identified.
 
@@ -92,17 +92,11 @@ If you read the previous section, you should have a Terminal open.
 ### Public SSH Key
 To declare your **public SSH Key** on Clever Cloud, in the left navigation bar, go in "Profile" and in the "SSH Keys" tab.
 
-Add the key by entering a name and the public SSH key. The key is the entire content of the **id_rsa.pub** file.
+Add the key by entering a name and the public SSH key. The key is the entire contents of the **id_rsa.pub** file.
 
-<figure class="cc-content-img"><a href="/assets/images/ssh1.png"><img src="/doc/assets/images/ssh1.png"></a></figure>
-<figcaption>
-The SSH Key manager.
-</figcaption>
-
-In this tab, you can list all your *SSH Keys* available on Clever Cloud and delete them if necessary.
 <div class="alert alert-hot-problems">
 <h4>Remember</h4>
-<p>Your public SSH key must be associated with only one account.</p
+<p>Your public SSH key must be associated with only one account.</p>
 </div>
 
 If you see "*access denied*" or "*password:*" when you
