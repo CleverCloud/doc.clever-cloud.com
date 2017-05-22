@@ -9,32 +9,31 @@ tags:
 # Deploying an application
 
 There are two steps in this section: application creation (requiring actions from
-dashboard) and application deployment (requiring actions from git for your FTP access).
+dashboard) and application deployment (requiring actions from Git / or your FTP access).
 
 ## Create an application
 
- 1. First, select the proper organization you want to add to application to. Then,
- click on the **Add an application** button, in the **Organization Manager** panel.
+ 1. First, select the proper organization you want to add the application to. Then,
+ click on the **Add an application** button in the **Organization Manager** panel.
  This starts the application creation wizard. If your account has been linked to
  GitHub, you can select a repository from your GitHub account.
 
- 2. Then select the language or the framework you need:
- <figure class="cc-content-img"><img src="/doc/assets/images/select-lang.png"></figure>
+ 2. Then select the language or the framework you need
 
- 3. *Optional:* in case of PHP or static applications, you can choose between FTP
+ 3. *Optional:* For PHP applications, you can choose between FTP
  and Git deployment.
 
  4. In the next step, you will be prompted to select your scaling configuration.
  If you need help to configure your scaling options, please refer to
  [the dedicated section](/doc/clever-cloud-overview/scaling/).
 
- <figure class="cc-content-img">
-   <img src="/doc/assets/images/select-scalab.png"/>
- </figure>
+ 5. Enter the name and description of your application.
 
- 5. Enter the name and description of you app.
+ 6. *Optional*: The wizard will offer you to [add an
+ add-on](/doc/addons/clever-cloud-addons/) to your application.
 
- 6. *Optional*: [add an add-on](/doc/addons/clever-cloud-addons/) to your app.
+ 7. *Optional*: The wizard will offer you to [add environment
+ variables](/doc/admin-console/environment-variables/) to your application.
 
 ## Git Deployment
 
@@ -46,7 +45,7 @@ which version is used on the server please use the `COMMIT_ID` [environment vari
 
 Follow these steps to deploy your application:
 
- 1. Get the git deployment url in the application information page, who looks like:
+ 1. Get the git deployment url in the application information page, which looks like:
  ``git+ssh://git@push.<zone>.clever-cloud.com/<your_app_id>.git``.
 
  2. In your terminal, go to your application repository. If you do not already track your app with git, start by typing:
@@ -81,7 +80,7 @@ Follow these steps to deploy your application:
 
  <div class="alert alert-hot-problems">
    <h4>Troubleshooting:</h4>
-   <p>If the remote asks you for a password right after a git push attempt, this is may be due to a SSH Key misconfiguration.
+   <p>If the remote asks you for a password right after a git push attempt, this may be due to a SSH Key misconfiguration.
    <br>Add your SSH key to your profile here:
    <a href="https://console.clever-cloud.com/users/me/ssh-keys">https://console.clever-cloud.com/users/me/ssh-keys</a></p>
    <p>The full tutorial about adding SSH key is here: <a href="/doc/admin-console/ssh-keys/">Adding SSH keys</a> </p>
@@ -91,11 +90,11 @@ Follow these steps to deploy your application:
 
 Once you have created your application with Github, each push on the `master` branch will trigger
 a deployment. If you want to deploy an other branch than `master`, you can go to the `information`
-pane of your application and select the default branch to use.
+panel of your application and select the default branch to use.
 
  <div class="alert alert-hot-problems">
    <h4>Warning:</h4>
-   <p>You can't directly push to an application created on Clever Cloud as a Github app : in this case, only the automatic deployment from Github is henceforth allowed.</p>
+   <p>You can't directly push to an application created on Clever Cloud as a Github app: in this case, only the automatic deployment from Github is henceforth allowed.</p>
    <p>If you try to push to Clever Cloud, as you would do for a non-github app, you will get the following error :</p>
    <pre>fatal: '/data/repositories/&lt;app_id&gt;.git' does not appear to be a git repository</pre>
    <p>Indeed, no git repository is created on Clever Cloud because the application is directly cloned from Github.</p>
@@ -108,7 +107,7 @@ Caution: in Github, private repositories in an ordinary user account are an all-
 
 ## FTP Deployment
 
-It is possible to deploy via FTP with PHP and static applications.  
+It is possible to deploy via FTP with PHP applications.  
 
 To deploy via FTP, you need an FTP software installed on your machine. [Filezilla](https://filezilla-project.org/) is
 one of them.
