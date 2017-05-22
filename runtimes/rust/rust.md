@@ -47,8 +47,8 @@ Be sure that:
 
 ## Requirements
 
-The result of `cargo run --release --locked` must be a process listening on
-`0.0.0.0:8080`.
+The result of `cargo build --release --locked` must be an executable which
+starts a web server listening on `0.0.0.0:8080`.
 
 For instance, a minimal iron application can look like this:
 
@@ -72,8 +72,8 @@ fn main() {
 
 If your `Cargo.toml` defines multiple targets, you must specify the one you
 want to run, with the `CARGO_BIN` environment variable. If `CARGO_BIN` is
-specified, then `cargo run --release --bin "${CARGO_BIN}"` is used to start
-the application.
+specified, then the executable produced by this target is used to start the
+application.
 
 ### Dependencies
 
