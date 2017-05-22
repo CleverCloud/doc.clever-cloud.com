@@ -32,7 +32,7 @@ As much as you want. We've not set a limited number of apps by developer.
 
 ## How can I disable one of my existing applications?
 
-Log in with your account to [console.clever-cloud.com](https://console.clever-cloud.com), and select the appropriate organisation and app in the head-bar. Then click on **Configuration** in the left pane to stop your app. It will be un-deployed, and ready for a new start without pushing your app via Git or FTP again.
+Log in with your account to [console.clever-cloud.com](https://console.clever-cloud.com), and select the appropriate organization and app in the head-bar. Then click on **Configuration** in the left pane to stop your app. It will be un-deployed, and ready for a new start without pushing your app via Git or FTP again.
 
 ## What type of content is allowed on Clever Cloud?
 
@@ -45,9 +45,9 @@ We use custom probes to monitor:
 * hardware's components usage
 * databases read / write / update operations
 
-## How do I authenticate members of my organisation?
+## How do I authenticate members of my organization?
 
-Log in with your account to [console.clever-cloud.com](https://console.clever-cloud.com), and select the appropriate organisation in the head-bar. Then click on **Configuration** in the left pane and select **Members**. You'll see a list of the organisation's members. If your are an admin, you can revoke or grant apps permissions.
+Log in with your account to [console.clever-cloud.com](https://console.clever-cloud.com), and select the appropriate organization in the head-bar. Then click on **Configuration** in the left pane and select **Members**. You'll see a list of the organization's members. If your are an admin, you can revoke or grant apps permissions.
 
 ## How do I report an application that is in violation of your Terms and Conditions?
 

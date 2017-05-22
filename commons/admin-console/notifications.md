@@ -21,9 +21,9 @@ and decide where to send corresponding notifications.
 
 Historically and by default, deployment result e-mails (deployment succeeded or
 failed) were always sent to the owners of an application, namely the user
-themselves or the organisation's members.
+themselves or the organization's members.
 
-Using the **Organisation Manager** > **Notifications** panel you can choose to
+Using the **Organization Manager** > **Notifications** panel you can choose to
 disable this or to restrict it to only some applications.
 
 To do this, you need to delete the hook named *Default deployment result

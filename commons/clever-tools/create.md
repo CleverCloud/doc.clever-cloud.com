@@ -45,7 +45,7 @@ Then, in order to create your app in your personal space, use :
 
     clever create --type <type> <app-name>
 
-    # Create an application for an organisation
+    # Create an application for an organization
     clever create --type <type> <app-name> --org <org>
 
     # Choose the region of your application (par or mtl)
@@ -83,7 +83,7 @@ First, list addon providers and then create your addon.
     # Create your addon and link it to your application with --link
     clever addon create <provider-name> <addon-name> --link
 
-    # Create an addon for an organisation
+    # Create an addon for an organization
     clever addon create <provider-name> <addon-name> --link --org <org-name>
 
 ### Choosing provider's plan and region

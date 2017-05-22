@@ -14,7 +14,7 @@ keywords:
 
 # Unified Invoicing
 
-Each month, for each organisation, a single invoice is generated, including the whole activity (credits, add-on etc).
+Each month, for each organization, a single invoice is generated, including the whole activity (credits, add-on etc).
 
 ## Monthly invoice
 
@@ -37,7 +37,7 @@ Starting May 1st, the database will be integrated in the monthly invoice.
 
 ## Payment method management:
 
-You can register payment methods for each organisation. The monthly invoice is automatically paid with the default payment method. The other payment means can be used for one-shot invoices. This way, to use a new credit card, you just have to set it as the default one, it will automatically be used for new invoices.  
+You can register payment methods for each organization. The monthly invoice is automatically paid with the default payment method. The other payment means can be used for one-shot invoices. This way, to use a new credit card, you just have to set it as the default one, it will automatically be used for new invoices.  
 
 As of now, only credit cards can be used for monthly invoice payment. More payments methods will soon be available. [Please get in touch](mailto:support@clever-cloud.com) if you have specific needs.
 
@@ -49,7 +49,7 @@ If you desire a strong control on costs, you can set up a hard limit for consump
 
 Unified invoicing has been rolled-out during February 2017. Here are the changes introduced by Unified Invoicing:
 
-- Payment methods are now associated with organisations instead of users, which means you can see and change credit cards for organisations in an easier way.
+- Payment methods are now associated with organizations instead of users, which means you can see and change credit cards for organizations in an easier way.
 - Credit consumption and add-ons are unified in a single monthly invoice. Each month, the consumption from the last month is credited on your account.  
 - FS buckets and Cellar consumptions are now integrated in your daily consumption, along with apps.
 - **Going out of credits no longer stops applications (by default).**

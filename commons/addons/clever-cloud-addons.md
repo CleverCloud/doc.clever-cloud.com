@@ -35,10 +35,10 @@ Clever Cloud provides multiple add-ons to work with your applications:
 ## Create an add-on for your application
 
 In order to create an add-on for your application, go to the [Clever Cloud Console](https://console.clever-cloud.com/).
-When you are in the main page of the console, go to the organisation in which you wan to create the add-on,
+When you are in the main page of the console, go to the organization in which you wan to create the add-on,
 for example your [personal space](https://console.clever-cloud.com/users/me).
 
-When you are in the organisation, click on **Add an add-on**. This space let you create and configure the
+When you are in the organization, click on **Add an add-on**. This space let you create and configure the
 add-on to follow your needs.
 
 First, choose which *type* of add-on you want to create. See above to have a list of available add-ons and the
@@ -53,7 +53,7 @@ This environment variables must be used in your application to, for example, pro
 localization of the database provided by the add-on.
 
 The last step lets you choose the name of the add-on (for example "My database") and the region where the add-on is
-hosted. Click on the **Create** button and the add-on will now be available in your organisation, and corresponding
+hosted. Click on the **Create** button and the add-on will now be available in your organization, and corresponding
 environment variables will be available for the applications linked to the add-on you just created.
 
 ## Managing your add-on
@@ -68,7 +68,7 @@ Once an add-on is created, two tabs are available:
 
 To link an add-on with your application, just follow the following steps:
 
-1. Go in the organisation of your application and click on the name of the application you want to link with your add-on.
+1. Go in the organization of your application and click on the name of the application you want to link with your add-on.
 2. Go in the **Add-ons** section.
 3. Click on the **Link** button of the add-on you want to link to your application.
 

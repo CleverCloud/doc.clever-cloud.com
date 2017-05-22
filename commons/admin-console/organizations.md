@@ -8,7 +8,7 @@ keyworkds:
 - roles
 - users
 - accounts
-- organisations
+- organizations
 - organizations
 - collaboration
 ---

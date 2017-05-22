@@ -56,7 +56,7 @@ Clever Tools.
     clever link <app_id>
 
     # You can also use the application name (make sure to specify the
-    # organisation name if your application is in an organisation.
+    # organization name if your application is in an organization.
     clever link --org <org_name> <app_name>
 
     # Unlink an application

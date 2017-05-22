@@ -37,7 +37,7 @@ The ``OAuth`` and doubles quotes around values are mandatory
 #### **Create consumers tokens**
 
 You need to create an oauth consumer token in the Clever Cloud console.
-A link "Create an oauth consumer" is available under your organisation's
+A link "Create an oauth consumer" is available under your organization's
 addons list. All created consumers will appear below that link, like your
 applications and addons.
 
