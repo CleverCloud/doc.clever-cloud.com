@@ -16,7 +16,7 @@ keywords:
 
 When you deploy an application on any PaaS, a new virtual machine is created, the previous one is deleted.
 If your application generates data, for example if you let users upload pictures and you do not store it on external
-services like S3, you will loose anything stored on the disk.
+services like S3, you will lose anything stored on the disk.
 
 The Git deployment does not allow you to keep generated data files between deployments. To avoid the loss of your data,
 you have to mount a persistent filesystem. This is why we created File System Buckets.
