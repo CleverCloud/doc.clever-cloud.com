@@ -8,7 +8,7 @@ tags:
 
 # Deploy Play Framework 2 Java
 
-Clever Cloud supports Play! 2 applications natively. The following guide explains how to set up your application to run the Clever Cloud.
+Clever Cloud supports Play! 2 applications natively. The following guide explains how to set up your application to run on Clever Cloud.
 
 ## Overview
 

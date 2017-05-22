@@ -12,7 +12,7 @@ This article will document how you can technically plug into the platform to pro
 
 There are two faces here:
 
-* [The add-on provider API](#add-on-provider-api) - The API *you* need to provide and document to allow the Clever Cloud's backend to request provision and deprovision of add-ons.
+* [The add-on provider API](#add-on-provider-api) - The API *you* need to provide and document to allow Clever Cloud's backend to request provision and deprovision of add-ons.
 
 * [The add-on infos API](#add-on-infos-api) - The API Clever Cloud provides to allow you to get informations about provisioned add-ons and their owners.
 
@@ -20,7 +20,7 @@ There are two faces here:
 
 In the PaaS world, an add-on system is preceding the others, therefore is well known by a lot of developers: the Heroku one. To ease up the transition between Heroku and Clever Cloud, we decided to support (then iterate over) the Heroku standard for add-on provisioning API.
 
-So, if you already have been integrated as an add-on provider for the Heroku platform, you will have no trouble integrating in the Clever Cloud's add-on platform. This explains why we handle "heroku\_id" fields instead of "clevercloud\_id" or equivalent.
+So, if you already have been integrated as an add-on provider for the Heroku platform, you will have no trouble integrating in Clever Cloud's add-on platform. This explains why we handle "heroku\_id" fields instead of "clevercloud\_id" or equivalent.
 
 ## Add-on Provider API
 
@@ -161,7 +161,7 @@ The request body contains the following fields:
 
 * `plan` - The slug field for the plan the user chose. You can create
 plans in the dashboard once your add-on manifest has been uploaded to
-the Clever Cloud's platform. We send you the slug of the given plan,
+the Clever Cloud platform. We send you the slug of the given plan,
 not its name.
 
 * `region` - The region to provision the add-on. As for now, only "EU" will be sent.
@@ -366,7 +366,7 @@ This endpoint gives you more informations about a provisioned add-on.
 
 * `id` - The add-on id from Clever Cloud's POV.
 
-* `name` - The name the user gave to this add-on in the Clever Cloud's dashboard.
+* `name` - The name the user gave to this add-on in the Clever Cloud dashboard.
 
 * `config` - Config vars as you defined during the provision call.
 

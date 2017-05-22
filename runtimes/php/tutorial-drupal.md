@@ -1,6 +1,6 @@
 ---
 title: Deploy a Drupal website
-shortdesc: This article shows you how to deploy a Drupal-based website on the Clever Cloud.
+shortdesc: This article shows you how to deploy a Drupal-based website on Clever Cloud.
 tags:
 - php
 ---

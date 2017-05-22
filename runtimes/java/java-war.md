@@ -20,7 +20,7 @@ In <abbr title="Java Enterprise Edition">JEE</abbr>, application modules are pac
 
 ## Available containers
 
-The Clever Cloud supports many servlet containers.
+Clever Cloud supports many servlet containers.
 The supported containers are listed below:
 
 <table id="containers" class="table table-bordered table-striped">

@@ -161,7 +161,7 @@ If your application got privates dependencies, you can add a [Private SSH Key](h
 
 ## Node.js supported versions
 
-The Clever Cloud can virtually run any version of node >= 0.6 and any
+Clever Cloud can virtually run any version of node >= 0.6 and any
 module. Lesser (pre-npm) versions are not officially supported. Unstable
 versions are not supported either.
 

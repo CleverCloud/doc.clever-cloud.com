@@ -1,6 +1,6 @@
 ---
 title: Hello world tutorial
-shortdesc: How to write a hello world web application using Rack and deploy it on the Clever Cloud.
+shortdesc: How to write a hello world web application using Rack and deploy it on Clever Cloud.
 tags:
 - ruby
 ---
@@ -8,7 +8,7 @@ tags:
 
 ## Introduction
 
-Currently, the Clever Cloud supports Rack-based applications.
+Currently, Clever Cloud supports Rack-based applications.
 Created in 2007, Rack has become the de-facto standard for ruby
 web applications.
 
@@ -66,7 +66,7 @@ gem 'rack', '~>1.5.1'
 ```
 
 We don't need any more dependencies. The Gemfile is mandatory to deploy
-on the Clever Cloud.
+on Clever Cloud.
 
 
 ## Test your application

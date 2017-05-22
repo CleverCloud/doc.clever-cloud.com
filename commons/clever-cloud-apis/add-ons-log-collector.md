@@ -1,15 +1,15 @@
 ---
 title: Add-on Log Collector
 position: 3
-shortdesc: This article targets the add-on providers who want to integrate logs from their add-ons to the Clever Cloud's logging system
+shortdesc: This article targets the add-on providers who want to integrate logs from their add-ons to Clever Cloud's logging system
 tags:
 - developer
 ---
 # Add-on Log Collector
 
 This article targets the add-on providers who want to integrate logs
-from their add-ons to the Clever Cloud's logging system. Doing this
-allows the users to get their add-on's logs in the Clever Cloud's
+from their add-ons to Clever Cloud's logging system. Doing this
+allows the users to get their add-on's logs in Clever Cloud's
 dashboard.
 
 Note that, for the same reasons as the one mentioned in [Add-on API](/doc/clever-cloud-addons-api/add-ons-api) article, which you should have read if your reading these lines, if you already are a Heroku add-on provider, you should not be lost using this log collector API.

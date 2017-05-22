@@ -101,7 +101,7 @@ Add the key by entering a name and the public SSH key. The key is the entire con
 
 If you see "*access denied*" or "*password:*" when you
 [push on Clever Cloud](https://www.clever-cloud.com/doc/clever-cloud-overview/add-application/#git-deployment),
-your SSH Keys may be invalid or not available on Clever cloud. Please check that you SSH Key is present and valid in
+your SSH Keys may be invalid or not available on Clever Cloud. Please check that you SSH Key is present and valid in
 your profile.
 
 ### Private SSH Key

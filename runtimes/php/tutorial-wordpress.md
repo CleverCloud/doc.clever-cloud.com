@@ -1,6 +1,6 @@
 ---
 title: Deploy a Wordpress website
-shortdesc: This article shows you how to deploy a Wordpress-based website on the Clever Cloud.
+shortdesc: This article shows you how to deploy a Wordpress-based website on Clever Cloud.
 tags:
 - php
 ---

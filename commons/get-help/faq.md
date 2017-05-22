@@ -51,7 +51,7 @@ Log in with your account to [console.clever-cloud.com](https://console.clever-cl
 
 ## How do I report an application that is in violation of your Terms and Conditions?
 
-To report an application that is in violation of the Clever Cloud's Terms and Condition, please contact us at <abuse@clever-cloud.com>.
+To report an application that is in violation of Clever Cloud's Terms and Conditions, please contact us at <abuse@clever-cloud.com>.
 
 We will investigate and contact the application's owner over the violation if needed.
 
