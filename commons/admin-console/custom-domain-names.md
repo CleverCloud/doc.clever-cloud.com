@@ -16,18 +16,18 @@ keywords:
 When creating an application, you have two (non exclusive) choices for domain names:
 
 * Using a personal domain name
-* Using a ***.cleverapps.io** free domain, with built-in SSL
+* Using a **\*.cleverapps.io** free domain, with built-in SSL
 
 ## Linking your Domain Name to your Application
 
 You can link one or several domain names in the console.
 
-Add it in the application configuration: in the console, click on your **application name** in the first panel, then choose **domain names**. You'll have to choose to add a custom domain name or use a sub-domain under ``*.cleverapps.io``
+Add it in the application configuration: in the console, click on your **application name** in the first panel, then choose **domain names**. You'll have to choose to add a custom domain name or use a sub-domain under ``*.cleverapps.io``.
 
-There is a default entry configured by default for every new app: ``yourAppID.cleverapps.io``.
-In your application's domain section, just enter ``example.cleverapps.io``. You have to choose a unique one. Trusted SSL is available on every sub-domains.
+There is a default entry configured by default for every new app: ``yourAppID.cleverapps.io``, which can be removed.
+In your application's domain section, just enter ``example.cleverapps.io``. You have to choose a unique one. Trusted SSL is available on every sub-domain.
 
-If you need to configure a custom domain name, see the steps below.
+If you need to configure a custom domain name, follow the steps below.
 
 ## Personal Domain Names
 
@@ -69,7 +69,7 @@ If you need to configure a custom domain name, see the steps below.
 
 <br/>
 
-You can point your domain name to clever cloud either with a CNAME record or with A records. **The use of a CNAME record is highly recommended.** With a CNAME record, your DNS configuration is always up-to-date. Using A records will require you to keep the DNS configuration up-to-date manually. Domain names linked to clever cloud applications are monitored, so we will send you an email if your DNS configuration is obsolete or incorrect.
+You can point your domain name to Clever Cloud either with a CNAME record or with A records. **The use of a CNAME record is highly recommended.** With a CNAME record, your DNS configuration is always up-to-date. Using A records will require you to keep the DNS configuration up-to-date manually. Domain names linked to Clever Cloud applications are monitored, so we will send you an email if your DNS configuration is obsolete or incorrect.
 
 
 <div class="panel panel-warning">
@@ -84,8 +84,6 @@ You can point your domain name to clever cloud either with a CNAME record or wit
 If you want to make your application available from a domain name which does not support CNAME records (eg example.com in addition to ``www.example.com``), check if your registrar provides a web redirection service. This way, you only have to make ``www.example.com`` point to Clever Cloud. Please note that web redirection provided by registrars only work over HTTP.
 
 Remember that DNS changes may take time to propagate (usually a few hours, sometimes up to a day or more). It depends on the TTL setting of your DNS configuration. For faster changes, you can lower the TTL value in advance, and rise it again afterwards.
-
-Before changing your domain name configuration, you can lower the TTL of your domain name one day before the migration (like 3min). Any changes on your DNS configuration will be applied faster. Then, when everything is configured properly, you can put the default TTL value.
 
 
 <div class="panel panel-warning">
