@@ -23,22 +23,7 @@ Once you created an organization, you can add collaborators and assign them [rol
 
 Organization names are unique. It means that you cannot use an already used organization name.
 
-In order to add an organization, just click on "Add an organization" in the top left sidebar:
-
-<figure class="cc-content-img">
-<a href="/assets/images/gotohome.png"><img src="/doc/assets/images/gotohome.png"/></a>
-<figcaption>
-Access to your organizations via the sidebar.
-</figcaption>
-</figure>
-
-
-<figure class="cc-content-img">
-<a href="/assets/images/gotohome.png"><img src="/doc/assets/images/orga-enterprise.png"/></a>
-<figcaption>
-An organization can represent a company, for an easier invoicing process.
-</figcaption>
-</figure>
+In order to add an organization, just click on "Add an organization" in the top left sidebar.
 
 
 ## Roles and privileges
