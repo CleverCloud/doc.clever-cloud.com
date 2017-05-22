@@ -21,8 +21,7 @@ scaling. These two parameters can be combined to adapt to your needs.
 
 ## What is a Scaler?
 
-A **Scaler** is the Clever Cloud "instance". It is an individual container hosting your application. They are not virtual
-machines and are independent. A Scaler is defined by two factors: RAM and CPU.
+A **Scaler** is a Clever Cloud "instance". It is an individual and independent virtual machine hosting your application. A Scaler is defined by two factors: RAM and CPU.
 
 With the Scalers, Clever Cloud gives you the ability to scale your application **up and down** with **two non
 exclusive methods**: horizontal and vertical scaling.
