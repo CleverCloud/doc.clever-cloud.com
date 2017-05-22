@@ -13,8 +13,9 @@ tags:
      <h4>Hooks are not available everywhere yet</h4>
   </div>
   <div class="panel-body">
-    Hooks are currently only available for Haskell applications. In the meantime,
-    you can continue to use the postDeploy hook.
+    Hooks are currently only available for Erlang, Haskell, NodeJS and Rust
+    applications. In the meantime, you can continue to use the postDeploy on
+    the other runtimes.
   </div>
 </div>
 
