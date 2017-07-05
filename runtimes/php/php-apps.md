@@ -446,6 +446,16 @@ monolog:
 
 You can change the level to whatever level you desire. For Symfony, the configuration file is `app/config/config_prod.yml`.
 
+Laravel doesn't need Monolog to retrieve logs via Clever console or Clever CLI. Here, ensure that you have the following line in `config/app.php`:
+
+```php
+...
+'log' => env('APP_LOG'),
+...
+```
+
+Then, set `APP_LOG=syslog` as Clever application environment variable.
+
 ## Header injection
 
 If you need to inject headers on HTTP responses (for instance for [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS)),
