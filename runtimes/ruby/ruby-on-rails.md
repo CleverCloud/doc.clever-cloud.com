@@ -46,13 +46,13 @@ Then, you need to provide a Gemfile.lock. To do that, please run:
 ```
 ## Environment injection
 
-To access your variable in your application, nothing simpler! Just get
+To access your variables in your application, nothing simpler! Just get
 it from your environment, like you would with `PATH`:
 `ENV["MY_VARIABLE"]`.
 
-### Choose ruby version
+## Choose ruby version
 
-On your Clever application create an `RUBY_VERSION=rubyversion` where `rubyversion` represents:
+On your Clever Cloud application create an environment variable `RUBY_VERSION=rubyversion` where `rubyversion` represents:
 
  * "2" will select the greatest "2.X.Y" version available.
  * "2.3" will select the greatest "2.0.Y" version available.
@@ -68,7 +68,7 @@ releases, but, hey, we're human!
 Due to current landscape in ruby applications, the default version is the
 greatest 2.3.Y. We provide also the 2.2.Y and 2.1.Y versions.
 
-### Configuration secret key production
+## Configuration secret key production
 
 You need to use environment injection for `secret_key_base` in file  `./config/secret.yml` :
 
