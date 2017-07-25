@@ -440,7 +440,7 @@ Laravel doesn't need Monolog to retrieve logs via Clever console or Clever CLI. 
 
 ```php
 ...
-'log' => env('APP_LOG', 'syslog'),
+'log' => env('APP_LOG'),
 ...
 ```
 
