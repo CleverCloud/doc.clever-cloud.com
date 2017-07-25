@@ -322,6 +322,10 @@ It's quite not exhaustive, so it does not mean that other CMS can't work on the 
 <td>Symfony</td>
 <td>Thelia</td>
 </tr>
+<tr>
+<td>Laravel</td>
+<td>-</td>
+</tr>
 </tbody>
 </table>
 </div>
