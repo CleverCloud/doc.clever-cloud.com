@@ -48,6 +48,15 @@ db.default.url="jdbc:postgresql://"${POSTGRESQL_ADDON_HOST}"/"${POSTGRESQL_ADDON
 db.default.username=${POSTGRESQL_ADDON_USER}
 db.default.password=${POSTGRESQL_ADDON_PASSWORD}
 ```
+## Generate application secret
+
+To deploy a Play! application you have to set a secret in your `conf/application.conf`  the environment varible jey depends on Play 2 version:
+
+* 2.6.x: `play.http.secret.key=${?APPLICATION_SECRET}`;
+* 2.4.x -> 2.5.x: `play.crypto.secret=${?APPLICATION_SECRET}`;
+* 2.3.x: `application.secret=${?APPLICATION_SECRET}`.
+
+Then, in your Clever Cloud application define `APPLICATION_SECRET` with a value generated using `sbt playGenerateSecret`.
 
 ## Custom config file
 
