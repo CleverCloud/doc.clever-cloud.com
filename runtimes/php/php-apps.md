@@ -252,7 +252,7 @@ You use Artisan to manage your project and you want to execute _artisan migrate_
 
 To do this, we use a post build hook, you have to set a new environment variable on your Clever application as following:
 
-```
+```bash
 CC_POST_BUILD_HOOK=php artisan migrate --force
 ```
 
