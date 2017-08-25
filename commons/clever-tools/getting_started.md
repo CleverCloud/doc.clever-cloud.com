@@ -29,7 +29,7 @@ You need to put both files (`clever` and `nodegit.node`) in your `PATH` to use t
 
 #### Autocompletion
 
-The brew package enables autocompletion (for `bash` and `zsh`). Make sure `bash-completions` or `zsh-completions` are properly set up.
+Clever Tools comes with a comprehensive auto-completion system. The brew package installs it automatically (for `bash` and `zsh`). Make sure `bash-completions` or `zsh-completions` are properly set up.
 
     # In ~/.bash_profile
     . /usr/local/etc/bash_completion
@@ -63,13 +63,17 @@ Clever Tools comes with a comprehensive auto-completion system.
 
 #### In case of `libcurl` version mismatch
 
-On some distributions (eg. archlinux), a `libcurl` version mismatch between the system default and the expected version can happen. If you see `Error: /usr/lib/libcurl.so.4: version 'CURL_OPENSSL_3' not found (required by /usr/bin/nodegit.node)` in the logs, you can add the following alias to force using a compatible `libcurl` version:
+On some distributions (eg. archlinux), a `libcurl` version mismatch between the system default and the expected version can happen. If you see `Error: /usr/lib/libcurl.so.4: version 'CURL_OPENSSL_3' not found (required by /usr/bin/nodegit.node)` in the logs, you can fix the issue by using a compatible libcurl version:
 
+    # install libcurl-compat
+    pacman -S libcurl-compat # on archlinux
+
+    # add an alias to start clever tools with a compatible libcurl version
     alias clever='LD_PRELOAD=libcurl.so.3 clever'
 
 ### Manual installation (advanced)
 
-Clever Tools is built with [npm](https://npmjs.org) if you wish to install it from `npm`, you can run `npm install -g clever-tools`. You can also install it [from source](https://github.com/CleverCloud/clever-tools).
+Clever Tools is built with [npm](https://npmjs.org). If you wish to install it from `npm`, you can run `npm install -g clever-tools`. You can also install it [from source](https://github.com/CleverCloud/clever-tools).
 
 ## Linking your account
 
