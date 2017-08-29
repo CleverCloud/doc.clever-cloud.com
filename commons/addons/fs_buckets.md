@@ -13,7 +13,7 @@ keywords:
 - storage
 ---
 
-# FS Buckets: file system with persistence <span class="cc-beta pull-right" title="Currently in Beta version"></span>
+# FS Buckets: file system with persistence
 
 When you deploy an application on any PaaS, a new virtual machine is created, the previous one is deleted.
 If your application generates data, for example if you let users upload pictures and you do not store it on external
@@ -31,7 +31,7 @@ You will be able to retrieve generated data between two deployments.
 <th>Name</th>
 <th>Disk</th>
 <th>Mounts</th>
-<th>Price /Go</th>
+<th>Price per month</th>
 </tr>
 <tr>
 <td class="cc-col__price "><span class="label cc-label__price label-info">DEV</span></td>
@@ -41,13 +41,27 @@ You will be able to retrieve generated data between two deployments.
 </tr>
 <tr>
 <td class="cc-col__price "><span class="label cc-label__price label-info">S</span></td>
-<td>UNLIMITED</td>
+<td>1 GB</td>
 <td>UNLIMITED</td>
 <td>1.50€</td>
 </tr>
 </table>
 
 ## Configuring your application
+
+Buckets are configured using environment variables. Add the following to your application :
+
+```
+CC_FS_BUCKET=/some/empty/folder:bucket-8cef666d-6c0f-406e-bd65-a12877a30fba-fsbucket.services.clever-cloud.com
+```
+
+You can use multiple buckets by using any other number at the end of the variable.
+```
+CC_FS_BUCKET=/some/empty/folder:fs_bucket_host
+CC_FS_BUCKET_1=/some/otherempty/folder:fs_bucket_other_host
+```
+
+## Configuring your application with buckets.json (@deprecated)
 
 To configure your application to use buckets, use the
 `clevercloud/buckets.json` file.
@@ -154,12 +168,16 @@ buckets</td>
 
 ## Accessing your data inside the FS Bucket
 
+### From your application
+
+Your folder is mounted in application folder (`APP_HOME` env var). That mean `/some/empty/folder` is mounted in `/home/bas/app_01234567-0123-0123-0123-012345678987/some/empty/folder`.
+
 ### From the addon dashboard
 
-The "File explorer" tab of the addon dashboard gives you access to your files
+The **File explorer** tab of the addon dashboard gives you access to your files
 in the FS bucket.
 
 ### From your favourite FTP client
 
-The "Addon information" tab of your FS Bucket add-on displays the information
+The **Addon information** tab of your FS Bucket add-on displays the information
 you need to connect to your bucket using FTP.
