@@ -31,7 +31,7 @@ You will be able to retrieve generated data between two deployments.
 <th>Name</th>
 <th>Disk</th>
 <th>Mounts</th>
-<th>Price per month</th>
+<th>Price / Go / Month</th>
 </tr>
 <tr>
 <td class="cc-col__price "><span class="label cc-label__price label-info">DEV</span></td>
@@ -41,7 +41,7 @@ You will be able to retrieve generated data between two deployments.
 </tr>
 <tr>
 <td class="cc-col__price "><span class="label cc-label__price label-info">S</span></td>
-<td>1 GB</td>
+<td>UNLIMITED</td>
 <td>UNLIMITED</td>
 <td>1.50€</td>
 </tr>
@@ -52,10 +52,10 @@ You will be able to retrieve generated data between two deployments.
 Buckets are configured using environment variables. Add the following to your application :
 
 ```
-CC_FS_BUCKET=/some/empty/folder:bucket-8cef666d-6c0f-406e-bd65-a12877a30fba-fsbucket.services.clever-cloud.com
+CC_FS_BUCKET=/some/empty/folder:bucket-01234567-0123-0123-0123-012345678987-fsbucket.services.clever-cloud.com
 ```
 
-You can use multiple buckets by using any other number at the end of the variable.
+You can setup multiple buckets by appending a number at the end of the environment variable's name.
 ```
 CC_FS_BUCKET=/some/empty/folder:fs_bucket_host
 CC_FS_BUCKET_1=/some/otherempty/folder:fs_bucket_other_host
@@ -79,7 +79,7 @@ The `buckets.json` file must contain the following structure:
 
   },
   {
-    "bucket_host" : "bucket-c65762b6-4086-4c99-84b0-23eb85695809-fsbucket.services.clever-cloud.com",
+    "bucket_host" : "bucket-01234567-0123-0123-0123-012345678987-fsbucket.services.clever-cloud.com",
     "folder" : "/myotherFolder",
     "apps"   : ["app_id_2"]
   }
@@ -170,7 +170,8 @@ buckets</td>
 
 ### From your application
 
-Your folder is mounted in application folder (`APP_HOME` env var). That mean `/some/empty/folder` is mounted in `/home/bas/app_01234567-0123-0123-0123-012345678987/some/empty/folder`.
+Your bucket is mounted at the configured path, starting from your application's
+root folder.
 
 ### From the addon dashboard
 
