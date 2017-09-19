@@ -21,117 +21,117 @@ tags:
     <td>CC_TROUBLESHOOT</td>
     <td>Enable debug log level, will also keep the VM up after failure for 15 minutes so you can SSH and debug. Don't forget to cancel deployment if you push a new commit.</td>
     <td>false</td>
-  </tr> 
+  </tr>
   <tr>
     <td>CC_WORKER_COMMAND</td>
     <td></td>
     <td></td>
-  </tr> 
+  </tr>
   <tr>
     <td>CC_PRE_BUILD_HOOK</td>
     <td>Ran before the dependencies are fetched. If it fails, the deployment fails.</td>
     <td></td>
-  </tr> 
+  </tr>
   <tr>
     <td>CC_POST_BUILD_HOOK</td>
     <td>Ran after the project is built, and before the cache archive is generated. If it fails, the deployment fails.</td>
     <td></td>
-  </tr> 
+  </tr>
   <tr>
     <td>CC_PRE_RUN_HOOK</td>
     <td>Ran before the application is started, but after the cache archive has been generated. If it fails, the deployment fails.</td>
     <td></td>
-  </tr> 
+  </tr>
   <tr>
     <td>CC_RUN_SUCCEEDED_HOOK</td>
     <td>Ran once the application has started successfuly.</td>
     <td></td>
-  </tr> 
+  </tr>
   <tr>
     <td>CC_RUN_FAILED_HOOK</td>
     <td>Ran once the application has failed to start.</td>
     <td></td>
-  </tr> 
+  </tr>
   <tr>
     <td>ENABLE_METRICS</td>
     <td>BETA: Enable metrics collection, Contact support.</td>
     <td>false</td>
-  </tr> 
+  </tr>
   <tr>
     <td>IGNORE_FROM_BUILDCACHE</td>
     <td></td>
     <td></td>
-  </tr> 
+  </tr>
   <tr>
     <td>CACHE_DEPENDENCIES</td>
     <td></td>
     <td>false</td>
-  </tr> 
+  </tr>
   <tr>
     <td>INSTANCE_NUMBER</td>
     <td></td>
     <td></td>
-  </tr> 
+  </tr>
   <tr>
     <td>APP_FOLDER</td>
     <td></td>
     <td></td>
-  </tr> 
+  </tr>
   <tr>
     <td>APP_ID</td>
     <td></td>
     <td></td>
-  </tr> 
+  </tr>
   <tr>
     <td>APP_HOME</td>
     <td></td>
     <td></td>
-  </tr> 
+  </tr>
   <tr>
     <td>CC_DEPLOYMENT_ID</td>
     <td></td>
     <td></td>
-  </tr> 
+  </tr>
   <tr>
     <td>COMMIT_ID</td>
     <td></td>
     <td></td>
-  </tr> 
+  </tr>
   <tr>
     <td>CC_RACKUP_SERVER</td>
     <td></td>
     <td></td>
-  </tr> 
+  </tr>
   <tr>
     <td>ENABLE_GZIP_COMPRESSION</td>
     <td></td>
     <td></td>
-  </tr> 
+  </tr>
   <tr>
     <td>NGINX_READ_TIMEOUT</td>
     <td></td>
     <td></td>
-  </tr> 
+  </tr>
   <tr>
     <td>STATIC_FILES_PATH</td>
     <td></td>
     <td></td>
-  </tr> 
+  </tr>
   <tr>
     <td>STATIC_URL_PREFIX</td>
     <td></td>
     <td></td>
-  </tr> 
+  </tr>
   <tr>
     <td>STATIC_WEBROOT</td>
     <td></td>
     <td></td>
-  </tr> 
+  </tr>
   <tr>
     <td>UWSGI_INTERCEPT_ERRORS</td>
     <td></td>
     <td></td>
-  </tr> 
+  </tr>
 </table>
 
 
@@ -321,7 +321,7 @@ tags:
     <td>ENABLE_REDIS</td>
     <td></td>
     <td>false</td>
-  </tr> 
+  </tr>
   <tr>
     <td>HTTP_TIMEOUT</td>
     <td></td>
@@ -346,7 +346,7 @@ tags:
     <td>SESSION_TYPE</td>
     <td></td>
     <td></td>
-  </tr> 
+  </tr>
   <tr>
     <td>SOCKSIFY_EVERYTHING</td>
     <td></td>
@@ -356,7 +356,7 @@ tags:
     <td>USE_SOCKS</td>
     <td></td>
     <td>false</td>
-  </tr> 
+  </tr>
 </table>
 
 ### Python
@@ -406,27 +406,27 @@ tags:
     <td>STATIC_FILES_PATH</td>
     <td></td>
     <td></td>
-  </tr> 
+  </tr>
   <tr>
     <td>STATIC_PATH</td>
     <td></td>
     <td></td>
-  </tr> 
+  </tr>
   <tr>
     <td>STATIC_URL_PREFIX</td>
     <td></td>
     <td></td>
-  </tr> 
+  </tr>
   <tr>
     <td>STATIC_WEBROOT</td>
     <td></td>
     <td></td>
-  </tr> 
+  </tr>
   <tr>
     <td>UWSGI_ASYNC</td>
     <td></td>
     <td></td>
-  </tr> 
+  </tr>
   <tr>
     <td>UWSGI_ASYNC_ENGINE</td>
     <td></td>
@@ -436,7 +436,7 @@ tags:
     <td>WSGI_WORKERS</td>
     <td></td>
     <td></td>
-  </tr> 
+  </tr>
 </table>
 
 ### Ruby
@@ -476,52 +476,52 @@ tags:
     <td>STATIC_FILES_PATH</td>
     <td></td>
     <td></td>
-  </tr> 
+  </tr>
   <tr>
     <td>STATIC_PATH</td>
     <td></td>
     <td></td>
-  </tr> 
+  </tr>
   <tr>
     <td>STATIC_URL_PREFIX</td>
     <td></td>
     <td></td>
-  </tr> 
+  </tr>
   <tr>
     <td>STATIC_WEBROOT</td>
     <td></td>
     <td></td>
-  </tr> 
+  </tr>
   <tr>
     <td>UWSGI_ASYNC</td>
     <td></td>
     <td></td>
-  </tr> 
+  </tr>
   <tr>
     <td>UWSGI_ASYNC_ENGINE</td>
     <td></td>
     <td></td>
-  </tr> 
+  </tr>
   <tr>
     <td>WSGI_BUFFER_SIZE</td>
     <td></td>
     <td></td>
-  </tr> 
+  </tr>
   <tr>
     <td>WSGI_POST_BUFFERING</td>
     <td></td>
     <td></td>
-  </tr> 
+  </tr>
   <tr>
     <td>WSGI_THREADS</td>
     <td></td>
     <td></td>
-  </tr> 
+  </tr>
   <tr>
     <td>WSGI_WORKERS</td>
     <td></td>
     <td></td>
-  </tr> 
+  </tr>
 </table>
 
 ### Rust
