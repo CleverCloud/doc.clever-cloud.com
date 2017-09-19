@@ -24,7 +24,7 @@ tags:
   </tr>
   <tr>
     <td>CC_WORKER_COMMAND</td>
-    <td></td>
+    <td>Command to run in background as a worker process.</td>
     <td></td>
   </tr>
   <tr>
@@ -53,6 +53,11 @@ tags:
     <td></td>
   </tr>
   <tr>
+    <td>CACHE_DEPENDENCIES</td>
+    <td></td>
+    <td>false</td>
+  </tr>
+  <tr>
     <td>ENABLE_METRICS</td>
     <td>BETA: Enable metrics collection, Contact support.</td>
     <td>false</td>
@@ -63,18 +68,13 @@ tags:
     <td></td>
   </tr>
   <tr>
-    <td>CACHE_DEPENDENCIES</td>
-    <td></td>
-    <td>false</td>
-  </tr>
-  <tr>
     <td>INSTANCE_NUMBER</td>
     <td></td>
     <td></td>
   </tr>
   <tr>
     <td>APP_FOLDER</td>
-    <td></td>
+    <td>Folder in which the application is located (inside the git repository)</td>
     <td></td>
   </tr>
   <tr>
@@ -94,41 +94,6 @@ tags:
   </tr>
   <tr>
     <td>COMMIT_ID</td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>CC_RACKUP_SERVER</td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>ENABLE_GZIP_COMPRESSION</td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>NGINX_READ_TIMEOUT</td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>STATIC_FILES_PATH</td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>STATIC_URL_PREFIX</td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>STATIC_WEBROOT</td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>UWSGI_INTERCEPT_ERRORS</td>
     <td></td>
     <td></td>
   </tr>
@@ -272,11 +237,6 @@ tags:
     <th><center>Default value</center></th>
   </tr>
   <tr>
-    <td>CACHE_DEPENDENCIES</td>
-    <td></td>
-    <td>false</td>
-  </tr>
-  <tr>
     <td>CC_NODE_START_GOAL</td>
     <td></td>
     <td></td>
@@ -408,17 +368,17 @@ tags:
     <td></td>
   </tr>
   <tr>
-    <td>STATIC_PATH</td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
     <td>STATIC_URL_PREFIX</td>
     <td></td>
     <td></td>
   </tr>
   <tr>
     <td>STATIC_WEBROOT</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>UWSGI_INTERCEPT_ERRORS</td>
     <td></td>
     <td></td>
   </tr>
@@ -434,6 +394,16 @@ tags:
   </tr>
   <tr>
     <td>WSGI_WORKERS</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>ENABLE_GZIP_COMPRESSION</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>NGINX_READ_TIMEOUT</td>
     <td></td>
     <td></td>
   </tr>
@@ -478,17 +448,17 @@ tags:
     <td></td>
   </tr>
   <tr>
-    <td>STATIC_PATH</td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
     <td>STATIC_URL_PREFIX</td>
     <td></td>
     <td></td>
   </tr>
   <tr>
     <td>STATIC_WEBROOT</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>UWSGI_INTERCEPT_ERRORS</td>
     <td></td>
     <td></td>
   </tr>
@@ -522,6 +492,16 @@ tags:
     <td></td>
     <td></td>
   </tr>
+  <tr>
+    <td>ENABLE_GZIP_COMPRESSION</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>NGINX_READ_TIMEOUT</td>
+    <td></td>
+    <td></td>
+  </tr>
 </table>
 
 ### Rust
@@ -531,16 +511,6 @@ tags:
     <th><center>Name</center></th>
     <th><center>Description</center></th>
     <th><center>Default value</center></th>
-  </tr>
-  <tr>
-    <td>CC_TROUBLESHOOT</td>
-    <td></td>
-    <td>false</td>
-  </tr>
-  <tr>
-    <td>INSTANCE_TYPE</td>
-    <td></td>
-    <td></td>
   </tr>
   <tr>
     <td>RUSTUP_CHANNEL</td>
