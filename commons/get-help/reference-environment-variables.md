@@ -73,6 +73,11 @@ tags:
     <td></td>
   </tr>
   <tr>
+    <td>INSTANCE_TYPE</td>
+    <td>Whether this instance is a "build" instance or a "production" instance.</td>
+    <td></td>
+  </tr>
+  <tr>
     <td>APP_FOLDER</td>
     <td>Folder in which the application is located (inside the git repository)</td>
     <td></td>
