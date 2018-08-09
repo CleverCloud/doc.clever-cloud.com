@@ -55,5 +55,5 @@ You can use this atmosphere package to redirect your users to the HTTPS version 
 [force-ssl](https://atmospherejs.com/meteor/force-ssl)
 
 ## Oplog Tailing
-Oplog tailing is supported on dedicated databases (starting from Hazelnut). Once enabled, set the following environment variable:
-- `MONGO_OPLOG_URL`: `mongodb://[…]mongodb.services.clever-cloud.com:2075/local?authSource={DB_NAME}`
+Oplog tailing is supported on dedicated databases (starting from Hazelnut). Contact the support to enable oplog. Once enabled, set the following environment variable:
+- `MONGO_OPLOG_URL`: `mongodb://[…]mongodb.services.clever-cloud.com:{DB_PORT}/local?authSource={DB_NAME}`
