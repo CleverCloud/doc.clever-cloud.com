@@ -1,7 +1,7 @@
 ---
 title: Deploying Python apps
 position: 1
-shortdesc: Python 2.7 and 3.6 are available on our platform. You can use Git to deploy your application.
+shortdesc: Python 2.7 and 3.7 are available on our platform. You can use Git to deploy your application.
 tags:
 - python
 ---
@@ -12,7 +12,7 @@ You can learn how to use Python and see almost immediate gains in productivity a
 
 ## Overview
 
-Python 2.7 and 3.6 are available on our platform. You can use Git to deploy your application.
+Python 2.7 and 3.7 are available on our platform. You can use Git to deploy your application.
 
 
 ## Create an application
@@ -145,7 +145,7 @@ The `test.png` file will be accessed under: `https://<domain.tld>/public/test.pn
 
 ## Choose Python version
 
-The default version of python on Clever Cloud is **2.7**. If you want to use python **3.6** instead,
+The default version of python on Clever Cloud is **2.7**. If you want to use python **3.7** instead,
 create an environment variable `PYTHON_VERSION` equals to either `2` or `3`.
 
 Also, the file `/clevercloud/python_version` is still supported for backward compatibility.
