@@ -31,7 +31,7 @@ These are read-only variables that are generated for each scaler before they bui
   </tr>
   <tr>
     <td>INSTANCE_ID</td>
-    <td>the ID of the current instance (scaler) of your application. It's unique for each instance of your application and changes every time you deploy it.</td>
+    <td>The ID of the current instance (scaler) of your application. It's unique for each instance of your application and changes every time you deploy it.</td>
     <td>518c8d8f-e304-4310-81e0-9c4237d55645</td>
   </tr>
   <tr>
