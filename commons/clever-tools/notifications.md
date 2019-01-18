@@ -120,6 +120,20 @@ The list of values that can be assigned to `--event` option:
 - `CLEVER_TOOLS_REQUEST`
 - `CREDITS_ADDED`
 
+##### Examples:
+
+Get a message in a Slack channel when the deployment for an application failed:
+
+```
+clever webhooks add "The application failed to deploy" https://hooks.slack.com/services/xxxxxx/ --format slack --event DEPLOYMENT_FAIL
+```
+
+Notify your accounting service when credits are added:
+
+```
+clever webhooks add "credits added" https://hooks.slack.com/services/xxxxxx/yyyyyy/zzzzzzzzzzzzz --format raw --event META_CREDITS
+```
+
 All done! You can now push your application (`clever deploy`) or restart it
 (`clever restart`) and you will see the result of the deployment in your Slack
 channel.
