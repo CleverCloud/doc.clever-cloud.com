@@ -37,11 +37,8 @@ Where `DRAIN-TYPE` is one of:
  - `TCPSyslog`: for TCP syslog endpoint;
  - `UDPSyslog`: for UDP syslog endpoint;
  - `HTTP`: for TCP syslog endpoint (note that this endpoint has optional username/password parameters as HTTP Basic Authentication);
- - `ElasticSearch`: for ElasticSearch endpoint (note that this endpoint requires username/password parameters as HTTP Basic Authentication);
- - `Datadog`: for Datadog endpoint (note that this endpoint requires --api-key parameter as Datadog authentication).
+ - `ElasticSearch`: for ElasticSearch endpoint (note that this endpoint requires username/password parameters as HTTP Basic Authentication).
 
-ElasticSearch drains use the Elastic bulk API. To match this endpoint, specify `/_bulk` at the end of your ElasticSearch endpoint.
- 
 You can list the currently activated drains with this command.
 
     clever drain [--alias <alias>]
@@ -49,6 +46,16 @@ You can list the currently activated drains with this command.
 And remove them if needed
 
     clever drain remove [--alias <alias>] <DRAIN-ID>
+
+#### ElasticSearch logs drains
+
+ElasticSearch drains use the Elastic bulk API. To match this endpoint, specify `/_bulk` at the end of your ElasticSearch endpoint.
+
+#### Datadog logs drains
+
+To create [Datadog](https://docs.datadoghq.com/api/?lang=python#send-logs-over-http) drain, you just need to use:
+
+    clever drain create HTTP "https://http-intake.logs.datadoghq.com/v1/input/<API_KEY>?ddsource=clevercloud&service=<SERVICE>&host=<HOST>"
 
 ## Listing linked applications
 
