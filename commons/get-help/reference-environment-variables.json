@@ -1,0 +1,1142 @@
+[
+    {
+        "name": "INSTANCE_NUMBER",
+        "description": "Allows your application to differentiate each running node on the application level.",
+        "format": "Number",
+        "type": "INJECTED_BY_VARIANT",
+        "exampleValue": "0, 1, 2, 3...",
+        "defaultValue": "",
+        "variants": ["ALL"],
+        "addons": ["ALL"]
+    },
+    {
+        "name": "INSTANCE_TYPE",
+        "description": "Whether this instance is a \"build\" instance or a \"production\" instance.",
+        "format": ["build, production"],
+        "type": "INJECTED_BY_VARIANT",
+        "exampleValue": "",
+        "defaultValue": "",
+        "variants": ["ALL"],
+        "addons": ["ALL"]
+    },
+    {
+        "name": "INSTANCE_ID",
+        "description": "The ID of the current instance (scaler) of your application. It's unique for each instance of your application and changes every time you deploy it.",
+        "format": "String",
+        "type": "INJECTED_BY_VARIANT",
+        "exampleValue": "518c8d8f-e304-4310-81e0-9c4237d55645",
+        "defaultValue": "",
+        "variants": ["ALL"],
+        "addons": ["ALL"]
+    },
+    {
+        "name": "APP_ID",
+        "description": "The ID of your Clever Cloud application",
+        "format": "String",
+        "type": "INJECTED_BY_VARIANT",
+        "exampleValue": "app_518c8d8f-e304-4310-81e0-9c4237d55645",
+        "defaultValue": "",
+        "variants": ["ALL"],
+        "addons": ["ALL"]
+    },
+    {
+        "name": "APP_HOME",
+        "description": "The absolute path to your application folder",
+        "format": "String",
+        "type": "INJECTED_BY_VARIANT",
+        "exampleValue": "/home/bas/app_649a93d1-6677-44bc-aca7-6f46107d6e02",
+        "defaultValue": "",
+        "variants": ["ALL"],
+        "addons": ["ALL"]
+    },
+    {
+        "name": "CC_DEPLOYMENT_ID",
+        "description": "Internal id of current deployment",
+        "format": "String",
+        "type": "INJECTED_BY_VARIANT",
+        "exampleValue": "f7efaf04-1a63-45a1-8503-0de7c750ee48",
+        "defaultValue": "",
+        "variants": ["ALL"],
+        "addons": ["ALL"]
+    },
+    {
+        "name": "COMMIT_ID",
+        "description": "The id of the commit that's currently running",
+        "format": "String",
+        "type": "INJECTED_BY_VARIANT",
+        "exampleValue": "d88cd2ae1aaa91923ed2bd689d95d713b6f3f45f",
+        "defaultValue": "",
+        "variants": ["ALL"],
+        "addons": ["ALL"]
+    },
+    {
+        "name": "CC_REVERSE_PROXY_IPS",
+        "description": "A comma separated list of trusted IP addresses. You should only accept requests\n    coming from these IP addresses.",
+        "format": "String",
+        "type": "INJECTED_BY_VARIANT",
+        "exampleValue": "x.y.z.z,x.y.z.z",
+        "defaultValue": "",
+        "variants": ["ALL"],
+        "addons": ["ALL"]
+    },
+    {
+        "name": "APP_FOLDER",
+        "description": "Folder in which the application is located (inside the git repository)",
+        "format": "String",
+        "type": "USER_DEFINED",
+        "exampleValue": "TODO",
+        "defaultValue": "",
+        "variants": ["ALL"],
+        "addons": ["ALL"]
+    },
+    {
+        "name": "CC_TROUBLESHOOT",
+        "description": "Enable debug log level, will also keep the VM up after failure for 15 minutes so you can SSH and debug. Don't forget to cancel deployment if you push a new commit.",
+        "format": "Boolean",
+        "type": "USER_DEFINED",
+        "exampleValue": "",
+        "defaultValue": "false",
+        "variants": ["ALL"],
+        "addons": ["ALL"]
+    },
+    {
+        "name": "CC_WORKER_COMMAND",
+        "description": "Command to run in background as a worker process.",
+        "format": "String",
+        "type": "USER_DEFINED",
+        "exampleValue": "TODO",
+        "defaultValue": "",
+        "variants": ["ALL"],
+        "addons": ["ALL"]
+    },
+    {
+        "name": "CC_WORKER_RESTART",
+        "description": "One of <code>always</code>, <code>on-failure</code> or <code>no</code>. Control whether a worker needs to be restarted when it exits",
+        "format": ["always", "on-failure", "no"],
+        "type": "USER_DEFINED",
+        "exampleValue": "",
+        "defaultValue": "on-failure",
+        "variants": ["ALL"],
+        "addons": ["ALL"]
+    },
+    {
+        "name": "CC_PRE_BUILD_HOOK",
+        "description": "Ran before the dependencies are fetched. If it fails, the deployment fails.",
+        "format": "String",
+        "type": "USER_DEFINED",
+        "exampleValue": "TODO",
+        "defaultValue": "",
+        "variants": ["ALL"],
+        "addons": ["ALL"]
+    },
+    {
+        "name": "CC_POST_BUILD_HOOK",
+        "description": "Ran after the project is built, and before the cache archive is generated. If it fails, the deployment fails.",
+        "format": "String",
+        "type": "USER_DEFINED",
+        "exampleValue": "TODO",
+        "defaultValue": "",
+        "variants": ["ALL"],
+        "addons": ["ALL"]
+    },
+    {
+        "name": "CC_PRE_RUN_HOOK",
+        "description": "Ran before the application is started, but after the cache archive has been generated. If it fails, the deployment fails.",
+        "format": "String",
+        "type": "USER_DEFINED",
+        "exampleValue": "TODO",
+        "defaultValue": "",
+        "variants": ["ALL"],
+        "addons": ["ALL"]
+    },
+    {
+        "name": "CC_RUN_SUCCEEDED_HOOK",
+        "description": "Ran once the application has started successfuly.",
+        "format": "String",
+        "type": "USER_DEFINED",
+        "exampleValue": "TODO",
+        "defaultValue": "",
+        "variants": ["ALL"],
+        "addons": ["ALL"]
+    },
+    {
+        "name": "CC_RUN_FAILED_HOOK",
+        "description": "Ran once the application has failed to start.",
+        "format": "String",
+        "type": "USER_DEFINED",
+        "exampleValue": "",
+        "defaultValue": "",
+        "variants": ["ALL"],
+        "addons": ["ALL"]
+    },
+    {
+        "name": "CACHE_DEPENDENCIES",
+        "description": "Enable caching of your build dependencies to speed up following builds.",
+        "format": "Boolean",
+        "type": "USER_DEFINED",
+        "exampleValue": "",
+        "defaultValue": "false",
+        "variants": ["ALL"],
+        "addons": ["ALL"]
+    },
+    {
+        "name": "ENABLE_METRICS",
+        "description": "BETA: Enable metrics collection, Contact support.",
+        "format": "Boolean",
+        "type": "USER_DEFINED",
+        "exampleValue": "",
+        "defaultValue": "true",
+        "variants": ["ALL"],
+        "addons": ["ALL"]
+    },
+    {
+        "name": "IGNORE_FROM_BUILDCACHE",
+        "description": "Allows to specify paths to ignore when the build cache archive is created. TODO",
+        "format": "String",
+        "type": "USER_DEFINED",
+        "exampleValue": "TODO",
+        "defaultValue": "",
+        "variants": ["ALL"],
+        "addons": ["ALL"]
+    },
+    {
+        "name": "CC_MOUNT_DOCKER_SOCKET",
+        "description": "Set to true to access the host Docker socket from inside your container.",
+        "format": "Boolean",
+        "type": "USER_DEFINED",
+        "exampleValue": "",
+        "defaultValue": "false",
+        "variants": ["docker"],
+        "addons": ["ALL"]
+    },
+    {
+        "name": "CC_DOCKER_EXPOSED_HTTP_PORT",
+        "description": "Set to custom HTTP port if your Docker container runs on custom port.",
+        "format": "Number",
+        "type": "USER_DEFINED",
+        "exampleValue": "",
+        "defaultValue": "8080",
+        "variants": ["docker"],
+        "addons": ["ALL"]
+    },
+    {
+        "name": "CC_DOCKER_EXPOSED_TCP_PORT",
+        "description": "Set to custom TCP port if your Docker container runs on custom port but <strong>it still needs a support request to make use of it.</strong>",
+        "format": "Number",
+        "type": "USER_DEFINED",
+        "exampleValue": "",
+        "defaultValue": "4040",
+        "variants": ["docker"],
+        "addons": ["ALL"]
+    },
+    {
+        "name": "CC_GO_PKG",
+        "description": "Makes the deployer run go get ${CC_GO_PKG} instead of go get &lt;app_id&gt;. ",
+        "format": "String",
+        "type": "USER_DEFINED",
+        "exampleValue": "TODO",
+        "defaultValue": "",
+        "variants": ["go"],
+        "addons": ["ALL"]
+    },
+    {
+        "name": "CC_RUN_COMMAND",
+        "description": "Custom command to run your application.",
+        "format": "String",
+        "type": "USER_DEFINED",
+        "exampleValue": "TODO",
+        "defaultValue": "",
+        "variants": ["haskell"],
+        "addons": ["ALL"]
+    },
+    {
+        "name": "CC_SBT_TARGET_DIR",
+        "description": "Define where pick the bin to run.",
+        "format": "",
+        "type": "USER_DEFINED",
+        "exampleValue": "./target/universal/stage/bin",
+        "defaultValue": "",
+        "variants": ["gradle", "jar", "maven", "play1", "play2", "sbt", "war", "todo"],
+        "addons": ["ALL"]
+    },
+    {
+        "name": "CC_SBT_TARGET_BIN",
+        "description": "Define the bin to pick in the <code>CC_SBT_TARGET_DIR</code>.",
+        "format": "String",
+        "type": "USER_DEFINED",
+        "exampleValue": "",
+        "defaultValue": "The first bin found in the CC_SBT_TARGET_DIR.",
+        "variants": ["gradle", "jar", "maven", "play1", "play2", "sbt", "war", "todo"],
+        "addons": ["ALL"]
+    },
+    {
+        "name": "GRADLE_DEPLOY_GOAL",
+        "description": "Define which gradle goals to run during build.",
+        "format": "String",
+        "type": "USER_DEFINED",
+        "exampleValue": "TODO",
+        "defaultValue": "",
+        "variants": ["gradle", "jar", "maven", "play1", "play2", "sbt", "war", "todo"],
+        "addons": ["ALL"]
+    },
+    {
+        "name": "JAVA_VERSION",
+        "description": "Choose the JVM version between <code>7</code> to <code>11</code>.",
+        "format": ["11", "10", "9", "8", "7"],
+        "type": "USER_DEFINED",
+        "exampleValue": "",
+        "defaultValue": "8",
+        "variants": ["gradle", "jar", "maven", "play1", "play2", "sbt", "war", "todo"],
+        "addons": ["ALL"]
+    },
+    {
+        "name": "MAVEN_DEPLOY_GOAL",
+        "description": "Define which maven goals to run during build.",
+        "format": "String",
+        "type": "USER_DEFINED",
+        "exampleValue": "TODO",
+        "defaultValue": "",
+        "variants": ["gradle", "jar", "maven", "play1", "play2", "sbt", "war", "todo"],
+        "addons": ["ALL"]
+    },
+    {
+        "name": "NUDGE_APPID",
+        "description": "TODO",
+        "format": "String",
+        "type": "USER_DEFINED",
+        "exampleValue": "TODO",
+        "defaultValue": "",
+        "variants": ["gradle", "jar", "maven", "play1", "play2", "sbt", "war", "todo"],
+        "addons": ["ALL"]
+    },
+    {
+        "name": "PLAY1_VERSION",
+        "description": "Define which play1 version to use between <code>1.2</code>, <code>1.3</code>, <code>1.4</code> and <code>1.5</code>",
+        "format": ["1.2", "1.3", "1.4", "1.5"],
+        "type": "USER_DEFINED",
+        "exampleValue": "",
+        "defaultValue": "TODO",
+        "variants": ["gradle", "jar", "maven", "play1", "play2", "sbt", "war", "todo"],
+        "addons": ["ALL"]
+    },
+    {
+        "name": "SBT_DEPLOY_GOAL",
+        "description": "Define which sbt goals to run during build.",
+        "format": "String",
+        "type": "USER_DEFINED",
+        "exampleValue": "TODO",
+        "defaultValue": "stage",
+        "variants": ["gradle", "jar", "maven", "play1", "play2", "sbt", "war", "todo"],
+        "addons": ["ALL"]
+    },
+    {
+        "name": "CC_JAR_PATH",
+        "description": "Define the path to your jar.",
+        "format": "String",
+        "type": "USER_DEFINED",
+        "exampleValue": "TODO",
+        "defaultValue": "",
+        "variants": ["gradle", "jar", "maven", "play1", "play2", "sbt", "war", "todo"],
+        "addons": ["ALL"]
+    },
+    {
+        "name": "CC_EXTRA_JAVA_ARGS",
+        "description": "Define extra arguments to pass to 'java' for jars.",
+        "format": "String",
+        "type": "USER_DEFINED",
+        "exampleValue": "TODO",
+        "defaultValue": "",
+        "variants": ["gradle", "jar", "maven", "play1", "play2", "sbt", "war", "todo"],
+        "addons": ["ALL"]
+    },
+    {
+        "name": "CC_JAR_ARGS",
+        "description": "Define arguments to pass to the jar we launch.",
+        "format": "String",
+        "type": "USER_DEFINED",
+        "exampleValue": "TODO",
+        "defaultValue": "",
+        "variants": ["gradle", "jar", "maven", "play1", "play2", "sbt", "war", "todo"],
+        "addons": ["ALL"]
+    },
+    {
+        "name": "CC_NODE_START_GOAL",
+        "description": "Defines which node scripts to run",
+        "format": "String",
+        "type": "USER_DEFINED",
+        "exampleValue": "TODO",
+        "defaultValue": "start",
+        "variants": ["node"],
+        "addons": ["ALL"]
+    },
+    {
+        "name": "CC_RUN_COMMAND",
+        "description": "Define a custom command.",
+        "format": "String",
+        "type": "USER_DEFINED",
+        "exampleValue": "Todo",
+        "defaultValue": "",
+        "variants": ["node"],
+        "addons": ["ALL"]
+    },
+    {
+        "name": "NODE_BUILD_TOOL",
+        "description": "Choose your build tool between <code>npm</code> and <code>yarn</code> TODO",
+        "format": ["npm", "yarn"],
+        "type": "USER_DEFINED",
+        "exampleValue": "",
+        "defaultValue": "npm",
+        "variants": ["node"],
+        "addons": ["ALL"]
+    },
+    {
+        "name": "NPM_TOKEN",
+        "description": "Private repository token for npmjs.com",
+        "format": "String",
+        "type": "USER_DEFINED",
+        "exampleValue": "TODO",
+        "defaultValue": "",
+        "variants": ["node"],
+        "addons": ["ALL"]
+    },
+    {
+        "name": "ALWAYS_POPULATE_RAW_POST_DATA",
+        "description": "TODO",
+        "format": "String",
+        "type": "USER_DEFINED",
+        "exampleValue": "TODO",
+        "defaultValue": "",
+        "variants": ["php"],
+        "addons": ["ALL"]
+    },
+    {
+        "name": "CC_LDAP_CA_CERT",
+        "description": "TODO",
+        "format": "String",
+        "type": "USER_DEFINED",
+        "exampleValue": "TODO",
+        "defaultValue": "",
+        "variants": ["php"],
+        "addons": ["ALL"]
+    },
+    {
+        "name": "CC_WEBROOT",
+        "description": "Define the <code>DocumentRoot</code> of your project",
+        "format": "String",
+        "type": "USER_DEFINED",
+        "exampleValue": "TODO",
+        "defaultValue": "",
+        "variants": ["php"],
+        "addons": ["ALL"]
+    },
+    {
+        "name": "LDAPTLS_CACERT",
+        "description": "TODO",
+        "format": "String",
+        "type": "USER_DEFINED",
+        "exampleValue": "TODO",
+        "defaultValue": "",
+        "variants": ["php"],
+        "addons": ["ALL"]
+    },
+    {
+        "name": "ENABLE_REDIS",
+        "description": "TODO",
+        "format": "Boolean",
+        "type": "USER_DEFINED",
+        "exampleValue": "",
+        "defaultValue": "false",
+        "variants": ["php"],
+        "addons": ["ALL"]
+    },
+    {
+        "name": "HTTP_TIMEOUT",
+        "description": "Define a custom HTTP timeout",
+        "format": "Number",
+        "type": "USER_DEFINED",
+        "exampleValue": "",
+        "defaultValue": "180",
+        "variants": ["php"],
+        "addons": ["ALL"]
+    },
+    {
+        "name": "MAX_INPUT_VARS",
+        "description": "TODO",
+        "format": "String",
+        "type": "USER_DEFINED",
+        "exampleValue": "TODO",
+        "defaultValue": "",
+        "variants": ["php"],
+        "addons": ["ALL"]
+    },
+    {
+        "name": "PHP_VERSION",
+        "description": "Choose your PHP version between <code>5.6</code>, <code>7.0</code>, <code>7.1</code>, <code>7.2</code> and <code>7.3</code>",
+        "format": ["7.3", "7.2", "7.1", "7.0", "5.6", "TODO"],
+        "type": "USER_DEFINED",
+        "exampleValue": "",
+        "defaultValue": "7.0",
+        "variants": ["php"],
+        "addons": ["ALL"]
+    },
+    {
+        "name": "SESSION_TYPE",
+        "description": "Choose <code>redis</code> to use it as session store, TODO",
+        "format": "TODO",
+        "type": "USER_DEFINED",
+        "exampleValue": "TODO",
+        "defaultValue": "",
+        "variants": ["php"],
+        "addons": ["ALL"]
+    },
+    {
+        "name": "SOCKSIFY_EVERYTHING",
+        "description": "TODO",
+        "format": "TODO",
+        "type": "USER_DEFINED",
+        "exampleValue": "TODO",
+        "defaultValue": "",
+        "variants": ["php"],
+        "addons": ["ALL"]
+    },
+    {
+        "name": "USE_SOCKS",
+        "description": "TODO",
+        "format": "Boolean",
+        "type": "USER_DEFINED",
+        "exampleValue": "",
+        "defaultValue": "TODO",
+        "variants": ["php"],
+        "addons": ["ALL"]
+    },
+    {
+        "name": "CC_PYTHON_CELERY_LOGFILE",
+        "description": "Relative path to your Celery logfile: <code>/path/to/logdir</code> ",
+        "format": "String",
+        "type": "USER_DEFINED",
+        "exampleValue": "TODO",
+        "defaultValue": "",
+        "variants": ["python"],
+        "addons": ["ALL"]
+    },
+    {
+        "name": "CC_PYTHON_CELERY_MODULE",
+        "description": "Specify the Celery module you want to start: <code>mymodule</code>",
+        "format": "String",
+        "type": "USER_DEFINED",
+        "exampleValue": "TODO",
+        "defaultValue": "",
+        "variants": ["python"],
+        "addons": ["ALL"]
+    },
+    {
+        "name": "CC_PYTHON_CELERY_USE_BEAT",
+        "description": "Set to <code>true</code> to activate Beat support",
+        "format": "Boolean",
+        "type": "USER_DEFINED",
+        "exampleValue": "",
+        "defaultValue": "TODO",
+        "variants": ["python"],
+        "addons": ["ALL"]
+    },
+    {
+        "name": "CC_PYTHON_MODULE",
+        "description": "Select which module you want to start: <code>mymodule:app</code>. 'mymodule' refers to the path to the folder containing the app object. So a module called 'server.py' in a folder called 'app' would be used here as <code>app.server:app</code>",
+        "format": "String",
+        "type": "USER_DEFINED",
+        "exampleValue": "TODO",
+        "defaultValue": "",
+        "variants": ["python"],
+        "addons": ["ALL"]
+    },
+    {
+        "name": "CC_PYTHON_USE_GEVENT",
+        "description": "Set to <code>true</code> to enable Gevent",
+        "format": "Boolean",
+        "type": "USER_DEFINED",
+        "exampleValue": "",
+        "defaultValue": "TODO",
+        "variants": ["python"],
+        "addons": ["ALL"]
+    },
+    {
+        "name": "HARAKIRI",
+        "description": "Timeout (in seconds) after which an unresponding process is killed",
+        "format": "Number",
+        "type": "USER_DEFINED",
+        "exampleValue": "TODO",
+        "defaultValue": "<code>180</code>",
+        "variants": ["python"],
+        "addons": ["ALL"]
+    },
+    {
+        "name": "PYTHON_BACKEND",
+        "description": "Choose the Python backend to use between <code>uwsgi</code> and <code>gunicorn</code>",
+        "format": ["uwsgi", "gunicorn"],
+        "type": "USER_DEFINED",
+        "exampleValue": "TODO",
+        "defaultValue": "<code>uwsgi</code>",
+        "variants": ["python"],
+        "addons": ["ALL"]
+    },
+    {
+        "name": "PYTHON_VERSION",
+        "description": "Choose the Python version between <code>2.7</code> and <code>3.6</code>",
+        "format": ["2.6", "3.6"],
+        "type": "USER_DEFINED",
+        "exampleValue": "TODO",
+        "defaultValue": "",
+        "variants": ["python"],
+        "addons": ["ALL"]
+    },
+    {
+        "name": "PYTHON_SETUP_PY_GOAL",
+        "description": "Custom setup goal to be launch after <code>requirements.txt</code> have been installed",
+        "format": "String",
+        "type": "USER_DEFINED",
+        "exampleValue": "TODO",
+        "defaultValue": "",
+        "variants": ["python"],
+        "addons": ["ALL"]
+    },
+    {
+        "name": "STATIC_FILES_PATH",
+        "description": "Relative path to where your static files are stored: <code>path/to/static</code>",
+        "format": "String",
+        "type": "USER_DEFINED",
+        "exampleValue": "TODO",
+        "defaultValue": "",
+        "variants": ["python"],
+        "addons": ["ALL"]
+    },
+    {
+        "name": "STATIC_URL_PREFIX",
+        "description": "The URL path under which you want to serve static file, usually <code>/public</code>",
+        "format": "String",
+        "type": "USER_DEFINED",
+        "exampleValue": "TODO",
+        "defaultValue": "",
+        "variants": ["python"],
+        "addons": ["ALL"]
+    },
+    {
+        "name": "STATIC_WEBROOT",
+        "description": "TODO",
+        "format": "String",
+        "type": "USER_DEFINED",
+        "exampleValue": "TODO",
+        "defaultValue": "",
+        "variants": ["python"],
+        "addons": ["ALL"]
+    },
+    {
+        "name": "UWSGI_INTERCEPT_ERRORS",
+        "description": "TODO",
+        "format": "TODO",
+        "type": "USER_DEFINED",
+        "exampleValue": "TODO",
+        "defaultValue": "",
+        "variants": ["python"],
+        "addons": ["ALL"]
+    },
+    {
+        "name": "UWSGI_ASYNC",
+        "description": "Number of cores to use for uWSGI asynchronous/non-blocking modes",
+        "format": "Number",
+        "type": "USER_DEFINED",
+        "exampleValue": "TODO",
+        "defaultValue": "",
+        "variants": ["python"],
+        "addons": ["ALL"]
+    },
+    {
+        "name": "UWSGI_ASYNC_ENGINE",
+        "description": "Select the asynchronous engine for uWSGI (optional)",
+        "format": "String",
+        "type": "USER_DEFINED",
+        "exampleValue": "TODO",
+        "defaultValue": "",
+        "variants": ["python"],
+        "addons": ["ALL"]
+    },
+    {
+        "name": "WSGI_WORKERS",
+        "description": "Number of workers. (Defaut: automatically setup with the scaler size)",
+        "format": "Number",
+        "type": "USER_DEFINED",
+        "exampleValue": "TODO",
+        "defaultValue": "",
+        "variants": ["python"],
+        "addons": ["ALL"]
+    },
+    {
+        "name": "WSGI_THREADS",
+        "description": "Number of threads per worker. (Defaut: automatically setup with the scaler size)",
+        "format": "Number",
+        "type": "USER_DEFINED",
+        "exampleValue": "TODO",
+        "defaultValue": "",
+        "variants": ["python"],
+        "addons": ["ALL"]
+    },
+    {
+        "name": "WSGI_BUFFER_SIZE",
+        "description": "Buffer size (in bytes) for uploads.",
+        "format": "Number",
+        "type": "USER_DEFINED",
+        "exampleValue": "TODO",
+        "defaultValue": "<code>4096</code>",
+        "variants": ["python"],
+        "addons": ["ALL"]
+    },
+    {
+        "name": "WSGI_POST_BUFFERING",
+        "description": "Maximal size (in bytes) for the headers of a request. ",
+        "format": "Number",
+        "type": "USER_DEFINED",
+        "exampleValue": "TODO",
+        "defaultValue": "<code>4096</code>",
+        "variants": ["python"],
+        "addons": ["ALL"]
+    },
+    {
+        "name": "ENABLE_GZIP_COMPRESSION",
+        "description": "Set to <code>true</code> to gzip-compress the output of uwsgi",
+        "format": "Boolean",
+        "type": "USER_DEFINED",
+        "exampleValue": "",
+        "defaultValue": "TODO",
+        "variants": ["python"],
+        "addons": ["ALL"]
+    },
+    {
+        "name": "GZIP_TYPES",
+        "description": "Set the mime types to compress.",
+        "format": "String",
+        "type": "USER_DEFINED",
+        "exampleValue": "<code>text/* application/json application/xml application/javascript image/svg+xml</code>",
+        "defaultValue": "",
+        "variants": ["python"],
+        "addons": ["ALL"]
+    },
+    {
+        "name": "NGINX_READ_TIMEOUT",
+        "description": "Read timeout in seconds",
+        "format": "Number",
+        "type": "USER_DEFINED",
+        "exampleValue": "TODO",
+        "defaultValue": "<code>300</code>",
+        "variants": ["python"],
+        "addons": ["ALL"]
+    },
+    {
+        "name": "CC_RACKUP_SERVER",
+        "description": "The server to use for serving the ruby application",
+        "format": ["puma"],
+        "type": "USER_DEFINED",
+        "exampleValue": "TODO",
+        "defaultValue": "puma",
+        "variants": ["ruby"],
+        "addons": ["ALL"]
+    },
+    {
+        "name": "RACK_ENV",
+        "description": "TODO",
+        "format": "String",
+        "type": "USER_DEFINED",
+        "exampleValue": "TODO",
+        "defaultValue": "",
+        "variants": ["ruby"],
+        "addons": ["ALL"]
+    },
+    {
+        "name": "RAILS_ENV",
+        "description": "TODO",
+        "format": "String",
+        "type": "USER_DEFINED",
+        "exampleValue": "TODO",
+        "defaultValue": "",
+        "variants": ["ruby"],
+        "addons": ["ALL"]
+    },
+    {
+        "name": "RUBY_VERSION",
+        "description": "Choose the Ruby version to use.",
+        "format": ["TODO"],
+        "type": "USER_DEFINED",
+        "exampleValue": "TODO",
+        "defaultValue": "",
+        "variants": ["ruby"],
+        "addons": ["ALL"]
+    },
+    {
+        "name": "STATIC_FILES_PATH",
+        "description": "Relative path to where your static files are stored: <code>path/to/static</code>",
+        "format": "String",
+        "type": "USER_DEFINED",
+        "exampleValue": "TODO",
+        "defaultValue": "",
+        "variants": ["ruby"],
+        "addons": ["ALL"]
+    },
+    {
+        "name": "STATIC_URL_PREFIX",
+        "description": "The URL path under which you want to serve static file, usually <code>/public</code>",
+        "format": "String",
+        "type": "USER_DEFINED",
+        "exampleValue": "TODO",
+        "defaultValue": "",
+        "variants": ["ruby"],
+        "addons": ["ALL"]
+    },
+    {
+        "name": "STATIC_WEBROOT",
+        "description": "TODO",
+        "format": "String",
+        "type": "USER_DEFINED",
+        "exampleValue": "TODO",
+        "defaultValue": "",
+        "variants": ["ruby"],
+        "addons": ["ALL"]
+    },
+    {
+        "name": "NGINX_READ_TIMEOUT",
+        "description": "Read timeout in seconds",
+        "format": "Number",
+        "type": "USER_DEFINED",
+        "exampleValue": "TODO",
+        "defaultValue": "<code>300</code>",
+        "variants": ["ruby"],
+        "addons": ["ALL"]
+    },
+    {
+        "name": "RUSTUP_CHANNEL",
+        "description": "Require a specific channel version with <code>beta</code>, <code>nightly</code>, or a specific version like <code>1.13.0</code> ",
+        "format": "String",
+        "type": "USER_DEFINED",
+        "exampleValue": "TODO",
+        "defaultValue": "",
+        "variants": ["rust"],
+        "addons": ["ALL"]
+    },
+    {
+        "name": "CC_PHOENIX_ASSETS_DIR",
+        "description": "TODO",
+        "format": "String",
+        "type": "USER_DEFINED",
+        "exampleValue": "TODO",
+        "defaultValue": "",
+        "variants": ["elixir"],
+        "addons": ["ALL"]
+    },
+    {
+        "name": "CC_PHOENIX_DIGEST_GOAL",
+        "description": "Phoenix digest goal.",
+        "format": "String",
+        "type": "USER_DEFINED",
+        "exampleValue": "TODO",
+        "defaultValue": "phx.digest",
+        "variants": ["elixir"],
+        "addons": ["ALL"]
+    },
+    {
+        "name": "CC_PHOENIX_SERVER_GOAL",
+        "description": "Phoenix server goal.",
+        "format": "String",
+        "type": "USER_DEFINED",
+        "exampleValue": "TODO",
+        "defaultValue": "phx.server",
+        "variants": ["elixir"],
+        "addons": ["ALL"]
+    },
+    {
+        "name": "CC_PHOENIX_RUN_ECTO_MIGRATE",
+        "description": "Whether to run 'mix ecto.migrate' or not.",
+        "format": "String",
+        "type": "USER_DEFINED",
+        "exampleValue": "TODO",
+        "defaultValue": "true",
+        "variants": ["elixir"],
+        "addons": ["ALL"]
+    },
+    {
+        "name": "BUCKET_HOST",
+        "description": "Hostname of the bucket",
+        "format": "String",
+        "type": "INJECTED_BY_ADDON",
+        "exampleValue": "TODO",
+        "defaultValue": "",
+        "variants": ["ALL"],
+        "addons": ["fs-bucket"]
+    },
+    {
+        "name": "CC_FS_BUCKET",
+        "description": "Defines which bucket to mount on which path",
+        "format": "String",
+        "type": "INJECTED_BY_ADDON",
+        "exampleValue": "TODO",
+        "defaultValue": "",
+        "variants": ["ALL"],
+        "addons": ["fs-bucket"]
+    },
+    {
+        "name": "MONGODB_ADDON_DB",
+        "description": "TODO",
+        "format": "String",
+        "type": "INJECTED_BY_ADDON",
+        "exampleValue": "TODO",
+        "defaultValue": "",
+        "variants": ["ALL"],
+        "addons": ["mongodb"]
+    },
+    {
+        "name": "MONGODB_ADDON_PASSWORD",
+        "description": "TODO",
+        "format": "String",
+        "type": "INJECTED_BY_ADDON",
+        "exampleValue": "TODO",
+        "defaultValue": "",
+        "variants": ["ALL"],
+        "addons": ["mongodb"]
+    },
+    {
+        "name": "MONGODB_ADDON_USER",
+        "description": "TODO",
+        "format": "String",
+        "type": "INJECTED_BY_ADDON",
+        "exampleValue": "TODO",
+        "defaultValue": "",
+        "variants": ["ALL"],
+        "addons": ["mongodb"]
+    },
+    {
+        "name": "MYSQL_ADDON_DB",
+        "description": "TODO",
+        "format": "String",
+        "type": "INJECTED_BY_ADDON",
+        "exampleValue": "TODO",
+        "defaultValue": "",
+        "variants": ["ALL"],
+        "addons": ["mysql"]
+    },
+    {
+        "name": "MYSQL_ADDON_PASSWORD",
+        "description": "TODO",
+        "format": "String",
+        "type": "INJECTED_BY_ADDON",
+        "exampleValue": "TODO",
+        "defaultValue": "",
+        "variants": ["ALL"],
+        "addons": ["mysql"]
+    },
+    {
+        "name": "MYSQL_ADDON_ROLE",
+        "description": "TODO",
+        "format": "String",
+        "type": "INJECTED_BY_ADDON",
+        "exampleValue": "TODO",
+        "defaultValue": "",
+        "variants": ["ALL"],
+        "addons": ["mysql"]
+    },
+    {
+        "name": "MYSQL_ADDON_USER",
+        "description": "TODO",
+        "format": "String",
+        "type": "INJECTED_BY_ADDON",
+        "exampleValue": "TODO",
+        "defaultValue": "",
+        "variants": ["ALL"],
+        "addons": ["mysql"]
+    },
+    {
+        "name": "POSTGRESQL_ADDON_DB",
+        "description": "TODO",
+        "format": "String",
+        "type": "INJECTED_BY_ADDON",
+        "exampleValue": "TODO",
+        "defaultValue": "",
+        "variants": ["ALL"],
+        "addons": ["postgresql"]
+    },
+    {
+        "name": "POSTGRESQL_ADDON_PASSWORD",
+        "description": "TODO",
+        "format": "String",
+        "type": "INJECTED_BY_ADDON",
+        "exampleValue": "TODO",
+        "defaultValue": "",
+        "variants": ["ALL"],
+        "addons": ["postgresql"]
+    },
+    {
+        "name": "POSTGRESQL_ADDON_ROLE",
+        "description": "TODO",
+        "format": "String",
+        "type": "INJECTED_BY_ADDON",
+        "exampleValue": "TODO",
+        "defaultValue": "",
+        "variants": ["ALL"],
+        "addons": ["postgresql"]
+    },
+    {
+        "name": "POSTGRESQL_ADDON_USER",
+        "description": "TODO",
+        "format": "",
+        "type": "INJECTED_BY_ADDON",
+        "exampleValue": "TODO",
+        "defaultValue": "",
+        "variants": ["ALL"],
+        "addons": ["postgresql"]
+    },
+    {
+        "name": "REDIS_HOST",
+        "description": "TODO",
+        "format": "String",
+        "type": "INJECTED_BY_ADDON",
+        "exampleValue": "TODO",
+        "defaultValue": "",
+        "variants": ["ALL"],
+        "addons": ["redis"]
+    },
+    {
+        "name": "REDIS_PORT",
+        "description": "TODO",
+        "format": "Number",
+        "type": "INJECTED_BY_ADDON",
+        "exampleValue": "TODO",
+        "defaultValue": "",
+        "variants": ["ALL"],
+        "addons": ["redis"]
+    },
+    {
+        "name": "REDIS_PASSWORD",
+        "description": "TODO",
+        "format": "String",
+        "type": "INJECTED_BY_ADDON",
+        "exampleValue": "TODO",
+        "defaultValue": "",
+        "variants": ["ALL"],
+        "addons": ["redis"]
+    },
+    {
+        "name": "NEWRELIC_APPNAME",
+        "description": "TODO",
+        "format": "String",
+        "type": "INJECTED_BY_ADDON",
+        "exampleValue": "TODO",
+        "defaultValue": "",
+        "variants": ["ALL"],
+        "addons": ["newrelic"]
+    },
+    {
+        "name": "NEWRELIC_LICENSE",
+        "description": "TODO",
+        "format": "String",
+        "type": "INJECTED_BY_ADDON",
+        "exampleValue": "TODO",
+        "defaultValue": "",
+        "variants": ["ALL"],
+        "addons": ["newrelic"]
+    },
+    {
+        "name": "SOCKS_ADDON_HOST",
+        "description": "TODO",
+        "format": "",
+        "type": "INJECTED_BY_ADDON",
+        "exampleValue": "TODO",
+        "defaultValue": "",
+        "variants": ["ALL"],
+        "addons": ["socks"]
+    },
+    {
+        "name": "SOCKS_ADDON_PORT",
+        "description": "TODO",
+        "format": "Number",
+        "type": "INJECTED_BY_ADDON",
+        "exampleValue": "TODO",
+        "defaultValue": "",
+        "variants": ["ALL"],
+        "addons": ["socks"]
+    },
+    {
+        "name": "SOCKS_ADDON_PRIVATE_KEY",
+        "description": "TODO",
+        "format": "String",
+        "type": "INJECTED_BY_ADDON",
+        "exampleValue": "TODO",
+        "defaultValue": "",
+        "variants": ["ALL"],
+        "addons": ["socks"]
+    },
+    {
+        "name": "VPN_ADDON_CRT",
+        "description": "Client certificate",
+        "format": "String",
+        "type": "INJECTED_BY_ADDON",
+        "exampleValue": "TODO",
+        "defaultValue": "",
+        "variants": ["ALL"],
+        "addons": ["vpn"]
+    },
+    {
+        "name": "VPN_ADDON_CACRT",
+        "description": "Server CA certificate",
+        "format": "String",
+        "type": "INJECTED_BY_ADDON",
+        "exampleValue": "TODO",
+        "defaultValue": "",
+        "variants": ["ALL"],
+        "addons": ["vpn"]
+    },
+    {
+        "name": "VPN_ADDON_KEY",
+        "description": "Client certificate private key",
+        "format": "String",
+        "type": "INJECTED_BY_ADDON",
+        "exampleValue": "TODO",
+        "defaultValue": "",
+        "variants": ["ALL"],
+        "addons": ["vpn"]
+    },
+    {
+        "name": "VPN_ADDON_HOST",
+        "description": "Server host or IP address",
+        "format": "String",
+        "type": "INJECTED_BY_ADDON",
+        "exampleValue": "TODO",
+        "defaultValue": "",
+        "variants": ["ALL"],
+        "addons": ["vpn"]
+    },
+    {
+        "name": "VPN_ADDON_PORT",
+        "description": "Server port",
+        "format": "Number",
+        "type": "INJECTED_BY_ADDON",
+        "exampleValue": "TODO",
+        "defaultValue": "",
+        "variants": ["ALL"],
+        "addons": ["vpn"]
+    },
+    {
+        "name": "VPN_ADDON_TAKEY",
+        "description": "Pre-shared secret",
+        "format": "String",
+        "type": "INJECTED_BY_ADDON",
+        "exampleValue": "TODO",
+        "defaultValue": "",
+        "variants": ["ALL"],
+        "addons": ["vpn"]
+    },
+    {
+        "name": "VPN_TARGETS",
+        "description": "Comma-separated list of CIDRs for which you want the traffic to be\n    routed through the exit node",
+        "format": "String",
+        "type": "INJECTED_BY_ADDON",
+        "exampleValue": "TODO",
+        "defaultValue": "",
+        "variants": ["ALL"],
+        "addons": ["vpn"]
+    }
+]
