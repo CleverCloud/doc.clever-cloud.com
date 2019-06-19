@@ -103,6 +103,10 @@ You can use the [ARG](https://docs.docker.com/engine/reference/builder/#arg) ins
 Every environment variable defined for your application will be passed as a build environment variable using the `--build-arg=<ENV>`
 parameter during the `docker build`.
 
+## Environment variables
+
+Note that the environment variables you specify for your docker application either via the CLI or the console are available only during the run phase. If you need to use environment variables during build phase, use the process described in the **Build-time variables** section.
+
 ## Sample apps
 
 We provide a few examples of dockerized applications on Clever Cloud.
