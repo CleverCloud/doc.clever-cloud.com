@@ -142,19 +142,30 @@ you're not using an old version.
 ```java
 import com.amazonaws.ClientConfiguration;
 import com.amazonaws.HttpMethod;
+import com.amazonaws.auth.AWSStaticCredentialsProvider;
 import com.amazonaws.auth.BasicAWSCredentials;
-import com.amazonaws.services.s3.AmazonS3Client;
+import com.amazonaws.client.builder.AwsClientBuilder.EndpointConfiguration;
+import com.amazonaws.services.s3.AmazonS3;
+import com.amazonaws.services.s3.AmazonS3ClientBuilder;
 import java.net.URL;
 
 public class Main {
     public static void main(String[] argv) {
-        ClientConfiguration opts = new ClientConfiguration()
+        ClientConfiguration opts = new ClientConfiguration();
         opts.setSignerOverride("S3SignerType"); // Force the use of V2 signer
-        AmazonS3Client s3Client = new AmazonS3Client(new BasicAWSCredentials("<key>", "<secret>"), opts);
-        s3Client.setEndpoint("<host>");
-        // Use path style access to avoid java-related SNI issues
-        S3ClientOptions s3ClientOptions = new S3ClientOptions().withPathStyleAccess(true);
-        s3Client.setS3ClientOptions(s3ClientOptions);
+
+        EndpointConfiguration endpointConfiguration = new EndpointConfiguration("<host>", null);
+
+        AWSStaticCredentialsProvider credentialsProvider = new AWSStaticCredentialsProvider(
+            new BasicAWSCredentials("<key>", "<secret>"));
+
+        AmazonS3 s3Client = AmazonS3ClientBuilder.standard()
+            .withCredentials(credentialsProvider)
+            .withClientConfiguration(opts)
+            .withEndpointConfiguration(endpointConfiguration)
+            .withPathStyleAccessEnabled(Boolean.TRUE)
+            .build();
+        
         List<> buckets = s3Client.listBuckets();
 
         // handle results
@@ -164,7 +175,8 @@ public class Main {
         * you'll need to use 'HttpMethod.PUT' instead.
         * see doc : http://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/com/amazonaws/services/s3/AmazonS3.html#generatePresignedUrl-java.lang.String-java.lang.String-java.util.Date-com.amazonaws.HttpMethod-
         */
-        URL presignedUrl = s3Client.generatePresignedUrl("<YourBucket>", "<YourKey>", <expiration date>, HttpMethod.GET);
+        
+        URL presignedUrl = s3Client.generatePresignedUrl("<YourBucket>", "<YourFileKey>", <expiration date>, HttpMethod.GET);
     }
 }
 ```
