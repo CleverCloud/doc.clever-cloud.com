@@ -147,11 +147,15 @@ import com.amazonaws.auth.BasicAWSCredentials;
 import com.amazonaws.client.builder.AwsClientBuilder.EndpointConfiguration;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3ClientBuilder;
+import com.amazonaws.services.s3.model.Bucket;
 import java.net.URL;
+import java.util.List;
 
 public class Main {
     public static void main(String[] argv) {
         ClientConfiguration opts = new ClientConfiguration();
+        
+        // Only needed for "old" Cellar (V1)
         opts.setSignerOverride("S3SignerType"); // Force the use of V2 signer
 
         EndpointConfiguration endpointConfiguration = new EndpointConfiguration("<host>", null);
@@ -166,7 +170,7 @@ public class Main {
             .withPathStyleAccessEnabled(Boolean.TRUE)
             .build();
         
-        List<> buckets = s3Client.listBuckets();
+        List<Bucket> buckets = s3Client.listBuckets();
 
         // handle results
 
