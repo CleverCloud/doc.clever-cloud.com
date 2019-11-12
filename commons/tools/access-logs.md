@@ -54,11 +54,11 @@ w -> workerId (Sozu)
 r -> requestId (Sozu)
 ```
 
-# A Warp10 query example:
+# Warp10 queries examples:
 
 ```bash
-# retrieve all accesslogs since 30 seconds ago
-[ '<READTOKEN>' 'accessLogs' { } $NOW 30 s ] FETCH
+# retrieve all accesslogs from now to last 30s
+[ '<READTOKEN>' 'accessLogs' { } NOW 30 s ] FETCH
 
 # get all path
 <% DROP
@@ -72,4 +72,28 @@ FLATTEN
 
 # distinct|unique results
 UNIQUE
+```
+
+```bash
+# Get all application status code  for the last hour
+[ '<READTOKEN>' 'accessLogs' { 'app_id' '<APPLICATION ID>' } NOW 1 h ] FETCH
+<%
+  DROP
+  'gts' STORE
+  // output new GTS
+  NEWGTS
+  $gts 
+  <%
+    DUP
+    // store the timestamp
+    0 GET 'ts' STORE
+    // store the status code
+    -1 GET JSON-> 'sC' GET 'sC' STORE
+    // Keep the same labels in the output GTS than in the input ones
+    $gts LABELS RELABEL
+    // Add timestamp and status code value to the output GTS
+    [ $ts NaN NaN NaN $sC ] ADDVALUE
+  %>
+  FOREACH
+%> LMAP
 ```
