@@ -7,7 +7,7 @@ tags:
 
 # Access Logs analysis
 
-All your applications access logs are pushed to Warp10. You are now able to process them directly on the console on the Metrics tab of your applications.
+All your applications access logs are pushed to Warp10. You are now able to process them directly in the console in the Metrics tab of your applications.
 
 # Access Log model
 
