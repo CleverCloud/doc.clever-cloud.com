@@ -56,6 +56,8 @@ r -> requestId (Sozu)
 
 # Warp10 queries examples:
 
+The main ways to use `accessLogs` data are to `FETCH` over its and to get interesting values by a JSON processing.
+
 ```bash
 # retrieve all accesslogs from now to last 30s
 [ '<READTOKEN>' 'accessLogs' { } NOW 30 s ] FETCH
@@ -73,6 +75,10 @@ FLATTEN
 # distinct|unique results
 UNIQUE
 ```
+
+A convenient way to integrate the intercepted data in a workflow, is to use the power of warp10. Hence, it is often a good idea to use the GTS format to be able to apply all GTS treatment on the output.
+
+In the following example, we get the `accessLogs` status codes and create a GTS as output to be able to use some FILTER or other treatment on it in a second time.
 
 ```bash
 # Get all application status code  for the last hour
