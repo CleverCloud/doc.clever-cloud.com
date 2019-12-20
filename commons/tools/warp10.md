@@ -20,7 +20,7 @@ A GTS may contain some values which have the following models : `[ timestamp lon
 
 The `warpscript` langage is the langage run by warp10. It is a **reverse polish notation** with the notion of **stack**
 
-> The metrics ovh Team build an other way to request warp10: https://github.com/ovh/tsl/
+> The metrics ovh team build an other way to request warp10: https://github.com/ovh/tsl/
 
 > Notice that the timestamp is in **milliseconds**
 
