@@ -78,13 +78,16 @@ We had fixed some limits in our Warp10 database. For each we have a *soft* and a
 
 | Warpscript Operator | Warp10 limit description | soft limit | hard limit |
 |:-:|:-:|:-:|:-:|
-| [MAXGTS](https://www.warp10.io/doc/MAXGTS) | Maximum number of GTS which can be fetched | 30e6 | 50e6 |
-| [LIMIT](https://www.warp10.io/doc/LIMIT) | maximum number of datapoints which can be fetched during a script execution | 30e6 | 50e6 |
+| [MAXGTS](https://www.warp10.io/doc/MAXGTS) | Maximum number of GTS which can be fetched | 10e5 | 5e7 |
+| [LIMIT](https://www.warp10.io/doc/LIMIT) | maximum number of datapoints which can be fetched during a script execution | 10e6 | 10e7 |
 | [MAXBUCKETS](https://www.warp10.io/doc/MAXBUCKETS) | maximum number of buckets which can be created by a call to BUCKETIZE |  |  |
-| [MAXDEPTH](https://www.warp10.io/doc/MAXDEPTH) | maximum depth (number of levels) of the execution stack |  |  |
-| [MAXLOOP](https://www.warp10.io/doc/MAXLOOP) | maximum number of **milliseconds** which can be spent in a loop |  |  |
-| [MAXOPS](https://www.warp10.io/doc/MAXOPS) | maximum number of operations which can be performed during a single WarpScript execution | 30e6 | 50e6 |
-| [MAXSYMBOLS](https://www.warp10.io/doc/MAXSYMBOLS) | maximum number of simultaneous symbols which can be defined on the stack during a single WarpScript execution |  |  |
+| [MAXDEPTH](https://www.warp10.io/doc/MAXDEPTH) | maximum depth (number of levels) of the execution stack | 5e3 | 5e3 |
+| [MAXLOOP](https://www.warp10.io/doc/MAXLOOP) | maximum number of **milliseconds** which can be spent in a loop | 5e3 | 10e3 |
+| [MAXOPS](https://www.warp10.io/doc/MAXOPS) | maximum number of operations which can be performed during a single WarpScript execution | 5e6 | 5e7 |
+| [MAXSYMBOLS](https://www.warp10.io/doc/MAXSYMBOLS) | maximum number of simultaneous symbols which can be defined on the stack during a single WarpScript execution | 64 | 256 |
+| [MAXGEOCELLS](https://www.warp10.io/doc/MAXGEOCELLS) | maximum number of cells a GEOSHAPE  | 10e3 | 10e4 |
+| [MAXPIXELS](https://www.warp10.io/doc/MAXPIXELS) | maximum size (in pixels) of images which can be created by PGraphics | 10e5 | 10e5 |
+| [MAXRECURSION](https://www.warp10.io/doc/MAXRECURSION) | maximum nesting depth of macro calls | 16 | 32 |
 
 > **NOTICE THAT OPERATIONS OVER SOFT LIMITS MAY BE REALLY  INTENSIVES AND SLOWS. THEY SHOULDN'T NOT BE USED**
 
