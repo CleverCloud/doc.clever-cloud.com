@@ -72,6 +72,33 @@ The `warpscript` langage is the langage run by warp10. It is a **reverse polish 
 
 > [Warp1O documentation is availlable in their website](https://www.warp10.io/doc/reference)
 
+## technicals constraints
+
+We had fixed some limits in our Warp10 database. For each we have a *soft* and a *hard* one. To pass over the *soft* on. The stack must be [`AUTHENTICATE`](https://www.warp10.io/doc/AUTHENTICATE) and the limit must be **explicitly** set under the maximum define by the *hard*.
+
+| Warpscript Operator | Warp10 limit description | soft limit | hard limit |
+|:-:|:-:|:-:|:-:|
+| [MAXGTS](https://www.warp10.io/doc/MAXGTS) | Maximum number of GTS which can be fetched | 30e6 | 50e6 |
+| [LIMIT](https://www.warp10.io/doc/LIMIT) | maximum number of datapoints which can be fetched during a script execution | 30e6 | 50e6 |
+| [MAXBUCKETS](https://www.warp10.io/doc/MAXBUCKETS) | maximum number of buckets which can be created by a call to BUCKETIZE |  |  |
+| [MAXDEPTH](https://www.warp10.io/doc/MAXDEPTH) | maximum depth (number of levels) of the execution stack |  |  |
+| [MAXLOOP](https://www.warp10.io/doc/MAXLOOP) | maximum number of **milliseconds** which can be spent in a loop |  |  |
+| [MAXOPS](https://www.warp10.io/doc/MAXOPS) | maximum number of operations which can be performed during a single WarpScript execution | 30e6 | 50e6 |
+| [MAXSYMBOLS](https://www.warp10.io/doc/MAXSYMBOLS) | maximum number of simultaneous symbols which can be defined on the stack during a single WarpScript execution |  |  |
+
+> **NOTICE THAT OPERATIONS OVER SOFT LIMITS MAY BE REALLY  INTENSIVES AND SLOWS. THEY SHOULDN'T NOT BE USED**
+
+### Usage:
+
+An example where it is needed to increase the fetch limit by the `LIMIT` function
+
+```warpscript
+'<READTOKEN>' AUTHENTICATE
+50e6 TOLONG LIMIT
+// Fetch on the 'accessLogs' class for your application id as labels
+[ '<READTOKEN>' 'accessLogs' { 'app_id' '<APP_ID>'  } NOW 1 w ] FETCH
+```
+
 ## queries examples:
 
 The main ways to use `accessLogs` data are to `FETCH` over its and to get interesting values by a JSON processing.
