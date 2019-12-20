@@ -80,7 +80,7 @@ We had fixed some limits in our Warp10 database. For each we have a *soft* and a
 |:-:|:-:|:-:|:-:|
 | [MAXGTS](https://www.warp10.io/doc/MAXGTS) | Maximum number of GTS which can be fetched | 10e5 | 5e7 |
 | [LIMIT](https://www.warp10.io/doc/LIMIT) | maximum number of datapoints which can be fetched during a script execution | 10e6 | 10e7 |
-| [MAXBUCKETS](https://www.warp10.io/doc/MAXBUCKETS) | maximum number of buckets which can be created by a call to BUCKETIZE |  |  |
+| [MAXBUCKETS](https://www.warp10.io/doc/MAXBUCKETS) | maximum number of buckets which can be created by a call to BUCKETIZE | 10e5 | 50e5 |
 | [MAXDEPTH](https://www.warp10.io/doc/MAXDEPTH) | maximum depth (number of levels) of the execution stack | 5e3 | 5e3 |
 | [MAXLOOP](https://www.warp10.io/doc/MAXLOOP) | maximum number of **milliseconds** which can be spent in a loop | 5e3 | 10e3 |
 | [MAXOPS](https://www.warp10.io/doc/MAXOPS) | maximum number of operations which can be performed during a single WarpScript execution | 5e6 | 5e7 |
