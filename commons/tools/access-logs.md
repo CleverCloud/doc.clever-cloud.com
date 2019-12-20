@@ -54,16 +54,35 @@ w -> workerId (Sozu)
 r -> requestId (Sozu)
 ```
 
-# Warp10 queries examples:
+# Warp10 
+
+## Main concepts :
+
+Warp10 is a time series database. The notion of `class`, `labels`, `longitude`, `latitude`, `altitude` and `value` are used.
+
+A GTS is a GeoTime Serie define by a `class` and somes `labels`. They are indexed and used to quickly retrived the data.
+
+`labels` is a kind of dictionnary. That is called a **map** under the warp10 terminology
+
+A GTS may contain some values which have the following models : `[ timestamp longitude latitude altitude value ]`
+
+The `warpscript` langage is the langage run by warp10. It is a **reverse polish notation** with the notion of **stack**
+
+> Notice that the timestamp is in **milliseconds**
+
+> [Warp1O documentation is availlable in their website](https://www.warp10.io/doc/reference)
+
+## queries examples:
 
 The main ways to use `accessLogs` data are to `FETCH` over its and to get interesting values by a JSON processing.
 
-```bash
-# retrieve all accesslogs from now to last 30s
-[ '<READTOKEN>' 'accessLogs' { } NOW 30 s ] FETCH
+```warpscript
+// Fetch on the 'accessLogs' class for your application id as labels
+[ '<READTOKEN>' 'accessLogs' { 'app_id' '<APP_ID>'  } NOW 30 s ] FETCH
 
-# get all path
-<% DROP
+// get the path field
+<% 
+    DROP
     VALUES
     <% DROP
         JSON->
@@ -72,7 +91,7 @@ The main ways to use `accessLogs` data are to `FETCH` over its and to get intere
 %> LMAP
 FLATTEN
 
-# distinct|unique results
+// distinct|unique results
 UNIQUE
 ```
 
@@ -80,9 +99,9 @@ A convenient way to integrate the intercepted data in a workflow, is to use the 
 
 In the following example, we get the `accessLogs` status codes and create a GTS as output to be able to use some FILTER or other treatment on it in a second time.
 
-```bash
-# Get all application status code  for the last hour
-[ '<READTOKEN>' 'accessLogs' { 'app_id' '<APPLICATION ID>' } NOW 1 h ] FETCH
+```warpscript
+// Get all application status code  for the last hour
+[ '<READTOKEN>' 'accessLogs' { 'app_id' '<APPLICATION ID>' } NOW 10 m ] FETCH
 <%
   DROP
   'gts' STORE
