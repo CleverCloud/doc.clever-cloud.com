@@ -8,37 +8,37 @@ tags:
 
 # Warp10 
 
-## Main concepts :
+## Main concepts
 
 Warp10 is a time series database. The notion of `class`, `labels`, `longitude`, `latitude`, `altitude` and `value` are used.
 
-A GTS is a GeoTime Serie define by a `class` and somes `labels`. They are indexed and used to quickly retrived the data.
+A GTS is a GeoTime Serie defined by a `class` and somes `labels`. They are indexed and used to quickly retrieved the data.
 
-`labels` is a kind of dictionnary. That is called a **map** under the warp10 terminology
+`labels` is a kind of dictionnary. That is called a **map** under the warp10 terminology.
 
 A GTS may contain some values which have the following models : `[ timestamp longitude latitude altitude value ]`
 
-The `warpscript` langage is the langage run by warp10. It is a **reverse polish notation** with the notion of **stack**
+Warp10 uses [warpscript](https://www.warp10.io/content/03_Documentation/04_WarpScript/01_Concepts). It's a **stack** based **language using reverse polish notation**.
 
-> The metrics ovh team build an other way to request warp10: https://github.com/ovh/tsl/
+> The metrics ovh team built an other way to request warp10: https://github.com/ovh/tsl/
 
 > Notice that the timestamp is in **milliseconds**
 
-> [Warp1O documentation is availlable in their website](https://www.warp10.io/doc/reference)
+> [Warp1O documentation is availlable on their website](https://www.warp10.io/doc/reference)
 
 ## Endpoint
 
-The clevercloud warp10 endpoint is:
+The Clever Cloud warp10 endpoint is:
 
 ```
 https://c1-warp10-clevercloud-customers.services.clever-cloud.com/api/v0
 ```
 
-You can find some documentation about endpoint gateway [here](https://www.warp10.io/content/03_Documentation/03_Interacting_with_Warp_10/01_Introduction).
+You can find documentation about endpoint gateway [here](https://www.warp10.io/content/03_Documentation/03_Interacting_with_Warp_10/01_Introduction).
 
 > You can find the endpoint and an available token under the `metric` tab of your application
 
-Hence, you can request our warp10 platform by your own script. With a curl for expample :
+You can query our warp10 platform with your own script. Here's a curl example :
 
 ```bash
   curl -T <Path/to/a/warpscript_file> https://c1-warp10-clevercloud-customers.services.clever-cloud.com/api/v0/exec
@@ -52,9 +52,9 @@ Tokens are based on your application with the notion of producer and owner. Henc
 
 You can find a 5 days available token in the `metric` tab of your application.
 
-## technicals constraints
+## Technical constraints
 
-We had fixed some limits in our Warp10 database. For each we have a *soft* and a *hard* one. To pass over the *soft* on. The stack must be [`AUTHENTICATE`](https://www.warp10.io/doc/AUTHENTICATE) and the limit must be **explicitly** set under the maximum define by the *hard*.
+The followings limits are defined in warp10. The **soft** one can be passed over by an [`AUTHENTICATE`](https://www.warp10.io/doc/AUTHENTICATE) operation. The **hard** one is unsurpassable.
 
 | Warpscript Operator | Warp10 limit description | soft limit | hard limit |
 |:-:|:-:|:-:|:-:|
@@ -69,7 +69,7 @@ We had fixed some limits in our Warp10 database. For each we have a *soft* and a
 | [MAXPIXELS](https://www.warp10.io/doc/MAXPIXELS) | maximum size (in pixels) of images which can be created by PGraphics | 10e5 | 10e5 |
 | [MAXRECURSION](https://www.warp10.io/doc/MAXRECURSION) | maximum nesting depth of macro calls | 16 | 32 |
 
-> **NOTICE THAT OPERATIONS OVER SOFT LIMITS MAY BE REALLY  INTENSIVES AND SLOWS. THEY SHOULDN'T NOT BE USED**
+> **NOTICE THAT OPERATIONS OVER SOFT LIMITS MAY BE REALLY INTENSIVES. THEY SHOULD NOT BE USED**
 
 ### Usage:
 
@@ -84,6 +84,6 @@ An example where it is needed to increase the fetch limit by the `LIMIT` functio
 
 # Quantum
 
-Quantum is a web tool use to run some warpscript. You can access to it from your metrics interface.
+Quantum is a web tool used to run some warpscript. You can access to it from your metrics interface.
 
-It provide the path to the clevercloud warp10 gateway and let you explore your data.
+It provide the path to the Clever Cloud warp10 gateway and let you explore your data.

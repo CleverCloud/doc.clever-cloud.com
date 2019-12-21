@@ -64,7 +64,7 @@ Access logs are defined in the `'accessLogs'` Warp10 class and there are three W
 * app_id;
 * adc (reverse proxy used).
 
-To reduce space used to store access logs, we defined a light key-value model as following:
+To reduce space used to store access logs, we defined the following key-value model:
 
 ```bash
 t -> timestamp
@@ -102,9 +102,9 @@ r -> requestId (Sozu)
 ```
 
 
-## queries examples:
+## Queries examples:
 
-The main ways to use `accessLogs` data are to `FETCH` over its and to get interesting values by a JSON processing.
+The main ways to use `accessLogs` data is to `FETCH` over it and get interesting values by a JSON processing.
 
 ```warpscript
 // Fetch on the 'accessLogs' class for your application id as labels
@@ -125,9 +125,9 @@ FLATTEN
 UNIQUE
 ```
 
-A convenient way to integrate the intercepted data in a workflow, is to use the power of [warp10](/doc/tools/warp10/). Hence, it is often a good idea to use the GTS format to be able to apply all GTS treatment on the output.
+AA convenient way to integrate the intercepted data in a workflow is to use [warpscript](https://www.warp10.io/content/03_Documentation/04_WarpScript/01_Concepts). It is a good idea to use the GTS format to be able to apply all GTS transformation on the output.
 
-In the following example, we get the `accessLogs` status codes and create a GTS as output to be able to use some FILTER or other treatment on it in a second time.
+In the following example, we get the `accessLogs` status codes and create a GTS as output to be able to use FILTER or any other transformation on it a second time.
 
 ```warpscript
 // Get all application status code  for the last hour
