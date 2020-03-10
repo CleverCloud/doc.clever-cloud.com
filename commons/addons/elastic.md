@@ -57,7 +57,12 @@ Learn more on [APM official documentation](https://www.elastic.co/guide/en/apm/g
 
 ### How to setup APM
 
-Any applications linked to the APM application will have the right credentials and APM endpoint automatically avaiable as environment variables. These variables can be picked up automatically by the APM agent you are using in your application. As such everything should work automatically.
+Any applications linked to the APM application will have the right credentials and APM endpoint automatically available as environment variables. These variables can be picked up automatically by the APM agent you are using in your application. As such everything should work automatically.
+
+
+### APM Server custom configuration
+
+The APM server is deployed as an application. As such it's configured as an application. It's default pre run hook is set to `CC_PRE_RUN_HOOK="curl https://api.clever-cloud.com/v2/providers/es-addon/apm-server-setup/7 |sh"`. You can change the URL to point to your own custom configuration. A configuration example for RUM activation can be found here:https://gist.githubusercontent.com/ldoguin/d7aa23fd44cfaed04165275aaf229a3c/raw/93aa1d39d8c1e444969ae114dbcfe0a5868f8d84/es-apm-serverconfig.sh
 
 ## Backups
 
