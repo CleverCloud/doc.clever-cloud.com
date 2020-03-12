@@ -63,7 +63,7 @@ Any applications linked to the APM application will have the right credentials a
 
 You have multiple ways to use the APM agent. You can either add it in your dependencies and it should work out of the box or you can attach an agent to the JVM. If you prefer the last option, you have to define the following environment variable to attach the agent to the JVM: `CC_JAVA_APM_AGENT_ENABLE=true`.
 
-The agent will list all JVM on the system and attach on all of them, only once. If you know that your application will spawn multiple JVM processes (not threads) over time and you want the agent to also monitor those processes, you can add this environment variable: `CC_JAVA_APM_AGENT_CONTINUOUS=true`.
+The agent will list all JVMs on the system and attach to all of them, only once. If you know that your application will spawn multiple JVM processes (not threads) over time and you want the agent to also monitor those processes, you can add this environment variable: `CC_JAVA_APM_AGENT_CONTINUOUS=true`.
 
 The agent will periodically scan for JVM processes and will attach to them if needed.
 
@@ -168,5 +168,4 @@ Backups can be managed under the *Backup* tab of the elastic add-on. You can res
           </tr>        
     </tbody>
 </table>
-
 
