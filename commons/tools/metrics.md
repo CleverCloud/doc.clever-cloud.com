@@ -75,7 +75,7 @@ Access logs are defined in the `'accessLogs'` Warp10 class and there are three W
   <div class=“panel-body”>
   <ul>
     <li>Shared plan addons do not provide access logs</li>
-    <li>In case of a direct access to addons. They is no access logs recorded</li>
+    <li>There are no recorded access logs in case of a direct access to an add-on</li>
   </ul>
   </div>
 </div>
