@@ -403,9 +403,9 @@ So you can alter the build&start process for your application.
     <td></td>
   </tr>
   <tr>
-    <td>NPM_REGISTRY</td>
-    <td>The host of your private repository, available values: `npmjs` (registry.npmjs.org) or `github` (npm.pkg.github.com)</td>
-    <td>npmjs</td>
+    <td>CC_NPM_REGISTRY</td>
+    <td>The host of your private repository, available values: `github` or a full url.</td>
+    <td>registry.npmjs.org</td>
     <td></td>
   </tr>
   <tr>
