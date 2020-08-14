@@ -203,11 +203,11 @@ Then, the .npmrc file will be created automatically for your application, with t
 ```
 
 The default registry url is npmjs (registry.npmjs.org). We also support github packages (npm.pkg.github.com), you 
-can change the registry with the NPM_REGISTRY environment variable.
+can change the registry with the CC_NPM_REGISTRY environment variable.
 
 ``` javascript
 Example:
-NPM_REGISTRY=github
+CC_NPM_REGISTRY=github
 NPM_TOKEN=00000000-0000-0000-0000-000000000000
 ```
 ``` javascript
