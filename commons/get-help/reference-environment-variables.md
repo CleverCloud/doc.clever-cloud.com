@@ -393,7 +393,7 @@ So you can alter the build&start process for your application.
   <tr>
     <td>CC_RUN_COMMAND</td>
     <td>Define a custom command.</td>
-    <td>Exemple for Meteor: `node .build/bundle/main.js &lt;options&gt;`</td>
+    <td>Example for Meteor: `node .build/bundle/main.js &lt;options&gt;`</td>
     <td></td>
   </tr>
   <tr>
@@ -813,6 +813,43 @@ So you can alter the build&start process for your application.
     <td>CC_RUST_FEATURES</td>
     <td>The list of features to enable</td>
     <td></td>
+    <td></td>
+  </tr>
+</table>
+
+### Dotnet
+
+[Dotnet Documentation](/doc/dotnet/)
+
+<table class="table table-bordered" style="text-align:center">
+  <tr>
+    <th><center>Name</center></th>
+    <th><center>Description</center></th>
+    <th><center>Default value</center></th>
+    <th><center>Read Only</center></th>
+  </tr>
+  <tr>
+    <td>CC_DOTNET_VERSION</td>
+    <td>The version of .NET Core. Only version 3.1 is available at the moment.</td>
+    <td>3.1</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>CC_DOTNET_CSPROJ</td>
+    <td>The name of your project file to use for the build. Example : `app.csproj`</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>CC_DOTNET_TFM</td>
+    <td>Compiles for a specific framework. The framework must be defined in the project file. Example : `netcoreapp3.1`</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>CC_DOTNET_PROFILE</td>
+    <td>Override the build configuration settings in your project.</td>
+    <td>Release</td>
     <td></td>
   </tr>
 </table>
