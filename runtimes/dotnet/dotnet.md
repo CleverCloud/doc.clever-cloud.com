@@ -28,6 +28,10 @@ properties to setup.
 
 .NET Core is a cross-platform version of .NET for building websites, services, and console apps.
 
+## Dotnet version
+
+The version used on Clever Cloud is `3.1`, so you can deploy applications for the two current LTS versions as shown on this [page](https://dotnet.microsoft.com/download/dotnet-core). No support will be provided for end-of-life versions.
+
 ## Create an application
 
 Refer to the page [Deploy an application on Clever Cloud](/doc/clever-cloud-overview/add-application/).
@@ -36,8 +40,8 @@ Refer to the page [Deploy an application on Clever Cloud](/doc/clever-cloud-over
 
 Be sure that:
 
-* you have pushed in <b>master branch</b>
-* you listen on <b>port 8080</b>
+* you have pushed in `master branch`
+* you listen on `port 8080`, by default each Dotnet application is created with the `ASPNETCORE_URLS="http://0.0.0.0:8080"` environment variable.
 * you have committed the different files of your project and the corresponding `.csproj` file
 
 ## Requirements
@@ -53,10 +57,10 @@ No additional configuration is required (unless multiple .csproj files or target
 
 ### Multiple csproj files in the repository
 
-If multiple `.csproj` files are present in your repository, you can specify the file to use with the 
+If multiple `.csproj` files are present in your repository, you can specify the file to use (without the .csproj extension) with the 
 `CC_DOTNET_CSPROJ` environment variable.
 ```sh
-CC_DOTNET_CSPROJ=TodoApi2.csproj
+CC_DOTNET_CSPROJ=TodoApi2
 ```
 
 ### Multiple binary targets
@@ -99,7 +103,7 @@ Compiled dependencies are cached by default to speed up deployments. You can
 disable dependencies caching completely by removing the `CC_CACHE_DEPENDENCIES`
 environment variable. If you want to rebuild your application from scratch,
 you can select "rebuild and restart" from the console or launch `clever
-restart --without-cache` from CLI.
+restart --without-cache` from [CLI](https://github.com/CleverCloud/clever-tools)
 
 ### The configuration to publish for
 `Release` by default, you can use the `CC_DOTNET_PROFILE` environment variable to change this configuration.
@@ -110,11 +114,6 @@ CC_DOTNET_PROFILE=Debug
 ### Private dependencies
 
 Support for private dependencies will be available soon.
-
-### Dotnet version
-
-Only version 3.1 is available at the moment (`3.1.106`). It will be possible to choose different versions in the future
-with the `CC_DOTNET_VERSION` environment variable.
 
 ## Deploy on Clever Cloud
 

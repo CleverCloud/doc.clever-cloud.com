@@ -829,14 +829,8 @@ So you can alter the build&start process for your application.
     <th><center>Read Only</center></th>
   </tr>
   <tr>
-    <td>CC_DOTNET_VERSION</td>
-    <td>The version of .NET Core. Only version 3.1 is available at the moment.</td>
-    <td>3.1</td>
-    <td></td>
-  </tr>
-  <tr>
     <td>CC_DOTNET_CSPROJ</td>
-    <td>The name of your project file to use for the build. Example : `app.csproj`</td>
+    <td>The name of your project file to use for the build, without the .csproj extension.</td>
     <td></td>
     <td></td>
   </tr>
