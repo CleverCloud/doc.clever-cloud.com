@@ -6,6 +6,7 @@ tags:
 keywords:
 - dotnet
 - csproj
+- fsproj
 ---
 
 <div class="panel panel-warning">
@@ -40,9 +41,10 @@ Refer to the page [Deploy an application on Clever Cloud](/doc/clever-cloud-over
 
 Be sure that:
 
-* you have pushed in `master branch`
-* you listen on `port 8080`, by default each Dotnet application is created with the `ASPNETCORE_URLS="http://0.0.0.0:8080"` environment variable.
-* you have committed the different files of your project and the corresponding `.csproj` file
+* You have pushed in `master branch`.
+* You listen on `port 8080`, by default each Dotnet application is created with the `ASPNETCORE_URLS="http://0.0.0.0:8080"` environment variable.
+* You have committed the different files of your project and the corresponding project file (`.csproj`, `.fsproj`...).
+* If you have multiple projects in the same repository (Monorepo), you can use the APP_FOLDER environment variable to set the correct project path. See the list of environment variables [here](https://www.clever-cloud.com/doc/get-help/reference-environment-variables/).
 
 ## Requirements
 
@@ -53,19 +55,19 @@ During deployment, the `TodoApi.csproj` file and the target framework `netcoreap
 dotnet publish --framework netcoreapp3.1 --configuration Release
 ```
 
-No additional configuration is required (unless multiple .csproj files or target frameworks are present, see the documentation below).
+No additional configuration is required (unless multiple project files or target frameworks are present, see the documentation below).
 
-### Multiple csproj files in the repository
+### Multiple project files in the repository
 
-If multiple `.csproj` files are present in your repository, you can specify the file to use (without the .csproj extension) with the 
-`CC_DOTNET_CSPROJ` environment variable.
+If multiple project files are present in your repository, you can specify the file to use (without the .*proj extension) with the 
+`CC_DOTNET_PROJ` environment variable.
 ```sh
-CC_DOTNET_CSPROJ=TodoApi2
+CC_DOTNET_PROJ=TodoApi2
 ```
 
 ### Multiple binary targets
 
-If your `.csproj` file defines multiple targets, like :
+If your project file defines multiple targets, like :
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk.Web">
@@ -84,7 +86,7 @@ CC_DOTNET_TFM=netcoreapp3.1
 
 ### Dependencies
 
-Make sure to list all your dependencies in your `.csproj` file. For example:
+Make sure to list all your dependencies in your project file. For example:
 
 ```xml
   ...
