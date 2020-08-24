@@ -7,6 +7,7 @@ keywords:
 - dotnet
 - csproj
 - fsproj
+- vbproj
 ---
 
 <div class="panel panel-warning">
@@ -25,10 +26,6 @@ You do not need to change a lot in your application, the *requirements* will
 help you to configure your apps with some mandatory files to add, and
 properties to setup.
 
-## Overview
-
-.NET Core is a cross-platform version of .NET for building websites, services, and console apps.
-
 ## Dotnet version
 
 The version used on Clever Cloud is `3.1`, so you can deploy applications for the two current LTS versions as shown on this [page](https://dotnet.microsoft.com/download/dotnet-core). No support will be provided for end-of-life versions.
@@ -43,8 +40,7 @@ Be sure that:
 
 * You have pushed in `master branch`.
 * You listen on `port 8080`, by default each Dotnet application is created with the `ASPNETCORE_URLS="http://0.0.0.0:8080"` environment variable.
-* You have committed the different files of your project and the corresponding project file (`.csproj`, `.fsproj`...).
-* If you have multiple projects in the same repository (Monorepo), you can use the APP_FOLDER environment variable to set the correct project path. See the list of environment variables [here](https://www.clever-cloud.com/doc/get-help/reference-environment-variables/).
+* You have committed the different files of your project and the corresponding project file (`.csproj`, `.fsproj` or `.vbproj`). If the project file is not at the root of the repository, you can use the APP_FOLDER environment variable. See the list of environment variables [here](https://www.clever-cloud.com/doc/get-help/reference-environment-variables/).
 
 ## Requirements
 

@@ -829,8 +829,8 @@ So you can alter the build&start process for your application.
     <th><center>Read Only</center></th>
   </tr>
   <tr>
-    <td>CC_DOTNET_CSPROJ</td>
-    <td>The name of your project file to use for the build, without the .csproj extension.</td>
+    <td>CC_DOTNET_PROJ</td>
+    <td>The name of your project file to use for the build, without the .csproj / .fsproj / .vbproj extension.</td>
     <td></td>
     <td></td>
   </tr>
