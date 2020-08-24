@@ -186,10 +186,9 @@ You can (and should) define the `NODE_ENV=production` environment variable as ma
 rely on it for production mode.
 
 
-### Use private repositories with NPM_REGISTRY and NPM_TOKEN
+### Use private repositories with CC_NPM_REGISTRY and NPM_TOKEN
 
-On Clever Cloud, you only need to provide the *token* part. So to register your auth token, you need 
-to add to your application the `NPM_TOKEN` environment variable.
+Since April 2015, npmjs.com allows you to have private repositories. If you want to use a private repository on npmjs.com (the default one), you only need to provide the *token* part. So to register your auth token, you need to add to your application the `NPM_TOKEN` environment variable.
 
 ``` javascript
 Example:
@@ -202,12 +201,11 @@ Then, the .npmrc file will be created automatically for your application, with t
 //registry.npmjs.org/:_authToken=00000000-0000-0000-0000-000000000000
 ```
 
-The default registry url is npmjs (registry.npmjs.org). We also support github packages (npm.pkg.github.com), you 
-can change the registry with the CC_NPM_REGISTRY environment variable.
+To use another registry (like github), you can modify the url present in the .npmrc file with CC_NPM_REGISTRY the environment variable.
 
 ``` javascript
 Example:
-CC_NPM_REGISTRY=github
+CC_NPM_REGISTRY=npm.pkg.github.com
 NPM_TOKEN=00000000-0000-0000-0000-000000000000
 ```
 ``` javascript
