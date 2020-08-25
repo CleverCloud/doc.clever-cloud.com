@@ -188,7 +188,7 @@ rely on it for production mode.
 
 ### Use private repositories with CC_NPM_REGISTRY and NPM_TOKEN
 
-Since April 2015, npmjs.com allows you to have private repositories. If you want to use a private repository on npmjs.com (the default one), you only need to provide the *token* part. So to register your auth token, you need to add to your application the `NPM_TOKEN` environment variable.
+Since April 2015, npmjs.com allows you to have private repositories. If you want to use a private repository on npmjs.com (the default one), you only need to provide the *token* part. To register your auth token, you need to add to your application the `NPM_TOKEN` environment variable.
 
 ``` javascript
 Example:
@@ -201,7 +201,7 @@ Then, the .npmrc file will be created automatically for your application, with t
 //registry.npmjs.org/:_authToken=00000000-0000-0000-0000-000000000000
 ```
 
-To use another registry (like github), you can modify the url present in the .npmrc file with CC_NPM_REGISTRY the environment variable.
+To authenticate to another registry (like github), you can use the `CC_NPM_REGISTRY`  environment variable to define the registry's host.
 
 ``` javascript
 Example:

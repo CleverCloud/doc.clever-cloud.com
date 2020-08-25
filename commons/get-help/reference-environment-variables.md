@@ -404,7 +404,7 @@ So you can alter the build&start process for your application.
   </tr>
   <tr>
     <td>CC_NPM_REGISTRY</td>
-    <td>The host of your private repository, available values: `github` or a full url.</td>
+    <td>The host of your private repository, available values: `github` or the registry host.</td>
     <td>registry.npmjs.org</td>
     <td></td>
   </tr>
