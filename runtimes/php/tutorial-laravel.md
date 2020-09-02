@@ -98,3 +98,30 @@ Create a new environment variable called `CC_FS_BUCKET` and set `/storage/app:<b
 If you need to build your frontend assets (eg. javascript or CSS files), you can either add it as a step in your composer file, or you can add a post build hook with the `CC_POST_BUILD_HOOK` environment variable.
 
 For example, if you launch the build with `npm run prod`: `CC_POST_BUILD_HOOK=npm install && npm run prod`.
+
+### Optional: configure task scheduling
+
+If your app uses [task scheduling](https://laravel.com/docs/scheduling), you need to configure a cron:
+
+1. Create a `clevercloud/cron.json` file in your project, containing:
+
+```json
+[
+    "* * * * * $ROOT/clevercloud/cron.sh"
+]
+```
+
+2. Create a `clevercloud/cron.sh` file in your project (with execute permissions), containing:
+
+```bash
+#!/bin/bash -l
+set -euo pipefail
+
+cd "$APP_HOME" || exit 1
+php artisan schedule:run >> /dev/null 2>&1
+```
+
+Note: the PHP CLI process will use a `memory_limit` configuration value that depends on the instance's size (you can check it by connecting to your app using SSH and running `php -i`).
+If one of your sheduled tasks needs to allocate more memory than this limit, the `php artisan schedule:run` process will crash silently.
+To allow it to use more memory, you can call [`ini_set()`](https://www.php.net/manual/en/function.ini-set) inside a `php_sapi_name() === 'cli'` condition from an early hook to the app's lifecycle (like the `AppServiceProvider`).
+See [this Gist](https://gist.github.com/dsferruzza/e57dd3db957efe7a649325868f0024a4) for an example implementation.
