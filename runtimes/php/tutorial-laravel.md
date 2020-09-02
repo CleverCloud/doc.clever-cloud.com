@@ -16,7 +16,7 @@ We strongly recommend to use git deployment for laravel applications. This tutor
 
 ### Configure `DocumentRoot`
 
-Add a new environment variable called `CC_WEBROOT` and set `/public` as its value. 
+Add a new environment variable called `CC_WEBROOT` and set `/public` as its value.
 
 ```
 clever env set CC_WEBROOT /public
