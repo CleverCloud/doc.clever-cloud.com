@@ -101,7 +101,7 @@ For example, if you launch the build with `npm run prod`: `CC_POST_BUILD_HOOK=np
 
 ### Optional: configure task scheduling
 
-If your app uses [task scheduling](https://laravel.com/docs/scheduling), you need to configure a cron:
+If your app uses [task scheduling](https://laravel.com/docs/scheduling), you need to configure a cron to run the scheduling process:
 
 1. Create a `clevercloud/cron.json` file in your project, containing:
 
@@ -110,6 +110,8 @@ If your app uses [task scheduling](https://laravel.com/docs/scheduling), you nee
     "* * * * * $ROOT/clevercloud/cron.sh"
 ]
 ```
+
+This installs a cron that will run `clevercloud/cron.sh` every minute.
 
 2. Create a `clevercloud/cron.sh` file in your project (with execute permissions), containing:
 
