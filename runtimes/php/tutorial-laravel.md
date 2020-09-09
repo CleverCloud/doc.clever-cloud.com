@@ -117,11 +117,11 @@ If your app uses [task scheduling](https://laravel.com/docs/scheduling), you nee
 #!/bin/bash -l
 set -euo pipefail
 
-cd "$APP_HOME" || exit 1
+pushd "$APP_HOME"
 php artisan schedule:run >> /dev/null 2>&1
 ```
 
 Note: the PHP CLI process will use a `memory_limit` configuration value that depends on the instance's size (you can check it by connecting to your app using SSH and running `php -i`).
-If one of your sheduled tasks needs to allocate more memory than this limit, the `php artisan schedule:run` process will crash silently.
+If one of your scheduled tasks needs to allocate more memory than this limit, the `php artisan schedule:run` process will silently crash.
 To allow it to use more memory, you can call [`ini_set()`](https://www.php.net/manual/en/function.ini-set) inside a `php_sapi_name() === 'cli'` condition from an early hook to the app's lifecycle (like the `AppServiceProvider`).
 See [this Gist](https://gist.github.com/dsferruzza/e57dd3db957efe7a649325868f0024a4) for an example implementation.
