@@ -113,4 +113,4 @@ For more information on configuring symfony behind a reverse proxy, you can read
 ### Apache 404 error after deployment
 
 If everything looks fine and you still get 404 errors, remember that CleverCloud works with an Apache server, so you'll need an htaccess in the  `/public` directory.
-Symfony got your back on this: just run `composer require symfony/apache-pack`. See https://symfony.com/doc/current/setup/web_server_configuration.html for more information.
+Symfony got your back on this: just run `composer require symfony/apache-pack`. See [the official documentation of Symfony](https://symfony.com/doc/current/setup/web_server_configuration.html) for more information.
