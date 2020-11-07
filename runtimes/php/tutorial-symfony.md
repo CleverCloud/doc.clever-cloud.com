@@ -94,6 +94,18 @@ Then, add this to the application's environment variables:
 CC_POST_BUILD_HOOK=./clevercloud/post_build.sh
 ```
 
+**Note**:  
+
+If you have any NPM (or Yarn) dependencies and need to run `yarn install && yarn run build` as shown above, you can avoid to have to download all the node packages over and over again by mounting a [File System Bucket](/doc/addons/fs_buckets/) as your `/node_modules` directory.  
+Data stored in the FS Bucket will persist when deploying and only the new node packages will need to get downloaded.  
+
+If for some reason you do need to do a fresh node install, you can simply do so by removing the node modules.  
+This can be done manually by connecting via SSH (see [here](/doc/clever-tools/ssh-access/)) or by adding a line in the `clevercloud/post_build.sh` file, before the `yarn` commands:
+
+```bash
+rm -rf ./node_modules/*
+```
+
 ### Configure Symfony to work behind Clever Cloud reverse proxies
 
 You can use the CC_REVERSE_PROXY_IPS [environment variable](https://www.clever-cloud.com/doc/get-help/reference-environment-variables/) that contains a list of trusted IP addresses, separated by commas.
