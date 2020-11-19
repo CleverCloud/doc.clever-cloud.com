@@ -41,6 +41,8 @@ Set the `CC_PHP_VERSION` environment variable to one of the following values:
 - 7.3
 - 7.4
 
+You can also set the `CC_COMPOSER_VERSION` to `1` or `2` to select the composer version to use.
+
 By default, all new PHP applications are created with a default `CC_PHP_VERSION`, set to 7, which means latest php 7
 version available.
 You can of course change it whenever you want then redeploy your application to use the
