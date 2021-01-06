@@ -17,14 +17,15 @@ and the client. Following rules defined by the user, Varnish will cache the data
 
 ## Limitations
 
-Varnish is only available on PHP >= 5.5 applications. Support for other applications is in discussion. 
-For more information about it, contact us at <support@clever-cloud.com>.
+{{< alert "warning" >}}
+<p>Varnish is only available on PHP >= 5.5 applications. Support for other applications is in discussion.</p> 
+<p>For more information about it, contact us at <support@clever-cloud.com>.</p>
+{{< /alert >}}
 
 ## Enable Varnish for your application
 
 To enable it, you just have to create a `varnish.vcl` file in the `/clevercloud` folder.
 This file describes how Varnish caches your applications and how it decides to return a cached resource or not.
-
 
 {{< alert "warning" >}}
 <p>The <code>vcl 4.0;</code> and backend section of the `varnish.vcl` configuration file are not necessary as they are already handled by Clever Cloud.</p>
