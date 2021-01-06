@@ -15,12 +15,15 @@ keywords:
 [Varnish](https://www.varnish-cache.org/) is a HTTP proxy-cache, which works as a reverse proxy between your application
 and the client. Following rules defined by the user, Varnish will cache the data of an application to reduce the load on its server. We use **Varnish 4**
 
+## Limitations
+
+Varnish is only available on PHP >= 5.5 applications. Support for other applications is in discussion. 
+For more information about it, contact us at <support@clever-cloud.com>.
+
 ## Enable Varnish for your application
 
 To enable it, you just have to create a `varnish.vcl` file in the `/clevercloud` folder.
 This file describes how Varnish caches your applications and how it decides to return a cached resource or not.
-
-Varnish is provided by default in PHP >= 5.5 instances.
 
 
 {{< alert "warning" >}}
