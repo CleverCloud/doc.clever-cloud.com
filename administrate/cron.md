@@ -136,3 +136,7 @@ fi
 cd ${APP_HOME} # Which has been loaded by the env.
 … # Your part here
 ```
+
+## Standard Output & Error
+
+Everything coming from stdout & stderr is forwarded to syslog and is available in the console logs.
