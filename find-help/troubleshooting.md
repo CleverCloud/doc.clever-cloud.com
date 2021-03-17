@@ -80,8 +80,6 @@ In order to be able to use the same name for yourself, you will need to create a
 $ git remote add clever <your-git-deployment-url>
 ```
 
-### error
-
 You can find your deployment url under the Clever Cloud console in your application's information menu.
 
 ### Fail to push to a repository
