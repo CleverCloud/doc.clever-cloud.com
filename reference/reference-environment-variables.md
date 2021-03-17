@@ -338,7 +338,6 @@ So you can alter the build&start process for your application.
  |ES_ADDON_VERSION |  | ElasticSearch Version | 7  |
  {{< /table >}}
 
-
 ## New Relic
 
  {{<table "table table- bordered" "text-align:center" >}}
