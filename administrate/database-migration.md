@@ -11,6 +11,10 @@ tags:
 
 ## Migrating any database
 
+{{< alert "warning" "Read only users" >}}
+    As we do not support the migration of read only users, if you have created read only users you will have to create new ones.
+{{< /alert >}}
+
 You can now migrate any database easily in Clever Cloud
 
 Under any database add-on menu, go to the **Migrate/Upgrade** section.
@@ -34,7 +38,3 @@ Once you are happy with the changes you made, you can select **Migrate the Datab
 If the process succeeds, you will get a success screen. Every linked applications will automatically restart to use the new configuration. Please make sure to update configuration that do not use environment variable if you have some.
 
 In case the database migration fails, you will be informed at wich point it did and a button to contact our support team will appear. Reach out to them at support@clever-cloud.com with you add-on ID (available in the **Addon Dashboard** section) and they will help you finish the process.
-
-### Warnings
-
-As we do not support the migration of read only users, if you have created read only users you will have to create new ones.
