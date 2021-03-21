@@ -85,5 +85,5 @@ There, you just need to paste the URL you copied before in the Webhook URL
 field, then select *Result of deployments (success/fail)* in the *Only send
 notification for these events* menu.
 
-*Et voilà !* You can now push your application or restart it and you will see
+You can now push your application or restart it and you will see
 the result of the deployment in your Slack channel.
