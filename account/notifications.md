@@ -48,7 +48,7 @@ result events on an endpoint of your application without having to listen to
 all events via the Websocket API. No more lost events and having to reconnect
 to the websocket if and when it fails.
 
-To create a webhook still on **Notifications** panel:
+To create a webhook stay on the **Notifications** panel:
 1) click on **Webhooks** button at the top of the Notifications window.
 3) Add a new one.
 4) Choose the URL which will receive the data through a *POST* request and the format it will be sent as. 
