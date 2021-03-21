@@ -11,9 +11,9 @@ keywords:
 ---
 
 To delete your account :
-- Enter un the Clever Cloud Web Console.
-- Select **Profile** in the bottom left menu.
-- Select **Delete my account** in the top menu of the freshly opened page.
-- Click the red **Send me a confirmation email**. 
+1) Enter un the Clever Cloud Web Console.
+2) Select **Profile** in the bottom left menu.
+3) Select **Delete my account** in the top menu of the freshly opened page.
+4) Click the red **Send me a confirmation email**. 
 
 You will get an email with a link you must click to confirm your account deletion.
