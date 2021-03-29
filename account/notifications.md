@@ -22,7 +22,7 @@ Historically and by default, deployment result e-mails (deployment succeeded or
 failed) were always sent to the owners of an application, namely the user
 themselves or the organization's members.
 
-To disable the result e-mails or restrict it to only some application :
+To disable the deployment result e-mails or restrict it to only some applications:
 1) Go in **Organization Manager** > **Notifications** panel.
 2) Delete the hook named *Default deployment result
 e-mails*.
