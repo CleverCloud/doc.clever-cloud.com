@@ -48,9 +48,9 @@ all events via the Websocket API. No more lost events and having to reconnect
 to the websocket if and when it fails.
 
 To create a webhook stay on the **Notifications** panel:
-1) click on **Webhooks** button at the top of the Notifications window.
-3) Add a new one.
-4) Choose the URL which will receive the data through a *POST* request and the format it will be sent as. 
+1. Click on **Webhooks** button at the top of the Notifications window.
+2. Add a new one.
+3. Choose the URL which will receive the data through a *POST* request and the format it will be sent as. 
 
 As of now, you can choose between 3
 formats: *raw*, *slack* and *flowdock*. The *raw* format is the Clever Cloud
