@@ -23,11 +23,10 @@ failed) were always sent to the owners of an application, namely the user
 themselves or the organization's members.
 
 To disable the deployment result e-mails or restrict it to only some applications:
-1) Go in **Organization Manager** > **Notifications** panel.
-2) Delete the hook named *Default deployment result
-e-mails*.
-3) Add a new one.
-4) Set it to your liking.
+1. Go in **Organization Manager** > **Notifications** panel.
+2. Delete the hook named *Default deployment result e-mails*.
+3. Add a new one.
+4. Set it to your liking.
 
 In the future, this service will also handle credits warning notifications and
 others to come. You will be able to choose wether or not to receive an e-mail
