@@ -12,7 +12,7 @@ tags:
 ## Migrating any database
 
 {{< alert "warning" "Read only users" >}}
-    As we do not support the migration of read only users, if you have created read only users you will have to create new ones.
+    We do not support the migration of read only users. If you have any, you will have to create new ones at the end of the migration.
 {{< /alert >}}
 
 You can now migrate any database easily in Clever Cloud
