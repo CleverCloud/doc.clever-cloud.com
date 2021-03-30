@@ -25,7 +25,7 @@ While direct SSH access to instances is not recommended in an [immutable infrast
 {{< alert "warning" "SSH access is disabled on Docker instances" >}}
     <p>
     For security reasons, you can't connect on the instance that hosts your Docker application.<br/>
-    Instead, if bash is installed in your Docker application, you will be able to connect directly inside it.<br/>
+    Instead, if `bash` is installed in your Docker application, you will be able to connect directly inside your container.<br/>
     Contact the support if you need help to debug your Docker applications.
     </p>
 {{< /alert >}}
