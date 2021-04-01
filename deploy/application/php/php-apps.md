@@ -16,27 +16,6 @@ PHP is available on our platform with the branches 5.6, 7.2, 7.3, 7.4 and 8.0. Y
 
 The HTTP server is [Apache 2](https://httpd.apache.org/), and the PHP code is executed by [PHP-FPM](https://php-fpm.org/).
 
-## Memory Limit
-
-A smaller part of your application's memory is defined as the memory limit to allow workers to run efficiently, here is the memory limit for each flavor:
-
-{{<table "table table- bordered" "text-align:center" >}}
- | <center>Flavor</center> | <center>Memory Limit</center> |
- |-----------------------|------------------------------|
- |Pico | 64M |
- |Nano | 64M |
- |XS | 128M |
- |S | 256M |
- |M | 384M |
- |L | 512M |
- |XL | 768M |
- |2XL | 1024M |
- |3XL | 1536M |
- |4XL+ | 2048M |
- {{< /table >}}
-
-To change this limit you can define `MEMORY_LIMIT` [environment variable]({{< ref "reference/reference-environment-variables.md#php" >}}).
-
 If you define a limit exceeding the application memory it will use the default one.
 
 {{< readfile "/content/partials/create-application.md" >}}
