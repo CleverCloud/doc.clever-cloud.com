@@ -334,7 +334,7 @@ So you can alter the build&start process for your application.
  |ES_ADDON_URI | URI to query Elasticsearch | Generated upon creation | X  |
  |ES_ADDON_HOST | Elasticsearch hostname | Generated upon creation | X  |
  |ES_ADDON_USER | Username credential to authenticate to Elasticsearch | Generated upon creation | X  |
- |ES_ADDON_PASSWORD | Username credential to authenticate to Elasticsearch | Generated upon creation | X  |
+ |ES_ADDON_PASSWORD | Password credential to authenticate to Elasticsearch | Generated upon creation | X  |
  |ES_ADDON_VERSION | ElasticSearch Version | 7 | X  |
  {{< /table >}}
 
