@@ -48,7 +48,7 @@ remote: You tried to push to a custom branch.
 remote: This is not allowed.
 remote: error: hook declined to update refs/heads/<yourSpecificBranchName>
 ...
-error: failed to push some refs to 'xxxx'
+error: failed to push some refs to '<yourSpecificBranchName>'
 ```
 
 Clever Cloud uses the master branch to deploy your application but this does not mean that you cannot use another one on your computer.
