@@ -137,6 +137,8 @@ When php-fpm spawns a worker it allocates a smaller part of the application's me
 
 To change this limit you can define `MEMORY_LIMIT` [environment variable]({{< ref "reference/reference-environment-variables.md#php" >}}).
 
+If you define a limit exceeding the application memory it will use the default one.
+
 ##### `pm.max_children`: Maximum PHP Children per instance
 
 You can fix the maximum number of PHP running processes per instance by setting `pm.max_children` (see above).
