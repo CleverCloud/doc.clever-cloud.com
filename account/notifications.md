@@ -51,7 +51,7 @@ To create a webhook stay on the **Notifications** panel:
 1. Click on **Webhooks** button at the top of the Notifications window.
 2. Add a new one.
 3. Choose the URL which will receive the data through a *POST* request and the format it will be sent as.
-4.  
+
 As of now, you can choose between 3 formats: *raw*, *slack* and *flowdock*. The *raw* format is the Clever Cloud internal representation of events, it is identical to events sent by the Websocket API. *Slack* and *Flowdock* formats are to be used with the
 corresponding services: [Slack](https://slack.com) and [Flowdock](https://www.flowdock.com).
 
