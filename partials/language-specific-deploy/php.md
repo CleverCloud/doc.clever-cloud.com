@@ -220,6 +220,8 @@ You can also set the `CC_COMPOSER_VERSION` to `1` or `2` to select the composer 
 
 You can perform your own `composer.phar install` by using the [Post Build hook]({{< ref "develop/build-hooks.md#post-build-cc_post_build_hook" >}}) if for example you need to install dev dependencies.
 
+If you need to install development dependencies automatically, please let us know by opening a support ticket. This feature may be implemented using an environment variable in the future if this is often asked.
+
 Example of a `composer.json` file:
 
 ```javascript
