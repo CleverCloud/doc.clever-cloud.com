@@ -19,7 +19,7 @@ to connect to this API and use it.
 
 Clever Cloud API has an OAuth1 based authentication.
 
-There are 2 supported methods for the signature: `PLAINTEXT`, `HMAC-SHA1` and `HMAC-SHA512`.
+There are 3 supported methods for the signature: `PLAINTEXT`, `HMAC-SHA1` and `HMAC-SHA512`.
 
 While `PLAINTEXT` is way easier for testing, you **should** use `HMAC-SHA512` when it comes to production. This ensures that the request is totally verified.
 
