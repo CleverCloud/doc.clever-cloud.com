@@ -26,7 +26,7 @@ While `PLAINTEXT` is way easier for testing, you **should** use `HMAC-SHA512` wh
 We have a [JavaScript client on GitHub](https://gitHub.com/CleverCloud/clever-client.js) where you can find a lot of informations.
 Especially in the [esm/login.js file](https://gitHub.com/CleverCloud/clever-client.js/blob/master/esm/login.js)
 
-This client is being used by the Console. Also, the Console gives you a lot of informations in the "Network" panel of the devtools. If you're stuck, this is one way for debugging.
+This client is being used by our web Console and CLI. Also, the Console gives you a lot of information in the "Network" panel of the devtools. If you're stuck, this is one way for debugging.
 
 For the Authorization header, make sure to have something like:
 
