@@ -35,7 +35,7 @@ npm install -g clever-tools@beta
 #### Debian/Ubuntu (.deb)
 
 {{< alert "warning" "End of Bintray" >}}
-<p>Bintray is ending on 1st May, we will migrate hosting as soon as possible.</p>
+<p>Bintray is ending on May 1st 2021, we will migrate hosting as soon as possible.</p>
 <p>Please refer to the dedicated <a href="https://github.com/CleverCloud/clever-tools/issues/454">issue</a> to track the migration.</p>
 {{< /alert >}}
 
@@ -66,7 +66,7 @@ echo "deb https://dl.bintray.com/clevercloud/deb unstable beta" | tee -a /etc/ap
 #### CentOS/Fedora (.rpm)
 
 {{< alert "warning" "End of Bintray" >}}
-<p>Bintray is ending on 1st May, we will migrate hosting as soon as possible.</p>
+<p>Bintray is ending on May 1st 2021, we will migrate hosting as soon as possible.</p>
 <p>Please refer to the dedicated <a href="https://github.com/CleverCloud/clever-tools/issues/454">issue</a> to track the migration.</p>
 {{< /alert >}}
 
@@ -156,7 +156,7 @@ NOTES:
 #### Using chocolatey
 
 {{< alert "warning" "End of Bintray" >}}
-<p>Bintray is ending on 1st May, we will migrate hosting as soon as possible.</p>
+<p>Bintray is ending on May 1st 2021, we will migrate hosting as soon as possible.</p>
 <p>Please refer to the dedicated <a href="https://github.com/CleverCloud/clever-tools/issues/454">issue</a> to track the migration.</p>
 {{< /alert >}}
 
