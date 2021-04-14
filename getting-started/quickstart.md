@@ -118,6 +118,8 @@ Once you have created your application with GitHub, each push on the `master` br
    <p>If you have to push directly to a repo in order to deploy an application (eg if you deploy from a CI), then create a non-GitHub app.</p>
 {{< /alert >}}
 
+If you don't find your repository in the list fetched from Github, a workaround is to unlink your account in your profile here : https://console.clever-cloud.com/users/me/information, remove **Clever Cloud API** from your Github [Authorized OAuth Apps](https://github.com/settings/applications) and link again your Github account to your Clever Cloud account.
+
 **Private GitHub repositories are also supported.**
 
 Caution: in GitHub, private repositories in an ordinary user account are an all-or-nothing deal: either someone has full read write access (i.e., they're a collaborator) or they have no access. 
