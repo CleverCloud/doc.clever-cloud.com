@@ -58,6 +58,8 @@ And remove them if needed
 clever drain remove [--alias <alias>] <DRAIN-ID>
 ```
 
+If the status of your drain is shown as `DISABLED` without you disabling it, it may be because we  have not been able to send your logs to your drain endpoint or because the requests timed out after 25 seconds.
+
 ### ElasticSearch
 
 ElasticSearch drains use the Elastic bulk API. To match this endpoint, specify `/_bulk` at the end of your ElasticSearch endpoint.
