@@ -36,7 +36,7 @@ Please contact the support if you need another backend.
 
 If you do not have a `requirements.txt` file to commit you can obtain it via the command `pip freeze > requirements.txt` (or `pip3 freeze > requirements.txt` if you use Python 3.x) at the root of your project folder in your terminal.
 
-For example to install *PostgreSQL* and don't want to use the `pip freeze` command above you have to create a file `requirements.txt` at the root of the folder:
+For example to install *PostgreSQL* and don't want to use the `pip freeze` command above you have to create a file `requirements.txt` at the root of your application folder:
 
 ```txt
 psycopg2>=2.7 --no-binary psycopg2
