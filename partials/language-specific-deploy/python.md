@@ -182,8 +182,7 @@ We also support celery apps out of the box. To deploy a celery app, use the `CC_
 CC_PYTHON_CELERY_MODULE="mymodule"
 ```
 
-{{< al
-ert "warning" "Celery dependency needs to be in your requirements.txt" >}}
+{{< alert "warning" "Celery dependency needs to be in your requirements.txt" >}}
     Celery needs to be defined as a dependency in your requirements.txt. Otherwise the deployment will be aborted if Celery support is enabled.
 {{< /alert >}}
 
