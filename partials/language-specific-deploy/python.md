@@ -64,7 +64,7 @@ You can declare the `manage.py` tasks in `./clevercloud/python.json` with the fo
 
 ```json
 {
-    "deploy": { 
+    "deploy": {
         "managetasks": [ "migrate" ]
     }
 }
