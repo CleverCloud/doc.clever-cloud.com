@@ -32,13 +32,14 @@ Play is an open source web application framework, written in Scala and Java, whi
 
 You can configure your application start command by adding a `./clevercloud/sbt.json` file with the following fields:
 
-```javascript
+```json
 {
   "deploy":{
     "goal": "yourgoal"
   }
 }
 ```
+
 You can use the following properties:
 <table class="table table-bordered table-striped">
   <thead>
@@ -75,7 +76,7 @@ You have two options to fix this problem:
 You can set the "play.version" environment variable in the `clevercloud/sbt.json` file.
 For example, for Play 2.0.4:
 
-``` javascript
+``` json
 {
   "deploy": {
     "goal": "-Dplay.version=2.0.4"
@@ -85,7 +86,7 @@ For example, for Play 2.0.4:
 
 Otherwise, you can modify `plugins.sbt` in the project folder of your app like the following:
 
-``` scala
+```scala
 // Comment to get more information during initialization
 logLevel := Level.Warn
 

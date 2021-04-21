@@ -32,11 +32,11 @@ You *must* provide a `clevercloud/gradle.json` file (gradle.json file in
 clevercloud folder which is at the root of you application) that
 contains at least the following:
 
-```javascript
+```json
 {
-    "deploy": {
-        "goal": "grails:run"
-    }
+  "deploy": {
+    "goal": "grails:run"
+  }
 }
 ```
 
@@ -46,7 +46,7 @@ That is the only option you really need to supply.
 
 The full configuration can look like the following:
 
-```javascript
+```json
 {
   "build": {
     "type": "<string>",
@@ -57,7 +57,9 @@ The full configuration can look like the following:
   }
 }
 ```
+
 You can use the following properties:
+
 <table class="table table-bordered table-striped">
   <thead>
     <tr>
@@ -70,7 +72,7 @@ You can use the following properties:
     <tr>
       <td><span class="label label-default">Optional</span></td>
       <td>**build -&gt; type**</td>
-      <td>can be ``"maven"``, ``"gradle"`` or ``"ant"``</td>
+      <td>can be `"maven"`, `"gradle"` or `"ant"`</td>
     </tr>
     <tr>
       <td><span class="label label-default">Optional</span></td>
@@ -93,7 +95,7 @@ This will override the default way of runing your application.
 
 Example:
 
-```
+```bash
 CC_RUN_COMMAND=java -jar somefile.jar <options>
 ```
 
@@ -115,7 +117,7 @@ Since Gradle can come in many versions, Clever Cloud automatically support the
 Just create and commit the `gradlew` file and the wrapper `jar` and
 `properties` files:
 
-```haskell
+```txt
 ./
 	clevercloud/
 		gradle.json
@@ -131,4 +133,3 @@ Just create and commit the `gradlew` file and the wrapper `jar` and
 {{< readfile "/content/partials/deploy-git.md" >}}
 
 {{< readfile "/content/partials/more-config.md" >}}
-

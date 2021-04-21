@@ -29,7 +29,7 @@ path to your jar or provide a `clevercloud/jar.json` file (jar.json file in
 clevercloud folder which is at the root of you application) that
 contains at least the following:
 
-```javascript
+```json
 {
   "deploy": {
     "jarName": "path/to/jar"
@@ -37,9 +37,7 @@ contains at least the following:
 }
 ```
 
-That is the least you need to do. Note that `path/to/jar` *must not*
-start with a `/` and that the path should be relative to your
-repository's root.
+That is the least you need to do. Note that `path/to/jar` *must not* start with a `/` and that the path should be relative to your repository's root.
 
 ### Build options
 
@@ -47,7 +45,7 @@ You do not need to build and commit a JAR. Instead you can push your
 sources and build them with either gradle, ant or maven. Here is the
 configuration you need to provide in the `clevercloud/jar.json` file:
 
-```javascript
+```json
 {
   "build": {
     "type": "maven"|"gradle"|"ant",
@@ -56,13 +54,12 @@ configuration you need to provide in the `clevercloud/jar.json` file:
 }
 ```
 
-The `goal` field is what will be asked to the build command, like `mvn
-package` for a `maven` build with the `package` goal.
+The `goal` field is what will be asked to the build command, like `mvn package` for a `maven` build with the `package` goal.
 
 An configuration example with a maven build that generates a JAR with
 embedded dependencies is:
 
-```javascript
+```json
 {
   "build": {
     "type": "maven",
@@ -73,6 +70,7 @@ embedded dependencies is:
   }
 }
 ```
+
 ### An example of full configuration
 
 You can pass extra arguments to the `java` command by using the environment
@@ -80,7 +78,7 @@ variable `CC_EXTRA_JAVA_ARGS` and to your JAR by using `CC_JAR_ARGS`
 
 The full configuration can look like the following:
 
-```javascript
+```json
 {
   "build": {
     "type": "<string>",
@@ -92,7 +90,9 @@ The full configuration can look like the following:
   }
 }
 ```
+
 You can use the following properties:
+
 <table class="table table-bordered table-striped">
   <thead>
     <tr>
@@ -105,7 +105,7 @@ You can use the following properties:
     <tr>
       <td><span class="label label-default">Optional</span></td>
       <td>**build -&gt; type**</td>
-      <td>can be ``"maven"``, ``"gradle"`` or ``"ant"``</td>
+      <td>can be `"maven"`, `"gradle"` or `"ant"`</td>
     </tr>
     <tr>
       <td><span class="label label-default">Optional</span></td>
@@ -135,7 +135,7 @@ This will override the default way of running your application.
 
 Example:
 
-```
+```bash
 CC_RUN_COMMAND=java -jar somefile.jar <options>
 ```
 
