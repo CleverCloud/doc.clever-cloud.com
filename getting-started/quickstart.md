@@ -229,10 +229,11 @@ environment variables will be available for the applications linked to the add-o
 
 To link an already existing add-on with your application, just follow these steps:
 
-1. Go in the organization of your application and click on the name of the application you want to link with your add-on.
-2. Go in the **Service dependencies** section.
-3. Select the add-on you want to link under the "Link addons" dropdown menu.
-4. Click on the **Link** button of the add-on you want to link to your application.
+1. Go in the organization of your application
+2. Click on the name of the application you want to link with your add-on.
+3. Go in the **Service dependencies** section.
+4. Select the add-on you want to link under the "Link addons" dropdown menu.
+5. Click on the **Link** button of the add-on you want to link to your application.
 
 ### Managing your add-on
 
