@@ -21,7 +21,7 @@ An application is defined on Clever Cloud by the following elements:
 * a RAM and CPU consumption, depending on the language or framework used
 * an optional configuration file you may add to your project
 
-If one of these elements is missing, Clever Cloud can't deploy your application properly (except the configuration file, optional in some cases).
+If one of these elements is missing, Clever Cloud can't deploy your apgit plication properly (except the configuration file, optional in some cases).
 
 Supported platforms:
 
@@ -47,22 +47,25 @@ The log system retrieves all output from the application and displays it in the 
 
 In the [Clever Cloud Console](https://console.clever-cloud.com/):
 
- 1. Select the proper organization you want to add the application to. At this point you must only have the Personal Space but you can create one. Then, click on the **Add an application** button in the **Organization Manager** panel.
+ 1. Select the proper organization you want to add the application to. At this point you must only have the Personal Space but you can create one. 
+
+ 2. Click on the **Create an application** button in the **Organization Manager** panel.
+ 
  This starts the application creation wizard. If your account has been linked to GitHub, you can select a repository from your GitHub account.
  
  If you want to deploy an application within a GitHub organisation, first [grant the Clever Cloud API access to it](https://GitHub.com/settings/connections/applications/d96bd8fd996d2ca783cc).
 
- 2. Select the language or the framework you need
+ 1. Select the language or the framework you need
+   
+ 2. *Optional:* For PHP applications, you can choose between FTP and Git deployment.
 
- 3. *Optional:* For PHP applications, you can choose between FTP and Git deployment.
+ 3. Fine-tune your scaling configuration. Horizontal scaling is the number of instances that can run at the same time. Vertical scaling sets the minimum and maximum size the instance can be.
 
- 4. You will be able to fine-tune your scaling configuration. Horizontal scaling is the number of instances that can run at the same time. Vertical scaling sets the minimum and maximum size the instance can be.
+ 4. Enter the name and description of your application.
 
- 5. Enter the name and description of your application.
+ 5. *Optional*: [Add an add-on]({{< ref "deploy/addon" >}}) to your application.
 
- 6. *Optional*: The wizard will offer you to [add an add-on]({{< ref "deploy/addon" >}}) to your application.
-
- 7. *Optional*: The wizard will offer you to [add environment variables]({{< ref "develop/env-variables.md" >}}) to your application.
+ 6. *Optional*: [Add environment variables]({{< ref "develop/env-variables.md" >}}) to your application.
 
 ### Git Deployment
 
