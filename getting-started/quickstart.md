@@ -203,24 +203,26 @@ There are two kinds of billing:
 
 Here we will assume you want to create a new add-on and link it to your application.
 
-In order to create it, go to the [Clever Cloud Console](https://console.clever-cloud.com/).
-Go to the organization in which you wan to create the add-on, for example your [personal space](https://console.clever-cloud.com/users/me).
+In order to create it:
+1. Go to the [Clever Cloud Console](https://console.clever-cloud.com/).
 
-1. When you are in the organization, click on **Add an add-on**. This space let you create and configure the add-on according to your needs.
+2. Go to the organization in which you wan to create the add-on, for example your [personal space](https://console.clever-cloud.com/users/me).
 
-2. Choose which *type* of add-on you want to create. See above the list of available add-ons and their corresponding documentation pages for further information on how they work.
+3. Click on **Add an add-on**. This space let you create and configure the add-on according to your needs.
+   
+4. Choose which *type* of add-on you want to create. See above the list of available add-ons and their corresponding documentation pages for further information on how they work.
 
-3. Select the plan you need for you add-on. You can find details about the pricing, the capacity of the add-on, ... on this page or in the corresponding documentation page.
+5. Select the plan you need for you add-on. You can find details about the pricing, the capacity of the add-on, ... on this page or in the corresponding documentation page.
 
-4. You will be able to choose with which application you want to link you add-on.
+6. Choose with which application you want to link you add-on.
 Linking an add-on to an application will provide configuration to the application through [environment variables]({{< ref "/develop/env-variables.md" >}}).
 The environment variables provided by the add-on are available for use in the linked application.
 
 If you want to use your add-on alone, just don't link it to any application.
 
-5. Choose the name of the add-on and the region where the add-on will be hosted.
+1. Choose the name of the add-on and the region where the add-on will be hosted.
 
-6. Click on the **Create** button and the add-on will now be available in your organization, and corresponding
+2. Click on the **Create** button and the add-on will now be available in your organization, and corresponding
 environment variables will be available for the applications linked to the add-on you just created.
 
 ### Link an existing add-on to your application
