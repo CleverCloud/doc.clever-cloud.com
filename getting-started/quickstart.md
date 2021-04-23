@@ -86,7 +86,7 @@ Follow these steps to deploy your application:
   $ git commit -m "first commit"
   ```
 
- 3. Then, link your local repository to Clever Cloud by providing the Git remote url:
+ 3. Link your local repository to Clever Cloud by providing the Git remote url:
 
   ```bash
   $ git remote add <remote-name> <your-git-deployment-url>
