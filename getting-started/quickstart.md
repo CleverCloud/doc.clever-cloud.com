@@ -229,7 +229,7 @@ environment variables will be available for the applications linked to the add-o
 
 To link an already existing add-on with your application, just follow these steps:
 
-1. Go in the organization of your application
+1. Go in the organization of your application.
 2. Click on the name of the application you want to link with your add-on.
 3. Go in the **Service dependencies** section.
 4. Select the add-on you want to link under the "Link addons" dropdown menu.
@@ -260,5 +260,8 @@ This screen is managed directly by the provider of the add-on.
 
 ### Delete an add-on
 
-To delete an add-on, go to the *Configuration* page of the add-on, and click on *Remove add-on*.
+To delete an add-on:
+1. Go to the *Configuration* page of the add-on.
+2. Click on *Remove add-on*.
+
 Warning: After deletion of the add-on, all associated data will be removed.
