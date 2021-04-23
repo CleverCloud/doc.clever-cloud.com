@@ -18,7 +18,7 @@ An application is defined on Clever Cloud by the following elements:
 
 * a dedicated language/framework
 * a deployment method (FTP and/or Git)
-* RAM and CPU consumption, depending on the language or framework used
+* a RAM and CPU consumption, depending on the language or framework used
 * an optional configuration file you may add to your project
 
 If one of these elements is missing, Clever Cloud can't deploy your application properly (except the configuration file, optional in some cases).
