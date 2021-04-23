@@ -141,7 +141,7 @@ matching your application's ID. You will find the FTP credentials in the configu
 [More documentation about Filezilla.](https://wiki.filezilla-project.org/FileZilla_Client_Tutorial_%28en%29)
 
 {{< alert "warning" "Warning:" >}}
-<p>An FTP application is automatically started once the application is created, even if no code has been sent.</p>
+<p>An FTP application starts automatically once the application is created, even if no code has been sent.</p>
 {{< /alert >}}
 
 {{< alert "warning" "Our advice:" >}}
