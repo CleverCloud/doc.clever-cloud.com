@@ -115,7 +115,7 @@ You can see your application **logs** in the dashboard to **monitor the deployme
 
 #### Automated Deployment with GitHub
 
-Once you have created your application with GitHub, each push on the `master` branch will trigger a deployment. If you want to deploy an other branch than `master`, you can go to the `information` panel of your application and select the default branch to use.
+Once you have created your application with GitHub, each push on the `master` branch trigger a deployment. To deploy an other branch than `master`, go to the `information` panel of your application and select the default branch to use.
 
 {{< alert "warning" "Warning:" >}}
    <p>You can't directly push to an application created on Clever Cloud as a GitHub app: in this case, only the automatic deployment from GitHub is henceforth allowed.</p>
