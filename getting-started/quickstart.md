@@ -131,11 +131,11 @@ Caution: in GitHub, private repositories in an ordinary user account are an all-
 
 ### FTP Deployment
 
-It is possible to deploy via FTP with PHP applications.  
+You can deploy via FTP with PHP applications.  
 
 To deploy via FTP, you need an FTP software installed on your machine. [Filezilla](https://filezilla-project.org/) is one of them.
 
-When you have chosen to deploy your application via FTP, a [FS Bucket]({{< ref "/deploy/addon/fs-bucket.md" >}}) has been created with an ID
+Deploy your application via FTP, create a [FS Bucket]({{< ref "/deploy/addon/fs-bucket.md" >}}) with an ID
 matching your application's ID. You will find the FTP credentials in the configuration tab of this particular FS Bucket.
 
 [More documentation about Filezilla.](https://wiki.filezilla-project.org/FileZilla_Client_Tutorial_%28en%29)
