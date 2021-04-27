@@ -22,11 +22,12 @@ Historically and by default, deployment result e-mails (deployment succeeded or
 failed) were always sent to the owners of an application, namely the user
 themselves or the organization's members.
 
-To disable the deployment result e-mails or restrict it to only some applications:
-1. Go in **Organization Manager** > **Notifications** panel.
-2. Delete the hook named *Default deployment result e-mails*.
-3. Add a new one.
-4. Set it to your liking.
+To disable the result e-mails or restrict it to only some application :
+1) Go in **Organization Manager** > **Notifications** panel.
+2) Delete the hook named *Default deployment result
+e-mails*.
+3) Add a new one.
+4) Set it to your liking.
 
 In the future, this service will also handle credits warning notifications and
 others to come. You will be able to choose wether or not to receive an e-mail
@@ -48,11 +49,11 @@ all events via the Websocket API. No more lost events and having to reconnect
 to the websocket if and when it fails.
 
 To create a webhook stay on the **Notifications** panel:
-1. Click on **Webhooks** button at the top of the Notifications window.
-2. Add a new one.
-3. Choose the URL which will receive the data through a *POST* request and the format it will be sent as.
+1) click on **Webhooks** button at the top of the Notifications window.
+3) Add a new one.
+4) Choose the URL which will receive the data through a *POST* request and the format it will be sent as. 
 
-As of now, you can choose between 3 formats: *raw*, *slack* and *flowdock*. The *raw* format is the Clever Cloud internal representation of events, it is identical to events sent by the Websocket API. *Slack* and *Flowdock* formats are to be used with the
+As of now, you can choose between 3 formats: *raw*, *slack* and *flowdock*. The *raw* format is the Clever Cloudinternal representation of events, it is identical to events sent by the Websocket API. *Slack* and *Flowdock* formats are to be used with the
 corresponding services: [Slack](https://slack.com) and [Flowdock](https://www.flowdock.com).
 
 You can also choose which events you want and restrict notifications to a list
