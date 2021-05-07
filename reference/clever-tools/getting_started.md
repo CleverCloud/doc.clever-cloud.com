@@ -35,8 +35,8 @@ npm install -g clever-tools@beta
 #### Debian/Ubuntu (.deb)
 
 {{< alert "warning" "Bintray to Nexus" >}}
-<p>We recently moved from Bintray to a self hosted Nexus repository available at [https://nexus.clever-cloud.com](https://nexus.clever-cloud.com).</p>
-<p>You have to update the URL of your repository with the new one. If you experience any issue please let us know on the following [issue](https://github.com/CleverCloud/clever-tools/issues/454).</p>
+<p>We recently moved from Bintray to a self hosted Nexus repository available at <a href="https://nexus.clever-cloud.com">nexus.clever-cloud.com</a>.</p>
+<p>You have to update the URL of your repository with the new one. If you experience any issue please let us know on the following <a href="https://github.com/CleverCloud/clever-tools/issues/454">issue</a>.</p>
 {{< /alert >}}
 
 If you are using a GNU/Linux distribution that uses `.deb` packages like Debian or Ubuntu, you can run:
@@ -56,7 +56,7 @@ apt install clever-tools
 
 NOTES:
 
-* The `.deb` packages are hosted on Clever Cloud's public Nexus instance available at [https://nexus.clever-cloud.com](https://nexus.clever-cloud.com) (their GPG key is required to trust their signed packages).
+* The `.deb` packages are hosted on Clever Cloud's public Nexus instance available at [nexus.clever-cloud.com](https://nexus.clever-cloud.com) (our PGP key is required to trust our signed packages).
 * If you want access to the beta channel, you can use this in your `sources.list`:
 
 ```sh
@@ -66,8 +66,8 @@ echo "deb https://nexus.clever-cloud.com/repository/deb bionic unstable beta" | 
 #### CentOS/Fedora (.rpm)
 
 {{< alert "warning" "Bintray to Nexus" >}}
-<p>We recently moved from Bintray to a self hosted Nexus repository available at [https://nexus.clever-cloud.com](https://nexus.clever-cloud.com).</p>
-<p>You have to update the URL of your repository with the new one. If you experience any issue please let us know on the following [issue](https://github.com/CleverCloud/clever-tools/issues/454).</p>
+<p>We recently moved from Bintray to a self hosted Nexus repository available at <a href="https://nexus.clever-cloud.com">nexus.clever-cloud.com</a>.</p>
+<p>You have to update the URL of your repository with the new one. If you experience any issue please let us know on the following <a href="https://github.com/CleverCloud/clever-tools/issues/454">issue</a>.</p>
 {{< /alert >}}
 
 If you are using a GNU/Linux distribution that uses `.rpm` packages like CentOS or Fedora, you can run:
@@ -156,8 +156,8 @@ NOTES:
 #### Using chocolatey
 
 {{< alert "warning" "Bintray to Nexus" >}}
-<p>We recently moved from Bintray to a self hosted Nexus repository available at [https://nexus.clever-cloud.com](https://nexus.clever-cloud.com).</p>
-<p>You have to update the URL of your repository with the new one. If you experience any issue please let us know on the following [issue](https://github.com/CleverCloud/clever-tools/issues/454).</p>
+<p>We recently moved from Bintray to a self hosted Nexus repository available at <a href="https://nexus.clever-cloud.com">nexus.clever-cloud.com</a>.</p>
+<p>You have to update the URL of your repository with the new one. If you experience any issue please let us know on the following <a href="https://github.com/CleverCloud/clever-tools/issues/454">issue</a>.</p>
 {{< /alert >}}
 
 If you are using Windows and you have [chocolatey](https://chocolatey.org) installed, you can run: 
@@ -230,11 +230,9 @@ clever unlink <app_id>
 ```
 
 {{< alert "info" "Notes on `.clever.json`" >}}
-    <div>
-      Once you have linked an application, clever-tools will create a Json configuration file named `.clever.json` at the root of the directory.
-    </div>
-    <div>This file can be commited safely, others team members working on this repository will not have to link the application again.</div>
-    <div>This configuration file contains the AppID, so keep this in mind if you publish it on a public repository.</div>
+  <p>Once you have linked an application, clever-tools will create a Json configuration file named `.clever.json` at the root of the directory.</p>
+  <p>This file can be commited safely, others team members working on this repository will not have to link the application again.</p>
+  <p>This configuration file contains the AppID, so keep this in mind if you publish it on a public repository.</p>
 {{< /alert >}}
 
 <br>
