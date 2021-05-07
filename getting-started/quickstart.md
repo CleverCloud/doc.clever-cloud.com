@@ -117,6 +117,8 @@ You can see your application **logs** in the dashboard to **monitor the deployme
 
 Once you have created your application with GitHub, each push on the `master` branch trigger a deployment. To deploy an other branch than `master`, go to the `information` panel of your application and select the default branch to use.
 
+{{< image "/images/github-deployment-branch.png" "Github deployment branch select" >}}
+
 {{< alert "warning" "Warning:" >}}
    <p>You can't directly push to an application created on Clever Cloud as a GitHub app: in this case, only the automatic deployment from GitHub is henceforth allowed.</p>
    <p>If you try to push to Clever Cloud, as you would do for a non-GitHub app, you will get the following error :</p>
@@ -145,14 +147,14 @@ matching your application's ID. You will find the FTP credentials in the configu
 {{< /alert >}}
 
 {{< alert "warning" "Our advice:" >}}
-<p>FTP deployment is ok for small websites but not for large ones. We strongly ecommend you to use <b>Git</b> deployment for <b>large PHP websites</b>.</p>
+<p>FTP deployment is ok for small websites but not for large ones. We strongly recommend you to use <b>Git</b> deployment for <b>large PHP websites</b>.</p>
 {{< /alert >}}
 
 ### Application management generalities
 
 There are many tabs available in the application's menu:
 
-- Information: General informations about your application
+- Information: General information about your application
 - Scalability: Set-up scalability options
 - Domain names: Manage custom domain names
 - Environment variables: Manage environment variables
@@ -165,7 +167,7 @@ There are many tabs available in the application's menu:
 
 ## Create your first add-on
 
-Applications often requires one or more services in addition to the runtime itself. Add-ons are services you can use independantely, or you can link them with your application(s). For instance, you may want to add a database or a caching system to your application or just have a database with no linked application.
+Applications often requires one or more services in addition to the runtime itself. Add-ons are services you can use independently, or you can link them with your application(s). For instance, you may want to add a database or a caching system to your application or just have a database with no linked application.
 
 An add-on can be shared by different applications to share data between them. It can be a database shared by two or three applications of your infrastructure for example, or they can be independent.
 
@@ -175,7 +177,7 @@ Most of the add-ons catalog is provided by Clever Cloud, but vendors are also al
 
 Clever Cloud provides multiple add-ons to work with your applications:
 
-* [MySQL]({{< ref "/deploy/addon/mysql" >}})
+* [MySQL]({{< ref "/deploy/addon/mysql/mysql" >}})
 * [PostgreSQL]({{< ref "/deploy/addon/postgresql" >}})
 * [MongoDB]({{< ref "/deploy/addon/mongodb" >}})
 * [FS buckets]({{< ref "/deploy/addon/fs-bucket" >}})
@@ -237,7 +239,7 @@ To link an already existing add-on with your application, just follow these step
 
 ### Managing your add-on
 
-Once an add-on is created, at least two managment tabs are available in the Clever Cloud console:
+Once an add-on is created, at least two management tabs are available in the Clever Cloud console:
 
 * the Information tab
 * the Configuration tab

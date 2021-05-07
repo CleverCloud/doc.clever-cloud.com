@@ -40,9 +40,9 @@ Any member of the Clever Cloud organisation containing the Elastic add-on will b
 
 ## Elastic APM
 
-Elastic APM is an Application performance management tool chain based on the Elastic Stack. See exactly where your application is spending time so you can quickly fix issues and feel good about the code you push. To use it you must install an *APM agent* to your application. Once both your application and APM server are running, you application with automatically send APM datas to the APM server wich will send them to Elastic and once indexed they will be available in your Kibana dashboard (this process is really fast, you won't see it as a human).
+Elastic APM is an Application performance management tool chain based on the Elastic Stack. See exactly where your application is spending time so you can quickly fix issues and feel good about the code you push. To use it you must install an *APM agent* to your application. Once both your application and APM server are running, you application with automatically send APM datas to the APM server which will send them to Elastic and once indexed they will be available in your Kibana dashboard (this process is really fast, you won't see it as a human).
 
-Curently, APM agents are available in the following languages:
+Currently, APM agents are available in the following languages:
 - [Go](https://www.elastic.co/guide/en/apm/agent/go/1.x/introduction.html)
 - [Java](https://www.elastic.co/guide/en/apm/agent/java/1.x/intro.html)
 - [Node.js](https://www.elastic.co/guide/en/apm/agent/nodejs/2.x/intro.html)
@@ -61,7 +61,13 @@ Any applications linked to the APM application will have the right credentials a
 
 ### APM Server custom configuration
 
-The APM server is deployed as an application. As such it's configured as an application. Its default pre run hook is set to `CC_PRE_RUN_HOOK="curl https://api.clever-cloud.com/v2/providers/es-addon/apm-server-setup/7 |sh"`. You can change the URL to point to your own custom configuration. A configuration example for RUM activation can be found here:https://gist.githubusercontent.com/ldoguin/d7aa23fd44cfaed04165275aaf229a3c/raw/93aa1d39d8c1e444969ae114dbcfe0a5868f8d84/es-apm-serverconfig.sh
+The APM server is deployed as an application. As such it's configured as an application. Its default pre run hook is set to:
+
+`CC_PRE_RUN_HOOK="curl https://api.clever-cloud.com/v2/providers/es-addon/apm-server-setup/7 | sh"`
+
+You can change the URL to point to your own custom configuration.
+
+A configuration example for RUM activation can be found here: [es-apm-serverconfig.sh](https://gist.githubusercontent.com/ldoguin/d7aa23fd44cfaed04165275aaf229a3c/raw/93aa1d39d8c1e444969ae114dbcfe0a5868f8d84/es-apm-serverconfig.sh).
 
 ### Java APM agent
 
