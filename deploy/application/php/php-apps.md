@@ -16,7 +16,6 @@ PHP is available on our platform with the branches 5.6, 7.2, 7.3, 7.4 and 8.0. Y
 
 The HTTP server is [Apache 2](https://httpd.apache.org/), and the PHP code is executed by [PHP-FPM](https://php-fpm.org/).
 
-
 {{< readfile "/content/partials/create-application.md" >}}
 
 {{< readfile "/content/partials/set-env-vars.md" >}}
@@ -32,5 +31,11 @@ Application deployment on Clever Cloud is via **Git or FTP**.
 {{< readfile "/content/partials/deploy-git.md" >}}
 
 {{< readfile "/content/partials/deploy-ftp.md" >}}
+
+## ProxySQL
+
+{{< readfile "/content/partials/proxysql.md" >}}
+
+You can learn more about ProxySQL on the [dedicated documentation page]({{< ref "/deploy/addon/mysql/proxysql.md" >}})
 
 {{< readfile "/content/partials/more-config.md" >}}

@@ -34,42 +34,53 @@ npm install -g clever-tools@beta
 
 #### Debian/Ubuntu (.deb)
 
+{{< alert "warning" "Bintray to Nexus" >}}
+<p>We recently moved from Bintray to a self hosted Nexus repository available at <a href="https://nexus.clever-cloud.com">nexus.clever-cloud.com</a>.</p>
+<p>You have to update the URL of your repository with the new one. If you experience any issue please let us know on the following <a href="https://github.com/CleverCloud/clever-tools/issues/454">issue</a>.</p>
+{{< /alert >}}
+
 If you are using a GNU/Linux distribution that uses `.deb` packages like Debian or Ubuntu, you can run:
 
 > Make sure you can download https hosted sources package. You may install :
-  ```sh
-  apt install apt-transport-https ca-certificates
-  ```
 
 ```sh
-apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys "379CE192D401AB61"
-echo "deb https://dl.bintray.com/clevercloud/deb stable main" | tee -a /etc/apt/sources.list.d/clevercloud.list
+apt install apt-transport-https ca-certificates
+```
+
+```sh
+apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys "A7B8F38C536F1DF2"
+echo "deb https://nexus.clever-cloud.com/repository/deb bionic stable main" | tee -a /etc/apt/sources.list
 apt update
 apt install clever-tools
 ```
 
 NOTES:
 
-* The `.deb` packages are hosted on Bintray (their GPG key is required to trust their signed packages).
+* The `.deb` packages are hosted on Clever Cloud's public Nexus instance available at [nexus.clever-cloud.com](https://nexus.clever-cloud.com) (our PGP key is required to trust our signed packages).
 * If you want access to the beta channel, you can use this in your `sources.list`:
 
 ```sh
-echo "deb https://dl.bintray.com/clevercloud/deb unstable beta" | tee -a /etc/apt/sources.list
+echo "deb https://nexus.clever-cloud.com/repository/deb bionic unstable beta" | tee -a /etc/apt/sources.list
 ```
 
 #### CentOS/Fedora (.rpm)
 
+{{< alert "warning" "Bintray to Nexus" >}}
+<p>We recently moved from Bintray to a self hosted Nexus repository available at <a href="https://nexus.clever-cloud.com">nexus.clever-cloud.com</a>.</p>
+<p>You have to update the URL of your repository with the new one. If you experience any issue please let us know on the following <a href="https://github.com/CleverCloud/clever-tools/issues/454">issue</a>.</p>
+{{< /alert >}}
+
 If you are using a GNU/Linux distribution that uses `.rpm` packages like CentOS or Fedora, you can run:
 
 ```sh
-curl https://bintray.com/clevercloud/rpm/rpm > /etc/yum.repos.d/bintray-clevercloud-rpm.repo
-echo "exclude=*beta*" >> /etc/yum.repos.d/bintray-clevercloud-rpm.repo
+curl https://nexus.clever-cloud.com/repository/rpm/ > /etc/yum.repos.d/nexus-clevercloud-rpm.repo
+ echo "exclude=*beta*" >> /etc/yum.repos.d/nexus-clevercloud-rpm.repo
 yum install clever-tools
 ```
 
 NOTES:
 
-* The `.rpm` packages are hosted on Bintray.
+* The `.rpm` packages are hosted on Clever Cloud's public Nexus instance available at  [https://nexus.clever-cloud.com](https://nexus.clever-cloud.com).
 * If you want access to the beta channel, you can omit the second line which contains an exclude option.
 
 #### Arch Linux
@@ -144,10 +155,15 @@ NOTES:
 
 #### Using chocolatey
 
+{{< alert "warning" "Bintray to Nexus" >}}
+<p>We recently moved from Bintray to a self hosted Nexus repository available at <a href="https://nexus.clever-cloud.com">nexus.clever-cloud.com</a>.</p>
+<p>You have to update the URL of your repository with the new one. If you experience any issue please let us know on the following <a href="https://github.com/CleverCloud/clever-tools/issues/454">issue</a>.</p>
+{{< /alert >}}
+
 If you are using Windows and you have [chocolatey](https://chocolatey.org) installed, you can run: 
 
 ```bash
-choco sources add -n=clevercloud -s='https://api.bintray.com/nuget/clevercloud/nupkg'
+choco sources add -n=clevercloud -s='https://nexus.clever-cloud.com/repository/nupkg'
 choco install clever-tools
 ```
 
@@ -198,25 +214,25 @@ Make sure you have `xdg-utils` available as well as a default browser set (or yo
 If you have an already existing application, you can start managing it with
 Clever Tools.
 
-    # First, go to your local repository
-    cd /path/to/your/application
+```sh
+# First, go to your local repository
+cd /path/to/your/application
 
-    # Then, link it to the Clever Cloud application
-    clever link <app_id>
+# Then, link it to the Clever Cloud application
+clever link <app_id>
 
-    # You can also use the application name (make sure to specify the
-    # organization name if your application is in an organization.
-    clever link --org <org_name> <app_name>
+# You can also use the application name (make sure to specify the
+# organization name if your application is in an organization.
+clever link --org <org_name> <app_name>
 
-    # Unlink an application
-    clever unlink <app_id>
+# Unlink an application
+clever unlink <app_id>
+```
 
 {{< alert "info" "Notes on `.clever.json`" >}}
-    <div>
-      Once you have linked an application, clever-tools will create a Json configuration file named `.clever.json` at the root of the directory.
-    </div>
-    <div>This file can be commited safely, others team members working on this repository will not have to link the application again.</div>
-    <div>This configuration file contains the AppID, so keep this in mind if you publish it on a public repository.</div>
+  <p>Once you have linked an application, clever-tools will create a Json configuration file named `.clever.json` at the root of the directory.</p>
+  <p>This file can be commited safely, others team members working on this repository will not have to link the application again.</p>
+  <p>This configuration file contains the AppID, so keep this in mind if you publish it on a public repository.</p>
 {{< /alert >}}
 
 <br>
@@ -225,8 +241,10 @@ Clever Tools.
 
 After having written new code, you can deploy it to Clever Cloud
 
-    # Will git push your code to Clever Cloud and display logs
-    clever deploy
+```sh
+# Will git push your code to Clever Cloud and display logs
+clever deploy
 
-    # Will open your application
-    clever open
+# Will open your application
+clever open
+```

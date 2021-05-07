@@ -28,7 +28,6 @@ These are read-only variables that are generated for each scaler before they bui
  |COMMIT_ID | The id of the commit that's currently running | d88cd2ae1aaa91923ed2bd689d95d713b6f3f45f |
  |CC_REVERSE_PROXY_IPS | A comma separated list of trusted IP addresses. You should only accept requests  coming from these IP addresses. | x.y.z.z,x.y.z.z |
  |ELASTIC_APM_SERVICE_NAME | Sets the name of your service/application in Elastic APM. Automatically defined when you have linked an Elastic APM service to your application. You can override it by defining it yourself | Your application's name conforming to Elastic APM naming convention |
- |CC_CLAMAV | Start the clamav and clamav-freshclam services (the database is updated every 2 hours). WARNING: Clamscan consumes a lot of resources (~ 1GB of memory), make sure you have a scaler with enough memory to avoid OOM. | false, true |
  {{< /table >}}
 
 ### Variables you can define
@@ -55,6 +54,7 @@ So you can alter the build&start process for your application.
  |[CC_OVERRIDE_BUILDCACHE]({{< ref "develop/env-variables.md#settings-you-can-define-using-environment-variables" >}}) | Allows to specify paths that will be in the build cache. <br />Only those files / directories will be cached |  |
  |[CC_METRICS_PROMETHEUS_PORT]({{< ref "administrate/metrics/overview.md#publish-your-own-metrics" >}}) | Define the port on which the Prometheus endpoint is available | `8080` |
  |[CC_METRICS_PROMETHEUS_PATH]({{< ref "administrate/metrics/overview.md#publish-your-own-metrics" >}}) | Define the path on which the Prometheus endpoint is available | `/metrics` |
+ |[CC_CLAMAV]({{< ref "administrate/clamav.md" >}}) | Start the clamav and clamav-freshclam services (the database is updated every 2 hours). WARNING: Clamscan consumes a lot of resources (~ 1GB of memory), make sure you have a scaler with enough memory to avoid OOM. | `false` |
  {{< /table >}}
 
 ## Docker
@@ -144,6 +144,7 @@ So you can alter the build&start process for your application.
  |ENABLE_REDIS |  | `false` |  |
  |HTTP_TIMEOUT | Define a custom HTTP timeout | `180` |  |
  |MAX_INPUT_VARS |  |  |  |
+ |MEMORY_LIMIT | Change the default memory limit |  |  |
  |CC_PHP_VERSION | Choose your PHP version between `5.6`, `7.2`, `7.3`, `7.4` and `8.0` | `7` |  |
  |CC_COMPOSER_VERSION | Choose your composer version between `1` and `2` | `2` |  |
  |[SESSION_TYPE]({{< ref "deploy/application/php/php-apps.md#use-redis-to-store-php-sessions" >}}) | Choose `redis` to use it as session store |  |  |
@@ -152,14 +153,28 @@ So you can alter the build&start process for your application.
  |CC_OPCACHE_MEMORY | Set the shared opcache memory size | Default is about 1/8 of the RAM |  |
  |CC_OPCACHE_MAX_ACCELERATED_FILES | Maximum number of files handled by opcache. | Default depends on the scaler size |  |
  |CC_OPCACHE_INTERNED_STRINGS_BUFFER | The amount of memory used to store interned strings, in megabytes. | Default 4 (PHP5), 8 (PHP7) |  |
+ |CC_OPCACHE_PRELOAD | The path of the PHP preload file (PHP version 7.4 or higher). |  |  |
  |CC_MTA_SERVER_HOST | Host of the SMTP server |  |  |
  |CC_MTA_SERVER_PORT | Port of the SMTP server | 465 |  |
  |CC_MTA_AUTH_USER | User to authenticate to the SMTP server |  |  |
  |CC_MTA_AUTH_PASSWORD | Password to authenticate to the SMTP server |  |  |
  |CC_MTA_USE_TLS | Enable or disable TLS when connecting to the SMTP server | true |  |
  |CC_MTA_AUTH_METHOD | Enable or disable authentication to the SMTP server | on |  |
+ |CC_REALPATH_CACHE_TTL | The size of the realpath cache to be used by PHP | 120 |  |
  |SQREEN_API_APP_NAME | The name of your sqreen application. |  |  |
  |SQREEN_API_TOKEN | Organization token. |  |  |
+ {{< /table >}}
+
+## ProxySQL
+
+[ProxySQL Documentation]({{< ref "deploy/addon/mysql/proxysql.md" >}})
+{{<table "table table- bordered" "text-align:center" >}}
+ | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
+ |-----------------------|------------------------------|--------------------------------|--------------------------------|
+ |CC_ENABLE_MYSQL_PROXYSQL | Enable the ProxySQL  feature | `false`  | |
+ |CC_MYSQL_PROXYSQL_MAX_CONNECTIONS | Defines the maximum number of connections the local ProxySQL will open to your MySQL add-on | `10` | |
+ |CC_MYSQL_PROXYSQL_USE_TLS | Enable or disable secured connection using TLS to your MySQL add-on | `true` | |
+ |CC_MYSQL_PROXYSQL_SOCKET_PATH | Contains the path to the Unix Datagram Socket to connect to ProxySQL | | `true` |
  {{< /table >}}
 
 ## Python
@@ -169,6 +184,7 @@ So you can alter the build&start process for your application.
  {{<table "table table- bordered" "text-align:center" >}}
  | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
  |-----------------------|------------------------------|--------------------------------|--------------------------------|
+ |CC_PIP_REQUIREMENTS_FILE | Allows you to define a custom `requirements.txt` file  | `requirements.txt`  |  |
  |CC_PYTHON_CELERY_LOGFILE | Relative path to your Celery logfile: `/path/to/logdir`  |  |  |
  |CC_PYTHON_CELERY_MODULE | Specify the Celery module you want to start: `mymodule` |  |  |
  |CC_PYTHON_CELERY_USE_BEAT | Set to `true` to activate Beat support |  |  |
@@ -205,7 +221,7 @@ So you can alter the build&start process for your application.
  |CC_RACKUP_SERVER | The server to use for serving the ruby application | puma |  |
  |RACK_ENV |  |  |  |
  |RAILS_ENV |  |  |  |
- |RUBY_VERSION | Choose the Ruby version to use. |  |  |
+ |CC_RUBY_VERSION | Choose the Ruby version to use but we strongly advise to set Ruby version in your Gemfile |  |  |
  |STATIC_FILES_PATH | Relative path to where your static files are stored: `path/to/static` |  |  |
  |[STATIC_URL_PREFIX]({{< ref "deploy/application/python/python_apps.md#configure-your-python-application" >}}) | The URL path under which you want to serve static file, usually `/public` |  |  |
  |STATIC_WEBROOT |  |  |  |
@@ -222,7 +238,7 @@ So you can alter the build&start process for your application.
  | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
  |-----------------------|------------------------------|--------------------------------|--------------------------------|
  |CC_RUST_BIN | The name of the binary to launch once built |  |  |
- |CC_RUSTUP_CHANNEL | RUSTUP_CHANNEL | Require a specific channel version with `beta`, `nightly`, or a specifiv version like `1.13.0`  | stable |  |
+ |CC_RUSTUP_CHANNEL | The rust channel to use. Use a specific channel version with `stable`, `beta`, `nightly` or a specific version like `1.13.0`  | `stable` |  |
  |CC_RUST_FEATURES | The list of features to enable |  |  |
  {{< /table >}}
 
@@ -281,7 +297,7 @@ So you can alter the build&start process for your application.
 
 ## MySQL
 
-[MySQL Documentation]({{< ref "deploy/addon/mysql.md" >}})
+[MySQL Documentation]({{< ref "deploy/addon/mysql/mysql.md" >}})
 
  {{<table "table table- bordered" "text-align:center" >}}
  | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
@@ -317,6 +333,28 @@ So you can alter the build&start process for your application.
  |REDIS_PASSWORD |  | Generated upon creation | X  |
  {{< /table >}}
 
+## Elastic Stack
+
+[Elastic Stack Documentation]({{< ref "deploy/addon/elastic.md" >}})
+
+ {{<table "table table- bordered" "text-align:center" >}}
+ | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
+ |-----------------------|------------------------------|--------------------------------|--------------------------------|
+ |ELASTIC_APM_SERVER_URLS | URI to connect APM Server | Generated upon creation | X  |
+ |ES_ADDON_APM_HOST | APM Server hostname | Generated upon creation | X  |
+ |ES_ADDON_APM_AUTH_TOKEN | Authentication token to send metrics to APM Server | Generated upon creation | X  |
+ |ELASTIC_APM_SECRET_TOKEN | Authentication token to send metrics to APM Server | Generated upon creation | X  |
+ |ES_ADDON_APM_USER | Username credential used by APM Server to send metrics to Elasticsearch | Generated upon creation | X  |
+ |ES_ADDON_APM_PASSWORD | Password credential used by APM Server to send metrics to Elasticsearch | Generated upon creation | X  |
+ |ES_ADDON_KIBANA_HOST | Kibana hostname | Generated upon creation | X  |
+ |ES_ADDON_KIBANA_USER | Username credential used by Kibana to query Elasticsearch | Generated upon creation | X  |
+ |ES_ADDON_KIBANA_PASSWORD | Password credential used by Kibana to query Elasticsearch | Generated upon creation | X  |
+ |ES_ADDON_URI | URI to query Elasticsearch | Generated upon creation | X  |
+ |ES_ADDON_HOST | Elasticsearch hostname | Generated upon creation | X  |
+ |ES_ADDON_USER | Username credential to authenticate to Elasticsearch | Generated upon creation | X  |
+ |ES_ADDON_PASSWORD | Password credential to authenticate to Elasticsearch | Generated upon creation | X  |
+ |ES_ADDON_VERSION | ElasticSearch Version | 7 | X  |
+ {{< /table >}}
 
 ## New Relic
 
