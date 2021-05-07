@@ -35,7 +35,7 @@ Maven is essentially a project management and comprehension tool and as such pro
 
 ### About Cargo
 
-To run your app, you can, for example, use plugins like cargo ([Find it here](https://codehaus-cargo.GitHub.io/cargo/Maven2+plugin.html)).
+To run your app, you can, for example, use plugins like cargo ([Find it here](https://codehaus-cargo.github.io/cargo/Maven+3+Plugin.html)).
 Your application must be set to listen on the port 8080.
 
 {{< readfile "/content/partials/java-versions.md" >}}
@@ -87,17 +87,17 @@ You can use the following properties:
   <tbody>
     <tr>
       <td><span class="label label-default">Optional</span></td>
-      <td>**build -&gt; type**</td>
-      <td>can be `"maven"`, `"gradle"` or `"ant"`</td>
+      <td><strong>build -&gt; type</strong></td>
+      <td>can be <code>maven</code>, <code>gradle</code> or <code>ant</code></td>
     </tr>
     <tr>
       <td><span class="label label-default">Optional</span></td>
-      <td>**build -&gt; goal**</td>
+      <td><strong>build -&gt; goal</strong></td>
       <td>is the target you want to use to build your project</td>
     </tr>
     <tr>
       <td><span class="label label-danger">Required</span></td>
-      <td>**deploy -&gt; goal**</td>
+      <td><strong>deploy -&gt; goal</strong></td>
       <td>the goal/target and options you want to execute to deploy/run you project</td>
     </tr>
   </tbody>
@@ -120,7 +120,7 @@ This will override the default `maven run` we use to run your application.
 Example:
 
 ```bash
-CC_RUN_COMMAND=java -jar somefile.jar <options>
+CC_RUN_COMMAND="java -jar somefile.jar <options>"
 ```
 
 {{< readfile "/content/partials/new-relic.md" >}}

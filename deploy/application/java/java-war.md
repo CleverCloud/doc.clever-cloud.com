@@ -98,7 +98,7 @@ The supported containers are listed below:
 ## Configure your Java application
 
 {{< alert "warning" >}}
-<p>You **must** provide a `clevercloud/war.json` file in your application repository.</p>
+<p>You <strong>must</strong> provide a <code>clevercloud/war.json</code> file in your application repository.</p>
 {{< /alert >}}
 
 ### Full configuration example
@@ -135,13 +135,13 @@ Here's what your configuration file can look like:
 
 ```json
 {
-   "deploy":{
+   "deploy": {
       "container":"<string>",
-      "war" : [
+      "war": [
          {
-            "file":"<string>",
-            "context":"/<string>",
-            "checkMe":"/<string>"
+            "file": "<string>",
+            "context": "/<string>",
+            "checkMe": "/<string>"
          }
       ]
    }
@@ -161,27 +161,27 @@ Here's what your configuration file can look like:
          <td>
             <span class="label label-danger">Required</span>
          </td>
-         <td>**container**</td>
-         <td>Name of the container to use. Should contain one of the values inside parentheses in the [containers table](#available-containers) (in uppercase and all).</td>
+         <td><strong>container</strong></td>
+         <td>Name of the container to use. Should contain one of the values inside parentheses in the <a href="#available-containers">containers table</a> (in uppercase and all).</td>
       </tr>
       <tr>
          <td>
             <span class="label label-danger">Required</span>
          </td>
-         <td>**file**</td>
+         <td><strong>file</strong></td>
          <td>Should contain the path of the war/ear file relative to your application root.</td>
       </tr>
       <tr>
          <td>
             <span class="label label-default">Optional</span>
          </td>
-         <td>**context**</td>
+         <td><strong>context</strong></td>
          <td>
             <ul>
                <li>Must start with a slash (/), can be "/".</li>
-               <li>Defines the base path you want your app to be under. If your app has a /foobar endpoint, it will be available under the `/{my-context}/foobar` path.</li>
-               <li>Not needed for an `ear` file.</li>
-               <li>The default value for a war is the name of the war without the extensions: helloworld-1.0.war will be deployed under the `/helloworld-1.0` context.</li>
+               <li>Defines the base path you want your app to be under. If your app has a /foobar endpoint, it will be available under the <code>/{my-context}/foobar</code> path.</li>
+               <li>Not needed for an <code>ear</code> file.</li>
+               <li>The default value for a war is the name of the war without the extensions: helloworld-1.0.war will be deployed under the <code>/helloworld-1.0</code> context.</li>
             </ul>
          </td>
       </tr>
@@ -189,13 +189,13 @@ Here's what your configuration file can look like:
          <td>
             <span class="label label-default">Optional</span>
          </td>
-         <td>**checkMe**</td>
+         <td><strong>checkMe</strong></td>
          <td>
             <ul>
                <li>This field is recommended</li>
                <li>A path to GET in order to test if the application is really running.</li>
                <li>By default we will consider that the application is up if the container is up.</li>
-               <li>With this option, we will try to `GET /{checkMe}` for each one of your wars and consider the app down until every single checkMe path that replies a 200.</li>
+               <li>With this option, we will try to <code>GET /{checkMe}</code> for each one of your wars and consider the app down until every single checkMe path that replies a 200.</li>
             </ul>
          </td>
       </tr>
@@ -232,7 +232,7 @@ That you can do, by setting the "build" field object in the `war.json` file:
          <td>
             <span class="label label-danger">Required</span>
          </td>
-         <td>**type**</td>
+         <td><strong>type</strong></td>
          <td>
             <ul>
                <li>The tool you want to use to build your app</li>
@@ -244,7 +244,7 @@ That you can do, by setting the "build" field object in the `war.json` file:
          <td>
             <span class="label label-danger">Required</span>
          </td>
-         <td>**goal**</td>
+         <td><strong>goal</strong></td>
          <td>
             <ul>
                <li>The goal you want the tool to execute.</li>
@@ -347,7 +347,7 @@ This will override the default way of running your application.
 Example:
 
 ```bash
-CC_RUN_COMMAND=java -jar somefile.jar <options>
+CC_RUN_COMMAND="java -jar somefile.jar <options>"
 ```
 
 {{< readfile "/content/partials/new-relic.md" >}}

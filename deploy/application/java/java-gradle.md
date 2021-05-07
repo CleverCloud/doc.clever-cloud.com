@@ -71,17 +71,17 @@ You can use the following properties:
   <tbody>
     <tr>
       <td><span class="label label-default">Optional</span></td>
-      <td>**build -&gt; type**</td>
-      <td>can be `"maven"`, `"gradle"` or `"ant"`</td>
+      <td><strong>build -&gt; type</strong></td>
+      <td>can be <code>maven</code>, <code>gradle</code> or <code>ant</code></td>
     </tr>
     <tr>
       <td><span class="label label-default">Optional</span></td>
-      <td>**build -&gt; goal**</td>
+      <td><strong>build -&gt; goal</strong></td>
       <td>is the target you want to use to build your project</td>
     </tr>
     <tr>
       <td><span class="label label-danger">Required</span></td>
-      <td>**deploy -&gt; goal**</td>
+      <td><strong>deploy -&gt; goal</strong></td>
       <td>the goal/target and options you want to execute to deploy/run you project</td>
     </tr>
   </tbody>
@@ -96,7 +96,7 @@ This will override the default way of runing your application.
 Example:
 
 ```bash
-CC_RUN_COMMAND=java -jar somefile.jar <options>
+CC_RUN_COMMAND="java -jar somefile.jar <options>"
 ```
 
 ### Environment injection
@@ -104,18 +104,17 @@ CC_RUN_COMMAND=java -jar somefile.jar <options>
 Clever Cloud can inject environment variables that are defined in the
 dashboard and by add-ons linked to your application.
 
-For Java applications, the environment is injected in the
-`System.getProperties()` object. So, to use a variable, you just do
-`System.getProperties().getProperty("MY_VARIABLE")`.
+For Java applications, the environment is injected in the `System.getProperties()` object.
+
+So, to use a variable, you just need `System.getProperties().getProperty("MY_VARIABLE")`.
 
 For Groovy applications, just use the `System.getProperty("MY_VARIABLE")`.
 
 ## The Gradle Wrapper
 
-Since Gradle can come in many versions, Clever Cloud automatically support the
-[Gradle Wrapper|https://www.gradle.org/docs/current/userguide/gradle_wrapper.html]:
-Just create and commit the `gradlew` file and the wrapper `jar` and
-`properties` files:
+Since Gradle can come in many versions, Clever Cloud automatically support the [Gradle Wrapper|https://www.gradle.org/docs/current/userguide/gradle_wrapper.html].
+
+Just create and commit the `gradlew` file and the wrapper `jar` and `properties` files:
 
 ```txt
 ./
