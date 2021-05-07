@@ -1,10 +1,11 @@
 ## Configure your Haskell application
+
 ### Mandatory configuration
 
 Be sure that:
 
-* you have pushed in <b>master branch</b>
-* you listen on <b>port 8080</b>
+* you have pushed in **master branch**
+* you listen on **port 8080**
 * you have one and only one binary target in your [`.cabal` file](#dependencies)
 * your project has a `stack.yaml` file
 
@@ -33,7 +34,7 @@ main = scotty 8080 $ do
 
 Make sure to list all your dependencies in your `.cabal` file. For the example above, you need:
 
-```
+```txt
   build-depends:       base
                      , scotty
 ```
@@ -56,8 +57,8 @@ by stack), you can specify it through the `CC_RUN_COMMAND` environment variable.
 
 For instance, for a hakyll website, you can put
 
-```
-CC_RUN_COMMAND=~./local/bin/site server --host 0.0.0.0 --port 8080
+```bash
+CC_RUN_COMMAND="~./local/bin/site server --host 0.0.0.0 --port 8080"
 ```
 
 To access environment variables from your code, just get them from the environment with `getEnv :: String -> IO String` in `System.Environment`.
@@ -80,4 +81,5 @@ main = do
     get "/" $ do
       html . pack $ "Hello world " ++ myVar
 ```
+
 This loads the environment variable in your `main` function and tests it. This way, the application will refuse to start with an helpful error message if `MY_VAR` is not defined.
