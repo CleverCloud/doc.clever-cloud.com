@@ -15,7 +15,7 @@ keywords:
 PostgreSQL is an object-relational database management system (ORDBMS) with an emphasis on extensibility
 and on standards-compliance.
 
-## Version
+## Versions
 
 The version currently installed by the add-on is :
 
@@ -102,8 +102,4 @@ Usually this threshold is set to 20%.
 
 ## Plans
 
-<cc-smart-container context='{"productId": "postgresql-addon", "addonFeatures": ["cpu", "memory", "disk-size", "connection-limit", "has-logs", "has-metrics"]}'>
-  <cc-pricing-product mode="addon" action="none">
-    <div slot="head"></div>
-  </cc-pricing-product>
-</cc-smart-container>
+{{< pricingAddon "postgresql-addon" "[\"cpu\", \"memory\", \"disk-size\", \"connection-limit\", \"has-logs\", \"has-metrics\"]" >}}
