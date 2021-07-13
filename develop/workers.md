@@ -13,7 +13,7 @@ keywords:
 You can run background tasks running in parallel of your application. They will be restarted automatically on error.
 Those are especially useful for environments where you can't have long-running processes such as PHP, Ruby or Python.
 
-The workers run in the same environment as your application. They are launched as services by Systemd, in the application's directory.
+The workers run in the same environment as your application. They are launched as services by systemd, in the application's directory.
 
 All you need to do is add one (or several) environment variables as such:
 
