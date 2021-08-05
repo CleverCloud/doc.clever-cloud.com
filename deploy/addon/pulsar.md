@@ -6,6 +6,10 @@ tags:
 keywords:
 - pulsar
 - messaging
+- cold storage
+- queue
+- hot storage
+- biscuit
 ---
 
 ## Overview
