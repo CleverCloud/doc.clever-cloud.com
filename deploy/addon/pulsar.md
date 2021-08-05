@@ -153,7 +153,7 @@ PARTITION_WRITE
 
 ### Attenuation
 
-The pulsar addon given biscuit can be attenuated, here is an attenuation example using (biscuit-cli)[https://github.com/biscuit-auth/biscuit-cli] from the given biscuit to produce/consume topics starting with `TOPIC_PREFIX`:
+The pulsar addon given biscuit can be attenuated, here is an attenuation example using (biscuit-cli)[https://github.com/biscuit-auth/biscuit-cli] from the given biscuit to produce/consume topics starting with `"TOPIC_PREFIX"`:
 
 First inspect your biscuit:
 ```bash
@@ -196,7 +196,43 @@ Put
 check if topic_operation(#ambient, "user_12345678-f54e-4e09-848c-1953af6e3e89", "pulsar_12345678-6b36-4af2-be1f-d97862c0c41c", $topic, $operation), $topic.starts_with("TOPIC_PREFIX")
 ```
 
-Then it outputs the attenuated token. You can find more examples on the (biscuit-pulsar authorization java tests)[https://github.com/CleverCloud/biscuit-pulsar/blob/master/src/test/java/com/clevercloud/biscuitpulsar/AuthorizationProviderBiscuitTest.java].
+Then it outputs the attenuated token. Inspect it to ensure your attenuation:
+
+```bash
+Authority block:
+== Datalog ==
+right(#authority, #admin);
+
+== Revocation ids ==
+Content-based: fe7526a27b43fa7d5386c31b3efb6c53b551b4a8e3e969f4dc074497b3942a57
+Unique:        faf6cab8a4dffad77633181d6f924414980bb6d76c5298b88f700c11659c7407
+
+==========
+
+Block n°1:
+== Datalog ==
+check if topic_operation(#ambient, "user_12345678-f54e-4e09-848c-1953af6e3e89", "pulsar_50ee8f69-6b36-4af2-be1f-d97862c0c41c", $2, $3) or namespace_operation(#ambient, "user_12345678-f54e-4e09-848c-1953af6e3e89", "pulsar_12345678-6b36-4af2-be1f-d97862c0c41c", $2);
+
+== Revocation ids ==
+Content-based: a35a92a278a3ad9ec5db8dc3e905cfbc17f5a8e2cb13ff39b69b003500fe6c46
+Unique:        17dfec62b62da36562a0998d496bb3aa30f229138ec810a070084bdf1c55be3a
+
+==========
+
+Block n°2:
+== Datalog ==
+check if topic_operation(#ambient, "user_12345678-f54e-4e09-848c-1953af6e3e89", "pulsar_12345678-6b36-4af2-be1f-d97862c0c41c", $topic, $operation), $topic.starts_with("TOPIC_PREFIX");
+
+== Revocation ids ==
+Content-based: 8eaaa639d5b94c3e053ad840e8dcca6fe66a621442ecc99eadf1df03d6138f1d
+Unique:        f608dc2f724fc14faf0daf50774ef0b9425cda26f56ee93317ca80ca13736027
+
+==========
+```
+
+Now the block n°2 ensure that topics must starts with `"TOPIC_PREFIX"`.
+
+You can find more examples on the (biscuit-pulsar authorization java tests)[https://github.com/CleverCloud/biscuit-pulsar/blob/master/src/test/java/com/clevercloud/biscuitpulsar/AuthorizationProviderBiscuitTest.java].
 
 ## Storage
 
@@ -215,7 +251,7 @@ Pulsar has a [tiered storage feature](https://pulsar.apache.org/docs/en/tiered-s
 
 For each pulsar addon we provide, we also provide an hidden cellar addon (which is our object storage addon) which is directly binded to the pulsar namespace offload policies. 
 
-The offload threshold of the namespace is deactivated by default, but you can activate it with:
+The offload threshold of the namespace is deactivated by default, you can activate it with:
 
 ```bash
 # Example to set offload to run when hot storage is > 10G and put data to Cellar Addon
