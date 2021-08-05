@@ -471,3 +471,18 @@ to be routed through the exit node.
 |VPN_ADDON_TAKEY | Pre-shared secret |  |  |
 |VPN_TARGETS | Comma-separated list of CIDRs for which you want the traffic to be routed through the exit node |  |  |
 {{< /table >}}
+
+### Pulsar
+
+{{<table "table table- bordered" "text-align:center" >}}
+| <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
+|-----------------------|------------------------------|--------------------------------|--------------------------------|
+| ADDON_PULSAR_BINARY_SSL_PORT="2002" |   |   | X  |
+| ADDON_PULSAR_BINARY_URL | Use this complete url in your application  |   | X |
+| ADDON_PULSAR_BISCUIT_TOKEN | Biscuit authentication token  |   | X |
+| ADDON_PULSAR_HOSTNAME |   |   | X |
+| ADDON_PULSAR_HTTPS_PORT |   |   | X  |
+| ADDON_PULSAR_NAMESPACE | your addon id   |   | X  |
+| ADDON_PULSAR_TENANT | your user id by clever  |   | X  |
+| ADDON_PULSAR_WEB_URL |   |   | X  |
+{{< /table >}}
