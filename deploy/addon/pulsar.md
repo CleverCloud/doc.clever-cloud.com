@@ -10,11 +10,13 @@ keywords:
 - queue
 - hot storage
 - biscuit
+- rabbitmq
+- kafka
 ---
 
 ## Overview
 
-Pulsar works on a publisher / subscriber model, just like RabbitMQ or Kafka.
+Pulsar works on a publisher/subscriber model, just like RabbitMQ or Kafka.
 
 ```
 client               Pulsar             client
@@ -23,9 +25,9 @@ publishes to   =>    topic      <=  subscribes to
 "producer"                           "consumer"
 ```
 
-They are several modes of subscription. A consumer may subscribe exclusively, or share the subscription with other consumers.
+They are several modes of subscription. A consumer may subscribe exclusively, or share the subscription with other consumers. There is the subscription mode types:
 
-- Exclusive
+- Exclusive (only one consumer for the subscription)
 - Failover (if a consumer fails, another one receives the message)
 - Shared (messages are distributed to several consumers)
 - Key_Shared (messages come with keys and go to consumers with the corresponding key)
@@ -38,17 +40,17 @@ A topic is defined this way:
 
 Tenants and namespaces allow for grouping and subgrouping of topics.
 
-What a pulsar add-on basically is, is a tenant/namespace pair that allows you to create and use as many topics as you wantt following this pattern:
+A Clever Cloud Pulsar add-on is basically a `tenant/namespace` pair that allows you to create and use topics following this pattern:
 
-`{persistent|non-persistent}://user_id/pulsar_addon_id/name_of_your_topic`
+`{persistent|non-persistent}://<CLEVER_CLOUD_TENANT_ID>/<ADDON_ID>/<TOPIC_NAME>`
 
 ## Authorization
 
-Pulsar addon uses (Biscuit for Pulsar)[https://github.com/CleverCloud/biscuit-pulsar/commits/master] implementation which is directly pluggable to the Pulsar authentication and authorization system. Each addon exposes its own biscuit token.
+Pulsar add-on uses (Biscuit for Pulsar)[https://github.com/CleverCloud/biscuit-pulsar] implementation which is directly pluggable to the Pulsar authentication and authorization system. Each add-on exposes its own Biscuit token.
 
 ### Usage
 
-We advise you to use (`pulsarctl`)[https://github.com/streamnative/pulsarctl] provided by StreamNative. Here is an example to list topics in your addon (in your namespace):
+We advise you to use (`pulsarctl`)[https://github.com/streamnative/pulsarctl] provided by StreamNative. Here is an example to list topics in your add-on (in your namespace):
 
 ```bash
 pulsarctl --admin-service-url https://<PULSAR_REST_URL> --auth-params <BISCUIT> --auth-plugin org.apache.pulsar.client.impl.auth.AuthenticationToken topics list <tenant>/<namespace>
@@ -67,7 +69,7 @@ As Biscuit is a token, you can use `AuthenticationToken("<BISCUIT>")` provided b
 
 ### Operations
 
-The pulsar addon given biscuit enable you to run several operations on namespace, its policies and the related topics.
+The pulsar addon given Biscuit token enables you to run several operations on namespace, its policies and the related topics.
 
 #### Namespace
 
@@ -153,9 +155,16 @@ PARTITION_WRITE
 
 ### Attenuation
 
-The pulsar addon given biscuit can be attenuated, here is an attenuation example using (biscuit-cli)[https://github.com/biscuit-auth/biscuit-cli] from the given biscuit to produce/consume topics starting with `"TOPIC_PREFIX"`:
+The Pulsar add-on given Biscuit token can be attenuated, here is an attenuation example using (biscuit-cli)[https://github.com/biscuit-auth/biscuit-cli] from the given Biscuit token to produce/consume topics starting with `"TOPIC_PREFIX"`:
 
-First inspect your biscuit:
+Put your Biscuit token in a file:
+
+```bash
+echo "<BISCUIT_TOKEN>" > addon.biscuit
+```
+
+Inspect your Biscuit token:
+
 ```bash
 $ biscuit inspect addon.biscuit
 Authority block:
@@ -179,13 +188,13 @@ Unique:        17dfec62b62da36562a0998d496bb3aa30f229138ec810a070084bdf1c55be3a
 ==========
 ```
 
-* The authority block is the cluster authentication block (the cluster admin biscuit).
+* The authority block is the cluster authentication block (the cluster admin Biscuit token).
 * The block n°1 is an attenuation of the authority block to only authorize operations on `tenant = "user_1235678-f54e-4e09-848c-1953af6e3e89"` and `namespace = "pulsar_1235678-6b36-4af2-be1f-d97862c0c41c"`.
 
-Now attenuate it:
+Attenuate it:
 
 ```bash
-$ biscuit attenuate addon.biscuit
+biscuit attenuate addon.biscuit
 ```
 
 This will open your `$EDITOR` to type the attenuation.
@@ -238,7 +247,7 @@ You can find more examples on the (biscuit-pulsar authorization java tests)[http
 
 ### Retention
 
-Provided addon pulsar have a infinite retention policies which can be changed using:
+Provided Pulsar add-on have infinite retention policies which can be changed using:
 
 ```bash
 # Example to set retention of namespace to 2 weeks and/or 100 GB
@@ -249,7 +258,7 @@ pulsarctl --admin-service-url https://<PULSAR_REST_URL> --auth-params <BISCUIT> 
 
 Pulsar has a [tiered storage feature](https://pulsar.apache.org/docs/en/tiered-storage-overview/) allowing to offload heavy data to cold storage once a threshold is reached.
 
-For each pulsar addon we provide, we also provide an hidden cellar addon (which is our object storage addon) which is directly binded to the pulsar namespace offload policies. 
+For each Pulsar add-on we provide, we also provide an hidden (Cellar add-on)[https://www.clever-cloud.com/doc/deploy/addon/cellar/] (which is our object storage addon) which is directly binded to the Pulsar namespace offload policies.
 
 The offload threshold of the namespace is deactivated by default, you can activate it with:
 
