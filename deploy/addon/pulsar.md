@@ -54,10 +54,10 @@ Pulsar add-on uses [Biscuit for Pulsar](https://github.com/CleverCloud/biscuit-p
 We advise you to use [`pulsarctl`](https://github.com/streamnative/pulsarctl) provided by StreamNative. Here is an example to list topics in your add-on (in your namespace):
 
 ```bash
-pulsarctl --admin-service-url $ADDON_PULSAR_WEB_URL --auth-params $ADDON_PULSAR_TOKEN --auth-plugin org.apache.pulsar.client.impl.auth.AuthenticationToken topics list $ADDON_PULSAR_TENANT/$ADDON_PULSAR_NAMESPACE
+pulsarctl --admin-service-url $ADDON_PULSAR_WEB_URL --auth-params $ADDON_PULSAR_BISCUIT_TOKEN --auth-plugin org.apache.pulsar.client.impl.auth.AuthenticationToken topics list $ADDON_PULSAR_TENANT/$ADDON_PULSAR_NAMESPACE
 ```
 
-As Biscuit is a token, you can use `AuthenticationToken($ADDON_PULSAR_TOKEN)` provided by clients librairies to authenticate to our clusters without any tweak.
+As Biscuit is a token, you can use `AuthenticationToken($ADDON_PULSAR_BISCUIT_TOKEN)` provided by clients librairies to authenticate to our clusters without any tweak.
 
 * C++ client
 * C# client
@@ -70,7 +70,8 @@ As Biscuit is a token, you can use `AuthenticationToken($ADDON_PULSAR_TOKEN)` pr
 
 ### Rust example
 
-Clever cloud maintains pulsar's [asynchronous Rust client](https://github.com/wyyerd/pulsar-rs), which support biscuits. Here is a minimal example that produces (publishes)a *"Hello, World!"* to the client:
+Clever cloud maintains pulsar's [asynchronous Rust client](https://github.com/wyyerd/pulsar-rs), which support biscuits.
+Here is a minimal example that produces (publishes) a *"Hello, World!"* to the client:
 
 ```toml
 # Cargo.toml
@@ -238,7 +239,7 @@ The Pulsar add-on given Biscuit token can be attenuated, here is an attenuation 
 Put your Biscuit token in a file:
 
 ```bash
-echo $ADDON_PULSAR_TOKEN > addon.biscuit
+echo $ADDON_PULSAR_BISCUIT_TOKEN > addon.biscuit
 ```
 
 Inspect your Biscuit token:
