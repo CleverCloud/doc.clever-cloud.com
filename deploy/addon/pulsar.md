@@ -76,7 +76,7 @@ As Biscuit is a token, you can use `AuthenticationToken($ADDON_PULSAR_TOKEN)` pr
 
 ### Rust example
 
-Clever cloud maintains pulsar's [asynchronous Rust client](https://github.com/wyyerd/pulsar-rs), which support biscuits.
+Clever Cloud maintains pulsar's [asynchronous Rust client](https://github.com/wyyerd/pulsar-rs), which support biscuits.
 Here is a minimal example that produces (publishes) a *"Hello, World!"* to the client:
 
 ```toml
