@@ -16,7 +16,7 @@ keywords:
 
 ## Overview
 
-Pulsar works on a publisher/subscriber model, just like RabbitMQ or Kafka.
+[Pulsar](https://pulsar.apache.org/) works on a publisher/subscriber model, just like RabbitMQ or Kafka.
 
 ```
 client               Pulsar             client
