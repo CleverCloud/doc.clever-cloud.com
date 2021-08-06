@@ -16,7 +16,7 @@ keywords:
 
 ## Overview
 
-[Pulsar](https://pulsar.apache.org/) works on a publisher/subscriber model. It allows services to communicate asynchronously, with latencies on the order of 100 milliseconds. It is used for streaming analytics and data integration pipelines to ingest and distribute data. It is equally effective as messaging-oriented middleware for service integration or as a queue to parallelize tasks. It also enables you to create systems of event producers and consumers. Publishers communicate with subscribers asynchronously by broadcasting events.
+[Pulsar](https://pulsar.apache.org/) works on a publisher/subscriber model. It allows services to communicate asynchronously, with latencies ranging around 100 milliseconds. It is used for streaming analytics and data integration pipelines to ingest and distribute data. It is equally effective as messaging-oriented middleware for service integration or as a queue to parallelize tasks. It also enables you to create systems of event producers and consumers. Publishers communicate with subscribers asynchronously by broadcasting events.
 
 ```
 client               Pulsar             client
@@ -47,12 +47,12 @@ It allows you to create and use topics following this pattern:
 
 ## Version
 
-We maintain up-to-date Pulsar clusters based on the official Apache Pulsar release process. Your Pulsar add-on version is available in your add-on dashboard. Updates will be notified using Clever Cloud weekly updates on the (blog)[https://www.clever-cloud.com/blog/].
+We maintain up-to-date Pulsar clusters based on the official Apache Pulsar release process. Your Pulsar add-on version is available in your add-on dashboard. Updates will be notified using Clever Cloud weekly updates on the [blog](https://www.clever-cloud.com/blog/).
 
 ## Common use cases
 
 * Ingestion user interaction and server events To make use of user interaction events from end-user apps or server events from your system, you may forward them to Pulsar and then use a stream processing tool which delivers them to your applications. Pulsar allows you to gather events from many clients simultaneously.
-* Replicating data among databases using (Pulsar IO)[https://pulsar.apache.org/docs/en/io-overview/] is commonly used to distribute change events from databases.
+* Replicating data among databases using [Pulsar IO](https://pulsar.apache.org/docs/en/io-overview/) is commonly used to distribute change events from databases.
 * Parallel processing and workflows. You can efficiently distribute a large number of tasks among multiple workers ( compressing text files, sending email notifications).
 * Data streaming from IoT devices. For example, a residential sensor can stream data to backend servers.
 * Refreshing distributed caches. For example, an application can publish invalidation events to update the IDs of objects that have changed.
@@ -61,19 +61,112 @@ We maintain up-to-date Pulsar clusters based on the official Apache Pulsar relea
 ## Create an add-on
 
 It is as simple and straightforward as creating any other add-on.
-In your personnal space, click on *+ Create*, then *an add-on*, then find the *Pulsar* add-on.
+In your personnal space, click on *+ Create* > *an add-on* > *Pulsar*.
 Chose your plan, link an app to it (or not), give it a name and a zone, and it's done.
 
 ## Authorization
 
 Pulsar add-on uses [Biscuit for Pulsar](https://github.com/CleverCloud/biscuit-pulsar) implementation which is directly pluggable to the Pulsar authentication and authorization system. Each add-on exposes its own Biscuit token.
 
-### Usage
+### Attenuation
+
+The Pulsar add-on given Biscuit token can be attenuated, here is an attenuation example using [biscuit-cli](https://github.com/biscuit-auth/biscuit-cli) from the given Biscuit token to produce/consume topics starting with a custom topic prefix called `"my-own-prefix"`.
+
+Put your Biscuit token in a file:
+
+```bash
+echo $ADDON_PULSAR_TOKEN > addon.biscuit
+```
+
+Inspect your Biscuit token:
+
+```bash
+biscuit inspect addon.biscuit
+Authority block:
+== Datalog ==
+right(#authority, #admin);
+
+== Revocation ids ==
+Content-based: fe7526a27b43fa7d5386c31b3efb6c53b551b4a8e3e969f4dc074497b3942a57
+Unique:        faf6cab8a4dffad77633181d6f924414980bb6d76c5298b88f700c11659c7407
+
+==========
+
+Block n°1:
+== Datalog ==
+check if topic_operation(#ambient, "user_1235678-f54e-4e09-848c-1953af6e3e89", "pulsar_1235678-6b36-4af2-be1f-d97862c0c41c", $2, $3) or namespace_operation(#ambient, "user_12345668-f54e-4e09-848c-1953af6e3e89", "pulsar_1235678-6b36-4af2-be1f-d97862c0c41c", $2);
+
+== Revocation ids ==
+Content-based: a35a92a278a3ad9ec5db8dc3e905cfbc17f5a8e2cb13ff39b69b003500fe6c46
+Unique:        17dfec62b62da36562a0998d496bb3aa30f229138ec810a070084bdf1c55be3a
+
+==========
+```
+
+* The authority block is the cluster authentication block (the cluster admin Biscuit token).
+* The block n°1 is an attenuation of the authority block to only authorize operations on `tenant = "user_1235678-f54e-4e09-848c-1953af6e3e89"` and `namespace = "pulsar_1235678-6b36-4af2-be1f-d97862c0c41c"`.
+
+Attenuate it:
+
+```bash
+biscuit attenuate addon.biscuit
+```
+
+This will open your `$EDITOR` to type the attenuation.
+
+Put
+
+```bash
+check if topic_operation(#ambient, "user_12345678-f54e-4e09-848c-1953af6e3e89", "pulsar_12345678-6b36-4af2-be1f-d97862c0c41c", $topic, $operation), $topic.starts_with("my-own-prefix")
+```
+
+Then it outputs the attenuated token. Inspect it to ensure your attenuation:
+
+```bash
+Authority block:
+== Datalog ==
+right(#authority, #admin);
+
+== Revocation ids ==
+Content-based: fe7526a27b43fa7d5386c31b3efb6c53b551b4a8e3e969f4dc074497b3942a57
+Unique:        faf6cab8a4dffad77633181d6f924414980bb6d76c5298b88f700c11659c7407
+
+==========
+
+Block n°1:
+== Datalog ==
+check if topic_operation(#ambient, "user_12345678-f54e-4e09-848c-1953af6e3e89", "pulsar_50ee8f69-6b36-4af2-be1f-d97862c0c41c", $2, $3) or namespace_operation(#ambient, "user_12345678-f54e-4e09-848c-1953af6e3e89", "pulsar_12345678-6b36-4af2-be1f-d97862c0c41c", $2);
+
+== Revocation ids ==
+Content-based: a35a92a278a3ad9ec5db8dc3e905cfbc17f5a8e2cb13ff39b69b003500fe6c46
+Unique:        17dfec62b62da36562a0998d496bb3aa30f229138ec810a070084bdf1c55be3a
+
+==========
+
+Block n°2:
+== Datalog ==
+check if topic_operation(#ambient, "user_12345678-f54e-4e09-848c-1953af6e3e89", "pulsar_12345678-6b36-4af2-be1f-d97862c0c41c", $topic, $operation), $topic.starts_with("my-own-prefix");
+
+== Revocation ids ==
+Content-based: 8eaaa639d5b94c3e053ad840e8dcca6fe66a621442ecc99eadf1df03d6138f1d
+Unique:        f608dc2f724fc14faf0daf50774ef0b9425cda26f56ee93317ca80ca13736027
+
+==========
+```
+
+Now the block n°2 ensure that topics must starts with `"my-own-prefix"`.
+
+You can find more examples on the [biscuit-pulsar authorization java tests](https://github.com/CleverCloud/biscuit-pulsar/blob/master/src/test/java/com/clevercloud/biscuitpulsar/AuthorizationProviderBiscuitTest.java).
+
+## Usage
 
 We advise you to use [`pulsarctl`](https://github.com/streamnative/pulsarctl) provided by StreamNative. Here is an example to list topics in your add-on (in your namespace):
 
 ```bash
-pulsarctl --admin-service-url $ADDON_PULSAR_HTTP_URL --auth-params $ADDON_PULSAR_TOKEN --auth-plugin org.apache.pulsar.client.impl.auth.AuthenticationToken topics list $ADDON_PULSAR_TENANT/$ADDON_PULSAR_NAMESPACE
+pulsarctl --admin-service-url $ADDON_PULSAR_HTTP_URL \\
+          --auth-params $ADDON_PULSAR_TOKEN \\
+          --auth-plugin org.apache.pulsar.client.impl.auth.AuthenticationToken \\
+          topics list $ADDON_PULSAR_TENANT/$ADDON_PULSAR_NAMESPACE
 ```
 
 As Biscuit is a token, you can use `AuthenticationToken($ADDON_PULSAR_TOKEN)` provided by [clients libraries](https://pulsar.apache.org/docs/en/client-libraries/) to authenticate to our clusters without any tweak.
@@ -81,7 +174,7 @@ As Biscuit is a token, you can use `AuthenticationToken($ADDON_PULSAR_TOKEN)` pr
 ### Rust example
 
 Clever Cloud maintains pulsar's [asynchronous Rust client](https://github.com/wyyerd/pulsar-rs), which support biscuits.
-Here is a minimal example that produces (publishes) a *"Hello, World!"* to the client:
+Here is a minimal example that produces (publishes) a *"Hello, World!"* on the topic `my-own-topic`:
 
 ```toml
 # Cargo.toml
@@ -158,7 +251,7 @@ async fn main() -> Result<(), pulsar::Error> {
 
 ### Java example
 
-There is an official (Java Pulsar Client)[https://pulsar.apache.org/docs/en/client-libraries-java/], import it in your `pom.xml`:
+There is an official [Java Pulsar Client](https://pulsar.apache.org/docs/en/client-libraries-java/), import it in your `pom.xml`:
 
 ```xml
 <dependency>
@@ -282,96 +375,6 @@ Topics policies operations authorized:
 PARTITION_READ
 PARTITION_WRITE
 ```
-
-### Attenuation
-
-The Pulsar add-on given Biscuit token can be attenuated, here is an attenuation example using [biscuit-cli](https://github.com/biscuit-auth/biscuit-cli) from the given Biscuit token to produce/consume topics starting with a custom topic prefix called `"my-own-prefix"`.
-
-Put your Biscuit token in a file:
-
-```bash
-echo $ADDON_PULSAR_TOKEN > addon.biscuit
-```
-
-Inspect your Biscuit token:
-
-```bash
-biscuit inspect addon.biscuit
-Authority block:
-== Datalog ==
-right(#authority, #admin);
-
-== Revocation ids ==
-Content-based: fe7526a27b43fa7d5386c31b3efb6c53b551b4a8e3e969f4dc074497b3942a57
-Unique:        faf6cab8a4dffad77633181d6f924414980bb6d76c5298b88f700c11659c7407
-
-==========
-
-Block n°1:
-== Datalog ==
-check if topic_operation(#ambient, "user_1235678-f54e-4e09-848c-1953af6e3e89", "pulsar_1235678-6b36-4af2-be1f-d97862c0c41c", $2, $3) or namespace_operation(#ambient, "user_12345668-f54e-4e09-848c-1953af6e3e89", "pulsar_1235678-6b36-4af2-be1f-d97862c0c41c", $2);
-
-== Revocation ids ==
-Content-based: a35a92a278a3ad9ec5db8dc3e905cfbc17f5a8e2cb13ff39b69b003500fe6c46
-Unique:        17dfec62b62da36562a0998d496bb3aa30f229138ec810a070084bdf1c55be3a
-
-==========
-```
-
-* The authority block is the cluster authentication block (the cluster admin Biscuit token).
-* The block n°1 is an attenuation of the authority block to only authorize operations on `tenant = "user_1235678-f54e-4e09-848c-1953af6e3e89"` and `namespace = "pulsar_1235678-6b36-4af2-be1f-d97862c0c41c"`.
-
-Attenuate it:
-
-```bash
-biscuit attenuate addon.biscuit
-```
-
-This will open your `$EDITOR` to type the attenuation.
-
-Put
-
-```bash
-check if topic_operation(#ambient, "user_12345678-f54e-4e09-848c-1953af6e3e89", "pulsar_12345678-6b36-4af2-be1f-d97862c0c41c", $topic, $operation), $topic.starts_with("my-own-prefix")
-```
-
-Then it outputs the attenuated token. Inspect it to ensure your attenuation:
-
-```bash
-Authority block:
-== Datalog ==
-right(#authority, #admin);
-
-== Revocation ids ==
-Content-based: fe7526a27b43fa7d5386c31b3efb6c53b551b4a8e3e969f4dc074497b3942a57
-Unique:        faf6cab8a4dffad77633181d6f924414980bb6d76c5298b88f700c11659c7407
-
-==========
-
-Block n°1:
-== Datalog ==
-check if topic_operation(#ambient, "user_12345678-f54e-4e09-848c-1953af6e3e89", "pulsar_50ee8f69-6b36-4af2-be1f-d97862c0c41c", $2, $3) or namespace_operation(#ambient, "user_12345678-f54e-4e09-848c-1953af6e3e89", "pulsar_12345678-6b36-4af2-be1f-d97862c0c41c", $2);
-
-== Revocation ids ==
-Content-based: a35a92a278a3ad9ec5db8dc3e905cfbc17f5a8e2cb13ff39b69b003500fe6c46
-Unique:        17dfec62b62da36562a0998d496bb3aa30f229138ec810a070084bdf1c55be3a
-
-==========
-
-Block n°2:
-== Datalog ==
-check if topic_operation(#ambient, "user_12345678-f54e-4e09-848c-1953af6e3e89", "pulsar_12345678-6b36-4af2-be1f-d97862c0c41c", $topic, $operation), $topic.starts_with("my-own-prefix");
-
-== Revocation ids ==
-Content-based: 8eaaa639d5b94c3e053ad840e8dcca6fe66a621442ecc99eadf1df03d6138f1d
-Unique:        f608dc2f724fc14faf0daf50774ef0b9425cda26f56ee93317ca80ca13736027
-
-==========
-```
-
-Now the block n°2 ensure that topics must starts with `"my-own-prefix"`.
-
-You can find more examples on the [biscuit-pulsar authorization java tests](https://github.com/CleverCloud/biscuit-pulsar/blob/master/src/test/java/com/clevercloud/biscuitpulsar/AuthorizationProviderBiscuitTest.java).
 
 ## Storage
 
