@@ -252,7 +252,10 @@ Provided Pulsar add-on have infinite retention policies which can be changed usi
 
 ```bash
 # Example to set retention of namespace to 2 weeks and/or 100 GB
-pulsarctl --admin-service-url $ADDON_PULSAR_WEB_URL --auth-params $ADDON_PULSAR_BISCUIT_TOKEN --auth-plugin org.apache.pulsar.client.impl.auth.AuthenticationToken namespaces set-retention $ADDON_PULSAR_TENANT/$ADDON_PULSAR_NAMESPACE --time 2w --size 100G
+pulsarctl --admin-service-url $ADDON_PULSAR_WEB_URL \\
+          --auth-params $ADDON_PULSAR_BISCUIT_TOKEN \\
+          --auth-plugin org.apache.pulsar.client.impl.auth.AuthenticationToken \\
+          namespaces set-retention $ADDON_PULSAR_TENANT/$ADDON_PULSAR_NAMESPACE --time 2w --size 100G
 ```
 
 ### Offload storage to Cellar (S3)
@@ -265,5 +268,8 @@ The offload threshold of the namespace is deactivated by default, you can activa
 
 ```bash
 # Example to set offload to run when hot storage is > 10G and put data to Cellar Addon
-pulsarctl --admin-service-url $ADDON_PULSAR_WEB_URL --auth-params $ADDON_PULSAR_BISCUIT_TOKEN --auth-plugin org.apache.pulsar.client.impl.auth.AuthenticationToken namespaces set-offload-treshold $ADDON_PULSAR_TENANT/$ADDON_PULSAR_NAMESPACE 10G
+pulsarctl --admin-service-url $ADDON_PULSAR_WEB_URL \\
+          --auth-params $ADDON_PULSAR_BISCUIT_TOKEN \\
+          --auth-plugin org.apache.pulsar.client.impl.auth.AuthenticationToken \\
+          namespaces set-offload-treshold $ADDON_PULSAR_TENANT/$ADDON_PULSAR_NAMESPACE 10G
 ```
