@@ -46,11 +46,11 @@ A Clever Cloud Pulsar add-on is basically a `tenant/namespace` pair that allows 
 
 ## Authorization
 
-Pulsar add-on uses (Biscuit for Pulsar)[https://github.com/CleverCloud/biscuit-pulsar] implementation which is directly pluggable to the Pulsar authentication and authorization system. Each add-on exposes its own Biscuit token.
+Pulsar add-on uses [Biscuit for Pulsar](https://github.com/CleverCloud/biscuit-pulsar) implementation which is directly pluggable to the Pulsar authentication and authorization system. Each add-on exposes its own Biscuit token.
 
 ### Usage
 
-We advise you to use (`pulsarctl`)[https://github.com/streamnative/pulsarctl] provided by StreamNative. Here is an example to list topics in your add-on (in your namespace):
+We advise you to use [`pulsarctl`](https://github.com/streamnative/pulsarctl) provided by StreamNative. Here is an example to list topics in your add-on (in your namespace):
 
 ```bash
 pulsarctl --admin-service-url https://<PULSAR_REST_URL> --auth-params <BISCUIT> --auth-plugin org.apache.pulsar.client.impl.auth.AuthenticationToken topics list <tenant>/<namespace>
@@ -155,7 +155,7 @@ PARTITION_WRITE
 
 ### Attenuation
 
-The Pulsar add-on given Biscuit token can be attenuated, here is an attenuation example using (biscuit-cli)[https://github.com/biscuit-auth/biscuit-cli] from the given Biscuit token to produce/consume topics starting with `"TOPIC_PREFIX"`:
+The Pulsar add-on given Biscuit token can be attenuated, here is an attenuation example using [biscuit-cli](https://github.com/biscuit-auth/biscuit-cli) from the given Biscuit token to produce/consume topics starting with `"TOPIC_PREFIX"`:
 
 Put your Biscuit token in a file:
 
@@ -241,7 +241,7 @@ Unique:        f608dc2f724fc14faf0daf50774ef0b9425cda26f56ee93317ca80ca13736027
 
 Now the block n°2 ensure that topics must starts with `"TOPIC_PREFIX"`.
 
-You can find more examples on the (biscuit-pulsar authorization java tests)[https://github.com/CleverCloud/biscuit-pulsar/blob/master/src/test/java/com/clevercloud/biscuitpulsar/AuthorizationProviderBiscuitTest.java].
+You can find more examples on the [biscuit-pulsar authorization java tests](https://github.com/CleverCloud/biscuit-pulsar/blob/master/src/test/java/com/clevercloud/biscuitpulsar/AuthorizationProviderBiscuitTest.java).
 
 ## Storage
 
@@ -258,7 +258,7 @@ pulsarctl --admin-service-url https://<PULSAR_REST_URL> --auth-params <BISCUIT> 
 
 Pulsar has a [tiered storage feature](https://pulsar.apache.org/docs/en/tiered-storage-overview/) allowing to offload heavy data to cold storage once a threshold is reached.
 
-For each Pulsar add-on we provide, we also provide an hidden (Cellar add-on)[https://www.clever-cloud.com/doc/deploy/addon/cellar/] (which is our object storage addon) which is directly binded to the Pulsar namespace offload policies.
+For each Pulsar add-on we provide, we also provide an hidden [Cellar add-on](https://www.clever-cloud.com/doc/deploy/addon/cellar/) (which is our object storage addon) which is directly binded to the Pulsar namespace offload policies.
 
 The offload threshold of the namespace is deactivated by default, you can activate it with:
 
