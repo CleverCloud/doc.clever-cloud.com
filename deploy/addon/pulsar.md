@@ -40,9 +40,10 @@ A topic is defined this way:
 
 Tenants and namespaces allow for grouping and subgrouping of topics.
 
-A Clever Cloud Pulsar add-on is basically a `tenant/namespace` pair that allows you to create and use topics following this pattern:
+A Clever Cloud Pulsar add-on is basically a immutable `tenant/namespace` where the tenant is your user id, and the namespace is the add-on id.
+It allows you to create and use topics following this pattern:
 
-`{persistent|non-persistent}://<CLEVER_CLOUD_TENANT_ID>/<ADDON_ID>/<TOPIC_NAME>`
+`{persistent|non-persistent}://<USER_ID>/<ADDON_ID>/<TOPIC_NAME>`
 
 ## Authorization
 
@@ -53,10 +54,10 @@ Pulsar add-on uses [Biscuit for Pulsar](https://github.com/CleverCloud/biscuit-p
 We advise you to use [`pulsarctl`](https://github.com/streamnative/pulsarctl) provided by StreamNative. Here is an example to list topics in your add-on (in your namespace):
 
 ```bash
-pulsarctl --admin-service-url https://<PULSAR_REST_URL> --auth-params <BISCUIT> --auth-plugin org.apache.pulsar.client.impl.auth.AuthenticationToken topics list <tenant>/<namespace>
+pulsarctl --admin-service-url $ADDON_PULSAR_WEB_URL --auth-params $ADDON_PULSAR_TOKEN --auth-plugin org.apache.pulsar.client.impl.auth.AuthenticationToken topics list $ADDON_PULSAR_TENANT/$ADDON_PULSAR_NAMESPACE
 ```
 
-As Biscuit is a token, you can use `AuthenticationToken("<BISCUIT>")` provided by clients librairies to authenticate to our clusters without any tweak.
+As Biscuit is a token, you can use `AuthenticationToken($ADDON_PULSAR_TOKEN)` provided by clients librairies to authenticate to our clusters without any tweak.
 
 * C++ client
 * C# client
@@ -155,12 +156,12 @@ PARTITION_WRITE
 
 ### Attenuation
 
-The Pulsar add-on given Biscuit token can be attenuated, here is an attenuation example using [biscuit-cli](https://github.com/biscuit-auth/biscuit-cli) from the given Biscuit token to produce/consume topics starting with `"TOPIC_PREFIX"`:
+The Pulsar add-on given Biscuit token can be attenuated, here is an attenuation example using [biscuit-cli](https://github.com/biscuit-auth/biscuit-cli) from the given Biscuit token to produce/consume topics starting with a custom topic prefix called `"my-own-prefix"`.
 
 Put your Biscuit token in a file:
 
 ```bash
-echo "<BISCUIT_TOKEN>" > addon.biscuit
+echo $ADDON_PULSAR_TOKEN > addon.biscuit
 ```
 
 Inspect your Biscuit token:
@@ -202,7 +203,7 @@ This will open your `$EDITOR` to type the attenuation.
 Put
 
 ```bash
-check if topic_operation(#ambient, "user_12345678-f54e-4e09-848c-1953af6e3e89", "pulsar_12345678-6b36-4af2-be1f-d97862c0c41c", $topic, $operation), $topic.starts_with("TOPIC_PREFIX")
+check if topic_operation(#ambient, "user_12345678-f54e-4e09-848c-1953af6e3e89", "pulsar_12345678-6b36-4af2-be1f-d97862c0c41c", $topic, $operation), $topic.starts_with("my-own-prefix")
 ```
 
 Then it outputs the attenuated token. Inspect it to ensure your attenuation:
@@ -230,7 +231,7 @@ Unique:        17dfec62b62da36562a0998d496bb3aa30f229138ec810a070084bdf1c55be3a
 
 Block n°2:
 == Datalog ==
-check if topic_operation(#ambient, "user_12345678-f54e-4e09-848c-1953af6e3e89", "pulsar_12345678-6b36-4af2-be1f-d97862c0c41c", $topic, $operation), $topic.starts_with("TOPIC_PREFIX");
+check if topic_operation(#ambient, "user_12345678-f54e-4e09-848c-1953af6e3e89", "pulsar_12345678-6b36-4af2-be1f-d97862c0c41c", $topic, $operation), $topic.starts_with("my-own-prefix");
 
 == Revocation ids ==
 Content-based: 8eaaa639d5b94c3e053ad840e8dcca6fe66a621442ecc99eadf1df03d6138f1d
@@ -239,7 +240,7 @@ Unique:        f608dc2f724fc14faf0daf50774ef0b9425cda26f56ee93317ca80ca13736027
 ==========
 ```
 
-Now the block n°2 ensure that topics must starts with `"TOPIC_PREFIX"`.
+Now the block n°2 ensure that topics must starts with `"my-own-prefix"`.
 
 You can find more examples on the [biscuit-pulsar authorization java tests](https://github.com/CleverCloud/biscuit-pulsar/blob/master/src/test/java/com/clevercloud/biscuitpulsar/AuthorizationProviderBiscuitTest.java).
 
@@ -251,7 +252,7 @@ Provided Pulsar add-on have infinite retention policies which can be changed usi
 
 ```bash
 # Example to set retention of namespace to 2 weeks and/or 100 GB
-pulsarctl --admin-service-url https://<PULSAR_REST_URL> --auth-params <BISCUIT> --auth-plugin org.apache.pulsar.client.impl.auth.AuthenticationToken namespaces set-retention <tenant>/<namespace> --time 2w --size 100G
+pulsarctl --admin-service-url $ADDON_PULSAR_WEB_URL --auth-params $ADDON_PULSAR_BISCUIT_TOKEN --auth-plugin org.apache.pulsar.client.impl.auth.AuthenticationToken namespaces set-retention $ADDON_PULSAR_TENANT/$ADDON_PULSAR_NAMESPACE --time 2w --size 100G
 ```
 
 ### Offload storage to Cellar (S3)
@@ -264,5 +265,5 @@ The offload threshold of the namespace is deactivated by default, you can activa
 
 ```bash
 # Example to set offload to run when hot storage is > 10G and put data to Cellar Addon
-pulsarctl --admin-service-url https://<PULSAR_REST_URL> --auth-params <BISCUIT> --auth-plugin org.apache.pulsar.client.impl.auth.AuthenticationToken namespaces set-offload-treshold <tenant>/<namespace> 10G
+pulsarctl --admin-service-url $ADDON_PULSAR_WEB_URL --auth-params $ADDON_PULSAR_BISCUIT_TOKEN --auth-plugin org.apache.pulsar.client.impl.auth.AuthenticationToken namespaces set-offload-treshold $ADDON_PULSAR_TENANT/$ADDON_PULSAR_NAMESPACE 10G
 ```
