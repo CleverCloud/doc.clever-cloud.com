@@ -152,6 +152,45 @@ async fn main() -> Result<(), pulsar::Error> {
 }
 ```
 
+### Java example
+
+There is an official (Java Pulsar Client)[https://pulsar.apache.org/docs/en/client-libraries-java/], import it in your `pom.xml`:
+
+```xml
+<dependency>
+  <groupId>org.apache.pulsar</groupId>
+  <artifactId>pulsar-client</artifactId>
+  <version>2.8.0</version>
+</dependency>
+```
+
+```java
+PulsarClient client = PulsarClient.builder()
+  .authentication(new AuthenticationToken("ADDON_PULSAR_TOKEN"))
+  .serviceUrl("ADDON_PULSAR_BINARY_URL")
+  .build();
+
+String TOPIC = "non-persistent://{}/{}/my-own-topic"
+
+Producer<String> producer = client.newProducer(Schema.STRING)
+  .topic(TOPIC)
+  .create();
+
+  producer.send("Hello world!");
+
+Consumer consumer = client.newConsumer()
+  .topics(Arrays.asList(TOPIC))
+  .consumerName("my-consumer-name")
+  .subscriptionName("my-subscription-name")
+  .subscriptionInitialPosition(SubscriptionInitialPosition.Earliest)
+  .subscribe();
+
+while (!consumer.hasReachedEndOfTopic()) {
+  Message<String> msg = consumer.receive();
+  // Got the message!
+}
+```
+
 ### Operations
 
 The pulsar addon given Biscuit token enables you to run several operations on namespace, its policies and the related topics.
