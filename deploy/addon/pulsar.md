@@ -69,10 +69,10 @@ Pulsar add-on uses [Biscuit for Pulsar](https://github.com/CleverCloud/biscuit-p
 We advise you to use [`pulsarctl`](https://github.com/streamnative/pulsarctl) provided by StreamNative. Here is an example to list topics in your add-on (in your namespace):
 
 ```bash
-pulsarctl --admin-service-url $ADDON_PULSAR_WEB_URL --auth-params $ADDON_PULSAR_BISCUIT_TOKEN --auth-plugin org.apache.pulsar.client.impl.auth.AuthenticationToken topics list $ADDON_PULSAR_TENANT/$ADDON_PULSAR_NAMESPACE
+pulsarctl --admin-service-url $ADDON_PULSAR_HTTP_URL --auth-params $ADDON_PULSAR_TOKEN --auth-plugin org.apache.pulsar.client.impl.auth.AuthenticationToken topics list $ADDON_PULSAR_TENANT/$ADDON_PULSAR_NAMESPACE
 ```
 
-As Biscuit is a token, you can use `AuthenticationToken($ADDON_PULSAR_BISCUIT_TOKEN)` provided by [clients libraries](https://pulsar.apache.org/docs/en/client-libraries/) to authenticate to our clusters without any tweak.
+As Biscuit is a token, you can use `AuthenticationToken($ADDON_PULSAR_TOKEN)` provided by [clients libraries](https://pulsar.apache.org/docs/en/client-libraries/) to authenticate to our clusters without any tweak.
 
 ### Rust example
 
@@ -112,7 +112,7 @@ impl SerializeMessage for TestData {
 #[tokio::main]
 async fn main() -> Result<(), pulsar::Error> {
     let pulsar_addon_url = std::env::var("ADDON_PULSAR_BINARY_URL").unwrap();
-    let biscuit = std::env::var("ADDON_PULSAR_BISCUIT_TOKEN").unwrap();
+    let biscuit = std::env::var("ADDON_PULSAR_TOKEN").unwrap();
     let tenant = std::env::var("ADDON_PULSAR_TENANT").unwrap();
     let namespace = std::env::var("ADDON_PULSAR_NAMESPACE").unwrap();
 
@@ -247,7 +247,7 @@ The Pulsar add-on given Biscuit token can be attenuated, here is an attenuation 
 Put your Biscuit token in a file:
 
 ```bash
-echo $ADDON_PULSAR_BISCUIT_TOKEN > addon.biscuit
+echo $ADDON_PULSAR_TOKEN > addon.biscuit
 ```
 
 Inspect your Biscuit token:
@@ -338,8 +338,8 @@ Provided Pulsar add-on have infinite retention policies which can be changed usi
 
 ```bash
 # Example to set retention of namespace to 2 weeks and/or 100 GB
-pulsarctl --admin-service-url $ADDON_PULSAR_WEB_URL \\
-          --auth-params $ADDON_PULSAR_BISCUIT_TOKEN \\
+pulsarctl --admin-service-url $ADDON_PULSAR_HTTP_URL \\
+          --auth-params $ADDON_PULSAR_TOKEN \\
           --auth-plugin org.apache.pulsar.client.impl.auth.AuthenticationToken \\
           namespaces set-retention $ADDON_PULSAR_TENANT/$ADDON_PULSAR_NAMESPACE --time 2w --size 100G
 ```
@@ -354,8 +354,8 @@ The offload threshold of the namespace is deactivated by default, you can activa
 
 ```bash
 # Example to set offload to run when hot storage is > 10G and put data to Cellar Addon
-pulsarctl --admin-service-url $ADDON_PULSAR_WEB_URL \\
-          --auth-params $ADDON_PULSAR_BISCUIT_TOKEN \\
+pulsarctl --admin-service-url $ADDON_PULSAR_HTTP_URL \\
+          --auth-params $ADDON_PULSAR_TOKEN \\
           --auth-plugin org.apache.pulsar.client.impl.auth.AuthenticationToken \\
           namespaces set-offload-treshold $ADDON_PULSAR_TENANT/$ADDON_PULSAR_NAMESPACE 10G
 ```

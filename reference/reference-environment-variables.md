@@ -484,5 +484,5 @@ to be routed through the exit node.
 | ADDON_PULSAR_HTTP_URL    |                                           |                                | X                          |
 | ADDON_PULSAR_NAMESPACE   | your addon id                             |                                | X                          |
 | ADDON_PULSAR_TENANT      | your Clever Cloud tenant id               |                                | X                          |
-| ADDON_PULSAR_BISCUIT_TOKEN       | biscuit authentication token              |                                | X                          |
+| ADDON_PULSAR_TOKEN       | biscuit authentication token              |                                | X                          |
 {{< /table >}}
