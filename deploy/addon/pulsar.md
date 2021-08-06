@@ -16,7 +16,7 @@ keywords:
 
 ## Overview
 
-[Pulsar](https://pulsar.apache.org/) works on a publisher/subscriber model, just like RabbitMQ or Kafka.
+[Pulsar](https://pulsar.apache.org/) works on a publisher/subscriber model. It allows services to communicate asynchronously, with latencies on the order of 100 milliseconds. It is used for streaming analytics and data integration pipelines to ingest and distribute data. It is equally effective as messaging-oriented middleware for service integration or as a queue to parallelize tasks. It also enables you to create systems of event producers and consumers. Publishers communicate with subscribers asynchronously by broadcasting events.
 
 ```
 client               Pulsar             client
