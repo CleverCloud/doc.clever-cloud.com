@@ -45,6 +45,10 @@ It allows you to create and use topics following this pattern:
 
 `{persistent|non-persistent}://<CLEVERCLOUD_TENANT_ID>/<ADDON_ID>/<TOPIC_NAME>`
 
+## Version
+
+We maintain up-to-date Pulsar clusters based on the official Apache Pulsar release process. Your Pulsar add-on version is available in your add-on dashboard. Updates will be notified using Clever Cloud weekly updates on the (blog)[https://www.clever-cloud.com/blog/].
+
 ## Common use cases
 
 * Ingestion user interaction and server events To make use of user interaction events from end-user apps or server events from your system, you may forward them to Pulsar and then use a stream processing tool which delivers them to your applications. Pulsar allows you to gather events from many clients simultaneously.
