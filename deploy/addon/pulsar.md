@@ -32,7 +32,7 @@ They are several modes of subscription. A consumer may subscribe exclusively, or
 - Shared (messages are distributed to several consumers)
 - Key_Shared (messages come with keys and go to consumers with the corresponding key)
 
-More on this in the [official documentation](https://pulsar.apache.org/docs/en/concepts-messaging/#subscriptions)
+More on this in the [official documentation](https://pulsar.apache.org/docs/en/concepts-messaging/#subscriptions).
 
 A topic is defined this way:
 
@@ -61,8 +61,8 @@ We maintain up-to-date Pulsar clusters based on the official Apache Pulsar relea
 ## Create an add-on
 
 It is as simple and straightforward as creating any other add-on.
-In your personnal space, click on *+ Create* > *an add-on* > *Pulsar*.
-Chose your plan, link an app to it (or not), give it a name and a zone, and it's done.
+In your personnal space, click on *Create* > *an add-on* > *Pulsar*.
+Choose your plan, link an app to it (or not), give it a name and a zone, and it's done.
 
 ## Authorization
 
@@ -296,7 +296,7 @@ These operations might change in the future. Don't hesitate to call our support 
 
 #### Namespace
 
-Namespace operations authorized:
+Authorized namespace operations:
 
 ```
 CREATE_TOPIC
@@ -310,7 +310,7 @@ CLEAR_BACKLOG
 UNSUBSCRIBE
 ```
 
-Namespace policies operations authorized:
+Authorized namespace policies operations:
 
 ```
 ALL_READ
@@ -350,7 +350,7 @@ TTL_WRITE
 
 #### Topics
 
-Topics operations authorized:
+Authorized topics operations:
 
 ```
 LOOKUP
@@ -369,7 +369,7 @@ UNSUBSCRIBE
 GET_STATS
 ```
 
-Topics policies operations authorized:
+Authorized topics policies operations:
 
 ```
 PARTITION_READ
