@@ -45,6 +45,15 @@ It allows you to create and use topics following this pattern:
 
 `{persistent|non-persistent}://<USER_ID>/<ADDON_ID>/<TOPIC_NAME>`
 
+## Common use cases
+
+* Ingestion user interaction and server events To make use of user interaction events from end-user apps or server events from your system, you may forward them to Pulsar and then use a stream processing tool which delivers them to your applications. Pulsar allows you to gather events from many clients simultaneously.
+* Replicating data among databases using (Pulsar IO)[https://pulsar.apache.org/docs/en/io-overview/] is commonly used to distribute change events from databases.
+* Parallel processing and workflows. You can efficiently distribute a large number of tasks among multiple workers ( compressing text files, sending email notifications).
+* Data streaming from IoT devices. For example, a residential sensor can stream data to backend servers.
+* Refreshing distributed caches. For example, an application can publish invalidation events to update the IDs of objects that have changed.
+* Real-time event distribution Events, raw or processed, may be made available to multiple applications across your team and organization for real time processing.
+
 ## Create an add-on
 
 It is as simple and straightforward as creating any other add-on.
