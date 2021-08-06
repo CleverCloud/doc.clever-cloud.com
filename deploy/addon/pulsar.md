@@ -57,16 +57,7 @@ We advise you to use [`pulsarctl`](https://github.com/streamnative/pulsarctl) pr
 pulsarctl --admin-service-url $ADDON_PULSAR_WEB_URL --auth-params $ADDON_PULSAR_BISCUIT_TOKEN --auth-plugin org.apache.pulsar.client.impl.auth.AuthenticationToken topics list $ADDON_PULSAR_TENANT/$ADDON_PULSAR_NAMESPACE
 ```
 
-As Biscuit is a token, you can use `AuthenticationToken($ADDON_PULSAR_BISCUIT_TOKEN)` provided by clients librairies to authenticate to our clusters without any tweak.
-
-* C++ client
-* C# client
-* Go client
-* Java client
-* Node.js client
-* Python client
-* Rust client
-* WebSocket client
+As Biscuit is a token, you can use `AuthenticationToken($ADDON_PULSAR_BISCUIT_TOKEN)` provided by [clients libraries](https://pulsar.apache.org/docs/en/client-libraries/) to authenticate to our clusters without any tweak.
 
 ### Rust example
 
@@ -149,6 +140,8 @@ async fn main() -> Result<(), pulsar::Error> {
 ### Operations
 
 The pulsar addon given Biscuit token enables you to run several operations on namespace, its policies and the related topics.
+
+These operations might change in the future. Don't hesitate to call our support to ask for new operations!
 
 #### Namespace
 
@@ -245,7 +238,7 @@ echo $ADDON_PULSAR_BISCUIT_TOKEN > addon.biscuit
 Inspect your Biscuit token:
 
 ```bash
-$ biscuit inspect addon.biscuit
+biscuit inspect addon.biscuit
 Authority block:
 == Datalog ==
 right(#authority, #admin);
