@@ -43,7 +43,7 @@ Tenants and namespaces allow for grouping and subgrouping of topics.
 A Clever Cloud Pulsar add-on is basically a immutable `tenant/namespace` where the tenant is your user id, and the namespace is the add-on id.
 It allows you to create and use topics following this pattern:
 
-`{persistent|non-persistent}://<USER_ID>/<ADDON_ID>/<TOPIC_NAME>`
+`{persistent|non-persistent}://<CLEVERCLOUD_TENANT_ID>/<ADDON_ID>/<TOPIC_NAME>`
 
 ## Common use cases
 
