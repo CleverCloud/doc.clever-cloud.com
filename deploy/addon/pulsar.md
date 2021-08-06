@@ -45,6 +45,12 @@ It allows you to create and use topics following this pattern:
 
 `{persistent|non-persistent}://<USER_ID>/<ADDON_ID>/<TOPIC_NAME>`
 
+## Create an add-on
+
+It is as simple and straightforward as creating any other add-on.
+In your personnal space, click on *+ Create*, then *an add-on*, then find the *Pulsar* add-on.
+Chose your plan, link an app to it (or not), give it a name and a zone, and it's done.
+
 ## Authorization
 
 Pulsar add-on uses [Biscuit for Pulsar](https://github.com/CleverCloud/biscuit-pulsar) implementation which is directly pluggable to the Pulsar authentication and authorization system. Each add-on exposes its own Biscuit token.
