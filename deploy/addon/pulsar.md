@@ -403,6 +403,8 @@ pulsarctl --admin-service-url $ADDON_PULSAR_HTTP_URL \\
           namespaces set-offload-treshold $ADDON_PULSAR_TENANT/$ADDON_PULSAR_NAMESPACE 10G
 ```
 
-## Plans
+## Pricing
+
+Clever Cloud Pulsar add-on pricing is comsumption based, here is a pricing simulator:
 
 {{< pricingConsumption "pulsar" >}}
