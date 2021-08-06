@@ -380,7 +380,7 @@ PARTITION_WRITE
 
 ### Retention
 
-Provided Pulsar add-on have infinite retention policies which can be changed using:
+A Pulsar add-on is provided with infinite retention policies, which can be changed using:
 
 ```bash
 # Example to set retention of namespace to 2 weeks and/or 100 GB
