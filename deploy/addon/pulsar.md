@@ -68,6 +68,83 @@ As Biscuit is a token, you can use `AuthenticationToken($ADDON_PULSAR_TOKEN)` pr
 * Rust client
 * WebSocket client
 
+### Rust example
+
+Clever cloud maintains pulsar's [asynchronous Rust client](https://github.com/wyyerd/pulsar-rs), which support biscuits. Here is a minimal example that produces (publishes)a *"Hello, World!"* to the client:
+
+```toml
+# Cargo.toml
+[dependencies]
+tokio = {version = "1.9.0", features = ["full"] }
+pulsar = "4.0.0"
+serde_json = "1.0.66"
+serde = { version = "1.0.127", features = ["derive"] }
+```
+
+```rust
+use pulsar::{
+    message::proto, producer, Error as PulsarError, Pulsar, SerializeMessage, TokioExecutor,
+};
+use serde::{Deserialize, Serialize};
+
+#[derive(Serialize, Deserialize)]
+struct TestData {
+    data: String,
+}
+
+impl SerializeMessage for TestData {
+    fn serialize_message(input: Self) -> Result<producer::Message, PulsarError> {
+        let payload = serde_json::to_vec(&input).map_err(|e| PulsarError::Custom(e.to_string()))?;
+        Ok(producer::Message {
+            payload,
+            ..Default::default()
+        })
+    }
+}
+
+#[tokio::main]
+async fn main() -> Result<(), pulsar::Error> {
+    let pulsar_addon_url = std::env::var("ADDON_PULSAR_BINARY_URL").unwrap();
+    let biscuit = std::env::var("ADDON_PULSAR_BISCUIT_TOKEN").unwrap();
+    let tenant = std::env::var("ADDON_PULSAR_TENANT").unwrap();
+    let namespace = std::env::var("ADDON_PULSAR_NAMESPACE").unwrap();
+
+    let topic = format!("non-persistent://{}/{}/my-own-topic", tenant, namespace);
+
+    let auth = pulsar::Authentication {
+        name: "token".to_string(),
+        data: biscuit.clone().into_bytes(),
+    };
+
+    let pulsar: Pulsar<_> = Pulsar::builder(pulsar_addon_url, TokioExecutor)
+        .with_auth(auth)
+        .build()
+        .await?;
+
+    let mut producer = pulsar
+        .producer()
+        .with_topic(topic)
+        .with_name("my producer")
+        .with_options(producer::ProducerOptions {
+            schema: Some(proto::Schema {
+                r#type: proto::schema::Type::String as i32,
+                ..Default::default()
+            }),
+            ..Default::default()
+        })
+        .build()
+        .await?;
+
+    producer
+        .send(TestData {
+            data: "Hello world!".to_string(),
+        })
+        .await?;
+
+    Ok(())
+}
+```
+
 ### Operations
 
 The pulsar addon given Biscuit token enables you to run several operations on namespace, its policies and the related topics.
