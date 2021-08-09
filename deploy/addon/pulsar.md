@@ -40,7 +40,7 @@ A topic is defined this way:
 
 Tenants and namespaces allow for grouping and subgrouping of topics.
 
-A Clever Cloud Pulsar add-on is basically a immutable `tenant/namespace` where the tenant is your user id, and the namespace is the add-on id.
+A Clever Cloud Pulsar add-on is basically an immutable `tenant/namespace` where the tenant is your user id, and the namespace is the add-on id.
 It allows you to create and use topics following this pattern:
 
 `{persistent|non-persistent}://<CLEVERCLOUD_TENANT_ID>/<ADDON_ID>/<TOPIC_NAME>`
@@ -51,14 +51,14 @@ We maintain up-to-date Pulsar clusters based on the official Apache Pulsar relea
 
 ## Common use cases
 
-* Ingestion user interaction and server events To make use of user interaction events from end-user apps or server events from your system, you may forward them to Pulsar and then use a stream processing tool which delivers them to your applications. Pulsar allows you to gather events from many clients simultaneously.
 * Replicating data among databases using [Pulsar IO](https://pulsar.apache.org/docs/en/io-overview/) is commonly used to distribute change events from databases.
-* Parallel processing and workflows. You can efficiently distribute a large number of tasks among multiple workers ( compressing text files, sending email notifications).
+* Parallel processing and workflows. You can efficiently distribute a large number of tasks among multiple workers (compressing text files, sending email notifications).
 * Data streaming from IoT devices. For example, a residential sensor can stream data to backend servers.
 * Refreshing distributed caches. For example, an application can publish invalidation events to update the IDs of objects that have changed.
 * Real-time event distribution Events, raw or processed, may be made available to multiple applications across your team and organization for real time processing.
+* User interaction ingestion and server events from end-user apps or server events to your system, you may forward them to Pulsar and then use a stream processing tool which delivers them to your applications. Pulsar allows you to gather events from many clients simultaneously.
 
-## Create an add-on
+## Create a Pulsar add-on
 
 It is as simple and straightforward as creating any other add-on.
 In your personnal space, click on *Create* > *an add-on* > *Pulsar*.
@@ -67,6 +67,8 @@ Choose your plan, link an app to it (or not), give it a name and a zone, and it'
 ## Authorization
 
 Pulsar add-on uses [Biscuit for Pulsar](https://github.com/CleverCloud/biscuit-pulsar) implementation which is directly pluggable to the Pulsar authentication and authorization system. Each add-on exposes its own Biscuit token.
+
+As Biscuit is a token, you can use `AuthenticationToken($ADDON_PULSAR_TOKEN)` provided by [clients libraries](https://pulsar.apache.org/docs/en/client-libraries/) to authenticate to our clusters without any tweak.
 
 ### Attenuation
 
@@ -168,8 +170,6 @@ pulsarctl --admin-service-url $ADDON_PULSAR_HTTP_URL \
           --auth-plugin org.apache.pulsar.client.impl.auth.AuthenticationToken \
           topics list $ADDON_PULSAR_TENANT/$ADDON_PULSAR_NAMESPACE
 ```
-
-As Biscuit is a token, you can use `AuthenticationToken($ADDON_PULSAR_TOKEN)` provided by [clients libraries](https://pulsar.apache.org/docs/en/client-libraries/) to authenticate to our clusters without any tweak.
 
 ### Rust example
 
@@ -290,9 +290,9 @@ while (!consumer.hasReachedEndOfTopic()) {
 
 ### Operations
 
-The pulsar addon given Biscuit token enables you to run several operations on namespace, its policies and the related topics.
+The Biscuit token provided by the Pulsar add-on allows you to run several operations on namespace, its policies and the related topics.
 
-These operations might change in the future. Don't hesitate to call our support to ask for new operations!
+These operations might change in the future. Don't hesitate to write to our support to ask for new operations!
 
 #### Namespace
 
@@ -394,7 +394,7 @@ pulsarctl --admin-service-url $ADDON_PULSAR_HTTP_URL \
 
 Pulsar has a [tiered storage feature](https://pulsar.apache.org/docs/en/tiered-storage-overview/) allowing to offload heavy data to cold storage once a threshold is reached.
 
-For each Pulsar add-on we provide, we also provide an hidden [Cellar add-on](https://www.clever-cloud.com/doc/deploy/addon/cellar/) (which is our object storage addon) which is directly binded to the Pulsar namespace offload policies.
+For each Pulsar add-on we provide, we also provide a hidden [Cellar add-on]({{< ref "deploy/addon/cellar.md" >}}), our object storage add-on. This Cellar add-on is bound to the Pulsar namespace offload policies and will store your offloaded data.
 
 The offload threshold of the namespace is deactivated by default, you can activate it with:
 
