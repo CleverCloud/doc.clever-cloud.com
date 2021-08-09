@@ -163,9 +163,9 @@ You can find more examples on the [biscuit-pulsar authorization java tests](http
 We advise you to use [`pulsarctl`](https://github.com/streamnative/pulsarctl) provided by StreamNative. Here is an example to list topics in your add-on (in your namespace):
 
 ```bash
-pulsarctl --admin-service-url $ADDON_PULSAR_HTTP_URL \\
-          --auth-params $ADDON_PULSAR_TOKEN \\
-          --auth-plugin org.apache.pulsar.client.impl.auth.AuthenticationToken \\
+pulsarctl --admin-service-url $ADDON_PULSAR_HTTP_URL \
+          --auth-params $ADDON_PULSAR_TOKEN \
+          --auth-plugin org.apache.pulsar.client.impl.auth.AuthenticationToken \
           topics list $ADDON_PULSAR_TENANT/$ADDON_PULSAR_NAMESPACE
 ```
 
@@ -384,9 +384,9 @@ A Pulsar add-on is provided with infinite retention policies, which can be chang
 
 ```bash
 # Example to set retention of namespace to 2 weeks and/or 100 GB
-pulsarctl --admin-service-url $ADDON_PULSAR_HTTP_URL \\
-          --auth-params $ADDON_PULSAR_TOKEN \\
-          --auth-plugin org.apache.pulsar.client.impl.auth.AuthenticationToken \\
+pulsarctl --admin-service-url $ADDON_PULSAR_HTTP_URL \
+          --auth-params $ADDON_PULSAR_TOKEN \
+          --auth-plugin org.apache.pulsar.client.impl.auth.AuthenticationToken \
           namespaces set-retention $ADDON_PULSAR_TENANT/$ADDON_PULSAR_NAMESPACE --time 2w --size 100G
 ```
 
@@ -400,9 +400,9 @@ The offload threshold of the namespace is deactivated by default, you can activa
 
 ```bash
 # Example to set offload to run when hot storage is > 10G and put data to Cellar Addon
-pulsarctl --admin-service-url $ADDON_PULSAR_HTTP_URL \\
-          --auth-params $ADDON_PULSAR_TOKEN \\
-          --auth-plugin org.apache.pulsar.client.impl.auth.AuthenticationToken \\
+pulsarctl --admin-service-url $ADDON_PULSAR_HTTP_URL \
+          --auth-params $ADDON_PULSAR_TOKEN \
+          --auth-plugin org.apache.pulsar.client.impl.auth.AuthenticationToken \
           namespaces set-offload-treshold $ADDON_PULSAR_TENANT/$ADDON_PULSAR_NAMESPACE 10G
 ```
 
