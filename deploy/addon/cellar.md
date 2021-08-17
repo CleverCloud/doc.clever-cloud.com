@@ -295,6 +295,6 @@ If you need to rollback, you can either set the old configuration or completely 
 s3cmd -c s3cfg -s delcors s3://your-bucket
 ```
 
-## Plans
+## Pricing
 
 {{< pricingConsumption "cellar" >}}

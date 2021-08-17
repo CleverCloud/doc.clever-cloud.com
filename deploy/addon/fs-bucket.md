@@ -157,6 +157,6 @@ in the FS bucket.
 The **Addon information** tab of your FS Bucket add-on displays the information
 you need to connect to your bucket using FTP.
 
-## Plans
+## Pricing
 
 {{< pricingConsumption "fsbucket" >}}
