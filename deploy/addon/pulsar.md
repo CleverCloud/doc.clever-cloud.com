@@ -288,6 +288,96 @@ while (!consumer.hasReachedEndOfTopic()) {
 }
 ```
 
+### Node WebSocket Example 
+
+*producer.msj*
+```javascript
+const { Producer } = require('pulsar-ws')
+
+const producer = new Producer({
+  persistent: true,
+  reconnect: true,
+  host: 'HOST',
+  port: 2000,
+  secure: true,
+  tenant: 'ADDON_PULSAR_TENANT',
+  namespace: 'ADDON_PULSAR_NAMESPACE',
+  topic: 'my-topic',
+  token: "fake-token"
+  params: {
+    producerName: "my-topic-producer",
+  }
+}, console)
+
+function createMessage() {
+    return {
+        payload: Buffer.from(JSON.stringify({jobTitle: 'Full Stack Dev'})).toString('base64'), 
+    };
+}
+
+async function run() {
+    await producer.start();
+    const msg = createMessage("Hello World!")
+    await producer.send(msg);
+
+    await producer.stop()
+}
+
+async function main() {
+    try {
+        run()
+    } catch (err) {
+        console.log(err)
+    }
+}
+
+main()
+```
+
+*consumer.msj*
+```javascript
+const { Consumer } = require('pulsar-ws')
+
+const consumer = new Consumer({
+  persistent: true,
+  reconnect: true,
+  host: 'HOST',
+  port: 2000,
+  secure: true,
+  tenant: 'ADDON_PULSAR_TENANT',
+  namespace: 'ADDON_PULSAR_NAMESPACE',
+  topic: 'my-topic',
+  subscription: "subscription-test",
+  token: "fake-token"
+  params: {
+    consumerName: 'simple-consumer-1',
+    subscriptionType: 'Shared' // You can put any subscription type here
+  }
+}, console)
+
+function handleMessage(message) {
+  return Buffer.from(message.payload, 'base64')
+}
+
+async function run() {
+  await consumer.listen(rawMessage => {
+    let message = handleMessage(rawMessage)
+    console.log(`recevied message in callback: ${message}`);
+  })
+}
+
+async function main() {
+  try {
+    run()
+  } catch (err) {
+    console.log(err)
+  }
+}
+
+main()
+
+```
+
 ### Operations
 
 The Biscuit token provided by the Pulsar add-on allows you to run several operations on namespace, its policies and the related topics.
