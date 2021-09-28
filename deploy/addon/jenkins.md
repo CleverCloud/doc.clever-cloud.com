@@ -111,7 +111,7 @@ picked up to execute your jobs.
 
 As of today, only runners on Clever Cloud Docker applications are supported. The Docker image you provide **must** contain the Jenkins Inbound agent.
 
-By default, Jenkins provides a few docker images that embed this agent. The agent will then connect to Jenkins to receive jobs orders.
+By default, Jenkins provides a few Docker images that embed this agent. The agent will then connect to Jenkins to receive jobs orders.
 
 You can find more details on the default [Jenkins Inbout agent](https://hub.docker.com/r/jenkins/inbound-agent/) docker image. Jenkins also
 provides various base images with pre-installed tools for some CI workflows on [Docker Hub](https://hub.docker.com/u/jenkins).
