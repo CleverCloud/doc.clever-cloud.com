@@ -55,7 +55,7 @@ authentication.
 ## Configure your Jenkins instance
 
 Once you accessed your Jenkins interface, we can start configuring it. A custom Clever Cloud plugin is automatically installed on your instance during the provisioning.
-This plugin will allow you to configure the runners Jenkins will start to execute your jobs. Those runners will be docker applications provisionned directly on Clever Cloud, in your organization.
+This plugin will allow you to configure the runners Jenkins will start to execute your jobs. Those runners will be Docker applications provisioned directly on Clever Cloud, in your organization.
 
 ### Configure your runners
 
