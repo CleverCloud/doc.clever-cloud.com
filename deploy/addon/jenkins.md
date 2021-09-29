@@ -82,7 +82,7 @@ Let's configure a runner template for Java Maven projects:
 - Name your runner template, for example `Jenkins maven agent`.
 - Set `maven` as the label. Jobs that require a `maven` runner will then be able to execute on this runner.
 - Set the docker image your jobs will use. For example `jenkins/jnlp-agent-maven`. Be sure to read the [section about Docker image requiremetns](#docker-image-requirements).
-- Select the virtual machine size you need. For Java projects, let's use a M instance that has 4 vCPU and 4GB of RAM.
+- Select the virtual machine size you need. For Java projects, let's use a M instance that has 4 vCPUs and 8 GiB of RAM.
 
 {{< image "/images/jenkins/cloud-configuration.png" "Jenkins Cloud configuration" >}}
 
@@ -155,6 +155,67 @@ Once your job has ended, after the 1 minute sleep, the application provisionned 
 
 You should now be able to start creating jobs that automatically build and test your projects on a Clever Cloud application.
 
+### Jenkins File example
+
+Here is an example of a Jenkins file taken from our [CLI repository](https://github.com/CleverCloud/clever-tools/blob/master/Jenkinsfile). It should
+be at the root directory of your project for Jenkins to pick it up. It basically builds our CLI project and publish it to various platforms.
+
+```bash
+pipeline {
+  agent { label 'cc-ci-agent' }
+  environment {
+    GIT_TAG_NAME = gitTagName()
+    S3_KEY_ID = credentials('CELLAR_CC_TOOLS_ACCESS_KEY_ID')
+    S3_SECRET_KEY = credentials('CELLAR_CC_TOOLS_SECRET_ACCESS_KEY')
+    BINTRAY_API_KEY = credentials('BINTRAY_CC_TOOLS_API_KEY')
+    NPM_TOKEN = credentials('NPM_TOKEN')
+  }
+  options {
+    buildDiscarder(logRotator(daysToKeepStr: '5', numToKeepStr: '10', artifactDaysToKeepStr: '5', artifactNumToKeepStr: '10'))
+  }
+  stages {
+    stage('build') {
+      steps {
+        sh 'npm ci'
+        sh 'node scripts/job-build.js'
+      }
+    }
+    stage('publish') {
+      when {
+        not {
+          environment name: 'GIT_TAG_NAME', value: ''
+        }
+        beforeAgent true
+      }
+      parallel {
+        stage('cellar') {
+          steps {
+            sh 'node scripts/job-publish-cellar.js'
+          }
+        }
+        stage('npm') {
+          steps {
+            sh 'node ./scripts/job-publish-npm.js'
+          }
+        }
+      }
+    }
+  }
+  post {
+    always {
+      archiveArtifacts artifacts: 'releases/**/*', fingerprint: true, onlyIfSuccessful: true
+    }
+  }
+}
+
+@NonCPS
+String gitTagName() {
+    return sh(script: 'git describe --tags --exact-match $(git rev-parse HEAD) || true', returnStdout: true)?.trim()
+}
+```
+
+You can find more documentation about the Jenkins file syntax on [Jenkin's Documentation](https://www.jenkins.io/doc/book/pipeline/jenkinsfile/)
+
 ## Customize your Jenkins instance
 
 Jenkins can be customized following your needs with a multitude of plugins. You can go into `Manage Jenkins` and then `Manage plugins` to manage them.
@@ -191,4 +252,67 @@ All plugins will be downloaded. You can enable the option `Restart Jenkins when 
 
 ## Backup
 
-By default, Clever Cloud performs a free backup every day, with a retention of seven days. Retention and frequency can be customized for Premium customers. Each backup can be found in the add-on dashboard in the web console, along with the credentials.
+By default, Clever Cloud performs a backup every day, with a retention of seven days. Retention and frequency can be customized for Premium customers. Backups can be found in the Clever Cloud Console in the `backups` menu of your add-on.
+
+## Plans
+
+### Jenkins Add-on
+
+Those plans correspond to the Jenkins controller instance.
+
+{{< pricingAddon "jenkins" "[\"cpu\", \"memory\", \"disk-size\", \"has-logs\", \"has-metrics\"]" >}}
+
+### Runners
+
+Those plans are the available runners for your jobs.
+
+<table class="table table-bordered table-striped dataTable"><caption>Jenkins Runners</caption>
+<tr>
+<th>Name</th>
+<th>vCPUs</th>
+<th>RAM</th>
+<th>Price (hour)</th>
+</tr>
+<tr>
+<td>XS</td>
+<td>1</td>
+<td>2 GiB</td>
+<td>€0.10</td>
+</tr>
+<tr>
+<td>S</td>
+<td>2</td>
+<td>4 GiB</td>
+<td>€0.25</td>
+</tr>
+<tr>
+<td>M</td>
+<td>4</td>
+<td>8 GiB</td>
+<td>€0.50</td>
+</tr>
+<tr>
+<td>L</td>
+<td>6</td>
+<td>12 GiB</td>
+<td>€0.75</td>
+</tr>
+<tr>
+<td>XL</td>
+<td>8</td>
+<td>16 GiB</td>
+<td>€1.00</td>
+</tr>
+<tr>
+<td>2XL</td>
+<td>12</td>
+<td>24 GiB</td>
+<td>€2.00</td>
+</tr>
+<tr>
+<td>3XL</td>
+<td>16</td>
+<td>32 GiB</td>
+<td>€4.00</td>
+</tr>
+</table>
