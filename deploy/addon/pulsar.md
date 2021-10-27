@@ -67,7 +67,7 @@ Choose your plan, link an app to it (or not), give it a name and a zone, and it'
 
 Pulsar add-on uses [Biscuit for Pulsar](https://github.com/CleverCloud/biscuit-pulsar) implementation which is directly pluggable to the Pulsar authentication and authorization system. Each add-on exposes its own Biscuit token.
 
-As Biscuit is a token, you can use `AuthenticationToken($ADDON_PULSAR_TOKEN)` provided by [clients libraries](https://pulsar.apache.org/docs/en/client-libraries/) to authenticate to our clusters without any tweak.
+As Biscuit is a token, you can use `AuthenticationToken($ADDON_PULSAR_BISCUIT_TOKEN)` provided by [clients libraries](https://pulsar.apache.org/docs/en/client-libraries/) to authenticate to our clusters without any tweak.
 
 ### Attenuation
 
@@ -76,7 +76,7 @@ The Pulsar add-on given Biscuit token can be attenuated, here is an attenuation 
 Put your Biscuit token in a file:
 
 ```bash
-echo $ADDON_PULSAR_TOKEN > addon.biscuit
+echo $ADDON_PULSAR_BISCUIT_TOKEN > addon.biscuit
 ```
 
 Inspect your Biscuit token:
@@ -165,7 +165,7 @@ We advise you to use [`pulsarctl`](https://github.com/streamnative/pulsarctl) pr
 
 ```bash
 pulsarctl --admin-service-url $ADDON_PULSAR_HTTP_URL \
-          --auth-params $ADDON_PULSAR_TOKEN \
+          --auth-params $ADDON_PULSAR_BISCUIT_TOKEN \
           --auth-plugin org.apache.pulsar.client.impl.auth.AuthenticationToken \
           namespaces topic $ADDON_PULSAR_TENANT/$ADDON_PULSAR_NAMESPACE
 ```
@@ -208,7 +208,7 @@ impl SerializeMessage for TestData {
 #[tokio::main]
 async fn main() -> Result<(), pulsar::Error> {
   let pulsar_addon_url = std::env::var("ADDON_PULSAR_BINARY_URL").unwrap();
-  let biscuit = std::env::var("ADDON_PULSAR_TOKEN").unwrap();
+  let biscuit = std::env::var("ADDON_PULSAR_BISCUIT_TOKEN").unwrap();
   let tenant = std::env::var("ADDON_PULSAR_TENANT").unwrap();
   let namespace = std::env::var("ADDON_PULSAR_NAMESPACE").unwrap();
 
@@ -262,7 +262,7 @@ There is an official [Java Pulsar Client](https://pulsar.apache.org/docs/en/clie
 
 ```java
 PulsarClient client = PulsarClient.builder()
-  .authentication(new AuthenticationToken("ADDON_PULSAR_TOKEN"))
+  .authentication(new AuthenticationToken("ADDON_PULSAR_BISCUIT_TOKEN"))
   .serviceUrl("ADDON_PULSAR_BINARY_URL")
   .build();
 
@@ -384,7 +384,7 @@ A Pulsar add-on is provided with infinite retention policies, which can be chang
 ```bash
 # Example to set retention of namespace to 2 weeks and/or 100 GB
 pulsarctl --admin-service-url $ADDON_PULSAR_HTTP_URL \
-          --auth-params $ADDON_PULSAR_TOKEN \
+          --auth-params $ADDON_PULSAR_BISCUIT_TOKEN \
           --auth-plugin org.apache.pulsar.client.impl.auth.AuthenticationToken \
           namespaces set-retention $ADDON_PULSAR_TENANT/$ADDON_PULSAR_NAMESPACE --time 2w --size 100G
 ```
@@ -400,7 +400,7 @@ The offload threshold of the namespace is deactivated by default, you can activa
 ```bash
 # Example to set offload to run when hot storage is > 10G and put data to Cellar Addon
 pulsarctl --admin-service-url $ADDON_PULSAR_HTTP_URL \
-          --auth-params $ADDON_PULSAR_TOKEN \
+          --auth-params $ADDON_PULSAR_BISCUIT_TOKEN \
           --auth-plugin org.apache.pulsar.client.impl.auth.AuthenticationToken \
           namespaces set-offload-treshold $ADDON_PULSAR_TENANT/$ADDON_PULSAR_NAMESPACE 10G
 ```
