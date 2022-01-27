@@ -58,13 +58,14 @@ You need to paste a PEM bundle containing (in this order):
 You should create a `file.pem`containing:
 
 ```
------BEGIN ENCRYPTED PRIVATE KEY-----
+-----BEGIN PRIVATE KEY-----
  <the private key>
------END ENCRYPTED PRIVATE KEY-----
+-----END PRIVATE KEY-----
 -----BEGIN CERTIFICATE-----
 <the certificate>
 -----END CERTIFICATE-----
 ```
+
 You can add optionnal intermediate certificates by appending them to the file as 
 ```
 -----BEGIN CERTIFICATE-----
