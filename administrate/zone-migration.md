@@ -17,7 +17,7 @@ Keep in mind that our support team remains available, should you have any questi
 
 ## Application migration
 
-Most of the applications will be able to be migrated without issues. If your application matches any criteria is in the list below, you will need extra steps
+Most of the applications will migrate without issues. If one of your applications matches any criteria is in the list below, you will need extra steps
 described in the following sub-sections.
 
 - Any application that uses a FSBucket add-on
