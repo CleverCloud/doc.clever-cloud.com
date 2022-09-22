@@ -23,7 +23,7 @@ described in the following sub-sections.
 - Any application that uses a FSBucket add-on
 - PHP applications
 
-If your application matches any criterias on this list, please read the prerequisites below first and then follow the right sub-section.
+In this case, please read the prerequisites below first and then follow the right sub-section.
 
 ### Prerequisites
 
