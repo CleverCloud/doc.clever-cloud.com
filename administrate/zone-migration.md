@@ -31,7 +31,7 @@ Besides redeploying your application in your target zone, you have to keep a few
 - Increased latency might be observed during DNS propagation (more below)
 - You will need to update your DNS settings, so make sure you have access to your DNS registrar
 
-One of the first things you can do is to lower your DNS records TTL (time to live) to speed up the DNS propagation when you will update your domains DNS records.
+One of the first things you can do is to lower your DNS records TTL (time to live). in order to speed up the DNS propagation during the update of your domains DNS records.
 
 On your registrar's interface, find your application's domain. Usually, the DNS record will be `domain.tld IN CNAME domain.<current-zone>.clever-cloud.com` with a certain TTL.
 Update that TTL to 60 seconds instead and wait for this change to propagate (wait as much time as the old TTL value). This change will allow a faster DNS propagation when
