@@ -73,7 +73,7 @@ To migrate FSBuckets, see the [section below](#fsbucket).
 ### PHP Applications
 
 Because of technical reasons, a PHP application can not be migrated to another zone. In this case, you will have to re-create the application.
-When domains will be switched to the old application to the new one, a small downtime may occur. 404 or 503 errors might happen for a few seconds.
+When domains are switched from the old application to the new one, a small downtime may occur. 404 or 503 errors might happen for a few seconds.
 
 First, create a new PHP application on your target zone.
 Then, you can easily copy / paste the environment variable from the old application to the new one using the `Expert mode` of our environment variables interface.
