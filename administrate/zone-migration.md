@@ -48,7 +48,7 @@ may increase the latency for your users. For example, if you are migrating from 
 then redirect the trafic to our Montreal infrastructure, leading to requests taking more time.
 
 You might also experience an increased latency between your application and other services (like a PostgreSQL add-on for example). If your application has switched to the Montreal zone
-and your PostgreSQL add-on is still in Paris, your application will need extract time to query the database.
+and your PostgreSQL add-on is still in Paris, your application will need extra time to query the database.
 
 #### DNS updates
 
