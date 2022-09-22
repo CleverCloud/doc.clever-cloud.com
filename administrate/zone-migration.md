@@ -111,7 +111,7 @@ These add-ons can not be automatically migrated across zones. Please reach out t
 
 ### FSBucket
 
-FSBuckets can't be migrated across zones either. You will have to create a new add-on on the target zone and transfer the content from the old add-on to the new one.
+FSBuckets can not be migrated across zones either. You will have to create a new FSBucket in the target zone and transfer its content from the old to the new one.
 
 To do so, you can use the `lftp` or `rclone` tools. Or you can ask our support team and we will be able to do it for you.
 
