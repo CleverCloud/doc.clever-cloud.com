@@ -13,7 +13,7 @@ In this document, we will see how you can migrate your Clever Cloud services fro
 
 For most of the services, you will be able to migrate them as-is. For others, you will need to create them and do a manual migration.
 
-Keep in mind that our support team remains available should you have any questions regarding zone migration.
+Keep in mind that our support team remains available, should you have any questions regarding zone migration.
 
 ## Application migration
 
