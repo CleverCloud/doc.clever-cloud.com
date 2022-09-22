@@ -107,7 +107,7 @@ where your database has been migrated.
 
 ### Jenkins, Elasticsearch, Cellar, Pulsar
 
-Those add-ons can't be automatically migrated across zones. Please reach out to our support team so we can assist you further for this migration.
+These add-ons can not be automatically migrated across zones. Please reach out to our support team so we can assist you further for this migration.
 
 ### FSBucket
 
