@@ -55,7 +55,7 @@ and your PostgreSQL add-on is still in Paris, your application will need extra t
 Once your application has been migrated to your target zone, you will find in the `Domain names` section the new `A` and `CNAME` DNS records to use for your application's domains.
 If you were using `A` records, update the records (there might be more or fewer of them than what you had previously, this is normal). If you used a `CNAME` record, simply change the value.
 
-Once done, it will take as much time to propagate as to what value was defined your TTL for that record. If you followed the prerequisites above, it should take a few minutes tops.
+Once done, it will take as much time to propagate as the TTL defined for that record. If you followed the prerequisites above, it should take a few minutes tops.
 
 ### Migration
 
