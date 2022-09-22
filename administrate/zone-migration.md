@@ -34,7 +34,7 @@ Besides redeploying your application in your target zone, you have to keep a few
 One of the first things you can do is to lower your DNS records TTL (time to live). in order to speed up the DNS propagation during the update of your domains DNS records.
 
 On your registrar's interface, find your application's domain. Usually, the DNS record will be `domain.tld IN CNAME domain.<current-zone>.clever-cloud.com` with a certain TTL.
-Update that TTL to 60 seconds instead and wait for this change to propagate (wait as much time as the old TTL value). This change will allow a faster DNS propagation when
+Edit that TTL to 60 seconds instead of the existing value, and wait for this change to propagate (wait as much time as the old TTL value). This change will allow a faster DNS propagation when
 you will have to update the `CNAME` record value to `domain.<target-zone>.clever-cloud.com`, lowering the amount of time your users will experience an increased latency.
 
 {{< alert "info" "Note" >}}
