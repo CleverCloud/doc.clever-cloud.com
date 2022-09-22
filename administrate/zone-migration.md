@@ -59,7 +59,7 @@ Once done, it will take as much time to propagate as the TTL defined for that re
 
 ### Migration
 
-If your application doesn't match any criteria of the list in the `Application migration` section, then you can go to the `Information` pane of your application and under the `Zone` label, chose your target zone.
+If your application doesn't match any criteria of the list in the `Application migration` section, then you can go to the `Information` pane of your application. Under the `Zone` label, chose your target zone.
 Once selected, you can save your changes using the `Save` button at the bottom of the page.
 
 After saving, you can now redeploy your application in the `Overview`, it will redeploy on the new zone.
