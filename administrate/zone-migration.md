@@ -29,7 +29,7 @@ In this case, please read the prerequisites below first and then follow the righ
 
 Besides redeploying your application in your target zone, you have to keep a few things in mind:
 - Increased latency might be observed during DNS propagation (more below)
-- You will need to update your DNS settings so make sure you have access to your DNS registrar
+- You will need to update your DNS settings, so make sure you have access to your DNS registrar
 
 One of the first things you can do is to lower your DNS records TTL (time to live) to speed up the DNS propagation when you will update your domains DNS records.
 
