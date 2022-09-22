@@ -83,7 +83,7 @@ Make sure the Scalability section of your application is the same as the old one
 Once everything is setup again, we can push the code. If you are using Git, you can find the new Git URL in the `Information` pane.
 If you are using FTP, please read the [FSBucket migration section](#fsbucket).
 
-Your new application should now be deployed. You can now update the domain names: for each domain on your old application, delete the domain and add it to the new application.
+Your new application should now be deployed. You can update the domain names: for each domain of your old application, delete it and add it to the new application.
 
 You can use the CLI to do it and minimize the downtime:
 
