@@ -44,7 +44,7 @@ After the migration, you can set back your old TTL value.
 #### Increased latency
 
 Once your application has been redeployed to your target zone, your application's domain will still have its DNS pointing to the old zone. As a consequence, the
-may increase the latency for your users. For example, if you are migrating from Paris (PAR) to Montreal (MTL), your visitors will connect to our Paris infrastructure, which will
+latency may increase for your users. For example, if you are migrating from Paris (PAR) to Montreal (MTL), your visitors will connect to our Paris infrastructure, which will
 then redirect the trafic to our Montreal infrastructure, leading to requests taking more time.
 
 You might also experience an increased latency between your application and other services (like a PostgreSQL add-on for example). If your application has switched to the Montreal zone
