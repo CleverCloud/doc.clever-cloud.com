@@ -66,7 +66,7 @@ After saving, you can now redeploy your application in the `Overview`, it will r
 
 ### Applications using an FSBucket
 
-FSBuckets can only be mounted by applications on the same zone. This means that you can' use a FSBucket add-on hosted on Paris if your application is on Montreal.
+FSBuckets can only be mounted by applications on the same zone. This means that you can't use a FSBucket add-on hosted on Paris if your application is on Montreal.
 
 To migrate FSBuckets, see the [section below](#fsbucket).
 
