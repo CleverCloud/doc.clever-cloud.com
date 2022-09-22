@@ -77,7 +77,7 @@ When domains are switched from the old application to the new one, a small downt
 
 First, create a new PHP application on your target zone.
 Then, you can easily copy / paste the environment variable from the old application to the new one using the `Expert mode` of our environment variables interface.
-Don't forget to link any services that are linked to your old application. Linking multiple times the same service to different application doesn't cause any issues.
+Don't forget to link all services that were linked to your old application. Linking multiple times the same service to different application doesn't cause any issue.
 Make sure the Scalability section of your application is the same as the old one as well as the various options (HTTPS redirection, build cache, ...) you can find in the `Information pane`.
 
 Once everything is setup again, we can push the code. If you are using Git, you can find the new Git URL in the `Information` pane.
