@@ -31,11 +31,11 @@ Besides redeploying your application in your target zone, you have to keep a few
 - Increased latency might be observed during DNS propagation (more below)
 - You will need to update your DNS settings, so make sure you have access to your DNS registrar
 
-One of the first things you can do is to lower your DNS records TTL (time to live). in order to speed up the DNS propagation during the update of your domains DNS records.
+One of the first things you can do is to lower your DNS records TTL (time to live). In order to speed up the DNS propagation during the update of your domains DNS records.
 
 On your registrar's interface, find your application's domain. Usually, the DNS record will be `domain.tld IN CNAME domain.<current-zone>.clever-cloud.com` with a certain TTL.
 Edit that TTL to 60 seconds instead of the existing value, and wait for this change to propagate (wait as much time as the old TTL value). This change will allow a faster DNS propagation when
-you will have to update the `CNAME` record value to `domain.<target-zone>.clever-cloud.com`, lowering the amount of time your users will experience an increased latency.
+you have to update the `CNAME` record value to `domain.<target-zone>.clever-cloud.com`, lowering the amount of time your users will experience an increased latency.
 
 {{< alert "info" "Note" >}}
 After the migration, you can set back your old TTL value.
@@ -45,7 +45,7 @@ After the migration, you can set back your old TTL value.
 
 Once your application has been redeployed to your target zone, your application's domain will still have its DNS pointing to the old zone. As a consequence, the
 latency may increase for your users. For example, if you are migrating from Paris (PAR) to Montreal (MTL), your visitors will connect to our Paris infrastructure, which will
-then redirect the trafic to our Montreal infrastructure, leading to requests taking more time.
+then redirect the traffic to our Montreal infrastructure, leading requests to take more time.
 
 You might also experience an increased latency between your application and other services (like a PostgreSQL add-on for example). If your application has switched to the Montreal zone
 and your PostgreSQL add-on is still in Paris, your application will need extra time to query the database.
@@ -66,7 +66,7 @@ After saving, you can now redeploy your application in the `Overview`, it will r
 
 ### Applications using an FSBucket
 
-FSBuckets can only be mounted by applications on the same zone. This means that you can not use an FSBucket add-on hosted in Paris, if your application is in Montreal.
+FSBuckets can only be mounted by applications on the same zone. This means that you cannot use an FSBucket add-on hosted in Paris, if your application is in Montreal.
 
 To migrate FSBuckets, see the [section below](#fsbucket).
 
@@ -80,7 +80,7 @@ Then, you can easily copy / paste the environment variable from the old applicat
 Don't forget to link all services that were linked to your old application. Linking multiple times the same service to different application doesn't cause any issue.
 Make sure the Scalability section of your application is the same as the old one, as well as the various options you can find in the `Information pane` (HTTPS redirection, build cache, ...).
 
-Once everything is setup again, we can push the code. If you are using Git, you can find the new Git URL in the `Information` pane.
+Once everything is setup again, we can push the code. If you are using Git, you can find the new Git URL in the `Information` panel.
 If you are using FTP, please read the [FSBucket migration section](#fsbucket).
 
 Your new application should now be deployed. You can update the domain names: for each domain of your old application, delete it and add it to the new application.
