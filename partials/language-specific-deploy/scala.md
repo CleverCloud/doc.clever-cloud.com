@@ -38,7 +38,7 @@ If you have a single repository with multiple modules or want to build a specifi
 
 `CC_SBT_TARGET_DIR` must be set to the relative path of the module and `CC_SBT_TARGET_BIN` to the name of the binary to run.
 
-For instance, if you want to deploy a module named `service1` that produce a binary named "my-binary", you have to define the following variables in the application's [environment variables](#setting-up-environment-variables-on-clever-cloud).:
+For instance, if you want to deploy a module named `service1` that produce a binary named "my-binary", you have to define the following variables:
 ```
 SBT_DEPLOY_GOAL=service1/stage
 CC_SBT_TARGET_DIR=service1
