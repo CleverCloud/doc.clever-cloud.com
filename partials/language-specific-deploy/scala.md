@@ -46,7 +46,7 @@ CC_SBT_TARGET_BIN=my-binary
 ```
 Our engine will execute the `sbt service1/stage` and will run `service1/target/universal/stage/bin/my-binary`
 
-**Note**, even when `CC_RUN_COMMAND` is configured `CC_SBT_TARGET_DIR` and `CC_SBT_TARGET_BIN` should be set to the correct values.
+**Note:** even when `CC_RUN_COMMAND` is configured `CC_SBT_TARGET_DIR` and `CC_SBT_TARGET_BIN` should be set to the correct values.
 
 ### HOCON users
 
