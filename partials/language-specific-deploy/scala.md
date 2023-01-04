@@ -44,6 +44,8 @@ SBT_DEPLOY_GOAL=service1/stage
 CC_SBT_TARGET_DIR=service1
 CC_SBT_TARGET_BIN=my-binary
 ```
+Check details on [environment variables](#setting-up-environment-variables-on-clever-cloud).
+
 Our engine will execute the `sbt service1/stage` and will run `service1/target/universal/stage/bin/my-binary`
 
 **Note:** even when `CC_RUN_COMMAND` is configured `CC_SBT_TARGET_DIR` and `CC_SBT_TARGET_BIN` should be set to the correct values.
