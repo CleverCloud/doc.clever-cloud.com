@@ -11,3 +11,14 @@ Just follow the instructions of your FTP Software to send code to Clever Cloud.
 {{< /alert >}}
 
 Refer to the [quickstart]({{< ref "/getting-started/quickstart.html" >}}) for more details on FTP deployments.
+
+### Transfer files programmatically
+
+Install [rclone](https://rclone.org/).
+
+Then create a config and use it as a target to transfer a directory:
+
+```bash
+rclone config create remote ftp host ${FTP_HOST} user ${FTP_USER} pass ${FTP_PASSWORD}
+rclone sync -v ${PWD}/my_local_directory remote:
+```
