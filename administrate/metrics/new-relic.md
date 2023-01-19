@@ -54,6 +54,12 @@ Alternatively you can create and add a `./clevercloud/newrelic.json` file in you
 
 If the `appname` or `NEW_RELIC_APP_NAME` is not specified, we use your application id for the name.
 
+#### PHP Agent
+
+To configure the PHP agent, you can add settings inside your [.user.ini](https://www.clever-cloud.com/doc/deploy/application/php/php-apps/#change-php-settings). 
+
+All the configuration settings are [available here](https://docs.newrelic.com/docs/apm/agents/php-agent/configuration/php-agent-configuration/#inivar-tt-settings)
+
 ### Usage
 
 Just redeploy your application on Clever Cloud for the changes to take effect. A few minutes later, your application will begin sending data to New Relic. Once New Relic receives the data, your application will be listed in the dashboard.
