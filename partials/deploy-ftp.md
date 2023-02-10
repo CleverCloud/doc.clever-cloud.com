@@ -6,7 +6,7 @@ When you have chosen to deploy your application via FTP at the application creat
 
 You will find the FTP credentials in the configuration tab of this particular FS Bucket.
 
-Just follow the instructions of your FTP Software do send code to Clever Cloud.
+Just follow the instructions of your FTP Software to send code to Clever Cloud.
 
 {{< alert "warning" "Warning" >}}
 <p>An FTP application is automatically started once the application is created, even if no code has been sent.</p>

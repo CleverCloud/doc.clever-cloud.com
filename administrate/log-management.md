@@ -1,7 +1,7 @@
 ---
 title: Logs management
 position: 3
-shortdesc: How to manage addons and applications log drains
+shortdesc: How to manage addons and applications logs and drains
 tags:
  - administrate
 keywords:
@@ -11,6 +11,8 @@ keywords:
 - log drains
 - drain
 - drains
+- datadog
+- newrelic
 ---
 
 Log management is currently only available through our API and [clever-tools]({{< ref "/getting-started/cli.html" >}}).
@@ -19,51 +21,194 @@ Log management is currently only available through our API and [clever-tools]({{
 
 You can see logs with the command down below.
 
-    clever logs
+```bash
+clever logs
+```
 
 You can also add a flag `--before` or `--after` followed by a date (ISO8601 format).
 
-    # Here is an example
-    clever logs --before 2016-08-11T14:54:33.971Z
+```bash
+clever logs --before 2016-08-11T14:54:33.971Z
+```
 
-### Logs drains: exporting logs to an external tools
+You can also get your add-on's logs by using `--addon` flag, the value must be the add-on id starting by `addon_`. 
+
+```bash
+clever logs --addon <addon_xxx>
+```
+
+{{< alert "warning" "Warning:" >}}
+   Only the last 1000 lines of logs are got by `clever logs`.
+{{< /alert >}}
+
+### Access logs
+
+It contains all incoming requests to your application. Here is an example:
+
+```txt
+255.255.255.255 - - [06/Feb/2020:07:59:22 +0100] "GET /aget/to/your/beautiful/website -" 200 1453
+```
+
+They are available in different formats, the most common is CLF which stands for Common Log Format.
+
+You can see access logs with the following command:
+
+```bash
+clever accesslogs
+```
+
+As with the `logs` command, you can specify `--before` and `--after` flags as well as the `--follow`  to display access logs continuously.
+
+If you need to change the ouput you can specify the `--format` flag with one of these values:
+
+- simple: `2021-06-25T10:11:35.358Z 255.255.255.255 GET /`
+- extended: `2021-06-25T10:11:35.358Z [ 255.255.255.255 - Nantes, FR ] GET www.clever-cloud.com / 200`
+- clf: `255.255.255.255 - - [25/Jun/2021:12:11:35 +0200] "GET / -" 200 562`
+- json:
+  
+  ```json
+    {
+        "t":"2021-06-25T10:11:35.358209Z",
+        "a":"app_xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+        "adc":"clevercloud-adc-nX",
+        "o":"orga_xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+        "i":"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+        "ipS":"255.255.255.255",
+        "pS":58477,
+        "s":{
+            "lt":50.624,
+            "lg":3.0511,
+            "ct":"Nantes",
+            "co":"FR"
+        },
+        "ipD":"46.252.181.17",
+        "pD":14001,
+        "d":{
+            "lt":45.7059,
+            "lg":4.7444,
+            "ct":"Chaponost",
+            "co":"FR"
+        },
+        "vb":"GET",
+        "path":"/",
+        "bIn":658,"bOut":562,
+        "h":"www.clever-cloud.com",
+        "rTime":"31ms",
+        "sTime":"75μs",
+        "scheme":"HTTPS",
+        "sC":200,"sT":"OK",
+        "w":"WRK-01",
+        "r":"01F91AEG8Z9RJKYB7JY7H56FNB",
+        "tlsV":"TLS1.3"
+    }
+  ```
+
+## Exporting logs to an external tools
 
 You can use the logs drains to send your application's logs to an external server with the following command.
 
-
-    clever drain create [--alias <alias>] <DRAIN-TYPE> <DRAIN-URL> [--username <username>] [--password <password>]
+```bash
+clever drain create [--alias <alias>] <DRAIN-TYPE> <DRAIN-URL> [--username <username>] [--password <password>]
+```
 
 Where `DRAIN-TYPE` is one of:
 
- - `TCPSyslog`: for TCP syslog endpoint;
- - `UDPSyslog`: for UDP syslog endpoint;
- - `HTTP`: for TCP syslog endpoint (note that this endpoint has optional username/password parameters as HTTP Basic Authentication);
- - `ElasticSearch`: for ElasticSearch endpoint (note that this endpoint requires username/password parameters as HTTP Basic Authentication);
- - `DatadogHTTP`: for Datadog endpoint (note that this endpoint needs your Datadog API Key).
+- `TCPSyslog`: for TCP syslog endpoint;
+- `UDPSyslog`: for UDP syslog endpoint;
+- `HTTP`: for TCP syslog endpoint (note that this endpoint has optional username/password parameters as HTTP Basic Authentication);
+- `ElasticSearch`: for Elasticsearch endpoint (note that this endpoint requires username/password parameters as HTTP Basic Authentication);
+- `DatadogHTTP`: for Datadog endpoint (note that this endpoint needs your Datadog API Key).
 
 You can list the currently activated drains with this command.
 
-    clever drain [--alias <alias>]
+```bash
+clever drain [--alias <alias>]
+```
 
 And remove them if needed
 
-    clever drain remove [--alias <alias>] <DRAIN-ID>
+```bash
+clever drain remove [--alias <alias>] <DRAIN-ID>
+```
 
-#### ElasticSearch logs drains
+If the status of your drain is shown as `DISABLED` without you disabling it, it may be because we  have not been able to send your logs to your drain endpoint or because the requests timed out after **25 seconds**.
 
-ElasticSearch drains use the Elastic bulk API. To match this endpoint, specify `/_bulk` at the end of your ElasticSearch endpoint.
+You can also use the logs drain to send your add-on's logs by using `--addon` flag, the value must be the add-on id starting by `addon_`. 
+
+### Elasticsearch
+
+ElasticSearch drains use the Elastic bulk API. To match this endpoint, specify `/_bulk` at the end of your Elasticsearch endpoint.
+
+```bash
+clever drain create ElasticSearch https://xxx-elasticsearch.services.clever-cloud.com/_bulk --username USERNAME --password PASSWORD
+```
 
 Each day, we will create an index `logstash-<yyyy-MM-dd>` and push logs to it.
 
-#### Datadog logs drains
+#### Index Lifecycle Management
 
-Datadog has two zones, EU and COM. An account on one zone is not available on the other, make sure to target the good EU or COM intake endpoint.
+Depending on the amount of logs generated by your application, you might want to manage the lifecyle of your log indexes to prevent your Elasticsearch instance from running out of storage space.
 
-To create a [Datadog](https://docs.datadoghq.com/api/?lang=python#send-logs-over-http) drain, you just need to use:
+To do so, Elasticsearch provides a functionnality called [Index Lifecycle management](https://www.elastic.co/guide/en/elasticsearch/reference/current/index-lifecycle-management.html) that allows you to create a policy to delete indexes based on their creation date.
 
-    clever drain create DatadogHTTP "https://http-intake.logs.datadoghq.com/v1/input/<API_KEY>?ddsource=clevercloud&service=<SERVICE>&host=<HOST>"
+With our Elasticsearch add-on, you can choose to create a Kibana application in which you can create the policy and apply it to your indexes with an index template, but you can create them manually through API requests.
 
-#### Logs extended storage
+Here is an example that will create a policy to delete indexes older than 30 days:
 
-Each organisations or personal space has `Logs extended storage` Cellar addon. This addon will be used to store your applications/addons logs when the hot retention is reached when the feature will be available.
-Then, the most aged logs will be pushed to `Logs extended storage` as cold storage. The retention for cold storage will be user defined via a new log management interface.
+```bash
+curl -X PUT "https://username:password@xxx-elasticsearch.services.clever-cloud.com/_ilm/policy/logs_drain?pretty" -H 'Content-Type: application/json' -d'
+{
+  "policy": {
+    "phases": {
+      "delete": {
+        "min_age": "30d",
+        "actions": {
+          "delete": {} 
+        }
+      }
+    }
+  }
+}
+'
+```
+
+An index template example to apply the policy based on an index pattern:
+
+```bash
+curl -X PUT "https://username:password@xxx-elasticsearch.services.clever-cloud.com/_index_template/logs_drain?pretty" -H 'Content-Type: application/json' -d'
+{
+  "index_patterns": ["logstash-*"], 
+  "template": {
+    "settings": {
+      "index.lifecycle.name": "logs_drain"
+    }
+  }
+}
+'
+```
+
+For more information, please refer to the [official documentation](https://www.elastic.co/guide/en/elasticsearch/reference/current/set-up-lifecycle-policy.html).
+
+### Datadog
+
+To create a [Datadog](https://docs.datadoghq.com/fr/api/latest/logs/#send-logs) drain, you just need to use:
+
+```bash
+clever drain create DatadogHTTP "https://http-intake.logs.datadoghq.com/v1/input/<API_KEY>?ddsource=clevercloud&service=<SERVICE>&hostname=<HOST>"
+```
+
+{{< alert "warning" "zone" >}}
+Datadog has two zones, **EU** and **COM**. An account on one zone is not available on the other, make sure to target the right intake endpoint (`datadoghq.eu` or `datadoghq.com`).
+{{< /alert >}}
+
+### NewRelic
+
+To create a [NewRelic](https://docs.newrelic.com/docs/logs/log-api/introduction-log-api/) drain, you just need to use:
+
+```bash
+clever drain create NewRelicHTTP "https://log-api.eu.newrelic.com/log/v1" --api-key "<API_KEY>"
+```
+
+{{< alert "warning" "zone" >}}
+NewRelic has two zones, **EU** and **US**. An account on one zone is not available on the other, make sure to target the right intake endpoint (`log-api.eu.newrelic.com` or `log-api.newrelic.com`).
+{{< /alert >}}

@@ -16,9 +16,9 @@ The Elastic Stack is Elasticsearch, Kibana, Beats, and Logstash (also known as t
 
 Provisioning the Elastic Stack addon on Clever Cloud will give you an Elasticsearch instance, Kibana and an APM server.
 
-## Elastic Stack version
+## Versions
 
-The current versions supported at add-on creation are 6 and 7.
+The current versions supported at add-on creation are 7 and 8.
 
 ## Elasticsearch
 
@@ -46,6 +46,7 @@ Currently, APM agents are available in the following languages:
 - [Go](https://www.elastic.co/guide/en/apm/agent/go/1.x/introduction.html)
 - [Java](https://www.elastic.co/guide/en/apm/agent/java/1.x/intro.html)
 - [Node.js](https://www.elastic.co/guide/en/apm/agent/nodejs/2.x/intro.html)
+- [PHP](https://www.elastic.co/guide/en/apm/agent/php/current/index.html)
 - [Python](https://www.elastic.co/guide/en/apm/agent/python/5.x/getting-started.html)
 - [Ruby](https://www.elastic.co/guide/en/apm/agent/ruby/3.x/introduction.html)
 
@@ -69,6 +70,14 @@ You can change the URL to point to your own custom configuration.
 
 A configuration example for RUM activation can be found here: [es-apm-serverconfig.sh](https://gist.githubusercontent.com/ldoguin/d7aa23fd44cfaed04165275aaf229a3c/raw/93aa1d39d8c1e444969ae114dbcfe0a5868f8d84/es-apm-serverconfig.sh).
 
+### Kibana custom configuration
+
+Kibana is deployed as an application. As such it's configured as an application. Its default pre run hook is set to:
+
+`CC_PRE_RUN_HOOK="curl https://api.clever-cloud.com/v2/providers/es-addon/kibana-setup/7 | sh"`
+
+You can change the URL to point to your own custom configuration.
+
 ### Java APM agent
 
 You have multiple ways to use the APM agent. You can either add it in your dependencies and it should work out of the box or you can attach an agent to the JVM. If you prefer the last option, you have to define the following environment variable to attach the agent to the JVM: `CC_JAVA_APM_AGENT_ENABLE=true`.
@@ -87,89 +96,6 @@ Backups can be managed under the *Backup* tab of the elastic add-on. You can res
     <p>If you are using Elasticsearch 6, backups are not deleted automatically, you will need to clean them up from time to time.</p>
 {{< /alert >}}
 
-## Elastic stack plans
+## Plans
 
-<table class="table table-bordered table-striped dataTable"><caption>Elastic Stack pricing plans</caption> 
-    <tbody>
-        <tr>
-          <th><strong>Plan name </strong></th>
-            <th> CPUs </th>
-            <th> DISK </th>
-            <th> MEMORY </th>
-            <th> NODES </th>
-            <th> Price </th>
-        </tr>
-          <tr>
-            <td class="cc-col__price"><span class="label cc-label__price label-info">XS</span></td>
-              <td class="text-right">1</td>
-              <td class="text-right">10</td>
-              <td class="text-right">1</td>
-              <td class="text-right">1</td>
-              <td class="text-right">17.00&nbsp;€</td>
-          </tr>
-          <tr>
-            <td class="cc-col__price"><span class="label cc-label__price label-info">S</span></td>
-              <td class="text-right">1</td>
-              <td class="text-right">60</td>
-              <td class="text-right">2</td>
-              <td class="text-right">1</td>
-              <td class="text-right">34.00&nbsp;€</td>
-          </tr>
-          <tr>
-            <td class="cc-col__price"><span class="label cc-label__price label-info">M</span></td>
-              <td class="text-right">2</td>
-              <td class="text-right">120</td>
-              <td class="text-right">4</td>
-              <td class="text-right">1</td>
-              <td class="text-right">58.00&nbsp;€</td>
-          </tr>
-          <tr>
-            <td class="cc-col__price"><span class="label cc-label__price label-info">L</span></td>
-              <td class="text-right">4</td>
-              <td class="text-right">240</td>
-              <td class="text-right">8</td>
-              <td class="text-right">1</td>
-              <td class="text-right">122.00&nbsp;€</td>
-          </tr>
-          <tr>
-            <td class="cc-col__price"><span class="label cc-label__price label-info">XL</span></td>
-              <td class="text-right">6</td>
-              <td class="text-right">450</td>
-              <td class="text-right">16</td>
-              <td class="text-right">1</td>
-              <td class="text-right">237.00&nbsp;€</td>
-          </tr>
-          <tr>
-            <td class="cc-col__price"><span class="label cc-label__price label-info">XXL</span></td>
-              <td class="text-right">8</td>
-              <td class="text-right">870</td>
-              <td class="text-right">32</td>
-              <td class="text-right">1</td>
-              <td class="text-right">458.00&nbsp;€</td>
-          </tr>
-          <tr>
-            <td class="cc-col__price"><span class="label cc-label__price label-info">XXXL</span></td>
-              <td class="text-right">16</td>
-              <td class="text-right">1700</td>
-              <td class="text-right">64</td>
-              <td class="text-right">1</td>
-              <td class="text-right">967.00&nbsp;€</td>
-        </tr>
-        <tr>
-            <td class="cc-col__price"><span class="label cc-label__price label-info">4XL</span></td>
-              <td class="text-right">32</td>
-              <td class="text-right">3500</td>
-              <td class="text-right">128</td>
-              <td class="text-right">1</td>
-              <td class="text-right">1887.00&nbsp;€</td>
-          </tr>
-          <tr>
-            <td class="cc-col__price"><span class="label cc-label__price label-info">5XL</span></td>            
-              <td class="text-right">64</td>            
-              <td class="text-right">7000</td>            
-              <td class="text-right">256</td>            
-              <td class="text-right">1</td>            
-              <td class="text-right">4151.00&nbsp;€</td>
-          </tr>        
-    </tbody>
-</table>
+{{< pricingAddon "es-addon" "[\"cpu\", \"memory\", \"disk-size\"]" >}}

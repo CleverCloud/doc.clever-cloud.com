@@ -1,11 +1,6 @@
 ## Create an application on Clever Cloud
 
 ### via the web console
-1. Create a new app by clicking on the **Add an Application** button, in the sidebar.
-2. Select a brand new instance (or a repository from GitHub if your account is linked).
-3. Then select @application-type@ in the platform list.
-4. Configure your scaling options.
-5. Enter your application's name and description and click "Next". You can also select the region you want (North America or Europe).
 
 Refer to [our getting started]({{< ref "/getting-started/" >}}) for more details on application creation via the console.
 

@@ -14,11 +14,11 @@ keywords:
 
 Redis is an open source, in-memory data structure store, used as database, cache and message broker.
 
-## Redis version
+## Version
 
 The version currently installed by the add-on is : Redis 6.0.10
 
-## Redis administration with Redsmin
+## Administration with Redsmin
 
 Each Redis add-on provides a [Redsmin](https://www.redsmin.com) dashboard, which allows
 you to query and monitor your redis database activity.
@@ -34,7 +34,17 @@ information (host, port, password) to start the replication. The add-on panel wi
 
 While a redis database is configured as a follower, it's read-only.
 
+## Redis-cli usage
+
+You can use Redis URI to connect to your databases with -u option. However, the generated URI in the information tab (`REDIS_URL`) of you add-on is not a legal syntax to use `redis-cli`.
+
+This is the correct syntax for `redis-cli` URI : *redis ://password@host:port[/database]*
+
 ## Default retention policy
 
 By default, the eviction policy is `noeviction`. If you plan to use Redis as a LRU cache,
 please contact the support to change its policy.
+
+## Plans
+
+{{< pricingAddon "redis-addon" "[\"cpu\", \"max-db-size\", \"disk-size\", \"connection-limit\", \"has-logs\", \"has-metrics\", \"databases\"]" >}}

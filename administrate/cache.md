@@ -6,6 +6,7 @@ tags:
 - administrate
 keywords:
 - varnish
+- varnish-modules
 - caching
 - cache
 ---
@@ -13,12 +14,12 @@ keywords:
 ## Overview
 
 [Varnish](https://www.varnish-cache.org/) is a HTTP proxy-cache, which works as a reverse proxy between your application
-and the client. Following rules defined by the user, Varnish will cache the data of an application to reduce the load on its server. We use **Varnish 4**
+and the client. Following rules defined by the user, Varnish will cache the data of an application to reduce the load on its server. We use **Varnish 6.6.0 and varnish-modules 0.18.0**.
 
 ## Limitations
 
 {{< alert "warning" >}}
-<p>Varnish is only available on PHP and Go applications. Support for other applications is in discussion.</p> 
+<p>Varnish is only available on PHP, Go and Node.js applications. Support for other applications is in discussion.</p> 
 <p>For more information about it, contact us at <a href="mailto:support@clever-cloud.com">support@clever-cloud.com</a>.</p>
 {{< /alert >}}
 
@@ -28,15 +29,26 @@ To enable it, you just have to create a `varnish.vcl` file in the `/clevercloud`
 This file describes how Varnish caches your applications and how it decides to return a cached resource or not.
 
 {{< alert "warning" >}}
-<p>The <code>vcl 4.0;</code> and backend section of the `varnish.vcl` configuration file are not necessary as they are already handled by Clever Cloud.</p>
-<p>If you have a PHP FTP application or if your `varnish.vcl` file is on an FS Bucket, make sure you redeploy the application for the changes to take effect.</p>
+The `vcl 4.1;` and backend section of the `varnish.vcl` configuration file are not necessary as they are already handled by Clever Cloud.
+If you have a PHP FTP application or if your `varnish.vcl` file is on an FS Bucket, make sure you redeploy the application for the changes to take effect.
 {{< /alert >}}
 
-To know how to write your `varnish.vcl` file, please have a look at the [Varnish 4.0 book](https://book.varnish-software.com/4.0/).
+To know how to write your `varnish.vcl` file, please have a look at the [Varnish 6 book](https://info.varnish-software.com/resources/varnish-6-by-example-book).
 
-## Varnish 3 to 4 migration
+## Listen on the right port
 
-If you already have a configuration file written for varnish 3, you can use [varnish3to4](https://GitHub.com/fgsch/varnish3to4) to convert it to varnish 4 in order to use it on Clever Cloud.
+Once varnish is enabled, your application should no longer listen on port **8080**, but on port **8081**. Because it's Varnish that will listen on port **8080**, and it will have in its configuration your application as backend.
+
+## Configure the cache size
+
+You can change the storage size specified in the varnish.params file with the `CC_VARNISH_STORAGE_SIZE` environment variable (the default value is `1G`).
+```bash
+CC_VARNISH_STORAGE_SIZE=2G
+```
+
+## Varnish 6 migration
+
+If you already have a configuration for an older version of varnish, you can read this [guide](https://varnish-cache.org/docs/6.0/whats-new/upgrading-6.0.html) to upgrade to version 6.
 
 ## Example files
 

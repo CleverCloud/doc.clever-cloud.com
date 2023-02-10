@@ -14,7 +14,7 @@ keywords:
 When creating an application, you have two (non exclusive) choices for domain names:
 
 * Using a personal domain name
-* Using a **\*.cleverapps.io** free domain, with built-in SSL
+* Using a **\*.cleverapps.io** free domain for dev purposes, with built-in SSL
 
 You can link one or several domain names in the console.
 
@@ -22,10 +22,21 @@ Add it in the application configuration: in the console, click on your **applica
 
 ## Using a **\*.cleverapps.io** free domain, with built-in SSL
 
+{{< alert "warning" "cleverapps.io domains are for developement only!" >}}
+  `*.cleverapps.io` domains are given for development and tests purpose. They point to
+  specific reverse proxies and have the following weaknesses:
+  - .io TLD is not a stable one
+  - since we offer the domain, the probability that people will abuse it is high. Thus, we
+    do not garantee the same QoS on the cleverapps reverse proxies.
+{{< /alert >}}
+
 In the console, in the domain name sub menu of your application, there is a default entry configured by default for every new app: <code>yourAppID.cleverapps.io</code>, which can be removed.
 
 In your application's domain section, just enter <code>example.cleverapps.io</code>. You have to choose a unique one. Trusted SSL is available on every sub-domain.
 
+{{< alert "warning" "TLS on sub-domain level" >}}
+  `*.cleverapps.io` certificate is only valid for the first sub-domain level, it won't work with a domain like `blog.mycompany.cleverapps.io`.
+{{< /alert >}}
 
 ## Using Personal Domain Names
 
@@ -85,6 +96,28 @@ Provide the following to your registrar:
     <td>Two records:<br>
     <code>@ 10800 IN A 87.98.180.173</code><br>
     <code>@ 10800 IN A 87.98.182.136</code>
+    </td>
+  </tr>
+</table>
+
+### Your Application Runs in the Europe/Roubaix HDS ('RBXHDS') Zone
+
+<table class="table table-bordered" style="text-align:center">
+  <tr>
+    <th><center>Record Type</center></th>
+    <th><center>Value</center></th>
+  </tr>
+  <tr>
+    <td>CNAME <div><span class="label label-success">Recommended</span></div></td>
+    <td>
+    <code>{yoursubdomain} 10800 IN CNAME domain.rbxhds.clever-cloud.com.</code>
+    </td>
+  </tr>
+  <tr>
+    <td>A<div><small>Only if CNAME is not available</small></div></td>
+    <td>Two records:<br>
+    <code>@ 10800 IN A 135.125.16.47</code><br>
+    <code>@ 10800 IN A 135.125.16.49</code>
     </td>
   </tr>
 </table>
@@ -175,6 +208,28 @@ Provide the following to your registrar:
     <td>Two records:<br>
     <code>@ 10800 IN A 139.99.253.215</code><br>
     <code>@ 10800 IN A 139.99.253.237</code>
+    </td>
+  </tr>
+</table>
+
+### Your Application Runs in the Jeddah ('JED') Zone
+
+<table class="table table-bordered" style="text-align:center">
+  <tr>
+    <th><center>Record Type</center></th>
+    <th><center>Value</center></th>
+  </tr>
+  <tr>
+    <td>CNAME <div><span class="label label-success">Recommended</span></div></td>
+    <td>
+    <code>{yoursubdomain} 10800 IN CNAME domain.jed.clever-cloud.com.</code>
+    </td>
+  </tr>
+  <tr>
+    <td>A<div><small>Only if CNAME is not available</small></div></td>
+    <td>Two records:<br>
+    <code>@ 10800 IN A 158.101.226.110</code><br>
+    <code>@ 10800 IN A 150.230.50.217</code>
     </td>
   </tr>
 </table>

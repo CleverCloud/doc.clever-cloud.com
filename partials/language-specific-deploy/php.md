@@ -9,12 +9,13 @@ Set the `CC_PHP_VERSION` environment variable to one of the following values:
 - `7.3`
 - `7.4`
 - `8.0`
+- `8.1`
 
 All new PHP applications are created with a default `CC_PHP_VERSION`, set to 7, which means latest php 7 version available.
-You can of course change it whenever you want then redeploy your application to use the version you want.
 
-The configuration file for your PHP application must be `/clevercloud/php.json`, that is a *php.json* file in a
-`/clevercloud` folder at the root of your application.
+You can of course change it whenever you want then redeploy your application to use the version you want. We only support values based on the first two digits `X.Y` not `X.Y.Z`.
+
+The configuration file for your PHP application must be `/clevercloud/php.json`, that is a *php.json* file in a `/clevercloud` folder at the root of your application.
 
 ### Change the webroot
 
@@ -44,8 +45,8 @@ In the following example we want to set the webroot to the folder `/public`:
 }
 ```
 
-{{< alert "warning" "Path style" >}}
-<p>Please note the <strong>absolute</strong> path style: <code>/public</code>. The change of the webroot will be <strong>rejected</strong> during the deployment if the target directory does not exist or is not a directory.</p>
+{{< alert "warning" "Warning:" >}}
+    Please note the absolute path style: `/public`. The change of the webroot will be rejected during the deployment if the target directory does not exist or is not a directory.
 {{< /alert >}}
 
 ### Change PHP settings
@@ -162,6 +163,8 @@ If you need basic authentication, you can use the `.htpasswd` file. The path to 
 
 Your site root folder is available at `/var/www/bas/site/`, so the directive should look like: `AuthUserFile /var/www/bas/site/.htpasswd`
 
+Alternatively, you can configure basic authentication using [environment variables]({{< ref "reference/reference-environment-variables.md#php" >}}). You will need to set `CC_HTTP_BASIC_AUTH` variable to your own `login:password` pair. If you need to allow access to multiple users, you can create additional environment `CC_HTTP_BASIC_AUTH_n` (where `n` is a number) variables.
+
 ### Define a custom HTTP timeout
 
 You can define the timeout of an HTTP request in Apache using the `HTTP_TIMEOUT` [environment variable]({{< ref "develop/env-variables.md" >}}).
@@ -203,6 +206,20 @@ These statements will keep the former protocol of the request when issuying the 
 
 If you want to force all redirects to HTTPS, you can replace `%{HTTP:X-Forwarded-Proto}` with `https`.
 
+### Change the FastCGI module
+
+You can choose between two FastCGI modules, `fastcgi` and `proxy_fcgi`.
+
+To choose between these two modules you must use the `CC_CGI_IMPLEMENTATION` environment variable with `fastcgi` or `proxy_fcgi` as a value.
+
+{{< alert "info" "Recommandation" >}}
+We recommend preferring `proxy_fcgi` over `fastcgi`. The `fastcgi` implementation is not maintained anymore, but has been kept as default to prevent unexpected behaviors with historical applications.
+{{< /alert >}}
+
+If you have issues with downloading content, it could be related to the `fastcgi` module not working correctly in combination with the `deflate` module, as the `Content-Length` header is not updated to the new size of the encoded content.
+
+To resolve this issue, we advise you to switch the value of `CC_CGI_IMPLEMENTATION` from default to `proxy_fcgi`.
+
 ### Environment injection
 
 As mentionned above, Clever Cloud can inject environment variables that are defined in the
@@ -221,9 +238,12 @@ $pg = new PDO("postgresql:host={$host};dbname={$database}, $username, $password)
 ```
 
 {{< alert "warning" "Warning:" >}}
-<p>Environment variables are displayed in the default output of <code>phpinfo()</code>.</p>
-<p>If you want to use <code>phpinfo()</code> without exposing environment variables, you have to call it this way:<p>
-<code>phpinfo(INFO_GENERAL | INFO_CREDITS | INFO_CONFIGURATION | INFO_MODULES | INFO_LICENSE)</code>
+    <p>Environment variables are displayed in the default output of `phpinfo()`.
+    If you want to use `phpinfo()` without exposing environment variables, you have to call it this way:
+    </p>
+    ```php
+    phpinfo(INFO_GENERAL | INFO_CREDITS | INFO_CONFIGURATION | INFO_MODULES | INFO_LICENSE)
+    ```
 {{< /alert >}}
 
 ## Composer
@@ -236,51 +256,55 @@ You can also set the `CC_COMPOSER_VERSION` to `1` or `2` to select the composer 
 <p>If you encounter any issues, add your own `composer.phar` file in the root of your repository which will override the version we use.</p>
 {{< /alert >}}
 
-You can perform your own `composer.phar install` by using the [Post Build hook]({{< ref "develop/build-hooks.md#post-build-cc_post_build_hook" >}}) if for example you need to install dev dependencies.
-
-If you need to install development dependencies automatically, please let us know by opening a support ticket. This feature may be implemented using an environment variable in the future if this is often asked.
+You can perform your own `composer.phar install` by using the [Post Build hook]({{< ref "develop/build-hooks.md#post-build-cc_post_build_hook" >}}).
 
 Example of a `composer.json` file:
 
 ```json
 {
-   "require": {
-      "laravel/framework": "4.1.*",
-      "ruflin/Elastica": "dev-master",
-      "shift31/laravel-elasticsearch": "dev-master",
-      "natxet/CssMin": "dev-master"
-   },
-   "repositories": [
-      {
-         "type": "vcs",
-         "url": "https://GitHub.com/timothylhuillier/laravel-elasticsearch.git"
-      }
-   ],
-   "autoload": {
-      "classmap": [
-         "app/controllers",
-         "app/models",
-         "app/database/migrations",
-         "app/database/seeds"
-      ],
-      "psr-0": {
-         "SomeApp": "app"
-      }
-   },
-   "config": {
-      "preferred-install": "dist"
-   },
-   "minimum-stability": "dev"
+    "require": {
+        "laravel/framework": "4.1.*",
+        "ruflin/Elastica": "dev-master",
+        "shift31/laravel-elasticsearch": "dev-master",
+        "natxet/CssMin": "dev-master"
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://GitHub.com/timothylhuillier/laravel-elasticsearch.git"
+        }
+    ],
+    "autoload": {
+        "classmap": [
+            "app/controllers",
+            "app/models",
+            "app/database/migrations",
+            "app/database/seeds"
+        ],
+        "psr-0": {
+            "SomeApp": "app"
+        }
+    },
+    "config": {
+        "preferred-install": "dist"
+    },
+    "minimum-stability": "dev"
 }
 ```
 
 Example of a minimalist PHP application using composer and custom scripts: [php-composer-demo](https://GitHub.com/CleverCloud/php-composer-demo)
 
+## Development Dependencies
+
+Development dependencies will not be automatically installed during the deployment. You can control their installation by using the `CC_PHP_DEV_DEPENDENCIES` environment variable which takes `install` value.
+
+Any other value than `install` will prevent developement dependencies from being installed.
+
 ### GitHub rate limit
 
 Sometimes, you can encounter the following error when downloading dependencies:
 
-```
+```txt
 Failed to download symfony/symfony from dist: Could not authenticate against GitHub.com
 ```
 
@@ -296,7 +320,7 @@ You use Artisan to manage your project and you want to execute _artisan migrate_
 
 To do this, we use a post build hook, you have to set a new environment variable on your Clever application as following:
  
-```
+```bash
 CC_POST_BUILD_HOOK=php artisan migrate --force
 ```
 
@@ -346,10 +370,11 @@ You can check enabled extensions and versions by viewing our `phpinfo()` example
 - [PHP 7.3](https://php73info.cleverapps.io).
 - [PHP 7.4](https://php74info.cleverapps.io).
 - [PHP 8.0](https://php80info.cleverapps.io).
+- [PHP 8.1](https://php80info.cleverapps.io).
 
 **Warning**: some extensions need to be [enabled explicitely](#enable-specific-extensions)
 
-The following extensions are enabled by default: `amqp`, `imagick`, `libsodium`, `memcached`, `memcache`, `mongodb`, `opcache`, `redis`, `solr`, `ssh2`, `zip`.
+The following extensions are enabled by default: `amqp`, `imagick`, `libsodium`, `mcrypt`, `memcached`, `memcache`, `mongodb`, `opcache`, `redis`, `solr`, `ssh2`, `zip`, `gRPC`, `protobuf`, `Pspell`.
 
 You can add `DISABLE_<extension_name>: true` in your [environment variable]({{< ref "develop/env-variables.md" >}}) to disable them.
 
@@ -363,11 +388,6 @@ If you have a request about modules, feel free to contact our support at <suppor
 
 Some extensions need to be enabled explicitly. To enable these extensions, you'll need to set the corresponding [environment variable](#setting-up-environment-variables-on-clever-cloud):
 
-* APC: set `ENABLE_APC` to `true`.
-
-    APC is a framework for caching and optimizing PHP intermediate code.
-    **Warning**: APC is only available for PHP 5.4.
-
 * APCu: set `ENABLE_APCU` to `true`.
 
     APCu is an in-memory key-value store for PHP. Keys are of type string and values can be any PHP variables.
@@ -375,6 +395,24 @@ Some extensions need to be enabled explicitly. To enable these extensions, you'l
 * Couchbase: set `ENABLE_COUCHBASE` and `ENABLE_PCS` to `true`
 
     Couchbase is a document database with a SQL-based query language that is engineered to deliver performance at scale.
+
+* Elastic APM Agent: set `ENABLE_ELASTIC_APM_AGENT` to `true` (default if `ELASTIC_APM_SERVER_URL` is defined).
+
+    Elastic APM agent is Elastic's APM agent extension for PHP. The PHP agent enables you to trace the execution of operations
+    in your application, sending performance metrics and errors to the Elastic APM server.
+    **Warning**: This extension is available starting PHP 7.2.
+
+* Event: set `ENABLE_EVENT` to `true`.
+
+    Event is an extension to schedule I/O, time and signal based events.
+
+* GEOS: set `ENABLE_GEOS` to `true`.
+
+    GEOS (Geometry Engine - Open Source) is a C++ port of the Java Topology Suite (JTS).
+
+* GnuPG: set `ENABLE_GNUPG` to `true`.
+
+    GnuPG is an extension that provides methods to interact with GNU Privacy Guard (OpenPGP implementation).
 
 * IonCube: set `ENABLE_IONCUBE` to `true`.
 
@@ -397,15 +435,25 @@ Some extensions need to be enabled explicitly. To enable these extensions, you'l
 
     OAuth consumer extension. OAuth is an authorization protocol built on top of HTTP.
 
-* XDebug: set `ENABLE_XDEBUG` to `true`.
+* PCS: set `ENABLE_PCS` to `true`.
 
-    XDebug is a debugger and profiler tool for PHP.
+    PCS provides a fast and easy way to mix C and PHP code in your PHP extension.
 
 * Rdkafka: set `ENABLE_RDKAFKA` to `true`.
 
     PHP-rdkafka is a thin librdkafka binding providing a working PHP 5 / PHP 7 Kafka client.
 
 * Sqreen: The Sqreen agent is started automatically after adding the environment variables (`SQREEN_API_APP_NAME` and `SQREEN_API_TOKEN`). 
+
+* Uopz: set `ENABLE_UOPZ` to `true`.
+    The uopz extension is focused on providing utilities to aid with unit testing PHP code.
+
+* Uploadprogress: set `ENABLE_UPLOADPROGRESS` to `true`.
+    The uploadprogress extension is used to track the progress of a file download.
+
+* XDebug: set `ENABLE_XDEBUG` to `true`.
+
+    XDebug is a debugger and profiler tool for PHP.
 
 ## Use Redis to store PHP Sessions
 
@@ -422,13 +470,16 @@ To enable this feature, you need to:
  - create an [environment variable](#setting-up-environment-variables-on-clever-cloud) named `SESSION_TYPE` with the value `redis`.
 
 {{< alert "warning" "Warning:" >}}
-<p>You must have a <a href="{{< ref "deploy/addon/redis.md" >}}">Redis</a> add-on linked with your application to enable PHP session storage in Redis.</p>
-<p>If no Redis add-on is linked with your application, the deployment will fail.</p>
+    You must have a [Redis]({{< ref "deploy/addon/redis.md" >}}) add-on [linked with your application](#linking-a-database-or-any-other-add-on-to-your-application) to enable PHP session storage in Redis.
+
+    If no Redis add-on is linked with your application, the deployment will fail.
 {{< /alert >}}
 
 ## Sending emails
 
 The PHP language has the `mail` function to directly send emails. While we do not provide a SMTP server (needed to send the emails), you can configure one through environment variables.
+
+We provide Mailpace addon to send emails through PHP `mail()` function. You have to turn TLS on with port 465 (environment variable `CC_MTA_SERVER_USE_TLS=true`) to make Mailpace working.
 
 We also recommend you to use [Mailgun](https://www.mailgun.com/) or [Mailjet](https://www.mailjet.com/) if your project supports it. These services already have everything you need to send emails from your code.
 
@@ -440,7 +491,8 @@ Services like [Mailgun](https://www.mailgun.com/) or [Mailjet](https://www.mailj
 - `CC_MTA_SERVER_PORT`: Port of the SMTP server. Defaults to `465` whether TLS is enabled or not.
 - `CC_MTA_AUTH_USER`: User to authenticate to the SMTP server.
 - `CC_MTA_AUTH_PASSWORD`: Password to authenticate to the SMTP server.
-- `CC_MTA_SERVER_USE_TLS`: Enable or disable TLS (no STARTTLS support). Defaults to `true`.
+- `CC_MTA_SERVER_USE_TLS`: Enable or disable TLS. Defaults to `true`.
+- `CC_MTA_SERVER_STARTTLS`: Enable or disable STARTTLS. Defaults to `false`.
 - `CC_MTA_SERVER_AUTH_METHOD`: Enable or disable authentication. Defaults to `on`.
 
 ## Configure Monolog
@@ -474,9 +526,9 @@ Then, set `APP_LOG=syslog` as Clever application environment variable.
 
 ## Using HTTP authentication
 
-Using basic HTTP authentication, PHP usually gives you the user and password in variables named `$_SERVER['PHP_AUTH_USER']` and `$_SERVER['PHP_AUTH_PW']`.
+Using basic HTTP authentication, PHP usually handles the values of user and password in variables named `$_SERVER['PHP_AUTH_USER']` and `$_SERVER['PHP_AUTH_PW']`.
 
-On Clever Cloud, we have enabled an option in Apache to pass directly the Authorization header even though we are using FastCGI; still, PHP does not use the header and the variables mentioned before are empty.
+At Clever Cloud, we have enabled an Apache option to pass directly the Authorization header, even though we are using FastCGI; still, the header is not used by PHP, and the aforementioned variables are empty.
 
 You can do this to fill them using the Authorization header:
 
