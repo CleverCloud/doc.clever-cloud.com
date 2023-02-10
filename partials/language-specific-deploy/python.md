@@ -182,7 +182,7 @@ You can also activate beat with `CC_PYTHON_CELERY_USE_BEAT=true` and provide a g
 The `CC_PYTHON_CELERY_LOGFILE` path is relative to the application's path.
 
 {{< alert "warning" "Beware of timezones with Celery Beat!" >}}
-There is a bug in recent versions of Celery. You need to add the `CELERY_TIMEZONE = 'UTC'` environment variable.
-   
+There is a bug in versions <4.2 of Celery. You need to add the `CELERY_TIMEZONE = 'UTC'` environment variable.
+
 The bug is documented here: [https://GitHub.com/celery/celery/issues/4184](https://GitHub.com/celery/celery/issues/4184).
 {{< /alert >}}
