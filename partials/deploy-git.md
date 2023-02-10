@@ -1,10 +1,10 @@
 ## Git Deployment on Clever Cloud
 
-*You need git on your computer to deploy via this tool. Here is the official website of Git to get more information: [git-scm.com](https://git-scm.com)*
+*You need Git on your computer to deploy via this tool. Here is the official website of Git to get more information: [git-scm.com](https://git-scm.com)*
 
 ### Setting up your remotes
 
-1. The "Information" page of your app gives you your git deployment URL, it looks like this:
+1. The "Information" page of your app gives you your Git deployment URL, it looks like this:
    1. `git+ssh://git@push.clever-cloud.com/<your_app_id>.git`
    2. Copy it in your clipboard
 

@@ -175,8 +175,7 @@ You can define the timeout of an HTTP request in Apache using the `HTTP_TIMEOUT`
 
 Load balancers handle HTTPS traffic ahead of your application. You can use the `X-Forwarded-Proto` header to know the original protocol (`http` or `https`).
 
-Place the following snippet in a `.htaccess` file to ensure that your visitors
-only access your application through HTTPS.
+Place the following snippet in a `.htaccess` file to ensure that your visitors only access your application through HTTPS.
 
 ```conf
 RewriteEngine On
@@ -368,6 +367,7 @@ You can check enabled extensions and versions by viewing our `phpinfo()` example
 - [PHP 5.6](https://php56info.cleverapps.io).
 - [PHP 7.2](https://php72info.cleverapps.io).
 - [PHP 7.3](https://php73info.cleverapps.io).
+- [PHP 8.1](https://php81info.cleverapps.io).
 - [PHP 7.4](https://php74info.cleverapps.io).
 - [PHP 8.0](https://php80info.cleverapps.io).
 - [PHP 8.1](https://php80info.cleverapps.io).
