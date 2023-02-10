@@ -23,7 +23,7 @@ By default, you can enable Kibana when you create an Elastic Stack add-on.
 
 ## Enable Kibana with your Elastic Stack add-on
 
-Kibana can be enabled at the add-on creation. Choose "Create an add-on" > "Elastic Stack". Select your plan, applications which will use the Elasctic Stack and name the add-on. On the options for the Elastic Stack page, enable Kibana. Then, confirm options and your add-on is ready with Kibana enabled.
+Kibana can be enabled at the add-on creation. Choose "Create an add-on" > "Elastic Stack". Select your plan, applications which will use the Elastic Stack and name the add-on. On the "options" step, enable Kibana. Then, confirm the options and your add-on will start with a Kibana instance.
 
 ### Customize Kibana configuration file
 
