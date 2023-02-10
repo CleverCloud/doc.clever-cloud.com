@@ -25,7 +25,7 @@ By default, you can enable Kibana when you create an Elastic Stack add-on.
 
 Kibana can be enabled at the add-on creation. Choose "Create an add-on" > "Elastic Stack". Select your plan, applications which will use the Elastic Stack and name the add-on. On the "options" step, enable Kibana. Then, confirm the options and your add-on will start with a Kibana instance.
 
-### Customize Kibana configuration file
+### Customize the Kibana configuration file
 
 The configuration is set with this deployment hook :
 `CC_PRE_RUN_HOOK` = `curl https://api.clever-cloud.com/v2/providers/es-addon/kibana-setup/<your elastic version> | sh`
