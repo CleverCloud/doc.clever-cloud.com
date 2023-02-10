@@ -69,7 +69,7 @@ If you can find them, you do not need to generate a new one, simply go to the fo
 1. If you don't have it, download [Git for Windows](https://git-for-windows.GitHub.io/) and install it.
 2. Run **Git Bash** (from the *Start Menu* or from the *Explorer* with the contextual menu (right click)).
 3. Run `cd ~/.ssh/` in your Terminal.
-3. If the folder exists, run `ls` and check if a pair of key exists : `id_ed25519` and `id_ed25519.pub`.
+4. If the folder exists, run `ls` and check if a pair of key exists : `id_ed25519` and `id_ed25519.pub`.
 
 Using `id_rsa` and `id_rsa.pub` is fine too. We are just advocating the use of **ed25519**.
 
