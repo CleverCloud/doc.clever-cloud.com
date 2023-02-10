@@ -56,5 +56,5 @@ Follow these steps :
     - line 49 : `elasticsearch.username: kibana`
     - line 50 : `elasticsearch.password: <password>`
 - Launch Kibana (`<path_to_kibana>/bin/kibana`)
-- Go on Kibana through the dedicated [local address](http://localhost:5601)
+- Go to Kibana through the dedicated [local address](http://localhost:5601)
 - Connect to ElasticSearch with your Elastic username and password
