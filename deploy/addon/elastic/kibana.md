@@ -47,7 +47,7 @@ Remember, you need to ask Clever Cloud Support team to grant superuser permissio
 
 You need to disable SSO authentication first. Then, you will be able to add a custom domain name in "Domain name" tab of your Kibana app.
 
-## Deploy Kibana at localhost
+## Deploy Kibana on localhost
 
 Follow these steps :
 - Download/unzip Kibana in version which match with your Elastic Stack version
