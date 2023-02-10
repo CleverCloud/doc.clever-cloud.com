@@ -6,7 +6,7 @@ Be sure that:
 
 * Your application listens to the wild network **0.0.0.0**, not only `localhost` or `127.0.0.1`
 * Your application listens on port **8080**
-* You put your main code in a file named `main.go` (If you do not do that, Go will generate a library and not an executable)
+* You put your main code in a file named `main.go` (if you do not do that, Go will generate a library and not an executable)
 
 Apart from listening on port 8080, there is nothing to change on your application.
 
