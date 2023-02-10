@@ -36,7 +36,7 @@ Check other available configuration file on [Github](https://github.com/sebartyr
 
 ### Disable SSO authentication
 
-To disable SSO authentication and use instead elastic users, you need to modify the configuration file of Kibana and `CC_PRE_RUN_HOOK` in environment variables.
+To disable SSO authentication and use elastic users instead, you need to modify Kibana's configuration file and `CC_PRE_RUN_HOOK` in environment variables.
 
 For example for Kibana 8.3.3: 
 `CC_PRE_RUN_HOOK` = `curl https://raw.githubusercontent.com/sebartyr/custom-kibana-config/master/no-sso-8.3.3 | sh`
