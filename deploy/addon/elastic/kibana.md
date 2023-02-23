@@ -39,7 +39,7 @@ Check other available configuration file on [Github](https://github.com/CleverCl
 To disable SSO authentication and use elastic users instead, you need to modify Kibana's configuration file and `CC_PRE_RUN_HOOK` in environment variables.
 
 For example for Kibana 8.3.3: 
-`CC_PRE_RUN_HOOK` = `curl https://raw.githubusercontent.com/CleverCloud/custom-kibana-config/master/no-sso-8.3.3 | sh`
+`CC_PRE_RUN_HOOK` = `curl https://raw.githubusercontent.com/CleverCloud/custom-kibana-config/master/8.3.3/no-sso-8.3.3 | sh`
 
 Remember, you need to ask Clever Cloud Support team to grant superuser permissions to your user. After that, you will be able to add additional users via Kibana.
 
