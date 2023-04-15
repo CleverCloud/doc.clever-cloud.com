@@ -10,6 +10,7 @@ Set the `CC_PHP_VERSION` environment variable to one of the following values:
 - `7.4`
 - `8.0`
 - `8.1`
+- `8.2`
 
 All new PHP applications are created with a default `CC_PHP_VERSION`, set to 7, which means latest php 7 version available.
 
