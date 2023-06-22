@@ -63,10 +63,32 @@ So you can alter the build&start process for your application.
 |[CC_METRICS_PROMETHEUS_PASSWORD]({{< ref "administrate/metrics/overview.md#publish-your-own-metrics" >}}) | Define the password for the basic auth of the Prometheus endpoint | |
 |[CC_METRICS_PROMETHEUS_RESPONSE_TIMEOUT]({{< ref "administrate/metrics/overview.md#publish-your-own-metrics" >}}) | Define the timeout in seconds to collect the application metrics. This value **must** be below 60 seconds as data are collected every minutes | `3` |
 |[CC_CLAMAV]({{< ref "administrate/clamav.md" >}}) | Start the clamav and clamav-freshclam services (the database is updated every 2 hours). WARNING: Clamscan consumes a lot of resources (~ 1GB of memory), make sure you have a scaler with enough memory to avoid OOM. | `false` |
+|[CC_CLAMAV_MAXTHREADS]({{< ref "administrate/clamav.md" >}}) | Maximum number of threads running at the same time. | `10` |
+|[CC_CLAMAV_MAXQUEUE]({{< ref "administrate/clamav.md" >}}) | Maximum number of queued items. | `100` |
 |CC_NODE_VERSION| Set Node.js version on non-Node.js application. Don't use it for Node.js applications, use [this](https://www.clever-cloud.com/doc/deploy/application/javascript/by-framework/nodejs/#select-node-version) instead | |
 |[CC_VARNISH_STORAGE_SIZE]({{< ref "administrate/cache.md" >}}) | Configure the size of the Varnish cache. | `1G` |
 |CC_DISABLE_GIT_SUBMODULES | Disable Git submodules initialization & synchronization | |
 {{< /table >}}
+
+### Tailscale support
+
+[Tailscale](https://tailscale.com/) is a managed VPN service based on Wireguard that enable private networking between users, devices or machines. Clever Cloud provides a native integration of Tailscale, by mounting a VPN endpoint for each of your application's instances. 
+
+Note that `Reusable keys` are required to use multiple instances. You can [generate one here](https://login.tailscale.com/admin/settings/keys).
+
+{{<table "table table- bordered" "text-align:center" >}}
+| <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
+|-----------------------|------------------------------|--------------------------------|--------------------------------|
+|[TAILSCALE_AUTH_KEY](https://tailscale.com/) | Contains your Tailscale Auth key |  |  |
+|TAILSCALE_LOGIN_SERVER| Contains the login server |  |  |
+{{< /table >}}
+
+#### How it works?
+
+For a given application with `TAILSCALE_AUTH_KEY` configured, each instance will be configured to join a Tailscale network. Instances will be named after your configured name, suffixed with the [INSTANCE_NUMBER]({{< ref "develop/env-variables.md" >}}) : `CC-<NAME>-<INSTANCE_NUMBER>`. If you have multiple instances and use one of them for being an admin instance (using [INSTANCE_NUMBER]({{< ref "develop/env-variables.md" >}})), you can match the instance from your deployment to reach it over VPN.
+
+If `TAILSCALE_LOGIN_SERVER` is provided, the agent will be configured to reach an alternative control server. Note that using your own control server is at your own risks, and Tailscale can't be responsible. An alternative control server can still be useful to use for constraints environements. [Headscale](https://github.com/juanfont/headscale/) is an example of self-hosted implementation of the Tailscale control server that can run on Clever Cloud.
+
 
 ## Docker
 
@@ -106,7 +128,7 @@ So you can alter the build&start process for your application.
  {{<table "table table- bordered" "text-align:center" >}}
  | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
  |-----------------------|------------------------------|--------------------------------|--------------------------------|
- |CC_ELIXIR_VERSION | Choose the Elixir version between `1.8`, `1.9`, `1.10`, `1.11` or `1.12` | `1.11` |  |
+ |CC_ELIXIR_VERSION | Choose the Elixir version between `1.8`, `1.9`, `1.10`, `1.11`, `1.12`, `1.13` or `1.14` | `1.11` |  |
  |CC_MIX_BUILD_GOAL | The mix goal to build the application (default compile) |  |  |
  |CC_PHOENIX_ASSETS_DIR | Folder in which your Phoenix assets are located. |  |  |
  |CC_PHOENIX_DIGEST_GOAL | Phoenix digest goal. | phx.digest |  |
@@ -191,7 +213,7 @@ So you can alter the build&start process for your application.
 |HTTP_TIMEOUT | Define a custom HTTP timeout | `180` |  |
 |MAX_INPUT_VARS |  |  |  |
 |MEMORY_LIMIT | Change the default memory limit |  |  |
-|CC_PHP_VERSION | Choose your PHP version between `5.6`, `7.2`, `7.3`, `7.4` and `8.0` | `7` |  |
+|CC_PHP_VERSION | Choose your PHP version between `5.6`, `7.2`, `7.3`, `7.4`, `8.0`, `8.1` and `8.2` | `7` |  |
 |CC_COMPOSER_VERSION | Choose your composer version between `1` and `2` | `2` |  |
 |[CC_PHP_DEV_DEPENDENCIES]({{< ref "deploy/application/php/php-apps.md#development-dependencies" >}}) | Control if development dependencies are installed or not. Values are either `install` or `ignore` |  |  |
 |[CC_CGI_IMPLEMENTATION]({{< ref "deploy/application/php/php-apps.md#development-dependencies" >}}) | Choose the Apache FastCGI module between `fastcgi` and `proxy_fcgi` | `fastcgi` |  |
@@ -230,7 +252,7 @@ So you can alter the build&start process for your application.
 |CC_PYTHON_USE_GEVENT | Set to `true` to enable Gevent |  |  |
 |HARAKIRI | Timeout (in seconds) after which an unresponding process is killed | `180` |  |
 |CC_PYTHON_BACKEND | Choose the Python backend to use between `daphne`, `gunicorn`, `uvicorn` and `uwsgi` | `uwsgi` |  |
-|CC_PYTHON_VERSION | Choose the Python version between `2.7`, `3.7`, `3.8`, `3.9` and `3.10` |  |  |
+|CC_PYTHON_VERSION | Choose the Python version between `2.7`, `3.7`, `3.8`, `3.9`, `3.10` and `3.11` |  |  |
 |PYTHON_SETUP_PY_GOAL | Custom setup goal to be launch after `requirements.txt` have been installed |  |  |
 |STATIC_FILES_PATH | Relative path to where your static files are stored: `path/to/static` |  |  |
 |[STATIC_URL_PREFIX]({{< ref "deploy/application/python/python_apps.md#configure-your-python-application" >}}) | The URL path under which you want to serve static file, usually `/public` |  |  |
@@ -412,21 +434,10 @@ So you can alter the build&start process for your application.
 |CC_PGPOOL_CACHE_UNSAFE_MEMQCACHE_TABLE_LIST | Comma separated list of table names not to memcache that don't write to database (regexp are accepted)  | `''` | |
 {{< /table >}}
 
-### Redis
-
-[Redis Documentation]({{< ref "deploy/addon/redis.md" >}})
-
-{{<table "table table- bordered" "text-align:center" >}}
-| <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
-|-----------------------|------------------------------|--------------------------------|--------------------------------|
-|REDIS_HOST |  | Generated upon creation | X  |
-|REDIS_PORT |  | Generated upon creation | X  |
-|REDIS_PASSWORD |  | Generated upon creation | X  |
-{{< /table >}}
 
 ### Elastic Stack
 
-[Elastic Stack Documentation]({{< ref "deploy/addon/elastic.md" >}})
+[Elastic Stack Documentation]({{< ref "deploy/addon/elastic/elastic.md" >}})
 
 {{<table "table table- bordered" "text-align:center" >}}
 | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
@@ -447,6 +458,35 @@ So you can alter the build&start process for your application.
 |ES_ADDON_VERSION | ElasticSearch Version | 7 | X  |
 {{< /table >}}
 
+### Blackfire
+
+{{<table "table table- bordered" "text-align:center" >}}
+| <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
+|-----------------------|------------------------------|--------------------------------|--------------------------------|
+|CC_BLACKFIRE_SERVER_TOKEN | The server token used to authenticate with Blackfire | '' | X |
+|CC_BLACKFIRE_SERVER_ID | The server id used to authenticate with Blackfire | '' | X |
+|CC_BLACKFIRE_LOG_LEVEL | Sets the verbosity of Agent’s log output | '1' | X |
+|CC_BLACKFIRE_MEMORY_LIMIT | Sets the maximum allowed RAM usage (megabytes) when ingesting traces | '500' | X |
+|CC_BLACKFIRE_COLLECTOR | Sets the URL of Blackfire’s data collector | 'https://blackfire.io' | X |
+|CC_BLACKFIRE_TIMEOUT | Sets the Blackfire API connection timeout | '15' | X |
+|CC_BLACKFIRE_STATSD | Sets the statsd server to send agent’s statistics | '' | X |
+|CC_BLACKFIRE_STATSD_PREFIX | Sets the statsd prefix to use when sending data | 'blackfire' | X |
+{{< /table >}}
+
+### New Relic
+
+{{<table "table table- bordered" "text-align:center" >}}
+| <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
+|-----------------------|------------------------------|--------------------------------|--------------------------------|
+|[NEW_RELIC_APP_NAME](https://docs.newrelic.com/docs/apm/agents/java-agent/configuration/java-agent-configuration-config-file/#ev-NEW_RELIC_APP_NAME) | Contains the application name | X |
+|[NEW_RELIC_LICENSE_KEY](https://docs.newrelic.com/docs/apm/agents/java-agent/configuration/java-agent-configuration-config-file/#ev-NEW_RELIC_LICENSE_KEY) | Contains your New Relic account license | X |
+|[CC_NEWRELIC_BROWSER_MONITORING_AUTO_INSTRUMENT](https://docs.newrelic.com/docs/apm/agents/php-agent/configuration/php-agent-configuration/#inivar-autorum) | true | X |  
+|[CC_NEWRELIC_DISTRIBUTED_TRACING_ENABLED](https://docs.newrelic.com/docs/apm/agents/php-agent/configuration/php-agent-configuration/#inivar-distributed-enabled) | true | X |  
+|[CC_NEWRELIC_ERROR_COLLECTOR_ENABLED](https://docs.newrelic.com/docs/apm/agents/php-agent/configuration/php-agent-configuration/#inivar-err-enabled) | true | X |  
+|[CC_NEWRELIC_TRANSACTION_TRACER_ENABLED](https://docs.newrelic.com/docs/apm/agents/php-agent/configuration/php-agent-configuration/#inivar-tt-enable) | true | X |  
+|[CC_NEWRELIC_TRANSACTION_TRACER_RECORD_SQL](https://docs.newrelic.com/docs/apm/agents/php-agent/configuration/php-agent-configuration/#inivar-tt-sql) | obfuscated | X |  
+{{< /table >}}
+
 ### Pulsar
 
 {{<table "table table- bordered" "text-align:center" >}}
@@ -462,15 +502,17 @@ So you can alter the build&start process for your application.
 |ADDON_PULSAR_TOKEN | Your Biscuit authentication token | Generated upon creation        | X |
 {{< /table >}}
 
-### New Relic
+### Redis
+
+[Redis Documentation]({{< ref "deploy/addon/redis.md" >}})
 
 {{<table "table table- bordered" "text-align:center" >}}
 | <center>Name</center> | <center>Description</center> | <center>Default value</center> | <center>Read Only</center> |
 |-----------------------|------------------------------|--------------------------------|--------------------------------|
-|[NEW_RELIC_APP_NAME](https://docs.newrelic.com/docs/apm/agents/java-agent/configuration/java-agent-configuration-config-file/#ev-NEW_RELIC_APP_NAME) | Contains the application name |  |  |
-|[NEW_RELIC_LICENSE_KEY](https://docs.newrelic.com/docs/apm/agents/java-agent/configuration/java-agent-configuration-config-file/#ev-NEW_RELIC_LICENSE_KEY) | Contains your New Relic account license |  |  |
+|REDIS_HOST |  | Generated upon creation | X  |
+|REDIS_PORT |  | Generated upon creation | X  |
+|REDIS_PASSWORD |  | Generated upon creation | X  |
 {{< /table >}}
-
 
 ### Socks
 
