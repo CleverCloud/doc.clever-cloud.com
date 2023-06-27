@@ -96,6 +96,6 @@ if you have any Vapor-specific issue, as their documentation will stay up-to-dat
 
 ### Contact our support team
 
-If you think your problem comes from our side, read the
-[Find Help section]({{< ref "/find-help/_index.md" >}})
+If you think your problem comes from our side,
+read the [Find Help section]({{< ref "/find-help/_index.md" >}})
 or [contact the support team]({{< ref "/find-help/support.md" >}}).
