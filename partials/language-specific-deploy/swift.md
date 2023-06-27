@@ -27,6 +27,14 @@ While it's not mandatory, we recommend you to commit your [`Package.resolved`][p
 Possible values are `debug` and `release`.
 If you don't define `CC_SWIFT_CONFIG`, we will build your application using the `release` configuration.
 
+#### Package manifest in a subdirectory
+
+If your package manifest[^pm] is located in a subdirectory of your git repository,
+you can set the `APP_FOLDER` environment variable
+to the relative path of its parent directory in the repository.
+
+See [Reference > Environment Variable Reference][vars-you-can-define] for more information.
+
 #### Binary target name
 
 If your package manifest[^pm] declares more than one [`executableTarget`][executable-target],
@@ -35,10 +43,10 @@ to the name of the [`executableTarget`][executable-target] you want us to execut
 
 #### Custom run command
 
-As introduced in [Reference > Environment Variable Reference][cc-run-command],
+As introduced in [Reference > Environment Variable Reference][vars-you-can-define],
 `CC_RUN_COMMAND` allows you to override the command we will use to run your application.
 
-By default, we simply execute the binary previously built by `swift build <options>`.
+By default, we just execute the binary previously built by `swift build <options>`.
 If you need to pass arguments to the invocation of your binary, this is the way to do it.
 
 An example of such use case can be found in [Example Swift deployment: the Swift Package Index][doc-example-spi].
@@ -50,5 +58,5 @@ An example of such use case can be found in [Example Swift deployment: the Swift
 [package-resolved]: <https://github.com/apple/swift-package-manager/blob/809cb152a303926b243edb09ba4f0590e4b0c8b7/Documentation/Usage.md#resolving-versions-packageresolved-file> "swift-package-manager/Documentation/Usage.md at 809cb152a303926b243edb09ba4f0590e4b0c8b7 · apple/swift-package-manager"
 
 [git-deployment]: <{{< ref "/getting-started/quickstart.html#git-deployment" >}}> "Quickstart | Clever Cloud Documentation"
-[cc-run-command]: <{{< ref "/reference/reference-environment-variables#variables-you-can-define" >}}> "Environment Variable Reference | Clever Cloud Documentation"
+[vars-you-can-define]: <{{< ref "/reference/reference-environment-variables#variables-you-can-define" >}}> "Environment Variable Reference | Clever Cloud Documentation"
 [doc-example-spi]: <{{< ref "/deploy/application/swift/examples/swift-package-index.md" >}}> "Example Swift deployment: the Swift Package Index | Clever Cloud Documentation"
