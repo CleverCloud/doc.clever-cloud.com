@@ -115,7 +115,7 @@ As long as you [clean up](#clean-up) after you tried this tutorial, you should n
 Using our CLI, you only need to run:
 
 ```bash
-clever scale --build-flavor xl
+clever scale --build-flavor XL
 ```
 
 </details>
