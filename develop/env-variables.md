@@ -216,6 +216,8 @@ Here is a non-exhaustive summary:
 | [Ruby][ruby] | `ENV["MY_VAR"]` |
 | [Rust][rust] | `std::env::var("MY_VAR")` |
 | [Scala][scala] | `System.getenv("MY_VAR")` |
+| [Swift + Hummingbird][swift-hb] | `HBEnvironment.shared.get("MY_VAR")` |
+| [Swift + Vapor][swift-vapor] | `Environment.get("MY_VAR")` or `Environment.process.MY_VAR` |
 | [.NET][dotnet] | `System.Environment.GetEnvironmentVariable("MY_VAR")` |
 
 [go]: {{< ref "deploy/application/golang/go#environment-injection.md" >}}
@@ -229,6 +231,8 @@ Here is a non-exhaustive summary:
 [ruby]: {{< ref "deploy/application/ruby/ruby-rack#environment-injection" >}}
 [rust]: {{< ref "deploy/application/rust/rust#environment-injection" >}}
 [scala]: {{< ref "deploy/application/scala/scala#environment-injection" >}}
+[swift-hb]: {{< ref "deploy/application/swift/by-framework/hummingbird#environment-injection" >}}
+[swift-vapor]: {{< ref "deploy/application/swift/by-framework/vapor#environment-injection" >}}
 [dotnet]: {{< ref "deploy/application/dotnet/dotnet#environment-injection" >}}
 {{</table>}}
 
