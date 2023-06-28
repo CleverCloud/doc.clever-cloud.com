@@ -182,13 +182,11 @@ Make sure you replace `<GITHUB_TOKEN>` with your just-created GitHub Personal Ac
 {{< /alert >}}
 
 ```bash
-# Centralize the build configuration
-_CONFIG="debug"
 # Run SPI logic
 CC_POST_BUILD_HOOK="yarn && yarn build"
-CC_PRE_RUN_HOOK="$(swift build -c ${_CONFIG} --show-bin-path)/Run migrate --yes"
-CC_RUN_COMMAND="$(swift build -c ${_CONFIG} --show-bin-path)/Run serve --hostname 0.0.0.0"
-CC_RUN_SUCCEEDED_HOOK="bin=$(swift build -c ${_CONFIG} --show-bin-path)/Run; $bin reconcile && $bin ingest --limit 100 && $bin analyze --limit 100"
+CC_PRE_RUN_HOOK=".build/debug/Run migrate --yes"
+CC_RUN_COMMAND=".build/debug/Run serve --hostname 0.0.0.0"
+CC_RUN_SUCCEEDED_HOOK="bin='.build/debug/Run'; $bin reconcile && $bin ingest --limit 100 && $bin analyze --limit 100"
 # Rename the PostgreSQL add-on exposed environment variables to the names used by the SPI
 DATABASE_HOST="$POSTGRESQL_ADDON_HOST"
 DATABASE_NAME="$POSTGRESQL_ADDON_DB"
@@ -200,7 +198,7 @@ GITHUB_TOKEN="<GITHUB_TOKEN>"
 # Optional: Set other SPI environment variables
 SITE_URL="${APP_ID//_/-}.cleverapps.io"
 # Configure the app to run in dev mode
-CC_SWIFT_CONFIG="${_CONFIG}"
+CC_SWIFT_CONFIG="debug"
 ENV="dev"
 LOG_LEVEL="debug"
 VAPOR_ENV="dev"
