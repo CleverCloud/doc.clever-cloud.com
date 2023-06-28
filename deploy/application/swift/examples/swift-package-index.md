@@ -186,7 +186,7 @@ Make sure you replace `<GITHUB_TOKEN>` with your just-created GitHub Personal Ac
 CC_POST_BUILD_HOOK="yarn && yarn build"
 CC_PRE_RUN_HOOK=".build/debug/Run migrate --yes"
 CC_RUN_COMMAND=".build/debug/Run serve --hostname 0.0.0.0"
-CC_RUN_SUCCEEDED_HOOK="bin='.build/debug/Run'; $bin reconcile && $bin ingest --limit 100 && $bin analyze --limit 100"
+CC_WORKER_COMMAND="bin='.build/debug/Run'; $bin reconcile && $bin ingest --limit 100 && $bin analyze --limit 100"
 # Rename the PostgreSQL add-on exposed environment variables to the names used by the SPI
 DATABASE_HOST="$POSTGRESQL_ADDON_HOST"
 DATABASE_NAME="$POSTGRESQL_ADDON_DB"
@@ -371,11 +371,11 @@ the token you created in [the "Create a GitHub token" step](#create-a-github-tok
 ## Going further
 
 When [setting the application's environment variables](#set-the-applications-environment-variables),
-we used `CC_RUN_SUCCEEDED_HOOK` to ingest and analyze 100 packages.
+we used `CC_WORKER_COMMAND` to ingest and analyze 100 packages.
 This was useful to have some realistic data, but we could push it further to ingest and analyze
 all of the indexed packages.
 
-To do this, we could remove `CC_RUN_SUCCEEDED_HOOK` and replace it by:
+To do this, we could remove `CC_WORKER_COMMAND` and replace it by:
 
 <small>Values come from [SwiftPackageIndex-Server/app.yml][app.yml].</small>
 
