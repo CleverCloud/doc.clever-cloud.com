@@ -184,24 +184,24 @@ Make sure you replace `<GITHUB_TOKEN>` with your just-created GitHub Personal Ac
 ```bash
 # Run SPI logic
 CC_POST_BUILD_HOOK="yarn && yarn build"
-CC_PRE_RUN_HOOK=".build/debug/Run migrate --yes"
-CC_RUN_COMMAND=".build/debug/Run serve --hostname 0.0.0.0"
-CC_WORKER_COMMAND="bin='.build/debug/Run'; $bin reconcile && $bin ingest --limit 100 && $bin analyze --limit 100"
-# Rename the PostgreSQL add-on exposed environment variables to the names used by the SPI
-DATABASE_HOST="$POSTGRESQL_ADDON_HOST"
-DATABASE_NAME="$POSTGRESQL_ADDON_DB"
-DATABASE_PASSWORD="$POSTGRESQL_ADDON_PASSWORD"
-DATABASE_PORT="$POSTGRESQL_ADDON_PORT"
-DATABASE_USERNAME="$POSTGRESQL_ADDON_USER"
+CC_PRE_RUN_HOOK=": 'Rename the PostgreSQL add-on exposed environment variables to the names used by the SPI';
+echo \"DATABASE_HOST=$POSTGRESQL_ADDON_HOST\" >> .env;
+echo \"DATABASE_NAME=$POSTGRESQL_ADDON_DB\" >> .env;
+echo \"DATABASE_PASSWORD=$POSTGRESQL_ADDON_PASSWORD\" >> .env;
+echo \"DATABASE_PORT=$POSTGRESQL_ADDON_PORT\" >> .env;
+echo \"DATABASE_USERNAME=$POSTGRESQL_ADDON_USER\" >> .env;
+: 'Optional: Also set other SPI environment variables';
+echo \"SITE_URL=${APP_ID//_/-}.cleverapps.io\" >> .env;
+.build/release/Run migrate --yes;"
+CC_RUN_COMMAND=".build/release/Run serve --hostname 0.0.0.0"
+CC_WORKER_COMMAND="bin='.build/release/Run'; $bin reconcile && $bin ingest --limit 100 && $bin analyze --limit 100"
 # Set a GitHub token for SPI to use
 GITHUB_TOKEN="<GITHUB_TOKEN>"
-# Optional: Set other SPI environment variables
-SITE_URL="${APP_ID//_/-}.cleverapps.io"
-# Configure the app to run in dev mode
-CC_SWIFT_CONFIG="debug"
+# Configure the app to build in development mode
 ENV="dev"
-LOG_LEVEL="debug"
 VAPOR_ENV="dev"
+#CC_SWIFT_CONFIG="debug"
+LOG_LEVEL="debug"
 ```
 
 {{< alert "warning" "Click on \"Update changes\"" >}}
@@ -377,14 +377,15 @@ all of the indexed packages.
 
 To do this, we could remove `CC_WORKER_COMMAND` and replace it by:
 
-<small>Values come from [SwiftPackageIndex-Server/app.yml][app.yml].</small>
+<small>Values come from [SwiftPackageIndex-Server/app.yml][app.yml]
+and "Analyze loop" values have been updated to fix a connection deadlock.</small>
 
 ```bash
 CC_WORKER_COMMAND_0="# Reconcile loop
 export LOG_LEVEL=notice
 while true; do
     echo 'Reconciling package list...';
-    .build/debug/Run reconcile;
+    .build/release/Run reconcile;
     echo 'Reconciliation done, waiting 120 seconds...';
     sleep 120;
 done"
@@ -392,17 +393,17 @@ CC_WORKER_COMMAND_1="# Ingest loop
 export LOG_LEVEL=notice
 while true; do
     echo 'Ingesting 100 packages...';
-    .build/debug/Run ingest --limit 100;
+    .build/release/Run ingest --limit 100;
     echo 'Ingestion done. Waiting 300 seconds...';
     sleep 300;
 done"
 CC_WORKER_COMMAND_2="# Analyze loop
 export LOG_LEVEL=notice
 while true; do
-    echo 'Analyzing 25 packages...';
-    .build/debug/Run analyze --limit 25;
-    echo 'Analysis done. Waiting 20 seconds...';
-    sleep 20;
+    echo 'Analyzing 15 packages...';
+    .build/release/Run analyze --limit 15;
+    echo 'Analysis done. Waiting 15 seconds...';
+    sleep 15;
 done"
 ```
 
