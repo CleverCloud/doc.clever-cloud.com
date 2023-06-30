@@ -302,7 +302,6 @@ To see an application's logs using our [CLI][cli], you have two options:
 
   ```bash
   clever ssh
-  journalctl -efa -u bas-deploy
   journalctl -efa -u bas
   ```
 
