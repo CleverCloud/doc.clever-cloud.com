@@ -290,21 +290,23 @@ how you can see your build/deployment logs on Clever Cloud.
 <details>
 <summary>Using our CLI</summary>
 
-To create a [managed PostgreSQL database][doc-pg-add-on]
-and link it to your just-created Swift application
-using our [CLI][cli], you only need to run:
+To see an application's logs using our [CLI][cli], you have two options:
 
-```bash
-clever addon create postgresql-addon "[Examples/Swift] SPI DB" \
-    --link "[Examples/Swift] SPI" \
-    --plan dev
-```
+- The simple way
 
-{{< alert "info" "Custom add-on owner" >}}
-If you need your add-on to be created outside of your personal space,
-you can add the `--owner <OWNER_ID>` argument to the above command
-(replacing `<OWNER_ID>` by your unique organization identifier (`orga_…`)).
-{{< /alert >}}
+  ```bash
+  clever logs
+  ```
+
+- The advanced way
+
+  ```bash
+  clever ssh
+  journalctl -efa -u bas-deploy
+  journalctl -efa -u bas
+  ```
+
+For more information about SSH access using the CLI, see [SSH access with Clever Tools][ssh-access].
 
 </details>
 
@@ -503,6 +505,7 @@ Analysis still seems to be working, so you can leave it as is.
 [console]: <https://console.clever-cloud.com>
 [dedicated-build-instance]: <{{< ref "/administrate/apps-management.md#edit-application-configuration" >}}>
 [cli]: <{{< ref "/getting-started/cli.md" >}}>
+[ssh-access]: <{{< ref "/reference/clever-tools/ssh-access.md" >}}> "SSH access with Clever Tools | Clever Cloud Documentation"
 [swift-5.8-bootstrapping]: <https://forums.swift.org/t/implementing-parts-of-the-swift-compiler-in-swift/59524> "Implementing Parts of the Swift Compiler in Swift - Development / Compiler - Swift Forums"
 [app.yml]: <https://github.com/SwiftPackageIndex/SwiftPackageIndex-Server/blob/ca26072f7c8efcc91dadc44647b5063c78c3f87d/app.yml> "SwiftPackageIndex-Server/app.yml at ca26072f7c8efcc91dadc44647b5063c78c3f87d · SwiftPackageIndex/SwiftPackageIndex-Server"
 [gh-token-scopes]: <https://github.com/SwiftPackageIndex/SwiftPackageIndex-Server/blob/ffe47bd98315fd63c48e6aae6da1b6adfc3833af/LOCAL_DEVELOPMENT_SETUP.md#running-reconciliation-and-ingestion-locally> "SwiftPackageIndex-Server/LOCAL_DEVELOPMENT_SETUP.md at ffe47bd98315fd63c48e6aae6da1b6adfc3833af · SwiftPackageIndex/SwiftPackageIndex-Server"
