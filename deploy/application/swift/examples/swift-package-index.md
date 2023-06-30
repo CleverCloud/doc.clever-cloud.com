@@ -241,7 +241,7 @@ DATABASE_USERNAME=$POSTGRESQL_ADDON_USER" >> .env;
 echo "SITE_URL=${APP_ID//_/-}.cleverapps.io" >> .env;' > scripts/clever-cloud/rename-env-vars.sh;
 echo '#!/bin/bash
 
-./rename-env-vars.sh;
+scripts/clever-cloud/rename-env-vars.sh;
 $BIN_PATH migrate --yes;' > scripts/clever-cloud/pre-run-hook.sh;
 chmod u+x scripts/clever-cloud/*;
 git add scripts/clever-cloud/ && git commit -m 'Add Clever Cloud pre-run hook script';
