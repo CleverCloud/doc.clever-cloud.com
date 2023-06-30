@@ -22,6 +22,24 @@ if you already have [Clever Cloud's CLI — `clever`][cli] installed on your ma
 [cli]: <{{< ref "/getting-started/cli.md" >}}>
 {{< /alert >}}
 
+## Clone the repository
+
+```bash
+git clone https://github.com/SwiftPackageIndex/SwiftPackageIndex-Server/
+cd SwiftPackageIndex-Server/
+# Checkout the last commit running Swift 5.7
+git checkout -b swift-5.7 ffe47bd98315fd63c48e6aae6da1b6adfc3833af
+# Cherry-pick a bug fix committed after `ffe47bd`
+git cherry-pick ea04e88a58409fc881f6c9a16ff138f6616f0cc2
+```
+
+{{< alert "secondary" "Clever Cloud only supports Swift 5.7 for now" >}}
+During the Swift runtime private beta, Clever Cloud will only support Swift 5.7 deployments.
+This is caused by [a major change in the Swift 5.8 comiler structure][swift-5.8-bootstrapping]
+that we haven't yet taken into account.
+Rest assured, Clever Cloud's Swift runtime will be released with support for Swift 5.7, 5.8 and 5.9.
+{{< /alert >}}
+
 ## Create the application
 
 <details open="true">
@@ -64,9 +82,11 @@ clever scale --flavor nano
 Creating an application from the CLI also runs `clever link`,
 which creates a `.clever.json` in your repository.
 
-If you are okay with pushing this little config file into the repository, it's safe to do,
-but you can also ignore it from your commits using `echo '.clever.json' >> .gitignore`
-and then `git commit -m 'Ignore Clever Cloud configuration file' -- .gitignore`.
+If you are okay with pushing this little config file into the repository, you can run
+`git add .clever.json && git commit -m 'Add Clever Cloud configuration file'`.
+You can also ignore it from your commits using `echo '.clever.json' >> .gitignore`
+and then `git commit -m 'Ignore Clever Cloud configuration file' -- .gitignore`
+if you prefer.
 
 </details>
 
@@ -183,18 +203,10 @@ Make sure you replace `<GITHUB_TOKEN>` with your just-created GitHub Personal Ac
 
 ```bash
 # Run SPI logic
-CC_POST_BUILD_HOOK="yarn && yarn build"
-CC_PRE_RUN_HOOK=": 'Rename the PostgreSQL add-on exposed environment variables to the names used by the SPI';
-echo \"DATABASE_HOST=$POSTGRESQL_ADDON_HOST\" >> .env;
-echo \"DATABASE_NAME=$POSTGRESQL_ADDON_DB\" >> .env;
-echo \"DATABASE_PASSWORD=$POSTGRESQL_ADDON_PASSWORD\" >> .env;
-echo \"DATABASE_PORT=$POSTGRESQL_ADDON_PORT\" >> .env;
-echo \"DATABASE_USERNAME=$POSTGRESQL_ADDON_USER\" >> .env;
-: 'Optional: Also set other SPI environment variables';
-echo \"SITE_URL=${APP_ID//_/-}.cleverapps.io\" >> .env;
-.build/release/Run migrate --yes;"
-CC_RUN_COMMAND=".build/release/Run serve --hostname 0.0.0.0"
-CC_WORKER_COMMAND="bin='.build/release/Run'; $bin reconcile && $bin ingest --limit 100 && $bin analyze --limit 100"
+CC_POST_BUILD_HOOK="yarn && yarn build;"
+CC_PRE_RUN_HOOK="scripts/clever-cloud/pre-run-hook.sh"
+CC_SWIFT_BIN_ARGS="serve --hostname 0.0.0.0"
+CC_WORKER_COMMAND="$BIN_PATH reconcile && $BIN_PATH ingest --limit 100 && $BIN_PATH analyze --limit 100;"
 # Set a GitHub token for SPI to use
 GITHUB_TOKEN="<GITHUB_TOKEN>"
 # Configure the app to build in development mode
@@ -208,35 +220,34 @@ LOG_LEVEL="debug"
 Make sure you click on "Update changes" otherwise your environment will not be saved.
 {{< /alert >}}
 
-{{< alert "info" "Prefer running scripts in hooks" >}}
-Writing long commands in hooks is not recommended.
-Instead, you can define your commands in a `Makefile` or dedicated scripts (e.g. Bash)
-and run them from the hooks.
-You can find more information in [Develop > Deployment Hooks]({{< ref "/develop/build-hooks.md" >}}).
+Writing long commands/scripts in [deployment hooks]({{< ref "/develop/build-hooks.md" >}}) is not recommended.
+That's why `CC_PRE_RUN_HOOK` starts a script present in the repository.
+It doesn't exist yet, so we have to create it like so:
 
-The Swift Package Index already defines `make build-front-end`, `make migrate` and `make serve-front-end`,
-but they are all tightly coupled to Docker, which Clever Cloud doesn't use so have to redefine them here.
-{{< /alert >}}
-
-## Start the application
-
-### Clone the repository
+<small>The Swift Package Index already defines `make build-front-end`, `make migrate` and `make serve-front-end`,
+but they are all tightly coupled to Docker, which Clever Cloud doesn't use so have to redefine them here.</small>
 
 ```bash
-git clone https://github.com/SwiftPackageIndex/SwiftPackageIndex-Server/
-cd SwiftPackageIndex-Server/
-# Checkout the last commit running Swift 5.7
-git checkout -b swift-5.7 ffe47bd98315fd63c48e6aae6da1b6adfc3833af
-# Cherry-pick a bug fix committed after `ffe47bd`
-git cherry-pick ea04e88a58409fc881f6c9a16ff138f6616f0cc2
+mkdir scripts/clever-cloud/;
+echo '#!/bin/bash
+
+# Rename the PostgreSQL add-on exposed environment variables to the names used by the SPI
+echo "DATABASE_HOST=$POSTGRESQL_ADDON_HOST
+DATABASE_NAME=$POSTGRESQL_ADDON_DB
+DATABASE_PASSWORD=$POSTGRESQL_ADDON_PASSWORD
+DATABASE_PORT=$POSTGRESQL_ADDON_PORT
+DATABASE_USERNAME=$POSTGRESQL_ADDON_USER" >> .env;
+# Optional: Also set other SPI environment variables
+echo "SITE_URL=${APP_ID//_/-}.cleverapps.io" >> .env;' > scripts/clever-cloud/rename-env-vars.sh;
+echo '#!/bin/bash
+
+./rename-env-vars.sh;
+$BIN_PATH migrate --yes;' > scripts/clever-cloud/pre-run-hook.sh;
+chmod u+x scripts/clever-cloud/*;
+git add scripts/clever-cloud/ && git commit -m 'Add Clever Cloud pre-run hook script';
 ```
 
-{{< alert "secondary" "Clever Cloud only supports Swift 5.7 for now" >}}
-During the Swift runtime private beta, Clever Cloud will only support Swift 5.7 deployments.
-This is caused by [a major change in the Swift 5.8 comiler structure][swift-5.8-bootstrapping]
-that we haven't yet taken into account.
-Rest assured, Clever Cloud's Swift runtime will be released with support for Swift 5.7, 5.8 and 5.9.
-{{< /alert >}}
+## Start the application
 
 ### Push your code to Clever Cloud
 
@@ -258,7 +269,8 @@ git push clever swift-5.7:master
 
 ## Enjoy!
 
-Wait a few minutes, then You should be able to 
+Open `<APP_ID>.cleverapps.io`, it should show a waiting screen.
+After a few minutes, when the deployment succeeds, you should see the Swift Package Index appear automatically.
 
 ### While waiting for your app to build
 
@@ -375,61 +387,56 @@ we used `CC_WORKER_COMMAND` to ingest and analyze 100 packages.
 This was useful to have some realistic data, but we could push it further to ingest and analyze
 all of the indexed packages.
 
-To do this, we could remove `CC_WORKER_COMMAND` and replace it by:
+To do this, we could use three separate [workers]({{< ref "/develop/workers.md" >}})
+to reconcile the package list, ingest the packages and analyze them.
+The Swift Package Index already defines `make reconcile`, `make ingest`, `make analyze`, `ingest-loop.sh`
+and `analyze-loop.sh`, but they are all tightly coupled to Docker which Clever Cloud doesn't use,
+so have to create simpler scripts.
 
-<small>Values come from [SwiftPackageIndex-Server/app.yml][app.yml]
-and "Analyze loop" values have been updated to fix a connection deadlock.</small>
+You can create them by running:
 
 ```bash
-CC_WORKER_COMMAND_0="# Reconcile loop
+mkdir scripts/simple;
+echo "#!/bin/bash
+
 export LOG_LEVEL=notice
 while true; do
     echo 'Reconciling package list...';
     .build/release/Run reconcile;
     echo 'Reconciliation done, waiting 120 seconds...';
     sleep 120;
-done"
-CC_WORKER_COMMAND_1="# Ingest loop
+done" > scripts/simple/reconcile-loop.sh;
+echo "#!/bin/bash
+
 export LOG_LEVEL=notice
 while true; do
     echo 'Ingesting 100 packages...';
     .build/release/Run ingest --limit 100;
     echo 'Ingestion done. Waiting 300 seconds...';
     sleep 300;
-done"
-CC_WORKER_COMMAND_2="# Analyze loop
+done" > scripts/simple/ingest-loop.sh;
+echo "#!/bin/bash
+
 export LOG_LEVEL=notice
 while true; do
-    echo 'Analyzing 15 packages...';
-    .build/release/Run analyze --limit 15;
-    echo 'Analysis done. Waiting 15 seconds...';
-    sleep 15;
-done"
+    echo 'Analyzing 25 packages...';
+    .build/release/Run analyze --limit 25;
+    echo 'Analysis done. Waiting 20 seconds...';
+    sleep 20;
+done" > scripts/simple/analyze-loop.sh;
+chmod u+x scripts/simple/*;
+git add scripts/simple/ && git commit -m 'Add Docker-independent `reconcile`, `ingest` and `analyze` loops';
 ```
 
-{{< alert "info" "Prefer running scripts in workers" >}}
-Writing long commands in workers is not recommended.
-Instead, you can define your commands in a `Makefile` or dedicated scripts (e.g. Bash)
-and run them from the workers.
-You can find more information in [Develop > Workers]({{< ref "/develop/workers.md" >}}).
+<small>Values come from [SwiftPackageIndex-Server/app.yml][app.yml].</small>
 
-Worker environment variables are escaped for security reasons,
-which means you can't use variables inside of them.
-Using predefined scripts has the added benefit of removing this limitation.
+Then, remove the `CC_WORKER_COMMAND` environment variable and replace it by:
 
-The Swift Package Index already defines `make reconcile`, `make inges`, `make analyze` and `ingest-loop.sh`,
-but they are all tightly coupled to Docker, which Clever Cloud doesn't use so have to redefine them here.
-
-We could have committed new scripts, but another goal of this tutorial is to highlight
-the fact that deploying on Clever Cloud can have literally no impact on your repository.
-We will not lock you in with some proprietary code.
-{{< /alert >}}
-
-{{< alert "secondary" "Custom add-on owner" >}}
-If you need your add-on to be created outside of your personal space,
-you can add the `--owner <OWNER_ID>` argument to the above command
-(replacing `<OWNER_ID>` by your unique organization identifier (`orga_…`)).
-{{< /alert >}}
+```bash
+CC_WORKER_COMMAND_0="scripts/simple/reconcile-loop.sh"
+CC_WORKER_COMMAND_1="scripts/simple/ingest-loop.sh"
+CC_WORKER_COMMAND_2="scripts/simple/analyze-loop.sh"
+```
 
 Now restart the app, and connect to the instance using:
 
