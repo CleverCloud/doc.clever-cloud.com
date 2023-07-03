@@ -1,6 +1,7 @@
 ---
 title: "Example Swift deployment: Hummingbird multipart form decoding"
 shortdesc: "The deployment of a Swift application on Clever Cloud: Hummingbird's multipart form decoding example"
+weight: 10
 tags:
 - deploy
 - example

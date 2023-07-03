@@ -1,6 +1,7 @@
 ---
 title: "Example Swift deployment: the Swift Package Index"
 shortdesc: "The deployment of a real-world Swift application on Clever Cloud: the Swift Package Index"
+weight: 20
 tags:
 - deploy
 - example
