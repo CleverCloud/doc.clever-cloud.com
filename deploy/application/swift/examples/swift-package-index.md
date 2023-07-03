@@ -398,33 +398,33 @@ You can create them by running:
 
 ```bash
 mkdir scripts/simple;
-echo "#!/bin/bash
+echo '#!/bin/bash
 
 export LOG_LEVEL=notice
 while true; do
-    echo 'Reconciling package list...';
+    echo "Reconciling package list...";
     .build/release/Run reconcile;
-    echo 'Reconciliation done, waiting 120 seconds...';
+    echo "Reconciliation done, waiting 120 seconds...";
     sleep 120;
-done" > scripts/simple/reconcile-loop.sh;
-echo "#!/bin/bash
+done' > scripts/simple/reconcile-loop.sh;
+echo '#!/bin/bash
 
 export LOG_LEVEL=notice
 while true; do
-    echo 'Ingesting 100 packages...';
+    echo "Ingesting 100 packages...";
     .build/release/Run ingest --limit 100;
-    echo 'Ingestion done. Waiting 300 seconds...';
+    echo "Ingestion done. Waiting 300 seconds...";
     sleep 300;
-done" > scripts/simple/ingest-loop.sh;
-echo "#!/bin/bash
+done' > scripts/simple/ingest-loop.sh;
+echo '#!/bin/bash
 
 export LOG_LEVEL=notice
 while true; do
-    echo 'Analyzing 25 packages...';
+    echo "Analyzing 25 packages...";
     .build/release/Run analyze --limit 25;
-    echo 'Analysis done. Waiting 20 seconds...';
+    echo "Analysis done. Waiting 20 seconds...";
     sleep 20;
-done" > scripts/simple/analyze-loop.sh;
+done' > scripts/simple/analyze-loop.sh;
 chmod u+x scripts/simple/*;
 git add scripts/simple/ && git commit -m 'Add Docker-independent `reconcile`, `ingest` and `analyze` loops';
 ```
@@ -439,7 +439,8 @@ CC_WORKER_COMMAND_1="scripts/simple/ingest-loop.sh"
 CC_WORKER_COMMAND_2="scripts/simple/analyze-loop.sh"
 ```
 
-Now restart the app, and connect to the instance using:
+Now run `git push clever swift-5.7:master` to update your app
+and connect to the instance using:
 
 ```bash
 clever ssh
