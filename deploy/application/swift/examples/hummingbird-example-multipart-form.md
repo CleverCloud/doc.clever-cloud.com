@@ -195,6 +195,8 @@ You can also run `clever deploy` which does it for you.
 Open `<APP_ID>.cleverapps.io`, it should show a waiting screen.
 After a few minutes, when the deployment succeeds, you should see the HTML form appear automatically.
 
+{{< image "/images/swift/hummingbird-multipart-form-decoding-result.png" "Expected result after deploying Hummingbird's multipart form decoding example" >}}
+
 ### While waiting for your app to build
 
 {{< readfile "/content/partials/while-waiting-for-app-to-build.md" >}}

@@ -275,6 +275,8 @@ git push clever swift-5.7:master
 Open `<APP_ID>.cleverapps.io`, it should show a waiting screen.
 After a few minutes, when the deployment succeeds, you should see the Swift Package Index appear automatically.
 
+{{< image "/images/swift/swift-package-index-result.png" "Expected result after deploying the Swift Package Index" >}}
+
 ### While waiting for your app to build
 
 {{< readfile "/content/partials/while-waiting-for-app-to-build.md" >}}
