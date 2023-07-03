@@ -283,7 +283,7 @@ After a few minutes, when the deployment succeeds, you should see the Swift Pack
 
 ### While waiting for your app to build
 
-While waiting for your app to build, it can be the perfect time to dicover
+While waiting for your app to build, it can be the perfect time to discover
 how you can see your build/deployment logs on Clever Cloud.
 
 <details open="true">
