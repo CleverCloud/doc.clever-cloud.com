@@ -94,7 +94,7 @@ which creates a `.clever.json` in your repository.
 If you are okay with pushing this little config file into the repository, you can run
 `git add .clever.json && git commit -m 'Add Clever Cloud configuration file'`.
 You can also ignore it from your commits using `echo '.clever.json' >> .gitignore`
-and then `git commit -m 'Ignore Clever Cloud configuration file' -- .gitignore`
+and then `git add .gitignore && git commit -m 'Ignore Clever Cloud configuration file'`
 if you prefer.
 
 </details>
