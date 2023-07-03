@@ -55,10 +55,9 @@ Rest assured, Clever Cloud's Swift runtime will be released with support for Swi
 4. Select "Create a brand new app"
 5. Select "Swift"
 6. Edit the scalability and choose a "nano" instance size (it is enough for this example) then hit "Next"
-7. Link your newly created database to the "\[Examples/Swift\] SPI" app
-   (or whatever you called it) then hit "Next"
-8. Give your database a name (e.g. "\[Examples/Swift\] SPI DB"),
+7. Give your application a name (e.g. "\[Examples/Swift\] SPI"),
    choose a zone then hit "Create"
+8. You can click "I don't need any add-on", as we will create it in the next step
 
 </details>
 
