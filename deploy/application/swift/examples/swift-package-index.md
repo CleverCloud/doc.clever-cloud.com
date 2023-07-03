@@ -82,6 +82,12 @@ clever create --type swift '[Examples/Swift] SPI'
 clever scale --flavor nano
 ```
 
+{{< alert "info" "Custom application owner" >}}
+If you need your application to be created outside of your personal space,
+you can add the `--owner <OWNER_ID>` argument to the `clever create` command
+(replacing `<OWNER_ID>` by your unique organization identifier (`orga_…`)).
+{{< /alert >}}
+
 Creating an application from the CLI also runs `clever link`,
 which creates a `.clever.json` in your repository.
 
