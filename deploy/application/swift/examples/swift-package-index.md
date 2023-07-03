@@ -4,9 +4,13 @@ shortdesc: "The deployment of a real-world Swift application on Clever Cloud: th
 tags:
 - deploy
 - example
+- swift
+- vapor
 keywords:
 - swift
 - postgresql
+- vapor
+- spi
 str_replace_dict:
   "@application-type@": "Swift"
 ---
