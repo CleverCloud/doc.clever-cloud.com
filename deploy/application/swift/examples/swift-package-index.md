@@ -42,6 +42,8 @@ During the Swift runtime private beta, Clever Cloud will only support Swift 5.7 
 This is caused by [a major change in the Swift 5.8 comiler structure][swift-5.8-bootstrapping]
 that we haven't yet taken into account.
 Rest assured, Clever Cloud's Swift runtime will be released with support for Swift 5.7, 5.8 and 5.9.
+
+[swift-5.8-bootstrapping]: <https://forums.swift.org/t/implementing-parts-of-the-swift-compiler-in-swift/59524> "Implementing Parts of the Swift Compiler in Swift - Development / Compiler - Swift Forums"
 {{< /alert >}}
 
 ## Create the application
@@ -49,7 +51,7 @@ Rest assured, Clever Cloud's Swift runtime will be released with support for Swi
 <details open="true">
 <summary>Using the web console</summary>
 
-1. Go to [console.clever-cloud.com](https://console.clever-cloud.com/)
+1. Go to [console.clever-cloud.com][console]
 2. Select your personal space or organization in the left sidebar
 3. Hit "Create…" then "an application"
 4. Select "Create a brand new app"
@@ -125,12 +127,14 @@ so most of our users decide to use big build instances.
 For more information about scalability, see [Application scaling][doc-app-scaling].
 
 As long as you [clean up](#clean-up) after you tried this tutorial, you should not see the difference.
+
+[doc-app-scaling]: <{{< ref "/administrate/scalability.md" >}}>
 {{< /alert >}}
 
 <details open="true">
 <summary>Using the web console</summary>
 
-1. Go to [console.clever-cloud.com](https://console.clever-cloud.com/)
+1. Go to [console.clever-cloud.com][console]
 2. Select your personal space or organization in the leftmost sidebar
 3. Select your example Swift application in the main sidebar
 4. Select "Information" in the secondary sidebar
@@ -158,7 +162,7 @@ you can either use the [Clever Cloud console][console] or our [CLI][cli].
 <details open="true">
 <summary>Using the web console</summary>
 
-1. Go to [console.clever-cloud.com](https://console.clever-cloud.com/)
+1. Go to [console.clever-cloud.com][console]
 2. Select your personal space or organization in the left sidebar
 3. Hit "Create…" then "an add-on"
 4. Select "PostgreSQL"
@@ -283,40 +287,7 @@ After a few minutes, when the deployment succeeds, you should see the Swift Pack
 
 ### While waiting for your app to build
 
-While waiting for your app to build, it can be the perfect time to discover
-how you can see your build/deployment logs on Clever Cloud.
-
-<details open="true">
-<summary>Using the web console</summary>
-
-1. Go to [console.clever-cloud.com](https://console.clever-cloud.com/)
-2. Select your personal space or organization in the leftmost sidebar
-3. Select your example Swift application in the main sidebar
-4. Select "Logs" in the secondary sidebar
-
-</details>
-
-<details>
-<summary>Using our CLI</summary>
-
-To see an application's logs using our [CLI][cli], you have two options:
-
-- The simple way
-
-  ```bash
-  clever logs
-  ```
-
-- The advanced way
-
-  ```bash
-  clever ssh
-  journalctl -efa -u bas
-  ```
-
-For more information about SSH access using the CLI, see [SSH access with Clever Tools][ssh-access].
-
-</details>
+{{< readfile "/content/partials/while-waiting-for-app-to-build.md" >}}
 
 ### Deployment failed
 
@@ -335,7 +306,7 @@ so here is how to do it:
 <details open="true">
 <summary>Using the web console</summary>
 
-1. Go to [console.clever-cloud.com](https://console.clever-cloud.com/)
+1. Go to [console.clever-cloud.com][console]
 2. Select your personal space or organization in the leftmost sidebar
 3. Select your example Swift application in the main sidebar
 4. Select "Information" in the secondary sidebar
@@ -362,7 +333,7 @@ Then type `y` or add the `-y`/`--yes` option to the command.
 <details open="true">
 <summary>Using the web console</summary>
 
-1. Go to [console.clever-cloud.com](https://console.clever-cloud.com/)
+1. Go to [console.clever-cloud.com][console]
 2. Select your personal space or organization in the leftmost sidebar
 3. Select your [managed PostgreSQL database][doc-pg-add-on] in the main sidebar
 4. Select "Information" in the secondary sidebar
@@ -467,15 +438,7 @@ Then, check the logs using
 journalctl -u <UNIT> -efa
 ```
 
-<details>
-<summary><code>journalctl</code> options explained</summary>
-
-- `-u <UNIT>`: Show logs from the specified unit
-- `-e`: Immediately jump to the end of the logs
-- `-f`: Follow new logs
-- `-a`: Show all fields, including long and unprintable
-
-</details>
+{{< readfile "/content/partials/journalctl-options-explained.md" >}}
 
 <details>
 <summary><code>journalctl</code> usage example</summary>
@@ -509,13 +472,10 @@ Analysis still seems to be working, so you can leave it as is.
 
 {{< /alert >}}
 
-[doc-app-scaling]: <{{< ref "/administrate/scalability.md" >}}>
 [doc-pg-add-on]: <{{< ref "/deploy/addon/postgresql/postgresql.md" >}}>
 [console]: <https://console.clever-cloud.com>
 [dedicated-build-instance]: <{{< ref "/administrate/apps-management.md#edit-application-configuration" >}}>
 [cli]: <{{< ref "/getting-started/cli.md" >}}>
-[ssh-access]: <{{< ref "/reference/clever-tools/ssh-access.md" >}}> "SSH access with Clever Tools | Clever Cloud Documentation"
-[swift-5.8-bootstrapping]: <https://forums.swift.org/t/implementing-parts-of-the-swift-compiler-in-swift/59524> "Implementing Parts of the Swift Compiler in Swift - Development / Compiler - Swift Forums"
 [app.yml]: <https://github.com/SwiftPackageIndex/SwiftPackageIndex-Server/blob/ca26072f7c8efcc91dadc44647b5063c78c3f87d/app.yml> "SwiftPackageIndex-Server/app.yml at ca26072f7c8efcc91dadc44647b5063c78c3f87d · SwiftPackageIndex/SwiftPackageIndex-Server"
 [gh-token-scopes]: <https://github.com/SwiftPackageIndex/SwiftPackageIndex-Server/blob/ffe47bd98315fd63c48e6aae6da1b6adfc3833af/LOCAL_DEVELOPMENT_SETUP.md#running-reconciliation-and-ingestion-locally> "SwiftPackageIndex-Server/LOCAL_DEVELOPMENT_SETUP.md at ffe47bd98315fd63c48e6aae6da1b6adfc3833af · SwiftPackageIndex/SwiftPackageIndex-Server"
 [gh-docs-pat]: <https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens> "Managing your personal access tokens - GitHub Docs"
