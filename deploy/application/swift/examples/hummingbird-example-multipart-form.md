@@ -76,15 +76,6 @@ if you prefer.
 
 </details>
 
-{{< alert "secondary" "About application scalability" >}}
-We could use the "pico" instance size, but you will see that we start an ingestion script
-when a deployment succeeds, and it will run quicker if the instance is bigger.
-
-Anyway, you will be billed to the exact seconds you consume,
-so as long as you [clean up](#clean-up) after you tried this tutorial,
-you won't notice the difference.
-{{< /alert >}}
-
 ## Configure the application
 
 ### Select a dedicated build instance
