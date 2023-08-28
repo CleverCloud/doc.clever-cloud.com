@@ -151,24 +151,8 @@ Using our CLI, you only need to run:
 
 ```bash
 echo 'APP_FOLDER="multipart-form"
-CC_SWIFT_BIN_ARGS="--hostname 0.0.0.0"' > .env.clever;
-cat .env.clever | clever env import;
+CC_SWIFT_BIN_ARGS="--hostname 0.0.0.0"' | clever env import;
 ```
-
-<details>
-<summary>Make sure you ignore <code>.env.clever</code> from git</summary>
-
-`.env.clever` does not contain any sensitive information in this example,
-but it is a good practice to ignore it.
-If it's not already ignored by more global settings, you can run:
-
-```bash
-echo '.env.clever' >> .gitignore
-git add .gitignore
-git commit -m 'Ignore `.env.clever`'
-```
-
-</details>
 
 </details>
 
