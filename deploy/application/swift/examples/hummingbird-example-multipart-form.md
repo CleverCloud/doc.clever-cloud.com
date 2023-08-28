@@ -25,6 +25,25 @@ if you already have [Clever Cloud's CLI — `clever`][cli] installed on your ma
 [cli]: <{{< ref "/getting-started/cli.md" >}}>
 {{< /alert >}}
 
+## TL;DR
+
+If you don't want to read, here is all you need to do:
+
+```bash
+# Clone the repository
+git clone https://github.com/hummingbird-project/hummingbird-examples;
+cd hummingbird-examples/;
+# Create the application
+clever create --type swift '[Examples/Swift] Hummingbird Multipart Form decoding';
+clever scale --flavor pico; # For a low price
+clever scale --build-flavor XL; # For fast builds
+# Tell Clever Cloud to run the "multipart-form" example
+echo 'APP_FOLDER="multipart-form"
+CC_SWIFT_BIN_ARGS="--hostname 0.0.0.0"' | clever env import;
+# Start the application
+clever deploy;
+```
+
 ## Clone the repository
 
 ```bash
