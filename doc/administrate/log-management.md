@@ -22,7 +22,7 @@ type: docs
 Log management is currently only available through our API and [clever-tools]({{< ref "/doc/CLI" >}}).
 
 {{< callout type="info">}}
-Logs are currently retained for a maximum of 7 days. Logs are flushed daily at midnight.
+Logs are currently retained for a maximum of 1 day. Logs are flushed daily at midnight.
 You can use log drains if a greater retention is needed.
 {{< /callout >}}
 
@@ -112,7 +112,7 @@ If you need to change the ouput you can specify the `--format` flag with one of 
     }
   ```
 
-## Exporting logs to an external tool
+## Exporting logs to an external tools
 
 You can use the logs drains to send your application's logs to an external server with the following command.
 

@@ -75,5 +75,3 @@ To access the environment variables from your code, you need to add `my.option=$
 {{< readfile file="link-addon.md" >}}
 
 {{< readfile file="more-config.md" >}}
-
-{{< readfile file="url_healthcheck.md" >}}
